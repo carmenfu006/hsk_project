@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans:wght@400;500&display=swap');
+
 /* Color */
 .primary-color {
   color: #3FD3C3;
@@ -7,15 +10,40 @@
   color: #002F5D;
 }
 
-.primary-color-bg {
+.bg-primary-color {
   background-color: #3FD3C3;
 }
 
-.secondary-color-bg {
+.bg-secondary-color {
   background-color: #002F5D;
 }
 
 /* Button */
 .btn {
   border-radius: 32px;
+}
+
+/* Font */
+body {
+  font-family: 'Noto Sans';
+}
+
+footer {
+  font-family: 'Inter';
+}
+
+.fw400 {
+  font-weight: 400;
+}
+
+.fw500 {
+  font-weight: 500;
+}
+
+.fs16 {
+  font-size: 12px;
+}
+
+.fs28 {
+  font-size: 28px;
 }
