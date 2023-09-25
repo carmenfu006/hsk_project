@@ -1,0 +1,21 @@
+/* Color */
+.primary-color {
+  color: #3FD3C3;
+}
+
+.secondary-color {
+  color: #002F5D;
+}
+
+.primary-color-bg {
+  background-color: #3FD3C3;
+}
+
+.secondary-color-bg {
+  background-color: #002F5D;
+}
+
+/* Button */
+.btn {
+  border-radius: 32px;
+}
