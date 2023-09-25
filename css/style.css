@@ -1,5 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans:wght@100;300;400;500&display=swap');
+
+a {
+  color: #002F5D;
+}
+
+a:hover {
+  color:#002F5D; 
+  text-decoration:none;
+}
 
 /* Color */
 .primary-color {
@@ -8,6 +16,10 @@
 
 .secondary-color {
   color: #002F5D;
+}
+
+.sunset-orange-color {
+  color: #FFA940;
 }
 
 .bg-primary-color {
@@ -26,10 +38,19 @@
 /* Font */
 body {
   font-family: 'Noto Sans';
+  color: #002F5D;
 }
 
 footer {
   font-family: 'Inter';
+}
+
+.fw100 {
+  font-weight: 100;
+}
+
+.fw300 {
+  font-weight: 300;
 }
 
 .fw400 {
@@ -40,8 +61,16 @@ footer {
   font-weight: 500;
 }
 
-.fs16 {
+.fs12 {
   font-size: 12px;
+}
+
+.fs14 {
+  font-size: 14px;
+}
+
+.fs16 {
+  font-size: 16px;
 }
 
 .fs28 {
