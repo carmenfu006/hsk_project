@@ -98,6 +98,32 @@ footer {
 }
 
 /* Background Image */
+.home-card-1 {
+  background-image: url('../images/home-card-1.jpg');
+  height: 650px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.home-card-2 {
+  background-image: url('../images/home-card-2.jpg');
+  height: 650px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.home-card-3 {
+  background-image: url('../images/home-card-3.jpg');
+  height: 650px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card {
+  height: 300px;
+}
+
+
 .frame {
   background: rgba(255, 255, 255, 0.1);
 }
@@ -110,7 +136,7 @@ footer {
 
 .caption {
   position: absolute;
-  top: 45%;
+  top: 35%;
   left: 0;
   width: 100%;
 }
