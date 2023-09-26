@@ -115,9 +115,16 @@ footer {
   width: 100%;
 }
 
-@media screen and (min-width: 400px) {
-  .home-bg-image-1 {
-    height: 250px;
+.caption-2 {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 320px) {
+  .home-bg-image-2 {
+    height: 500px;
     width: 100%;
     background-size: 100% 100%;  
     background-repeat: no-repeat;
@@ -128,6 +135,13 @@ footer {
   .cap-large {
     display: none !important;
   }
+
+  .home-bg-image-2 {
+    height: 450px;
+    width: 100%;
+    background-size: 100% 100%;  
+    background-repeat: no-repeat;
+  }
 }
 
 @media screen and (min-width: 800px) {
@@ -137,10 +151,24 @@ footer {
     background-size: 100% 100%;  
     background-repeat: no-repeat;
   }
+
+  .home-bg-image-2 {
+    height: 450px;
+    width: 100%;
+    background-size: 100% 100%;  
+    background-repeat: no-repeat;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .cap-large {
     display: block !important;
+  }
+
+  .home-bg-image-2 {
+    height: 450px;
+    width: 100%;
+    background-size: 100% 100%;  
+    background-repeat: no-repeat;
   }
 }
