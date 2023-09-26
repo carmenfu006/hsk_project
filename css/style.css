@@ -9,6 +9,18 @@ a:hover {
   text-decoration:none;
 }
 
+.nav-link {
+  color: #002F5D !important;
+}
+
+.nav-link.active {
+  border-bottom: 3px solid #3FD3C3;
+}
+
+.test {
+  border-bottom: 3px solid #3FD3C3;
+}
+
 /* Color */
 .primary-color {
   color: #3FD3C3;
@@ -33,6 +45,14 @@ a:hover {
 /* Button */
 .btn {
   border-radius: 32px;
+  color: #002F5D;
+  background-color: #E6E6E6;
+}
+
+.btn.active {
+  border-radius: 32px;
+  color: #002F5D;
+  background-color: #3FD3C3;
 }
 
 /* Font */
@@ -75,4 +95,14 @@ footer {
 
 .fs28 {
   font-size: 28px;
+}
+
+/* Background Image */
+
+.home-bg-image-1 {
+  background-image: url("../images/home-bg-image-1.png");
+  width: 100%; 
+  height: 500px;
+  background-size: 100%%;  
+  background-repeat: no-repeat;
 }

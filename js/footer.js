@@ -11,11 +11,11 @@ footer_template.innerHTML = `
   <div class='row'>
     <div class='col-lg-6 col-md-12 col-sm-12 fw400 fs12'>
       <div class='row'>
-        <div class='col mb-2'>联系我们：support@hskk.org</div>
-        <div class='col mb-2'>友情链接：www.chinesetest.cn</div>
+        <div class='col mb-2'>联系我们：<a class='text-white' href='mailto:support@hskk.org'>support@hskk.org</a></div>
+        <div class='col mb-2'>友情链接：<a class='text-white' href='https://www.chinesetest.cn'>www.chinesetest.cn</a></div>
       </div>
       <div class='row'>
-        <div class='col mb-5'>更多质讯：www.hskk.org</div>
+        <div class='col mb-5'>更多质讯：<a class='text-white' href='https://www.hskk.org'>www.hskk.org</a></div>
       </div>
     </div>
     <div class='col-lg-6 col-md-12 col-sm-12 fw500 fs12'>

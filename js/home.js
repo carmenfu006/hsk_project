@@ -1,0 +1,1 @@
+$("#home-menu-btn").addClass('active');
