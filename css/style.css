@@ -55,6 +55,10 @@ a:hover {
   background-color: #3FD3C3;
 }
 
+.w180 {
+  width: 180px !important;
+}
+
 /* Font */
 body {
   font-family: 'Noto Sans';
@@ -97,29 +101,48 @@ footer {
   font-size: 28px;
 }
 
+/* Carousel Indicators */
+.carousel-indicators {
+  bottom: -60px;
+}
+
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #E6E6E6;
+}
+
+.carousel-indicators li.active {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #3FD3C3;
+}
+
 /* Background Image */
 .home-card-1 {
   background-image: url('../images/home-card-1.jpg');
-  height: 650px;
+  height: 700px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .home-card-2 {
   background-image: url('../images/home-card-2.jpg');
-  height: 650px;
+  height: 700px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .home-card-3 {
   background-image: url('../images/home-card-3.jpg');
-  height: 650px;
+  height: 700px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.card {
+.card-option {
   height: 300px;
 }
 
