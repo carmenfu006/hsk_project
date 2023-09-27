@@ -42,17 +42,28 @@ a:hover {
   background-color: #002F5D;
 }
 
+.bg-info-color {
+  background-color: #d9f6f3;
+  border-radius: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  display: inline-flex";
+}
+
 /* Button */
 .btn {
   border-radius: 32px;
   color: #002F5D;
   background-color: #E6E6E6;
+  font-weight: bold;
 }
 
 .btn.active {
   border-radius: 32px;
   color: #002F5D;
   background-color: #3FD3C3;
+  font-weight: bold;
 }
 
 .w180 {

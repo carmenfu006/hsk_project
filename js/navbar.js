@@ -24,7 +24,7 @@ navbar_template.innerHTML = `
         <a class='nav-link' href='#'>HSK口语移动端考期</a>
       </li>
       <li class='nav-item'>
-        <a class='nav-link' href='#'>考点与学校合作</a>
+        <a id='collaboration-menu-btn' class='nav-link' href='collaboration.html'>考点与学校合作</a>
       </li>
       <li class='nav-item'>
         <a class='nav-link' href='#'>最新质讯</a>
