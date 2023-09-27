@@ -49,42 +49,47 @@
           <button type='button' class='btn btn-sm active p-2 pr-4 pl-4 mt-2 w180'>合作方登入</button>
         </div>
       </div>
-      <div class='row mt-5 mb-5'>
+      <div class='row mt-5'>
         <div class='col-12'>
-          <h4 class='font-weight-bold'>联系我们</h4>
+          <h5 class='font-weight-bold'>联系我们</h5>
           <p class='text-muted'>请提供您的联系信息,我们将尽快与您取得联系。</p>
         </div>
       </div>
-      <form>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">联系电话<span class='text-danger'>*</span></label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      <form class='mb-5'>
+        <div class='form-group'>
+          <label for='inputTel'>联系电话<span class='text-danger'>*</span></label>
+          <div class='input-group'>
+            <select class='form-control border-right-0 w80'>
+              <option value='+852' selected>+852</option>
+              <option value='+62'>+62</option>
+              <option value='+971'>+971</option>
+              <option value='+61'>+61</option>
+            </select>
+            <input type='number' class='form-control border-left-0' placeholder='联系电话'/>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Example select</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
+        <div class='form-group'>
+          <label for='inputEmail'>电子邮件<span class='text-danger'>*</span></label>
+          <input type='email' class='form-control' placeholder='电子邮件'>
         </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect2">Example multiple select</label>
-          <select multiple class="form-control" id="exampleFormControlSelect2">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
+        <div class='form-group'>
+          <label for='textarea'>留言内容</label>
+          <textarea class='form-control' rows='3' placeholder='留言内容'></textarea>
         </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Example textarea</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <div class='text-center'>
+          <button type='submit' disabled class='btn btn-sm p-2 pr-4 pl-4 mt-2 w180'>发送</button>
         </div>
       </form>
+      <div aria-live='polite' aria-atomic='true' class='d-flex justify-content-center align-items-center'>
+        <div class='toast' role='alert' aria-live='assertive' aria-atomic='true' data-autohide='false'>
+          <div class='toast-header secondary-color'>
+            <strong class='mr-auto'>信息已成功发送</strong>
+            <button type='button' class='ml-2 mb-1 close' data-dismiss='toast' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
     <footer id='footer' class='bg-secondary-color text-white'></footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

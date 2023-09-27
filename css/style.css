@@ -17,8 +17,9 @@ a:hover {
   border-bottom: 3px solid #3FD3C3;
 }
 
-.test {
-  border-bottom: 3px solid #3FD3C3;
+.toast-header {
+  height: 60px;
+  background-color: #ECFBF9;
 }
 
 /* Color */
@@ -43,7 +44,7 @@ a:hover {
 }
 
 .bg-info-color {
-  background-color: #d9f6f3;
+  background-color: #D9F6F3;
   border-radius: 16px;
   justify-content: center;
   align-items: center;
@@ -52,6 +53,13 @@ a:hover {
 }
 
 /* Button */
+button:disabled,
+button[disabled]{
+  /* background-color: #F6F8F9; */
+  pointer-events: none;
+  opacity: 0.2 !important;
+}
+
 .btn {
   border-radius: 32px;
   color: #002F5D;
@@ -64,6 +72,11 @@ a:hover {
   color: #002F5D;
   background-color: #3FD3C3;
   font-weight: bold;
+}
+
+/* Width */
+.w80 {
+  max-width: 80px !important;
 }
 
 .w180 {
