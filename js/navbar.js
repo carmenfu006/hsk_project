@@ -7,10 +7,10 @@ navbar_template.innerHTML = `
     <i class='fa-solid fa-globe secondary-color'></i>
   </a>
   <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
-    <a class='dropdown-item' href='#'>Action 2</a>
-    <a class='dropdown-item' href='#'>Another action</a>
-    <div class='dropdown-divider'></div>
-    <a class='dropdown-item' href='#'>Something else here</a>
+    <a class='dropdown-item i18n' lang='zh'>中文</a>
+    <a class='dropdown-item i18n' lang='en'>English</a>
+    <a class='dropdown-item i18n' lang='id'>Bahasa Indonesia</a>
+    <a class='dropdown-item i18n' lang='ar'>عربي</a>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -18,7 +18,7 @@ navbar_template.innerHTML = `
   <div class='collapse navbar-collapse m-3' id='navbarSupportedContent'>
     <ul class='navbar-nav mr-auto'>
       <li class='nav-item'>
-        <a id='home-menu-btn' class='nav-link menu-btn' href='home.html#home-content'>首页</a>
+        <a id='home-menu-btn' class='nav-link menu-btn i18n-1' href='home.html#home-content'>首页</a>
       </li>
       <li class='nav-item'>
         <a id='apply-menu-btn' class='nav-link menu-btn' href='application.html'>HSK口语移动端考期</a>
@@ -39,10 +39,10 @@ navbar_template.innerHTML = `
           <i class='fa-solid fa-globe fa-lg mt-3 secondary-color'></i>
         </a>
         <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
-          <a class='dropdown-item' href='#'>Action</a>
-          <a class='dropdown-item' href='#'>Another action</a>
-          <div class='dropdown-divider'></div>
-          <a class='dropdown-item' href='#'>Something else here</a>
+          <a class='dropdown-item i18n' lang='zh'>中文</a>
+          <a class='dropdown-item i18n' lang='en'>English</a>
+          <a class='dropdown-item i18n' lang='id'>Bahasa Indonesia</a>
+          <a class='dropdown-item i18n' lang='ar'>عربي</a>
         </div>
       </li>
       <button type='button' class='btn btn-sm active m-1 p-2 pr-3 pl-3'>考生登入/注册</button>

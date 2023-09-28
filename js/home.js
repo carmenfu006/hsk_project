@@ -1,13 +1,9 @@
-setActiveMenu()
-
-function setActiveMenu() {
-  if (window.location.hash === '#home-content') {
-    $('#home-menu-btn').addClass('active');
-  } else if (window.location.hash === '#home-news') {
-    $('#news-menu-btn').addClass('active');
-  } else if (window.location.hash === '#home-faqs') {
-    $('#faqs-menu-btn').addClass('active');
-  }
+if (window.location.hash === '#home-content') {
+  $('#home-menu-btn').addClass('active');
+} else if (window.location.hash === '#home-news') {
+  $('#news-menu-btn').addClass('active');
+} else if (window.location.hash === '#home-faqs') {
+  $('#faqs-menu-btn').addClass('active');
 }
 
 $('.collapse')
