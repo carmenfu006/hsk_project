@@ -24,7 +24,7 @@ navbar_template.innerHTML = `
         <a id='apply-menu-btn' class='nav-link menu-btn' href='application.html'>HSK口语移动端考期</a>
       </li>
       <li class='nav-item'>
-        <a id='collab-menu-btn' class='nav-link menu-btn' href='collaboration.html'>考点与学校合作</a>
+        <a id='partner-menu-btn' class='nav-link menu-btn' href='partner.html'>考点与学校合作</a>
       </li>
       <li class='nav-item'>
         <a id='news-menu-btn' class='nav-link menu-btn' href='home.html#home-news'>最新质讯</a>
@@ -54,7 +54,7 @@ navbar_template.innerHTML = `
 navbar.appendChild(navbar_template.content);
 
 setActiveMenu('#home-menu-btn')
-setActiveMenu('#collab-menu-btn')
+setActiveMenu('#partner-menu-btn')
 setActiveMenu('#news-menu-btn')
 setActiveMenu('#faqs-menu-btn')
 
