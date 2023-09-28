@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class='row mb-5 text-center d-block d-sm-none d-md-block d-lg-none'>
-        <button type='button' class='btn btn-sm mb-3 p-2 pr-4 pl-4 mr-3 ml-3 w180 active'>联系我们</button>
+        <button id='collab-contact-us' type='button' class='btn btn-sm mb-3 p-2 pr-4 pl-4 mr-3 ml-3 w180 active'>联系我们</button>
       </div>
       <div class='row bg-info-color m-1 p-1 pb-4'>
         <div class='col-lg-3 col-md-12 col-sm-12 text-center'>
@@ -55,9 +55,9 @@
           <p class='text-muted'>请提供您的联系信息,我们将尽快与您取得联系。</p>
         </div>
       </div>
-      <form class='mb-5'>
+      <form id='collab-contact-us-form' class='mb-5'>
         <div class='form-group'>
-          <label for='inputTel'>联系电话<span class='text-danger'>*</span></label>
+          <label>联系电话<span class='text-danger'>*</span></label>
           <div class='input-group'>
             <select class='form-control border-right-0 w80'>
               <option value='+852' selected>+852</option>
@@ -69,11 +69,11 @@
           </div>
         </div>
         <div class='form-group'>
-          <label for='inputEmail'>电子邮件<span class='text-danger'>*</span></label>
+          <label>电子邮件<span class='text-danger'>*</span></label>
           <input type='email' class='form-control' placeholder='电子邮件'>
         </div>
         <div class='form-group'>
-          <label for='textarea'>留言内容</label>
+          <label>留言内容</label>
           <textarea class='form-control' rows='3' placeholder='留言内容'></textarea>
         </div>
         <div class='text-center'>
