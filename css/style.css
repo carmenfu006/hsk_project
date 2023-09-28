@@ -59,7 +59,6 @@ a:hover {
 /* Button */
 button:disabled,
 button[disabled]{
-  /* background-color: #F6F8F9; */
   pointer-events: none;
   opacity: 0.2 !important;
 }
@@ -69,6 +68,8 @@ button[disabled]{
   color: #002F5D;
   background-color: #E6E6E6;
   font-weight: bold;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .btn.active {
@@ -78,9 +79,25 @@ button[disabled]{
   font-weight: bold;
 }
 
+/* Form */
+
+.form-control:focus {
+  border-color: #d6d8d9;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
 /* Width */
-.w80 {
-  max-width: 80px !important;
+.w85 {
+  max-width: 85px !important;
+}
+
+.w120 {
+  max-width: 120px !important;
+}
+
+.w175 {
+  max-width: 175px !important;
 }
 
 .w180 {
@@ -169,6 +186,8 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+/* Home CSS */
 
 .card-option {
   height: 300px;

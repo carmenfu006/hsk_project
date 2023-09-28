@@ -1,0 +1,1 @@
+$('#apply-menu-btn').addClass('active');

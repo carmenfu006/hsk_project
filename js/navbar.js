@@ -21,7 +21,7 @@ navbar_template.innerHTML = `
         <a id='home-menu-btn' class='nav-link menu-btn' href='home.html#home-content'>首页</a>
       </li>
       <li class='nav-item'>
-        <a class='nav-link menu-btn' href='#'>HSK口语移动端考期</a>
+        <a id='apply-menu-btn' class='nav-link menu-btn' href='application.html'>HSK口语移动端考期</a>
       </li>
       <li class='nav-item'>
         <a id='collab-menu-btn' class='nav-link menu-btn' href='collaboration.html'>考点与学校合作</a>
@@ -29,12 +29,12 @@ navbar_template.innerHTML = `
       <li class='nav-item'>
         <a id='news-menu-btn' class='nav-link menu-btn' href='home.html#home-news'>最新质讯</a>
       </li>
-      <li class='nav-item'>
+      <li class='nav-item mb-1'>
         <a id='faqs-menu-btn' class='nav-link menu-btn' href='home.html#home-faqs'>常见问题</a>
       </li>
     </ul>
     <ul class='navbar-nav'>
-      <li class='nav-item dropdown show d-none d-sm-block'>
+      <li class='nav-item dropdown show d-none d-sm-block d-md-none d-lg-block'>
         <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
           <i class='fa-solid fa-globe fa-lg mt-3 secondary-color'></i>
         </a>
