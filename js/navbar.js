@@ -18,19 +18,19 @@ navbar_template.innerHTML = `
   <div class='collapse navbar-collapse m-3' id='navbarSupportedContent'>
     <ul class='navbar-nav mr-auto'>
       <li class='nav-item'>
-        <a id='home-menu-btn' class='nav-link' href='home.html'>首页</a>
+        <a id='home-menu-btn' class='nav-link menu-btn' href='home.html#home-content'>首页</a>
       </li>
       <li class='nav-item'>
-        <a class='nav-link' href='#'>HSK口语移动端考期</a>
+        <a class='nav-link menu-btn' href='#'>HSK口语移动端考期</a>
       </li>
       <li class='nav-item'>
-        <a id='collaboration-menu-btn' class='nav-link' href='collaboration.html'>考点与学校合作</a>
+        <a id='collaboration-menu-btn' class='nav-link menu-btn' href='collaboration.html'>考点与学校合作</a>
       </li>
       <li class='nav-item'>
-        <a class='nav-link' href='#'>最新质讯</a>
+        <a id='news-menu-btn' class='nav-link menu-btn' href='home.html#home-news'>最新质讯</a>
       </li>
       <li class='nav-item'>
-        <a class='nav-link' href='#'>常见问题</a>
+        <a id='faqs-menu-btn' class='nav-link menu-btn' href='home.html#home-faqs'>常见问题</a>
       </li>
     </ul>
     <ul class='navbar-nav'>
@@ -52,3 +52,21 @@ navbar_template.innerHTML = `
 `;
 
 navbar.appendChild(navbar_template.content);
+
+setActiveMenu('#home-menu-btn')
+setActiveMenu('#news-menu-btn')
+setActiveMenu('#faqs-menu-btn')
+
+function setActiveMenu(menuBtn) {
+  $(menuBtn).on('click', function() {
+    $('.menu-btn').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  // if(window.location.hash) {
+  //   console.log('Carmen',)
+  // } else {
+  //   // Fr
+  // }
+  
+}

@@ -1,17 +1,17 @@
-$("#home-menu-btn").addClass('active');
+// $('#home-menu-btn').addClass('active');
 
-$(".collapse")
-.on("show.bs.collapse", function () {
+$('.collapse')
+.on('show.bs.collapse', function () {
   $(this)
-    .prev(".card-header")
-    .find(".fa")
-    .removeClass("fa-plus")
-    .addClass("fa-minus");
+    .prev('.card-header')
+    .find('.fa')
+    .removeClass('fa-plus')
+    .addClass('fa-minus');
 })
-.on("hide.bs.collapse", function () {
+.on('hide.bs.collapse', function () {
   $(this)
-    .prev(".card-header")
-    .find(".fa")
-    .removeClass("fa-minus")
-    .addClass("fa-plus");
+    .prev('.card-header')
+    .find('.fa')
+    .removeClass('fa-minus')
+    .addClass('fa-plus');
 });
