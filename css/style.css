@@ -43,6 +43,10 @@ a:hover {
   background-color: #002F5D;
 }
 
+.bg-grey-color {
+  background-color: #E6E6E6;
+}
+
 .bg-info-color {
   background-color: #D9F6F3;
   border-radius: 16px;
@@ -170,6 +174,13 @@ footer {
   height: 300px;
 }
 
+.news-content {
+  height: 200px;
+}
+
+.pointer {
+  cursor: pointer;
+}
 
 .frame {
   background: rgba(255, 255, 255, 0.1);

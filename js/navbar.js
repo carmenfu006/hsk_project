@@ -24,7 +24,7 @@ navbar_template.innerHTML = `
         <a class='nav-link menu-btn' href='#'>HSK口语移动端考期</a>
       </li>
       <li class='nav-item'>
-        <a id='collaboration-menu-btn' class='nav-link menu-btn' href='collaboration.html'>考点与学校合作</a>
+        <a id='collab-menu-btn' class='nav-link menu-btn' href='collaboration.html'>考点与学校合作</a>
       </li>
       <li class='nav-item'>
         <a id='news-menu-btn' class='nav-link menu-btn' href='home.html#home-news'>最新质讯</a>
@@ -54,6 +54,7 @@ navbar_template.innerHTML = `
 navbar.appendChild(navbar_template.content);
 
 setActiveMenu('#home-menu-btn')
+setActiveMenu('#collab-menu-btn')
 setActiveMenu('#news-menu-btn')
 setActiveMenu('#faqs-menu-btn')
 
@@ -62,11 +63,4 @@ function setActiveMenu(menuBtn) {
     $('.menu-btn').removeClass('active');
     $(this).addClass('active');
   });
-
-  // if(window.location.hash) {
-  //   console.log('Carmen',)
-  // } else {
-  //   // Fr
-  // }
-  
 }
