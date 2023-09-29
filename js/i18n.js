@@ -1,3 +1,5 @@
+setQueryString()
+
 translateWeb('.i18n-1', '首页', 'Home', 'Beranda', 'الصفحة الرئيسية')
 
 $('.i18n').on('click', function() {
@@ -31,4 +33,15 @@ function translateWeb(classname, zh, en, id, ar) {
     default:
       $(classname).html(zh);
   }
+}
+
+function setQueryString() {
+  let queryString = new URL(window.location).search;
+  $('a[href*=".html"]').each(function() {
+    let current = this.href.split('#')[0];
+    if (window.location.hash) {
+      let hash = this.href.split('#')[1];
+      this.href = current + queryString + '#' + hash;
+    }
+  });
 }

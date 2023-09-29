@@ -45,22 +45,15 @@ navbar_template.innerHTML = `
           <a class='dropdown-item i18n' lang='ar'>عربي</a>
         </div>
       </li>
-      <button type='button' class='btn btn-sm active m-1 p-2 pr-3 pl-3'>考生登入/注册</button>
-      <button type='button' class='btn btn-sm active m-1 p-2 pr-3 pl-3'>合作方登入</button>
+      <a href='user-login.html' class='btn btn-sm active m-1 p-2 pr-3 pl-3'>考生登入/注册</a>
+      <a href='' class='btn btn-sm active m-1 p-2 pr-3 pl-3'>合作方登入</a>
     </ul>
   </div>
 `;
 
 navbar.appendChild(navbar_template.content);
 
-setActiveMenu('#home-menu-btn')
-setActiveMenu('#partner-menu-btn')
-setActiveMenu('#news-menu-btn')
-setActiveMenu('#faqs-menu-btn')
-
-function setActiveMenu(menuBtn) {
-  $(menuBtn).on('click', function() {
-    $('.menu-btn').removeClass('active');
-    $(this).addClass('active');
-  });
-}
+$('.menu-btn').on('click', function() {
+  $('.menu-btn').removeClass('active');
+  $(this).addClass('active');
+});
