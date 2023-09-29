@@ -70,6 +70,7 @@ button[disabled]{
   font-weight: bold;
   box-shadow: none !important;
   outline: none !important;
+  font-size: 12px;
 }
 
 .btn.active {
@@ -112,6 +113,7 @@ button[disabled]{
 body {
   font-family: 'Noto Sans';
   color: #002F5D;
+  font-size: 12px;
 }
 
 footer {

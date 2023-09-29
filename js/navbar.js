@@ -4,7 +4,7 @@ const navbar_template = document.createElement('template');
 navbar_template.innerHTML = `
   <a class='navbar-brand mr-auto' href='index.html'><img src='images/logo.png' class='img-fluid w-75' alt='Responsive image'></a>
   <a class='nav-link dropdown-toggle d-block d-sm-none d-md-block d-lg-none' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-    <i class='fa-solid fa-globe secondary-color'></i>
+    <i class='fa-solid fa-globe fa-2x secondary-color'></i>
   </a>
   <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
     <a class='dropdown-item i18n' lang='zh'>中文</a>
@@ -36,7 +36,7 @@ navbar_template.innerHTML = `
     <ul class='navbar-nav'>
       <li class='nav-item dropdown show d-none d-sm-block d-md-none d-lg-block'>
         <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-          <i class='fa-solid fa-globe fa-lg mt-2 align-self-center secondary-color'></i>
+          <i class='fa-solid fa-globe fa-lg mt-3 align-self-center secondary-color'></i>
         </a>
         <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
           <a class='dropdown-item i18n' lang='zh'>中文</a>
