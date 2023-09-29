@@ -57,24 +57,24 @@ translateWeb(
 )
 translateWeb(
   '.i18n-9', 
-  '联系我们: ', 
-  'Contact Us: ', 
-  'Hubungi Kami: ', 
-  'تواصل معنا: '
+  '联系我们', 
+  'Contact Us', 
+  'Hubungi Kami', 
+  'تواصل معنا'
 )
 translateWeb(
   '.i18n-10', 
-  '友情链接: ', 
-  'Friendly Links: ', 
-  'Tautan Sahabat: ', 
-  'روابط صديقة: '
+  '友情链接', 
+  'Friendly Links', 
+  'Tautan Sahabat', 
+  'روابط صديقة'
 )
 translateWeb(
   '.i18n-11', 
-  '更多质讯: ', 
-  'More Information: ', 
-  'Informasi Lebih Lanjut: ', 
-  'لمزيد من المعلومات: '
+  '更多质讯', 
+  'More Information', 
+  'Informasi Lebih Lanjut', 
+  'لمزيد من المعلومات'
 )
 translateWeb(
   '.i18n-12', 
@@ -145,6 +145,55 @@ translateWeb(
   'Convenient and Flexible Testing',
   'Ujian yang Mudah dan Fleksibel',
   'اختبار مريح ومرن'
+)
+translateWeb(
+  '.i18n-22',
+  '移动端轻松完成',
+  'Easily complete the test on your mobile device',
+  'Mudah diakses melalui seluler',
+  'يمكنك إجراء الاختبار بسهولة من الهاتف المحمول'
+)
+translateWeb(
+  '.i18n-23',
+  '随时随地参与考试',
+  'Participate in the test anytime, anywhere',
+  'Bisa mengikuti ujian kapan saja, di mana saja',
+  'شارك في الاختبار في أي وقت وفي أي مكان'
+)
+translateWeb(
+  '.i18n-24',
+  '简便操作',
+  'Simple Operation',
+  'Operasi yang Mudah',
+  'عملية اختبار بسيطة'
+)
+translateWeb(
+  '.i18n-25',
+  '考试操作界⾯简洁明了',
+  'The test interface is clean and clear',
+  'Antarmuka ujian yang sederhana dan jelas',
+  'واجهة اختبار سهلة الاستخدام'
+)
+translateWeb(
+  '.i18n-26',
+  '考试过程更加顺畅',
+  'The testing process is smoother',
+  'Proses ujian menjadi lebih lancar',
+  'عملية الاختبار تسير بسلاسة'
+)
+translateWeb(
+  '.i18n-27',
+  '查看考期及报名',
+  'View Test Dates and Registration',
+  'Lihat Jadwal Ujian dan Daftar',
+  'للتحقق من التواريخ والتسجيل'
+)
+translateWeb(
+  '.i18n-28',
+  '了解更多详情',
+  'Learn more details',
+  'Pelajari Lebih Lanjut',
+  'للمزيد من المعلومات'
 )
 
 

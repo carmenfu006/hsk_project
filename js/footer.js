@@ -12,18 +12,18 @@ footer_template.innerHTML = `
     <div class='col-lg-6 col-md-12 col-sm-12 fw400 fs12'>
       <div class='row'>
         <div class='col mb-2'>
-          <span class='i18n-9'>联系我们: </span>
-          <span><a class='text-white' href='mailto:support@hskk.org'>support@hskk.org</a></span>
+          <span class='i18n-9'>联系我们</span>
+          <span><a class='text-white' href='mailto:support@hskk.org'>: support@hskk.org</a></span>
         </div>
         <div class='col mb-2'>
-          <span class='i18n-10'>友情链接: </span>
-          <span><a class='text-white' href='https://www.chinesetest.cn'>www.chinesetest.cn</a></span>
+          <span class='i18n-10'>友情链接</span>
+          <span><a class='text-white' href='https://www.chinesetest.cn'>: www.chinesetest.cn</a></span>
         </div>
       </div>
       <div class='row'>
         <div class='col mb-5'>
-          <span class='i18n-11'>更多质讯: </span>
-          <span><a class='text-white' href='https://www.hskk.org'>www.hskk.org</a></span>
+          <span class='i18n-11'>更多质讯</span>
+          <span><a class='text-white' href='https://www.hskk.org'>: www.hskk.org</a></span>
         </div>
       </div>
     </div>
