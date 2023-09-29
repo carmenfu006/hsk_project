@@ -5,21 +5,30 @@ footer_template.innerHTML = `
   <div class='container pt-5 pb-5'>
   <div class='row'>
     <div class='col-12 mb-3 fw500 fs28'>
-      <h5>全球唯一HSK口语移动端考试</h5>
+      <h5 class='i18n-8'>全球唯一HSK口语移动端考试</h5>
     </div>
   </div>
   <div class='row'>
     <div class='col-lg-6 col-md-12 col-sm-12 fw400 fs12'>
       <div class='row'>
-        <div class='col mb-2'>联系我们：<a class='text-white' href='mailto:support@hskk.org'>support@hskk.org</a></div>
-        <div class='col mb-2'>友情链接：<a class='text-white' href='https://www.chinesetest.cn'>www.chinesetest.cn</a></div>
+        <div class='col mb-2'>
+          <span class='i18n-9'>联系我们: </span>
+          <span><a class='text-white' href='mailto:support@hskk.org'>support@hskk.org</a></span>
+        </div>
+        <div class='col mb-2'>
+          <span class='i18n-10'>友情链接: </span>
+          <span><a class='text-white' href='https://www.chinesetest.cn'>www.chinesetest.cn</a></span>
+        </div>
       </div>
       <div class='row'>
-        <div class='col mb-5'>更多质讯：<a class='text-white' href='https://www.hskk.org'>www.hskk.org</a></div>
+        <div class='col mb-5'>
+          <span class='i18n-11'>更多质讯: </span>
+          <span><a class='text-white' href='https://www.hskk.org'>www.hskk.org</a></span>
+        </div>
       </div>
     </div>
     <div class='col-lg-6 col-md-12 col-sm-12 fw500 fs12'>
-      HSK口语移动端考试App下载
+      <span class='i18n-12'>HSK口语移动端考试App下载</span>
       <div class='row pt-3 d-flex justify-content-start container'>
         <img src='images/mobile-app-store-badge.png' class='img-fluid mr-3 mb-2' alt='Responsive image'>
         <img src='images/mobile-google-play-badge.png' class='img-fluid mr-3 mb-2' alt='Responsive image'>

@@ -21,22 +21,22 @@ navbar_template.innerHTML = `
         <a id='home-menu-btn' class='nav-link menu-btn i18n-1' href='home.html#home-content'>首页</a>
       </li>
       <li class='nav-item'>
-        <a id='apply-menu-btn' class='nav-link menu-btn' href='application.html'>HSK口语移动端考期</a>
+        <a id='apply-menu-btn' class='nav-link menu-btn i18n-2' href='application.html'>HSK口语移动端考期</a>
       </li>
       <li class='nav-item'>
-        <a id='partner-menu-btn' class='nav-link menu-btn' href='partner.html'>考点与学校合作</a>
+        <a id='partner-menu-btn' class='nav-link menu-btn i18n-3' href='partner.html'>考点与学校合作</a>
       </li>
       <li class='nav-item'>
-        <a id='news-menu-btn' class='nav-link menu-btn' href='home.html#home-news'>最新质讯</a>
+        <a id='news-menu-btn' class='nav-link menu-btn i18n-4' href='home.html#home-news'>最新质讯</a>
       </li>
       <li class='nav-item mb-1'>
-        <a id='faqs-menu-btn' class='nav-link menu-btn' href='home.html#home-faqs'>常见问题</a>
+        <a id='faqs-menu-btn' class='nav-link menu-btn i18n-5' href='home.html#home-faqs'>常见问题</a>
       </li>
     </ul>
     <ul class='navbar-nav'>
       <li class='nav-item dropdown show d-none d-sm-block d-md-none d-lg-block'>
         <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-          <i class='fa-solid fa-globe fa-lg mt-3 secondary-color'></i>
+          <i class='fa-solid fa-globe fa-lg mt-2 align-self-center secondary-color'></i>
         </a>
         <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
           <a class='dropdown-item i18n' lang='zh'>中文</a>
@@ -45,8 +45,8 @@ navbar_template.innerHTML = `
           <a class='dropdown-item i18n' lang='ar'>عربي</a>
         </div>
       </li>
-      <a href='user-login.html' class='btn btn-sm active m-1 p-2 pr-3 pl-3'>考生登入/注册</a>
-      <a href='' class='btn btn-sm active m-1 p-2 pr-3 pl-3'>合作方登入</a>
+      <a href='user-login.html' class='btn btn-sm active m-1 p-2 pr-3 pl-3 i18n-6'>考生登入/注册</a>
+      <a href='' class='btn btn-sm active m-1 p-2 pr-3 pl-3 i18n-7'>合作方登入</a>
     </ul>
   </div>
 `;
