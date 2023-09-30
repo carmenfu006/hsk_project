@@ -399,6 +399,65 @@ translateWeb(
   'Utamanya untuk siswa yang telah belajar bahasa Tiongkok selama lebih dari dua tahun akademik dengan 2-3 pelajaran per minggu, menguasai sekitar 3.000 kata yang paling sering digunakan.',
   'مخصص بشكل أساسي للطلاب الذين درسوا اللغة الصينية لمدة أكثر من عامين دراسيين بمعدل 2-3 حصص في الأسبوع، واستيعاب حوالي 3000 كلمة مستخدمة بشكل شائع.'
 )
+translateWeb(
+  '.i18n-58',
+  '我们欢迎全球范围内的考点和学校加入我们的合作伙伴网络。无论您位于何处,我们都将竭诚为您提供最佳的考试解决方案。 立即加入我们的合作伙伴行列,为您的学生提供卓越的考试体验! 联系我们了解更多详情,共同开创教育的未来!',
+  "We welcome testing centers and schools from around the world to join our partnership network. No matter where you are located, we are dedicated to providing you with the best exam solutions. Join our partnership today and offer your students an exceptional testing experience! Contact us to learn more and together, let's shape the future of education!",
+  'Kami menyambut baik pusat ujian dan sekolah dari seluruh dunia untuk bergabung dalam jaringan mitra kerjasama kami. Tak peduli di mana Anda berada, kami dengan senang hati menyediakan solusi ujian terbaik untuk Anda. Segera bergabung dalam barisan mitra kerjasama kami dan berikan pengalaman ujian yang luar biasa untuk siswa Anda! Hubungi kami untuk informasi lebih lanjut dan bersama-sama menciptakan masa depan pendidikan!',
+  'نحن نرحب بنقاط الاختبار والمدارس من جميع أنحاء العالم للانضمام إلى شبكة شركائنا. بغض النظر عن موقعك، نحن هنا لنقدم لك أفضل حلاً لاختباراتك. انضم إلينا اليوم كشريك وقدم تجربة امتحان متميزة لطلابك! اتصل بنا لمعرفة المزيد من التفاصيل ومعًا نصنع مستقبل التعليم!'
+)
+translateWeb(
+  '.i18n-59',
+  '让我们携手合作，为学生的成功助力!',
+  "Let's work together to support student success!",
+  'Marilah kita berkolaborasi untuk mendukung kesuksesan siswa!',
+  'لنتعاون معًا ونساهم في نجاح الطلاب!'
+)
+translateWeb(
+  '.i18n-60',
+  '请提供您的联系信息，我们将尽快与您取得联系。',
+  'Please provide your contact information, and we will get in touch with you as soon as possible.',
+  'Silakan berikan informasi kontak Anda, kami akan segera menghubungi Anda.',
+  'يرجى تقديم معلومات الاتصال الخاصة بك، وسنقوم بالتواصل معك في أقرب وقت ممكن.'
+)
+translateWeb(
+  '.i18n-61',
+  '联系电话',
+  'Contact Phone',
+  'Nomor Telepon',
+  'رقم الهاتف للتواصل',
+  true
+)
+translateWeb(
+  '.i18n-62',
+  '电子邮件',
+  'Email',
+  'Email',
+  'البريد الإلكتروني',
+  true
+)
+translateWeb(
+  '.i18n-63',
+  '留言内容',
+  'Message',
+  'Isi Pesan',
+  'محتوى الرسالة',
+  true
+)
+translateWeb(
+  '.i18n-64',
+  '发送',
+  'Send',
+  'Kirim',
+  'إرسال'
+)
+translateWeb(
+  '.i18n-65',
+  '信息已成功发送',
+  'Message successfully sent',
+  'Pesan telah berhasil terkirim',
+  'تم إرسال الرسالة بنجاح'
+)
 
 translateWeb('.i18n-0', '验证码', 'Verification code', 'Kode verifikasi', 'رمز التحقق', true)
 
