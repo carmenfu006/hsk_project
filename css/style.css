@@ -174,23 +174,34 @@ footer {
 /* Background Image */
 .home-card-1 {
   background-image: url('../images/home-card-1.jpg');
-  height: 700px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .home-card-2 {
   background-image: url('../images/home-card-2.jpg');
+}
+
+.home-card-3 {
+  background-image: url('../images/home-card-3.jpg');
+}
+
+.home-card {
   height: 700px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.home-card-3 {
-  background-image: url('../images/home-card-3.jpg');
-  height: 700px;
+.home-bg-image-1 {
+  background-image: url('../images/home-bg-image-1.png');
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: center;
+  height: 420px;
+}
+
+.home-bg-image-2 {
+  background-image: url('../images/home-bg-image-2.jpg');
+  background-size: 100% 100%;  
+  background-repeat: no-repeat;
+  min-height: 600px;
 }
 
 /* Home CSS */
@@ -211,73 +222,20 @@ footer {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.thumbnail {
-  position: relative;
-  object-fit: cover;
-  overflow: hidden
-}
-
-.caption {
-  position: absolute;
-  top: 35%;
-  left: 0;
-  width: 100%;
-}
-
-.caption-2 {
-  position: absolute;
-  top: 15%;
-  left: 0;
-  width: 100%;
-}
-
 @media screen and (min-width: 320px) {
   .home-bg-image-2 {
-    height: 500px;
-    width: 100%;
-    background-size: 100% 100%;  
-    background-repeat: no-repeat;
+    min-height: 670px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .home-bg-image-2 {
+    min-height: 630px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .cap-large {
-    display: none !important;
-  }
-
   .home-bg-image-2 {
-    height: 450px;
-    width: 100%;
-    background-size: 100% 100%;  
-    background-repeat: no-repeat;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .home-bg-image-1 {
-    height: 500px;
-    width: 100%;
-    background-size: 100% 100%;  
-    background-repeat: no-repeat;
-  }
-
-  .home-bg-image-2 {
-    height: 450px;
-    width: 100%;
-    background-size: 100% 100%;  
-    background-repeat: no-repeat;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .cap-large {
-    display: block !important;
-  }
-
-  .home-bg-image-2 {
-    height: 450px;
-    width: 100%;
-    background-size: 100% 100%;  
-    background-repeat: no-repeat;
+    min-height: 580px;
   }
 }

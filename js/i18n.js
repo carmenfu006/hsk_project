@@ -122,7 +122,7 @@ translateWeb(
   '.i18n-18', 
   '了解⾃⾝⼝语程度和不⾜，加以改进',
   'Understand your spoken language proficiency and areas for improvement',
-  'Mengenal tingkat kemampuan berbicara anda dan meningkatkannya',
+  'Mengenal tingkat kemampuan berbicara Anda dan meningkatkannya',
   'فهم مستوى لغتك الشخصية ونقاط الضعف فيها، والعمل على تحسينها'
 )
 translateWeb(
@@ -194,6 +194,146 @@ translateWeb(
   'Learn more details',
   'Pelajari Lebih Lanjut',
   'للمزيد من المعلومات'
+)
+translateWeb(
+  '.i18n-29',
+  '欢迎来到HSK口语移动端考试中⼼',
+  'Welcome to the HSK Spoken Mobile Test Center',
+  'Selamat datang di Pusat Ujian HSK Lisan Versi Seluler',
+  'مرحبًا بك في مركز اختبار HSK الشفوي للهواتف المحمولة'
+)
+translateWeb(
+  '.i18n-30',
+  '我们利⽤最新科技，满⾜全球中⽂学习者的需求。',
+  'We use the latest technology to meet the needs of Chinese learners worldwide.',
+  'Kami menggunakan teknologi terbaru untuk memenuhi kebutuhan pembelajar bahasa Tionghoa di seluruh dunia.',
+  'نحن نستخدم أحدث التكنولوجيا لتلبية احتياجات متعلمي اللغة الصينية في جميع أنحاء العالم.'
+)
+translateWeb(
+  '.i18n-31',
+  '通过考试',
+  'Through the test',
+  'Melalui ujian ini',
+  ' من خلال الاختبار'
+)
+translateWeb(
+  '.i18n-32',
+  '了解⾃⾝⼝语程度和不⾜，加以改进',
+  'Understand your spoken language proficiency and areas for improvement',
+  'Mengenal tingkat kemampuan berbicara Anda dan meningkatkannya',
+  'فهم مستوى لغتك الشخصية ونقاط الضعف فيها، والعمل على تحسينها'
+)
+translateWeb(
+  '.i18n-33',
+  '熟悉考试流程，帮助提⾼成绩',
+  'Become familiar with the test process to help improve your scores',
+  'Familiar dengan proses ujian untuk meningkatkan hasil',
+  'التعرف على عملية الاختبار وزيادة فرص الحصول على درجات أفضل'
+)
+translateWeb(
+  '.i18n-34',
+  '获得语⾔认证，助⼒升学和求职',
+  'Obtain language certification to assist with further education and job opportunities',
+  'Mendapatkan sertifikasi bahasa untuk kemajuan belajar dan karir',
+  'الحصول على شهادة لغوية لمساعدتك في الانتقال إلى المرحلة التعليمية التالية أو البحث عن وظيفة'
+)
+translateWeb(
+  '.i18n-35',
+  '为什么选择HSK口语移动端考试',
+  'Why Choose the HSK Oral Mobile Exam',
+  'Mengapa Memilih Pemeriksaan Mobile Lisan HSK',
+  'لماذا تختار اختبار HSK الشفوي المتنقل'
+)
+translateWeb(
+  '.i18n-36',
+  '随时随地 灵活度高',
+  'Flexibility anytime, anywhere',
+  'Fleksibilitas kapan saja, di mana saja',
+  'مرونة في أي وقت وفي أي مكان'
+)
+translateWeb(
+  '.i18n-37',
+  '选择自己最适合时间进行考试',
+  'Choose the most suitable time for your exam',
+  'Pilih waktu yang paling cocok untuk ujian Anda',
+  'اختر الوقت الأنسب لامتحانك'
+)
+translateWeb(
+  '.i18n-38',
+  '安在家中或办公室',
+  'Take it from the comfort of your home or office',
+  'Lakukan di rumah atau kantor Anda',
+  'أدخله من راحة منزلك أو مكتبك'
+)
+translateWeb(
+  '.i18n-39',
+  '通过自身手机，简单操作',
+  'Simple operation on your own mobile phone',
+  'Operasi sederhana pada ponsel Anda sendiri',
+  'عملية بسيطة على هاتفك المحمول الخاص'
+)
+translateWeb(
+  '.i18n-40',
+  '考试高效 操作简单',
+  'Efficient exam, easy operation',
+  'Ujian yang efisien, operasi yang mudah',
+  'امتحان فعّال وعملية سهلة'
+)
+translateWeb(
+  '.i18n-41',
+  '通过人工智能令考试流程快捷顺畅',
+  'AI technology streamlines the exam process',
+  'Teknologi kecerdasan buatan menyederhanakan proses ujian',
+  'تسهل التكنولوجيا الذكية عملية الامتحان'
+)
+translateWeb(
+  '.i18n-42',
+  '全程脸部及语音识别,保障准确性和公正性',
+  'Full-face and voice recognition to ensure accuracy and fairness',
+  'Pengenalan wajah dan suara penuh untuk memastikan akurasi dan keadilan',
+  'تعرفة كاملة للوجه والصوت لضمان الدقة والعدالة'
+)
+translateWeb(
+  '.i18n-43',
+  '专业客服团队,提供考试支援',
+  'Professional customer service team to provide exam support',
+  'Tim layanan pelanggan profesional untuk memberikan dukungan ujian',
+  'فريق خدمة عملاء محترف لتقديم دعم الامتحان'
+)
+translateWeb(
+  '.i18n-44',
+  '官方考试 权威认证',
+  'Official exam, authoritative certification',
+  'Ujian resmi, sertifikasi berwibawa',
+  'امتحان رسمي، شهادة موثوقة'
+)
+translateWeb(
+  '.i18n-45',
+  '唯一移动端官方考试平台',
+  'The only official mobile exam platform',
+  'Satu-satunya platform ujian mobile resmi',
+  'المنصة الوحيدة للامتحان المتنقل الرسمي'
+)
+translateWeb(
+  '.i18n-46',
+  '与纸笔/机网考成绩同等',
+  'Results equivalent to paper-based/online exams',
+  'Hasil setara dengan ujian berbasis kertas/daring',
+  'النتائج معادلة للامتحانات الورقية/عبر الإنترنت'
+)
+translateWeb(
+  '.i18n-47',
+  '支持多次报考、成绩反馈迅速',
+  'Support for multiple attempts, fast score feedback',
+  'Dukungan untuk percobaan berkali-kali, umpan balik nilai cepat',
+  'دعم للمحاولات المتعددة، تغذية ردود سريعة على النتائج'
+)
+translateWeb(
+  '.i18n-48',
+  '联报HSK考试,获全方面中文认证',
+  'Linked with HSK exam for comprehensive Chinese certification',
+  'Terhubung dengan ujian HSK untuk sertifikasi Tiongkok yang komprehensif',
+  'مرتبط بامتحان HSK للحصول على شهادة صينية شاملة'
 )
 
 
