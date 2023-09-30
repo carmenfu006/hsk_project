@@ -22,7 +22,8 @@ translateWeb(
   'التعاون مع مراكز الاختبار والمدارس'
 )
 translateWeb(
-  '.i18n-4', '最新资讯', 
+  '.i18n-4', 
+  '最新资讯', 
   'Latest Information', 
   'Informasi Terbaru', 
   'أحدث المعلومات'
@@ -288,14 +289,14 @@ translateWeb(
 )
 translateWeb(
   '.i18n-42',
-  '全程脸部及语音识别,保障准确性和公正性',
+  '全程脸部及语音识别，保障准确性和公正性',
   'Full-face and voice recognition to ensure accuracy and fairness',
   'Pengenalan wajah dan suara penuh untuk memastikan akurasi dan keadilan',
   'تعرفة كاملة للوجه والصوت لضمان الدقة والعدالة'
 )
 translateWeb(
   '.i18n-43',
-  '专业客服团队,提供考试支援',
+  '专业客服团队，提供考试支援',
   'Professional customer service team to provide exam support',
   'Tim layanan pelanggan profesional untuk memberikan dukungan ujian',
   'فريق خدمة عملاء محترف لتقديم دعم الامتحان'
@@ -330,12 +331,74 @@ translateWeb(
 )
 translateWeb(
   '.i18n-48',
-  '联报HSK考试,获全方面中文认证',
+  '联报HSK考试，获全方面中文认证',
   'Linked with HSK exam for comprehensive Chinese certification',
   'Terhubung dengan ujian HSK untuk sertifikasi Tiongkok yang komprehensif',
   'مرتبط بامتحان HSK للحصول على شهادة صينية شاملة'
 )
-
+translateWeb(
+  '.i18n-49',
+  'HSK口语移动端考期',
+  'HSK Oral Mobile Exam Dates',
+  'Tanggal Ujian Mobile HSK Lisan',
+  'تواريخ الامتحان المتنقل للاختبار الشفوي HSK'
+)
+translateWeb(
+  '.i18n-50',
+  'HSK口语（初级)',
+  'HSK Oral (Elementary)',
+  'HSK Lisan (Dasar)',
+  'HSK الشفوي (مستوى المبتدئين)'
+)
+translateWeb(
+  '.i18n-51',
+  '主要面向按每周2-3课时进度学习汉语一到两个学期，掌握200个左右最常用词语的考生。',
+  'Mainly for students who have studied Chinese for one to two semesters with 2-3 lessons per week, mastering around 200 of the most commonly used words.',
+  'Utamanya untuk siswa yang telah belajar bahasa Tiongkok selama satu hingga dua semester dengan 2-3 pelajaran per minggu, menguasai sekitar 200 kata yang paling sering digunakan.',
+  'مخصص بشكل أساسي للطلاب الذين درسوا اللغة الصينية لمدة فصلين دراسيين إلى عامين بمعدل 2-3 حصص في الأسبوع، واستيعاب حوالي 200 من أكثر الكلمات استخداماً.'
+)
+translateWeb(
+  '.i18n-52',
+  '推介考期',
+  'Recommended Exam Dates',
+  'Tanggal Ujian yang Direkomendasikan',
+  'تواريخ الامتحان الموصى بها'
+)
+translateWeb(
+  '.i18n-53',
+  '立即报名',
+  'Register Now',
+  'Daftar Sekarang',
+  'سجّل الآن'
+)
+translateWeb(
+  '.i18n-54',
+  'HSK口语（中级)',
+  'HSK Oral (Intermediate)',
+  'HSK Lisan (Menengah)',
+  'HSK الشفوي (متوسط)'
+)
+translateWeb(
+  '.i18n-55',
+  '主要面向按每周2-3课时进度学习汉语一到两学年，掌握900个左右最常用词语的考生。',
+  'Mainly for students who have studied Chinese for one to two academic years with 2-3 lessons per week, mastering around 900 of the most commonly used words.',
+  'Utamanya untuk siswa yang telah belajar bahasa Tiongkok selama satu hingga dua tahun akademik dengan 2-3 pelajaran per minggu, menguasai sekitar 900 kata yang paling sering digunakan.',
+  'مخصص بشكل أساسي للطلاب الذين درسوا اللغة الصينية لمدة فصلين دراسيين إلى عامين بمعدل 2-3 حصص في الأسبوع، واستيعاب حوالي 900 كلمة مستخدمة بشكل شائع.'
+)
+translateWeb(
+  '.i18n-56',
+  'HSK口语（高级)',
+  'HSK Oral (Advanced)',
+  'HSK Lisan (Lanjutan)',
+  'HSK الشفوي (متقدم)'
+)
+translateWeb(
+  '.i18n-57',
+  '主要面向按每周2-3课时进度学习汉语两学年以上，掌握3000个左右最常用词语的考生。',
+  'Mainly for students who have studied Chinese for more than two academic years with 2-3 lessons per week, mastering around 3,000 of the most commonly used words.',
+  'Utamanya untuk siswa yang telah belajar bahasa Tiongkok selama lebih dari dua tahun akademik dengan 2-3 pelajaran per minggu, menguasai sekitar 3.000 kata yang paling sering digunakan.',
+  'مخصص بشكل أساسي للطلاب الذين درسوا اللغة الصينية لمدة أكثر من عامين دراسيين بمعدل 2-3 حصص في الأسبوع، واستيعاب حوالي 3000 كلمة مستخدمة بشكل شائع.'
+)
 
 translateWeb('.i18n-0', '验证码', 'Verification code', 'Kode verifikasi', 'رمز التحقق', true)
 
