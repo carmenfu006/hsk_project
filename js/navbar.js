@@ -4,7 +4,7 @@ const navbar_template = document.createElement('template');
 navbar_template.innerHTML = `
   <a class='navbar-brand mr-auto' href='index.html'><img src='images/logo.png' class='img-fluid w-75' alt='Responsive image'></a>
   <a class='nav-link dropdown-toggle d-block d-sm-none d-md-block d-lg-none' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-    <i class='fa-solid fa-globe fa-2x secondary-color'></i>
+    <i class='fa-solid fa-globe fa-lg secondary-color'></i>
   </a>
   <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
     <a class='dropdown-item i18n' lang='zh'>中文</a>
@@ -13,7 +13,7 @@ navbar_template.innerHTML = `
     <a class='dropdown-item i18n' lang='ar'>عربي</a>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="secondary-color"><i class="fa-solid fa-bars"></i></span>
   </button>
   <div class='collapse navbar-collapse m-3' id='navbarSupportedContent'>
     <ul class='navbar-nav mr-auto'>
@@ -57,3 +57,9 @@ $('.menu-btn').on('click', function() {
   $('.menu-btn').removeClass('active');
   $(this).addClass('active');
 });
+
+var loc = window.location.pathname;
+var path = loc.substring(0, loc.lastIndexOf('/'));
+var directoryName = path.substring(path.lastIndexOf("/")+1);
+
+console.log(directoryName);

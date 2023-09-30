@@ -28,7 +28,7 @@ a:hover {
 }
 
 .secondary-color {
-  color: #002F5D;
+  color: #002F5D !important;
 }
 
 .sunset-orange-color {
