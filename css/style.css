@@ -9,6 +9,10 @@ a:hover {
   text-decoration:none;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .nav-link {
   color: #002F5D !important;
 }
@@ -267,18 +271,26 @@ footer {
 }
 
 .o-hidden {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-.nav {
+.month {
   transition: transform 0.4s;
   transform: translateX(50%);
   left: -50%;
 }
 
-.nav.justify-content-end {
+.month.justify-content-end {
   transform: translateX(0);
   left: 0;
+}
+
+.month-year {
+  margin-top: 5px;
+}
+
+.month-item {
+  min-width: 55px;
 }
 
 /* Screen size */
