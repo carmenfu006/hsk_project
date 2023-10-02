@@ -184,6 +184,32 @@ footer {
   background-color: #3FD3C3;
 }
 
+/* Progress Indicators */
+.progress-indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #E6E6E6;
+}
+
+.progress-indicator-dot.active {
+  background-color: #3FD3C3;
+}
+
+.progress-indicator-line.active {
+  background-color: #3FD3C3;
+}
+
+.progress-indicator-word {
+  font-weight: bold;
+  color: #E6E6E6;
+}
+
+.progress-indicator-word.active {
+  font-weight: 500;
+  color: #002F5D;
+}
+
 /* Background Image */
 .home-card-1 {
   background-image: url('../images/home-card-1.jpg');
@@ -241,9 +267,27 @@ footer {
   .card-text {
     font-size: 12px;
   }
-  /* .home-card {
-    min-height: 870px;
-  } */
+
+  .progress-indicator {
+    overflow-x: scroll;
+    position: static;
+  }
+  
+  .progress-indicator-width {
+    min-width: 610px;
+    min-height: 50px;
+  }
+  
+  .progress-indicator-bar {
+    padding-left: 58px;
+  }
+  
+  .progress-indicator-line {
+    width: 110px;
+    height: 3px;
+    border-radius: 12%;
+    background-color: #E6E6E6;
+  }
 }
 
 @media screen and (min-width: 375px) {
@@ -255,5 +299,62 @@ footer {
 @media screen and (min-width: 768px) {
   .home-bg-image-2 {
     min-height: 580px;
+  }
+
+  .progress-indicator {
+    overflow-x: hidden;
+    position: static;
+  }
+
+  .progress-indicator-width {
+    max-width: 685px;
+    min-height: 50px;
+  }
+  
+  .progress-indicator-bar {
+    padding-left: 68px;
+  }
+  
+  .progress-indicator-line {
+    width: 125px;
+    height: 3px;
+    border-radius: 12%;
+    background-color: #E6E6E6;
+  }
+}
+
+@media screen and (min-width: 1024px) {  
+  .progress-indicator-width {
+    max-width: 910px;
+    min-height: 50px;
+  }
+  
+  .progress-indicator-bar {
+    padding-left: 90px;
+  }
+  
+  .progress-indicator-line {
+    width: 170px;
+    height: 3px;
+    border-radius: 12%;
+    background-color: #E6E6E6;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .progress-indicator-width {
+    min-width: 1110px;
+    min-height: 50px;
+  }
+  
+  .progress-indicator-bar {
+    padding-left: 108px;
+  }
+
+  .progress-indicator-line {
+    width: 210px;
+    height: 3px;
+    border-radius: 12%;
+    background-color: #E6E6E6;
   }
 }
