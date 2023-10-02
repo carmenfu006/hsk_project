@@ -41,6 +41,164 @@
           <h4 class='text-center font-weight-bold mt-5 mb-5'>选择考期</h4>
         </div>
       </div>
+      <div class='row'>
+        <div class='col'>
+          <form id='application-step-1-form' class='mb-5'>
+            <div class='form-group'>
+              <label class=''>考试地区</label>
+              <select class='form-control' id='exampleFormControlSelect1'>
+                <option>中国香港 (GMT+8:00)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class='form-group'>
+              <label class=''>考试级别</label>
+              <select class='form-control' id='exampleFormControlSelect2'>
+                <option class='i18n-50'>HSK⼝语(初级)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class='row'>
+              <div class='col'>
+                <p class='mt-2'>
+                  <span>请选择考试时间</span>
+                  <span class='text-muted'>(* 年-月-日 时:分, 请留意考试地区时差 )</span>
+                </p>
+                <div class='d-flex w-50 container'>
+                  <div class="flex-shrink-0">
+                    <a href="#" class="btn-left btn-link p-2 toggle text-dark"><i class="fa fa-arrow-left"></i></a>
+                  </div>
+                  <div class="flex-grow-1 o-hidden">
+                  <ul class="nav nav-fill text-uppercase small position-relative flex-nowrap">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Self</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">World</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Lifestyle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Bio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Politics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Local</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Science</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Tech</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Health</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Food</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Design</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Culture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Travel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">More</a>
+                    </li>
+                  </ul>
+                  </div>
+                  <div class="flex-shrink-0">
+                    <a href="#" class="btn-right btn-link toggle p-2 text-dark"><i class="fa fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='card mb-3'>
+              <div class='card-header'>
+                考试时间*(GMT+08:00)
+              </div>
+              <div class='row no-gutters'>
+                <div class='col-lg-6 col-md-6 col-sm-12'>
+                  <ul class='list-group'>
+                    <li class='list-group-item rounded-0 border-top-0 border-right-0 border-left-0'>
+                      <div class='form-check'>
+                        <input class='form-check-input' type='checkbox' name='checkbox' id='checkbox1' value='option1'>
+                        <label class='form-check-label' for='checkbox1'>
+                          2023-09-05 09:00
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class='col-lg-6 col-md-6 col-sm-12'>
+                  <ul class='list-group'>
+                    <li class='list-group-item rounded-0 border-top-0 border-right-0 border-left-0'>
+                      <div class='form-check'>
+                        <input class='form-check-input' type='checkbox' name='checkbox' id='checkbox2' value='option2'>
+                        <label class='form-check-label' for='checkbox2'>
+                          2023-09-10 09:00
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class='col-lg-6 col-md-6 col-sm-12'>
+                  <ul class='list-group'>
+                    <li class='list-group-item rounded-0 border-0'>
+                      <div class='form-check'>
+                        <input class='form-check-input' type='checkbox' name='checkbox' id='checkbox3' value='option3'>
+                        <label class='form-check-label' for='checkbox3'>
+                          2023-09-15 09:00
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col'>
+                <p class='text-center text-danger mt-2 mb-4'>考试前30分钟需要做设备检测，通过后才可考试，请预留时间。</p>
+              </div>
+            </div>
+            <div class='card mb-3'>
+              <div class='card-header selected-date-time'>
+                已选择考期及费用
+              </div>
+              <ul class='list-group list-group-flush'>
+                <li class='list-group-item text-muted'>
+                  尚未选择任何考试
+                </li>
+              </ul>
+            </div>
+            <div class='form-check'>
+              <input class='form-check-input' type='checkbox' name='terms' id='terms' value='true'>
+              <label class='form-check-label' for='terms'>
+                我已阅读并同意《汉语考试考生须知》及《汉语考试考生隐私保护指引》
+              </label>
+            </div>
+            <div class='text-center'>
+              <button type='submit' disabled class='btn btn-sm p-2 pr-4 pl-4 mt-2 w180'>下一步</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </section>
     <footer id='footer' class='bg-secondary-color text-white'></footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

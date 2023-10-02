@@ -81,11 +81,14 @@ button[disabled]{
 }
 
 /* Form */
-
 .form-control:focus {
   border-color: #d6d8d9;
   box-shadow: none !important;
   outline: none !important;
+}
+
+input[type=checkbox] {
+  accent-color: #3FD3C3;
 }
 
 /* Width */
@@ -242,7 +245,6 @@ footer {
 }
 
 /* Home CSS */
-
 .card-option {
   height: 300px;
 }
@@ -258,6 +260,28 @@ footer {
 .frame {
   background: rgba(255, 255, 255, 0.1);
 }
+
+/* Application CSS */
+.selected-date-time.active {
+  background-color: #D9F6F3;
+}
+
+.o-hidden {
+  overflow: hidden;
+}
+
+.nav {
+  transition: transform 0.4s;
+  transform: translateX(50%);
+  left: -50%;
+}
+
+.nav.justify-content-end {
+  transform: translateX(0);
+  left: 0;
+}
+
+/* Screen size */
 
 @media screen and (min-width: 320px) {
   .home-bg-image-2 {
