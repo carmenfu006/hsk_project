@@ -6,6 +6,7 @@ $('.toggle').click(function(){
 });
 
 progressIndicator()
+loadFile()
 
 function progressIndicator() {
   const progressbar = document.getElementById('progressbar');
@@ -59,4 +60,34 @@ function progressIndicator() {
 
 function activeProgressBar(classname) {
   $(classname).addClass('active');
+}
+
+function loadFile() {
+  let imageTag = $('#output');
+
+  checkFile(imageTag)
+
+  $('#file').change(function(event) {
+    imageTag.attr('src', URL.createObjectURL(event.target.files[0]));
+    checkFile(imageTag)
+  });
+
+  $('.fa-trash').click(function() {
+    imageTag.attr('src', '')
+    $('#file').val('');
+    checkFile(imageTag)
+  })
+}
+
+function checkFile(imageTag) {
+  let imageUpload = $('.image-upload');
+  let imageDisplay = $('.image-display');
+
+  if (imageTag.attr('src') == '') {
+    imageUpload.removeClass('d-none');
+    imageDisplay.addClass('d-none');
+  } else {
+    imageUpload.addClass('d-none');
+    imageDisplay.removeClass('d-none');
+  }
 }

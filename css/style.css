@@ -9,10 +9,6 @@ a:hover {
   text-decoration:none;
 }
 
-ul {
-  list-style-type: none;
-}
-
 .pointer {
   cursor: pointer;
 }
@@ -382,6 +378,10 @@ footer {
 }
 
 @media screen and (min-width: 1440px) {
+  .home-bg-image-1 {
+    background-size: 100% 100%;
+  }
+
   .progress-indicator-width {
     min-width: 1110px;
     min-height: 50px;
@@ -397,4 +397,13 @@ footer {
     border-radius: 12%;
     background-color: #E6E6E6;
   }
+}
+
+
+
+
+.home-bg-image-1 {
+  background-image: url('../images/home-bg-image-1.png');
+  background-repeat: no-repeat;
+  height: 420px;
 }

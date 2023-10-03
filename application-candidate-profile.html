@@ -43,6 +43,39 @@
           </div>
         </div>
       </div>
+      <div class='row no-gutters mb-3 image-upload'>
+        <div class='col bg-grey-color text-center'>
+          <div class='pt-5 pb-3'>
+            <label for='file' style='cursor: pointer;'><i class='fa-solid fa-arrow-up-from-bracket fa-2xl primary-color mb-4'></i></label>
+            <input type='file' accept='image/jpeg image/png' name='image' id='file' style='display: none;'>
+            <p class='font-weight-bold mb-0'>点击或拖动文件到此区域进行上传。</p>
+            <p class='text-muted'>(支持的文件格式：JPG; 最大文件大小为500KB)</p>
+          </div>
+        </div>
+      </div>
+      <div class='row border no-gutters mb-3 image-display'>
+        <div class='col d-flex justify-content-between'>
+          <div class='image-output'>
+            <img src='' id='output' width='200' class='img-fluid' alt='Responsive image'/>
+          </div>
+          <i class='fa-solid fa-trash text-danger align-self-center mr-3'></i>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col'>
+          <div class='image-guideline'>
+            <p>相关注意事项</p>
+            <ul>
+              <li>照片要求:近期免冠、正面、单色背景、两寸证件照，不得使用风景照、生活照</li>
+              <li>照片格式: JPG</li>
+              <li>照片标佳: 180像素*240像素</li>
+              <li>文件大小: 15~500kb</li>
+              <li>如果考生没有在报名网站上传电子照片，可以使用移动存储设备 (U盘，移动硬盘等) 将电子照片送到报考的考点，寻求考点工作人员的帮助</li>
+              <li>在中国大陆地区考点报名参加汉语考试的考生，须上传电子照片。如未上传照片或上传照片不符合要求的，将不能进入考场参加考试</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class='row'>
         <div class='col'>
           <form id='application-step-3-form' class='mb-5' action='application-verify-info.html' method='POST'>
