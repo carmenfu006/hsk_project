@@ -14,28 +14,7 @@
   <body>
     <nav id='navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
     <section class='content container mt-5'>
-      <div class='progress-indicator'>
-        <div class='progress-indicator-width'>
-          <div class='row progress-indicator-bar'>
-            <div class='progress-indicator-dot active'></div>
-            <div class='progress-indicator-line m-1'></div>
-            <div class='progress-indicator-dot'></div>
-            <div class='progress-indicator-line m-1'></div>
-            <div class='progress-indicator-dot'></div>
-            <div class='progress-indicator-line m-1'></div>
-            <div class='progress-indicator-dot'></div>
-            <div class='progress-indicator-line m-1'></div>
-            <div class='progress-indicator-dot'></div>
-          </div>
-          <div class='row text-center'>
-            <div class='col progress-indicator-word active'>选择考期</div>
-            <div class='col progress-indicator-word'>考生资料</div>
-            <div class='col progress-indicator-word'>上传照片</div>
-            <div class='col progress-indicator-word'>确认考生信息</div>
-            <div class='col progress-indicator-word'>预报名已提交</div>
-          </div>
-        </div>
-      </div>
+      <div id='progressbar' class='progress-indicator'></div>
       <div class='row'>
         <div class='col'>
           <h4 class='text-center font-weight-bold mt-5 mb-5'>选择考期</h4>
@@ -43,7 +22,7 @@
       </div>
       <div class='row'>
         <div class='col'>
-          <form id='application-step-1-form' class='mb-5'>
+          <form id='application-step-1-form' class='mb-5' action='application-candidate-info.html' method='POST'>
             <div class='form-group'>
               <label class=''>考试地区</label>
               <select class='form-control' id='exampleFormControlSelect1'>
@@ -173,7 +152,7 @@
               </label>
             </div>
             <div class='text-center mt-4'>
-              <button type='submit' disabled class='btn btn-sm p-2 pr-4 pl-4 mt-2 w180'>下一步</button>
+              <button type='submit' class='btn btn-sm p-2 pr-4 pl-4 mt-2 w180'>下一步</button>
             </div>
           </form>
         </div>
