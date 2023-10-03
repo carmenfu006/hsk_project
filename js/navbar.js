@@ -18,7 +18,7 @@ navbar_template.innerHTML = `
   <div class='collapse navbar-collapse m-3' id='navbarSupportedContent'>
     <ul class='navbar-nav mr-auto'>
       <li class='nav-item'>
-        <a id='home-menu-btn' class='nav-link menu-btn i18n-1' href='home.html#home-content'>首页</a>
+        <a id='home-menu-btn' class='nav-link menu-btn i18n-1' href='home.html'>首页</a>
       </li>
       <li class='nav-item'>
         <a id='apply-menu-btn' class='nav-link menu-btn i18n-2' href='application.html'>HSK口语移动端考期</a>

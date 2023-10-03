@@ -1,5 +1,3 @@
-setQueryString()
-
 translateWeb(
   '.i18n-1', 
   '首页', 
@@ -463,39 +461,40 @@ translateWeb('.i18n-0', '验证码', 'Verification code', 'Kode verifikasi', 'ر
 
 $('.i18n').on('click', function() {
   let lang = $(this).attr('lang');
-  urlAddParams('lang', lang);
+  // urlAddParams('lang', lang);
+  setSession('lang', lang);
+  location.reload();
 });
 
-function urlAddParams(key, value) {
-  let url = new URL(window.location.href);
-  url.searchParams.set(key, value);
-  window.location.href = url.href;
+function setSession(key, value) {
+  sessionStorage.setItem(key, value);
 }
 
-function translateWeb(classname, zh, en, id, ar, boolean) {
+function translateWeb(classname, zh, en, id, ar, input) {
   let url = new URL(window.location.href);
-  let lang = url.searchParams.get('lang');
+  // let lang = url.searchParams.get('lang');
+  let lang = sessionStorage.getItem("lang");
 
   switch(lang) {
     case 'zh':
-      translate(classname, zh, boolean)
+      translate(classname, zh, input)
       break;
     case 'en':
-      translate(classname, en, boolean)
+      translate(classname, en, input)
       break;
     case 'id':
-      translate(classname, id, boolean)
+      translate(classname, id, input)
       break;
     case 'ar':
-      translate(classname, ar, boolean)
+      translate(classname, ar, input)
       break;
     default:
-      translate(classname, zh, boolean)
+      translate(classname, zh, input)
   }
 }
 
-function translate(classname, lang, boolean) {
-  if (!boolean) {
+function translate(classname, lang, input) {
+  if (!input) {
     $(classname).html(lang);
   } else {
     $(classname).each(function() {
@@ -508,21 +507,26 @@ function translate(classname, lang, boolean) {
   }
 }
 
-function setQueryString() {
-  let queryString = new URL(window.location).search;
-  $('a[href*=".html"]').each(function() {
-    let current = this.href.split('#')[0];
-    let hash = this.href.split('#')[1];
-    this.href = current + queryString + '#' + hash;
-  });
-}
+// function urlAddParams(key, value) {
+//   let url = new URL(window.location.href);
+//   url.searchParams.set(key, value);
+//   window.location.href = url.href;
+// }
 
-$('#lang').val(urlParam('lang'))
+// function setQueryString() {
+//   let queryString = new URL(window.location).search;
+//   $('a[href*=".html"]').each(function() {
+//     let current = this.href.split('#')[0];
+//     let hash = this.href.split('#')[1];
+//     this.href = current + queryString + '#' + hash;
+//   });
+// }
 
-function urlParam(name) {
-  var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-    if (results==null) {
-       return null;
-    }
-    return decodeURI(results[1]) || 0;
-}
+// $('#lang').val(urlParam('lang'))
+// function urlParam(name) {
+//   var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+//     if (results==null) {
+//        return null;
+//     }
+//     return decodeURI(results[1]) || 0;
+// }
