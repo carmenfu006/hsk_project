@@ -398,12 +398,3 @@ footer {
     background-color: #E6E6E6;
   }
 }
-
-
-
-
-.home-bg-image-1 {
-  background-image: url('../images/home-bg-image-1.png');
-  background-repeat: no-repeat;
-  height: 420px;
-}
