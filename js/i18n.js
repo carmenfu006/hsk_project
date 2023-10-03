@@ -516,3 +516,13 @@ function setQueryString() {
     this.href = current + queryString + '#' + hash;
   });
 }
+
+$('#lang').val(urlParam('lang'))
+
+function urlParam(name) {
+  var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null) {
+       return null;
+    }
+    return decodeURI(results[1]) || 0;
+}

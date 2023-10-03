@@ -22,7 +22,7 @@
       </div>
       <div class='row'>
         <div class='col'>
-          <form id='application-step-1-form' class='mb-5' action='application-candidate-info.html' method='POST'>
+          <form id='application-step-1-form' class='mb-5' action='application-candidate-info.html' method='GET'>
             <div class='form-group'>
               <label class=''>考试地区</label>
               <select class='form-control' id='exampleFormControlSelect1'>
@@ -151,6 +151,7 @@
                 我已阅读并同意《汉语考试考生须知》及《汉语考试考生隐私保护指引》
               </label>
             </div>
+            <input id='lang' type='hidden' name='lang' />
             <div class='text-center mt-4'>
               <button type='submit' class='btn btn-sm p-2 pr-4 pl-4 mt-2 w180'>下一步</button>
             </div>
