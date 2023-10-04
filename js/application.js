@@ -59,6 +59,7 @@ function progressIndicator() {
       break;
     case 'application-verify-info.html':
       activeProgressBar('.step-1, .step-2, .step-3, .step-4');
+      $('#verify-profile').attr('src', getSession('file'));
       break;
     case 'application-submit.html':
       activeProgressBar('.step-1, .step-2, .step-3, .step-4, .step-5');
@@ -84,7 +85,7 @@ function enabledNextBtn() {
       $('#to-step-2').attr('disabled', true);
     }
 
-    if (verifyInput('#sex') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#surname') && verifyInput('#given-name') && verifyInput('#year') && verifyInput('#month') && verifyInput('#day') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#identity-type') && verifyInput('#identity') && verifyInput('#country-code') && verifyInput('#contact-number')) {
+    if (verifyInput('#sex') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#surname') && verifyInput('#given-name') && verifyInput('#birth-year') && verifyInput('#birth-month') && verifyInput('#birth-day') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#identity-type') && verifyInput('#identity') && verifyInput('#country-code') && verifyInput('#contact-number')) {
       $('#to-step-3').attr('disabled', false);
     } else {
       $('#to-step-3').attr('disabled', true);
@@ -109,9 +110,18 @@ function loadFile() {
 
   checkFile(imageTag)
 
-  $('#file').change(function(event) {
-    imageTag.attr('src', URL.createObjectURL(event.target.files[0]));
-    checkFile(imageTag)
+  $('#file').change(function() {
+    const file = this.files[0];
+
+    if (file) {
+      let reader = new FileReader();
+      reader.onload = function(event){
+        imageTag.attr('src', URL.createObjectURL(file));
+        checkFile(imageTag)
+        setSession('file', event.target.result);
+      }
+      reader.readAsDataURL(file);
+    }
   });
 
   $('.fa-trash').click(function() {
@@ -140,7 +150,8 @@ function setSession(key, value) {
 }
 
 function getSession(key) {
-  sessionStorage.getItem(key);
+  console.log(sessionStorage.getItem(key))
+  return sessionStorage.getItem(key);
 }
 
 function activeClick(classname) {
@@ -153,7 +164,12 @@ function activeClick(classname) {
 function checkboxSelect(classname, setInputVal, inputId) {
   $(classname).on('change', function() {
     $(classname).prop('checked', false);
-    $(this).prop('checked', true);
+
+    if($(this).is(':checked')) {
+      $(this).prop('checked', false);
+    } else {
+      $(this).prop('checked', true);
+    }
 
     if (setInputVal) {
       $(inputId).val($(this).val())
@@ -172,3 +188,55 @@ function verifyInput(id) {
 function verifyCheckInput(id) {
   return $(id).is(':checked')
 }
+
+function inputVal(id) {
+  return $(id).val()
+}
+
+function imgVal(id) {
+  return getBase64Image($(id));
+}
+
+function getBase64Image(img) {
+  var canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  var ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+
+  var dataURL = canvas.toDataURL("image/png");
+
+  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
+
+$('#to-step-2').on('click', function(e) {
+  setSession('exam-location', inputVal('#exam-location'));
+  setSession('exam-level', inputVal('#exam-level'));
+  setSession('exam-datetime', inputVal('#exam-datetime'));
+  setSession('exam-amount', inputVal('#exam-amount'));
+  setSession('terms', inputVal('#terms'));
+
+  window.location.replace($(this)[0].form.action);
+});
+
+$('#to-step-3').on('click', function(e) {
+  setSession('sex', inputVal('#sex'));
+  setSession('hsk', inputVal('#hsk'));
+  setSession('hskk', inputVal('#hskk'));
+  setSession('username', inputVal('#username'));
+  setSession('surname', inputVal('#surname'));
+  setSession('given-name', inputVal('#given-name'));
+  setSession('birth-year', inputVal('#birth-year'));
+  setSession('birth-month', inputVal('#birth-month'));
+  setSession('birth-day', inputVal('#birth-day'));
+  setSession('nationality', inputVal('#nationality'));
+  setSession('native-language', inputVal('#native-language'));
+  setSession('identity-type', inputVal('#identity-type'));
+  setSession('identity', inputVal('#identity'));
+  setSession('country-code', inputVal('#country-code'));
+  setSession('contact-number', inputVal('#contact-number'));
+  setSession('learning-time', inputVal('#learning-time'));
+
+  window.location.replace($(this)[0].form.action);
+});
