@@ -91,3 +91,11 @@ function checkFile(imageTag) {
     imageDisplay.removeClass('d-none');
   }
 }
+
+function setSession(key, value) {
+  sessionStorage.setItem(key, value);
+}
+
+function getSession(key) {
+  sessionStorage.getItem(key);
+}

@@ -462,13 +462,9 @@ translateWeb('.i18n-0', '验证码', 'Verification code', 'Kode verifikasi', 'ر
 $('.i18n').on('click', function() {
   let lang = $(this).attr('lang');
   // urlAddParams('lang', lang);
-  setSession('lang', lang);
+  sessionStorage.setSession('lang', lang);
   location.reload();
 });
-
-function setSession(key, value) {
-  sessionStorage.setItem(key, value);
-}
 
 function translateWeb(classname, zh, en, id, ar, input) {
   let url = new URL(window.location.href);
