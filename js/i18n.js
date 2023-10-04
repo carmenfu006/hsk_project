@@ -462,7 +462,7 @@ translateWeb('.i18n-0', '验证码', 'Verification code', 'Kode verifikasi', 'ر
 $('.i18n').on('click', function() {
   let lang = $(this).attr('lang');
   // urlAddParams('lang', lang);
-  sessionStorage.setSession('lang', lang);
+  sessionStorage.setItem('lang', lang);
   location.reload();
 });
 

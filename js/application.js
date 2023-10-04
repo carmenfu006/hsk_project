@@ -7,6 +7,11 @@ $('.toggle').click(function(){
 
 progressIndicator()
 loadFile()
+activeClick('.month-item');
+checkboxSelect('.exam-datetime', true, '#exam-datetime');
+checkboxSelect('.sex', true, '#sex');
+checkboxSelect('.hsk', true, '#hsk');
+checkboxSelect('.hskk', true, '#hskk');
 
 function progressIndicator() {
   const progressbar = document.getElementById('progressbar');
@@ -40,12 +45,15 @@ function progressIndicator() {
   switch(page) {
     case 'application.html':
       activeProgressBar('.step-1');
+      enabledNextBtn();
       break;
     case 'application-candidate-info.html':
       activeProgressBar('.step-1, .step-2');
+      enabledNextBtn();
       break;
     case 'application-candidate-profile.html':
       activeProgressBar('.step-1, .step-2, .step-3');
+      enabledNextBtn();
       break;
     case 'application-verify-info.html':
       activeProgressBar('.step-1, .step-2, .step-3, .step-4');
@@ -62,6 +70,23 @@ function activeProgressBar(classname) {
   $(classname).addClass('active');
 }
 
+function enabledNextBtn() {
+  $(':input').on('change', function() {
+
+    if (verifyInput('#exam-datetime') && verifyInput('#exam-amount') && verifyCheckInput('#terms')) {
+      $('#to-step-2').attr('disabled', false);
+    }
+
+    if (verifyInput('#sex') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#surname') && verifyInput('#given-name') && verifyInput('#year') && verifyInput('#month') && verifyInput('#day') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#identity-type') && verifyInput('#identity') && verifyInput('#country-code') && verifyInput('#contact-number')) {
+      $('#to-step-3').attr('disabled', false);
+    }
+
+    if (verifyInput('#file')) {
+      $('#to-step-4').attr('disabled', false);
+    }
+  })
+}
+
 function loadFile() {
   let imageTag = $('#output');
 
@@ -75,6 +100,7 @@ function loadFile() {
   $('.fa-trash').click(function() {
     imageTag.attr('src', '')
     $('#file').val('');
+    $('#to-step-4').attr('disabled', true);
     checkFile(imageTag)
   })
 }
@@ -98,4 +124,34 @@ function setSession(key, value) {
 
 function getSession(key) {
   sessionStorage.getItem(key);
+}
+
+function activeClick(classname) {
+  $(classname).on('click', function() {
+    $(classname).removeClass('active');
+    $(this).addClass('active');
+  });
+}
+
+function checkboxSelect(classname, setInputVal, inputId) {
+  $(classname).on('change', function() {
+    $(classname).prop('checked', false);
+    $(this).prop('checked', true);
+
+    if (setInputVal) {
+      $(inputId).val($(this).val())
+    }
+  });
+}
+
+function verifyInput(id) {
+  if ($(id).val() === '') {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function verifyCheckInput(id) {
+  return $(id).is(':checked')
 }

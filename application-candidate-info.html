@@ -23,6 +23,9 @@
       <div class='row'>
         <div class='col'>
           <form id='application-step-2-form' class='mb-5' action='application-candidate-profile.html'>
+            <input type='hidden' id='sex' name='sex'>
+            <input type='hidden' id='hsk' name='hsk'>
+            <input type='hidden' id='hskk' name='hskk'>
             <div class='form-group'>
               <label class=''>用户名</label>
               <input type='text' class='form-control' placeholder='用户名' id='username'>
@@ -42,13 +45,13 @@
               <label class=''>性别</label>
               <div class='row'>
                 <div class='form-check ml-3'>
-                  <input class='form-check-input' type='checkbox' name='male' id='male' value='male'>
+                  <input class='form-check-input sex' type='checkbox' name='male' id='male' value='male'>
                   <label class='form-check-label' for='male'>
                     男
                   </label>
                 </div>
                 <div class='form-check ml-3'>
-                  <input class='form-check-input' type='checkbox' name='female' id='female' value='female'>
+                  <input class='form-check-input sex' type='checkbox' name='female' id='female' value='female'>
                   <label class='form-check-label' for='female'>
                     女
                   </label>
@@ -60,20 +63,20 @@
               <div class='row'>
                 <div class='col-4'>
                   <select class='form-control' id='year'>
-                    <option>年</option>
-                    <option>2</option>
+                    <option value=''>年</option>
+                    <option value='2'>2</option>
                   </select>
                 </div>
                 <div class='col-4'>
                   <select class='form-control' id='month'>
-                    <option>月</option>
-                    <option>2</option>
+                    <option value=''>月</option>
+                    <option value='2'>2</option>
                   </select>
                 </div>
                 <div class='col-4'>
                   <select class='form-control' id='day'>
-                    <option>日</option>
-                    <option>2</option>
+                    <option value=''>日</option>
+                    <option value='2'>2</option>
                   </select>
                 </div>
               </div>
@@ -81,22 +84,22 @@
             <div class='form-group'>
               <label class=''>国籍</label>
               <select class='form-control' id='nationality'>
-                <option>请选择国籍</option>
-                <option>2</option>
+                <option value=''>请选择国籍</option>
+                <option value='2'>2</option>
               </select>
             </div>
             <div class='form-group'>
               <label class=''>母语</label>
               <select class='form-control' id='native-language'>
-                <option>请选择您的第一语言，即母语</option>
-                <option>2</option>
+                <option value=''>请选择您的第一语言，即母语</option>
+                <option value='2'>2</option>
               </select>
             </div>
             <div class='form-group'>
               <label class=''>证件类型</label>
               <select class='form-control' id='identity-type'>
-                <option>请选择证件类型</option>
-                <option>2</option>
+                <option value=''>请选择证件类型</option>
+                <option value='2'>2</option>
               </select>
             </div>
             <div class='form-group'>
@@ -112,33 +115,33 @@
                 <span class='i18n-61'>联系电话</span>
               </label>
               <div class='input-group'>
-                <select class='form-control border-right-0 w85'>
-                  <option value='+852' selected>+852</option>
+                <select class='form-control border-right-0 w85' id='country-code'>
+                  <option value='+852'>+852</option>
                   <option value='+62'>+62</option>
                   <option value='+971'>+971</option>
                   <option value='+61'>+61</option>
                 </select>
-                <input type='number' class='form-control border-left-0 i18n-61' placeholder='联系电话'/>
+                <input type='number' class='form-control border-left-0 i18n-61' placeholder='联系电话' id='contact-number'/>
               </div>
             </div>
             <div class='form-group'>
               <label class=''>你学习汉语多长时间了</label>
               <select class='form-control' id='learning-time'>
-                <option>请选择时间</option>
-                <option>2</option>
+                <option value=''>请选择时间</option>
+                <option value='2'>2</option>
               </select>
             </div>
             <div class='form-group'>
               <label class=''>考過HSK沒有？</label>
               <div class='row'>
                 <div class='form-check ml-3'>
-                  <input class='form-check-input' type='checkbox' name='hsk' id='hsk' value='true'>
+                  <input class='form-check-input hsk' type='checkbox' name='hsk' id='hsk' value='true'>
                   <label class='form-check-label' for='hsk'>
                     有
                   </label>
                 </div>
                 <div class='form-check ml-3'>
-                  <input class='form-check-input' type='checkbox' name='hsk' id='no_hsk' value='true'>
+                  <input class='form-check-input hsk' type='checkbox' name='hsk' id='no_hsk' value='false'>
                   <label class='form-check-label' for='hsk'>
                     沒有
                   </label>
@@ -149,13 +152,13 @@
               <label class=''>考過HSKK沒有？</label>
               <div class='row'>
                 <div class='form-check ml-3'>
-                  <input class='form-check-input' type='checkbox' name='hskk' id='hskk' value='true'>
+                  <input class='form-check-input hskk' type='checkbox' name='hskk' id='hskk' value='true'>
                   <label class='form-check-label' for='hskk'>
                     有
                   </label>
                 </div>
                 <div class='form-check ml-3'>
-                  <input class='form-check-input' type='checkbox' name='hskk' id='no_hskk' value='true'>
+                  <input class='form-check-input hskk' type='checkbox' name='hskk' id='no_hskk' value='false'>
                   <label class='form-check-label' for='hskk'>
                     沒有
                   </label>
@@ -164,7 +167,7 @@
             </div>
             <div class='text-center mt-4 d-flex justify-content-center'>
               <a href='application.html' class='btn btn-sm p-2 pr-4 pl-4 mt-2 mr-1 w180'>上一步</a>
-              <button type='submit' class='btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180'>下一步</button>
+              <button id='to-step-3' disabled type='submit' class='btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180'>下一步</button>
             </div>
           </form>
         </div>
