@@ -470,7 +470,8 @@ function translateWeb(classname, zh, en, id, ar, input) {
   let url = new URL(window.location.href);
   // let lang = url.searchParams.get('lang');
   let lang = sessionStorage.getItem("lang");
-
+  updatePDFLink(lang)
+  
   switch(lang) {
     case 'zh':
       translate(classname, zh, input)
@@ -501,6 +502,13 @@ function translate(classname, lang, input) {
       }
     });
   }
+}
+
+function updatePDFLink(lang) {
+  let terms_pdf = $('#terms-pdf');
+  let privacy_pdf = $('#privacy-pdf');
+  terms_pdf.attr('href', `terms/tnc_${lang}.pdf`);
+  privacy_pdf.attr('href', `privacy/privacy_${lang}.pdf`);
 }
 
 // function urlAddParams(key, value) {

@@ -6,7 +6,11 @@ a {
 
 a:hover {
   color:#002F5D; 
-  text-decoration:none;
+  text-decoration: none;
+}
+
+a.primary-color:hover {
+  color: #3FD3C3;
 }
 
 .pointer {
