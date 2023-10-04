@@ -24,7 +24,7 @@ function progressIndicator() {
         <div class='progress-indicator-line m-1 step-4'></div>
         <div class='progress-indicator-dot step-4'></div>
         <div class='progress-indicator-line m-1 step-5'></div>
-        <div class='progress-indicator-dot'></div>
+        <div class='progress-indicator-dot step-5'></div>
       </div>
       <div class='row text-center'>
         <div class='col progress-indicator-word step-1'>选择考期</div>
