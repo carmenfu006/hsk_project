@@ -1,3 +1,5 @@
+if (user == null) window.location.href = 'candidate-login.html';
+
 $('#apply-menu-btn').addClass('active');
 
 $('.toggle').click(function(){
@@ -40,7 +42,7 @@ function progressIndicator() {
       </div>
     </div>`;
 
-  progressbar.appendChild(progressbar_template.content);
+  if (progressbar) progressbar.appendChild(progressbar_template.content);
 
   switch(page) {
     case 'application.html':
@@ -61,6 +63,9 @@ function progressIndicator() {
     case 'application-submit.html':
       activeProgressBar('.step-1, .step-2, .step-3, .step-4, .step-5');
       break;
+      case 'payment.html':
+        enabledNextBtn();
+        break;
     default:
       activeProgressBar('.step-1');
   }
@@ -71,18 +76,30 @@ function activeProgressBar(classname) {
 }
 
 function enabledNextBtn() {
-  $(':input').on('change', function() {
+  $(':input').on('change click keyup', function() {
 
     if (verifyInput('#exam-datetime') && verifyInput('#exam-amount') && verifyCheckInput('#terms')) {
       $('#to-step-2').attr('disabled', false);
+    } else {
+      $('#to-step-2').attr('disabled', true);
     }
 
     if (verifyInput('#sex') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#surname') && verifyInput('#given-name') && verifyInput('#year') && verifyInput('#month') && verifyInput('#day') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#identity-type') && verifyInput('#identity') && verifyInput('#country-code') && verifyInput('#contact-number')) {
       $('#to-step-3').attr('disabled', false);
+    } else {
+      $('#to-step-3').attr('disabled', true);
     }
 
     if (verifyInput('#file')) {
       $('#to-step-4').attr('disabled', false);
+    } else {
+      $('#to-step-4').attr('disabled', true);
+    }
+
+    if (verifyInput('#discount-code')) {
+      $('#verify-code').attr('disabled', false);
+    } else {
+      $('#verify-code').attr('disabled', true);
     }
   })
 }

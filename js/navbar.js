@@ -83,7 +83,7 @@ login_modal_template.innerHTML = `
   </div>
 `
 
-navbar.appendChild(navbar_template.content);
+if (navbar) navbar.appendChild(navbar_template.content);
 if (login_modal) login_modal.appendChild(login_modal_template.content);
 
 $('.menu-btn').on('click', function() {

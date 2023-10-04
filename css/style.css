@@ -112,6 +112,10 @@ input[type=checkbox] {
   width: 180px !important;
 }
 
+.mw85 {
+  max-width: 85px !important;
+}
+
 .mw180 {
   min-width: 180px !important;
 }
@@ -293,7 +297,7 @@ footer {
   min-width: 55px;
 }
 
-.application-content {
+.application-content, .payment-content {
   max-width: 768px;
 }
 
