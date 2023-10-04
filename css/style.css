@@ -293,6 +293,10 @@ footer {
   min-width: 55px;
 }
 
+.application-content {
+  max-width: 768px;
+}
+
 /* Screen size */
 
 @media screen and (min-width: 320px) {
@@ -360,7 +364,7 @@ footer {
 }
 
 @media screen and (min-width: 1024px) {  
-  .progress-indicator-width {
+  /* .progress-indicator-width {
     max-width: 910px;
     min-height: 50px;
   }
@@ -374,7 +378,7 @@ footer {
     height: 3px;
     border-radius: 12%;
     background-color: #E6E6E6;
-  }
+  } */
 }
 
 @media screen and (min-width: 1440px) {
@@ -382,7 +386,7 @@ footer {
     background-size: 100% 100%;
   }
 
-  .progress-indicator-width {
+  /* .progress-indicator-width {
     min-width: 1110px;
     min-height: 50px;
   }
@@ -396,5 +400,5 @@ footer {
     height: 3px;
     border-radius: 12%;
     background-color: #E6E6E6;
-  }
+  } */
 }

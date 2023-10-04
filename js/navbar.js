@@ -46,7 +46,7 @@ navbar_template.innerHTML = `
         </div>
       </li>
       <a href='candidate-login.html' class='btn btn-sm active m-1 p-2 pr-3 pl-3 i18n-6'>考生登入/注册</a>
-      <a href='' class='btn btn-sm active m-1 p-2 pr-3 pl-3 i18n-7'>合作方登入</a>
+      <a href='partner-login.html' class='btn btn-sm active m-1 p-2 pr-3 pl-3 i18n-7'>合作方登入</a>
     </ul>
   </div>
 `;

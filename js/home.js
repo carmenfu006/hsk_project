@@ -1,7 +1,7 @@
 setActiveMenu()
 
 function setActiveMenu() {
-  if (window.location.hash === '#home-content') {
+  if (window.location.hash === '') {
     $('#home-menu-btn').addClass('active');
   } else if (window.location.hash === '#home-news') {
     $('#news-menu-btn').addClass('active');
