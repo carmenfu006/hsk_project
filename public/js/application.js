@@ -64,9 +64,6 @@ function progressIndicator() {
     case 'application-submit.html':
       activeProgressBar('.step-1, .step-2, .step-3, .step-4, .step-5');
       break;
-      case 'payment.html':
-        enabledNextBtn();
-        break;
     default:
       activeProgressBar('.step-1');
   }
@@ -95,12 +92,6 @@ function enabledNextBtn() {
       $('#to-step-4').attr('disabled', false);
     } else {
       $('#to-step-4').attr('disabled', true);
-    }
-
-    if (verifyInput('#discount-code')) {
-      $('#verify-code').attr('disabled', false);
-    } else {
-      $('#verify-code').attr('disabled', true);
     }
   })
 }

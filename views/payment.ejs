@@ -15,25 +15,25 @@
   </head>
   <body>
     <nav id='navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
-    <section class='payment-content container mt-5 mb-5'>
+    <section class='content container mt-5 mb-5'>
+      <form id='payment-form' action='payment-success.html' method='POST'>
       <div class='row'>
         <div class='col'>
           <h3 class='text-center font-weight-bold mt-5 mb-5'>在线支付</h3>
         </div>
       </div>
       <div class='row'>
-        <div class='col-lg-6 col-md-6 col-md-12'>
-          <form id="payment-form">
-            <div id="payment-element">
-              <!-- Elements will create form elements here -->
-            </div>
-            <button id="submit">Submit</button>
-            <div id="error-message">
-              <!-- Display error message to your customers here -->
-            </div>
-          </form>
+        <div class='col'></div>
+        <div class='col-lg-5 col-md-5 col-md-12 mb-5'>
+          <div id='payment-element'>
+            <!-- Elements will create form elements here -->
+          </div>
+          <div id='error-message'>
+            <!-- Display error message to your customers here -->
+          </div>
         </div>
-        <div class='col-lg-6 col-md-6 col-md-12'>
+        <div class='col'></div>
+        <div class='col-lg-4 col-md-5 col-md-12'>
           <div class='card mb-3'>
             <div class='card-header d-flex justify-content-between'>
               <div>支付项目</div>
@@ -43,34 +43,36 @@
               <li class='list-group-item d-flex justify-content-between'>
                 <div>HSK⼝语(初级)移动端考试</div>
                 <div>
-                  <span>$260.00</span>
+                  <span>$</span>
+                  <span class='total-amount'>260.00</span>
                   <span class='text-muted font-weight-bold'>HKD</span>
                 </div>
               </li>
             </ul>
           </div>
-          <form id='application-step-1-form' class='mb-5' action='payment-success.html'>
-            <div class='input-group border rounded'>
-              <input type='text' class='form-control border-0' placeholder='优惠码' id='discount-code'/>
-              <button id='verify-code' class='form-control border-0 bg-primary-color mw85' disabled>应用</button>
+          <div class='input-group border rounded mb-5'>
+            <input type='text' class='form-control border-0' placeholder='优惠码' id='discount-code' name='discount-code'/>
+            <button id='verify-code' class='form-control border-0 bg-primary-color mw85' disabled>应用</button>
+          </div>
+          <div class='d-flex justify-content-between mt-3'>
+            <div>
+              <h5 class='font-weight-bold'>总付款金额</h5>
             </div>
-            <div class='d-flex justify-content-between mt-3'>
-              <div>
-                <h5 class='font-weight-bold'>总付款金额</h5>
-              </div>
-              <div>
-                <h5 class='font-weight-bold'>
-                  <span>$260.00</span>
-                  <span class='text-muted'>HKD</span>
-                </h5>
-              </div>
+            <div>
+              <h5 class='font-weight-bold'>
+                <span>$</span>
+                <span class='total-amount'>260.00</span>
+                <span class='text-muted'>HKD</span>
+              </h5>
             </div>
-            <div class='text-center mt-4 mb-5'>
-              <button type='submit' class='btn btn-block p-2 pr-4 pl-4 active fs16'>付款</button>
-            </div>
-          </form>
+          </div>
+          <div class='text-center mt-4 mb-5'>
+            <button type='submit' class='btn btn-block p-2 pr-4 pl-4 active fs16'>付款</button>
+          </div>
         </div>
+        <div class='col'></div>
       </div>
+    </form>
     </section>
     <footer id='footer' class='bg-secondary-color text-white'></footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
