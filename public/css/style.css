@@ -395,6 +395,11 @@ footer {
     border-radius: 12%;
     background-color: #E6E6E6;
   } */
+
+  .toast-login {
+    top: 30px;
+    right: 25px;
+  }
 }
 
 @media screen and (min-width: 1440px) {

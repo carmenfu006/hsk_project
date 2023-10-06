@@ -91,7 +91,7 @@ $('.menu-btn').on('click', function() {
   $(this).addClass('active');
 });
 
-sessionStorage.setItem('user', 'true');
+// sessionStorage.setItem('user', 'true');
 // sessionStorage.removeItem('user')
 
 let user = sessionStorage.getItem('user');
