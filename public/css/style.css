@@ -43,6 +43,14 @@ a.primary-color:hover {
   color: #FFA940;
 }
 
+.danger-color {
+  color: rgba(252, 85, 85, 1);
+}
+
+.bg-danger-color {
+  background-color: rgba(252, 85, 85, 0.1);
+}
+
 .bg-primary-color {
   background-color: #3FD3C3;
 }

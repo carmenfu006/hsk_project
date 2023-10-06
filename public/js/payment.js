@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   const {stripePublicKey} = await fetch('/config').then(r => r.json())
   const stripe = Stripe(stripePublicKey)
 
-  // let data = { amount: 56000, customer: 'dummy'}
+  // let data = { amount: 26000, customer: 'dummy'}
 
   // const {clientSecret} = await fetch('/create-payment-intent', {
   //   method: 'POST',
@@ -12,9 +12,9 @@ window.addEventListener('DOMContentLoaded', async () => {
   //   body: JSON.stringify(data)
   // }).then(r => r.json())
 
-  const elements = stripe.elements({ clientSecret : 'pi_3Ny6SFArZBHZvCDs0hSzMrvd_secret_HueDkjb0IdLYSXxoFObnnIxAJ' });
-  
-  // const elements = stripe.elements({ clientSecret });
+  const clientSecret = 'pi_3Ny6SFArZBHZvCDs0hSzMrvd_secret_HueDkjb0IdLYSXxoFObnnIxAJ'
+
+  const elements = stripe.elements({ clientSecret });
   const paymentElement = elements.create('payment');
   paymentElement.mount('#payment-element');
 
@@ -29,13 +29,14 @@ window.addEventListener('DOMContentLoaded', async () => {
       }
     })
     if (error) {
-      // toast box
+      $('.toast').toast('show');
     }
   })
-
+  
   // Discount and update paymentIntent
-  const verify_code = $('#verify-code')
-  const discount_field = $('#discount-code')
+  const verify_code = $('#verify-code');
+  const discount_field = $('#discount-code');
+  const discount_error_message = $('#discount-error-message');
   
   discount_field.on('keyup', function() {
     if (discount_field.val() != '') {
@@ -52,7 +53,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     // let discount_code = $('#discount-code').val();
     
     let discountValue = 6000;
-    let currentAmount = 56000;
+    let currentAmount = 26000;
     // let currentAmount = data.amount;
     let finalAmount = currentAmount - discountValue;
 
@@ -72,8 +73,9 @@ window.addEventListener('DOMContentLoaded', async () => {
       $('.total-amount').html((finalAmount/100).toFixed(2))
       verify_code.html('应用')
       verify_code.css('background-color', '#3FD3C3')
+      $('#discount-error-message').addClass('d-none')
     } else {
-      // toast box
+      $('#discount-error-message').removeClass('d-none')
     }
   })
 })
