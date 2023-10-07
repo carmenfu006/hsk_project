@@ -197,7 +197,7 @@ footer {
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  background-color: #E6E6E6;
+  background-color: #CFCFCF;
 }
 
 .carousel-indicators li.active {
@@ -212,7 +212,7 @@ footer {
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  background-color: #E6E6E6;
+  background-color: #CFCFCF;
 }
 
 .progress-indicator-dot.active {
@@ -225,10 +225,43 @@ footer {
 
 .progress-indicator-word {
   font-weight: bold;
-  color: #E6E6E6;
+  color: #CFCFCF;
 }
 
 .progress-indicator-word.active {
+  font-weight: 500;
+  color: #002F5D;
+}
+
+/* Instruction Progress Indicators */
+.instruction-progress-indicator-dot {
+  padding-top: 1px;
+  padding-left: 9px;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: #CFCFCF;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.instruction-progress-indicator-word {
+  padding-top: 2px;
+  padding-left: 2px;
+  color: #C0C0C0;
+}
+
+.instruction-progress-indicator-line {
+  margin-top: 12px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.instruction-progress-indicator-dot.active {
+  background-color: #3FD3C3;
+}
+
+.instruction-progress-indicator-word.active {
   font-weight: 500;
   color: #002F5D;
 }
@@ -309,7 +342,7 @@ footer {
   min-width: 55px;
 }
 
-.application-content, .payment-content {
+.application-content, .payment-content, .user-content {
   max-width: 768px;
 }
 
@@ -324,25 +357,25 @@ footer {
     font-size: 12px;
   }
 
-  .progress-indicator {
+  .progress-indicator, .instruction-progress-indicator {
     overflow-x: scroll;
     position: static;
   }
   
-  .progress-indicator-width {
+  .progress-indicator-width, .instruction-progress-indicator-width {
     min-width: 610px;
     min-height: 50px;
   }
   
-  .progress-indicator-bar {
+  .progress-indicator-bar, .instruction-progress-indicator-bar {
     padding-left: 58px;
   }
   
-  .progress-indicator-line {
+  .progress-indicator-line, .instruction-progress-indicator-line {
     width: 110px;
     height: 3px;
     border-radius: 12%;
-    background-color: #E6E6E6;
+    background-color: #CFCFCF;
   }
 }
 
@@ -357,25 +390,25 @@ footer {
     min-height: 580px;
   }
 
-  .progress-indicator {
+  .progress-indicator, .instruction-progress-indicator {
     overflow-x: hidden;
     position: static;
   }
 
-  .progress-indicator-width {
+  .progress-indicator-width, .instruction-progress-indicator-width {
     max-width: 685px;
     min-height: 50px;
   }
   
-  .progress-indicator-bar {
+  .progress-indicator-bar, .instruction-progress-indicator-bar {
     padding-left: 68px;
   }
   
-  .progress-indicator-line {
+  .progress-indicator-line, .instruction-progress-indicator-line {
     width: 125px;
     height: 3px;
     border-radius: 12%;
-    background-color: #E6E6E6;
+    background-color: #CFCFCF;
   }
 }
 
