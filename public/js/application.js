@@ -59,6 +59,7 @@ function progressIndicator() {
       break;
     case 'application-verify-info.html':
       activeProgressBar('.step-1, .step-2, .step-3, .step-4');
+      populateInfo();
       $('#verify-profile').attr('src', getSession('file'));
       break;
     case 'application-submit.html':
@@ -223,3 +224,18 @@ $('#to-step-3').on('click', function(e) {
 
   window.location.replace($(this)[0].form.action);
 });
+
+function populateInfo() {
+  if ($('.info-username')) $('.info-username').html(getSession('username'));
+  if ($('.info-name')) $('.info-name').html(getSession('surname') + ' ' + getSession('given-name'));
+  if ($('.info-sex')) $('.info-sex').html(getSession('sex'));
+  if ($('.info-birthday')) $('.info-birthday').html(getSession('birth-year') + '/' + getSession('birth-month') + '/' + getSession('birth-day'));
+  if ($('.info-nationality')) $('.info-nationality').html(getSession('nationality'));
+  if ($('.info-native-language')) $('.info-native-language').html(getSession('native-language'));
+  if ($('.info-identity-type')) $('.info-identity-type').html(getSession('identity-type'));
+  if ($('.info-identity')) $('.info-identity').html(getSession('identity'));
+  if ($('.info-contact-number')) $('.info-contact-number').html(getSession('country-code') + '-' + getSession('contact-number'));
+  if ($('.info-learning-time')) $('.info-learning-time').html(getSession('learning-time'));
+  if ($('.info-hsk')) $('.info-hsk').html(getSession('hsk'));
+  if ($('.info-hskk')) $('.info-hskk').html(getSession('hskk'));
+}
