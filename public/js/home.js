@@ -44,3 +44,10 @@ $('.collapse')
     .removeClass('fa-minus')
     .addClass('fa-plus');
 });
+
+$('#more-faq').on('click', function() {
+  $(this).remove();
+  for (let i = 8; i < 15; i++) {
+    $(`#card-${i}`).removeClass('d-none');
+  }
+})
