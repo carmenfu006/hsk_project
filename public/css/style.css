@@ -390,6 +390,10 @@ footer {
     min-height: 580px;
   }
 
+  .progress-indicator {
+    padding-left: 20px;
+  }
+
   .progress-indicator, .instruction-progress-indicator {
     overflow-x: hidden;
     position: static;
