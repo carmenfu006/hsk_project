@@ -471,32 +471,23 @@ function translateWeb(classname, zh, en, id, ar, input) {
   // let lang = url.searchParams.get('lang');
   let lang = sessionStorage.getItem("lang");
   updatePDFLink(lang)
+  updateLogo(lang)
   
   switch(lang) {
     case 'zh':
       translate(classname, zh, input)
-      $('#navbar-logo').attr('src', 'images/logo.png');
-      $('#navbar-user-logo').attr('src', '../images/logo.png');
       break;
     case 'en':
       translate(classname, en, input)
-      $('#navbar-logo').attr('src', 'images/logo_lang.png');
-      $('#navbar-user-logo').attr('src', '../images/logo_lang.png');
       break;
     case 'id':
       translate(classname, id, input)
-      $('#navbar-logo').attr('src', 'images/logo_lang.png');
-      $('#navbar-user-logo').attr('src', '../images/logo_lang.png');
       break;
     case 'ar':
       translate(classname, ar, input)
-      $('#navbar-logo').attr('src', 'images/logo_lang.png');
-      $('#navbar-user-logo').attr('src', '../images/logo_lang.png');
       break;
     default:
       translate(classname, zh, input)
-      $('#navbar-logo').attr('src', 'images/logo.png');
-      $('#navbar-user-logo').attr('src', '../images/logo.png');
   }
 }
 
@@ -519,6 +510,16 @@ function updatePDFLink(lang) {
   let privacy_pdf = $('#privacy-pdf');
   terms_pdf.attr('href', `terms/tnc_${lang}.pdf`);
   privacy_pdf.attr('href', `privacy/privacy_${lang}.pdf`);
+}
+
+function updateLogo(lang) {
+  if (lang == 'zh') {
+    $('#navbar-logo').attr('src', 'images/logo.png');
+    $('#navbar-user-logo').attr('src', '../images/logo.png');
+  } else {
+    $('#navbar-logo').attr('src', 'images/logo_lang.png');
+    $('#navbar-user-logo').attr('src', '../images/logo_lang.png');
+  }
 }
 
 // function urlAddParams(key, value) {

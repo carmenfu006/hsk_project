@@ -185,7 +185,7 @@ footer {
 }
 
 .fs28 {
-  font-size: 28px !important;
+  font-size: 28px;
 }
 
 /* Carousel Indicators */
@@ -342,7 +342,7 @@ footer {
   min-width: 55px;
 }
 
-.application-content, .payment-content, .user-content {
+.partner-content, .application-content, .payment-content, .user-content {
   max-width: 768px;
 }
 
