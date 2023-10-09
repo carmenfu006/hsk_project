@@ -82,21 +82,21 @@
               <label class=''>国籍</label>
               <select class='form-control' id='nationality'>
                 <option value=''>请选择国籍</option>
-                <option value='2'>2</option>
+                <option value='api'>api</option>
               </select>
             </div>
             <div class='form-group'>
               <label class=''>母语</label>
               <select class='form-control' id='native-language'>
                 <option value=''>请选择您的第一语言，即母语</option>
-                <option value='2'>2</option>
+                <option value='api'>api</option>
               </select>
             </div>
             <div class='form-group'>
               <label class=''>证件类型</label>
               <select class='form-control' id='identity-type'>
                 <option value=''>请选择证件类型</option>
-                <option value='2'>2</option>
+                <option value='api'>api</option>
               </select>
             </div>
             <div class='form-group'>
@@ -125,14 +125,14 @@
               <label class=''>你学习汉语多长时间了</label>
               <select class='form-control' id='learning-time'>
                 <option value=''>请选择时间</option>
-                <option value='2'>2</option>
+                <option value='api'>api</option>
               </select>
             </div>
             <div class='form-group'>
-              <label class=''>考過HSK沒有？</label>
+              <label class=''>过去6个月考過HSK沒有？</label>
               <div class='row'>
                 <div class='form-check ml-3'>
-                  <input class='form-check-input hsk' type='checkbox' name='hsk' id='hsk' value='yes'>
+                  <input class='form-check-input hsk' type='checkbox' name='hsk' id='yes_hsk' value='yes'>
                   <label class='form-check-label' for='hsk'>
                     有
                   </label>
@@ -145,11 +145,31 @@
                 </div>
               </div>
             </div>
+            <div id='hsk-date' class='form-group d-none'>
+              <label class=''>请选择最近一次HSK的考试日期</label>
+              <div class='row'>
+                <div class='col-4'>
+                  <select class='form-control' id='hsk-year'>
+                    <option value=''>年</option>
+                  </select>
+                </div>
+                <div class='col-4'>
+                  <select class='form-control' id='hsk-month'>
+                    <option value=''>月</option>
+                  </select>
+                </div>
+                <div class='col-4'>
+                  <select class='form-control' id='hsk-day'>
+                    <option value=''>日</option>
+                  </select>
+                </div>
+              </div>
+            </div>
             <div class='form-group'>
-              <label class=''>考過HSKK沒有？</label>
+              <label class=''>过去6个月考過HSKK沒有？</label>
               <div class='row'>
                 <div class='form-check ml-3'>
-                  <input class='form-check-input hskk' type='checkbox' name='hskk' id='hskk' value='yes'>
+                  <input class='form-check-input hskk' type='checkbox' name='hskk' id='yes_hskk' value='yes'>
                   <label class='form-check-label' for='hskk'>
                     有
                   </label>
@@ -159,6 +179,26 @@
                   <label class='form-check-label' for='hskk'>
                     沒有
                   </label>
+                </div>
+              </div>
+            </div>
+            <div id='hskk-date' class='form-group d-none'>
+              <label class=''>请选择最近一次HSKK的考试日期</label>
+              <div class='row'>
+                <div class='col-4'>
+                  <select class='form-control' id='hskk-year'>
+                    <option value=''>年</option>
+                  </select>
+                </div>
+                <div class='col-4'>
+                  <select class='form-control' id='hskk-month'>
+                    <option value=''>月</option>
+                  </select>
+                </div>
+                <div class='col-4'>
+                  <select class='form-control' id='hskk-day'>
+                    <option value=''>日</option>
+                  </select>
                 </div>
               </div>
             </div>

@@ -8,15 +8,6 @@ $('.toggle').click(function(){
 });
 
 progressIndicator()
-populateYear()
-populateMonth()
-populateDay()
-loadFile()
-activeClick('.month-item');
-checkboxSelect('.exam-datetime', true, '#exam-datetime');
-checkboxSelect('.sex', true, '#sex');
-checkboxSelect('.hsk', true, '#hsk');
-checkboxSelect('.hskk', true, '#hskk');
 
 function progressIndicator() {
   const progressbar = document.getElementById('progressbar');
@@ -50,14 +41,29 @@ function progressIndicator() {
   switch(page) {
     case 'application.html':
       activeProgressBar('.step-1');
+      activeClick('.month-item');
+      checkboxSelect('.exam-datetime', true, '#exam-datetime');
       enabledNextBtn();
       break;
     case 'application-candidate-info.html':
       activeProgressBar('.step-1, .step-2');
+      checkboxSelect('.sex', true, '#sex');
+      checkboxSelect('.hsk', true, '#hsk', '#hsk-date');
+      checkboxSelect('.hskk', true, '#hskk', '#hskk-date');
       enabledNextBtn();
+      populateYear('#birth-year');
+      populateYear('#hsk-year');
+      populateYear('#hskk-year');
+      populateMonth('#birth-month');
+      populateMonth('#hsk-month');
+      populateMonth('#hskk-month');
+      populateDay('#birth-day');
+      populateDay('#hsk-day');
+      populateDay('#hskk-day');
       break;
     case 'application-candidate-profile.html':
       activeProgressBar('.step-1, .step-2, .step-3');
+      loadFile();
       enabledNextBtn();
       break;
     case 'application-verify-info.html':
@@ -155,7 +161,7 @@ function activeClick(classname) {
   });
 }
 
-function checkboxSelect(classname, setInputVal, inputId) {
+function checkboxSelect(classname, setInputVal, inputId, targetId) {
   $(classname).on('change', function() {
     $(classname).prop('checked', false);
 
@@ -167,7 +173,14 @@ function checkboxSelect(classname, setInputVal, inputId) {
 
     if (setInputVal) {
       $(inputId).val($(this).val())
+
+      if ($(inputId).val() === 'yes') {
+        $(targetId).removeClass('d-none');
+      } else {
+        $(targetId).addClass('d-none');
+      }
     }
+    
   });
 }
 
@@ -225,6 +238,16 @@ $('#to-step-3').on('click', function(e) {
   setSession('contact-number', inputVal('#contact-number'));
   setSession('learning-time', inputVal('#learning-time'));
 
+  if (inputVal('#hsk') == 'yes') {
+    setSession('hsk-year', inputVal('#hsk-year'));
+    setSession('hsk-month', inputVal('#hsk-month'));
+    setSession('hsk-day', inputVal('#hsk-day'));
+  }
+  if (inputVal('#hskk') == 'yes') {
+    setSession('hskk-year', inputVal('#hskk-year'));
+    setSession('hskk-month', inputVal('#hskk-month'));
+    setSession('hskk-day', inputVal('#hskk-day'));
+  }
   window.location.replace($(this)[0].form.action);
 });
 
@@ -243,12 +266,12 @@ function populateInfo() {
   if ($('.info-hskk')) $('.info-hskk').html(getSession('hskk'));
 }
 
-function populateYear() {
-  let select_year = $('#birth-year');
+function populateYear(id) {
+  let select_year = $(id);
   let currentYear = (new Date()).getFullYear();
   if (select_year) {
     for (let i = currentYear; i >= currentYear-100; i--) {
-      let option = document.createElement("option");
+      let option = document.createElement('option');
       option.value = i;
       option.text = i;
       select_year[0].appendChild(option)
@@ -256,11 +279,11 @@ function populateYear() {
   }
 }
 
-function populateMonth() {
-  let select_month = $('#birth-month');
+function populateMonth(id) {
+  let select_month = $(id);
   if (select_month) {
     for (let i = 1; i <= 12; i++) {
-      let option = document.createElement("option");
+      let option = document.createElement('option');
       option.value = i;
       option.text = i;
       select_month[0].appendChild(option)
@@ -268,11 +291,11 @@ function populateMonth() {
   }
 }
 
-function populateDay() {
-  let select_day = $('#birth-day');
+function populateDay(id) {
+  let select_day = $(id);
   if (select_day) {
     for (let i = 1; i <= 31; i++) {
-      let option = document.createElement("option");
+      let option = document.createElement('option');
       option.value = i;
       option.text = i;
       select_day[0].appendChild(option)
