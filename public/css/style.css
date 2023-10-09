@@ -270,6 +270,21 @@ footer {
   background-color: #3FD3C3;
 }
 
+/* Sidebar */
+.w3-sidebar {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.w3-bar-item {
+  color: #a5a5a5;
+}
+
+.w3-bar-item.active {
+  color: #002F5D;
+  background-color: #3fd3c42d;
+}
+
 /* Background Image */
 .home-card-1 {
   background-image: url('../images/home-card-1.jpg');
