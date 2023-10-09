@@ -1,7 +1,9 @@
 const footer = document.getElementById('footer');
 const user_footer = document.getElementById('user-footer');
+const user_footbar = document.getElementById('user-footbar');
 const footer_template = document.createElement('template');
 const user_footer_template = document.createElement('template');
+const user_footbar_template = document.createElement('template');
 
 footer_template.innerHTML = `
   <div class='container pt-5 pb-5'>
@@ -123,5 +125,59 @@ user_footer_template.innerHTML = `
   </div>
 `;
 
+user_footbar_template.innerHTML = `
+  <div class='row user-footbar-width'>
+    <div id='dashboard-footbar' class='col text-center ml-3 pt-2 nav-footbar'>
+      <a href='dashboard.html'>
+        <i class='fa-solid fa-house'></i>
+        <p>个人主页</p>
+      </a>
+    </div>
+    <div id='instruction-footbar' class='col text-center pt-2 nav-footbar'>
+      <a href='exam-instruction.html'>
+        <i class='fa-solid fa-circle-exclamation'></i>
+        <p>考试须知</p>
+      </a>
+    </div>
+    <div id='inspection-footbar' class='col-2 text-center pt-2 nav-footbar'>
+      <a href='inspection-instruction.html'>
+        <i class='fa-solid fa-mobile-screen'></i>
+        <p>设备检测指示</p>
+      </a>
+    </div>
+    <div id='notice-footbar' class='col text-center pt-2 nav-footbar'>
+      <a href='important-notice.html'>
+        <i class='fa-solid fa-triangle-exclamation'></i>
+        <p>重要提示</p>
+      </a>
+    </div>
+    <div id='alert-footbar' class='col text-center pt-2 nav-footbar'>
+      <a href='abnormal-alert.html'>
+        <i class='fa-solid fa-circle-xmark'></i>
+        <p>异常警告</p>
+      </a>
+    </div>
+    <div id='support-footbar' class='col text-center pt-2 nav-footbar'>
+      <a href='support-center.html'>
+        <i class='fa-solid fa-shield-heart'></i>
+        <p>⽀援中⼼</p>
+      </a>
+    </div>
+    <div id='faqs-footbar' class='col text-center pt-2 nav-footbar'>
+      <a href='faqs.html'>
+        <i class='fa-solid fa-circle-question'></i>
+        <p>常⻅问题</p>
+      </a>
+    </div>
+    <div id='record-footbar' class='col text-center pt-2 nav-footbar'>
+      <a href='exam-record.html'>
+        <i class='fa-solid fa-gear'></i>
+        <p>考试记录</p>
+      </a>
+    </div>
+  </div>
+`;
+
 if (footer) footer.appendChild(footer_template.content);
 if (user_footer) user_footer.appendChild(user_footer_template.content);
+if (user_footbar) user_footbar.appendChild(user_footbar_template.content);

@@ -1,6 +1,7 @@
 $('.toast').toast('show');
 
 instructionProgressIndicator()
+dashboardPage()
 
 function instructionProgressIndicator() {
   const progressbar = document.getElementById('instruction-progressbar');
@@ -55,4 +56,39 @@ function countdown(second) {
     $('#timer').html(timeleft);
     timeleft -= 1;
   }, 1000);
+}
+
+function dashboardPage() {
+  const page = document.URL.split(/[?#]/)[0].split('/').pop();
+
+  switch(page) {
+    case 'dashboard.html':
+      activeMenuBar('#dashboard-sidebar', '#dashboard-footbar')
+      break;
+    case 'inspection-instruction.html':
+      activeMenuBar('#inspection-sidebar', '#inspection-footbar')
+      break;
+    case 'important-notice.html':
+      activeMenuBar('#notice-sidebar', '#notice-footbar')
+      break;
+    case 'abnormal-alert.html':
+      activeMenuBar('#alert-sidebar', '#alert-footbar')
+      break;
+    case 'support-center.html':
+      activeMenuBar('#support-sidebar', '#support-footbar')
+      break;
+    case 'faqs.html':
+      activeMenuBar('#faqs-sidebar', '#faqs-footbar')
+      break;
+    case 'exam-record.html':
+      activeMenuBar('#record-sidebar', '#record-footbar')
+      break;
+    default:
+      activeProgressBar('.step-1');
+  }
+}
+
+function activeMenuBar(sidebarId, footbarId) {
+  $(sidebarId).addClass('active');
+  $(footbarId).addClass('active');
 }

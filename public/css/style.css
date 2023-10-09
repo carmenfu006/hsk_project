@@ -292,6 +292,19 @@ footer {
   background-color: #3fd3c42d;
 }
 
+/* Footbar */
+.user-footbar {
+  overflow-x: scroll;
+}
+
+.user-footbar-width {
+  width: 768px;
+}
+
+.nav-footbar.active {
+  border-top: 3px solid #3FD3C3;
+}
+
 /* Background Image */
 .home-card-1 {
   background-image: url('../images/home-card-1.jpg');

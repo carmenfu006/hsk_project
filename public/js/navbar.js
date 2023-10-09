@@ -128,17 +128,41 @@ user_navbar_template.innerHTML = `
 `;
 
 user_sidebar_template.innerHTML = `
-  <a href='dashboard.html' class='w3-bar-item w3-button active'><i class='fa-solid fa-house mr-2'></i>个人主页</a>
-  <a href='exam-instruction.html' class='w3-bar-item w3-button'><i class='fa-solid fa-circle-exclamation mr-2'></i>考试须知</a>
-  <a href='#' class='w3-bar-item w3-button'><i class='fa-solid fa-mobile-screen mr-2'></i>设备检测指示</a>
+  <a href='dashboard.html' id='dashboard-sidebar' class='w3-bar-item w3-button rounded'>
+    <i class='fa-solid fa-house mr-2'></i>
+    <span>个人主页</span>
+  </a>
+  <a href='exam-instruction.html' id='instruction-sidebar' class='w3-bar-item w3-button rounded'>
+    <i class='fa-solid fa-circle-exclamation mr-2'></i>
+    <span>考试须知</span>
+  </a>
+  <a href='inspection-instruction.html' id='inspection-sidebar' class='w3-bar-item w3-button rounded'>
+    <i class='fa-solid fa-mobile-screen mr-2'></i>
+    <span>设备检测指示</span>
+  </a>
   <div class='border-bottom mt-3 mb-3'></div>
-  <a href='#' class='w3-bar-item w3-button'><i class='fa-solid fa-triangle-exclamation mr-2'></i>重要提示</a>
-  <a href='#' class='w3-bar-item w3-button'><i class='fa-solid fa-circle-xmark mr-2'></i>异常警告</a>
+  <a href='important-notice.html' id='notice-sidebar' class='w3-bar-item w3-button rounded'>
+    <i class='fa-solid fa-triangle-exclamation mr-2'></i>
+    <span>重要提示</span>
+  </a>
+  <a href='abnormal-alert.html' id='alert-sidebar' class='w3-bar-item w3-button rounded'>
+    <i class='fa-solid fa-circle-xmark mr-2'></i>
+    <span>异常警告</span>
+  </a>
   <div class='border-bottom mt-3 mb-3'></div>
-  <a href='#' class='w3-bar-item w3-button'><i class='fa-solid fa-shield-heart mr-2'></i>⽀援中⼼</a>
-  <a href='faqs.html' class='w3-bar-item w3-button'><i class='fa-solid fa-circle-question mr-2'></i>常⻅问题</a>
+  <a href='support-center.html' id='support-sidebar' class='w3-bar-item w3-button rounded'>
+    <i class='fa-solid fa-shield-heart mr-2'></i>
+    <span>⽀援中⼼</span>
+  </a>
+  <a href='faqs.html' id='faqs-sidebar' class='w3-bar-item w3-button rounded'>
+    <i class='fa-solid fa-circle-question mr-2'></i>
+    <span>常⻅问题</span>
+  </a>
   <div class='border-bottom mt-3 mb-3'></div>
-  <a href='#' class='w3-bar-item w3-button'><i class='fa-solid fa-gear mr-2'></i>考试记录</a>
+  <a href='exam-record.html' id='record-sidebar' class='w3-bar-item w3-button'>
+    <i class='fa-solid fa-gear mr-2'></i>
+    <span>考试记录</span>
+  </a>
 `;
 
 if (navbar) navbar.appendChild(navbar_template.content);
