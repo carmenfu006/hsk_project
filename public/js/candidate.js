@@ -33,6 +33,9 @@ function instructionProgressIndicator() {
     case 'exam-instruction-step3.html':
       activeProgressBar('.step-1, .step-2, .step-3');
       break;
+    case 'exam-instruction-complete.html':
+      countdown(5)
+      break;
     default:
       activeProgressBar('.step-1');
   }
@@ -40,4 +43,16 @@ function instructionProgressIndicator() {
 
 function activeProgressBar(classname) {
   $(classname).addClass('active');
+}
+
+function countdown(second) {
+  var timeleft = second;
+  var timer = setInterval(function(){
+    if(timeleft <= 0){
+      clearInterval(timer);
+      window.location.href = 'dashboard.html'
+    }
+    $('#timer').html(timeleft);
+    timeleft -= 1;
+  }, 1000);
 }
