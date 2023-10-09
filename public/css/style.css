@@ -266,6 +266,10 @@ footer {
   color: #002F5D;
 }
 
+.instruction-progress-indicator-line.active {
+  background-color: #3FD3C3;
+}
+
 /* Background Image */
 .home-card-1 {
   background-image: url('../images/home-card-1.jpg');
@@ -344,6 +348,11 @@ footer {
 
 .partner-content, .application-content, .payment-content, .user-content {
   max-width: 768px;
+}
+
+.instruction-content {
+  height: 500px;
+  overflow-y: scroll;
 }
 
 /* Screen size */

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
+    <script src="../js/navbar.js" type="text/javascript" defer></script>
+    <script src="../js/footer.js" type="text/javascript" defer></script>
+    <script src="../js/candidate.js" type="text/javascript" defer></script>
+    <script src="../js/i18n.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <nav id='user-navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
+    <section class='user-content container mt-5 mb-5'>
+      <div class='row'>
+        <div class='col text-center'>
+          <h4 class='font-weight-bold mb-4'>考试须知</h4>
+          <p class='p-0 m-0 text-muted'>请根据以下流程准备考试</p>
+        </div>
+      </div>
+      <div id='instruction-progressbar' class='instruction-progress-indicator mt-4 mb-4'></div>
+      <div class='instruction-content instruction-two border rounded p-3'>
+        <div class='row mb-4'>
+          <div class='col'>
+            <h6>考⽣须仔细阅读以下内容，确保在线考试顺利进⾏。考前需知包含重要信息，不阅读将对考⽣成绩产⽣影响。请务必认真阅读并遵守 考前需知中的规定，以确保公正公平的考试环境。</h6>
+            <h5 class='font-weight-bold mt-3'>设备要求</h5>
+            <p>强烈建议考⽣遵照以下要求准备考试设备，以免考试失败。</p>
+            <div class='row'>
+              <div class='col-1'>
+                <img src='../images/candidate/icon-smartphone.png' width='35px'/>
+              </div>
+              <div class='col'>
+                <p class='pl-3 mt-2'>iPhone8Plus 以上, IOS 15以上；安卓6以上，建议⼿机屏幕 5.5⼨及以上</p>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-1'>
+                <img src='../images/candidate/icon-battery.png' width='35px'/>
+              </div>
+              <div class='col'>
+                <p class='pl-3 mt-2'>电量30%以上</p>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-1'>
+                <img src='../images/candidate/icon-wifi.png' width='35px'/>
+              </div>
+              <div class='col'>
+                <p class='pl-3 mt-2'>网速150KB以上</p>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-1'>
+                <img src='../images/candidate/icon-memory.png' width='35px'/>
+              </div>
+              <div class='col'>
+                <p class='pl-3 mt-2'>内存>2G 存储>1G</p>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-1'>
+                <img src='../images/candidate/icon-location.png' width='35px'/>
+              </div>
+              <div class='col'>
+                <p class='pl-3 mt-2'>开启位置权限</p>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-1'>
+                <img src='../images/candidate/icon-noti.png' width='35px'/>
+              </div>
+              <div class='col'>
+                <p class='pl-3 mt-2'>开启通知权限</p>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-1'>
+                <img src='../images/candidate/icon-camera.png' width='35px'/>
+              </div>
+              <div class='col'>
+                <p class='pl-3 mt-2'>允许使用摄像头</p>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-1'>
+                <img src='../images/candidate/icon-headphone.png' width='35px'/>
+              </div>
+              <div class='col'>
+                <p class='pl-3 mt-2'>建议使用耳机</p>
+              </div>
+            </div>
+            <h5 class='font-weight-bold mt-3'>重要信息</h5>
+            <ul>
+              <li>考试前7天，你会收到考前设备检测的邮件提醒通知。</li>
+            </ul>
+            <p>为了确保您能顺利进行考试，我们将对您的设备进行设备检测。请按照以下步骤下载并使用官方HSK口语考试App（HSK Official）进行设备检测。完成设备检测后，您才能参加考试。</p>
+            <p>请按照以下步骤操作：</p>
+            <p>1. 登录“官方HSK口语考试App”</p>
+            <img src='../images/candidate/app_1_zh.png' class='mx-auto d-block mb-4' />
+            <p>2. 登录后，按“考前检测”进入检测流程</p>
+            <img src='../images/candidate/app_2_zh.png' class='mx-auto d-block mb-4' />
+            <p>3. 核对个人信息无误，继续按“下一步”</p>
+            <img src='../images/candidate/app_3_zh.png' class='mx-auto d-block mb-4' />
+            <p>4. 依提示，然后按“拍摄”即可完成脸部信息核对</p>
+            <img src='../images/candidate/app_4_zh.png' class='mx-auto d-block mb-4' />
+            <p>5. 按步骤完成设备检测</p>
+            <img src='../images/candidate/app_5_zh.png' class='mx-auto d-block mb-4' />
+            <p>请注意，您必须完成设备检测才能参加考试。</p>
+            <ul>
+              <li>考试前2天，你会收到设备检测成功确认邮件以及准考证号</li>
+            </ul>
+            <h5 class='font-weight-bold mt-3'>重要提示</h5>
+            <ol>
+              <li>环境测试</li>
+              <ul>
+                <li>请在安静的环境中进行考试</li>
+                <li>确保网路环境畅通</li>
+                <li>房间内光线充足</li>
+                <li>且只有考生一人在考试空间内</li>
+              </ul>
+              <li>认证识别</li>
+              <ul>
+                <li>考试过程中将不定时进行多重认证识别</li>
+                <li>请保持面容在摄像头拍摄范围内</li>
+                <li>请保持正常的声线和音量</li>
+                <li>请允许APP获取位置，并确保考试地点与报名时选择的考点位置相同</li>
+                <li>如多次识别异常考试将被终止</li>
+              </ul>
+              <li>考试切换</li>
+              <ul>
+                <li>考试过程中不允许将APP切至后台</li>
+                <li>若不小心将APP切入后台，务必在15秒内回到考试介面，否则考试将被终止</li>
+                <li>如APP第二次切至后台，考试将立即被终止</li>
+              </ul>
+              <li>防止干扰</li>
+              <p class='p-0 m-0'>考试期间其他资讯提示会打断答题和影响考试</p>
+              <ul>
+                <li>受电话或资讯影响的题目将不得分</li>
+                <li>IOS系统，建议开启“引导式访问”功能</li>
+                <li>安卓系统，建议开启“萤幕固定”功能</li>
+              </ul>
+              <li>考试介面</li>
+              <p>请认真查看并熟悉以下考试介面，了解介面有助于顺利考试。</p>
+            </ol>
+            <img src='../images/candidate/app_6_zh.png' class='mx-auto d-block mb-4' />
+            <img src='../images/candidate/app_7_zh.png' class='mx-auto d-block mb-4' />
+            <h5 class='font-weight-bold mt-3'>异常警告</h5>
+            <p>考试过程中将进行多重检测，绿色外框代表考试顺利进行， 如考试无异常外框将保持绿色，直至考试结束。</p>
+            <img src='../images/candidate/app_8_zh.png' class='mx-auto d-block mb-4' />
+            <p>异常警告可分为以下五种：</p>
+            <p>异常警告一</p>
+            <ul>
+              <li>多重认证识别第一次异常，外框将变为浅红色</li>
+              <li>请尽快根据提示进行调整</li>
+              <li>浅红色外框状态仍能继续答题</li>
+              <li>调整后检测无异常外框将变回绿色</li>
+            </ul>
+            <img src='../images/candidate/app_9_zh.png' class='mx-auto d-block mb-4' />
+            <p>异常警告二</p>
+            <ul>
+              <li>多重认证识别第二次异常，外框将变为红色</li>
+              <li>请尽快根据提示进行调整</li>
+              <li>红色外框状态仍能继续答题</li>
+              <li>留意提示内容，减少异常情况发生</li>
+              <li>调整后检测无异常外框将变回绿色</li>
+            </ul>
+            <img src='../images/candidate/app_10_zh.png' class='mx-auto d-block mb-4' />
+            <p>异常警告三：严重警告</p>
+            <ul>
+              <li>多重认证识别第三次异常，外框将变为深红色（最后一次异常提醒）</li>
+              <li>考生务必根据提示进行调整</li>
+              <li>深红色外框状态仍能继续答题</li>
+              <li>再次发生异常情况，考试将被自动终止，将根据已完成的部分进行评分</li>
+              <li>调整后检测无异常外框将变回绿色</li>
+            </ul>
+            <img src='../images/candidate/app_11_zh.png' class='mx-auto d-block mb-4' />
+            <p>异常警告四：严重警告</p>
+            <p class='p-0 m-0'>严重违反的行为有：</p>
+            <ul>
+              <li>考试过程中面部及声纹识别三次异常</li>
+              <li>考试过程中两次退出app</li>
+              <li>考试过程中录屏或者截屏</li>
+              <li>考试过程中通话</li>
+            </ul>
+            <img src='../images/candidate/app_11_zh.png' class='mx-auto d-block mb-4' />
+            <p>异常警告五：考试已被终止</p>
+            <ul>
+              <li>认证识别多次异常，考生未根据提示完成调整</li>
+              <li>考试将根据已完成的部分进行评分</li>
+              <li>我们将复查试卷异常记录，若核实作弊情况，考试成绩将被取消</li>
+              <li>作弊的考生将被列入黑名单，两年内不得再报考试</li>
+            </ul>
+            <img src='../images/candidate/app_12_zh.png' class='mx-auto d-block mb-4' />
+          </div>
+        </div>
+      </div>
+      <div class='text-center mt-4'>
+        <a href='exam-instruction-step3.html' class='btn btn-sm p-2 pr-4 pl-4 mt-2 w180 active'>已完成阅读</a>
+      </div>
+    </section>
+    <footer id='user-footer' class='bg-secondary-color text-white'></footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  </body>
+<html>
