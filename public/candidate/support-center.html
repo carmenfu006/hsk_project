@@ -18,7 +18,63 @@
     <section class='user-content container'>
       <div class='row pt-5 pb-5 mb-5'>
         <div class='col-lg-1 col-md-12 col-sm-12'></div>
-        <div class='col-lg-11 col-md-12 col-sm-12 text-center'>
+        <div class='col-lg-11 col-md-12 col-sm-12'>
+          <div class='row'>
+            <div class='col text-center mb-5'>
+              <h4 class='font-weight-bold mb-2'>⽀援中⼼</h4>
+              <p class='p-0 m-0 text-muted'>如果你已通过app反馈过问题，请勿重复在本⻚⾯留⾔。</p>
+            </div>
+          </div>
+          <div class='row'>
+            <div class='col'>
+              <form id='support-center-form' class='mb-5'>
+                <div class='form-group'>
+                  <div class='row'>
+                    <div class='col-lg-6 col-md-12 col-sm-12 mt-1'>
+                      <label class=''>问题类型</label>
+                      <select class='form-control' id='question-type'>
+                        <option value=''>请选择问题相关类型</option>
+                      </select>
+                    </div>
+                    <div class='col-lg-6 col-md-12 col-sm-12 mt-1'>
+                      <label class=''>考试时间</label>
+                      <select class='form-control' id='exam-time'>
+                        <option value=''>请选择考试时间</option>
+                      </select>
+                      <p>
+                        <span>💡</span>
+                        <span>时间格式: </span>
+                        <span>(YYYY-MM-DD HH:MM) (UTC+8)</span>
+                      </p>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class='form-group'>
+                  <label class=''>使用设备</label>
+                  <input type='text' class='form-control' placeholder='请输入您使用的设备型号' name='equipment' id='equipment'>
+                </div>
+                <div class='form-group'>
+                  <label class=''>问题描述</label>
+                  <textarea class='form-control' rows='3' placeholder='问题描述' name='question' id='question'></textarea>
+                </div>
+                <label class=''>文件上传</label>
+                <div class='row no-gutters mb-3 file-upload'>
+                  <div class='col bg-white text-center'>
+                    <div class='pt-5 pb-3'>
+                      <label for='file' style='cursor: pointer;'><i class='fa-solid fa-arrow-up-from-bracket fa-2xl primary-color mb-4'></i></label>
+                      <p class='font-weight-bold mb-0'>点击或拖动文件到此区域进行上传。</p>
+                      <p class='text-muted'>(支持的文件格式：JPG; 最大文件大小为500KB)</p>
+                      <input type='file' accept='image/jpeg image/png' name='image' id='file' style='display: none;'>
+                    </div>
+                  </div>
+                </div>
+                <div class='text-center mt-4 d-flex justify-content-center'>
+                  <button type='submit' class='btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180 active'>提交</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>
