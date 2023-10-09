@@ -1,9 +1,11 @@
+const user_sidebar = document.getElementById('user-sidebar');
 const user_navbar = document.getElementById('user-navbar');
 const navbar = document.getElementById('navbar');
 const login_modal = document.getElementById('login-modal');
 const user_navbar_template = document.createElement('template');
 const navbar_template = document.createElement('template');
 const login_modal_template = document.createElement('template');
+const user_sidebar_template = document.createElement('template');
 
 navbar_template.innerHTML = `
   <a class='navbar-brand mr-auto' href='../index.html'><img src='images/logo.png' id='navbar-logo' class='img-fluid w-75' alt='Responsive image'></a>
@@ -125,7 +127,22 @@ user_navbar_template.innerHTML = `
   </div>
 `;
 
+user_sidebar_template.innerHTML = `
+  <a href='dashboard.html' class='w3-bar-item w3-button active'><i class='fa-solid fa-house mr-2'></i>个人主页</a>
+  <a href='exam-instruction.html' class='w3-bar-item w3-button'><i class='fa-solid fa-circle-exclamation mr-2'></i>考试须知</a>
+  <a href='#' class='w3-bar-item w3-button'><i class='fa-solid fa-mobile-screen mr-2'></i>设备检测指示</a>
+  <div class='border-bottom mt-3 mb-3'></div>
+  <a href='#' class='w3-bar-item w3-button'><i class='fa-solid fa-triangle-exclamation mr-2'></i>重要提示</a>
+  <a href='#' class='w3-bar-item w3-button'><i class='fa-solid fa-circle-xmark mr-2'></i>异常警告</a>
+  <div class='border-bottom mt-3 mb-3'></div>
+  <a href='#' class='w3-bar-item w3-button'><i class='fa-solid fa-shield-heart mr-2'></i>⽀援中⼼</a>
+  <a href='faqs.html' class='w3-bar-item w3-button'><i class='fa-solid fa-circle-question mr-2'></i>常⻅问题</a>
+  <div class='border-bottom mt-3 mb-3'></div>
+  <a href='#' class='w3-bar-item w3-button'><i class='fa-solid fa-gear mr-2'></i>考试记录</a>
+`;
+
 if (navbar) navbar.appendChild(navbar_template.content);
+if (user_sidebar) user_sidebar.appendChild(user_sidebar_template.content);
 if (user_navbar) user_navbar.appendChild(user_navbar_template.content);
 if (login_modal) login_modal.appendChild(login_modal_template.content);
 
