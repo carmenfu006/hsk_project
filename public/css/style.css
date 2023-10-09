@@ -96,6 +96,13 @@ button[disabled]{
   font-weight: bold;
 }
 
+.btn.warning {
+  border-radius: 32px;
+  color: #002F5D;
+  background-color: #FFC107;
+  font-weight: bold;
+}
+
 /* Form */
 .form-control:focus {
   border-color: #d6d8d9;
