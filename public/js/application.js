@@ -8,6 +8,9 @@ $('.toggle').click(function(){
 });
 
 progressIndicator()
+populateYear()
+populateMonth()
+populateDay()
 loadFile()
 activeClick('.month-item');
 checkboxSelect('.exam-datetime', true, '#exam-datetime');
@@ -238,4 +241,41 @@ function populateInfo() {
   if ($('.info-learning-time')) $('.info-learning-time').html(getSession('learning-time'));
   if ($('.info-hsk')) $('.info-hsk').html(getSession('hsk'));
   if ($('.info-hskk')) $('.info-hskk').html(getSession('hskk'));
+}
+
+function populateYear() {
+  let select_year = $('#birth-year');
+  let currentYear = (new Date()).getFullYear();
+  if (select_year) {
+    for (let i = currentYear; i >= currentYear-100; i--) {
+      let option = document.createElement("option");
+      option.value = i;
+      option.text = i;
+      select_year[0].appendChild(option)
+    }
+  }
+}
+
+function populateMonth() {
+  let select_month = $('#birth-month');
+  if (select_month) {
+    for (let i = 1; i <= 12; i++) {
+      let option = document.createElement("option");
+      option.value = i;
+      option.text = i;
+      select_month[0].appendChild(option)
+    }
+  }
+}
+
+function populateDay() {
+  let select_day = $('#birth-day');
+  if (select_day) {
+    for (let i = 1; i <= 31; i++) {
+      let option = document.createElement("option");
+      option.value = i;
+      option.text = i;
+      select_day[0].appendChild(option)
+    }
+  }
 }

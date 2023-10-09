@@ -6,7 +6,7 @@ const navbar_template = document.createElement('template');
 const login_modal_template = document.createElement('template');
 
 navbar_template.innerHTML = `
-  <a class='navbar-brand mr-auto' href='../index.html'><img src='images/logo.png' class='img-fluid w-75' alt='Responsive image'></a>
+  <a class='navbar-brand mr-auto' href='../index.html'><img src='images/logo.png' id='navbar-logo' class='img-fluid w-75' alt='Responsive image'></a>
   <a class='nav-link dropdown-toggle d-block d-sm-none d-md-block d-lg-none' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
     <i class='fa-solid fa-globe fa-lg secondary-color'></i>
   </a>
@@ -89,7 +89,7 @@ login_modal_template.innerHTML = `
 `;
 
 user_navbar_template.innerHTML = `
-  <a class='navbar-brand mr-auto' href='../home.html'><img src='../images/logo.png' class='img-fluid w-75' alt='Responsive image'></a>
+  <a class='navbar-brand mr-auto' href='../home.html'><img src='../images/logo.png' id='navbar-user-logo' class='img-fluid w-75' alt='Responsive image'></a>
   <a class='nav-link dropdown-toggle d-block d-sm-none d-md-block d-lg-none' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
     <i class='fa-solid fa-globe fa-lg secondary-color'></i>
   </a>

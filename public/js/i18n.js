@@ -475,18 +475,28 @@ function translateWeb(classname, zh, en, id, ar, input) {
   switch(lang) {
     case 'zh':
       translate(classname, zh, input)
+      $('#navbar-logo').attr('src', 'images/logo.png');
+      $('#navbar-user-logo').attr('src', '../images/logo.png');
       break;
     case 'en':
       translate(classname, en, input)
+      $('#navbar-logo').attr('src', 'images/logo_lang.png');
+      $('#navbar-user-logo').attr('src', '../images/logo_lang.png');
       break;
     case 'id':
       translate(classname, id, input)
+      $('#navbar-logo').attr('src', 'images/logo_lang.png');
+      $('#navbar-user-logo').attr('src', '../images/logo_lang.png');
       break;
     case 'ar':
       translate(classname, ar, input)
+      $('#navbar-logo').attr('src', 'images/logo_lang.png');
+      $('#navbar-user-logo').attr('src', '../images/logo_lang.png');
       break;
     default:
       translate(classname, zh, input)
+      $('#navbar-logo').attr('src', 'images/logo.png');
+      $('#navbar-user-logo').attr('src', '../images/logo.png');
   }
 }
 

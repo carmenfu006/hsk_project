@@ -11,15 +11,24 @@ footer_template.innerHTML = `
       </div>
     </div>
     <div class='row'>
-      <div class='col-lg-6 col-md-12 col-sm-12 fw400 fs12'>
-        <div class='row'>
+      <div class='col-lg-6 col-md-12 col-sm-12 fw500 fs14'>
+        <div class='row no-gutters'>
           <div class='col mb-2'>
             <span class='i18n-9'>联系我们</span>
             <span><a class='text-white' href='mailto:support@hskk.org'>: support@hskk.org</a></span>
           </div>
           <div class='col mb-2'>
-            <span class='i18n-10'>友情链接</span>
-            <span><a class='text-white' href='https://www.chinesetest.cn'>: www.chinesetest.cn</a></span>
+            <div class='d-flex justify-content-start'>
+              <span class='i18n-10'>友情链接</span>
+              <span class='ml-1'>:</span>
+              <a class='text-white' href='https://www.chinesetest.cn'>
+              <img src='images/chinese-testing-logo.png' width='40px' class='d-block ml-2 mr-1'/>
+              </a>
+              <a class='text-white' href='https://www.chinesetest.cn'>
+                <p class='p-0 m-0 fs11'>汉语考试服务网</p>
+                <p class='p-0 m-0 fs11'>www.chinesetest.cn</p>
+              </a>
+            </div>
           </div>
         </div>
         <div class='row'>
@@ -29,7 +38,7 @@ footer_template.innerHTML = `
           </div>
         </div>
       </div>
-      <div class='col-lg-6 col-md-12 col-sm-12 fw500 fs12'>
+      <div class='col-lg-6 col-md-12 col-sm-12 fw500 fs14'>
         <span class='i18n-12'>HSK口语移动端考试App下载</span>
         <div class='row pt-3 d-flex justify-content-start container'>
           <img src='images/mobile-app-store-badge.png' class='img-fluid mr-3 mb-2' alt='Responsive image'>
@@ -41,7 +50,7 @@ footer_template.innerHTML = `
     <div class='row border-bottom pt-5'></div>
     <div class='row pt-5 flex-lg-row flex-column-reverse'>
       <div class='col-lg-6 col-md-12 col-sm-12 order-lg-0 order-md-0 order-sm-0 fw400 fs12'>
-        Copyright © 2023 HSKk Mobile Exam Center. All rights reserved.
+        Copyright © 2023 HSKk Speaking Test Mobile Exam Center. All rights reserved.
       </div>
       <div class='col-lg-6 col-md-12 col-sm-12 order-lg-1 order-md-1 order-sm-1'>
         <div class='d-flex justify-content-lg-end mb-4'>
@@ -62,15 +71,24 @@ user_footer_template.innerHTML = `
       </div>
     </div>
     <div class='row'>
-      <div class='col-lg-6 col-md-12 col-sm-12 fw400 fs12'>
-        <div class='row'>
+      <div class='col-lg-6 col-md-12 col-sm-12 fw500 fs14'>
+        <div class='row no-gutters'>
           <div class='col mb-2'>
             <span class='i18n-9'>联系我们</span>
             <span><a class='text-white' href='mailto:support@hskk.org'>: support@hskk.org</a></span>
           </div>
           <div class='col mb-2'>
-            <span class='i18n-10'>友情链接</span>
-            <span><a class='text-white' href='https://www.chinesetest.cn'>: www.chinesetest.cn</a></span>
+            <div class='d-flex justify-content-start'>
+              <span class='i18n-10'>友情链接</span>
+              <span class='ml-1'>:</span>
+              <a class='text-white' href='https://www.chinesetest.cn'>
+              <img src='../images/chinese-testing-logo.png' width='40px' class='d-block ml-2 mr-1'/>
+              </a>
+              <a class='text-white' href='https://www.chinesetest.cn'>
+                <p class='p-0 m-0 fs11'>汉语考试服务网</p>
+                <p class='p-0 m-0 fs11'>www.chinesetest.cn</p>
+              </a>
+            </div>
           </div>
         </div>
         <div class='row'>
@@ -80,7 +98,7 @@ user_footer_template.innerHTML = `
           </div>
         </div>
       </div>
-      <div class='col-lg-6 col-md-12 col-sm-12 fw500 fs12'>
+      <div class='col-lg-6 col-md-12 col-sm-12 fw500 fs14'>
         <span class='i18n-12'>HSK口语移动端考试App下载</span>
         <div class='row pt-3 d-flex justify-content-start container'>
           <img src='../images/mobile-app-store-badge.png' class='img-fluid mr-3 mb-2' alt='Responsive image'>
@@ -92,7 +110,7 @@ user_footer_template.innerHTML = `
     <div class='row border-bottom pt-5'></div>
     <div class='row pt-5 flex-lg-row flex-column-reverse'>
       <div class='col-lg-6 col-md-12 col-sm-12 order-lg-0 order-md-0 order-sm-0 fw400 fs12'>
-        Copyright © 2023 HSKk Mobile Exam Center. All rights reserved.
+        Copyright © 2023 HSKk Speaking Test Mobile Exam Center. All rights reserved.
       </div>
       <div class='col-lg-6 col-md-12 col-sm-12 order-lg-1 order-md-1 order-sm-1'>
         <div class='d-flex justify-content-lg-end mb-4'>

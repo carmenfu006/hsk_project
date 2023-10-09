@@ -185,7 +185,7 @@ footer {
 }
 
 .fs28 {
-  font-size: 28px;
+  font-size: 28px !important;
 }
 
 /* Carousel Indicators */
