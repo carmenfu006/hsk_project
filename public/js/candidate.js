@@ -63,26 +63,42 @@ function dashboardPage() {
 
   switch(page) {
     case 'dashboard.html':
+      authoriseAccess()
       activeMenuBar('#dashboard-sidebar', '#dashboard-footbar')
       break;
+    case 'exam-instruction.html':
+      authoriseAccess()
+      break;
+    case 'exam-instruction-step2.html':
+      authoriseAccess()
+      break;
+    case 'exam-instruction-step3.html':
+      authoriseAccess()
+      break;
     case 'inspection-instruction.html':
+      authoriseAccess()
       activeMenuBar('#inspection-sidebar', '#inspection-footbar')
       break;
     case 'important-notice.html':
+      authoriseAccess()
       activeMenuBar('#notice-sidebar', '#notice-footbar')
       activeIndicator('.notice-indicator-dot')
       break;
     case 'abnormal-alert.html':
+      authoriseAccess()
       activeMenuBar('#alert-sidebar', '#alert-footbar')
       activeIndicator('.alert-indicator-dot')
       break;
     case 'support-center.html':
+      authoriseAccess()
       activeMenuBar('#support-sidebar', '#support-footbar')
       break;
     case 'faqs.html':
+      authoriseAccess()
       activeMenuBar('#faqs-sidebar', '#faqs-footbar')
       break;
     case 'exam-record.html':
+      authoriseAccess()
       activeMenuBar('#record-sidebar', '#record-footbar')
       activeIndicator('.status-filter')
       break;
@@ -109,4 +125,8 @@ function activeIndicator(classname) {
     $(classname).removeClass('active');
     $(this).addClass('active')
   })
+}
+
+function authoriseAccess() {
+  if (user == null) window.location.href = window.location.origin + '/candidate-login.html'
 }

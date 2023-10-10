@@ -56,11 +56,9 @@ navbar_template.innerHTML = `
         <a href='candidate-login.html' class='btn btn-sm active m-1 p-2 pr-3 pl-3 i18n-6'>考生登入/注册</a>
         <a href='partner-login.html' class='btn btn-sm active m-1 p-2 pr-3 pl-3 i18n-7'>合作方登入</a>
       </div>
-      <div id='user-login'>
-        <div class='d-flex'>
-          <span class='mt-2 pt-1'>登出</span>
-          <span><i class='fa-solid fa-right-from-bracket fa-lg mt-4 ml-2 align-self-center secondary-color d-block'></i></span>
-        </div>
+      <div id='user-logout' class='d-flex pointer'>
+        <span class='mt-2 pt-1'>登出</span>
+        <span><i class='fa-solid fa-right-from-bracket fa-lg mt-4 ml-2 align-self-center secondary-color d-block'></i></span>
       </div>
     </ul>
   </div>
@@ -119,7 +117,7 @@ user_navbar_template.innerHTML = `
           <a class='dropdown-item i18n' lang='ar'>عربي</a>
         </div>
       </li>
-      <div class='d-flex'>
+      <div id='user-logout' class='d-flex pointer'>
         <span class='mt-2 pt-1'>登出</span>
         <span><i class='fa-solid fa-right-from-bracket fa-lg mt-4 ml-2 align-self-center secondary-color d-block'></i></span>
       </div>
@@ -182,11 +180,27 @@ let user = sessionStorage.getItem('user');
 
 if (user == null) {
   $('#apply-menu-btn').remove()
-  $('#user-login').remove()
+  $('#user-logout').remove()
 } else {
   $('#apply-modal-btn').remove()
   $('#user-public').remove()
 }
+
+$('#to-candidate-dashboard').on('click', function(e) {
+  sessionStorage.setItem('user', 'true');
+  window.location.replace($(this)[0].form.action);
+});
+
+$('#to-partner-dashboard').on('click', function(e) {
+  sessionStorage.setItem('partner', 'true');
+  window.location.replace($(this)[0].form.action);
+});
+
+$('#user-logout').on('click', function(e) {
+  sessionStorage.removeItem('user');
+  sessionStorage.removeItem('partner');
+  window.location.href = window.location.origin;
+});
 
 // var loc = window.location.pathname;
 // var path = loc.substring(0, loc.lastIndexOf('/'));
