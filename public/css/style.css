@@ -377,6 +377,18 @@ div.record {
   background-color: #febbbb7e;
 }
 
+.card.status-ongoing {
+  border-top: 2px solid #8e8e8e;
+}
+
+.card.status-terminate {
+  border-top: 2px solid #FC5555;
+}
+
+.card.status-result {
+  border-top: 2px solid #3FD3C3;
+}
+
 /* Footbar */
 .user-footbar {
   overflow-x: scroll;
