@@ -1,9 +1,11 @@
 const footer = document.getElementById('footer');
 const user_footer = document.getElementById('user-footer');
 const user_footbar = document.getElementById('user-footbar');
+const partner_footbar = document.getElementById('partner-footbar');
 const footer_template = document.createElement('template');
 const user_footer_template = document.createElement('template');
 const user_footbar_template = document.createElement('template');
+const partner_footbar_template = document.createElement('template');
 
 footer_template.innerHTML = `
   <div class='container pt-5 pb-5'>
@@ -178,6 +180,32 @@ user_footbar_template.innerHTML = `
   </div>
 `;
 
+partner_footbar_template.innerHTML = `
+  <div class='d-flex justify-content-center'>
+  <div class='row partner-footbar-width'>
+    <div id='candidate-management-footbar' class='col text-center pt-2 nav-footbar'>
+      <a href='candidate-management.html'>
+        <i class='fa-solid fa-user'></i>
+        <p>考⽣管理</p>
+      </a>
+    </div>
+    <div id='faqs-footbar' class='col text-center pt-2 nav-footbar'>
+      <a href='faqs.html'>
+        <i class='fa-solid fa-comment-dots'></i>
+        <p>常⻅问题</p>
+      </a>
+    </div>
+    <div id='support-footbar' class='col text-center pt-2 nav-footbar'>
+      <a href='support-center.html'>
+        <i class='fa-solid fa-shield-heart'></i>
+        <p>⽀援中⼼</p>
+      </a>
+    </div>
+  </div>
+  </div>
+`;
+
 if (footer) footer.appendChild(footer_template.content);
 if (user_footer) user_footer.appendChild(user_footer_template.content);
 if (user_footbar) user_footbar.appendChild(user_footbar_template.content);
+if (partner_footbar) partner_footbar.appendChild(partner_footbar_template.content);

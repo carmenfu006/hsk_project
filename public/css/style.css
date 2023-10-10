@@ -390,12 +390,16 @@ div.record {
 }
 
 /* Footbar */
-.user-footbar {
+.user-footbar, partner-footbar {
   overflow-x: scroll;
 }
 
 .user-footbar-width {
   width: 768px;
+}
+
+.partner-footbar-width {
+  width: 340px;
 }
 
 .nav-footbar.active {

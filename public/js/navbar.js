@@ -1,3 +1,4 @@
+const partner_sidebar = document.getElementById('partner-sidebar');
 const user_sidebar = document.getElementById('user-sidebar');
 const user_navbar = document.getElementById('user-navbar');
 const navbar = document.getElementById('navbar');
@@ -6,6 +7,7 @@ const user_navbar_template = document.createElement('template');
 const navbar_template = document.createElement('template');
 const login_modal_template = document.createElement('template');
 const user_sidebar_template = document.createElement('template');
+const partner_sidebar_template = document.createElement('template');
 
 navbar_template.innerHTML = `
   <a class='navbar-brand mr-auto' href='../index.html'><img src='images/logo.png' id='navbar-logo' class='img-fluid w-75' alt='Responsive image'></a>
@@ -163,7 +165,23 @@ user_sidebar_template.innerHTML = `
   </a>
 `;
 
+partner_sidebar_template.innerHTML = `
+  <a href='candidate-management.html' id='candidate-management-sidebar' class='w3-bar-item w3-button rounded'>
+    <i class='fa-solid fa-user mr-2'></i>
+    <span>考⽣管理</span>
+  </a>
+  <a href='faqs.html' id='faqs-sidebar' class='w3-bar-item w3-button rounded'>
+    <i class='fa-solid fa-comment-dots mr-2'></i>
+    <span>常⻅问题</span>
+  </a>
+  <a href='support-center.html' id='support-sidebar' class='w3-bar-item w3-button rounded'>
+    <i class='fa-solid fa-shield-heart mr-2'></i>
+    <span>⽀援中⼼</span>
+  </a>
+`;
+
 if (navbar) navbar.appendChild(navbar_template.content);
+if (partner_sidebar) partner_sidebar.appendChild(partner_sidebar_template.content);
 if (user_sidebar) user_sidebar.appendChild(user_sidebar_template.content);
 if (user_navbar) user_navbar.appendChild(user_navbar_template.content);
 if (login_modal) login_modal.appendChild(login_modal_template.content);
@@ -177,12 +195,19 @@ $('.menu-btn').on('click', function() {
 // sessionStorage.removeItem('user')
 
 let user = sessionStorage.getItem('user');
+let partner = sessionStorage.getItem('partner');
 
 if (user == null) {
   $('#apply-menu-btn').remove()
   $('#user-logout').remove()
 } else {
   $('#apply-modal-btn').remove()
+  $('#user-public').remove()
+}
+
+if (partner == null) {
+  $('#user-logout').remove()
+} else {
   $('#user-public').remove()
 }
 

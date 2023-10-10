@@ -103,7 +103,7 @@ function dashboardPage() {
       activeIndicator('.status-filter')
       break;
     default:
-      activeProgressBar('.step-1');
+      authoriseAccess()
   }
 }
 
