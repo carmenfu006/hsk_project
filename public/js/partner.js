@@ -15,6 +15,7 @@ function dashboardPage() {
     case 'candidate-management.html':
       authoriseAccess()
       activeMenuBar('#candidate-management-sidebar', '#candidate-management-footbar')
+      activeIndicator('.level-bar-item')
       break;
     case 'support-center.html':
       authoriseAccess()
@@ -32,6 +33,13 @@ function dashboardPage() {
 function activeMenuBar(sidebarId, footbarId) {
   $(sidebarId).addClass('active');
   $(footbarId).addClass('active');
+}
+
+function activeIndicator(classname) {
+  $(classname).on('click', function(event) {
+    $(classname).removeClass('active');
+    $(this).addClass('active')
+  })
 }
 
 function authoriseAccess() {

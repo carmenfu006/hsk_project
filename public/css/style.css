@@ -389,6 +389,37 @@ div.record {
   border-top: 2px solid #3FD3C3;
 }
 
+/* Partner Candidate Management */
+.level-bar {
+  border: 1px solid #3FD3C3;
+  border-radius: 16px;
+  background-color: #D9F6F3;
+}
+
+.border-left {
+  border-color: #3FD3C3 !important;
+}
+
+.level-bar-item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.level-bar-item.left {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.level-bar-item.right {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.level-bar-item.active {
+  background-color: #3FD3C3;
+}
+
 /* Footbar */
 .user-footbar, partner-footbar {
   overflow-x: scroll;
