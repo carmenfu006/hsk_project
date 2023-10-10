@@ -74,6 +74,7 @@ function dashboardPage() {
       break;
     case 'abnormal-alert.html':
       activeMenuBar('#alert-sidebar', '#alert-footbar')
+      activeIndicator('.alert-indicator-dot')
       break;
     case 'support-center.html':
       activeMenuBar('#support-sidebar', '#support-footbar')

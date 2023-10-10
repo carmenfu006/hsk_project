@@ -292,13 +292,13 @@ footer {
   background-color: #3fd3c42d;
 }
 
-/* Notice Card */
-.notice-card-content {
+/* Notice & Alert Card */
+.notice-card-content, .alert-card-content {
   /* overflow-x: scroll; */
   overflow: hidden;
 }
 
-.notice-card-width {
+.notice-card-width, .alert-card-width {
   width: auto;
 }
 
@@ -308,7 +308,13 @@ footer {
   margin-right: 1rem;
 }
 
-.notice-indicator-dot {
+.alert-card {
+  min-width: 21.5rem;
+  height: 35rem;
+  margin-right: 1rem;
+}
+
+.notice-indicator-dot, .alert-indicator-dot {
   width: 10px;
   height: 10px;
   border-radius: 100%;
@@ -316,10 +322,34 @@ footer {
   margin-right: 10px;
 }
 
-.notice-indicator-dot.active {
+.notice-indicator-dot.active, .alert-indicator-dot.active {
   background-color: #3FD3C3;
   width: 30px;
-  border-radius: 28%;
+  border-radius: 11px;
+}
+
+.alert-card-body {
+  border-radius: 19.20px;
+}
+
+#alert-card-1 {
+  background-color: #C5F2ED;
+}
+
+#alert-card-2 {
+  background-color: #FEBBBB;
+}
+
+#alert-card-3 {
+  background-color: #FC6E6E;
+}
+
+#alert-card-4 {
+  background-color: #FB3E3E;
+}
+
+#alert-card-5, #alert-card-6 {
+  background-color: #FB3C3C;
 }
 
 /* Footbar */

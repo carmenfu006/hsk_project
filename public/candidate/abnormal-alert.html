@@ -15,10 +15,94 @@
   <body class='bg-grey-color'>
     <nav id='user-navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
     <nav id='user-sidebar' class='w3-sidebar w3-bar-block d-none d-lg-block pt-3'></nav>
-    <section class='user-content container'>
-      <div class='row pt-5 pb-5 mb-5'>
-        <div class='col-lg-1 col-md-12 col-sm-12'></div>
-        <div class='col-lg-11 col-md-12 col-sm-12 text-center'>
+    <section class='side-content'>
+      <div id='alert-card-content' class='alert-card-content'>
+        <div class='d-flex pt-5 mb-3 alert-card-width'>
+          <div id='alert-card-1' class='card alert-card p-3 rounded-0 border-0 shadow-sm'>
+            <div class='card-body alert-card-body bg-white'>
+              <h4 class='font-weight-bold mt-5 text-center'>异常警告</h4>
+              <ul class='p-0 pl-3'>
+                <li>考试过程中将进行多重检测</li>
+                <li>绿色外框代表考试顺利进行</li>
+                <li>如考试无异常外框将保持绿色，直至考试结束。</li>
+              </ul>
+            </div>
+          </div>
+          <div id='alert-card-2' class='card alert-card p-3 rounded-0 border-0 shadow-sm'>
+            <div class='card-body alert-card-body bg-white'>
+              <h4 class='font-weight-bold mt-5 text-center'>异常警告</h4>
+              <ul class='p-0 pl-3'>
+                <li>多重认证识别第一次异常，外框将变为浅红色</li>
+                <li>请尽快根据提示进行调整</li>
+                <li>浅红色外框状态仍能继续答题</li>
+                <li>调整后检测无异常外框将变回绿色</li>
+              </ul>
+            </div>
+          </div>
+          <div id='alert-card-3' class='card alert-card p-3 rounded-0 border-0 shadow-sm'>
+            <div class='card-body alert-card-body bg-white'>
+              <h4 class='font-weight-bold mt-5 text-center'>异常警告</h4>
+              <ul class='p-0 pl-3'>
+                <li>多重认证识别第二次异常，外框将变为红色</li>
+                <li>请尽快根据提示进行调整</li>
+                <li>红色外框状态仍能继续答题</li>
+                <li>留意提示内容，减少异常情况发生</li>
+                <li>调整后检测无异常外框将变回绿色</li>
+              </ul>
+            </div>
+          </div>
+          <div id='alert-card-4' class='card alert-card p-3 rounded-0 border-0 shadow-sm'>
+            <div class='card-body alert-card-body bg-white'>
+              <h4 class='font-weight-bold mt-5 text-center'>异常警告</h4>
+              <ul class='p-0 pl-3'>
+                <li>多重认证识别第三次异常，外框将变为深红色（最后一次异常提醒）</li>
+                <li>考生务必根据提示进行调整</li>
+                <li>深红色外框状态仍能继续答题</li>
+                <li>再次发生异常情况，考试将被自动终止，将根据已完成的部分进行评分</li>
+                <li>调整后检测无异常外框将变回绿色</li>
+              </ul>
+            </div>
+          </div>
+          <div id='alert-card-5' class='card alert-card p-3 rounded-0 border-0 shadow-sm'>
+            <div class='card-body alert-card-body bg-white'>
+              <h4 class='font-weight-bold mt-5 text-center'>异常警告</h4>
+              <p>严重违反的行为有：</p>
+              <ul class='p-0 pl-3'>
+                <li>考试过程中面部及声纹识别三次异常</li>
+                <li>考试过程中两次退出app</li>
+                <li>考试过程中录屏或者截屏</li>
+                <li>考试过程中通话</li>
+              </ul>
+            </div>
+          </div>
+          <div id='alert-card-6' class='card alert-card p-3 rounded-0 border-0 shadow-sm'>
+            <div class='card-body alert-card-body bg-white'>
+              <div class='row mt-5 text-center'>
+                <div class='col'>
+                  <i class='fa-solid fa-circle-xmark fa-5x mb-3' style='color: #fb3c3c;'></i>
+                  <h4 class='font-weight-bold'>考试已被终止</h4>
+                </div>
+              </div>
+              <ul class='p-0 pl-3'>
+                <li>认证识别多次异常，考生未根据提示完成调整</li>
+                <li>考试将根据已完成的部分进行评分</li>
+                <li>我们将复查试卷异常记录，若核实作弊情况，考试成绩将被取消</li>
+                <li>作弊的考生将被列入黑名单，两年内不得再报考试</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='user-content container notice-card-indicator pb-5 mb-5'>
+        <div class='row'>
+          <div class='col d-flex justify-content-center'>
+            <a href='abnormal-alert.html#alert-card-1' class='alert-indicator-dot active'></a>
+            <a href='abnormal-alert.html#alert-card-2' class='alert-indicator-dot'></a>
+            <a href='abnormal-alert.html#alert-card-3' class='alert-indicator-dot'></a>
+            <a href='abnormal-alert.html#alert-card-4' class='alert-indicator-dot'></a>
+            <a href='abnormal-alert.html#alert-card-5' class='alert-indicator-dot'></a>
+            <a href='abnormal-alert.html#alert-card-6' class='alert-indicator-dot'></a>
+          </div>
         </div>
       </div>
     </section>
