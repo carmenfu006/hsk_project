@@ -15,10 +15,98 @@
   <body class='bg-grey-color'>
     <nav id='user-navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
     <nav id='user-sidebar' class='w3-sidebar w3-bar-block d-none d-lg-block pt-3'></nav>
-    <section class='user-content container'>
-      <div class='row pt-5 pb-5 mb-5'>
-        <div class='col-lg-1 col-md-12 col-sm-12'></div>
-        <div class='col-lg-11 col-md-12 col-sm-12 text-center'>
+    <section class='side-content container'>
+      <div class='d-flex justify-content-between mt-3'>
+        <h4 class='font-weight-bold'>考试记录</h4>
+        <div class='d-flex exam-record-status mt-2'>
+          <p class='btn status-filter active'>全部</p>
+          <p class='btn status-filter'>未完成</p>
+          <p class='btn status-filter'>已完成</p>
+        </div>
+      </div>
+      <div class='card'>
+        <div class='card-header bg-white'>
+          <div class='row text-center'>
+            <div class='col'>
+              <h6 class='font-weight-bold'>准考证号</h6>
+            </div>
+            <div class='col'>
+              <h6 class='font-weight-bold'>考试级别</h6>
+            </div>
+            <div class='col'>
+              <h6 class='font-weight-bold'>考试时间</h6>
+            </div>
+            <div class='col'>
+              <h6 class='font-weight-bold'>状态/成绩</h6>
+            </div>
+          </div>
+        </div>
+        <div class='card-body border-bottom'>
+          <div class='row text-center'>
+            <div class='col'>
+              <div class='record'>H90717839090100023</div>
+            </div>
+            <div class='col'>
+              <div class='record'>HSK口语（初级）</div>
+            </div>
+            <div class='col'>
+              <div class='record'>2023-07-24 11:00(GTM+08:00)</div>
+            </div>
+            <div class='col'>
+              <div class='btn'>已付款待考试</div>
+            </div>
+          </div>
+        </div>
+        <div class='card-body border-bottom'>
+          <div class='row text-center'>
+            <div class='col'>
+              <div class='record'>H90717839090100023</div>
+            </div>
+            <div class='col'>
+              <div class='record'>HSK口语（初级）</div>
+            </div>
+            <div class='col'>
+              <div class='record'>2023-07-24 11:00(GTM+08:00)</div>
+            </div>
+            <div class='col'>
+              <div class='btn status-ongoing'>阅卷中</div>
+            </div>
+          </div>
+        </div>
+        <div class='card-body border-bottom'>
+          <div class='row text-center'>
+            <div class='col'>
+              <div class='record'>H90717839090100023</div>
+            </div>
+            <div class='col'>
+              <div class='record'>HSK口语（初级）</div>
+            </div>
+            <div class='col'>
+              <div class='record'>2023-07-24 11:00(GTM+08:00)</div>
+            </div>
+            <div class='col'>
+              <div class='btn status-terminate'>考试中断</div>
+            </div>
+          </div>
+        </div>
+        <div class='card-body border-bottom'>
+          <div class='row text-center'>
+            <div class='col'>
+              <div class='record'>H90717839090100023</div>
+            </div>
+            <div class='col'>
+              <div class='record'>HSK口语（初级）</div>
+            </div>
+            <div class='col'>
+              <div class='record'>2023-07-24 11:00(GTM+08:00)</div>
+            </div>
+            <div class='col'>
+              <div class='btn active'>查看本次成绩</div>
+            </div>
+          </div>
+        </div>
+        <div class='card-body border-bottom text-muted'>
+          * 考试时间格式：年-月-日
         </div>
       </div>
     </section>

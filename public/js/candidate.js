@@ -84,6 +84,7 @@ function dashboardPage() {
       break;
     case 'exam-record.html':
       activeMenuBar('#record-sidebar', '#record-footbar')
+      activeIndicator('.status-filter')
       break;
     default:
       activeProgressBar('.step-1');

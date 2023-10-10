@@ -352,6 +352,31 @@ footer {
   background-color: #FB3C3C;
 }
 
+/* Exam Record */
+.status-filter {
+  color: #a5a5a5;
+  /* margin-left: 10px; */
+}
+
+.status-filter.active {
+  color: #002F5D;
+  background-color: #3fd3c42d;
+  border-radius: 24px;
+}
+
+div.record {
+  padding-top: 6px;
+}
+
+.btn.status-ongoing {
+  background-color: #CCE4FB;
+}
+
+.btn.status-terminate {
+  color: #FC5555;
+  background-color: #febbbb7e;
+}
+
 /* Footbar */
 .user-footbar {
   overflow-x: scroll;
@@ -553,7 +578,7 @@ footer {
   }
 
   .side-content {
-    padding-left: 5px;
+    padding-left: 25px;
   }
 
   /* .progress-indicator-width {
