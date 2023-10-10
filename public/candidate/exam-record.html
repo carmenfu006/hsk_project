@@ -101,7 +101,7 @@
               <div class='record'>2023-07-24 11:00(GTM+08:00)</div>
             </div>
             <div class='col'>
-              <div class='btn active'>查看本次成绩</div>
+              <div class='btn active' data-toggle='modal' data-target='.modal-exam-result'>查看本次成绩</div>
             </div>
           </div>
         </div>
@@ -177,8 +177,37 @@
                 <p class='card-text'>H90717839090100023</p>
                 <p class='card-text'>HSK口语（初级）</p>
                 <p class='card-text'>2023-07-24 11:00(GTM+08:00)</p>
-                <div class='btn active status-result'>查看本次成绩</div>
+                <div class='btn active status-result' data-toggle='modal' data-target='.modal-exam-result'>查看本次成绩</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='modal fade modal-exam-result' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
+        <div class='modal-dialog modal-sm'>
+          <div class='modal-content'>
+            <div class='modal-header border-0 justify-content-center'>
+              <h5 class='modal-title font-weight-bold'>成绩报告</h5>
+            </div>
+            <div class='modal-body'>
+              <div class='row no-gutters'>
+                <div class='col-3'>
+                  <p class='card-text font-weight-bold'>姓名</p>
+                  <p class='card-text font-weight-bold'>考试⽇期</p>
+                  <p class='card-text font-weight-bold'>考试时间</p>
+                  <p class='card-text font-weight-bold'>考试级别</p>
+                </div>
+                <div class='col'>
+                  <p class='card-text'>陈大文</p>
+                  <p class='card-text'>2023-07-24</p>
+                  <p class='card-text'>11:00(GTM+08:00)</p>
+                  <p class='card-text'>HSK口语（初级）</p>
+                </div>
+              </div>
+            </div>
+            <div class='modal-footer border-0 flex-lg-row flex-column-reverse justify-content-center'>
+              <button type='button' class='btn btn-sm p-2 w120' data-dismiss='modal'>返回</button>
+              <button type='button' class='btn btn-sm p-2 w120 active'>打印成绩报告</button>
             </div>
           </div>
         </div>

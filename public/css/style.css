@@ -116,15 +116,15 @@ input[type=checkbox] {
 
 /* Width */
 .w85 {
-  max-width: 85px !important;
+  width: 85px !important;
 }
 
 .w120 {
-  max-width: 120px !important;
+  width: 120px !important;
 }
 
 .w175 {
-  max-width: 175px !important;
+  width: 175px !important;
 }
 
 .w180 {
