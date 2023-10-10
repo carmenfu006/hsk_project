@@ -70,6 +70,7 @@ function dashboardPage() {
       break;
     case 'important-notice.html':
       activeMenuBar('#notice-sidebar', '#notice-footbar')
+      activeIndicator('.notice-indicator-dot')
       break;
     case 'abnormal-alert.html':
       activeMenuBar('#alert-sidebar', '#alert-footbar')
@@ -91,4 +92,19 @@ function dashboardPage() {
 function activeMenuBar(sidebarId, footbarId) {
   $(sidebarId).addClass('active');
   $(footbarId).addClass('active');
+}
+
+function setSession(key, value) {
+  sessionStorage.setItem(key, value);
+}
+
+function getSession(key) {
+  return sessionStorage.getItem(key);
+}
+
+function activeIndicator(classname) {
+  $(classname).on('click', function(event) {
+    $(classname).removeClass('active');
+    $(this).addClass('active')
+  })
 }

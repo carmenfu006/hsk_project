@@ -292,6 +292,36 @@ footer {
   background-color: #3fd3c42d;
 }
 
+/* Notice Card */
+.notice-card-content {
+  /* overflow-x: scroll; */
+  overflow: hidden;
+}
+
+.notice-card-width {
+  width: auto;
+}
+
+.notice-card {
+  min-width: 22rem;
+  height: 35rem;
+  margin-right: 1rem;
+}
+
+.notice-indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #CFCFCF;
+  margin-right: 10px;
+}
+
+.notice-indicator-dot.active {
+  background-color: #3FD3C3;
+  width: 30px;
+  border-radius: 28%;
+}
+
 /* Footbar */
 .user-footbar {
   overflow-x: scroll;
@@ -481,11 +511,19 @@ footer {
     top: 30px;
     right: 25px;
   }
+
+  .side-content {
+    margin-left: 220px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .home-bg-image-1 {
     background-size: 100% 100%;
+  }
+
+  .side-content {
+    padding-left: 5px;
   }
 
   /* .progress-indicator-width {
