@@ -2,6 +2,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 
+const recaptchaSecretKey = process.env.RECAPTCHA_SECRET_KEY
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY
 const stripePublicKey = process.env.STRIPE_PUBLIC_KEY
 const stripe = require("stripe")(stripeSecretKey);
@@ -65,18 +66,7 @@ app.post('/recaptcha', (req, res) => {
     return res.json({'status': false, 'message' : '1'})
   }
 
-  const secretKey = '6LduQIkoAAAAAOFdCVYTkK8zx-5am_M0lsNzkvMm';
-  const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captchaResponse}`;
-
-  // request(url, (err, response, body) => {
-  //   body = JSON.parse(body);
-
-  //   if (body.success !== undefined && !body.success) {
-  //     return res.json({'status' : false, 'message' : '1'})
-  //   }
-
-  //   return res.json({'status' : true})
-  // })
+  const url = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecretKey}&response=${req.body.captchaResponse}`;
 
   https.get(url, (response) => {
     let data = '';
