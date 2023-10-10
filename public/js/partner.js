@@ -25,8 +25,6 @@ function dashboardPage() {
       authoriseAccess()
       activeMenuBar('#faqs-sidebar', '#faqs-footbar')
       break;
-    default:
-      authoriseAccess()
   }
 }
 
@@ -43,5 +41,5 @@ function activeIndicator(classname) {
 }
 
 function authoriseAccess() {
-  if (partner == null) window.location.href = window.location.origin + '/partner-login.html'
+  if (partner == null) window.location.href = window.location.origin + '/partner-login'
 }

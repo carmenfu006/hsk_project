@@ -102,8 +102,6 @@ function dashboardPage() {
       activeMenuBar('#record-sidebar', '#record-footbar')
       activeIndicator('.status-filter')
       break;
-    default:
-      authoriseAccess()
   }
 }
 
@@ -128,5 +126,5 @@ function activeIndicator(classname) {
 }
 
 function authoriseAccess() {
-  if (user == null) window.location.href = window.location.origin + '/candidate-login.html'
+  if (user == null) window.location.href = window.location.origin + '/candidate-login'
 }

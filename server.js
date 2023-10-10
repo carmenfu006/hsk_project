@@ -10,6 +10,7 @@ const express = require('express');
 const app = express();
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
+const https = require('https');
 // const fs = require('fs')
 
 app.set('view engine', 'ejs');
@@ -49,6 +50,48 @@ app.post('/update-payment-intent', async (req, res) => {
     { amount: amount }
   )
   res.status(200).send({status: 'complete'})
+})
+
+app.get('/candidate-login', async (req, res) => {
+  res.render('candidate-login')
+})
+
+app.get('/partner-login', async (req, res) => {
+  res.render('partner-login')
+})
+
+app.post('/recaptcha', (req, res) => {
+  if (req.body.captchaResponse === undefined || req.body.captchaResponse === '' || req.body.captchaResponse === null) {
+    return res.json({'status': false, 'message' : '1'})
+  }
+
+  const secretKey = '6LduQIkoAAAAAOFdCVYTkK8zx-5am_M0lsNzkvMm';
+  const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captchaResponse}`;
+
+  // request(url, (err, response, body) => {
+  //   body = JSON.parse(body);
+
+  //   if (body.success !== undefined && !body.success) {
+  //     return res.json({'status' : false, 'message' : '1'})
+  //   }
+
+  //   return res.json({'status' : true})
+  // })
+
+  https.get(url, (response) => {
+    let data = '';
+    response.on('data', (chunk) => {
+      data += chunk
+    })
+
+    response.on('end', () => {
+      return res.json({'status' : true})
+    })
+  })
+  .on('error', (error) => {
+    return res.json({'status' : false})
+  })
+
 })
 
 app.listen(3000)

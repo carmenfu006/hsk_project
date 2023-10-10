@@ -55,10 +55,14 @@ navbar_template.innerHTML = `
         </div>
       </li>
       <div id='user-public'>
-        <a href='candidate-login.html' class='btn btn-sm active m-1 p-2 pr-3 pl-3 i18n-6'>考生登入/注册</a>
-        <a href='partner-login.html' class='btn btn-sm active m-1 p-2 pr-3 pl-3 i18n-7'>合作方登入</a>
+        <a href='candidate-login' class='btn btn-sm active m-1 p-2 pr-3 pl-3 i18n-6'>考生登入/注册</a>
+        <a href='partner-login' class='btn btn-sm active m-1 p-2 pr-3 pl-3 i18n-7'>合作方登入</a>
       </div>
       <div id='user-logout' class='d-flex pointer'>
+        <span class='mt-2 pt-1'>登出</span>
+        <span><i class='fa-solid fa-right-from-bracket fa-lg mt-4 ml-2 align-self-center secondary-color d-block'></i></span>
+      </div>
+      <div id='partner-logout' class='d-flex pointer'>
         <span class='mt-2 pt-1'>登出</span>
         <span><i class='fa-solid fa-right-from-bracket fa-lg mt-4 ml-2 align-self-center secondary-color d-block'></i></span>
       </div>
@@ -83,7 +87,7 @@ login_modal_template.innerHTML = `
         </div>
         <div class='modal-footer border-0 flex-lg-row flex-column-reverse justify-content-center'>
           <button type='button' class='btn btn-sm p-2 w180' data-dismiss='modal'>取消</button>
-          <button type='button' class='btn btn-sm p-2 w180 active'>考生登入/注册</button>
+          <a href='candidate-login' class='btn btn-sm p-2 w180 active'>考生登入/注册</a>
         </div>
       </div>
     </div>
@@ -120,6 +124,10 @@ user_navbar_template.innerHTML = `
         </div>
       </li>
       <div id='user-logout' class='d-flex pointer'>
+        <span class='mt-2 pt-1'>登出</span>
+        <span><i class='fa-solid fa-right-from-bracket fa-lg mt-4 ml-2 align-self-center secondary-color d-block'></i></span>
+      </div>
+      <div id='partner-logout' class='d-flex pointer'>
         <span class='mt-2 pt-1'>登出</span>
         <span><i class='fa-solid fa-right-from-bracket fa-lg mt-4 ml-2 align-self-center secondary-color d-block'></i></span>
       </div>
@@ -206,22 +214,56 @@ if (user == null) {
 }
 
 if (partner == null) {
-  $('#user-logout').remove()
+  $('#partner-logout').remove()
 } else {
   $('#user-public').remove()
 }
 
 $('#to-candidate-dashboard').on('click', function(e) {
-  sessionStorage.setItem('user', 'true');
-  window.location.replace($(this)[0].form.action);
+  e.preventDefault();
+  const captchaResponse = grecaptcha.getResponse()
+
+  fetch('/recaptcha', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type' : 'application/json'
+    },
+      body: JSON.stringify({captchaResponse: captchaResponse})
+  })
+  .then(r => r.json())
+  .then((data) => {
+    console.log(data.status)
+    if (data.status == true) {
+      sessionStorage.setItem('user', 'true');
+      window.location.replace($(this)[0].form.action);
+    }
+  });
 });
 
 $('#to-partner-dashboard').on('click', function(e) {
-  sessionStorage.setItem('partner', 'true');
-  window.location.replace($(this)[0].form.action);
+  e.preventDefault();
+  const captchaResponse = grecaptcha.getResponse()
+
+  fetch('/recaptcha', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type' : 'application/json'
+    },
+      body: JSON.stringify({captchaResponse: captchaResponse})
+  })
+  .then(r => r.json())
+  .then((data) => {
+    console.log(data.status)
+    if (data.status == true) {
+      sessionStorage.setItem('partner', 'true');
+      window.location.replace($(this)[0].form.action);
+    }
+  });
 });
 
-$('#user-logout').on('click', function(e) {
+$('#user-logout, #partner-logout').on('click', function(e) {
   sessionStorage.removeItem('user');
   sessionStorage.removeItem('partner');
   window.location.href = window.location.origin;
