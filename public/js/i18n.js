@@ -1113,8 +1113,73 @@ translateWeb(
   'Petunjuk Ujian',
   'تعليمات الاختبار'
 )
-
-translateWeb('.i18n-0', '验证码', 'Verification code', 'Kode verifikasi', 'رمز التحقق', true)
+translateWeb(
+  '.i18n-159',
+  '登入/註冊',
+  'Login/Register',
+  'Masuk/Daftar',
+  'تسجيل الدخول / التسجيل'
+)
+translateWeb(
+  '.i18n-160',
+  '登入',
+  'Login',
+  'Masuk',
+  'تسجيل الدخول'
+)
+translateWeb(
+  '.i18n-161',
+  '邮箱',
+  'Email',
+  'Email',
+  'البريد الإلكتروني',
+  true
+)
+translateWeb(
+  '.i18n-162',
+  '验证码',
+  'Verification code',
+  'Kode verifikasi',
+  'رمز التحقق',
+  true
+)
+translateWeb(
+  '.i18n-163',
+  '如果未注册，填入邮箱和验证码后，会自动帮你注册账号。如果已注册，请用之前登录过的email登入。',
+  'If you are not registered, filling in your email and verification code will automatically create an account for you. If you are already registered, please log in with the email you used previously.',
+  'Jika Anda belum terdaftar, setelah mengisi email dan kode verifikasi, akun Anda akan didaftarkan secara otomatis. Jika sudah terdaftar, silakan masuk dengan email yang pernah Anda gunakan sebelumnya.',
+  '💡 إذا لم تكن مسجلاً بعد ، سيتم تسجيل حسابك تلقائيًا بعد إدخال البريد الإلكتروني ورمز التحقق. إذا كنت قد سجلت بالفعل ، يرجى تسجيل الدخول باستخدام عنوان البريد الإلكتروني الذي قمت بتسجيل الدخول به مسبقًا.'
+)
+translateWeb(
+  '.i18n-164',
+  '账号',
+  'Username',
+  'Akun',
+  'اسم المستخدم',
+  true
+)
+translateWeb(
+  '.i18n-165',
+  '账号',
+  'Password',
+  'Kata Sandi',
+  'كلمة المرور',
+  true
+)
+translateWeb(
+  '.i18n-166',
+  '还没有账号？',
+  "Don't have an account?",
+  'Belum memiliki akun?',
+  'ليس لديك حساب؟',
+)
+translateWeb(
+  '.i18n-167',
+  '加入我们',
+  'Join us',
+  'Bergabunglah dengan kami',
+  'انضم إلينا'
+)
 
 $('.i18n').on('click', function() {
   let lang = $(this).attr('lang');
@@ -1178,6 +1243,16 @@ function updateLogo(lang) {
     $('#navbar-user-logo').attr('src', '../images/logo_lang.png');
   }
 }
+
+// let lang = sessionStorage.getItem("lang");
+// updateRecaptcha(lang);
+
+// function updateRecaptcha(lang) {
+//   let src = $('#recaptcha')[0].src
+//   if (src) src = src + `?hl=${lang}`
+//   console.log(src)
+//   $('#recaptcha').attr('src', src)
+// }
 
 // function urlAddParams(key, value) {
 //   let url = new URL(window.location.href);

@@ -1,4 +1,4 @@
-$('.toast').toast('show');
+// $('.toast').toast('show');
 
 instructionProgressIndicator()
 dashboardPage()
