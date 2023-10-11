@@ -55,15 +55,15 @@ navbar_template.innerHTML = `
         </div>
       </li>
       <div id='user-public'>
-        <a href='candidate-login' class='btn btn-sm active m-1 p-2 pr-3 pl-3 i18n-6'>考生登入/注册</a>
-        <a href='partner-login' class='btn btn-sm active m-1 p-2 pr-3 pl-3 i18n-7'>合作方登入</a>
+        <a href='candidate-login' class='i18n-6 btn btn-sm active m-1 p-2 pr-3 pl-3'>考生登入/注册</a>
+        <a href='partner-login' class='i18n-7 btn btn-sm active m-1 p-2 pr-3 pl-3'>合作方登入</a>
       </div>
       <div id='user-logout' class='d-flex pointer'>
-        <span class='mt-2 pt-1'>登出</span>
+        <span class='i18n-154 mt-2 pt-1'>登出</span>
         <span><i class='fa-solid fa-right-from-bracket fa-lg mt-4 ml-2 align-self-center secondary-color d-block'></i></span>
       </div>
       <div id='partner-logout' class='d-flex pointer'>
-        <span class='mt-2 pt-1'>登出</span>
+        <span class='i18n-154 mt-2 pt-1'>登出</span>
         <span><i class='fa-solid fa-right-from-bracket fa-lg mt-4 ml-2 align-self-center secondary-color d-block'></i></span>
       </div>
     </ul>
@@ -86,8 +86,8 @@ login_modal_template.innerHTML = `
           <p>第六步：成功提交预报名表并缴费，通过电子邮件接收收据</p>
         </div>
         <div class='modal-footer border-0 flex-lg-row flex-column-reverse justify-content-center'>
-          <button type='button' class='btn btn-sm p-2 w180' data-dismiss='modal'>取消</button>
-          <a href='candidate-login' class='btn btn-sm p-2 w180 active'>考生登入/注册</a>
+          <button type='button' class='i18n-155 btn btn-sm p-2 w180' data-dismiss='modal'>取消</button>
+          <a href='candidate-login' class='i18n-6 btn btn-sm p-2 w180 active'>考生登入/注册</a>
         </div>
       </div>
     </div>
@@ -124,11 +124,11 @@ user_navbar_template.innerHTML = `
         </div>
       </li>
       <div id='user-logout' class='d-flex pointer'>
-        <span class='mt-2 pt-1'>登出</span>
+        <span class='i18n-154 mt-2 pt-1'>登出</span>
         <span><i class='fa-solid fa-right-from-bracket fa-lg mt-4 ml-2 align-self-center secondary-color d-block'></i></span>
       </div>
       <div id='partner-logout' class='d-flex pointer'>
-        <span class='mt-2 pt-1'>登出</span>
+        <span class='i18n-154 mt-2 pt-1'>登出</span>
         <span><i class='fa-solid fa-right-from-bracket fa-lg mt-4 ml-2 align-self-center secondary-color d-block'></i></span>
       </div>
     </ul>

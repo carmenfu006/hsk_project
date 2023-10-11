@@ -629,13 +629,6 @@ translateWeb(
 )
 translateWeb(
   '.i18n-90',
-  '女',
-  'Female',
-  'Perempuan',
-  'أنثى'
-)
-translateWeb(
-  '.i18n-90',
   '生日',
   'Date of Birth',
   'Tanggal Lahir',
@@ -1028,6 +1021,97 @@ translateWeb(
   'Payment unsuccessful',
   'Pembayaran gagal',
   'الدفع غير ناجح'
+)
+translateWeb(
+  '.i18n-146',
+  '支付成功',
+  'Payment Successful',
+  'Pembayaran Berhasil',
+  'تم الدفع بنجاح'
+)
+translateWeb(
+  '.i18n-147',
+  '您已成功付款，您的报名已经正式确认。',
+  'You have successfully made the payment, and your registration has been officially confirmed.',
+  'Anda telah berhasil melakukan pembayaran, pendaftaran Anda telah resmi dikonfirmasi.',
+  'لقد تم الدفع بنجاح. تم تأكيد تسجيلك بشكل رسمي.'
+)
+translateWeb(
+  '.i18n-148',
+  '详情已发送至您的邮箱。',
+  'and details have been sent to your email.',
+  'rincian telah dikirimkan ke email Anda.',
+  'تم إرسال تفاصيل الامتحان إلى بريدك الإلكتروني.'
+)
+translateWeb(
+  '.i18n-149',
+  '为帮助你顺利参加考试，请阅读考试须知，并尽快下载考试app完成考前设备检测。',
+  'To help you prepare for the exam, please read the exam instructions and download the exam app for pre-exam device checks.',
+  'Untuk membantu Anda dalam mengikuti ujian dengan lancar, silakan baca petunjuk ujian dan segera unduh aplikasi ujian untuk melakukan tes perangkat sebelumnya.',
+  'لمساعدتك في الاستعداد الجيد للاختبار، يرجى قراءة تعليمات الاختبار وتنزيل تطبيق الاختبار وإجراء فحص الأجهزة قبل الاختبار بأسرع وقت ممكن.'
+)
+translateWeb(
+  '.i18n-150',
+  '下一步',
+  'Next Step',
+  'Langkah Selanjutnya',
+  'الخطوة التالية'
+)
+translateWeb(
+  '.i18n-151',
+  '上一步',
+  'Previous Step',
+  'Langkah Sebelumnya',
+  'الخطوة السابقة'
+)
+translateWeb(
+  '.i18n-152',
+  '女',
+  'Female',
+  'Perempuan',
+  'أنثى'
+)
+translateWeb(
+  '.i18n-153',
+  '确认并提交',
+  'Confirm and Submit',
+  'Konfirmasi dan Kirim',
+  'تأكيد وإرسال'
+)
+translateWeb(
+  '.i18n-154',
+  '登出',
+  'Logout',
+  'Keluar',
+  'تسجيل خروج'
+)
+translateWeb(
+  '.i18n-155',
+  '取消',
+  'Cancel',
+  'Batal',
+  'يلغي'
+)
+translateWeb(
+  '.i18n-156',
+  '更多',
+  'More',
+  'Lagi',
+  'أكثر'
+)
+translateWeb(
+  '.i18n-157',
+  '考生主页',
+  'Candidate Homepage',
+  'Halaman Peserta Ujian',
+  'صفحة المتقدمين'
+)
+translateWeb(
+  '.i18n-158',
+  '考试须知',
+  'Exam Instructions',
+  'Petunjuk Ujian',
+  'تعليمات الاختبار'
 )
 
 translateWeb('.i18n-0', '验证码', 'Verification code', 'Kode verifikasi', 'رمز التحقق', true)
