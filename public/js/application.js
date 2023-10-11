@@ -29,7 +29,7 @@ function progressIndicator() {
       </div>
       <div class='row text-center'>
         <div class='col i18n-66 progress-indicator-word step-1'>选择考期</div>
-        <div class='col progress-indicator-word step-2'>考生资料</div>
+        <div class='col i18n-83 progress-indicator-word step-2'>考生资料</div>
         <div class='col progress-indicator-word step-3'>上传照片</div>
         <div class='col progress-indicator-word step-4'>确认考生信息</div>
         <div class='col progress-indicator-word step-5'>预报名已提交</div>
@@ -47,7 +47,7 @@ function progressIndicator() {
       break;
     case 'application-candidate-info.html':
       activeProgressBar('.step-1, .step-2');
-      checkboxSelect('.sex', true, '#sex');
+      checkboxSelect('.gender', true, '#gender');
       checkboxSelect('.hsk', true, '#hsk', '#hsk-date');
       checkboxSelect('.hskk', true, '#hskk', '#hskk-date');
       enabledNextBtn();
@@ -92,7 +92,7 @@ function enabledNextBtn() {
       $('#to-step-2').attr('disabled', true);
     }
 
-    if (verifyInput('#sex') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#surname') && verifyInput('#given-name') && verifyInput('#birth-year') && verifyInput('#birth-month') && verifyInput('#birth-day') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#identity-type') && verifyInput('#identity') && verifyInput('#country-code') && verifyInput('#contact-number')) {
+    if (verifyInput('#gender') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#firstname') && verifyInput('#lastname') && verifyInput('#birth-year') && verifyInput('#birth-month') && verifyInput('#birth-day') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#identity-type') && verifyInput('#identity') && verifyInput('#country-code') && verifyInput('#contact-number')) {
       $('#to-step-3').attr('disabled', false);
     } else {
       $('#to-step-3').attr('disabled', true);
@@ -221,12 +221,12 @@ $('#to-step-2').on('click', function(e) {
 });
 
 $('#to-step-3').on('click', function(e) {
-  setSession('sex', inputVal('#sex'));
+  setSession('gender', inputVal('#gender'));
   setSession('hsk', inputVal('#hsk'));
   setSession('hskk', inputVal('#hskk'));
   setSession('username', inputVal('#username'));
-  setSession('surname', inputVal('#surname'));
-  setSession('given-name', inputVal('#given-name'));
+  setSession('firstname', inputVal('#firstname'));
+  setSession('lastname', inputVal('#lastname'));
   setSession('birth-year', inputVal('#birth-year'));
   setSession('birth-month', inputVal('#birth-month'));
   setSession('birth-day', inputVal('#birth-day'));
@@ -253,8 +253,8 @@ $('#to-step-3').on('click', function(e) {
 
 function populateInfo() {
   if ($('.info-username')) $('.info-username').html(getSession('username'));
-  if ($('.info-name')) $('.info-name').html(getSession('surname') + ' ' + getSession('given-name'));
-  if ($('.info-sex')) $('.info-sex').html(getSession('sex'));
+  if ($('.info-name')) $('.info-name').html(getSession('firstname') + ' ' + getSession('lastname'));
+  if ($('.info-gender')) $('.info-gender').html(getSession('gender'));
   if ($('.info-birthday')) $('.info-birthday').html(getSession('birth-year') + '/' + getSession('birth-month') + '/' + getSession('birth-day'));
   if ($('.info-nationality')) $('.info-nationality').html(getSession('nationality'));
   if ($('.info-native-language')) $('.info-native-language').html(getSession('native-language'));

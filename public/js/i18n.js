@@ -575,7 +575,206 @@ translateWeb(
   'Panduan Perlindungan Privasi Peserta Ujian Bahasa Tionghoa',
   'دليل حماية خصوصية مرشح امتحان اللغة الصينية'
 )
-
+translateWeb(
+  '.i18n-83',
+  '考生资料',
+  'Candidate Information',
+  'Calon Ujian',
+  'معلومات المرشح'
+)
+translateWeb(
+  '.i18n-84',
+  '用户名',
+  'Username',
+  'Nama Pengguna',
+  'اسم المستخدم',
+  true
+)
+translateWeb(
+  '.i18n-85',
+  '姓名',
+  'Name',
+  'Nama',
+  'الاسم'
+)
+translateWeb(
+  '.i18n-86',
+  '姓',
+  'First Name',
+  'Nama Belakang',
+  'اللقب',
+  true
+)
+translateWeb(
+  '.i18n-87',
+  '名',
+  'Last Name',
+  'Nama Depan',
+  'الاسم',
+  true
+)
+translateWeb(
+  '.i18n-88',
+  '性别',
+  'Gender',
+  'Jenis Kelamin',
+  'الجنس'
+)
+translateWeb(
+  '.i18n-89',
+  '男',
+  'Male',
+  'Laki-laki',
+  'ذكر'
+)
+translateWeb(
+  '.i18n-90',
+  '女',
+  'Female',
+  'Perempuan',
+  'أنثى'
+)
+translateWeb(
+  '.i18n-90',
+  '生日',
+  'Date of Birth',
+  'Tanggal Lahir',
+  'تاريخ الميلاد'
+)
+translateWeb(
+  '.i18n-91',
+  '年',
+  'Year',
+  'Tahun',
+  'العام'
+)
+translateWeb(
+  '.i18n-92',
+  '月',
+  'Month',
+  'Bulan',
+  'الشهر'
+)
+translateWeb(
+  '.i18n-93',
+  '日',
+  'Day',
+  'Hari',
+  'اليوم'
+)
+translateWeb(
+  '.i18n-94',
+  '国籍',
+  'Nationality',
+  'Kebangsaan',
+  'الجنسية'
+)
+translateWeb(
+  '.i18n-95',
+  '请选择国籍',
+  'Please select your nationality',
+  'Silakan Pilih Kebangsaan',
+  'الرجاء اختيار الجنسية'
+)
+translateWeb(
+  '.i18n-96',
+  '母语',
+  'Native Language',
+  'Bahasa Ibu',
+  'اللغة الأم'
+)
+translateWeb(
+  '.i18n-97',
+  '请选择您的第一语言，即母语',
+  'Please select your first language, which is your native language',
+  'Silakan Pilih Bahasa Ibu Anda',
+  'الرجاء اختيار لغتك الأم، أي اللغة الأولى'
+)
+translateWeb(
+  '.i18n-98',
+  '证件类型',
+  'Document Type',
+  'Jenis Identitas',
+  'نوع الوثيقة'
+)
+translateWeb(
+  '.i18n-99',
+  '请选择证件类型',
+  'Please select document type',
+  'Silakan Pilih Jenis Identitas',
+  'الرجاء اختيار نوع الوثيقة'
+)
+translateWeb(
+  '.i18n-100',
+  '证件号码',
+  'Document Number',
+  'Nomor Identitas',
+  'رقم الوثيقة',
+  true
+)
+translateWeb(
+  '.i18n-101',
+  '证件号码应与证件保持一致，包括“（）”内的信息',
+  'Document number should match the information within the parentheses',
+  'Nomor identitas harus sesuai dengan informasi di dalam tanda kurung',
+  'يجب أن يتطابق رقم الوثيقة مع المعلومات داخل الأقواس'
+)
+translateWeb(
+  '.i18n-102',
+  '你学习汉语多长时间了',
+  'How long have you been learning Chinese?',
+  'Berapa lama Anda telah belajar bahasa Mandarin?',
+  'مدة دراستك للصينية'
+)
+translateWeb(
+  '.i18n-103',
+  '请选择时间',
+  'Please select duration',
+  'Silakan Pilih Waktu',
+  'الرجاء اختيار المدة'
+)
+translateWeb(
+  '.i18n-104',
+  '过去6个月考過HSK沒有？',
+  'Have you taken the HSK test in the past 6 months?',
+  'Apakah Anda pernah mengikuti tes HSK dalam 6 bulan terakhir?',
+  'هل أجريت اختبار HSK خلال الـ 6 أشهر الماضية؟'
+)
+translateWeb(
+  '.i18n-105',
+  '过去6个月考過HSKK沒有？',
+  'Have you taken the HSKK test in the past 6 months?',
+  'Apakah Anda pernah mengikuti tes HSKK dalam 6 bulan terakhir?',
+  'هل أجريت اختبار HSKK خلال الـ 6 أشهر الماضية؟'
+)
+translateWeb(
+  '.i18n-106',
+  '请选择最近一次HSK的考试日期',
+  'Please select the most recent HSK test date',
+  'Silakan pilih tanggal tes HSK terbaru',
+  'يرجى تحديد تاريخ آخر اختبار HSK'
+)
+translateWeb(
+  '.i18n-107',
+  '请选择最近一次HSKK的考试日期',
+  'Please select the most recent HSKK test date',
+  'Silakan pilih tanggal tes HSKK terbaru',
+  'يرجى تحديد تاريخ آخر اختبار HSKK'
+)
+translateWeb(
+  '.i18n-108',
+  '有',
+  'Yes',
+  'Ya',
+  'نعم'
+)
+translateWeb(
+  '.i18n-109',
+  '没有',
+  'No',
+  'Tidak',
+  'لا'
+)
 
 translateWeb('.i18n-0', '验证码', 'Verification code', 'Kode verifikasi', 'رمز التحقق', true)
 
