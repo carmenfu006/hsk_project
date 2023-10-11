@@ -30,8 +30,8 @@ function progressIndicator() {
       <div class='row text-center'>
         <div class='col i18n-66 progress-indicator-word step-1'>选择考期</div>
         <div class='col i18n-83 progress-indicator-word step-2'>考生资料</div>
-        <div class='col progress-indicator-word step-3'>上传照片</div>
-        <div class='col progress-indicator-word step-4'>确认考生信息</div>
+        <div class='col i18n-110 progress-indicator-word step-3'>上传照片</div>
+        <div class='col i18n-123 progress-indicator-word step-4'>考生信息确认</div>
         <div class='col progress-indicator-word step-5'>预报名已提交</div>
       </div>
     </div>`;

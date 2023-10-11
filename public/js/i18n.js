@@ -775,6 +775,105 @@ translateWeb(
   'Tidak',
   'لا'
 )
+translateWeb(
+  '.i18n-110',
+  '上传照片',
+  'Upload Photos',
+  'Mohon unggah foto',
+  'تحميل الصورة'
+)
+translateWeb(
+  '.i18n-111',
+  '照片会出现在你的成绩报告中，请按要求提交照片。',
+  'The photos will appear in your score report, please submit the photos as required.',
+  'Foto akan muncul dalam laporan nilai Anda, silakan unggah foto sesuai permintaan.',
+  'ستظهر الصور في تقرير الأداء الخاص بك، يرجى إرسال الصور حسب الطلب.'
+)
+translateWeb(
+  '.i18n-112',
+  '点击此处查看样本',
+  'Click here to view a sample.',
+  'Klik di sini untuk melihat contoh.',
+  'انقر هنا لعرض النموذج'
+)
+translateWeb(
+  '.i18n-113',
+  '点击或拖动文件到此区域进行上传。',
+  'Click or drag files to this area for upload.',
+  'Klik atau seret file ke area ini untuk mengunggah.',
+  'انقر أو اسحب الملفات إلى هذا المجال للتحميل.'
+)
+
+translateWeb(
+  '.i18n-114',
+  '(支持的文件格式：JPG; 最大文件大小为500KB)',
+  '(Supported file formats: JPG; Maximum file size is 500KB)',
+  '(Format file yang didukung: JPG; Ukuran maksimum file adalah 500KB)',
+  '(تنسيقات الملفات المدعومة: JPG؛ الحجم الأقصى للملف: 500 كيلوبايت)'
+)
+translateWeb(
+  '.i18n-115',
+  '照片样本',
+  'Photo samples',
+  'Sampel foto',
+  'عينات الصور'
+)
+translateWeb(
+  '.i18n-116',
+  '相关注意事项',
+  'Relevant Notes',
+  'Catatan Terkait',
+  'ملاحظات ذات الصلة'
+)
+translateWeb(
+  '.i18n-117',
+  '照片要求:近期免冠、正面、单色背景、两寸证件照，不得使用风景照、生活照',
+  'Photo Requirements: Recent, passport-sized, front-facing, single-color background, 2-inch passport photo; landscape or lifestyle photos are not allowed',
+  'Persyaratan foto: Terbaru, tanpa topi, wajah terlihat jelas, latar belakang tunggal, foto identitas 2x2 inci, jangan menggunakan foto lanskap atau foto kehidupan sehari-hari',
+  'متطلبات الصورة: صورة شخصية حديثة، وجه مستقيم، خلفية ملونة واحدة، حجم البطاقة 2 بوصة، يجب عدم استخدام صور المناظر الطبيعية أو الصور الشخصية'
+)
+translateWeb(
+  '.i18n-118',
+  '照片格式: JPG',
+  'Photo Format: JPG',
+  'Format foto: JPG',
+  'تنسيق الصورة: JPG'
+)
+translateWeb(
+  '.i18n-119',
+  '照片标佳: 180像素*240像素',
+  'Photo Dimensions: 180 pixels * 240 pixels',
+  'Ukuran foto: 180 piksel x 240 piksel',
+  'علامة الصورة: 180 بكسل × 240 بكسل'
+)
+translateWeb(
+  '.i18n-120',
+  '文件大小: 15~500kb',
+  'File Size: 15~500kb',
+  'Ukuran file: 15 hingga 500KB',
+  '.حجم الملف: من 15 إلى 500 كيلوبايت'
+)
+translateWeb(
+  '.i18n-121',
+  '如果考生没有在报名网站上传电子照片，可以使用移动存储设备 (U盘，移动硬盘等) 将电子照片送到报考的考点，寻求考点工作人员的帮助',
+  'If candidates have not uploaded electronic photos on the registration website, they can use portable storage devices (USB drives, external hard drives, etc.) to deliver electronic photos to the registered test center and seek assistance from test center staff',
+  'Jika calon tidak mengunggah foto digital di situs pendaftaran, foto digital dapat diserahkan ke pusat pendaftaran yang dituju menggunakan perangkat penyimpanan bergerak (flash drive, hard disk eksternal, dll.) dan meminta bantuan petugas pusat pendaftaran',
+  'إذا لم يقم المرشح بتحميل الصورة الإلكترونية على موقع التسجيل، يمكنه استخدام وسائط التخزين المحمولة (مثل محرك أقراص USB أو قرص صلب محمول) لتسليم الصورة الإلكترونية إلى مركز الامتحان الذي تم التقديم له والبحث عن مساعدة موظفي المركز'
+)
+translateWeb(
+  '.i18n-122',
+  '在中国大陆地区考点报名参加汉语考试的考生，须上传电子照片。如未上传照片或上传照片不符合要求的，将不能进入考场参加考试',
+  'Candidates registering to take the Chinese language test at test centers in mainland China must upload electronic photos. Those who fail to upload photos or upload photos that do not meet the requirements will not be allowed to enter the test center for the examination',
+  'Calon yang mendaftar untuk mengikuti ujian bahasa Tionghoa di daerah daratan Tiongkok harus mengunggah foto digital. Jika foto tidak diunggah atau tidak memenuhi persyaratan, calon tidak akan diizinkan masuk ke ruang ujian',
+  ' بالنسبة للمرشحين الذين يسجلون لاختبار اللغة الصينية في مناطق الصين الرئيسية، يجب تحميل الصورة الإلكترونية. إذا لم يتم تحميل الصورة أو إذا لم تتوافق مع المتطلبات، فلن يُسمح للمرشح بالدخول إلى قاعة الامتحان.'
+)
+translateWeb(
+  '.i18n-123',
+  '考生信息确认',
+  'Candidate Information Verification',
+  'Konfirmasi Informasi Calon',
+  'تأكيد معلومات المرشح'
+)
 
 translateWeb('.i18n-0', '验证码', 'Verification code', 'Kode verifikasi', 'رمز التحقق', true)
 
