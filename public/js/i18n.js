@@ -1180,6 +1180,433 @@ translateWeb(
   'Bergabunglah dengan kami',
   'انضم إلينا'
 )
+translateWeb(
+  '.i18n-168',
+  '考试须知',
+  'Exam Instructions',
+  'Petunjuk Ujian',
+  'ملاحظات عن الامتحان'
+)
+translateWeb(
+  '.i18n-169',
+  '请根据以下流程 准备考试',
+  'Please prepare for the exam according to the following process:',
+  'Silakan siapkan ujian sesuai dengan prosedur berikut:',
+  'يرجى إعداد نفسك للامتحان وفقًا للخطوات التالية'
+)
+translateWeb(
+  '.i18n-170',
+  '下载移动端考试APP',
+  'Download the mobile exam app',
+  'Unduh Aplikasi Ujian Mobile',
+  'قم بتنزيل تطبيق الامتحان على الهاتف المحمول'
+)
+translateWeb(
+  '.i18n-171',
+  '考前需知',
+  'Pre-Exam Information',
+  'Sebelum Ujian',
+  'ما يجب معرفته قبل الامتحان'
+)
+translateWeb(
+  '.i18n-172',
+  '考试当天',
+  'On the day of the exam',
+  'Pada Hari Ujian',
+  'يوم الامتحان'
+)
+translateWeb(
+  '.i18n-173',
+  '官方HSK口语考试APP',
+  'Official HSK Oral Exam App',
+  'Aplikasi Resmi HSK Lisan',
+  'تطبيق امتحان اللغة الصينية الرسمي HSK'
+)
+translateWeb(
+  '.i18n-174',
+  '在参加考试之前，请务必下载并安装我们的移动端考试APP以便正常进行考试。可扫描或点击以下QR Code到达应用市场下载。',
+  'Before participating in the exam, please make sure to download and install our mobile exam app for a smooth exam experience. You can scan or click on the QR Code below to access the app market for downloading.',
+  'Sebelum mengikuti ujian, pastikan untuk mengunduh dan menginstal aplikasi ujian mobile kami agar ujian berjalan lancar. Anda dapat memindai atau mengklik kode QR di bawah ini untuk mengunduhnya dari toko aplikasi.',
+  'قبل المشاركة في الامتحان، يرجى التأكد من تنزيل وتثبيت تطبيق الامتحان المحمول الخاص بنا لضمان انسيابية الامتحان. يمكنك مسح رمز الاستجواب أدناه أو النقر فوقه للوصول إلى متجر التطبيقات.'
+)
+translateWeb(
+  '.i18n-175',
+  '中国国内应用商店',
+  'App Store in China',
+  'Toko Aplikasi di Cina',
+  'الصين - متجر التطبيقات الداخلي'
+)
+translateWeb(
+  '.i18n-176',
+  '考⽣须仔细阅读以下内容，确保在线考试顺利进⾏。考前需知包含重要信息，不阅读将对考⽣成绩产⽣影响。请务必认真阅读并遵守 考前需知中的规定，以确保公正公平的考试环境。',
+  "Candidates must carefully read the following content to ensure a smooth online exam. Pre-exam information contains important details that, if not read, may affect candidates' scores. Please read and adhere to the regulations in the pre-exam information seriously to ensure a fair and just exam environment.",
+  'Calon Peserta Ujian harus membaca dengan cermat informasi berikut untuk memastikan kelancaran ujian online. Informasi sebelum ujian berisi detail penting yang dapat memengaruhi hasil ujian calon peserta. Harap baca dengan serius dan patuhi ketentuan dalam informasi sebelum ujian untuk memastikan lingkungan ujian yang adil dan objektif.',
+  'يجب على الطلاب قراءة المحتوى التالي بعناية لضمان سير الامتحان عبر الإنترنت بسلاسة. يحتوي ما يجب معرفته قبل الامتحان على معلومات مهمة، وعدم قراءته سيؤثر على أداء الطلاب. يرجى قراءة والامتثال للقواعد الموجودة في ما يجب معرفته قبل الامتحان بعناية لضمان بيئة الامتحان العادلة والمنصفة.'
+)
+translateWeb(
+  '.i18n-177',
+  '设备要求',
+  'Device Requirements',
+  'Persyaratan Perangkat',
+  'متطلبات الجهاز'
+)
+translateWeb(
+  '.i18n-178',
+  '强烈建议考⽣遵照以下要求准备考试设备，以免考试失败。',
+  'Candidates are strongly recommended to prepare exam devices according to the following requirements to avoid exam failure.',
+  'Kami sangat menyarankan agar calon peserta ujian mempersiapkan perangkat ujian sesuai dengan persyaratan berikut agar menghindari kegagalan ujian.',
+  'يوصى بشدة بأن يستعد الطلاب لامتحان الجهاز وفقًا للمتطلبات التالية لتجنب فشل الامتحان.'
+)
+translateWeb(
+  '.i18n-179',
+  'iPhone 8Plus 以上, IOS 15以上；安卓6以上，建议⼿机屏幕 5.5⼨及以上',
+  'iPhone 8 Plus or above, IOS 15 or above; Android 6 or above, recommended screen size 5.5 inches or above',
+  'iPhone 8 Plus atau yang lebih baru, iOS 15 atau yang lebih baru; Android 6 atau yang lebih baru, layar ponsel disarankan memiliki ukuran 5,5 inci atau lebih',
+  'iPhone 8 Plus أو أعلى، نظام التشغيل iOS 15 أو أحدث؛ Android 6 أو أحدث، يُفضل أن يكون حجم الشاشة للهاتف 5.5 بوصة أو أكبر'
+)
+translateWeb(
+  '.i18n-180',
+  '电量30%以上',
+  'More than 30% battery',
+  'Baterai lebih dari 30%',
+  'بطارية أكثر من 30%'
+)
+translateWeb(
+  '.i18n-181',
+  '网速150KB以上',
+  'Internet speed: 150KB or above',
+  'Kecepatan Internet 150KB atau lebih',
+  'سرعة الإنترنت 150 كيلوبايت أو أكثر'
+)
+translateWeb(
+  '.i18n-182',
+  '内存>2G 存储>1G',
+  'Memory: >2G Storage: >1G',
+  'Memori > 2GB Penyimpanan > 1GB',
+  'الذاكرة العشوائية (RAM) أكثر من 2 جيجابايت، التخزين أكثر من 1 جيجابايت'
+)
+translateWeb(
+  '.i18n-183',
+  '开启位置权限',
+  'Enable location permission',
+  'Izinkan akses lokasi',
+  'تفعيل إذن الموقع'
+)
+translateWeb(
+  '.i18n-184',
+  '开启通知权限',
+  'Enable notification permission',
+  'Izinkan notifikasi',
+  'تفعيل إذن الإشعارات'
+)
+translateWeb(
+  '.i18n-185',
+  '允许使用摄像头',
+  'Allow camera usage',
+  'Izinkan penggunaan kamera',
+  'السماح باستخدام الكاميرا'
+)
+translateWeb(
+  '.i18n-186',
+  '建议使用耳机',
+  'Headphones are recommended',
+  'Disarankan menggunakan earphone',
+  'يُفضل استخدام سماعات الرأس'
+)
+translateWeb(
+  '.i18n-187',
+  '重要信息',
+  'Important Information',
+  'Informasi Penting',
+  'معلومات هامة'
+)
+translateWeb(
+  '.i18n-188',
+  '考试前7天，你会收到考前设备检测的邮件提醒通知。',
+  'Seven days before the exam, you will receive an email reminder for pre-exam device testing.',
+  'Tujuh hari sebelum ujian, Anda akan menerima pemberitahuan email pengingat untuk pemeriksaan perangkat sebelum ujian.',
+  'قبل 7 أيام من الامتحان، ستتلقى رسالة تذكير عبر البريد الإلكتروني لفحص جهازك قبل الامتحان.'
+)
+translateWeb(
+  '.i18n-189',
+  '为了确保您能顺利进行考试，我们将对您的设备进行设备检测。请按照以下步骤下载并使用官方HSK口语考试App（HSK Official）进行设备检测。完成设备检测后，您才能参加考试。',
+  'To ensure a smooth exam experience, we will conduct device testing on your equipment. Please follow the steps below to download and use the official HSK Oral Exam App (HSK Official) for device testing. Only after completing the device testing can you participate in the exam.',
+  'Untuk memastikan kelancaran ujian Anda, kami akan memeriksa perangkat Anda. Ikuti langkah-langkah berikut untuk mengunduh dan menggunakan Aplikasi Ujian HSK Lisan Resmi (HSK Official) untuk pemeriksaan perangkat. Setelah berhasil menjalani pemeriksaan perangkat, Anda dapat mengikuti ujian. ',
+  'للتأكد من اجتياز الاختبار، سيتم اختبار جهازك. يرجى اتباع الخطوات أدناه لتنزيل تطبيق اختبار اللغة الصينية الرسمي (مسؤول HSK) واختبار الجهاز. يجب عليك إكمال اختبار الجهاز بنجاح قبل إجراء الاختبار.'
+)
+translateWeb(
+  '.i18n-190',
+  '请按照以下步骤操作：',
+  'Please follow these steps:',
+  'Harap ikuti langkah-langkah berikut:',
+  'يرجى اتباع الخطوات التالية:'
+)
+translateWeb(
+  '.i18n-191',
+  '1. 登录“官方HSK口语考试App”',
+  '1. Log in to the "Official HSK Oral Exam App."',
+  '1. Masuk ke "Aplikasi Ujian HSK Lisan Resmi"',
+  '1. قم بتسجيل الدخول إلى "تطبيق الامتحان الرسمي HSK"'
+)
+translateWeb(
+  '.i18n-192',
+  '2. 登录后，按“考前检测”进入检测流程',
+  '2. After logging in, click "Pre-Exam Testing" to enter the testing process.',
+  '2. Setelah masuk, klik "Pemeriksaan Sebelum Ujian" untuk memulai proses pemeriksaan.',
+  '2. بعد تسجيل الدخول، انقر على "اختبار قبل الامتحان" للمتابعة في عملية الاختبار'
+)
+translateWeb(
+  '.i18n-193',
+  '3. 核对个人信息无误，继续按“下一步”',
+  '3. Verify that your personal information is correct, and click "Next" to continue.',
+  '3. Periksa bahwa informasi pribadi Anda benar, lalu lanjutkan dengan mengklik "Langkah Selanjutnya."',
+  '3. تحقق من صحة المعلومات الشخصية واستمر بالنقر على "الخطوة التالية"'
+)
+translateWeb(
+  '.i18n-194',
+  '4. 依提示，然后按“拍摄”即可完成脸部信息核对',
+  '4. Follow the prompts and then click "Take a photo" to complete facial information verification.',
+  '4. Ikuti petunjuk untuk menyelesaikan verifikasi informasi wajah dengan mengklik "Ambil Foto."',
+  '4. اتبع التعليمات ثم انقر على "التصوير" لاستكمال التحقق من معلومات الوجه'
+)
+translateWeb(
+  '.i18n-195',
+  '5. 按步骤完成设备检测',
+  '5. Complete the device testing step by step.',
+  '5. Ikuti langkah-langkah untuk menyelesaikan pemeriksaan perangkat.',
+  '5. اتبع الخطوات لاكتمال اختبار الجهاز'
+)
+translateWeb(
+  '.i18n-196',
+  '请注意，您必须完成设备检测才能参加考试。',
+  'Please note that you must complete the device testing in order to participate in the exam.',
+  'Harap diperhatikan bahwa Anda harus menyelesaikan pemeriksaan perangkat sebelum dapat mengikuti ujian.',
+  'يرجى ملاحظة أنه يجب عليك اجتياز اختبار الجهاز بنجاح قبل المشاركة في الامتحان.'
+)
+translateWeb(
+  '.i18n-197',
+  '考试前2天，你会收到设备检测成功确认邮件以及准考证号',
+  'Two days before the exam, you will receive a confirmation email for successful device testing along with your admission ticket number',
+  'Dua hari sebelum ujian, Anda akan menerima email konfirmasi keberhasilan pemeriksaan perangkat beserta nomor kartu ujian',
+  'قبل 2 يوم من الامتحان، ستتلقى رسالة تأكيد ناجحة بعد اجتياز اختبار الجهاز بنجاح، بالإضافة إلى رقم القبول.'
+)
+translateWeb(
+  '.i18n-198',
+  '重要提示',
+  'Important Notice',
+  'Penting',
+  'هام'
+)
+translateWeb(
+  '.i18n-199',
+  '环境测试',
+  'Environment Testing',
+  'Uji Lingkungan',
+  'اختبار البيئة'
+)
+translateWeb(
+  '.i18n-200',
+  '请在安静的环境中进行考试',
+  'Please take the exam in a quiet environment.',
+  'Silakan melakukan ujian di lingkungan yang tenang.',
+  'يُرجى إجراء الاختبار في بيئة هادئة.'
+)
+translateWeb(
+  '.i18n-201',
+  '确保网路环境畅通',
+  'Ensure a smooth internet connection.',
+  'Pastikan koneksi internet lancar.',
+  'تأكد من أن الاتصال بالإنترنت سلس.'
+)
+translateWeb(
+  '.i18n-202',
+  '房间内光线充足',
+  'Ensure adequate lighting in the room.',
+  'Pastikan ruangan tercukupi cahaya.',
+  'يجب أن تكون الغرفة مضيئة بشكل كافٍ.'
+)
+translateWeb(
+  '.i18n-203',
+  '且只有考生一人在考试空间内',
+  'Only one examinee should be present in the examination space.',
+  'Hanya ada satu peserta ujian di dalam ruang ujian.',
+  'يجب أن يكون هناك فقط مرشح واحد داخل مساحة الاختبار.'
+)
+translateWeb(
+  '.i18n-204',
+  '认证识别',
+  'Certification and Identification',
+  'Identifikasi Sertifikasi',
+  'التحقق من الهوية والشهادة'
+)
+translateWeb(
+  '.i18n-205',
+  '考试过程中将不定时进行多重认证识别',
+  'Multiple certification and identification checks will be conducted intermittently during the exam.',
+  'Selama proses ujian, identifikasi sertifikasi akan dilakukan secara acak.',
+  'سيتم إجراء عمليات تحقق متعددة أثناء الاختبار بشكل عشوائي.'
+)
+translateWeb(
+  '.i18n-206',
+  '请保持面容在摄像头拍摄范围内',
+  "Please keep your face within the camera's capture range.",
+  'Pastikan wajah Anda berada dalam jangkauan kamera.',
+  'يُرجى التأكد من أن وجهك في نطاق كاميرا الويب.'
+)
+translateWeb(
+  '.i18n-207',
+  '请保持正常的声线和音量',
+  'Maintain a normal tone and volume of voice.',
+  'Pertahankan suara dan volume normal.',
+  'يُرجى الحفاظ على صوتك عاديًا ومستوى الصوت.'
+)
+translateWeb(
+  '.i18n-208',
+  '请允许APP获取位置，并确保考试地点与报名时选择的考点位置相同',
+  'Allow the app to access your location and ensure that the exam location matches the one you selected during registration.',
+  'Izinkan aplikasi mengakses lokasi, dan pastikan lokasi ujian sesuai dengan yang Anda pilih saat mendaftar.',
+  'يجب السماح للتطبيق بالوصول إلى موقعك، وتأكيد أن موقع الاختبار هو نفس الموقع الذي تم اختياره عند التسجيل.'
+)
+translateWeb(
+  '.i18n-209',
+  '如多次识别异常考试将被终止',
+  'If there are multiple abnormal identifications, the exam will be terminated.',
+  'Jika ada masalah identifikasi berulang, ujian akan dihentikan.',
+  'إذا كان هناك اكتشاف متكرر لعمليات التحقق غير العادية، سيتم إنهاء الاختبار.'
+)
+translateWeb(
+  '.i18n-210',
+  '考试切换',
+  'Exam Switching',
+  'Peralihan Ujian',
+  'تحويل التطبيق'
+)
+translateWeb(
+  '.i18n-211',
+  '考试过程中不允许将APP切至后台',
+  'It is not allowed to switch the app to the background during the exam.',
+  'Selama proses ujian, tidak diizinkan untuk mengalihkan aplikasi ke latar belakang.',
+  'طوال فترة الاختبار، لا يُسمح بتحويل التطبيق إلى الخلفية.'
+)
+translateWeb(
+  '.i18n-212',
+  '若不小心将APP切入后台，务必在15秒内回到考试介面，否则考试将被终止',
+  'If the app accidentally goes to the background, be sure to return to the exam interface within 15 seconds, otherwise, the exam will be terminated.',
+  'Jika secara tidak sengaja mengalihkan aplikasi ke latar belakang, pastikan kembali ke antarmuka ujian dalam 15 detik, jika tidak, ujian akan dihentikan.',
+  'إذا حدث ذلك عن طريق الخطأ، يجب العودة إلى واجهة الاختبار في غضون 15 ثانية، وإلا سيتم إنهاء الاختبار.'
+)
+translateWeb(
+  '.i18n-213',
+  '如APP第二次切至后台，考试将立即被终止',
+  'If the app goes to the background for the second time, the exam will be terminated immediately.',
+  'Jika aplikasi dialihkan ke latar belakang untuk kedua kalinya, ujian akan segera dihentikan.',
+  'إذا تم تحويل التطبيق إلى الخلفية مرة أخرى، سيتم إنهاء الاختبار فورًا.'
+)
+translateWeb(
+  '.i18n-214',
+  '防止干扰',
+  'Preventing Interference',
+  'Menghindari Gangguan',
+  'منع التداخل'
+)
+translateWeb(
+  '.i18n-215',
+  '考试期间其他资讯提示会打断答题和影响考试',
+  'Other information notifications during the exam may interrupt answering and affect the exam.',
+  'Pemberitahuan informasi lain selama ujian akan mengganggu jawaban dan memengaruhi hasil ujian.',
+  'خلال فترة الاختبار، ستؤثر التنبيهات الأخرى بالمعلومات على إجابتك وعلى سير الاختبار.'
+)
+translateWeb(
+  '.i18n-216',
+  '受电话或资讯影响的题目将不得分',
+  'Questions affected by phone calls or information will not be scored.',
+  'Soal yang terpengaruh oleh telepon atau informasi tidak akan mendapatkan skor.',
+  'لن يتم تقديم درجات للأسئلة التي تتأثر بالمكالمات الهاتفية أو الرسائل.'
+)
+translateWeb(
+  '.i18n-217',
+  'IOS系统，建议开启“引导式访问”功能',
+  'For iOS systems, it is recommended to enable the "Guided Access" feature.',
+  'Untuk sistem iOS, disarankan untuk mengaktifkan fitur "Guided Access" (Akses Terpandu).',
+  'لأجهزة iOS، يُفضل تمكين وظيفة "الوصول التوجيهي".'
+)
+translateWeb(
+  '.i18n-218',
+  '安卓系统，建议开启“萤幕固定”功能',
+  'For Android systems, it is recommended to enable the "Screen Pinning" feature.',
+  'Untuk sistem Android, disarankan untuk mengaktifkan fitur "Screen Pinning" (Penguncian Layar).',
+  'لأجهزة Android، يُفضل تمكين وظيفة "تثبيت الشاشة".'
+)
+translateWeb(
+  '.i18n-219',
+  '考试介面',
+  'Exam Interface',
+  'Antarmuka Ujian',
+  'واجهة الاختبار'
+)
+translateWeb(
+  '.i18n-220',
+  '请认真查看并熟悉以下考试介面，了解介面有助于顺利考试。',
+  'Please carefully review and familiarize yourself with the following exam interface, as understanding the interface will assist in a smooth examination.',
+  'Mohon perhatikan dan familiarisasi diri dengan antarmuka ujian berikut, pemahaman tentang antarmuka ini akan membantu kelancaran ujian Anda.',
+  'يُرجى مشاهدة وتعرف جيدًا على واجهة الاختبار التالية، حيث يمكن أن تساعد في تسهيل سير الاختبار بسلاسة.'
+)
+translateWeb(
+  '.i18n-221',
+  '异常警告',
+  'Abnormal Warning',
+  'Peringatan Kecelakaan',
+  'تحذير غير عادي'
+)
+translateWeb(
+  '.i18n-222',
+  '考试过程中将进行多重检测，绿色外框代表考试顺利进行， 如考试无异常外框将保持绿色，直至考试结束。',
+  'During the examination process, multiple checks will be conducted. A green border indicates that the examination is proceeding smoothly. If there are no abnormalities in the examination, the border will remain green until the end of the examination.',
+  'Selama proses ujian, akan ada banyak pemeriksaan. Bingkai berwarna hijau menunjukkan bahwa ujian berjalan lancar. Jika tidak ada kejadian yang aneh, bingkai akan tetap hijau hingga ujian selesai.',
+  'سيتم إجراء اختبار متعدد الفحوصات أثناء عملية الامتحان، حيث يُمثل الإطار الخارجي اللون الأخضر تقدم الامتحان بسلاسة. إذا لم تكن هناك أي مشكلات في الامتحان، سيتم الاحتفاظ بالإطار الخارجي باللون الأخضر حتى انتهاء الامتحان.'
+)
+translateWeb(
+  '.i18n-223',
+  '异常警告可分为以下五种：',
+  'Abnormal warnings can be divided into the following five types:',
+  'Peringatan kejadian aneh dapat dibagi menjadi lima jenis berikut:',
+  'يمكن تقسيم تحذيرات الاستثناء إلى خمسة أنواع:'
+)
+translateWeb(
+  '.i18n-224',
+  '异常警告一',
+  'Abnormal Warning One:',
+  'Peringatan Anomali Satu',
+  'تحذير استثنائي الأول'
+)
+translateWeb(
+  '.i18n-225',
+  '多重认证识别第一次异常，外框将变为浅红色',
+  'The first abnormal identification in multiple verifications results in a light red border.',
+  'Identifikasi validasi ganda mengenali anomali pertama, bingkai akan berubah menjadi merah muda.',
+  'اكتشاف استثنائي أول مرة من خلال التحقق المتعدد للهوية، حيث سيتغير الإطار الخارجي إلى اللون الأحمر الفاتح'
+)
+translateWeb(
+  '.i18n-226',
+  '请尽快根据提示进行调整',
+  'Please make adjustments promptly according to the prompts.',
+  'Segera sesuaikan sesuai petunjuk.',
+  'يرجى التكيف على الفور وفقًا للتعليمات'
+)
+translateWeb(
+  '.i18n-227',
+  '浅红色外框状态仍能继续答题',
+  'The status with a light red border allows you to continue answering questions.',
+  'Status bingkai merah muda masih memungkinkan untuk melanjutkan menjawab.',
+  'سيمكنك متابعة الإجابة مع الإطار الخارجي الأحمر الفاتح'
+)
+translateWeb(
+  '.i18n-228',
+  '调整后检测无异常外框将变回绿色',
+  'After adjustment, if there are no abnormalities, the border will return to green.',
+  'Setelah penyesuaian, jika tidak ada anomali, bingkai akan kembali hijau.',
+  'بعد التكيف، سيعود الإطار الخارجي إلى اللون الأخضر إذا لم يكن هناك أي استثناء.'
+)
 
 $('.i18n').on('click', function() {
   let lang = $(this).attr('lang');

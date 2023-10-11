@@ -138,7 +138,7 @@ user_footbar_template.innerHTML = `
     <div id='instruction-footbar' class='col text-center pt-2 nav-footbar'>
       <a href='exam-instruction.html'>
         <i class='fa-solid fa-circle-exclamation'></i>
-        <p>考试须知</p>
+        <p class='i18n-168'>考试须知</p>
       </a>
     </div>
     <div id='inspection-footbar' class='col-2 text-center pt-2 nav-footbar'>

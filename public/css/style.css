@@ -547,8 +547,13 @@ div.record {
     position: static;
   }
   
-  .progress-indicator-width, .instruction-progress-indicator-width {
+  .progress-indicator-width {
     min-width: 610px;
+    min-height: 50px;
+  }
+
+  .instruction-progress-indicator-width {
+    min-width: 900px;
     min-height: 50px;
   }
   
@@ -579,14 +584,19 @@ div.record {
     padding-left: 20px;
   }
 
-  .progress-indicator, .instruction-progress-indicator {
+  .progress-indicator {
     overflow-x: hidden;
     position: static;
   }
 
-  .progress-indicator-width, .instruction-progress-indicator-width {
+  .progress-indicator-width {
     max-width: 685px;
     min-height: 50px;
+  }
+
+  .instruction-progress-indicator {
+    overflow-x: scroll;
+    position: static;
   }
   
   .progress-indicator-bar, .instruction-progress-indicator-bar {

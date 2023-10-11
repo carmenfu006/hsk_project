@@ -142,7 +142,7 @@ user_sidebar_template.innerHTML = `
   </a>
   <a href='exam-instruction.html' id='instruction-sidebar' class='w3-bar-item w3-button rounded'>
     <i class='fa-solid fa-circle-exclamation mr-2'></i>
-    <span>考试须知</span>
+    <span class='i18n-168'>考试须知</span>
   </a>
   <a href='inspection-instruction.html' id='inspection-sidebar' class='w3-bar-item w3-button rounded'>
     <i class='fa-solid fa-mobile-screen mr-2'></i>
