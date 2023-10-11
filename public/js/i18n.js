@@ -1526,7 +1526,7 @@ translateWeb(
 translateWeb(
   '.i18n-217',
   'IOS系统，建议开启“引导式访问”功能',
-  'For iOS systems, it is recommended to enable the "Guided Access" feature."',
+  'For iOS systems, it is recommended to enable the "Guided Access" feature.',
   'Untuk sistem iOS, disarankan untuk mengaktifkan fitur "Guided Access" (Akses Terpandu).',
   'لأجهزة iOS، يُفضل تمكين وظيفة "الوصول التوجيهي".'
 )
@@ -1539,7 +1539,7 @@ translateWeb(
 )
 translateWeb(
   '.i18n-219',
-  '考试介面',
+  '考试界面',
   'Exam Interface',
   'Antarmuka Ujian',
   'واجهة الاختبار'
@@ -1747,17 +1747,162 @@ translateWeb(
   'Peserta yang berbuat curang akan dimasukkan dalam daftar hitam dan dilarang mengikuti ujian selama dua tahun.',
   'الطلاب المتلاعبين سيتم إدراجهم في القائمة السوداء وسيتم منعهم من الامتحان لمدة عامين.'
 )
+translateWeb(
+  '.i18n-249',
+  '1. 请你注意以下事项：',
+  '1. Please pay attention to the following:',
+  '1. Harap perhatikan hal berikut:',
+  '1. يُرجى مراعاة الأمور التالية:'
+)
+translateWeb(
+  '.i18n-250',
+  '在考前30分钟时也会有一次考前设备检测。',
+  'There will also be a pre-exam device check 30 minutes before the exam.',
+  'Sebelum ujian dimulai, akan ada pemeriksaan perangkat sekitar 30 menit sebelumnya.',
+  'سيتم أيضًا إجراء فحص للأجهزة قبل الامتحان بـ 30 دقيقة.'
+)
+translateWeb(
+  '.i18n-251',
+  '考试当天使用与设备检测时相同的手机参加考试。',
+  'Use the same mobile phone for the exam as during the device check.',
+  'Gunakan ponsel yang sama dengan yang digunakan saat pemeriksaan perangkat pada hari ujian.',
+  'استخدم هاتفك الجوال نفسه الذي تم استخدامه أثناء فحص الأجهزة يوم الامتحان.'
+)
+translateWeb(
+  '.i18n-252',
+  '选择⼀个安静、稳定的考试环境，确保你不会被干扰或受到外界噪音的影响。',
+  'Choose a quiet and stable testing environment to ensure you are not disturbed or affected by external noise.',
+  'Pilih lingkungan ujian yang tenang dan stabil, pastikan Anda tidak akan terganggu atau terpengaruh oleh kebisingan eksternal.',
+  'اختر بيئة هادئة ومستقرة للامتحان، وتأكد من عدم تعرضك لأي تشويش أو ضجيج خارجي.'
+)
+translateWeb(
+  '.i18n-253',
+  '确保你的设备电量充足，并关闭其他不必要的应用程序，以提供更好的考试性能。',
+  'Ensure that your device has sufficient battery power and close unnecessary applications for better exam performance.',
+  'Pastikan baterai perangkat Anda mencukupi dan tutup aplikasi yang tidak perlu untuk kinerja ujian yang lebih baik.',
+  'تأكد من أن بطارية جهازك مشحونة بشكل كافي وأغلق التطبيقات غير الضرورية لتحسين أداء الامتحان.'
+)
+translateWeb(
+  '.i18n-254',
+  '在考试过程中，有些题目会有较长的准备时间，为了保证您顺利进行考试，建议使用手机⽀架来放置手机，防止面部识别不通过，从而影响你的考试。',
+  'During the exam, some questions may have longer preparation times. To ensure a smooth exam, it is recommended to use a phone stand to place your phone to prevent facial recognition failures that may affect your exam.',
+  'Selama ujian, beberapa soal mungkin memerlukan waktu persiapan yang lebih lama. Untuk memastikan kelancaran ujian, disarankan menggunakan penyangga ponsel untuk menempatkan ponsel Anda agar pengenalan wajah tidak terganggu, yang dapat mempengaruhi ujian Anda.',
+  'قد تحتاج في بعض الأحيان إلى وقت إعداد أطول لبعض الأسئلة خلال الامتحان. لضمان سير الامتحان بسلاسة، يُفضل استخدام حامل هاتف جوال لوضع الهاتف عليه وتجنب مشاكل التعرف على الوجه التي قد تؤثر على أدائك في الامتحان.'
+)
+translateWeb(
+  '.i18n-255',
+  '在考试过程中，请勿录屏或截屏，禁止使用别的手机录像。如出现此情况，您的考试会被视为作弊处理。',
+  'Do not screen record or screenshot during the exam, and do not use another phone for recording. Such actions will be considered cheating.',
+  'Selama ujian, jangan merekam atau mengambil tangkapan layar, dan dilarang menggunakan ponsel lain untuk merekam video. Jika situasi seperti ini terjadi, ujian Anda akan dianggap sebagai tindakan curang.',
+  'يُمنع تسجيل الشاشة أو التقاط صورة خلال الامتحان، ومن ثم سيُعتبر امتحانك عرضًا للاحتيال إذا حدث ذلك.'
+)
+translateWeb(
+  '.i18n-256',
+  '在考试过程中，请勿使用手机进行通话。如出现此情况，您的考试会被视为作弊处理。',
+  'Do not make phone calls during the exam. If this occurs, your exam will be treated as cheating.',
+  'Selama ujian, jangan menggunakan ponsel untuk menelepon. Jika situasi seperti ini terjadi, ujian Anda akan dianggap sebagai tindakan curang.',
+  'يُمنع استخدام الهاتف الجوال للمكالمات خلال الامتحان، ومن ثم سيُعتبر امتحانك عرضًا للاحتيال إذا حدث ذلك.'
+)
+translateWeb(
+  '.i18n-257',
+  '考试前打开勿扰模式，防止其他短信或者电话，打断你的考试。',
+  'Before the exam, activate the "Do Not Disturb" mode to prevent other messages or calls from interrupting your exam.',
+  'Aktifkan mode "Do Not Disturb" sebelum ujian untuk menghindari pesan atau panggilan lain yang dapat mengganggu ujian Anda.',
+  'قبل الامتحان، قم بتفعيل وضع "عدم الإزعاج" على هاتفك لمنع وصول الرسائل النصية أو المكالمات الهاتفية الأخرى وإزعاجك أثناء الامتحان.'
+)
+translateWeb(
+  '.i18n-258',
+  '请查看自己手机如何设置“勿扰模式”。',
+  'Please check how to set "Do Not Disturb" mode on your phone.',
+  'Harap periksa cara mengatur mode "Do Not Disturb" di ponsel Anda.',
+  'يُرجى التحقق من كيفية تفعيل وضع "عدم الإزعاج" على هاتفك.'
+)
+translateWeb(
+  '.i18n-259',
+  '安卓手机',
+  'Android',
+  'Android',
+  'Android'
+)
+translateWeb(
+  '.i18n-260',
+  'iOS手机',
+  'iOS',
+  'iOS',
+  'iOS'
+)
+translateWeb(
+  '.i18n-261',
+  '2. 考生需要于考前半小时登入，进行考试设备检测',
+  '2. Candidates need to log in 30 minutes before the exam for the exam device check.',
+  '2. Peserta ujian harus masuk sekitar setengah jam sebelum ujian untuk pemeriksaan perangkat.',
+  '2. يجب على المرشحين تسجيل الدخول قبل نصف ساعة من بدء الامتحان وإجراء فحص الأجهزة.'
+)
+translateWeb(
+  '.i18n-262',
+  '3. 设备检测结束后，为避免考试受影响，请尽量保持现状，考试将自动开始。考试期间会进行面部、声纹及地点识别。',
+  '3. After the device check is completed, to avoid any disruption to the exam, please try to maintain the status quo. The exam will start automatically. Facial, voice, and location recognition will be performed during the exam.',
+  '3. Setelah pemeriksaan perangkat selesai, untuk menghindari gangguan pada ujian, cobalah untuk tetap tenang. Ujian akan dimulai secara otomatis. Selama ujian, akan dilakukan pengenalan wajah, suara, dan lokasi.',
+  '3. بعد انتهاء فحص الأجهزة، يُرجى الحفاظ على الحالة الحالية فيما يتعلق بالهاتف وسيتم بدء الامتحان تلقائيًا. سيتم تنفيذ تعرف على الوجه، وتعرف الصوت، وتحديد المكان خلال فترة الامتحان'
+)
+translateWeb(
+  '.i18n-263',
+  '已完成下载',
+  'Download Completed',
+  'Unduhan Selesai',
+  'تم التنزيل بنجاح'
+)
+translateWeb(
+  '.i18n-264',
+  '已完成阅读',
+  'Read and understood',
+  'Telah selesai membaca',
+  'تمت قراءة النص'
+)
+translateWeb(
+  '.i18n-265',
+  '你已完成阅读考试须知，',
+  'You have completed reading the exam instructions.',
+  'Anda telah menyelesaikan membaca petunjuk ujian.',
+  'لقد قمت بقراءة إشعار الامتحان وأؤكد ذلك.'
+)
+translateWeb(
+  '.i18n-266',
+  '祝考试顺利！',
+  'Good luck with your exam!',
+  'Semoga ujian Anda berjalan lancar!',
+  'نتمنى لك اجتياز الامتحان بنجاح!'
+)
+translateWeb(
+  '.i18n-267',
+  '页面将在',
+  'The page will automatically return to the main page in ',
+  'Halaman akan masuk ke beranda dalam ',
+  'الصفحة ستكون في'
+)
+translateWeb(
+  '.i18n-268',
+  '秒后自动进入主页。',
+  'seconds',
+  'detik',
+  'إعادة التوجيه تلقائيًا إلى الصفحة الرئيسية بعد ثوانٍ.'
+)
+translateWeb(
+  '.i18n-269',
+  '返回主页',
+  'Return to the main page',
+  'Kembali ke beranda',
+  'العودة إلى الصفحة الرئيسية'
+)
 
 $('.i18n').on('click', function() {
   let lang = $(this).attr('lang');
-  // urlAddParams('lang', lang);
   sessionStorage.setItem('lang', lang);
   location.reload();
 });
 
 function translateWeb(classname, zh, en, id, ar, input) {
   let url = new URL(window.location.href);
-  // let lang = url.searchParams.get('lang');
   let lang = sessionStorage.getItem("lang");
   updatePDFLink(lang)
   updateLogo(lang)
