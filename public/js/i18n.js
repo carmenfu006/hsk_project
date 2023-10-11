@@ -1148,7 +1148,7 @@ translateWeb(
   '如果未注册，填入邮箱和验证码后，会自动帮你注册账号。如果已注册，请用之前登录过的email登入。',
   'If you are not registered, filling in your email and verification code will automatically create an account for you. If you are already registered, please log in with the email you used previously.',
   'Jika Anda belum terdaftar, setelah mengisi email dan kode verifikasi, akun Anda akan didaftarkan secara otomatis. Jika sudah terdaftar, silakan masuk dengan email yang pernah Anda gunakan sebelumnya.',
-  '💡 إذا لم تكن مسجلاً بعد ، سيتم تسجيل حسابك تلقائيًا بعد إدخال البريد الإلكتروني ورمز التحقق. إذا كنت قد سجلت بالفعل ، يرجى تسجيل الدخول باستخدام عنوان البريد الإلكتروني الذي قمت بتسجيل الدخول به مسبقًا.'
+  'إذا لم تكن مسجلاً بعد ، سيتم تسجيل حسابك تلقائيًا بعد إدخال البريد الإلكتروني ورمز التحقق. إذا كنت قد سجلت بالفعل ، يرجى تسجيل الدخول باستخدام عنوان البريد الإلكتروني الذي قمت بتسجيل الدخول به مسبقًا.'
 )
 translateWeb(
   '.i18n-164',
@@ -1526,7 +1526,7 @@ translateWeb(
 translateWeb(
   '.i18n-217',
   'IOS系统，建议开启“引导式访问”功能',
-  'For iOS systems, it is recommended to enable the "Guided Access" feature.',
+  'For iOS systems, it is recommended to enable the "Guided Access" feature."',
   'Untuk sistem iOS, disarankan untuk mengaktifkan fitur "Guided Access" (Akses Terpandu).',
   'لأجهزة iOS، يُفضل تمكين وظيفة "الوصول التوجيهي".'
 )
@@ -1606,6 +1606,146 @@ translateWeb(
   'After adjustment, if there are no abnormalities, the border will return to green.',
   'Setelah penyesuaian, jika tidak ada anomali, bingkai akan kembali hijau.',
   'بعد التكيف، سيعود الإطار الخارجي إلى اللون الأخضر إذا لم يكن هناك أي استثناء.'
+)
+translateWeb(
+  '.i18n-229',
+  '异常警告二',
+  'Abnormal Warning Two:',
+  'Peringatan Anomali Dua',
+  'تحذير استثنائي الثاني'
+)
+translateWeb(
+  '.i18n-230',
+  '多重认证识别第二次异常，外框将变为红色',
+  'The second abnormal identification in multiple verifications results in a red border.',
+  'Identifikasi validasi ganda mengenali anomali kedua, bingkai akan berubah menjadi merah.',
+  'اكتشاف استثنائي للمرة الثانية من خلال التحقق المتعدد للهوية، حيث سيتغير الإطار الخارجي إلى اللون الأحمر'
+)
+translateWeb(
+  '.i18n-231',
+  '红色外框状态仍能继续答题',
+  'The status with a red border allows you to continue answering questions.',
+  'Status bingkai merah masih memungkinkan untuk melanjutkan menjawab.',
+  'يرجى التكيف على الفور وفقًا للتعليمات'
+)
+translateWeb(
+  '.i18n-232',
+  '留意提示内容，减少异常情况发生',
+  'Pay attention to the content of the prompts to reduce abnormal situations.',
+  'Perhatikan isi petunjuk untuk mengurangi kemungkinan anomali.',
+  'يرجى مراعاة محتوى التلميحات وتقليل حدوث استثناءات'
+)
+translateWeb(
+  '.i18n-233',
+  '异常警告三：严重警告',
+  'Abnormal Warning Three: Serious Warning',
+  'Peringatan Anomali Tiga: Peringatan Serius',
+  'تحذير استثنائي الثالث: تحذير خطير'
+)
+translateWeb(
+  '.i18n-234',
+  '多重认证识别第三次异常，外框将变为深红色（最后一次异常提醒）',
+  'The third abnormal identification in multiple verifications results in a deep red border (the final abnormal reminder).',
+  'Identifikasi validasi ganda mengenali anomali ketiga, bingkai akan berubah menjadi merah tua (peringatan terakhir).',
+  'اكتشاف استثنائي للمرة الثالثة من خلال التحقق المتعدد للهوية، حيث سيتغير الإطار الخارجي إلى اللون الأحمر الداكن (تحذير استثنائي الأخير)'
+)
+translateWeb(
+  '.i18n-235',
+  '考生务必根据提示进行调整',
+  'Candidates must make adjustments according to the prompts.',
+  'Peserta ujian harus segera mengikuti petunjuk untuk penyesuaian.',
+  'يجب على الطالب التكيف وفقًا للتعليمات'
+)
+translateWeb(
+  '.i18n-236',
+  '深红色外框状态仍能继续答题',
+  'The status with a deep red border allows you to continue answering questions.',
+  'Status bingkai merah tua masih memungkinkan untuk melanjutkan menjawab.',
+  'سيمكنك متابعة الإجابة مع الإطار الخارجي الأحمر الداكن'
+)
+translateWeb(
+  '.i18n-237',
+  '再次发生异常情况，考试将被自动终止，将根据已完成的部分进行评分',
+  'If abnormal situations occur again, the examination will be automatically terminated, and scoring will be based on the completed sections.',
+  'Jika terjadi anomali lagi, ujian akan berakhir secara otomatis, dan penilaian akan berdasarkan bagian yang telah selesai.',
+  'في حالة حدوث استثناء مرة أخرى، سيتم إنهاء الامتحان تلقائيًا، وسيتم تقدير الدرجة بناءً على الجزء المكتمل'
+)
+translateWeb(
+  '.i18n-238',
+  '异常警告四：严重警告',
+  'Abnormal Warning Four: Serious Warning',
+  'Peringatan Anomali Empat: Peringatan Serius',
+  'تحذير استثنائي الرابع: تحذير خطير'
+)
+translateWeb(
+  '.i18n-239',
+  '严重违反的行为有：',
+  'Serious violations include:',
+  'Tindakan pelanggaran serius melibatkan:',
+  'السلوك الخرق الجسيم يشمل:'
+)
+translateWeb(
+  '.i18n-240',
+  '考试过程中面部及声纹识别三次异常',
+  'Three abnormal facial and voice recognitions during the examination.',
+  'Tiga kali anomali dalam identifikasi wajah dan suara selama ujian.',
+  'الكشف عن استثناء ثلاث مرات أثناء تحقق الهوية الوجهية وبصمة الصوت أثناء الامتحان.'
+)
+translateWeb(
+  '.i18n-241',
+  '考试过程中两次退出app',
+  'Two app exits during the examination.',
+  'Dua kali keluar dari aplikasi selama ujian.',
+  'الخروج من التطبيق مرتين أثناء الامتحان.'
+)
+translateWeb(
+  '.i18n-242',
+  '考试过程中录屏或者截屏',
+  'Screen recording or screenshot during the examination.',
+  'Merekam atau mengambil tangkapan layar selama ujian.',
+  'تسجيل الشاشة أو التقاط صورة شاشة أثناء الامتحان.'
+)
+translateWeb(
+  '.i18n-243',
+  '考试过程中通话',
+  'Phone calls during the examination.',
+  'Menelepon selama ujian.',
+  'إجراء مكالمات أثناء الامتحان.'
+)
+translateWeb(
+  '.i18n-244',
+  '异常警告五：考试已被终止',
+  'Abnormal Warning Five: Examination Terminated',
+  'Peringatan Anomali Lima: Ujian Dihentikan',
+  'تحذير استثنائي الخامس: تم إنهاء الامتحان'
+)
+translateWeb(
+  '.i18n-245',
+  '认证识别多次异常，考生未根据提示完成调整',
+  'Multiple abnormal identifications without candidate adjustments.',
+  'Identifikasi validasi mengenali anomali berulang kali, peserta tidak mengikuti petunjuk penyesuaian.',
+  'اكتشاف متكرر للاستثناءات، وعدم التكيف الفوري من قبل الطالب'
+)
+translateWeb(
+  '.i18n-246',
+  '考试将根据已完成的部分进行评分',
+  'Scoring will be based on the completed sections of the examination.',
+  'Ujian akan dinilai berdasarkan bagian yang telah selesai.',
+  'سيتم تقدير الدرجة بناءً على الجزء المكتمل من الامتحان'
+)
+translateWeb(
+  '.i18n-247',
+  '我们将复查试卷异常记录，若核实作弊情况，考试成绩将被取消',
+  'We will review the abnormal records of the test paper. If cheating is confirmed, the test scores will be canceled.',
+  'Kami akan memeriksa catatan anomali ujian. Jika kecurangan terbukti, nilai ujian akan dibatalkan.',
+  'سنقوم بمراجعة سجل الامتحان للاستثناءات، وإذا تم تأكيد التلاعب، سيتم إلغاء نتائج الامتحان'
+)
+translateWeb(
+  '.i18n-248',
+  '作弊的考生将被列入黑名单，两年内不得再报考试',
+  'Cheating candidates will be blacklisted and will not be allowed to take the test again within two years.',
+  'Peserta yang berbuat curang akan dimasukkan dalam daftar hitam dan dilarang mengikuti ujian selama dua tahun.',
+  'الطلاب المتلاعبين سيتم إدراجهم في القائمة السوداء وسيتم منعهم من الامتحان لمدة عامين.'
 )
 
 $('.i18n').on('click', function() {
