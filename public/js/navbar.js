@@ -138,7 +138,7 @@ user_navbar_template.innerHTML = `
 user_sidebar_template.innerHTML = `
   <a href='dashboard.html' id='dashboard-sidebar' class='w3-bar-item w3-button rounded'>
     <i class='fa-solid fa-house mr-2'></i>
-    <span>个人主页</span>
+    <span class='i18n-272'>个人主页</span>
   </a>
   <a href='exam-instruction.html' id='instruction-sidebar' class='w3-bar-item w3-button rounded'>
     <i class='fa-solid fa-circle-exclamation mr-2'></i>
@@ -146,30 +146,30 @@ user_sidebar_template.innerHTML = `
   </a>
   <a href='inspection-instruction.html' id='inspection-sidebar' class='w3-bar-item w3-button rounded'>
     <i class='fa-solid fa-mobile-screen mr-2'></i>
-    <span>设备检测指示</span>
+    <span class='i18n-273'>设备检测指示</span>
   </a>
   <div class='border-bottom mt-3 mb-3'></div>
   <a href='important-notice.html' id='notice-sidebar' class='w3-bar-item w3-button rounded'>
     <i class='fa-solid fa-triangle-exclamation mr-2'></i>
-    <span>重要提示</span>
+    <span class='i18n-274'>重要提示</span>
   </a>
   <a href='abnormal-alert.html' id='alert-sidebar' class='w3-bar-item w3-button rounded'>
     <i class='fa-solid fa-circle-xmark mr-2'></i>
-    <span>异常警告</span>
+    <span class='i18n-221'>异常警告</span>
   </a>
   <div class='border-bottom mt-3 mb-3'></div>
   <a href='support-center.html' id='support-sidebar' class='w3-bar-item w3-button rounded'>
     <i class='fa-solid fa-shield-heart mr-2'></i>
-    <span>⽀援中⼼</span>
+    <span class='i18n-275'>⽀援中⼼</span>
   </a>
   <a href='faqs.html' id='faqs-sidebar' class='w3-bar-item w3-button rounded'>
     <i class='fa-solid fa-circle-question mr-2'></i>
-    <span>常⻅问题</span>
+    <span class='i18n-5'>常⻅问题</span>
   </a>
   <div class='border-bottom mt-3 mb-3'></div>
   <a href='exam-record.html' id='record-sidebar' class='w3-bar-item w3-button'>
     <i class='fa-solid fa-gear mr-2'></i>
-    <span>考试记录</span>
+    <span class='i18n-276'>考试记录</span>
   </a>
 `;
 

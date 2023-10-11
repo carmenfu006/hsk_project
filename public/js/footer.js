@@ -132,7 +132,7 @@ user_footbar_template.innerHTML = `
     <div id='dashboard-footbar' class='col text-center ml-3 pt-2 nav-footbar'>
       <a href='dashboard.html'>
         <i class='fa-solid fa-house'></i>
-        <p>个人主页</p>
+        <p class='i18n-272'>个人主页</p>
       </a>
     </div>
     <div id='instruction-footbar' class='col text-center pt-2 nav-footbar'>
@@ -144,37 +144,37 @@ user_footbar_template.innerHTML = `
     <div id='inspection-footbar' class='col-2 text-center pt-2 nav-footbar'>
       <a href='inspection-instruction.html'>
         <i class='fa-solid fa-mobile-screen'></i>
-        <p>设备检测指示</p>
+        <p class='i18n-273'>设备检测指示</p>
       </a>
     </div>
     <div id='notice-footbar' class='col text-center pt-2 nav-footbar'>
       <a href='important-notice.html'>
         <i class='fa-solid fa-triangle-exclamation'></i>
-        <p>重要提示</p>
+        <p class='i18n-274'>重要提示</p>
       </a>
     </div>
     <div id='alert-footbar' class='col text-center pt-2 nav-footbar'>
       <a href='abnormal-alert.html'>
         <i class='fa-solid fa-circle-xmark'></i>
-        <p>异常警告</p>
+        <p class='i18n-221'>异常警告</p>
       </a>
     </div>
     <div id='support-footbar' class='col text-center pt-2 nav-footbar'>
       <a href='support-center.html'>
         <i class='fa-solid fa-shield-heart'></i>
-        <p>⽀援中⼼</p>
+        <p class='i18n-275'>⽀援中⼼</p>
       </a>
     </div>
     <div id='faqs-footbar' class='col text-center pt-2 nav-footbar'>
       <a href='faqs.html'>
         <i class='fa-solid fa-circle-question'></i>
-        <p>常⻅问题</p>
+        <p class='i18n-5'>常⻅问题</p>
       </a>
     </div>
     <div id='record-footbar' class='col text-center pt-2 nav-footbar'>
       <a href='exam-record.html'>
         <i class='fa-solid fa-gear'></i>
-        <p>考试记录</p>
+        <p class='i18n-276'>考试记录</p>
       </a>
     </div>
   </div>

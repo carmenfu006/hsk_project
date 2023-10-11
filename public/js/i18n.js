@@ -1894,6 +1894,111 @@ translateWeb(
   'Kembali ke beranda',
   'العودة إلى الصفحة الرئيسية'
 )
+translateWeb(
+  '.i18n-270',
+  '欢迎, ',
+  'Hello, ',
+  'Hai, ',
+  'مرحبًا,'
+)
+translateWeb(
+  '.i18n-271',
+  '待完成考试',
+  'To be completed exams',
+  'Ujian yang harus diselesaikan',
+  'الاختبارات المقررة'
+)
+translateWeb(
+  '.i18n-272',
+  '个人主页',
+  'Homepage',
+  'Beranda',
+  'الصفحة الرئيسية'
+)
+translateWeb(
+  '.i18n-273',
+  '设备检测指示',
+  'Equipment Inspection Instructions',
+  'Petunjuk Pemeriksaan Peralatan',
+  'إشارات فحص الأجهزة'
+)
+translateWeb(
+  '.i18n-274',
+  '重要提示',
+  'Important Notices',
+  'Pemberitahuan Penting',
+  'تنبيه هام'
+)
+translateWeb(
+  '.i18n-275',
+  '⽀援中⼼',
+  'Support Center',
+  'Pusat Dukungan',
+  'مركز الدعم'
+)
+translateWeb(
+  '.i18n-276',
+  '考试记录',
+  'Exam Records',
+  'Rekam Ujian',
+  'سجل الاختبارات'
+)
+translateWeb(
+  '.i18n-277',
+  '考试前，我们会对你的设备进行设备检测，为了确保你在考试顺利进⾏，你需要下 载并使⽤官⽅HSK⼝语测试App（HSK Oﬃcial）进⾏设备检测。你必须完成设备检测才可以参加考试。',
+  'Prior to the exam, we will conduct an equipment inspection of your devices to ensure a smooth exam experience. You need to download and use the official HSK Language Test App (HSK Official) for the equipment inspection. You must complete the equipment inspection to participate in the exam.',
+  'Sebelum ujian, kami akan melakukan pemeriksaan peralatan Anda untuk memastikan Anda dapat mengikuti ujian dengan lancar. Anda perlu mengunduh dan menggunakan Aplikasi Resmi HSK (HSK Official) untuk pemeriksaan peralatan. Anda harus menyelesaikan pemeriksaan peralatan sebelum dapat mengikuti ujian.',
+  'قبل الامتحان، سنقوم بإجراء فحص لأجهزتك لضمان سلاسة إجراء الامتحان. ستحتاج إلى تنزيل واستخدام تطبيق اختبار اللغة الصينية الرسمي (HSK Official) لإجراء فحص الأجهزة. يجب عليك إكمال فحص الأجهزة لتتمكن من المشاركة في الامتحان.'
+)
+translateWeb(
+  '.i18n-278',
+  '禁止考试中录屏或截图',
+  'Prohibition of Screen Recording or Screenshots',
+  'Larangan Rekam atau Tangkap Layar Selama Ujian',
+  'منع التصوير أو التقاط الشاشة أثناء الاختبار'
+)
+translateWeb(
+  '.i18n-279',
+  '禁止考试中通话',
+  'No phone calls during exams',
+  'Tidak ada panggilan telepon selama ujian',
+  'عدم إجراء مكالمات هاتفية أثناء الامتحانات'
+)
+translateWeb(
+  '.i18n-280',
+  '受电话或信息影响的题目将不得分，建议开启手机勿扰模式',
+  'Questions that are affected by phone calls or messages will not be scored. It is recommended to turn on the Do Not Disturb mode on your mobile phone.',
+  'Pertanyaan yang dipengaruhi oleh panggilan telepon atau pesan tidak akan dinilai. Disarankan untuk mengaktifkan mode Jangan Ganggu di ponsel Anda.',
+  'لن يتم تسجيل الأسئلة التي تتأثر بالمكالمات الهاتفية أو الرسائل، ويوصى بتشغيل وضع عدم الإزعاج على هاتفك المحمول.'
+)
+translateWeb(
+  '.i18n-281',
+  '考试过程中将进行多重检测',
+  'During the examination process, multiple checks will be conducted.',
+  'Selama proses ujian, akan ada banyak pemeriksaan.',
+  'سيتم إجراء فحوصات متعددة أثناء الامتحان'
+)
+translateWeb(
+  '.i18n-282',
+  '绿色外框代表考试顺利进行',
+  'A green border indicates that the examination is proceeding smoothly.',
+  'Bingkai berwarna hijau menunjukkan bahwa ujian berjalan lancar.',
+  'تشير الحدود الخضراء إلى أن الفحص يسير بسلاسة.'
+)
+translateWeb(
+  '.i18n-283',
+  '如考试无异常外框将保持绿色，直至考试结束',
+  'If there are no abnormalities in the examination, the border will remain green until the end of the examination.',
+  'Jika tidak ada kejadian yang aneh, bingkai akan tetap hijau hingga ujian selesai.',
+  'إذا لم تكن هناك أي تشوهات في الفحص، فستظل الحدود خضراء حتى نهاية الفحص.'
+)
+translateWeb(
+  '.i18n-284',
+  '考试已被终止',
+  'Examination Terminated',
+  'Ujian Dihentikan',
+  'تم إنهاء الفحص'
+)
 
 $('.i18n').on('click', function() {
   let lang = $(this).attr('lang');
