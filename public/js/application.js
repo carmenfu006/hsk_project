@@ -28,7 +28,7 @@ function progressIndicator() {
         <div class='progress-indicator-dot step-5'></div>
       </div>
       <div class='row text-center'>
-        <div class='col progress-indicator-word step-1'>选择考期</div>
+        <div class='col i18n-66 progress-indicator-word step-1'>选择考期</div>
         <div class='col progress-indicator-word step-2'>考生资料</div>
         <div class='col progress-indicator-word step-3'>上传照片</div>
         <div class='col progress-indicator-word step-4'>确认考生信息</div>

@@ -456,6 +456,126 @@ translateWeb(
   'Pesan telah berhasil terkirim',
   'تم إرسال الرسالة بنجاح'
 )
+translateWeb(
+  '.i18n-66',
+  '选择考期',
+  'Exam Date Selection',
+  'Pilih Tanggal Ujian',
+  'اختيار موعد الامتحان'
+)
+translateWeb(
+  '.i18n-67',
+  '考试地区',
+  'Exam Location',
+  'Lokasi Ujian',
+  'منطقة الامتحان'
+)
+translateWeb(
+  '.i18n-68',
+  '中国香港 (GMT+8:00)',
+  'China Hong Kong (GMT+8:00)',
+  'China Hong Kong (GMT+8:00)',
+  'China Hong Kong (GMT+8:00)'
+)
+translateWeb(
+  '.i18n-69',
+  '印尼 (GMT+07:00)',
+  'Indonesia (GMT+07:00)',
+  'Indonesia (GMT+07:00)',
+  'Indonesia (GMT+07:00)'
+)
+translateWeb(
+  '.i18n-70',
+  '阿联酋 (GMT+04:00)',
+  'United Arab Emirates (GMT+04:00)',
+  'United Arab Emirates (GMT+04:00)',
+  'United Arab Emirates (GMT+04:00)'
+)
+translateWeb(
+  '.i18n-71',
+  '澳洲 (GMT+10:00)',
+  'Australia (GMT+10:00)',
+  'Australia (GMT+10:00)',
+  'Australia (GMT+10:00)'
+)
+translateWeb(
+  '.i18n-72',
+  '考试级别',
+  'Exam Level',
+  'Tingkat Ujian',
+  'مستوى الامتحان'
+)
+translateWeb(
+  '.i18n-73',
+  '请选择考试时间',
+  'Please select the exam date',
+  'Silakan pilih waktu ujian',
+  'الرجاء اختيار موعد الامتحان'
+)
+translateWeb(
+  '.i18n-74',
+  '(* 年-月-日 时:分, 请留意考试地区时差 )',
+  '(* year-month-day time, please note the time difference in the exam location)',
+  '(* tahun-bulan-tanggal jam:menit, perhatikan perbedaan zona waktu lokasi ujian)',
+  '(* سنة-شهر-يوم ساعة:دقيقة ، يرجى مراعاة فارق التوقيت في منطقة الامتحان)'
+)
+translateWeb(
+  '.i18n-75',
+  '考试时间*(GMT+08:00)',
+  'Exam Date* (GMT+08:00)',
+  'Waktu Ujian* (GMT+08:00)',
+  'موعد الامتحان* (GMT+08:00)'
+)
+translateWeb(
+  '.i18n-76',
+  '考试前30分钟需要做设备检测，通过后才可考试，请预留时间。',
+  'A device check is required 30 minutes before the exam, and you can only take the exam after passing it, so please allocate time accordingly.',
+  'Anda perlu melakukan pemeriksaan perangkat 30 menit sebelum ujian, hanya setelah lulus pemeriksaan tersebut Anda dapat mengikuti ujian, jadi tolong sisihkan waktu.',
+  'يجب إجراء فحص الجهاز قبل الامتحان بـ 30 دقيقة ، ويتعين أن يتم الامتحان بعد النجاح في الفحص. يرجى تخصيص الوقت الكافي.'
+)
+translateWeb(
+  '.i18n-77',
+  '已选择考期及费用',
+  'Selected Exam Date and Fees',
+  'Tanggal Ujian dan Biaya yang Dipilih',
+  'المواعيد والرسوم المحددة'
+)
+translateWeb(
+  '.i18n-78',
+  '尚未选择任何考试',
+  'No exam date selected yet',
+  'Belum Memilih Ujian Apapun',
+  'لم يتم اختيار أي امتحان حتى الآن'
+)
+translateWeb(
+  '.i18n-79',
+  '我已阅读并同意',
+  'I have read and agree to the',
+  'Saya telah membaca dan menyetujui',
+  'لقد قرأت ووافقت على'
+)
+translateWeb(
+  '.i18n-80',
+  '(考生须知)',
+  'Guidelines for HSK Test Takers',
+  'Pedoman Peserta Ujian Bahasa Tionghoa',
+  'إشعار مرشح امتحان اللغة الصينية'
+)
+translateWeb(
+  '.i18n-81',
+  '及',
+  'and the',
+  'dan',
+  'و'
+)
+translateWeb(
+  '.i18n-82',
+  '(隐私指引)',
+  'Privacy Protection Guidelines for HSK Test Takers',
+  'Panduan Perlindungan Privasi Peserta Ujian Bahasa Tionghoa',
+  'دليل حماية خصوصية مرشح امتحان اللغة الصينية'
+)
+
 
 translateWeb('.i18n-0', '验证码', 'Verification code', 'Kode verifikasi', 'رمز التحقق', true)
 
