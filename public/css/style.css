@@ -56,6 +56,10 @@ a.primary-color:hover {
   background-color: rgba(252, 85, 85, 0.1);
 }
 
+.bg-info-color {
+  background-color: #D9F6F3;
+}
+
 .bg-primary-color {
   background-color: #3FD3C3;
 }
@@ -68,7 +72,7 @@ a.primary-color:hover {
   background-color: #E6E6E6;
 }
 
-.bg-info-color {
+.bg-info-banner {
   background-color: #D9F6F3;
   border-radius: 16px;
   justify-content: center;

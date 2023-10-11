@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', async () => {
+  const lang = getSession('lang');
   const {stripePublicKey} = await fetch('/config').then(r => r.json())
-  const stripe = Stripe(stripePublicKey)
+  const stripe = Stripe(stripePublicKey, { locale : lang })
 
   // let data = { amount: 26000, customer: 'dummy'}
 
@@ -12,7 +13,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   //   body: JSON.stringify(data)
   // }).then(r => r.json())
 
-  const clientSecret = 'pi_3Ny6SFArZBHZvCDs0hSzMrvd_secret_HueDkjb0IdLYSXxoFObnnIxAJ'
+  const clientSecret = 'pi_3Ny66eArZBHZvCDs1A7jgrhZ_secret_d5uRkrCqAwPhfLkA28lV3TKQw'
 
   const elements = stripe.elements({ clientSecret });
   const paymentElement = elements.create('payment');
@@ -71,11 +72,27 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     if (updatePaymentIntents.status == 'complete') {
       $('.total-amount').html((finalAmount/100).toFixed(2))
-      verify_code.html('应用')
+      applyText(lang);
       verify_code.css('background-color', '#3FD3C3')
       $('#discount-error-message').addClass('d-none')
     } else {
       $('#discount-error-message').removeClass('d-none')
     }
   })
+
+  function getSession(key) {
+    return sessionStorage.getItem(key);
+  }
+  
+  function applyText(lang) {
+    if (lang == 'zh' || lang == null) {
+      verify_code.html('应用');
+    } else if (lang == 'en') {
+      verify_code.html('Apply');
+    } else if (lang == 'id') {
+      verify_code.html('Aplikasi');
+    } else if (lang == 'ar') {
+      verify_code.html('تطبيق');
+    }
+  }
 })

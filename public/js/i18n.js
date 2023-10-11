@@ -874,6 +874,161 @@ translateWeb(
   'Konfirmasi Informasi Calon',
   'تأكيد معلومات المرشح'
 )
+translateWeb(
+  '.i18n-124',
+  '预报名已提交',
+  'Registration Pre-submission',
+  'Pendaftaran Prakiraan Telah Diajukan',
+  'تم تقديم التسجيل المسبق'
+)
+translateWeb(
+  '.i18n-125',
+  '预报名已提交,',
+  'Your registration pre-submission has been received,',
+  'Pendaftaran prakiraan telah diajukan,',
+  'التسجيل المسبق متاح،'
+)
+translateWeb(
+  '.i18n-126',
+  '但还没有完成考试登记',
+  'but exam registration has not been completed yet',
+  'tetapi pendaftaran ujian belum selesai',
+  'لكنك لم تسجل للامتحان بعد'
+)
+translateWeb(
+  '.i18n-127',
+  '请在48小时内缴付你的考试费用，否则你的预报名将会被取消。',
+  'Please make your exam payment within 48 hours; otherwise, your pre-submission will be canceled.',
+  'Silakan membayar biaya ujian Anda dalam waktu 48 jam, atau pendaftaran prakiraan Anda akan dibatalkan.',
+  'يرجى دفع رسوم الامتحان خلال 48 ساعة، وإلا سيتم إلغاء تسجيلك المسبق.'
+)
+translateWeb(
+  '.i18n-128',
+  'HSK口语移动端考试中心的每场考试，名额有限，先到先得。',
+  'For each HSK Speaking Mobile Exam Center test, there are limited slots available, and they are assigned on a first-come, first-served basis.',
+  'Setiap sesi ujian di Pusat Ujian HSK Lisan di perangkat seluler memiliki kuota terbatas dan akan diberikan kepada yang mendaftar terlebih dahulu.',
+  '. لا يتوفر عدد محدود من المقاعد في كل امتحان HSK الشفهي في مركز الامتحان للأجهزة المحمولة، الأولوية لأولئك الذين يسجلون أولاً.'
+)
+translateWeb(
+  '.i18n-129',
+  '预报名成功后需要在48小时内付款，以最终确认考试登记。',
+  'Payment must be made within 48 hours after successful pre-submission to confirm your exam registration.',
+  'Setelah pendaftaran prakiraan berhasil, Anda harus melakukan pembayaran dalam waktu 48 jam untuk mengonfirmasi pendaftaran ujian.',
+  'بعد نجاح التسجيل المسبق، يجب دفع الرسوم في غضون 48 ساعة لتأكيد التسجيل النهائي للامتحان.'
+)
+translateWeb(
+  '.i18n-130',
+  '过时后未付款，会自动取消你的预报名并释放考位给其他考生。',
+  'Failure to make payment within the specified time will result in the automatic cancellation of your pre-submission, and the exam slot will be released for other candidates.',
+  'Jika pembayaran tidak dilakukan dalam waktu yang ditentukan, pendaftaran prakiraan Anda akan otomatis dibatalkan, dan tempat ujian akan dilepaskan untuk peserta lain.',
+  'في حالة عدم الدفع في الوقت المناسب، سيتم إلغاء التسجيل المسبق تلقائيًا وإفساح المجال للطلاب الآخرين.'
+)
+translateWeb(
+  '.i18n-131',
+  '请按“在线支付”进行付款，或在48小时内点击',
+  'Please proceed with "Online Payment" or click ',
+  'Silakan gunakan opsi "Pembayaran Online" atau kunjungi ',
+  'يرجى الضغط على "الدفع عبر الإنترنت" للدفع، أو انقر خلال 48 ساعة '
+)
+translateWeb(
+  '.i18n-132',
+  '支付考试费用后，将无法取消考试或退款。',
+  'Once the exam fee is paid, there will be no cancellations or refunds.',
+  'Setelah membayar biaya ujian, pendaftaran tidak dapat dibatalkan atau uang tidak dapat dikembalikan.',
+  'بعد دفع رسوم الامتحان، لا يمكن إلغاء التسجيل أو استرداد الأموا'
+)
+translateWeb(
+  '.i18n-133',
+  '如有疑问，请电邮support@hskk.org',
+  'If you have any questions, please email support@hskk.org',
+  'Jika Anda memiliki pertanyaan, silakan hubungi support@hskk.org',
+  'إذا كانت لديك أي استفسارات، يرجى مراسلة support@hskk.org'
+)
+translateWeb(
+  '.i18n-134',
+  '在线支付',
+  'Online Payment',
+  'Pembayaran Online',
+  'الدفع عبر الإنترنت'
+)
+translateWeb(
+  '.i18n-135',
+  '支付项目',
+  'Payment Items',
+  'Item Pembayaran',
+  'بند الدفع'
+)
+translateWeb(
+  '.i18n-136',
+  '小计',
+  'Subtotal',
+  'Subtotal',
+  'المجموع الفرعي'
+)
+translateWeb(
+  '.i18n-137',
+  'HSK⼝语(初级)移动端考试',
+  'HSK (Elementary Level) Mobile Exam',
+  'Ujian HSK (Tingkat Dasar) di Aplikasi Mobile',
+  'امتحان اللغة الصينية HSK (المستوى الأول) على الهاتف المحمول'
+)
+translateWeb(
+  '.i18n-138',
+  'HSK⼝语(中级)移动端考试',
+  'HSK (Intermediate Level) Mobile Exam',
+  'Ujian HSK (Tingkat Menengah) di Aplikasi Mobile',
+  'امتحان اللغة الصينية HSK (المستوى الثاني) على الهاتف المحمول'
+)
+translateWeb(
+  '.i18n-139',
+  'HSK⼝语(高级)移动端考试',
+  'HSK (Advanced Level) Mobile Exam',
+  'Ujian HSK (Tingkat Lanjutan) di Aplikasi Mobile',
+  'امتحان اللغة الصينية HSK (المستوى الثالث) على الهاتف المحمول'
+)
+translateWeb(
+  '.i18n-140',
+  '优惠码',
+  'Promo Code',
+  'Kode Diskon',
+  'كود الخصم',
+  true
+)
+translateWeb(
+  '.i18n-141',
+  '应用',
+  'Apply',
+  'Aplikasi',
+  'تطبيق'
+)
+translateWeb(
+  '.i18n-142',
+  '总付款金额',
+  'Total Payment Amount',
+  'Jumlah Pembayaran Total',
+  'المبلغ الإجمالي المطلوب'
+)
+translateWeb(
+  '.i18n-143',
+  '优惠码已应用！折扣已计入总付款金额。',
+  'Promo code applied! Discount has been applied to the total payment amount.',
+  'Kode Diskon Telah Digunakan! Diskon telah dihitung dalam Jumlah Pembayaran Total.',
+  'تم تطبيق الكود الترويجي بنجاح! تم احتساب الخصم في المبلغ الإجمالي.'
+)
+translateWeb(
+  '.i18n-144',
+  '无效的优惠码。请确认并重试。',
+  'Invalid promo code. Please check and try again.',
+  'Kode Diskon Tidak Valid. Harap periksa dan coba lagi.',
+  'كود الخصم غير صالح. يرجى التحقق والمحاولة مرة أخرى.'
+)
+translateWeb(
+  '.i18n-145',
+  '付款未成功',
+  'Payment unsuccessful',
+  'Pembayaran gagal',
+  'الدفع غير ناجح'
+)
 
 translateWeb('.i18n-0', '验证码', 'Verification code', 'Kode verifikasi', 'رمز التحقق', true)
 
