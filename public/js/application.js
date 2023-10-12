@@ -92,7 +92,7 @@ function enabledNextBtn() {
       $('#to-step-2').attr('disabled', true);
     }
 
-    if (verifyInput('#gender') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#firstname') && verifyInput('#lastname') && verifyInput('#birth-year') && verifyInput('#birth-month') && verifyInput('#birth-day') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#identity-type') && verifyInput('#identity') && verifyInput('#country-code') && verifyInput('#contact-number')) {
+    if (verifyInput('#gender') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#firstname') && verifyInput('#lastname') && verifyInput('#birth-year') && verifyInput('#birth-month') && verifyInput('#birth-day') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#identity-type') && verifyInput('#identity') && verifyInput('#country-code') && verifyInput('#contact-number') && verifyInputByCondition('#hsk', '#hsk-year', '#hsk-month', '#hsk-day') && verifyInputByCondition('#hskk', '#hskk-year', '#hskk-month', '#hskk-day')) {
       $('#to-step-3').attr('disabled', false);
     } else {
       $('#to-step-3').attr('disabled', true);
@@ -187,6 +187,18 @@ function checkboxSelect(classname, setInputVal, inputId, targetId) {
 function verifyInput(id) {
   if ($(id).val() === '') {
     return false;
+  } else {
+    return true;
+  }
+}
+
+function verifyInputByCondition(id, targetYear, targetMonth, targetDay) {
+  if ($(id).val() == 'yes') {
+    if ($(targetYear).val() == '' || $(targetMonth).val() == '' || $(targetDay).val() == '') {
+      return false;
+    } else {
+      return true;
+    }
   } else {
     return true;
   }
