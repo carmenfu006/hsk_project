@@ -535,7 +535,7 @@ div.record {
 
 @media screen and (min-width: 320px) {
   .home-bg-image-2 {
-    min-height: 670px;
+    min-height: 650px;
   }
 
   .card-text {
@@ -571,11 +571,21 @@ div.record {
 
 @media screen and (min-width: 375px) {
   .home-bg-image-2 {
-    min-height: 630px;
+    min-height: 560px;
   }
 }
 
 @media screen and (min-width: 768px) {
+  .home-text-1 {
+    font-size: 42px;
+  }
+  .home-text-2 {
+    font-size: 28px;
+  }
+  .home-text-3 {
+    font-size: 16px;
+  }
+
   .home-bg-image-2 {
     min-height: 580px;
   }
