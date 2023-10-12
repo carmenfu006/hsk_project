@@ -72,11 +72,13 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     if (updatePaymentIntents.status == 'complete') {
       $('.total-amount').html((finalAmount/100).toFixed(2))
-      applyText(lang);
+      applyText(lang, verify_code, '应用', 'Apply', 'Aplikasi', 'تطبيق');
       verify_code.css('background-color', '#3FD3C3')
       $('#discount-error-message').addClass('d-none')
+      $('#discount-success-message').removeClass('d-none')
     } else {
       $('#discount-error-message').removeClass('d-none')
+      $('#discount-success-message').addClass('d-none')
     }
   })
 
@@ -84,15 +86,15 @@ window.addEventListener('DOMContentLoaded', async () => {
     return sessionStorage.getItem(key);
   }
   
-  function applyText(lang) {
-    if (lang == 'zh' || lang == null) {
-      verify_code.html('应用');
+  function applyText(lang, target, zh, en, id, ar) {
+    if (lang == null || lang == 'zh') {
+      target.html(zh);
     } else if (lang == 'en') {
-      verify_code.html('Apply');
+      target.html(en);
     } else if (lang == 'id') {
-      verify_code.html('Aplikasi');
+      target.html(id);
     } else if (lang == 'ar') {
-      verify_code.html('تطبيق');
+      target.html(ar);
     }
   }
 })
