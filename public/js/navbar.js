@@ -219,50 +219,6 @@ if (partner == null) {
   $('#user-public').remove()
 }
 
-$('#to-candidate-dashboard').on('click', function(e) {
-  e.preventDefault();
-  const captchaResponse = grecaptcha.getResponse()
-
-  fetch('/recaptcha', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json, text/plain, */*',
-      'Content-Type' : 'application/json'
-    },
-      body: JSON.stringify({captchaResponse: captchaResponse})
-  })
-  .then(r => r.json())
-  .then((data) => {
-    console.log(data.status)
-    if (data.status == true) {
-      sessionStorage.setItem('user', 'true');
-      window.location.replace($(this)[0].form.action);
-    }
-  });
-});
-
-$('#to-partner-dashboard').on('click', function(e) {
-  e.preventDefault();
-  const captchaResponse = grecaptcha.getResponse()
-
-  fetch('/recaptcha', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json, text/plain, */*',
-      'Content-Type' : 'application/json'
-    },
-      body: JSON.stringify({captchaResponse: captchaResponse})
-  })
-  .then(r => r.json())
-  .then((data) => {
-    console.log(data.status)
-    if (data.status == true) {
-      sessionStorage.setItem('partner', 'true');
-      window.location.replace($(this)[0].form.action);
-    }
-  });
-});
-
 $('#user-logout, #partner-logout').on('click', function(e) {
   sessionStorage.removeItem('user');
   sessionStorage.removeItem('partner');

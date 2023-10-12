@@ -63,7 +63,7 @@ app.get('/partner-login', async (req, res) => {
 
 app.post('/recaptcha', (req, res) => {
   if (req.body.captchaResponse === undefined || req.body.captchaResponse === '' || req.body.captchaResponse === null) {
-    return res.json({'status': false, 'message' : '1'})
+    return res.json({'status': false, 'message' : 'Recaptcha not checked'})
   }
 
   const url = `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecretKey}&response=${req.body.captchaResponse}`;
@@ -79,7 +79,7 @@ app.post('/recaptcha', (req, res) => {
     })
   })
   .on('error', (error) => {
-    return res.json({'status' : false})
+    return res.json({'status' : false, 'message' : 'Recaptcha fails'})
   })
 
 })
