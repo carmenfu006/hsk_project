@@ -176,15 +176,15 @@ user_sidebar_template.innerHTML = `
 partner_sidebar_template.innerHTML = `
   <a href='candidate-management.html' id='candidate-management-sidebar' class='w3-bar-item w3-button rounded'>
     <i class='fa-solid fa-user mr-2'></i>
-    <span>考⽣管理</span>
+    <span class='i18n-302'>考⽣管理</span>
   </a>
   <a href='faqs.html' id='faqs-sidebar' class='w3-bar-item w3-button rounded'>
     <i class='fa-solid fa-comment-dots mr-2'></i>
-    <span>常⻅问题</span>
+    <span class='i18n-5'>常⻅问题</span>
   </a>
   <a href='support-center.html' id='support-sidebar' class='w3-bar-item w3-button rounded'>
     <i class='fa-solid fa-shield-heart mr-2'></i>
-    <span>⽀援中⼼</span>
+    <span class='i18n-275'>⽀援中⼼</span>
   </a>
 `;
 

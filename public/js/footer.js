@@ -186,19 +186,19 @@ partner_footbar_template.innerHTML = `
     <div id='candidate-management-footbar' class='col text-center pt-2 nav-footbar'>
       <a href='candidate-management.html'>
         <i class='fa-solid fa-user'></i>
-        <p>考⽣管理</p>
+        <p class='i18n-302'>考⽣管理</p>
       </a>
     </div>
     <div id='faqs-footbar' class='col text-center pt-2 nav-footbar'>
       <a href='faqs.html'>
         <i class='fa-solid fa-comment-dots'></i>
-        <p>常⻅问题</p>
+        <p class='i18n-5'>常⻅问题</p>
       </a>
     </div>
     <div id='support-footbar' class='col text-center pt-2 nav-footbar'>
       <a href='support-center.html'>
         <i class='fa-solid fa-shield-heart'></i>
-        <p>⽀援中⼼</p>
+        <p class='i18n-275'>⽀援中⼼</p>
       </a>
     </div>
   </div>

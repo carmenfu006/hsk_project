@@ -2120,6 +2120,104 @@ translateWeb(
   '*Format waktu ujian: tahun-bulan-tanggal',
   '* تنسيق وقت الامتحان: سنة - شهر - يوم'
 )
+translateWeb(
+  '.i18n-302',
+  '考⽣管理',
+  'Student Management',
+  'Manajemen Siswa',
+  'إدارة الامتحان'
+)
+translateWeb(
+  '.i18n-303',
+  '初級',
+  'Elementary',
+  'Tingkat Dasar',
+  'المستوى الأول'
+)
+translateWeb(
+  '.i18n-304',
+  '中級',
+  'Intermediate',
+  'Tingkat Menengah',
+  'المستوى المتوسط'
+)
+translateWeb(
+  '.i18n-305',
+  '高級',
+  'Advanced',
+  'Tingkat Lanjutan',
+  'المستوى العالي'
+)
+translateWeb(
+  '.i18n-306',
+  '证件上姓名',
+  'Name on ID',
+  'Nama di Dokumen Identitas',
+  'الاسم على الوثيقة'
+)
+translateWeb(
+  '.i18n-307',
+  '考点密码',
+  'Test Center Password',
+  'Kode Lokasi Ujian',
+  'كلمة مرور المركز'
+)
+translateWeb(
+  '.i18n-308',
+  '全部共',
+  'Total Number of ',
+  'Jumlah Total ',
+  'العدد الإجمالي '
+)
+translateWeb(
+  '.i18n-309',
+  '名考生',
+  'Candidates',
+  'Peserta',
+  'مرشحين'
+)
+translateWeb(
+  '.i18n-310',
+  'HSK⼝语移动端考试中⼼支援服务',
+  'HSK Mobile Language Test Center Support Services',
+  'Layanan Dukungan Pusat Ujian HSK Berbasis Seluler',
+  'خدمة الدعم لامتحان HSK النقال'
+)
+translateWeb(
+  '.i18n-311',
+  '为了确保全球范围内的考⽣能够顺利参加HSK⼝语移动端考试，我们通过zoom等線上平台， 为各个考点提供以下考试当日支援服务：',
+  'In order to ensure that students worldwide can smoothly participate in the HSK Mobile Language Test, we provide the following support services for each test center through online platforms such as Zoom on the day of the exam:',
+  'Untuk memastikan bahwa siswa di seluruh dunia dapat mengikuti ujian HSK Berbasis Seluler dengan lancar, kami menyediakan layanan dukungan berikut di hari ujian melalui platform online seperti Zoom:',
+  'من أجل ضمان مشاركة الطلاب في جميع أنحاء العالم في امتحان HSK النقال بسلاسة، نقدم خدمات الدعم التالية لمراكز الامتحان عبر منصات عبر الإنترنت مثل Zoom في يوم الامتحان:'
+)
+translateWeb(
+  '.i18n-312',
+  '技术支援：专业技术团队，提供考试操作技术支援。',
+  'Technical Support: Our professional technical team offers assistance with exam operations.',
+  'Dukungan Teknis: Tim teknis profesional siap memberikan dukungan teknis untuk operasi ujian.',
+  'دعم تقني: فريق تقني محترف يقدم دعمًا تقنيًا لعمليات الامتحان.'
+)
+translateWeb(
+  '.i18n-313',
+  '考前检测指导： 通过Zoom提供实时连接指导，确保考⽣能够顺利进⼊考试。',
+  'Pre-Test Guidance: Real-time guidance via Zoom to ensure students can smoothly access the exam.',
+  'Panduan Sebelum Ujian: Kami menyediakan panduan secara langsung melalui Zoom untuk memastikan bahwa siswa dapat masuk ke dalam ujian dengan lancar.',
+  'إرشاد قبل الامتحان: نقدم إرشادًا في الوقت الحقيقي من خلال Zoom لضمان دخول الطلاب إلى الامتحان بسهولة.'
+)
+translateWeb(
+  '.i18n-314',
+  '紧急支援： 考试过程中遇到任何技术困难或连接问题，支援团队随时在线。',
+  'Emergency Support: Our support team is available online to assist with any technical difficulties or connectivity issues during the exam.',
+  'Dukungan Darurat: Tim dukungan online siap membantu jika ada masalah teknis atau masalah koneksi selama ujian.',
+  'دعم الطوارئ: في حال واجه الطلاب أي صعوبات تقنية أو مشاكل في الاتصال خلال الامتحان، يكون فريق الدعم متاحًا عبر الإنترنت في أي وقت.'
+)
+translateWeb(
+  '.i18n-315',
+  '⽆论您身在世界的哪个角落，我们都致⼒于为您提供优质的考试支援服务，如果您有任何关 于考试支援服务的疑问或需求，请随时与我们联系。',
+  'No matter where you are in the world, we are committed to providing you with high-quality exam support services. If you have any questions or needs regarding exam support services, please feel free to contact us.',
+  'Tidak peduli di mana Anda berada di dunia ini, kami berkomitmen untuk memberikan layanan dukungan ujian berkualitas untuk Anda. Jika Anda memiliki pertanyaan atau kebutuhan mengenai layanan dukungan ujian, jangan ragu untuk menghubungi kami.',
+  'بغض النظر عن مكان وجودك في أي مكان في العالم، نسعى جاهدين لتقديم خدمات دعم الامتحان عالية الجودة لك. إذا كان لديك أي استفسارات أو احتياجات بخصوص خدمات الدعم للامتحان، فلا تتردد في الاتصال بنا.'
+)
 
 $('.i18n').on('click', function() {
   let lang = $(this).attr('lang');
