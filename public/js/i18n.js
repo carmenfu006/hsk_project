@@ -2886,71 +2886,71 @@ translateWeb(
 translateWeb(
   '.i18n-541',
   '我如何选择考试时间？',
-  '',
-  '',
+  'How do I choose my exam time?',
+  'Bagaimana cara memilih waktu ujian?',
   'كيف يمكنني اختيار وقت ا لامتحان؟'
 )
 translateWeb(
   '.i18n-542',
   '你可以点这里进行考期查看及报名。同时请留意，你需要在考试开始的前30分钟内完成线上移动端设备检测。',
-  '',
-  '',
+  'You can click here to view the exam dates and register. Please note that you need to complete the online mobile device check within 30 minutes before the exam starts.',
+  'Anda dapat memeriksa dan mendaftar untuk jadwal ujian di sini. Selain itu, pastikan Anda menyelesaikan pemeriksaan perangkat seluler secara online dalam 30 menit sebelum ujian dimulai.',
   'يمكنك النقر هنا لعرض تواريخ ا لامتحان والتسجيل. يرجى ملاحظة أنه يجب عليك إكمال فحص الجهاز ا لمحمول عبر .ا لإنترنت في غضون 30 دقيقة قبل بدء ا لامتحان'
 )
 translateWeb(
   '.i18n-543',
   '如何确定我所在时区的考试时间',
-  '',
-  '',
+  'How do I determine the exam time in my time zone?',
+  'Bagaimana cara mengetahui waktu ujian sesuai zona waktu saya?',
   'كيف يمكنني تحديد وقت ا لامتحان في منطقتي الزمنية؟'
 )
 translateWeb(
   '.i18n-544',
   '目前我们只支持考试当日身处中国香港，印尼，阿联酋以及澳洲四个地区的考生。请查看考试日期，并选择所在地区，可以查看到您所在地区的对应考试时间。',
-  '',
-  '',
+  'Currently, we only support candidates in China Hong Kong, Indonesia, the United Arab Emirates, and Australia on the day of the exam. Please check the exam date and select your region to view the corresponding exam time.',
+  'Saat ini, kami hanya mendukung peserta ujian yang berada di Hong Kong, Indonesia, Uni Emirat Arab, dan Australia pada hari ujian. Silakan lihat tanggal ujian dan pilih lokasi Anda untuk mengetahui waktu ujian yang sesuai dengan zona waktu Anda.',
   'حالًيا،ندعمفقطا لم رشحينفيالصينهونغكونغوإندونيسياوا لإماراتالعربيةا لمتحدةوأستراليافييوما لامتحان .يرجى التحقق من تاريخ ا لامتحان واختيار منطقتك لعرض وقت ا لامتحان ا لمقابل'
 )
 translateWeb(
   '.i18n-545',
   '我什么时候可以知道HSK口语移动端的考试成绩？',
-  '',
-  '',
+  'When will I receive my HSK speaking mobile exam results?',
+  'Kapan saya bisa mengetahui hasil ujian HSK Speaking di perangkat seluler?',
   'ا لمتحدث به على الجوال؟ )HSK( متى سأتلقى نتائج امتحان اللغة الصينية'
 )
 translateWeb(
   '.i18n-545-1',
   'HSK口语移动端考试的成绩会在7-10个工作日内显示。',
-  '',
-  '',
+  'The results of the HSK speaking mobile exam will be available within 7-10 business days.',
+  'Hasil ujian HSK Speaking di perangkat seluler akan ditampilkan dalam waktu 7-10 hari kerja.',
   '.ا لمتحدث به على الجوال متاحة خ لال 7-10 أيام عمل )HSK( ستكون نتائج امتحان اللغة الصينية'
 )
 translateWeb(
   '.i18n-545-2',
   '阅卷完成后，我们会以电邮及SMS的形式通知考生。',
-  '',
-  '',
+  'After scoring is completed, we will notify candidates via email and SMS.',
+  'Setelah penilaian selesai, kami akan memberi tahu peserta melalui email dan SMS.',
   '.بعد ا لانتهاء من تقدير الدرجات، سنقوم بإشعار ا لم رشح ين عبر البريد ا لإلكتروني والرسائل النصية'
 )
 translateWeb(
   '.i18n-545-3',
   '考生可以进入<a href="https://www.hskk.org">www.hskk.org</a>或考试APP查看成绩。',
-  '',
-  '',
+  'Candidates can check their scores on <a href="https://www.hskk.org">www.hskk.org</a> or the exam app.',
+  'Peserta dapat memeriksa hasil ujian di <a href="https://www.hskk.org">www.hskk.org</a> atau aplikasi ujian.',
   '.أو تطبيق ا لامتحان <a href="https://www.hskk.org">www.hskk.org</a> يمكن للمرشح ين التحقق من درجاتهم على موقع'
 )
 translateWeb(
   '.i18n-546',
   '我什么时候可以知道HSK的考试成绩？',
-  '',
-  '',
+  'When will I receive my HSK exam results?',
+  'Kapan saya bisa mengetahui hasil ujian HSK?',
   '؟)HSK( متى سأتلقى نتائج امتحان اللغة الصينية'
 )
 translateWeb(
   '.i18n-547',
   'HSK考试的成绩可以在HSK考试完成30个工作日后登陆报名网页查询。',
-  '',
-  '',
+  'HSK exam results can be checked on the registration website 30 business days after completing the HSK exam.',
+  'Hasil ujian HSK dapat dilihat di situs pendaftaran setelah 30 hari kerja sejak ujian selesai.',
   'على موقع التسجيل بعد مرور 30 يوم عمل من ا لانتهاء من )HSK( يمكن التحقق من نتائج امتحان اللغة الصينية .ا لامتحان'
 )
 
