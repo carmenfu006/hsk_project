@@ -29,7 +29,7 @@ translateWeb(
 translateWeb(
   '.i18n-5', 
   '常见问题', 
-  'FAQs', 
+  'Frequently Asked Question', 
   'Pertanyaan Umum', 
   'الأسئلة الشائعة'
 )
@@ -2532,6 +2532,426 @@ translateWeb(
   'You can log in to <a href="https://www.hskk.org">www.hskk.org</a> to view an electronic version of your score report. If you need a printed score report, you can apply for it on the same website or visit the official Hanban website to view and print your score report.',
   'Anda dapat melihat versi elektronik hasil ujian dengan login ke <a href="https://www.hskk.org">www.hskk.org</a>. Jika Anda memerlukan laporan hasil ujian dalam bentuk kertas, Anda dapat mengajukannya melalui www.hskk.org atau mengunjungi situs resmi Hanban International untuk melihat dan mencetak laporan hasil ujian.',
   'يمكنك تسجيل الدخول إلى <a href="https://www.hskk.org">www.hskk.org</a> لعرض نسخة إلكترونية من تقرير درجاتك. إذا كنت بحاجة إلى تقرير درجات مطبوع، فيمكنك التقدم بطلب للحصول عليه على نفس الموقع أو زيارة موقع Hanban الرسمي لعرض تقرير درجاتك وطباعته.'
+)
+translateWeb(
+  '.i18n-529',
+  '我的个人信息错误怎么办？',
+  'What should I do if my personal information is incorrect?',
+  'Bagaimana jika informasi pribadi saya salah?',
+  'ماذا يجب أن أفعل إذا كانت معلوماتي الشخصية غير صحيحة؟'
+)
+translateWeb(
+  '.i18n-530',
+  '考生姓名、国籍、考点、头像照片与个人实际信息不符合，请发送考生编号、考生姓名、考试等级，以及需要修改的个人信息至____电邮_____。',
+  'If your candidate name, nationality, test center, or profile photo does not match your actual information, please send your candidate number, candidate name, test level, and the personal information that needs to be corrected to the following email: email.',
+  'Nama calon, kewarganegaraan, lokasi ujian, dan foto profil tidak sesuai dengan informasi pribadi Anda. Silakan kirimkan nomor peserta, nama peserta, tingkat ujian, serta informasi pribadi yang perlu diperbarui ke alamat email ____.',
+  'إذا لم يتطابق اسم ا لم رشح، والجنسية، ومركز ا لاختبار، أو الصورة الشخصية مع معلوماتك الفعلية، يرجى إرسال رقم ا لم رشح الخاص بك، واسم ا لم رشح، ومستوى ا لاختبار، وا لمعلومات الشخصية التي تحتاج إلى تصحيحها إلى البريد ا لإلكتروني التالي: .]البريد ا لإلكتروني['
+)
+translateWeb(
+  '.i18n-531',
+  '为什么我收不到验证信息？',
+  'Why am I not receiving the verification code?',
+  'Mengapa saya tidak menerima pesan verifikasi?',
+  'لماذا لا أستلم رمز التحقق؟'
+)
+translateWeb(
+  '.i18n-531-1',
+  '请考生检查当前网络是否畅通，网络问题可能会导致验证信息接收延迟。',
+  'Please check if your current network is stable, as network issues may cause delays in receiving the verification code.',
+  'Mohon periksa apakah jaringan Anda saat ini lancar, masalah jaringan dapat menyebabkan keterlambatan dalam menerima pesan verifikasi.',
+  '.يرجى التحقق مما إذا كانت شبكتك الحالية مستقرة، حيث يمكن أن تسبب مشكلات الشبكة تأخي ًرا في استلام رمز التحقق'
+)
+translateWeb(
+  '.i18n-531-2',
+  '若不是网络问题，可能为联络方式登记错误，考生可以给我们发送电邮修改联络方式。',
+  "If it's not a network issue, it may be due to incorrect contact information. You can email us to update your contact information.",
+  'Jika bukan masalah jaringan, mungkin ada kesalahan dalam informasi kontak yang terdaftar. Anda dapat mengirimkan email kepada kami untuk memperbarui informasi kontak.',
+  'إذا لم يكن هناك مشكلة في الشبكة، فقد يكون ذلك بسبب معلومات ا لاتصال غير الصحيحة. يمكنك مراسلتنا عبر البريد .ا لإلكتروني لتحديث معلومات ا لاتصال الخاصة بك'
+)
+translateWeb(
+  '.i18n-531-3',
+  '你可以发送电邮至___电邮____查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。',
+  'You can inquire by sending an email to email, including your candidate name, test level, candidate number, and the issue you need assistance with.',
+  'Anda dapat mengirim email ke alamat ____ untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.',
+  'يمكنك ا لاستفسار عن طريق إرسال بريد إلكتروني إلى ]البريد ا لإلكتروني[، بما في ذلك اسم ا لم رشح، ومستوى ا لاختبار، .ورقم ا لم رشح، وا لمشكلة التي تحتاج إلى مساعدة في حلها'
+)
+translateWeb(
+  '.i18n-532',
+  '为什么我的设备检测不通过？',
+  'Why is my device not passing the detection?',
+  'Mengapa perangkat saya tidak lulus pengujian?',
+  '؟HSKK لماذا لا يتم اجتياز جهازي لاختبار'
+)
+translateWeb(
+  '.i18n-532-1',
+  'HSKK考试对于考生考试设备的具体要求如下：',
+  "The HSKK exam has specific requirements for the candidate's testing device:",
+  'Persyaratan khusus perangkat untuk ujian HSKK adalah sebagai berikut:',
+  ':له متطلبات محددة لجهاز ا لم رشح HSKK امتحان'
+)
+translateWeb(
+  '.i18n-532-2',
+  'iPhone8Plus 以上, IOS 15以上',
+  'iPhone 8 Plus or above, IOS 15 or above',
+  'iPhone 8 Plus atau yang lebih baru, iOS 15 atau yang lebih baru',
+  'أو أحدث 15 IOS أو أحدث، ونظام iPhone 8 Plus'
+)
+translateWeb(
+  '.i18n-532-3',
+  '安卓6以上，建议⼿机屏幕 5.5⼨及以上',
+  'Android 6 or above, recommended screen size 5.5 inches or above',
+  'Android 6 atau yang lebih baru, layar ponsel disarankan 5.5 inci atau lebih besar',
+  'أو أحدث، وحجم الشاشة ا لموصى به أكبر من 5.5 بوصة 6 Android'
+)
+translateWeb(
+  '.i18n-532-4',
+  '开启位置',
+  'Location services enabled',
+  'Aktifkan lokasi',
+  'تفعيل خدمات ا لموقع'
+)
+translateWeb(
+  '.i18n-532-5',
+  '权限电量25%以上',
+  'Battery level above 25%',
+  'Setidaknya 25% daya baterai tersisa',
+  '%مستوىالبطاريةأعلىمن25'
+)
+translateWeb(
+  '.i18n-532-6',
+  '开启通知权限',
+  'Notification permissions granted',
+  'Aktifkan izin notifikasi',
+  'منح أذونات ا لإشعارات'
+)
+translateWeb(
+  '.i18n-532-7',
+  '网速150KB以上',
+  'Internet speed of 150KB or above',
+  'Kecepatan internet minimal 150KB',
+  'أو أعلى KBسرعة ا لإنترنت 150'
+)
+translateWeb(
+  '.i18n-532-8',
+  '允许使用摄像头',
+  'Camera access allowed',
+  'Izinkan penggunaan kamera',
+  'الوصول إلى الكاميرا مسموح به'
+)
+translateWeb(
+  '.i18n-532-9',
+  '内存>2G 存储>1G',
+  'Memory > 2GB, storage > 1GB',
+  'RAM lebih dari 2 GB, penyimpanan lebih dari 1 GB',
+  'الذاكرة أكبر من 2 جيجابايت، والتخزين أكبر من 1 جيجابايت'
+)
+translateWeb(
+  '.i18n-532-10',
+  '建议使用耳机',
+  'It is recommended to use headphones.',
+  'Disarankan menggunakan headphone',
+  '. ُيفضل استخدام سماعات الرأس'
+)
+translateWeb(
+  '.i18n-532-11',
+  '你也可以发送电邮至___电邮____查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。',
+  'You can also inquire by sending an email to email, including your candidate name, test level, candidate number, and the issue you need assistance with.',
+  'Anda juga dapat mengirim email ke alamat ____ untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.',
+  'يمكنك أي ًضا ا لاستفسار عن طريق إرسال بريد إلكتروني إلى ]البريد ا لإلكتروني[، بما في ذلك اسم ا لم رشح، ومستوى .ا لاختبار، ورقم ا لم رشح، وا لمشكلة التي تحتاج إلى مساعدة في حلها'
+)
+translateWeb(
+  '.i18n-533',
+  '为什么手机播放不出我录的声音？',
+  "Why can't I hear the sound I recorded on my phone?",
+  'Mengapa ponsel saya tidak dapat memutar suara yang saya rekam?',
+  'لماذا لا يمكنني سماع الصوت الذي سجلته على هاتفي؟'
+)
+translateWeb(
+  '.i18n-533-1',
+  '请解除静音模式，调高音量。',
+  'Please turn off the silent mode and increase the volume.',
+  'Silakan nonaktifkan mode senyap dan tingkatkan volume suara.',
+  '. ُيرجى إيقاف وضع الصمت وزيادة مستوى الصوت'
+)
+translateWeb(
+  '.i18n-533-2',
+  '请授权APP使用麦克风和扬声器。',
+  'Grant the app permission to use the microphone and speaker.',
+  'Berikan izin aplikasi untuk menggunakan mikrofon dan speaker.',
+  '.قم بمنح التطبيق إذن استخدام ا لميكروفون وا لمكبر الصوت'
+)
+translateWeb(
+  '.i18n-533-3',
+  '若仍无法解决，请更换移动设备再次进行尝试。',
+  'If the issue persists, try using a different mobile device.',
+  'Jika masalah masih belum teratasi, coba gunakan perangkat seluler yang berbeda.',
+  '.إذا استمرت ا لمشكلة، جرب استخدام جهاز محمول مختلف'
+)
+translateWeb(
+  '.i18n-533-4',
+  '你也可以发送电邮至___电邮____查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。',
+  'You can inquire by sending an email to email, including your candidate name, test level, candidate number, and the issue you need assistance with.',
+  'Anda juga dapat mengirim email ke alamat ____ untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.',
+  'يمكنك ا لاستفسار عبر إرسال بريد إلكتروني إلى البريد ا لإلكتروني، بما في ذلك اسم ا لم رشح الخاص بك، ومستوى .ا لاختبار، ورقم ا لم رشح، وا لمشكلة التي تحتاج إلى مساعدة في حلها'
+)
+translateWeb(
+  '.i18n-534',
+  '为什么我的位置识别不通过？',
+  'Why is my location not being recognized?',
+  'Mengapa pengenalan lokasi saya tidak berhasil?',
+  'لماذا لا يتم التعرف على موقعي؟'
+)
+translateWeb(
+  '.i18n-534-1',
+  '请检查手机是否允许APP读取个人位置，若不允许读取位置，请在设置中打开位置信息再次进行尝试；',
+  'Check if your phone allows the app to access your location. If not, enable location services in your settings and try again.',
+  'Periksa apakah ponsel Anda mengizinkan aplikasi membaca lokasi Anda. Jika tidak, aktifkan opsi lokasi dalam pengaturan dan coba lagi.',
+  'تحقق مما إذا كان هاتفك يسمح للتطبيق بالوصول إلى موقعك. إذا لم يكن كذلك، قم بتمكين خدمات ا لموقع في إعدادات .هاتفك وحاول مرة أخرى'
+)
+translateWeb(
+  '.i18n-534-2',
+  '请核对考试地点与报名考试时选择的考点位置是否相同，若需要修改考点信息，可以发送电邮给我们。',
+  'Verify if the test location matches the one you selected when registering for the exam. If you need to change your test center information, you can email us.',
+  'Pastikan alamat ujian sesuai dengan lokasi yang Anda pilih saat mendaftar. Jika perlu mengubah lokasi ujian, Anda dapat mengirim email kepada kami.',
+  'تحققمماإذاكانموقعا لاختبارمطابًقاللمكانالذياخترتهعندالتسجيلللامتحان.إذاكنتبحاجةإلىتغييرمعلومات .مركز ا لاختبار الخاص بك، يمكنك مراسلتنا عبر البريد ا لإلكتروني'
+)
+translateWeb(
+  '.i18n-534-3',
+  '你可以发送电邮至___电邮____查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。',
+  'You can inquire by sending an email to email, including your candidate name, test level, candidate number, and the issue you need assistance with.',
+  'Anda dapat mengirim email ke alamat ____ untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.',
+  'يمكنك ا لاستفسار عن طريق إرسال بريد إلكتروني إلى البريد ا لإلكتروني، بما في ذلك اسم ا لم رشح الخاص بك، ومستوى .ا لاختبار، ورقم ا لم رشح، وا لمشكلة التي تحتاج إلى مساعدة في حلها'
+)
+translateWeb(
+  '.i18n-535',
+  '为什么我无法进行信息确认？',
+  "Why can't I complete the information confirmation?",
+  'Mengapa saya tidak dapat melakukan konfirmasi informasi?',
+  'لماذا لا يمكنني إكمال تأكيد ا لمعلومات؟'
+)
+translateWeb(
+  '.i18n-535-1',
+  '考生在回答问题时声音过小',
+  'If your voice is too low or your speech is too fast when answering questions, please adjust and try again.',
+  'Suara Anda terlalu kecil saat menjawab pertanyaan.',
+  '.إذا كان صوتك منخف ًضا ج ًدا أو كانت إجاباتك سريعة ج ًدا عند الرد على ا لأسئلة، ُيرجى ضبطها وا لمحاولة مرة أخرى'
+)
+translateWeb(
+  '.i18n-535-2',
+  '考生在回答问题时语速过快',
+  'Speak too fast when answering questions',
+  'Anda berbicara terlalu cepat saat menjawab pertanyaan.',
+  'التحدث بسرعة كبيرة عند الإجابة على الأسئلة'
+)
+translateWeb(
+  '.i18n-535-3',
+  '请调整后再尝试',
+  'Please adjust and try again',
+  'Silakan atur ulang dan coba lagi.',
+  'يرجى التعديل والمحاولة مرة أخرى'
+)
+translateWeb(
+  '.i18n-535-4',
+  '你也可以发送电邮至___电邮____查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。',
+  'You can inquire by sending an email to email, including your candidate name, test level, candidate number, and the issue you need assistance with.',
+  'Anda juga dapat mengirim email ke alamat ____ untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.',
+  'يمكنك ا لاستفسار عن طريق إرسال بريد إلكتروني إلى البريد ا لإلكتروني، بما في ذلك اسم ا لم رشح الخاص بك، ومستوى .ا لاختبار، ورقم ا لم رشح، وا لمشكلة التي تحتاج إلى مساعدة في حلها'
+)
+translateWeb(
+  '.i18n-536',
+  '为什么我在环境检测中面部拍照不通过？',
+  'Why is my facial photo not passing the environmental check?',
+  'Mengapa foto wajah saya tidak lulus dalam pemeriksaan lingkungan?',
+  'لماذا لا يتم اجتياز فحص البيئة بصورتي الوجه؟'
+)
+translateWeb(
+  '.i18n-536-1',
+  '我们会使用环境检测中的照片进行面部识别，如果拍照不通过，请检查考生的面部是否完全处于镜头可拍摄范围内。',
+  "We use the photos taken during the environmental check for facial recognition. If the photo is not passing, ensure that your face is fully within the camera's view.",
+  'Kami akan menggunakan foto dalam pemeriksaan lingkungan untuk mengenali wajah Anda. Jika foto tidak lolos, periksa apakah wajah Anda sepenuhnya terlihat dalam jangkauan kamera.',
+  'نحن نستخدم الصور التي تم التقاطها أثناء فحص البيئة للتعرف على الوجه. إذا لم تتم ا لموافقة على الصورة، تأكد من .أن وجهك موجود بالكامل داخل إطار الكاميرا'
+)
+translateWeb(
+  '.i18n-536-2',
+  '调整室内光线及拍摄角度重新尝试',
+  'Adjust indoor lighting and the shooting angle and try again.',
+  'Sempurnakan pencahayaan dalam ruangan dan sudut pengambilan foto, lalu coba lagi.',
+  '.قم بضبط إضاءة الغرفة وزاوية التصوير وحاول مرة أخرى'
+)
+translateWeb(
+  '.i18n-536-3',
+  '确认参加考试者为考生本人，报考时提供的照片与本人一致',
+  'Confirm that the test taker is the same person as the one who provided the photo during registration.',
+  'Pastikan foto yang Anda berikan saat mendaftar sesuai dengan wajah Anda.',
+  '.تأكد من أن الشخص الذي يجري ا لاختبار هو نفس الشخص الذي قدم الصورة أثناء التسجيل'
+)
+translateWeb(
+  '.i18n-536-4',
+  '拍照时请勿佩戴帽子、头巾、发带、墨镜等配饰',
+  'Do not wear hats, headscarves, headbands, sunglasses, or accessories when taking the photo.',
+  'Saat mengambil foto, hindari memakai topi, tudung, ikat kepala, kacamata hitam, dan aksesori lainnya.',
+  '.لا ترتدي القبعات أو الحجاب أو العصابات أو النظارات الشمسية أو ا لإكسسوارات عند التقاط الصورة'
+)
+translateWeb(
+  '.i18n-536-5',
+  '你也可以发送电邮至___电邮____查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决问题。',
+  'You can inquire by sending an email to email, including your candidate name, test level, candidate number, and the issue you need assistance with.',
+  'Anda juga dapat mengirim email ke alamat ____ untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.',
+  'يمكنك ا لاستفسار عن طريق إرسال بريد إلكتروني إلى البريد ا لإلكتروني ا لمذكور، متضمنًا اسم ا لم رشح ومستوى ا لاختبار .ورقم ا لم رشح وا لمشكلة التي تحتاج إلى ا لمساعدة في حلها'
+)
+translateWeb(
+  '.i18n-537',
+  '考试过程中我的屏幕边框为什么会变成红色？',
+  'Why does my screen border turn red during the exam?',
+  'Mengapa bingkai layar saya menjadi merah selama ujian?',
+  'لماذا يتحول حاشية الشاشة إلى اللون ا لأحمر أثناء ا لامتحان؟'
+)
+translateWeb(
+  '.i18n-537-1',
+  '考试过程中屏幕边框变成红色是一种警告提示，你的面部识别、位置识别、声纹识别或环境检测可能存在异常或违规，请根据提示信息进行调整。',
+  'The red border on the screen during the exam is a warning indicating that there may be abnormalities or violations in facial recognition, location recognition, voice recognition, or environmental checks. Please adjust as per the prompts.',
+  'Bingkai layar yang berubah menjadi merah selama ujian adalah tanda peringatan. Hal ini mungkin terjadi karena ada masalah atau pelanggaran dalam pengenalan wajah, pengenalan lokasi, pengenalan suara, atau pemeriksaan lingkungan. Silakan ikuti petunjuk yang diberikan.',
+  'الحاشية الحمراء على الشاشة أثناء ا لامتحان تشير إلى أن هناك انتكاسات أو انتهاكات في التعرف على الوجه، .والتعرفعلىا لموقع،والتعرفعلىالصوت،أوفحصالبيئة.يرجىضبطهاوفًقاللتلميحات'
+)
+translateWeb(
+  '.i18n-537-2',
+  '多重认证识别第一次异常边框为浅红色',
+  'The first instance of abnormal recognition results in a light red border.',
+  'Warna merah ringan pada bingkai layar menunjukkan masalah pengenalan ganda yang pertama.',
+  '.تظهر الحاشية الحمراء الفاتحة في حالة التعرف غير العادي للمرة ا لأولى'
+)
+translateWeb(
+  '.i18n-537-3',
+  '多重认证识别第二次异常边框为红色',
+  'The second instance results in a red border.',
+  'Warna merah pada bingkai layar adalah masalah pengenalan ganda yang kedua.',
+  '.تظهر الحاشية الحمراء في حالة التعرف غير العادي للمرة الثانية'
+)
+translateWeb(
+  '.i18n-537-4',
+  '多重认证识别第三次异常边框为深红色',
+  'The third instance results in a deep red border.',
+  'Warna merah gelap pada bingkai layar adalah masalah pengenalan ganda yang ketiga.',
+  '.تظهر الحاشية الحمراء العميقة في حالة التعرف غير العادي للمرة الثالثة'
+)
+translateWeb(
+  '.i18n-537-5',
+  '认证识别多次异常考试将即刻停止',
+  'Multiple instances of abnormal recognition will result in an immediate exam termination.',
+  'Jika masalah pengenalan terjadi berkali-kali, ujian akan dihentikan.',
+  '.ستؤدي حا لات متعددة من التعرف غير العادي إلى إنهاء ا لامتحان فو ًرا'
+)
+translateWeb(
+  '.i18n-537-6',
+  '考生调整后检测无异常边框将变回绿色',
+  'The border will turn green if no abnormalities are detected after adjustments.',
+  'Setelah Anda menyelesaikan perubahan yang diperlukan, bingkai layar akan kembali menjadi hijau.',
+  '.ستتحول الحاشية إلى اللون ا لأخضر إذا لم يتم اكتشاف أي انتكاسات بعد الضبط'
+)
+translateWeb(
+  '.i18n-538',
+  'App内为什么提示我的考试被终止？',
+  'Why does the app notify me that my exam has been terminated?',
+  'Mengapa aplikasi memberi tahu saya bahwa ujian saya telah dihentikan?',
+  'لماذاتُخِطُرنيالتطبيقبأنامتحانيتمإنهاؤه؟'
+)
+translateWeb(
+  '.i18n-539',
+  'App内提示考试被终止，表示你的考试过程中多次出现异常或违规情况，并且没有及时按照提示进行调整。若有异议，请将你的考生编号，姓名，考生等级发送至_____电邮______进行申诉。',
+  'If the app notifies you that your exam has been terminated, it means there have been multiple instances of abnormalities or violations during your exam, and you did not make the necessary adjustments as prompted. If you have any objections, please send your candidate number, name, and test level to email for appeal.',
+  'Pemberitahuan di dalam aplikasi bahwa ujian Anda telah dihentikan menandakan bahwa selama proses ujian Anda telah mengalami beberapa masalah atau pelanggaran aturan, dan Anda tidak segera mengikuti petunjuk yang diberikan. Jika Anda merasa ini tidak benar, silakan kirim nomor peserta Anda, nama, tingkat peserta, ke alamat email _____ untuk mengajukan keluhan.',
+  'إذا قام التطبيق بإخطارك بأن امتحانك تم إنهاؤه، فهذا يعني أن هناك عدة حا لات من ا لاستثناءات أو ا لانتهاكات أثناءامتحانك، ولم تقم بإجراء التعديلات اللا زمة كما تم توجيهك. إذا كان لديك أي اعتراضات، يرجى إرسال رقم ا لم رشح الخاص بك .واسمك ومستوى ا لاختبار إلى البريد ا لإلكتروني لتقديم ا لاستئناف'
+)
+translateWeb(
+  '.i18n-540',
+  '考试期间提示答案上传不成功怎么办？',
+  "What should I do if I'm unable to upload my answers during the exam?",
+  'Bagaimana mengatasi masalah gagal mengunggah jawaban selama ujian?',
+  'ماذا يجب أن أفعل إذا لم يتسن لي رفع إجاباتي أثناء ا لامتحان؟'
+)
+translateWeb(
+  '.i18n-540-1',
+  'App提示答案上传不成功，是本地网络环境不佳，请考生更换网络重新进行上传。',
+  'If the app indicates that answer uploads are unsuccessful, it may be due to a poor local network environment. Please switch to a different network and try uploading again.',
+  'Pemberitahuan dari aplikasi bahwa jawaban gagal diunggah biasanya disebabkan oleh kualitas jaringan lokal yang buruk. Silakan ganti jaringan dan coba unggah kembali.',
+  'إذا أشار التطبيق إلى عدم نجاح تحميل ا لإجابات، قد يكون ذلك بسبب بيئة الشبكة ا لمحلية الضعيفة. يرجى التبديل إلى .شبكة مختلفة ومحاولة الرفع مرة أخرى'
+)
+translateWeb(
+  '.i18n-540-2',
+  '若考试完成后，一个小时内持续上传不成功，我们将按照上传成功的部分进行评分。',
+  'If you continue to experience upload issues within an hour after completing the exam, we will score based on the successfully uploaded portions.',
+  'Jika setelah selesai ujian, Anda terus gagal mengunggah selama satu jam, kami akan menilai berdasarkan bagian yang berhasil diunggah.',
+  'إذااستمرتمشكلاتالرفعفيغضونساعةبعدانتهاءا لامتحان،سنقومبتقديرالنتيجةبناًءعلىا لأجزاءالتيتمرفعها .بنجاح'
+)
+translateWeb(
+  '.i18n-541',
+  '我如何选择考试时间？',
+  '',
+  '',
+  'كيف يمكنني اختيار وقت ا لامتحان؟'
+)
+translateWeb(
+  '.i18n-542',
+  '你可以点这里进行考期查看及报名。同时请留意，你需要在考试开始的前30分钟内完成线上移动端设备检测。',
+  '',
+  '',
+  'يمكنك النقر هنا لعرض تواريخ ا لامتحان والتسجيل. يرجى ملاحظة أنه يجب عليك إكمال فحص الجهاز ا لمحمول عبر .ا لإنترنت في غضون 30 دقيقة قبل بدء ا لامتحان'
+)
+translateWeb(
+  '.i18n-543',
+  '如何确定我所在时区的考试时间',
+  '',
+  '',
+  'كيف يمكنني تحديد وقت ا لامتحان في منطقتي الزمنية؟'
+)
+translateWeb(
+  '.i18n-544',
+  '目前我们只支持考试当日身处中国香港，印尼，阿联酋以及澳洲四个地区的考生。请查看考试日期，并选择所在地区，可以查看到您所在地区的对应考试时间。',
+  '',
+  '',
+  'حالًيا،ندعمفقطا لم رشحينفيالصينهونغكونغوإندونيسياوا لإماراتالعربيةا لمتحدةوأستراليافييوما لامتحان .يرجى التحقق من تاريخ ا لامتحان واختيار منطقتك لعرض وقت ا لامتحان ا لمقابل'
+)
+translateWeb(
+  '.i18n-545',
+  '我什么时候可以知道HSK口语移动端的考试成绩？',
+  '',
+  '',
+  'ا لمتحدث به على الجوال؟ )HSK( متى سأتلقى نتائج امتحان اللغة الصينية'
+)
+translateWeb(
+  '.i18n-545-1',
+  'HSK口语移动端考试的成绩会在7-10个工作日内显示。',
+  '',
+  '',
+  '.ا لمتحدث به على الجوال متاحة خ لال 7-10 أيام عمل )HSK( ستكون نتائج امتحان اللغة الصينية'
+)
+translateWeb(
+  '.i18n-545-2',
+  '阅卷完成后，我们会以电邮及SMS的形式通知考生。',
+  '',
+  '',
+  '.بعد ا لانتهاء من تقدير الدرجات، سنقوم بإشعار ا لم رشح ين عبر البريد ا لإلكتروني والرسائل النصية'
+)
+translateWeb(
+  '.i18n-545-3',
+  '考生可以进入<a href="https://www.hskk.org">www.hskk.org</a>或考试APP查看成绩。',
+  '',
+  '',
+  '.أو تطبيق ا لامتحان <a href="https://www.hskk.org">www.hskk.org</a> يمكن للمرشح ين التحقق من درجاتهم على موقع'
+)
+translateWeb(
+  '.i18n-546',
+  '我什么时候可以知道HSK的考试成绩？',
+  '',
+  '',
+  '؟)HSK( متى سأتلقى نتائج امتحان اللغة الصينية'
+)
+translateWeb(
+  '.i18n-547',
+  'HSK考试的成绩可以在HSK考试完成30个工作日后登陆报名网页查询。',
+  '',
+  '',
+  'على موقع التسجيل بعد مرور 30 يوم عمل من ا لانتهاء من )HSK( يمكن التحقق من نتائج امتحان اللغة الصينية .ا لامتحان'
 )
 
 
