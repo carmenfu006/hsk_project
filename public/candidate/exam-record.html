@@ -16,28 +16,28 @@
     <nav id='user-navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
     <nav id='user-sidebar' class='w3-sidebar w3-bar-block d-none d-lg-block pt-3'></nav>
     <section class='side-content container'>
-      <div class='d-flex justify-content-between mt-3'>
-        <h4 class='font-weight-bold'>考试记录</h4>
+      <div class='d-flex flex-md-row flex-column justify-content-between mt-3'>
+        <h4 class='i18n-276 font-weight-bold'>考试记录</h4>
         <div class='d-flex exam-record-status mt-2'>
-          <p class='btn status-filter active'>全部</p>
-          <p class='btn status-filter'>未完成</p>
-          <p class='btn status-filter'>已完成</p>
+          <p class='i18n-296 btn status-filter active'>全部</p>
+          <p class='i18n-297 btn status-filter'>未完成</p>
+          <p class='i18n-298 btn status-filter'>已完成</p>
         </div>
       </div>
       <div id='web-exam-record' class='card d-none d-lg-block'>
         <div class='card-header bg-white'>
           <div class='row text-center'>
             <div class='col'>
-              <h6 class='font-weight-bold'>准考证号</h6>
+              <h6 class='i18n-299 font-weight-bold'>准考证号</h6>
             </div>
             <div class='col'>
-              <h6 class='font-weight-bold'>考试级别</h6>
+              <h6 class='i18n-72 font-weight-bold'>考试级别</h6>
             </div>
             <div class='col'>
-              <h6 class='font-weight-bold'>考试时间</h6>
+              <h6 class='i18n-289 font-weight-bold'>考试时间</h6>
             </div>
             <div class='col'>
-              <h6 class='font-weight-bold'>状态/成绩</h6>
+              <h6 class='i18n-300 font-weight-bold'>状态/成绩</h6>
             </div>
           </div>
         </div>
@@ -105,19 +105,51 @@
             </div>
           </div>
         </div>
-        <div class='card-body border-bottom text-muted'>
+        <div class='card-body border-bottom text-muted i18n-301'>
           * 考试时间格式：年-月-日
         </div>
       </div>
       <div id='mobile-exam-record' class='d-block d-sm-none d-md-block d-lg-none pb-5 mb-5'>
         <div class='card mb-2 shadow-sm'>
           <div class='card-body'>
-            <div class='row no-gutters'>
+            <div class='row no-gutters mb-2'>
+              <div class='col-sm-3'>
+                <p class='i18n-299 card-text font-weight-bold'>准考证号</p>
+              </div>
+              <div class='col'>
+                <p class='card-text'>H90717839090100023</p>
+              </div>
+            </div>
+            <div class='row no-gutters mb-2'>
+              <div class='col-sm-3'>
+                <p class='i18n-72 card-text font-weight-bold'>考试级别</p>
+              </div>
+              <div class='col'>
+                <p class='card-text'>HSK口语（初级）</p>
+              </div>
+            </div>
+            <div class='row no-gutters mb-2'>
+              <div class='col-sm-3'>
+                <p class='i18n-289 card-text font-weight-bold'>考试时间</p>
+              </div>
+              <div class='col'>
+                <p class='card-text'>2023-07-24 11:00(GTM+08:00)</p>
+              </div>
+            </div>
+            <div class='row no-gutters mb-2'>
+              <div class='col-sm-3'>
+                <p class='i18n-300 card-text font-weight-bold pb-2'>状态/成绩</p>
+              </div>
+              <div class='col'>
+                <div class='btn'>已付款待考试</div>
+              </div>
+            </div>
+            <!-- <div class='row no-gutters'>
               <div class='col-3'>
-                <p class='card-text font-weight-bold'>考试级别</p>
-                <p class='card-text font-weight-bold'>准考证号</p>
-                <p class='card-text font-weight-bold'>考试时间</p>
-                <p class='card-text font-weight-bold pt-2'>状态/成绩</p>
+                <p class='i18n-299 card-text font-weight-bold'>准考证号</p>
+                <p class='i18n-72 card-text font-weight-bold'>考试级别</p>
+                <p class='i18n-289 card-text font-weight-bold'>考试时间</p>
+                <p class='i18n-300 card-text font-weight-bold pt-2'>状态/成绩</p>
               </div>
               <div class='col'>
                 <p class='card-text'>H90717839090100023</p>
@@ -125,7 +157,7 @@
                 <p class='card-text'>2023-07-24 11:00(GTM+08:00)</p>
                 <div class='btn'>已付款待考试</div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class='card mb-2 shadow-sm status-ongoing'>

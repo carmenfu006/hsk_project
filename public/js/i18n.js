@@ -1999,6 +1999,127 @@ translateWeb(
   'Ujian Dihentikan',
   'تم إنهاء الفحص'
 )
+translateWeb(
+  '.i18n-285',
+  '如果你已通过app反馈过问题，请勿重复在本⻚⾯留⾔。',
+  'If you have already submitted feedback through the app, please do not leave a message on this page.',
+  'Jika Anda sudah memberikan masukan melalui aplikasi, tolong jangan mengulangi pesan di halaman ini.',
+  'إذا قمت بتقديم ملاحظات حول التطبيق بالفعل، يرجى عدم تكرارها على هذه الصفحة.'
+)
+translateWeb(
+  '.i18n-286',
+  '问题类型',
+  'Issue Type',
+  'Jenis Masalah',
+  'نوع المشكلة'
+)
+translateWeb(
+  '.i18n-287',
+  '请选择问题相关类型',
+  'Please select the relevant issue type',
+  'Silakan pilih jenis masalah yang relevan',
+  'الرجاء اختيار نوع المشكلة المتعلقة'
+)
+translateWeb(
+  '.i18n-288',
+  '问题类型',
+  'Issue Type',
+  'Jenis Masalah',
+  'نوع المشكلة'
+)
+translateWeb(
+  '.i18n-289',
+  '考试时间',
+  'Exam Date',
+  'Waktu Ujian',
+  'وقت الاختبار'
+)
+translateWeb(
+  '.i18n-290',
+  '时间格式: (YYYY-MM-DD HH:MM) (UTC+8)',
+  'Time Format: (YYYY-MM-DD HH:MM) (UTC+8)',
+  'Format waktu: (YYYY-MM-DD HH:MM) (UTC+8)',
+  'تنسيق الوقت: (YYYY-MM-DD HH:MM) (UTC+8)'
+)
+translateWeb(
+  '.i18n-291',
+  '使用设备',
+  'Device Used',
+  'Perangkat yang Digunakan',
+  'الجهاز المستخدم'
+)
+translateWeb(
+  '.i18n-292',
+  '请输入您使用的设备型号',
+  'Please enter the model of the device you are using',
+  'Silakan masukkan model perangkat yang Anda gunakan',
+  'الرجاء إدخال نموذج الجهاز الذي تستخدمه',
+  true
+)
+translateWeb(
+  '.i18n-293',
+  '问题描述',
+  'Issue Description',
+  'Deskripsi Masalah',
+  'وصف المشكلة',
+  true
+)
+translateWeb(
+  '.i18n-294',
+  '文件上传',
+  'File Upload',
+  'Unggah Dokumen',
+  'تحميل الملف'
+)
+translateWeb(
+  '.i18n-295',
+  '提交',
+  'Submit',
+  'Kirim',
+  'إرسال'
+)
+translateWeb(
+  '.i18n-296',
+  '全部',
+  'All',
+  'Semua',
+  'الكل'
+)
+translateWeb(
+  '.i18n-297',
+  '未完成',
+  'Incomplete',
+  'Belum Selesai',
+  'غير مكتمل'
+)
+translateWeb(
+  '.i18n-298',
+  '已完成',
+  'Completed',
+  'Sudah Selesai',
+  'مكتمل'
+)
+translateWeb(
+  '.i18n-299',
+  '准考证号',
+  'Admission Ticket Number',
+  'Nomor Kartu Ujian',
+  'رقم الترشيح'
+)
+translateWeb(
+  '.i18n-300',
+  '状态/成绩',
+  'Status/Score',
+  'Status/Skor',
+  'الحالة/النتيجة'
+)
+translateWeb(
+  '.i18n-301',
+  '* 考试时间格式：年-月-日',
+  '*Examination time format: year-month-day',
+  '*Format waktu ujian: tahun-bulan-tanggal',
+  '* تنسيق وقت الامتحان: سنة - شهر - يوم'
+)
 
 $('.i18n').on('click', function() {
   let lang = $(this).attr('lang');
