@@ -288,8 +288,8 @@ footer {
 
 /* Sidebar */
 .w3-sidebar {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .w3-bar-item {
@@ -435,7 +435,7 @@ div.record {
 }
 
 .user-footbar-width {
-  width: 768px;
+  min-width: 1024px;
 }
 
 .partner-footbar-width {
