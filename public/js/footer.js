@@ -43,12 +43,12 @@ footer_template.innerHTML = `
         </div>
       </div>
       <div class='col-lg-6 col-md-12 col-sm-12 fw500 fs14'>
-        <span class='i18n-12'>HSK口语移动端考试App下载</span>
+      <!-- <span class='i18n-12'>HSK口语移动端考试App下载</span>
         <div class='row pt-3 d-flex justify-content-start container'>
           <img src='images/mobile-app-store-badge.png' class='img-fluid mr-3 mb-2' alt='Responsive image'>
           <img src='images/mobile-google-play-badge.png' class='img-fluid mr-3 mb-2' alt='Responsive image'>
           <img src='images/mobile-tengxun-badge.png' class='img-fluid mr-3 mb-2' alt='Responsive image'>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class='row border-bottom pt-5'></div>
