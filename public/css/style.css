@@ -71,6 +71,10 @@ a.primary-color:hover {
   background-color: #E6E6E6;
 }
 
+.bg-dark-color {
+  background-color: #0000007a;
+}
+
 .bg-info-banner {
   background-color: #D9F6F3;
   border-radius: 16px;
@@ -108,6 +112,14 @@ button[disabled]{
   border-radius: 32px;
   color: #002F5D;
   background-color: #FFC107;
+  font-weight: bold;
+}
+
+.btn.dark {
+  border-radius: 32px;
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  background-color: #0000007a;
   font-weight: bold;
 }
 
@@ -150,6 +162,10 @@ input[type=checkbox] {
 /* Height */
 .mh65 {
   min-height: 65px;
+}
+
+.mh400 {
+  min-height: 400px;
 }
 
 /* Font */
@@ -316,6 +332,10 @@ footer {
   margin-right: 1rem;
 }
 
+.notice-card-body {
+  overflow-y: scroll;
+}
+
 .alert-card {
   min-width: 21.5rem;
   height: 35rem;
@@ -434,7 +454,7 @@ div.record {
 }
 
 .user-footbar-width {
-  min-width: 1024px;
+  min-width: 1200px;
 }
 
 .partner-footbar-width {

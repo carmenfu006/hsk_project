@@ -2218,6 +2218,13 @@ translateWeb(
   'Tidak peduli di mana Anda berada di dunia ini, kami berkomitmen untuk memberikan layanan dukungan ujian berkualitas untuk Anda. Jika Anda memiliki pertanyaan atau kebutuhan mengenai layanan dukungan ujian, jangan ragu untuk menghubungi kami.',
   'بغض النظر عن مكان وجودك في أي مكان في العالم، نسعى جاهدين لتقديم خدمات دعم الامتحان عالية الجودة لك. إذا كان لديك أي استفسارات أو احتياجات بخصوص خدمات الدعم للامتحان، فلا تتردد في الاتصال بنا.'
 )
+translateWeb(
+  '.i18n-316',
+  '知道了',
+  'Got it',
+  'Mengerti',
+  'بعدتُ على دراية'
+)
 
 $('.i18n').on('click', function() {
   let lang = $(this).attr('lang');
