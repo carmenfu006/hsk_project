@@ -3,17 +3,17 @@ window.addEventListener('DOMContentLoaded', async () => {
   const {stripePublicKey} = await fetch('/config').then(r => r.json())
   const stripe = Stripe(stripePublicKey, { locale : lang })
 
-  // let data = { amount: 26000, customer: 'dummy'}
+  let data = { amount: 26000, customer: 'dummy'}
 
-  // const {clientSecret} = await fetch('/create-payment-intent', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: JSON.stringify(data)
-  // }).then(r => r.json())
+  const {clientSecret} = await fetch('/create-payment-intent', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  }).then(r => r.json())
 
-  const clientSecret = 'pi_3Ny66eArZBHZvCDs1A7jgrhZ_secret_d5uRkrCqAwPhfLkA28lV3TKQw'
+  // const clientSecret = 'pi_3Ny66eArZBHZvCDs1A7jgrhZ_secret_d5uRkrCqAwPhfLkA28lV3TKQw'
 
   const elements = stripe.elements({ clientSecret });
   const paymentElement = elements.create('payment');
