@@ -2225,6 +2225,315 @@ translateWeb(
   'Mengerti',
   'بعدتُ على دراية'
 )
+translateWeb(
+  '.i18n-317',
+  '如果下述常见问题的答案未能解决你的问题，请将您的问题发送至___电邮___，邮件内容需包括考生姓名，HSKK考试等级，考生序号，以及您遇到的问题，我们会尽快为您解决。',
+  'If the answers to the following frequently asked questions do not resolve your issue, please send your question to [email address], including your name, HSKK exam level, candidate number, and the issue you are facing. We will resolve it as soon as possible.',
+  'Jika jawaban untuk pertanyaan yang sering diajukan berikut tidak dapat mengatasi masalah Anda, silakan kirim pertanyaan Anda ke [alamat email], sertakan nama Anda, tingkat ujian HSKK, nomor kandidat, dan masalah yang Anda hadapi. Kami akan mengatasi masalah tersebut secepat mungkin.',
+  'إذا لم تحل إجابات الأسئلة الشائعة التالية مشكلتك، يرجى إرسال سؤالك إلى [عنوان البريد الإلكتروني]، بما في ذلك اسمك ومستوى امتحان HSKK ورقم المرشح والمشكلة التي تواجهها. سنقوم بحلها في أقرب وقت ممكن.'
+)
+translateWeb(
+  '.i18n-500',
+  '什么是HSK口语移动端（手机）考试中心？',
+  'What is the HSK(Speaking) Mobile Exam Center?',
+  'Apa itu Pusat Ujian HSK Lisan Versi Mobile (Ponsel)?',
+  'ا لمحمول؟ )HSK(Speaking ما هو مركز امتحان'
+)
+translateWeb(
+  '.i18n-501',
+  'HSK口语移动端（手机）考试中心可以让考生通过手机，选择灵活时间，轻松在家或办公室进行口语考试。⽬前HSK⼝语移动端只提供考试当⽇在中国香港、印尼、阿联酋以及澳洲的考⽣。',
+  'The HSK(Speaking) Mobile Exam Center allows candidates to take the spoken Chinese test through their mobile phones, offering flexibility in choosing the exam time and the convenience of taking the test at home or in the office. Currently, the HSK(Speaking) Mobile Exam Center is available only for candidates in China, Hong Kong, Indonesia, the United Arab Emirates, and Australia.',
+  'Pusat Ujian HSK Lisan Versi Mobile (Ponsel) memungkinkan peserta ujian untuk mengikuti ujian lisan dengan mudah melalui ponsel, memilih waktu yang fleksibel, dan mengikuti ujian di rumah atau kantor. Saat ini, HSK Lisan Versi Mobile hanya tersedia bagi peserta ujian yang berada di Tiongkok Hong Kong, Indonesia, Uni Emirat Arab, dan Australia.',
+  'ا لمحمول للمرشح ين إجراء اختبار اللغة الصينية ا لمنطوقة عبر هواتفهم ا لمحمولة، مما يوفر )HSK(Speaking يتيح مركز امتحان )HSK(Speaking مرونة في اختيار وقت ا لامتحان وسهولة إجراء ا لاختبار في ا لمنزل أو في ا لمكتب. حال ًيا، يتوفر مركز امتحان .ا لمحمول فقط للمرشح ين في الصين وهونغ كونغ وإندونيسيا ودولة ا لإمارات العربية ا لمتحدة وأستراليا'
+)
+translateWeb(
+  '.i18n-502',
+  '中国香港、印尼、阿联酋以及澳洲四个地区以外的考点或者学校，如何参加HSK移动端考试？',
+  'How can candidates from regions outside China, Hong Kong, Indonesia, the United Arab Emirates, and Australia participate in the HSK(Speaking) Mobile Exam?',
+  'Bagaimana cara peserta ujian di luar empat wilayah tersebut (Tiongkok Hong Kong, Indonesia, Uni Emirat Arab, dan Australia) dapat mengikuti ujian HSK Versi Mobile?',
+  'كيف يمكن للمرشح ين من مناطق خارج الصين وهونغ كونغ وإندونيسيا ودولة ا لإمارات العربية ا لمتحدة وأستراليا ا لمشاركة فيا لمحمول؟ )HSK(Speaking امتحان'
+)
+translateWeb(
+  '.i18n-503',
+  '可以通过<a href="mailto:support@hskk.org">support@hskk.org</a>联系我们获取更多资讯。',
+  'For information on how candidates from regions outside these mentioned areas can participate in the HSK(Speaking) Mobile Exam, please contact us at <a href="mailto:support@hskk.org">support@hskk.org</a>.',
+  'Anda dapat menghubungi kami melalui <a href="mailto:support@hskk.org">support@hskk.org</a> untuk mendapatkan informasi lebih lanjut.',
+  'للمزيد من ا لمعلومات حول كيفية مشاركة ا لم رشح ين من مناطق خارج هذه ا لمناطق ا لمذكورة في امتحان HSK(Speaking) ا لمحمول، يرجى التواصل معنا عبر البريد ا لإلكتروني <a href="mailto:support@hskk.org">support@hskk.org</a>.'
+)
+translateWeb(
+  '.i18n-504',
+  'HSK⼝语移动端考试与纸笔及机⽹考有何不同？',
+  'What are the differences between the HSK(Speaking) Mobile-based Exam and the paper-based and computer-based Exams?',
+  'Apa perbedaan antara ujian HSK Lisan Versi Mobile dengan ujian kertas, ujian komputer, dan ujian jaringan?',
+  'ا لمحمول وا لاختبار الورقي واختبار الكمبيوتر؟ )HSK(Speaking ما هي الفروق بين امتحان'
+)
+translateWeb(
+  '.i18n-505',
+  'HSK⼝语移动端考试通过⼿机进⾏，让考试变得更加灵活便捷。与传统的纸笔考试和机⽹考相比，HSK⼝语移动端考试的时间更弹性，可多次报考，并可安在家和办公室进⾏考试，充分利⽤现代化科技，⽅便考⽣评估⾃⾝的语⾔能⼒。',
+  'The HSK(Speaking) Mobile Exam is conducted on a mobile phone, making it more flexible and convenient compared to traditional paper-based and computer-based tests. It offers greater flexibility in terms of scheduling, allows multiple attempts, and can be taken from the comfort of your home or office, utilizing modern technology to assess your language skills effectively.',
+  'Ujian HSK Lisan Versi Mobile dilakukan melalui ponsel, membuat ujian menjadi lebih fleksibel dan mudah diakses. Dibandingkan dengan ujian tradisional kertas, ujian komputer, dan ujian jaringan, ujian HSK Lisan Versi Mobile memiliki jadwal yang lebih fleksibel, dapat diikuti berkali-kali, dan dapat dilakukan di rumah atau kantor, memanfaatkan teknologi modern untuk memudahkan peserta ujian dalam menilai kemampuan bahasa mereka.',
+  'ا لمحمول على هاتف محمول، مما يجعله أكثر مرونة وسهولة مقارنة با لاختبارات )HSK(Speaking يتم إجراء امتحانالتقليدية الورقية والكمبيوترية. يوفر مرونة أكبر فيما يتعلق بالجدولة، ويسمح بعدة محاولات، ويمكن أداؤه من منزلك أو مكتبك، .مستفي ًدا من التكنولوجيا الحديثة لتقييم مهاراتك اللغوية بفعالية'
+)
+translateWeb(
+  '.i18n-506',
+  '考试设备有什么要求？',
+  'What are the device requirements for the test?',
+  'Apa persyaratan perangkat untuk ujian?',
+  'ما هي متطلبات ا لأجهزة للامتحان؟'
+)
+translateWeb(
+  '.i18n-507',
+  'iPhone8Plus 以上, IOS 15以上。安卓6以上，建议⼿机屏幕 5.5⼨及以上。不⽀持任何折叠机型，ipad及任何平板电脑',
+  'iPhone 8 Plus or higher, running iOS 15 or higher. Android 6 or higher, with a recommended screen size of 5.5 inches or larger. Not supported: Foldable devices, iPads, and any tablet computers.',
+  'iPhone 8 Plus atau yang lebih baru dengan iOS 15 atau yang lebih baru. Android 6 atau yang lebih baru, dengan rekomendasi layar ponsel minimal 5,5 inci. Tidak mendukung ponsel lipat atau tablet, termasuk iPad.',
+  '.أو أحدث 15 iOS أو أحدث، يعمل بنظام iPhone 8 Plus .أو أحدث، بشاشة مقترحة بحجم 5.5 بوصة أو أكبر 6 Android .وأي أجهزة لوحية أخرى ،iPad غير مدعومة: ا لأجهزة القابلة للطي، وأجهزة'
+)
+translateWeb(
+  '.i18n-508',
+  '有哪些考试设备不⽀持？',
+  'Which devices are not supported for the test?',
+  'Perangkat apa saja yang tidak didukung untuk ujian?',
+  'أي ا لأجهزة لا تتوافق مع ا لاختبار؟'
+)
+translateWeb(
+  '.i18n-508-1',
+  '以下⼿机型号暂不受⽀持（清单会定期更新）',
+  'The following mobile phone models are currently not supported (this list may be updated periodically):',
+  'Berikut adalah beberapa model ponsel yang saat ini tidak didukung (daftar ini dapat diperbarui secara berkala):',
+  ':الهواتفا لمحمولةالتاليةغيرمدعومةحالًيا)قديتمتحديثهذهالقائمةبشكلدوري('
+)
+translateWeb(
+  '.i18n-508-2',
+  '三星Galaxy Z Fold3 5G',
+  'Samsung Galaxy Z Fold3 5G',
+  'Samsung Galaxy Z Fold3 5G',
+  'Samsung Galaxy Z Fold3 5G'
+)
+translateWeb(
+  '.i18n-508-3',
+  '三星Galaxy Z Flip3 5G',
+  'Samsung Galaxy Z Flip3 5G',
+  'Samsung Galaxy Z Flip3 5G',
+  'Samsung Galaxy Z Flip3 5G'
+)
+translateWeb(
+  '.i18n-508-4',
+  '三星 Galaxy Z Flip4',
+  'Samsung Galaxy Z Flip4',
+  'Samsung Galaxy Z Flip4',
+  'Samsung Galaxy Z Flip4'
+)
+translateWeb(
+  '.i18n-508-5',
+  '三星W21 5G（SM-W2021）',
+  'Samsung W21 5G (SM-W2021)',
+  'Samsung W21 5G (SM-W2021)',
+  'Samsung W21 5G (SM-W2021)'
+)
+translateWeb(
+  '.i18n-508-6',
+  'VIVO X Flip 和 vivo X Fold 2',
+  'VIVO X Flip and vivo X Fold 2',
+  'VIVO X Flip dan vivo X Fold 2',
+  'VIVO X Flip وvivo X Fold 2'
+)
+translateWeb(
+  '.i18n-508-7',
+  'Moto Razr 2022',
+  'Moto Razr 2022',
+  'Moto Razr 2022',
+  'Moto Razr 2022'
+)
+translateWeb(
+  '.i18n-508-8',
+  '华为 P50 Pocket',
+  'Huawei P50 Pocket',
+  'Huawei P50 Pocket',
+  'Huawei P50 Pocket'
+)
+translateWeb(
+  '.i18n-508-9',
+  '华为 Mate Xs 2',
+  'Huawei Mate Xs 2',
+  'Huawei Mate Xs 2',
+  'Huawei Mate Xs 2'
+)
+translateWeb(
+  '.i18n-508-10',
+  '华为 Mate X3',
+  'Huawei Mate X3',
+  'Huawei Mate X3',
+  'Huawei Mate X3'
+)
+translateWeb(
+  '.i18n-508-11',
+  '华为 Mate X2',
+  'Huawei Mate X2',
+  'Huawei Mate X2',
+  'Huawei Mate X2'
+)
+translateWeb(
+  '.i18n-508-12',
+  '⼩⽶ MIX Fold 2',
+  'Xiaomi MIX Fold 2',
+  'Xiaomi MIX Fold 2',
+  'Xiaomi MIX Fold 2'
+)
+translateWeb(
+  '.i18n-508-13',
+  '任何品牌和型号的折叠版⼿机',
+  'Any brand or model of foldable phones',
+  'Semua merek dan model ponsel lipat',
+  'أي ع لامة تجارية أو نموذج من الهواتف القابلة للطي'
+)
+translateWeb(
+  '.i18n-508-14',
+  '考⽣需避免⽤以上考试设备。如果考⽣使⽤以上设备⽽引起考试问题，考⽣需⾃我负责，考试费⽤将不 获退还。',
+  'Candidates are advised to avoid using the above-listed devices. If using such devices causes issues during the test, candidates will be responsible, and the test fee will not be refunded.',
+  'Peserta ujian disarankan untuk menghindari menggunakan perangkat di atas. Jika penggunaan perangkat tersebut menyebabkan masalah selama ujian, peserta ujian harus bertanggung jawab sendiri, dan biaya ujian tidak akan dikembalikan.',
+  'ُينصح بعدم استخدام ا لأجهزة ا لمذكورة أع لاه. إذا تسبب استخدام مثل هذه ا لأجهزة في مشاكل خ لال ا لاختبار، سيكون .ا لم رشحون مسؤولين، ولن يتم استرداد رسوم ا لاختبار'
+)
+translateWeb(
+  '.i18n-509',
+  '我可以在哪参加HSK⼝语移动端考试？',
+  'Where can I take the HSK(Speaking) Mobile Exam?',
+  'Di mana saya dapat mengikuti ujian HSK Lisan Versi Mobile?',
+  'ا لمحمول؟ )HSK(Speaking أين يمكنني أداء امتحان'
+)
+translateWeb(
+  '.i18n-510',
+  '你可以在这⾥直接报考HSK⼝语移动端考试，选择适当的考试⽇期和时间。 之后在家中，办公室或者其他安静的室内空间进⾏考试。',
+  'You can register for the HSK(Speaking) Mobile Exam directly on the website and choose a suitable test date and time. You can then take the test at home, in your office, or in another quiet indoor space.',
+  'Anda dapat mendaftar ujian HSK Lisan Versi Mobile di sini, memilih tanggal dan waktu ujian yang sesuai, dan kemudian mengikuti ujian di rumah, kantor, atau ruang dalam yang tenang.',
+  'ا لمحمول مباشرة على ا لموقع ا لإلكتروني واختيار تاريخ ووقت امتحان )HSK(Speaking يمكنك التسجيل لأداء امتحان.مناسب. بعد ذلك، يمكنك أداء ا لاختبار في ا لمنزل أو في مكتبك أو في مكان هادئ داخلي آخر'
+)
+translateWeb(
+  '.i18n-511',
+  '可以在考点参加HSK⼝语移动端考试么？',
+  'Can I take the HSK(Speaking) Mobile Exam at a test center?',
+  'Bisakah saya mengikuti ujian HSK Lisan Versi Mobile di pusat ujian?',
+  'على الهاتف ا لمحمول في مركز ا لاختبار؟ )التحدث( HSK هل يمكنني أداء امتحان'
+)
+translateWeb(
+  '.i18n-512',
+  '你可以在与我们有合作的考点进⾏考试。请联系<a href="mailto:support@hskk.org">support@hskk.org</a>获取更多信息。',
+  'You can take the test at test centers that are in cooperation with us. Please contact <a href="mailto:support@hskk.org">support@hskk.org</a> for more information.',
+  'Anda dapat mengikuti ujian di pusat ujian yang telah bekerja sama dengan kami. Silakan hubungi <a href="mailto:support@hskk.org">support@hskk.org</a> untuk informasi lebih lanjut.',
+  '.للمزيد من ا لمعلومات <a href="mailto:support@hskk.org">support@hskk.org</a> يمكنك أداء ا لاختبار في مراكز ا لاختبار التي تتعاون معنا. ُيرجى التواصل مع'
+)
+translateWeb(
+  '.i18n-513',
+  '通过HSK⼝语移动端考试中⼼报名和通过汉考国际报名有什么区别？',
+  'Is registration through the HSK(Speaking) Mobile Exam Center the same as registering through Chinese Testing International?',
+  'Apakah ada perbedaan antara mendaftar melalui Pusat Ujian HSK Lisan Versi Mobile dan mendaftar melalui Hanban (Lembaga Ujian Bahasa Tionghoa Internasional)?',
+  'هل التسجيل على الهاتف المحمول هو نفس التسجيل من خلال اختبار HSK للغة الصينية (تحدثا) والتسجيل من خلال مركز الاختبار الدولي؟'
+)
+translateWeb(
+  '.i18n-514',
+  '是⼀致的。HSK⼝语移动端考试中⼼<a href="https://www.hskk.org">www.hskk.org</a>会将你的所有报名资料同步在汉考国际官⽅的报名⽹站<a href="https://www.chinesetest.cn">www.chinesetest.cn</a>',
+  "Yes, it's the same. The HSK(Speaking) Mobile Exam Center (<a href='https://www.hskk.org'>www.hskk.org</a>) will synchronize all your registration information with the official Hanban registration website (<a href='https://www.chinesetest.cn'>www.chinesetest.cn</a>).",
+  'Proses pendaftaran adalah sama. Pusat Ujian HSK Lisan Versi Mobile di <a href="https://www.hskk.org">www.hskk.org</a> akan menyinkronkan semua data pendaftaran Anda dengan situs web resmi Hanban di <a href="https://www.chinesetest.cn">www.chinesetest.cn</a>.',
+  'بمزامنة جميع معلومات )<a href="https://www.hskk.org">www.hskk.org</a>( على الهاتف ا لمحمول )التحدث( HHSK نعم، هو نفسه. سيقوم مركز امتحان .)<a href="https://www.chinesetest.cn">www.chinesetest.cn</a>( التسجيل الخاصة بك مع موقع التسجيل الرسمي لهانبان'
+)
+translateWeb(
+  '.i18n-515',
+  '如何保证HSK⼝语移动端考试的公正性？',
+  'How is the fairness of the HSK(Speaking) Mobile Exam ensured?',
+  'Bagaimana keadilan ujian HSK Lisan Versi Mobile dijamin?',
+  'على الهاتف ا لمحمول؟ )التحدث( HSK كيف يتم ضمان عدالة امتحان'
+)
+translateWeb(
+  '.i18n-516',
+  '为了保证考试的公正性，我们会对考⽣的设备，地点，环境，⾯部及声⾳等在不同时候进⾏检测和确认。如果考生发生作弊行为，会被调查。一经证实，考生将在两年内不可参加任何考试。',
+  "To ensure the fairness of the test, we conduct checks and verifications of candidates' devices, locations, environments, faces, and voices at various times. If a candidate is found to engage in cheating, an investigation will be conducted. If confirmed, the candidate will be prohibited from taking any tests for two years.",
+  'Untuk memastikan keadilan ujian, kami akan melakukan pemeriksaan dan konfirmasi terhadap perangkat, lokasi, lingkungan, wajah, dan suara peserta ujian pada berbagai waktu. Jika ada indikasi kecurangan oleh peserta ujian, akan ada penyelidikan. Jika terbukti, peserta ujian akan dilarang mengikuti ujian selama dua tahun.',
+  'لضمان عدالة ا لاختبار، نقوم بإجراء فحوصات وتحقق من أجهزة ا لم رشح ين ومواقعهم وبيئاتهم ووجوههم وأصواتهم في أوقات مختلفة. إذا تم اكتشاف مرشح متورط في الغش، سيتم إجراء تحقيق. إذا تم تأكيد ذلك، سيتم منع ا لم رشح من أداء أي اختبار .لمدة عامين'
+)
+translateWeb(
+  '.i18n-517',
+  '我可以参加多少次考试？',
+  'How many times can I take the test?',
+  'Berapa kali saya dapat mengikuti ujian?',
+  'كم مرة يمكنني أداء ا لاختبار؟'
+)
+translateWeb(
+  '.i18n-518',
+  '在指定的国家和地区，HSK⼝语移动端考试的次数没有限制。',
+  'In designated countries and regions, there is no limit to the number of times you can take the HSK(Speaking) Mobile Exam.',
+  'Di negara dan wilayah yang ditentukan, tidak ada batasan jumlah percobaan untuk ujian HSK Lisan Versi Mobile.',
+  '.على الهاتف ا لمحمول )التحدث( HSK في البلدان وا لمناطق ا لمعينة، ليس هناك حد لعدد مرات أداء امتحان'
+)
+translateWeb(
+  '.i18n-519',
+  'HSK⼝语移动端考试是否可以联报HSK考试？',
+  'Can I take both the HSK and HSK(Speaking) Mobile Exam together?',
+  'Bolehkah ujian HSK bergerak dipadukan dengan ujian HSK biasa?',
+  'على الهاتف ا لمحمول م ًعا؟ )التحدث( HSK و HSK هل يمكنني أداء امتحاني'
+)
+translateWeb(
+  '.i18n-520',
+  '可以的。如果你参加了HSK考试，则可在HSK考试后的三个⽉内联考HSK⼝语移动端考试。',
+  'Yes, you can. If you have taken the HSK test, you can register for the HSK(Speaking) Mobile Exam within three months of your HSK test.',
+  'Boleh. Jika Anda mengikuti ujian HSK, Anda dapat mengambil ujian HSK bergerak dalam waktu tiga bulan setelah ujian HSK.',
+  'على الهاتف ا لمحمول )التحدث( HSK يمكنك التسجيل لأداء امتحان ،HSK نعم، يمكنك ذلك. إذا كنت قد أديت اختبار  .HSK في غضون ثلاثة أشهر من أدائك لاختبار'
+)
+translateWeb(
+  '.i18n-521',
+  '如何拿到HSK⼝语移动端考试，最好成绩？',
+  'How to achieve the best score in the HSK(speaking) test on the mobile platform?',
+  'Bagaimana cara mendapatkan skor tertinggi dalam ujian HSK Lisan Versi Mobile?',
+  'كيفية الحصول على أفضل درجة في اختبار HSK (المحادثة).'
+)
+translateWeb(
+  '.i18n-522',
+  '你需要做好设备检测，为考试做充⾜准备。同时仔细阅读考试指引和考前注意事项。',
+  'You need to perform device checks, prepare adequately for the exam, and carefully read the exam instructions and pre-exam precautions.',
+  'Anda perlu melakukan pemeriksaan perangkat, bersiap-siap untuk ujian dengan baik, dan membaca panduan ujian serta instruksi sebelum ujian.',
+  'يرجى التأكد من فحص المعدات، وإجراء اختبار HSK (الفموي)، وإجراء الاستعدادات الكافية للاختبار، وقراءة تعليمات الاختبار والاحتياطات بعناية قبل الاختبار.'
+)
+translateWeb(
+  '.i18n-523',
+  '如何提⾼HSK和HSK⼝语的联考成绩？',
+  'How can I achieve the best score in the HSK and HSK(Speaking) Mobile Exam combination?',
+  'Bagaimana meningkatkan skor dalam ujian HSK dan HSK Lisan?',
+  'كيفية تحسين درجات الامتحانات الشفوية HSK وHSK؟'
+)
+translateWeb(
+  '.i18n-524',
+  '你可以在HSK考试后的三个⽉内，多次报考HSK⼝语移动端考试，并拿最⾼的⼝语成绩作为指定的HSK联考成绩。',
+  'You can take the HSK(Speaking) Mobile Exam multiple times within three months after the HSK test and use your highest spoken Chinese score as your designated HSK combination score.',
+  'Anda dapat mengikuti ujian HSK Lisan Versi Mobile berkali-kali dalam tiga bulan setelah ujian HSK, dan skor lisan tertinggi akan dianggap sebagai skor HSK Anda.',
+  'يمكنك التقدم لاختبار HSK الشفهي المتنقل عدة مرات في غضون ثلاثة أشهر بعد اختبار HSK، والحصول على أعلى درجة في الاختبار الشفهي كنتيجة امتحان HSK المشترك المحدد.'
+)
+translateWeb(
+  '.i18n-525',
+  '如何获得考试成绩，成绩同机⽹考，纸笔考⼀致吗？',
+  'How can I obtain my test scores, and are the scores consistent with paper-based and computer-based tests?',
+  'Bagaimana cara mendapatkan hasil ujian, apakah hasil ujian bergerak sama dengan hasil ujian kertas atau komputer?',
+  'كيف يمكنني الحصول على درجات الاختبار الخاصة بي، وهل تتوافق الدرجات مع الاختبارات الورقية واختبارات الكمبيوتر؟'
+)
+translateWeb(
+  '.i18n-526',
+  '考试成绩通常会在考试结束后⼀个⽉内发布。成绩可以通过官⽅⽹站<a href="https://www.hskk.org">www.hskk.org</a>登录查看。移动端 考试与传统的纸笔考试和机考成绩⼀致。',
+  'Test scores are typically released within one month after the test. You can log in to the official website (<a href="https://www.hskk.org">www.hskk.org</a>) to check your scores. Scores for the mobile test are consistent with those of traditional paper-based and computer-based tests.',
+  'Biasanya, hasil ujian akan diumumkan dalam satu bulan setelah ujian selesai. Hasil ujian dapat dilihat dengan login ke situs resmi <a href="https://www.hskk.org">www.hskk.org</a>. Hasil ujian bergerak akan sama dengan hasil ujian kertas dan komputer.',
+  'عادةً ما يتم إصدار نتائج الاختبار في غضون شهر واحد بعد الاختبار. يمكنك تسجيل الدخول إلى الموقع الرسمي (<a href="https://www.hskk.org">www.hskk.org</a>) للتحقق من علاماتك. تتوافق درجات الاختبار المحمول مع درجات الاختبارات الورقية التقليدية والمعتمدة على الكمبيوتر.'
+)
+translateWeb(
+  '.i18n-527',
+  '如何获得成绩报告？',
+  'How can I obtain a score report?',
+  'Bagaimana cara mendapatkan laporan hasil ujian?',
+  'كيف يمكنني الحصول على تقرير النتيجة؟'
+)
+translateWeb(
+  '.i18n-528',
+  '你可以在<a href="https://www.hskk.org">www.hskk.org</a>登录查看电⼦版的成绩。 如果需要纸质成绩报告， 可通过<a href="https://www.hskk.org">www.hskk.org</a>申请或者去汉考国际官⽅⽹ ⻚查看成绩报告并打印。',
+  'You can log in to <a href="https://www.hskk.org">www.hskk.org</a> to view an electronic version of your score report. If you need a printed score report, you can apply for it on the same website or visit the official Hanban website to view and print your score report.',
+  'Anda dapat melihat versi elektronik hasil ujian dengan login ke <a href="https://www.hskk.org">www.hskk.org</a>. Jika Anda memerlukan laporan hasil ujian dalam bentuk kertas, Anda dapat mengajukannya melalui www.hskk.org atau mengunjungi situs resmi Hanban International untuk melihat dan mencetak laporan hasil ujian.',
+  'يمكنك تسجيل الدخول إلى <a href="https://www.hskk.org">www.hskk.org</a> لعرض نسخة إلكترونية من تقرير درجاتك. إذا كنت بحاجة إلى تقرير درجات مطبوع، فيمكنك التقدم بطلب للحصول عليه على نفس الموقع أو زيارة موقع Hanban الرسمي لعرض تقرير درجاتك وطباعته.'
+)
+
 
 $('.i18n').on('click', function() {
   let lang = $(this).attr('lang');

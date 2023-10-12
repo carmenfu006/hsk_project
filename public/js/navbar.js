@@ -47,7 +47,7 @@ navbar_template.innerHTML = `
         <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
           <i class='fa-solid fa-globe fa-lg mt-3 align-self-center secondary-color'></i>
         </a>
-        <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+        <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
           <a class='dropdown-item i18n' lang='zh'>中文</a>
           <a class='dropdown-item i18n' lang='en'>English</a>
           <a class='dropdown-item i18n' lang='id'>Bahasa Indonesia</a>

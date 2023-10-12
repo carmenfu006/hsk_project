@@ -47,7 +47,7 @@ $('.collapse')
 
 $('#more-faq').on('click', function() {
   $(this).remove();
-  for (let i = 8; i < 15; i++) {
+  for (let i = 8; i <= 15; i++) {
     $(`#card-${i}`).removeClass('d-none');
   }
 })
