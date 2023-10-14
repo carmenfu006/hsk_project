@@ -2233,6 +2233,55 @@ translateWeb(
   'إذا لم تحل إجابات الأسئلة الشائعة التالية مشكلتك، يرجى إرسال سؤالك إلى [عنوان البريد الإلكتروني]، بما في ذلك اسمك ومستوى امتحان HSKK ورقم المرشح والمشكلة التي تواجهها. سنقوم بحلها في أقرب وقت ممكن.'
 )
 translateWeb(
+  '.i18n-318',
+  '网上报名步骤',
+  'Online registration steps',
+  'Langkah-langkah pendaftaran online',
+  'خطوات التسجيل الالكتروني'
+)
+translateWeb(
+  '.i18n-319',
+  '第一步：注册用户并登入',
+  'Step 1: Register as a user and log in',
+  'Langkah 1: Daftar sebagai pengguna dan masuk',
+  'الخطوة 1: سجل كمستخدم وقم بتسجيل الدخول'
+)
+translateWeb(
+  '.i18n-320',
+  '第二步：选择考期',
+  'Step 2: Select the exam period',
+  'Langkah 2: Pilih periode ujian',
+  'الخطوة الثانية: تحديد فترة الامتحان'
+)
+translateWeb(
+  '.i18n-321',
+  '第三步：输入考生资料',
+  'Step 3: Enter candidate information',
+  'Langkah 3: Masukkan informasi kandidat',
+  'الخطوة 3: أدخل معلومات المرشح'
+)
+translateWeb(
+  '.i18n-322',
+  '第四步：确认考生信息并提交预报名',
+  'Step 4: Confirm candidate information and submit pre-registration',
+  'Langkah 4: Konfirmasikan informasi kandidat dan kirimkan prapendaftaran',
+  'الخطوة 4: تأكيد معلومات المرشح وإرسال التسجيل المسبق'
+)
+translateWeb(
+  '.i18n-323',
+  '第五步：在线付款',
+  'Step 5: Pay online',
+  'Langkah 5: Bayar online',
+  'الخطوة 5: الدفع عبر الإنترنت'
+)
+translateWeb(
+  '.i18n-324',
+  '第六步：成功提交预报名表并缴费，通过电子邮件接收收据',
+  'Step 6: Successfully submit the pre-registration form and pay the fee, and receive the receipt via email',
+  'Langkah 6: Berhasil mengirimkan formulir prapendaftaran dan membayar biayanya, dan menerima tanda terima melalui email',
+  'الخطوة 6: قم بإرسال نموذج التسجيل المسبق بنجاح ودفع الرسوم واستلام الإيصال عبر البريد الإلكتروني'
+)
+translateWeb(
   '.i18n-500',
   '什么是HSK口语移动端（手机）考试中心？',
   'What is the HSK(Speaking) Mobile Exam Center?',

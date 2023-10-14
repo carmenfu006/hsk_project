@@ -75,7 +75,7 @@ function toastLang(error_type) {
         toastMessage(error_type, '', '')
         break;
       default:
-        toastMessage('', '', '')
+        toastMessage(error_type, '', '')
     }
   }
 
@@ -94,7 +94,7 @@ function toastLang(error_type) {
         toastMessage(error_type, '', '')
         break;
       default:
-        toastMessage('', '', '')
+        toastMessage(error_type, '', '')
     }
   }
 }

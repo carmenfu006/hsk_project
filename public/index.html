@@ -6,116 +6,535 @@
     <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
     <script src="js/navbar.js" type="text/javascript" defer></script>
     <script src="js/footer.js" type="text/javascript" defer></script>
+    <script src="js/home.js" type="text/javascript" defer></script>
     <script src="js/i18n.js" type="text/javascript" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <nav id='navbar' class='navbar navbar-light navbar-expand-lg border-bottom'></nav>
+    <nav id='navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
     <div id='login-modal'></div>
-    <section class='content container'>
-      <div class='row mt-3 mb-5'>
-        <div class='col-1'>
-        </div>
-        <div class='col-10 border fs14'>
-          <i class='fa-solid fa-circle-exclamation fa-lg sunset-orange-color mt-4'></i>
-          <span class='secondary-color i18n-13'> 请注意</span>
-          <p class='fw100 i18n-14'>⽬前HSK口语移动端只提供考试当⽇在中国香港、印尼、阿联酋以及澳洲的考⽣。</p>
-        </div>
-        <div class='col-1'>
+    <section id='home-content' class='content'>
+      <div class='text-center text-white home-bg-image-1'>
+        <div class='row no-gutters pt-5'>
+          <div class='col'></div>
+          <div class='col-lg-6 col-md-6 col-sm-12 pt-lg-5'>
+            <h2 class='frame mr-3 ml-3 p-1 pb-3 pt-3 mt-5 mb-3 i18n-8 home-text-1'>全球唯一HSK口语移动端考试</h2>
+            <div class='d-block d-sm-none d-md-block d-lg-none mb-5'>
+              <a href='candidate-login' type='button' class='i18n-6 btn btn-sm active m-1 p-2 pr-3 pl-3 mb-3 i18n-6'>考生登入/注册</a>
+              <a href='partner-login' type='button' class='i18n-7 btn btn-sm active m-1 p-2 pr-3 pl-3 mb-3 i18n-7'>合作方登入</a>
+            </div>
+          </div>
+          <div class='col'></div>
         </div>
       </div>
-      <div class='row mt-3 mb-5'>
-        <div class='col'>
-          <h4 class='text-center font-weight-bold i18n-15'>HSK⼝语移动端考试介绍</h4>
-        </div>
-      </div>
-      <div class='row mt-3 mb-5'>
-        <div class='col-lg-6 col-sm-12'>
-          <img src='images/index-image-1.png' class='img-fluid' alt='Responsive image'>
-        </div>
-        <div class='col-lg-6 col-sm-12 p-4 fs14'>
-          <h6 class='font-weight-bold i18n-16'>欢迎来到HSK口语移动端考试中⼼</h6>
-          <p class='i18n-17'>我们利⽤最新科技，满⾜全球中⽂学习者的需求。通过考试：</p>
-          <div class='row no-gutters'>
-            <div class='col-1'>
-              <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
+      <div class='text-center text-white home-bg-image-2'>
+        <div class='container pt-5'>
+          <h4 class='pt-5 i18n-29 home-text-1'>欢迎来到HSK口语移动端考试中心</h4>
+          <p class='pt-1 i18n-30 home-text-3'>我们利用最新科技,提供最权威的中文认证，满足全球中文学习者的需求。</p>
+          <div class='row mt-4'>
+            <div class='col'></div>
+            <div class='col-lg-4 col-md-6 col-sm-12 frame p-4 mr-3 ml-3'>
+              <h5 class='mb-3 i18n-31 home-text-2'>通过考试</h5>
+              <div class='row no-gutters'>
+                <div class='col-1'>
+                  <img src='images/check-icon.png' class='img-fluid d-block' alt='Responsive image'>
+                </div>
+                <div class='col'>
+                  <p class='text-left pl-2 i18n-32 home-text-3'>了解⾃⾝⼝语程度和不⾜，加以改进</p>
+                </div>
+              </div>
+              <div class='row no-gutters'>
+                <div class='col-1'>
+                  <img src='images/check-icon.png' class='img-fluid d-block' alt='Responsive image'>
+                </div>
+                <div class='col'>
+                  <p class='text-left pl-2 i18n-33 home-text-3'>熟悉考试流程，帮助提⾼成绩</p>
+                </div>
+              </div>
+              <div class='row no-gutters'>
+                <div class='col-1'>
+                  <img src='images/check-icon.png' class='img-fluid d-block' alt='Responsive image'>
+                </div>
+                <div class='col'>
+                  <p class='text-left pl-2 i18n-34 home-text-3'>获得语⾔认证，助⼒升学和求职</p>
+                </div>
+              </div>
             </div>
-            <div class='col'>
-              <p class='i18n-18'>了解⾃⾝⼝语程度和不⾜，加以改进</p>
-            </div>
-          </div>
-          <div class='row no-gutters'>
-            <div class='col-1'>
-              <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
-            </div>
-            <div class='col'>
-              <p class='i18n-19'>熟悉考试流程，帮助提⾼成绩</p>
-            </div>
-          </div>
-          <div class='row no-gutters'>
-            <div class='col-1'>
-              <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
-            </div>
-            <div class='col'>
-              <p class='i18n-20'>获得语⾔认证，助⼒升学和求职</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='row mt-3 mb-5'>
-        <div class='col-lg-6 col-sm-12'>
-          <img src='images/index-image-2.png' class='img-fluid' alt='Responsive image'>
-        </div>
-        <div class='col-lg-6 col-sm-12 p-4 fs14'>
-          <h6 class='font-weight-bold mb-3 i18n-21'>考试⽅便灵活</h6>
-          <div class='row no-gutters'>
-            <div class='col-1'>
-              <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
-            </div>
-            <div class='col'>
-              <p class='i18n-22'>移动端轻松完成</p>
-            </div>
-          </div>
-          <div class='row no-gutters'>
-            <div class='col-1'>
-              <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
-            </div>
-            <div class='col'>
-              <p class='i18n-23'>随时随地参与考试</p>
-            </div>
+            <div class='col'></div>
           </div>
         </div>
       </div>
-      <div class='row mt-3 mb-5'>
-        <div class='col-lg-6 col-sm-12'>
-          <img src='images/index-image-3.png' class='img-fluid' alt='Responsive image'>
+      <div class='container mt-5'>
+        <div class='row mt-3 mb-5'>
+          <div class='col'>
+            <h4 class='text-center font-weight-bold i18n-35 home-text-1 mt-4'>为什么选择HSK口语移动端考试</h4>
+          </div>
         </div>
-        <div class='col-lg-6 col-sm-12 p-4 fs14'>
-          <h6 class='font-weight-bold mb-3 i18n-24'>简便操作</h6>
-          <div class='row no-gutters'>
-            <div class='col-1'>
-              <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
+        <div class='row mt-3 mb-5'>
+          <div class='col-lg-6 col-sm-12'>
+            <img src='images/home-image-1.png' class='img-fluid' alt='Responsive image'>
+          </div>
+          <div class='col-lg-6 col-sm-12 p-4 fs14'>
+            <h6 class='font-weight-bold mb-3 i18n-36 home-text-2'>随时随地 灵活度高</h6>
+            <div class='row no-gutters'>
+              <div class='col-1'>
+                <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
+              </div>
+              <div class='col'>
+                <p class='i18n-37 home-text-3'>选择自己最适合时间进行考试</p>
+              </div>
             </div>
-            <div class='col'>
-              <p class='i18n-25'>考试操作界⾯简洁明了</p>
+            <div class='row no-gutters'>
+              <div class='col-1'>
+                <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
+              </div>
+              <div class='col'>
+                <p class='i18n-38 home-text-3'>安在家中或办公室</p>
+              </div>
+            </div>
+            <div class='row no-gutters'>
+              <div class='col-1'>
+                <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
+              </div>
+              <div class='col'>
+                <p class='i18n-39 home-text-3'>通过自身手机，简单操作</p>
+              </div>
             </div>
           </div>
-          <div class='row no-gutters'>
-            <div class='col-1'>
-              <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
+        </div>
+        <div class='row mt-3 mb-5'>
+          <div class='col-lg-6 col-sm-12'>
+            <img src='images/home-image-2.png' class='img-fluid' alt='Responsive image'>
+          </div>
+          <div class='col-lg-6 col-sm-12 p-4 fs14'>
+            <h6 class='font-weight-bold mb-3 i18n-40 home-text-2'>考试高效 操作简单</h6>
+            <div class='row no-gutters'>
+              <div class='col-1'>
+                <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
+              </div>
+              <div class='col'>
+                <p class='i18n-41 home-text-3'>通过人工智能令考试流程快捷顺畅</p>
+              </div>
             </div>
+            <div class='row no-gutters'>
+              <div class='col-1'>
+                <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
+              </div>
+              <div class='col'>
+                <p class='i18n-42 home-text-3'>全程脸部及语音识别,保障准确性和公正性</p>
+              </div>
+            </div>
+            <div class='row no-gutters'>
+              <div class='col-1'>
+                <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
+              </div>
+              <div class='col'>
+                <p class='i18n-43 home-text-3'>专业客服团队,提供考试支援</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='row mt-3 mb-5'>
+          <div class='col-lg-6 col-sm-12'>
+            <img src='images/home-image-3.png' class='img-fluid' alt='Responsive image'>
+          </div>
+          <div class='col-lg-6 col-sm-12 p-4 fs14'>
+            <h6 class='font-weight-bold mb-3 i18n-44 home-text-2'>官方考试 权威认证</h6>
+            <div class='row no-gutters'>
+              <div class='col-1'>
+                <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
+              </div>
+              <div class='col'>
+                <p class='i18n-45 home-text-3'>唯一移动端官方考试平台</p>
+              </div>
+            </div>
+            <div class='row no-gutters'>
+              <div class='col-1'>
+                <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
+              </div>
+              <div class='col'>
+                <p class='i18n-46 home-text-3'>与纸笔/机网考成绩同等</p>
+              </div>
+            </div>
+            <div class='row no-gutters'>
+              <div class='col-1'>
+                <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
+              </div>
+              <div class='col'>
+                <p class='i18n-47 home-text-3'>支持多次报考、成绩反馈迅速</p>
+              </div>
+            </div>
+            <div class='row no-gutters'>
+              <div class='col-1'>
+                <img src='images/check-icon.png' class='img-fluid d-block pr-1' alt='Responsive image'>
+              </div>
+              <div class='col'>
+                <p class='i18n-48 home-text-3'>联报HSK考试,获全方面中文认证</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='row mt-3 mb-5 justify-content-center'>
+          <a href='application.html' class='btn btn-sm mb-3 p-2 pr-3 pl-3 mr-3 ml-3 mw180 active i18n-27'>查看考期及报名</a>
+          <a href='index.html#home-news' type='button' class='btn btn-sm mb-3 p-2 pr-3 pl-3 mr-3 ml-3 mw180 i18n-4'>最新质讯</a>
+        </div>
+      </div>
+      <div class='register-option bg-secondary-color pb-5'>
+        <div class='container'>
+          <div class='row pt-5'>
             <div class='col'>
-              <p class='i18n-26'>考试过程更加顺畅</p>
+              <h4 class='text-center font-weight-bold text-white mt-4 mb-4 i18n-49 home-text-1'>HSK口语移动端考期</h4>
+            </div>
+          </div>
+          <div class='row text-center'>
+            <div class='col-lg-4 col-md-6 col-sm-12 home-card-1 home-card'>
+              <div class='pt-2 pl-3 pr-3'>
+                <div class='p-3'>
+                  <h5 class='pt-5 i18n-50'>HSK口语 (初级)</h5>
+                  <p class='text-muted fs11 i18n-51'>主要面向按每周2-3课时进度学习汉语一到两个学期，掌握200个左右最常用词语的考生。</p>
+                  <p class='text-left'>🌟 <span class='i18n-52'>推介考期</span></p>
+                  <div class='card card-option'>
+                    <div class='card-body text-left overflow-auto'>
+                      <p class='card-text'>10月20日 10:00 AM(GMT+08:00)</p>
+                      <hr class='border-bottom'>
+                    </div>
+                  </div>
+                </div>
+                <div class='row mt-2 mb-5 justify-content-center'>
+                  <button type='button' class='btn btn-sm active mb-3 p-2 pr-4 pl-4 mr-3 ml-3 w180 i18n-53' data-toggle='modal' data-target='#staticBackdrop'>立即报名</button>
+                </div>
+              </div>
+            </div>
+            <div class='col-lg-4 col-md-6 col-sm-12 home-card-2 home-card'>
+              <div class='pt-2 pl-3 pr-3'>
+                <div class='p-3'>
+                  <h5 class='pt-5 i18n-54'>HSK口语 (中级)</h5>
+                  <p class='text-muted fs11 i18n-55'>主要面向按每周2-3课时进度学习汉语一到两学年，掌握900个左右最常用词语的考生。</p>
+                  <p class='text-left'>🌟 <span class='i18n-52'>推介考期</span></p>
+                  <div class='card card-option'>
+                    <div class='card-body text-left overflow-auto'>
+                      <p class='card-text'>10月20日 10:00 AM(GMT+08:00)</p>
+                      <hr class='border-bottom'>
+                    </div>
+                  </div>
+                </div>
+                <div class='row mt-2 mb-5 justify-content-center'>
+                  <button type='button' class='btn btn-sm active mb-3 p-2 pr-4 pl-4 mr-3 ml-3 w180 i18n-53' data-toggle='modal' data-target='#staticBackdrop'>立即报名</button>
+                </div>
+              </div>
+            </div>
+            <div class='col-lg-4 col-md-6 col-sm-12 home-card-3 home-card'>
+              <div class='pt-2 pl-3 pr-3'>
+                <div class='p-3'>
+                  <h5 class='pt-5 i18n-56'>HSK口语 (高级)</h5>
+                  <p class='text-muted fs11 i18n-57'>主要面向按每周2-3课时进度学习汉语两学年以上，掌握3000个左右最常用词语的考生。</p>
+                  <p class='text-left'>🌟 <span class='i18n-52'>推介考期</span></p>
+                  <div class='card card-option'>
+                    <div class='card-body text-left overflow-auto'>
+                      <p class='card-text'>10月20日 10:00 AM(GMT+08:00)</p>
+                      <hr class='border-bottom'>
+                    </div>
+                  </div>
+                </div>
+                <div class='row mt-2 mb-5 justify-content-center'>
+                  <button type='button' class='btn btn-sm active mb-3 p-2 pr-4 pl-4 mr-3 ml-3 w180 i18n-53' data-toggle='modal' data-target='#staticBackdrop'>立即报名</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class='row mt-3 mb-5 justify-content-center'>
-        <a href='application.html' class='btn btn-sm mb-3 p-2 pr-3 pl-3 mr-3 ml-3 i18n-27 mw180 active'>查看考期及报名</a>
-        <a href='partner.html' class='btn btn-sm mb-3 p-2 pr-3 pl-3 mr-3 ml-3 i18n-3 mw180'>考点或学校合作</a>
-        <a href='https://www.hskk.org' class='btn btn-sm mb-3 p-2 pr-3 pl-3 mr-3 ml-3 i18n-28 w180'>了解更多详情</a>
-        <a href='mailto:support@hskk.org' class='btn btn-sm mb-3 p-2 pr-3 pl-3 mr-3 ml-3 i18n-9 w180'>联系我们</a>
+      <div id='home-news' class='latest-news'>
+        <div class='container pt-5'>
+          <div class='row pt-5 mb-5'>
+            <div class='col'>
+              <h4 class='i18n-4 text-center font-weight-bold home-text-1'>最新资讯</h4>
+            </div>
+          </div>
+          <div class='row mt-3 mb-5'>
+            <div class='col-lg-6 col-sm-12 mb-5'>
+              <div id='carouselExampleIndicators' class='carousel slide' data-ride='carousel'>
+                <ol class='carousel-indicators'>
+                  <li data-target='#carouselExampleIndicators' data-slide-to='0' class='active'></li>
+                  <li data-target='#carouselExampleIndicators' data-slide-to='1'></li>
+                  <li data-target='#carouselExampleIndicators' data-slide-to='2'></li>
+                </ol>
+                <div class='carousel-inner'>
+                  <div class='carousel-item active'>
+                    <img class='d-block w-100' src='images/home-image-4.png' alt='First slide'>
+                  </div>
+                  <div class='carousel-item'>
+                    <img class='d-block w-100' src='images/home-image-3.png' alt='Second slide'>
+                  </div>
+                  <div class='carousel-item'>
+                    <img class='d-block w-100' src='images/home-image-2.png' alt='Third slide'>
+                  </div>
+                </div>
+                <a class='carousel-control-prev' href='#carouselExampleIndicators' role='button' data-slide='prev'>
+                  <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+                  <span class='sr-only'>Previous</span>
+                </a>
+                <a class='carousel-control-next' href='#carouselExampleIndicators' role='button' data-slide='next'>
+                  <span class='carousel-control-next-icon' aria-hidden='true'></span>
+                  <span class='sr-only'>Next</span>
+                </a>
+              </div>
+            </div>
+            <div class='col-lg-6 col-sm-12 p-4 fs14'>
+              <p class='pointer border-bottom' data-toggle='modal' data-target='#newsModal-1'>AI学习新方向 用潜能创写未来</p>
+              <p class='pointer border-bottom'>全程脸部及语音识别,保障准确性和公正性</p>
+              <p class='pointer border-bottom'>专业客服团队,提供考试支援</p>
+              <p class='pointer border-bottom'>全程脸部及语音识别,保障准确性和公正性</p>
+            </div>
+            <div class='modal fade' id='newsModal-1' tabindex='-1' role='dialog' aria-labelledby='modalLabel' aria-hidden='true'>
+              <div class='modal-dialog modal-lg' role='document'>
+                <div class='modal-content container'>
+                  <div class='modal-header border-0 justify-content-start'>
+                    <h5 class='modal-title pointer' id='modalLabel' data-dismiss='modal' aria-label='Close'><i class="fa-solid fa-arrow-left bg-grey-color rounded-circle p-2 mr-3"></i><span>最新资讯</span></h5>
+                  </div>
+                  <div class='modal-body'>
+                    <h5 class='font-weight-bold'>AI学习新方向 用潜能创写未来</h5>
+                    <img class='img-responsive mb-3' src='images/home-image-4.png' width='100%'>
+                    <div class='news-content overflow-auto'>
+                      <p>以AI人工智能为主题的电影，相信大家都有看过；一般而言，只会视为虚构幻想。 就在不久前，一场由ChatGPT等AI程式刮起的数码旋风，席卷全球，吸引亿万人试用及议论。在科技丶金融丶写作丶音乐丶娱乐， 以至教育等不同界别，掀起连场哄动。我们不得不承认，AI已由电影院融入真实生活圈。 未来，原来早已被悄悄下载。这一波AI风潮，对普罗大众来说，着实来得迅猛，有点令人措手不及。它造成的广泛影响，势必对 未来就业市场，以至现行教育模式，带来前所未有的变革；作为家长，宜及早准备。 应付变化越来越快的世界，以至教育模式，父母可做的，就是用心了解。故此，本专刊与大家分享全球教学最新趋势；继而探讨AI （尤其是生成式AI）与元宇宙两大热门元素，为全球教育界带来什么震撼性影响。我们更提供有关资讯，包括AI与元宇宙的基本认识丶在教育的应用与潜力丶环球学府与政府取态丶智能教学相比传统教学之利弊丶 本地及海外院校之AI及元宇宙课程等，务求让家长于最短时间内，获得一回实在且实用之资讯大更新，早日做好选校丶选科与财务 准备；更可参考个案，了解保险计划如何配合子女升学的理财需要，缔造更有把握的未来。</p>
+                    </div>
+                  </div>
+                  <div class='modal-footer border-0 justify-content-center'>
+                    <button type='button' class='btn btn-sm p-2 w180' data-dismiss='modal'>返回</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='home-faqs' class='faqs bg-light pt-1 pb-4'>
+        <div class='container mt-5'>
+          <div class='row pt-5 mb-5'>
+            <div class='col'></div>
+            <div class='col-lg-8 col-md-10 col-sm-12'>
+              <h4 class='i18n-5 text-center font-weight-bold mb-5 home-text-1'>常见问题</h4>
+              <p class='i18n-317 text-center text-muted'>如果下述常见问题的答案未能解决你的问题，请将您的问题发送至___电邮___，邮件内容需包括考生姓名，HSKK考试等级，考生序号，以及您遇到的问题，我们会尽快为您解决。</p>
+              <div class='accordion border-bottom rounded' id='accordion'>
+                <div id='card-1' class='card'>
+                  <div class='card-header bg-white'>
+                    <div class='d-flex justify-content-between mt-2'>
+                      <h6 class='i18n-500 pr-1'>什么是HSK口语移动端（手机）考试中心？</h6>
+                      <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-1' aria-expanded='true' aria-controls='collapse-1'><i class='fa fa-plus'></i></h6>
+                    </div>
+                  </div>
+                  <div id='collapse-1' class='collapse' aria-labelledby='heading-1' data-parent='#accordion'>
+                    <div class='i18n-501 card-body'>
+                      HSK口语移动端（手机）考试中心可以让考生通过手机，选择灵活时间，轻松在家或办公室进行口语考试。⽬前HSK⼝语移动端只提供考试当⽇在中国香港、印尼、阿联酋以及澳洲的考⽣。
+                    </div>
+                  </div>
+                </div>
+                <div id='card-2' class='card'>
+                  <div class='card-header bg-white'>
+                    <div class='d-flex justify-content-between mt-2'>
+                      <h6 class='i18n-502 pr-1'>中国香港、印尼、阿联酋以及澳洲四个地区以外的考点或者学校，如何参加HSK移动端考试？</h6>
+                      <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-2' aria-expanded='true' aria-controls='collapse-2'><i class='fa fa-plus'></i></h6>
+                    </div>
+                  </div>
+                  <div id='collapse-2' class='collapse' aria-labelledby='heading-2' data-parent='#accordion'>
+                    <div class='i18n-503 card-body'>
+                      可以通过<a href='mailto:support@hskk.org'>support@hskk.org</a>联系我们获取更多资讯。
+                    </div>
+                  </div>
+                </div>
+                <div id='card-3' class='card'>
+                  <div class='card-header bg-white'>
+                    <div class='d-flex justify-content-between mt-2'>
+                      <h6 class='i18n-504 pr-1'>HSK⼝语移动端考试与纸笔及机⽹考有何不同？</h6>
+                      <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-3' aria-expanded='true' aria-controls='collapse-3'><i class='fa fa-plus'></i></h6>
+                    </div>
+                  </div>
+                  <div id='collapse-3' class='collapse' aria-labelledby='heading-3' data-parent='#accordion'>
+                    <div class='i18n-505 card-body'>
+                      HSK⼝语移动端考试通过⼿机进⾏，让考试变得更加灵活便捷。与传统的纸笔考试和机⽹考相比，HSK⼝语移动端考试的时间更弹性，可多次报考，并可安在家和办公室进⾏考试，充分利⽤现代化科技，⽅便考⽣评估⾃⾝的语⾔能⼒。
+                    </div>
+                  </div>
+                </div>
+                <div id='card-4' class='card'>
+                  <div class='card-header bg-white'>
+                    <div class='d-flex justify-content-between mt-2'>
+                      <h6 class='i18n-506 pr-1'>考试设备有什么要求？</h6>
+                      <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-4' aria-expanded='true' aria-controls='collapse-4'><i class="fa fa-plus"></i></h6>
+                    </div>
+                  </div>
+                  <div id='collapse-4' class='collapse' aria-labelledby='heading-4' data-parent='#accordion'>
+                    <div class='i18n-507 card-body'>
+                      iPhone8Plus 以上, IOS 15以上。安卓6以上，建议⼿机屏幕 5.5⼨及以上。不⽀持任何折叠机型，ipad及任何平板电脑
+                    </div>
+                  </div>
+                </div>
+                <div id='card-5' class='card'>
+                  <div class='card-header bg-white'>
+                    <div class='d-flex justify-content-between mt-2'>
+                      <h6 class='i18n-508 pr-1'>有哪些考试设备不⽀持？</h6>
+                      <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-5' aria-expanded='true' aria-controls='collapse-5'><i class="fa fa-plus"></i></h6>
+                    </div>
+                  </div>
+                  <div id='collapse-5' class='collapse' aria-labelledby='heading-5' data-parent='#accordion'>
+                    <div class='card-body'>
+                      <p class='i18n-508-1'>以下⼿机型号暂不受⽀持（清单会定期更新）</p>
+                      <ul>
+                        <li class='i18n-508-2'>三星Galaxy Z Fold3 5G</li>
+                        <li class='i18n-508-3'>三星Galaxy Z Flip3 5G</li>
+                        <li class='i18n-508-4'>三星 Galaxy Z Flip4</li>
+                        <li class='i18n-508-5'>三星W21 5G（SM-W2021）</li>
+                        <li class='i18n-508-6'>VIVO X Flip 和 vivo X Fold 2</li>
+                        <li class='i18n-508-7'>Moto Razr 2022</li>
+                        <li class='i18n-508-8'>华为 P50 Pocket</li>
+                        <li class='i18n-508-9'>华为 Mate Xs 2</li>
+                        <li class='i18n-508-10'>华为 Mate X3</li>
+                        <li class='i18n-508-11'>华为 Mate x2</li>
+                        <li class='i18n-508-12'>⼩⽶ MIX Fold 2</li>
+                        <li class='i18n-508-13'>任何品牌和型号的折叠版⼿机</li>
+                      </ul>
+                      <p class='i18n-508-14'>考⽣需避免⽤以上考试设备。如果考⽣使⽤以上设备⽽引起考试问题，考⽣需⾃我负责，考试费⽤将不 获退还。</p>
+                    </div>
+                  </div>
+                </div>
+                <div id='card-6' class='card'>
+                  <div class='card-header bg-white'>
+                    <div class='d-flex justify-content-between mt-2'>
+                      <h6 class='i18n-509 pr-1'>我可以在哪参加HSK⼝语移动端考试？</h6>
+                      <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-6' aria-expanded='true' aria-controls='collapse-6'><i class="fa fa-plus"></i></h6>
+                    </div>
+                  </div>
+                  <div id='collapse-6' class='collapse' aria-labelledby='heading-6' data-parent='#accordion'>
+                    <div class='i18n-510 card-body'>
+                      你可以在这⾥直接报考HSK⼝语移动端考试，选择适当的考试⽇期和时间。 之后在家中，办公室或者其他安静的室内空间进⾏考试。
+                    </div>
+                  </div>
+                </div>
+                <div id='card-7' class='card'>
+                  <div class='card-header bg-white'>
+                    <div class='d-flex justify-content-between mt-2'>
+                      <h6 class='i18n-511 pr-1'>可以在考点参加HSK⼝语移动端考试么？</h6>
+                      <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-7' aria-expanded='true' aria-controls='collapse-7'><i class="fa fa-plus"></i></h6>
+                    </div>
+                  </div>
+                  <div id='collapse-7' class='collapse' aria-labelledby='heading-7' data-parent='#accordion'>
+                    <div class='i18n-512 card-body'>
+                      你可以在与我们有合作的考点进⾏考试。请联系<a href='mailto:support@hskk.org'>support@hskk.org</a>获取更多信息。
+                    </div>
+                  </div>
+                </div>
+                <div id='card-8' class='card d-none'>
+                  <div class='card-header bg-white'>
+                    <div class='d-flex justify-content-between mt-2'>
+                      <h6 class='i18n-513 pr-1'>通过HSK⼝语移动端考试中⼼报名和通过汉考国际报名有什么区别？</h6>
+                      <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-8' aria-expanded='true' aria-controls='collapse-8'><i class="fa fa-plus"></i></h6>
+                    </div>
+                  </div>
+                  <div id='collapse-8' class='collapse' aria-labelledby='heading-8' data-parent='#accordion'>
+                    <div class='i18n-514 card-body'>
+                      是⼀致的。HSK⼝语移动端考试中⼼<a href='https://www.hskk.org'>www.hskk.org</a>会将你的所有报名资料同步在汉考国际官⽅的报名⽹站<a href='https://www.chinesetest.cn'>www.chinesetest.cn</a>
+                    </div>
+                  </div>
+                </div>
+                <div id='card-9' class='card d-none'>
+                  <div class='card-header bg-white'>
+                    <div class='d-flex justify-content-between mt-2'>
+                      <h6 class='i18n-515 pr-1'>如何保证HSK⼝语移动端考试的公正性？</h6>
+                      <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-9' aria-expanded='true' aria-controls='collapse-9'><i class="fa fa-plus"></i></h6>
+                    </div>
+                  </div>
+                  <div id='collapse-9' class='collapse' aria-labelledby='heading-9' data-parent='#accordion'>
+                    <div class='i18n-516 card-body'>
+                      为了保证考试的公正性，我们会对考⽣的设备，地点，环境，⾯部及声⾳等在不同时候进⾏检测和确认。如果考生发生作弊行为，会被调查。一经证实，考生将在两年内不可参加任何考试。
+                    </div>
+                  </div>
+                </div>
+                <div id='card-10' class='card d-none'>
+                  <div class='card-header bg-white'>
+                    <div class='d-flex justify-content-between mt-2'>
+                      <h6 class='i18n-517 pr-1'>我可以参加多少次考试？</h6>
+                      <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-10' aria-expanded='true' aria-controls='collapse-10'><i class="fa fa-plus"></i></h6>
+                    </div>
+                  </div>
+                  <div id='collapse-10' class='collapse' aria-labelledby='heading-10' data-parent='#accordion'>
+                    <div class='i18n-518 card-body'>
+                      在指定的国家和地区，HSK⼝语移动端考试的次数没有限制。
+                    </div>
+                  </div>
+                </div>
+                <div id='card-11' class='card d-none'>
+                  <div class='card-header bg-white'>
+                    <div class='d-flex justify-content-between mt-2'>
+                      <h6 class='i18n-519 pr-1'>HSK⼝语移动端考试是否可以联报HSK考试？</h6>
+                      <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-11' aria-expanded='true' aria-controls='collapse-11'><i class="fa fa-plus"></i></h6>
+                    </div>
+                  </div>
+                  <div id='collapse-11' class='collapse' aria-labelledby='heading-11' data-parent='#accordion'>
+                    <div class='i18n-520 card-body'>
+                      可以的。如果你参加了HSK考试，则可在HSK考试后的三个⽉内联考HSK⼝语移动端考试。
+                    </div>
+                  </div>
+                </div>
+                <div id='card-12' class='card d-none'>
+                  <div class='card-header bg-white'>
+                    <div class='d-flex justify-content-between mt-2'>
+                      <h6 class='i18n-521 pr-1'>如何拿到HSK⼝语移动端考试，最好成绩？</h6>
+                      <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-12' aria-expanded='true' aria-controls='collapse-12'><i class="fa fa-plus"></i></h6>
+                    </div>
+                  </div>
+                  <div id='collapse-12' class='collapse' aria-labelledby='heading-12' data-parent='#accordion'>
+                    <div class='i18n-522 card-body'>
+                      你需要做好设备检测，为考试做充⾜准备。同时仔细阅读考试指引和考前注意事项。
+                    </div>
+                  </div>
+                </div>
+                <div id='card-13' class='card d-none'>
+                  <div class='card-header bg-white'>
+                    <div class='d-flex justify-content-between mt-2'>
+                      <h6 class='i18n-523 pr-1'>如何提⾼HSK和HSK⼝语的联考成绩？</h6>
+                      <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-13' aria-expanded='true' aria-controls='collapse-13'><i class="fa fa-plus"></i></h6>
+                    </div>
+                  </div>
+                  <div id='collapse-13' class='collapse' aria-labelledby='heading-13' data-parent='#accordion'>
+                    <div class='i18n-524 card-body'>
+                      你可以在HSK考试后的三个⽉内，多次报考HSK⼝语移动端考试，并拿最⾼的⼝语成绩作为指定的HSK联考成绩。
+                    </div>
+                  </div>
+                </div>
+                <div id='card-14' class='card d-none'>
+                  <div class='card-header bg-white'>
+                    <div class='d-flex justify-content-between mt-2'>
+                      <h6 class='i18n-525 pr-1'>如何获得考试成绩，成绩同机⽹考，纸笔考⼀致吗？</h6>
+                      <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-14' aria-expanded='true' aria-controls='collapse-14'><i class="fa fa-plus"></i></h6>
+                    </div>
+                  </div>
+                  <div id='collapse-14' class='collapse' aria-labelledby='heading-14' data-parent='#accordion'>
+                    <div class='i18n-526 card-body'>
+                      考试成绩通常会在考试结束后⼀个⽉内发布。成绩可以通过官⽅⽹站<a href='https://www.hskk.org'>www.hskk.org</a>登录查看。移动端 考试与传统的纸笔考试和机考成绩⼀致。
+                    </div>
+                  </div>
+                </div>
+                <div id='card-15' class='card d-none'>
+                  <div class='card-header bg-white'>
+                    <div class='d-flex justify-content-between mt-2'>
+                      <h6 class='i18n-527 pr-1'>如何获得成绩报告？</h6>
+                      <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-15' aria-expanded='true' aria-controls='collapse-15'><i class="fa fa-plus"></i></h6>
+                    </div>
+                  </div>
+                  <div id='collapse-15' class='collapse' aria-labelledby='heading-15' data-parent='#accordion'>
+                    <div class='i18n-528 card-body'>
+                      你可以在<a href="https://www.hskk.org">www.hskk.org</a>登录查看电⼦版的成绩。 如果需要纸质成绩报告， 可通过<a href="https://www.hskk.org">www.hskk.org</a>申请或者去汉考国际官⽅⽹ ⻚查看成绩报告并打印。
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='row mt-5 justify-content-center'>
+                <button id='more-faq' type='button' class='i18n-156 btn btn-sm mb-3 p-2 pr-4 pl-4 mr-3 ml-3 w180'>更多</button>
+              </div>
+            </div>
+            <div class='col'></div>
+          </div>
+        </div>
       </div>
     </section>
     <footer id='footer' class='bg-secondary-color text-white'></footer>

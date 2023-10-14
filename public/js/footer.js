@@ -15,7 +15,7 @@ footer_template.innerHTML = `
       </div>
     </div>
     <div class='row'>
-      <div class='col-lg-6 col-md-12 col-sm-12 fw500 fs14'>
+      <div class='col-lg-7 col-md-12 col-sm-12 fw500 fs14'>
         <div class='row no-gutters'>
           <div class='col mb-2'>
             <span class='i18n-9'>联系我们</span>
@@ -42,7 +42,7 @@ footer_template.innerHTML = `
           </div>
         </div>
       </div>
-      <div class='col-lg-6 col-md-12 col-sm-12 fw500 fs14'>
+      <div class='col-lg-5 col-md-12 col-sm-12 fw500 fs14'>
       <!-- <span class='i18n-12'>HSK口语移动端考试App下载</span>
         <div class='row pt-3 d-flex justify-content-start container'>
           <img src='images/mobile-app-store-badge.png' class='img-fluid mr-3 mb-2' alt='Responsive image'>

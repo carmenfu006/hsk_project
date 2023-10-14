@@ -11,6 +11,8 @@ const express = require('express');
 const app = express();
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
+const compression = require('compression');
+const port = 3000
 const https = require('https');
 // const fs = require('fs')
 
@@ -18,9 +20,10 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(compression());
 
-app.get('/application-submit', function(req, res) {
-  res.render('application-submit');
+app.get('/', function(req, res) {
+  res.render('index.html');
 })
 
 app.get('/payment', async (req, res) => {
@@ -84,4 +87,4 @@ app.post('/recaptcha', (req, res) => {
 
 })
 
-app.listen(3000)
+app.listen(port)
