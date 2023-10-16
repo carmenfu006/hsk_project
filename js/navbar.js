@@ -222,7 +222,7 @@ if (partner == null) {
 $('#user-logout, #partner-logout').on('click', function(e) {
   sessionStorage.removeItem('user');
   sessionStorage.removeItem('partner');
-  window.location.href = window.location.origin;
+  window.location.href = window.location.origin + '/index.html';
 });
 
 // var loc = window.location.pathname;
