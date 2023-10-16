@@ -2282,6 +2282,20 @@ translateWeb(
   'الخطوة 6: قم بإرسال نموذج التسجيل المسبق بنجاح ودفع الرسوم واستلام الإيصال عبر البريد الإلكتروني'
 )
 translateWeb(
+  '.i18n-325',
+  '返回',
+  'Return',
+  'Kembali',
+  'العودة'
+)
+translateWeb(
+  '.i18n-326',
+  '打印成绩报告',
+  'Print the report card',
+  'Cetak laporan nilai',
+  'طباعة تقرير الدرجات'
+)
+translateWeb(
   '.i18n-500',
   '什么是HSK口语移动端（手机）考试中心？',
   'What is the HSK(Speaking) Mobile Exam Center?',
@@ -3001,6 +3015,34 @@ translateWeb(
   'HSK exam results can be checked on the registration website 30 business days after completing the HSK exam.',
   'Hasil ujian HSK dapat dilihat di situs pendaftaran setelah 30 hari kerja sejak ujian selesai.',
   'على موقع التسجيل بعد مرور 30 يوم عمل من ا لانتهاء من )HSK( يمكن التحقق من نتائج امتحان اللغة الصينية .ا لامتحان'
+)
+translateWeb(
+  '.temp-i18n-1',
+  'AI学习新方向 用潜能创写未来',
+  'AI learns new directions, using potential to create the future',
+  'AI belajar arah baru, menggunakan potensi untuk menciptakan masa depan',
+  'تعلم الذكاء الاصطناعي اتجاهات جديدة، باستخدام الإمكانيات لخلق المستقبل'
+)
+translateWeb(
+  '.temp-i18n-2',
+  '全程脸部及语音识别,保障准确性和公正性',
+  'Full-face and voice recognition throughout, ensuring accuracy and fairness',
+  'Pengenalan wajah dan suara sepenuhnya, memastikan akurasi dan keadilan',
+  'التعرف على الوجه والصوت طوال الوقت، مضمون الدقة والعدالة'
+)
+translateWeb(
+  '.temp-i18n-3',
+  '专业客服团队,提供考试支援',
+  'Professional customer service team providing exam support',
+  'Tim layanan pelanggan profesional yang memberikan dukungan ujian',
+  'فريق خدمة العملاء المحترف يقدم دعم الامتحان'
+)
+translateWeb(
+  '.temp-i18n-4',
+  '以AI人工智能为主题的电影，相信大家都有看过；一般而言，只会视为虚构幻想。 就在不久前，一场由ChatGPT等AI程式刮起的数码旋风，席卷全球，吸引亿万人试用及议论。在科技丶金融丶写作丶音乐丶娱乐， 以至教育等不同界别，掀起连场哄动。我们不得不承认，AI已由电影院融入真实生活圈。 未来，原来早已被悄悄下载。这一波AI风潮，对普罗大众来说，着实来得迅猛，有点令人措手不及。它造成的广泛影响，势必对 未来就业市场，以至现行教育模式，带来前所未有的变革；作为家长，宜及早准备。 应付变化越来越快的世界，以至教育模式，父母可做的，就是用心了解。故此，本专刊与大家分享全球教学最新趋势；继而探讨AI （尤其是生成式AI）与元宇宙两大热门元素，为全球教育界带来什么震撼性影响。我们更提供有关资讯，包括AI与元宇宙的基本认识丶在教育的应用与潜力丶环球学府与政府取态丶智能教学相比传统教学之利弊丶 本地及海外院校之AI及元宇宙课程等，务求让家长于最短时间内，获得一回实在且实用之资讯大更新，早日做好选校丶选科与财务 准备；更可参考个案，了解保险计划如何配合子女升学的理财需要，缔造更有把握的未来。',
+  "Movies with AI (Artificial Intelligence) as the main theme are something most of us have watched. Typically, they are seen as fictional fantasies. However, not long ago, a digital whirlwind driven by AI programs like ChatGPT swept across the globe, attracting millions of people to try and discuss it. In various domains such as technology, finance, writing, music, entertainment, and even education, it caused quite a stir. We must admit that AI has seamlessly integrated into our real lives. The future that was quietly downloaded is now upon us. This AI wave has taken the world by storm, catching many off guard. The extensive impact it brings is bound to revolutionize the future job market and even current educational models. As parents, it's wise to be prepared. Dealing with the ever-accelerating changes in the world and educational models, what parents can do is to gain a deep understanding. Therefore, this special edition shares with you the latest global trends in education and explores the profound impact that AI, especially Generative AI, and the metaverse, two hot elements, will have on the global education sector. We also provide information on basic knowledge about AI and the metaverse, their applications and potential in education, the stances of international educational institutions and governments, the pros and cons of smart teaching compared to traditional teaching, AI and metaverse courses in local and overseas schools, and much more. Our aim is to provide parents with a quick and practical update, allowing them to make informed decisions about school and subject selection, as well as financial preparation. You can also refer to case studies to understand how insurance plans can complement your children's education-related financial needs and create a more secure future.",
+  'Film dengan tema Kecerdasan Buatan (AI) adalah sesuatu yang sudah banyak dari kita tonton. Biasanya, film-film tersebut dianggap sebagai fantasi fiksi belaka. Namun, belum lama ini, ada badai digital yang dipicu oleh program-program AI seperti ChatGPT yang melanda seluruh dunia, menarik jutaan orang untuk mencoba dan mendiskusikannya. Di berbagai bidang seperti teknologi, keuangan, penulisan, musik, hiburan, dan bahkan pendidikan, badai ini menimbulkan kehebohan. Kita harus mengakui bahwa AI telah terintegrasi dengan mulus ke dalam kehidupan nyata kita. Masa depan yang diam-diam diunduh sudah tiba. Gelombang AI ini telah menggebrak dunia, mengejutkan banyak orang. Dampak luas yang dibawanya pasti akan merevolusi pasar kerja masa depan dan bahkan model pendidikan saat ini. Sebagai orang tua, bijaksana untuk bersiap. Menghadapi perubahan yang semakin cepat di dunia dan model pendidikan, apa yang dapat dilakukan orang tua adalah memahami dengan baik. Oleh karena itu, edisi khusus ini berbagi dengan Anda tren terbaru dalam pendidikan global dan mengeksplorasi dampak mendalam yang akan dimiliki AI, terutama Generative AI, dan metaverse, dua elemen panas, terhadap sektor pendidikan global. Kami juga memberikan informasi dasar tentang pengetahuan AI dan metaverse, aplikasi dan potensi mereka dalam pendidikan, sikap lembaga pendidikan internasional dan pemerintah, pro dan kontra pembelajaran cerdas dibandingkan dengan pembelajaran tradisional, kursus AI dan metaverse di sekolah-sekolah lokal dan luar negeri, dan banyak lagi. Tujuan kami adalah memberikan orang tua pembaruan cepat dan praktis, sehingga mereka dapat mengambil keputusan informasi tentang pemilihan sekolah dan mata pelajaran, serta persiapan keuangan. Anda juga dapat merujuk kepada studi kasus untuk memahami bagaimana rencana asuransi dapat melengkapi kebutuhan finansial terkait pendidikan anak-anak Anda dan menciptakan masa depan yang lebih aman.',
+  'الأفلام التي تتناول موضوع الذكاء الاصطناعي كموضوع رئيسي هي شيء شاهده معظمنا. عادةً ما يتم اعتبارها خيالًا روائيًا. ومع ذلك، لم يمض وقت طويل حتى تقلب رياح رقمية تم تشغيلها بواسطة برامج الذكاء الاصطناعي مثل ChatGPT العالم، جذبت الملايين من الأشخاص لتجربتها ومناقشتها. في مجموعة متنوعة من المجالات مثل التكنولوجيا والمال والكتابة والموسيقى والترفيه، وحتى التعليم، أحدث هذا العاصفة الكثير من الضجة. يجب علينا أن نعترف بأن الذكاء الاصطناعي اندمج بسلاسة في حياتنا الحقيقية. المستقبل الذي تم تحميله بصمت قد وصل الآن. هذا الاهتزاز من الذكاء الاصطناعي قد هز العالم، مما ألقى بالعديد من الأشخاص في حيرة. الأثر الواسع النطاق الذي يحمله مرشح لأن يحدث ثورة في سوق العمل في المستقبل وحتى النماذج التعليمية الحالية. كوالدين، من الحكمة أن تكونوا مستعدين. التعامل مع التغييرات المتسارعة في العالم ونماذج التعليم، ما يمكن للوالدين فعله هو فهم عميق. لذلك، تشارك هذه الطبعة الخاصة معكم أحدث الاتجاهات العالمية في مجال التعليم وتستكشف التأثير العميق الذي ستكون له الذكاء الاصطناعي، خاصة الذكاء الاصطناعي التوليدي، والعالم الافتراضي، وهما عنصران ساخنان، على قطاع التعليم العالمي. نحن نقدم أيضًا معلومات أساسية حول مفهوم الذكاء الاصطناعي والعالم الافتراضي، تطبيقاتهما وإمكانياتهما في التعليم، ومواقف المؤسسات التعليمية والحكومات الدولية، والفوائد والسلبيات للتعليم الذكي مقارنة بالتعليم التقليدي، ودورات الذكاء الاصطناعي والعالم الافتراضي في المدارس المحلية والأجنبية، وأكثر من ذلك بكثير. هدفنا هو تزويد الوالدين بتحديث سريع وعملي، مما يتيح لهم اتخاذ قرارات مستنيرة بشأن اختيار المدرسة والمواد الدراسية، بالإضافة إلى التحضير المالي. يمكنكم أيضًا الرجوع إلى دراسات الحالة لفهم كيف يمكن لخطط التأمين أن تكمل احتياجات التعليم المتعلقة بأبنائك وتخلق مستقبلًا أكثر أمانًا.'
 )
 
 
