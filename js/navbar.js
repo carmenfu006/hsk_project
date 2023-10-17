@@ -225,6 +225,10 @@ $('#user-logout, #partner-logout').on('click', function(e) {
   window.location.href = window.location.origin + '/index.html';
 });
 
+$('#navbarDropdown').on('click', function(e) {
+  $('.navbar-collapse').removeClass('show');
+});
+
 // var loc = window.location.pathname;
 // var path = loc.substring(0, loc.lastIndexOf('/'));
 // var directoryName = path.substring(path.lastIndexOf("/")+1);
