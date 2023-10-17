@@ -2296,6 +2296,13 @@ translateWeb(
   'طباعة تقرير الدرجات'
 )
 translateWeb(
+  '.i18n-327',
+  '获取验证码',
+  'Get verification code',
+  'Dapatkan kode verifikasi',
+  'الحصول على رمز التحقق'
+)
+translateWeb(
   '.i18n-500',
   '什么是HSK口语移动端（手机）考试中心？',
   'What is the HSK(Speaking) Mobile Exam Center?',

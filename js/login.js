@@ -73,6 +73,64 @@ $('#to-partner-dashboard').on('click', function(e) {
   // });
 });
 
+$('#verification-code-btn').on('click', function(e) {
+  e.preventDefault();
+  var timeleft = 60;
+  var timer = setInterval(function(){
+    if(timeleft == 0){
+      $('#verification-code-btn').attr('disabled', false);
+      clearInterval(timer);
+      codeLang('.i18n-327')
+    } else {
+      $('#verification-code-btn').attr('disabled', true);
+      codeLangTimer('.i18n-327', timeleft)
+    }
+    timeleft -= 1;
+  }, 1000);
+});
+
+function codeLang(classname) {
+  let lang = sessionStorage.getItem('lang');
+
+  switch(lang) {
+    case 'zh':
+      $(classname).html('获取验证码');
+      break;
+    case 'en':
+      $(classname).html('Get verification code');
+      break;
+    case 'id':
+      $(classname).html('Dapatkan kode verifikasi');
+      break;
+    case 'ar':
+      $(classname).html('الحصول على رمز التحقق');
+      break;
+    default:
+      $(classname).html('获取验证码');
+  }
+}
+
+function codeLangTimer(classname, timer) {
+  let lang = sessionStorage.getItem('lang');
+
+  switch(lang) {
+    case 'zh':
+      $(classname).html(`重新获取验证码(${timer}s)`);
+      break;
+    case 'en':
+      $(classname).html(`Get verification code again(${timer}s)`);
+      break;
+    case 'id':
+      $(classname).html(`Dapatkan kode verifikasi lagi(${timer}s)`);
+      break;
+    case 'ar':
+      $(classname).html(`احصل على رمز التحقق مرة أخرى(${timer}s)`);
+      break;
+    default:
+      $(classname).html(`重新获取验证码(${timer}s)`);
+  }
+}
+
 function toastLang(error_type) {
   let lang = sessionStorage.getItem('lang');
 

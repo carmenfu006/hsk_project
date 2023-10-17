@@ -87,7 +87,7 @@ login_modal_template.innerHTML = `
         </div>
         <div class='modal-footer border-0 flex-lg-row flex-column-reverse justify-content-center'>
           <button type='button' class='i18n-155 btn btn-sm p-2 w180' data-dismiss='modal'>取消</button>
-          <a href='candidate-login' class='i18n-6 btn btn-sm p-2 w180 active'>考生登入/注册</a>
+          <a href='candidate-login.html' class='i18n-6 btn btn-sm p-2 w180 active'>考生登入/注册</a>
         </div>
       </div>
     </div>

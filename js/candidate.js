@@ -49,7 +49,7 @@ function activeProgressBar(classname) {
 function countdown(second) {
   var timeleft = second;
   var timer = setInterval(function(){
-    if(timeleft <= 0){
+    if(timeleft == 0){
       clearInterval(timer);
       window.location.href = 'dashboard.html'
     }
