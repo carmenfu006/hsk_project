@@ -1,4 +1,4 @@
-if (user == null) window.location.href = 'candidate-login';
+if (user == null) window.location.href = 'candidate-login.html';
 
 $('#apply-menu-btn').addClass('active');
 
