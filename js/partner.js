@@ -41,5 +41,5 @@ function activeIndicator(classname) {
 }
 
 function authoriseAccess() {
-  if (partner == null) window.location.href = window.location.origin + '/partner-login'
+  if (partner == null) window.location.href = window.location.origin + '/partner-login.html'
 }
