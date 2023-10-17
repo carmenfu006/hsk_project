@@ -1,3 +1,5 @@
+addRecaptchaToHead()
+
 $('#to-candidate-dashboard').on('click', function(e) {
   e.preventDefault();
   const captchaResponse = grecaptcha.getResponse()
@@ -177,4 +179,12 @@ function toastMessage(line1, line2, line3) {
   $('.error-line-1').html(line1)
   $('.error-line-2').html(line2)
   $('.error-line-3').html(line3)
+}
+
+function addRecaptchaToHead() {
+  let lang = sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'zh';
+  const script = document.createElement("script");
+  script.src = `https://www.google.com/recaptcha/api.js?hl=${lang}`;
+
+  document.head.appendChild(script);
 }
