@@ -58,6 +58,9 @@ navbar_template.innerHTML = `
         <a href='candidate-login.html' class='i18n-6 btn btn-sm active m-1 p-2 pr-3 pl-3'>考生登入/注册</a>
         <a href='partner-login.html' class='i18n-7 btn btn-sm active m-1 p-2 pr-3 pl-3'>合作方登入</a>
       </div>
+      <div id='candidate-dashboard' class='d-none pointer'>
+        <a href='/candidate/dashboard.html' class='i18n-272 mt-2 mr-2 pt-1'>个人主页</a>
+      </div>
       <div id='user-logout' class='d-flex pointer'>
         <span class='i18n-154 mt-2 pt-1'>登出</span>
         <span><i class='fa-solid fa-right-from-bracket fa-lg mt-4 ml-2 align-self-center secondary-color d-block'></i></span>
@@ -123,6 +126,9 @@ user_navbar_template.innerHTML = `
           <a class='dropdown-item i18n' lang='ar'>عربي</a>
         </div>
       </li>
+      <div id='candidate-dashboard' class='d-none pointer'>
+        <a href='/candidate/dashboard.html' class='i18n-272 mt-2 mr-2 pt-1'>个人主页</a>
+      </div>
       <div id='user-logout' class='d-flex pointer'>
         <span class='i18n-154 mt-2 pt-1'>登出</span>
         <span><i class='fa-solid fa-right-from-bracket fa-lg mt-4 ml-2 align-self-center secondary-color d-block'></i></span>
@@ -208,9 +214,11 @@ let partner = sessionStorage.getItem('partner');
 if (user == null) {
   $('#apply-menu-btn').remove()
   $('#user-logout').remove()
+  $('#candidate-dashboard').removeClass('d-flex')
 } else {
   $('#apply-modal-btn').remove()
   $('#user-public').remove()
+  $('#candidate-dashboard').addClass('d-flex')
 }
 
 if (partner == null) {

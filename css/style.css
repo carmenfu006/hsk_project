@@ -329,7 +329,7 @@ footer {
 .notice-card {
   min-width: 22rem;
   height: 35rem;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
 .notice-card-body {
@@ -550,6 +550,10 @@ div.record {
   overflow-y: scroll;
 }
 
+.instruction-content.no-scroll {
+  overflow-y: visible;
+}
+
 /* Screen size */
 
 @media screen and (min-width: 320px) {
@@ -559,6 +563,11 @@ div.record {
 
   .card-text {
     font-size: 12px;
+  }
+
+  .notice-card-content, .alert-card-content {
+    overflow-x: scroll;
+    /* overflow: hidden; */
   }
 
   .progress-indicator, .instruction-progress-indicator {
@@ -624,7 +633,7 @@ div.record {
   }
 
   .instruction-progress-indicator {
-    overflow-x: scroll;
+    overflow-x: hidden;
     position: static;
   }
   
@@ -664,6 +673,11 @@ div.record {
 
   .side-content {
     margin-left: 220px;
+  }
+
+  .notice-card-content, .alert-card-content {
+    /* overflow-x: scroll; */
+    overflow: hidden;
   }
 }
 
