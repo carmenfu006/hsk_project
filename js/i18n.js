@@ -3063,7 +3063,7 @@ function translateWeb(classname, zh, en, id, ar, input) {
   let url = new URL(window.location.href);
   let lang = sessionStorage.getItem("lang");
   updatePDFLink(lang)
-  updateLogo(lang)
+  // updateLogo(lang)
   
   switch(lang) {
     case 'zh':
