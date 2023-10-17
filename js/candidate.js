@@ -126,5 +126,5 @@ function activeIndicator(classname) {
 }
 
 function authoriseAccess() {
-  if (user == null) window.location.href = window.location.origin + '/candidate-login'
+  if (user == null) window.location.href = window.location.origin + '/candidate-login.html'
 }
