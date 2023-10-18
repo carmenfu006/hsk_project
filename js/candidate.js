@@ -65,6 +65,7 @@ function dashboardPage() {
     case 'dashboard.html':
       authoriseAccess()
       activeMenuBar('#dashboard-sidebar', '#dashboard-footbar')
+      scrollFootbar('dashboard-footbar')
       break;
     case 'exam-instruction.html':
       authoriseAccess()
@@ -78,29 +79,35 @@ function dashboardPage() {
     case 'inspection-instruction.html':
       authoriseAccess()
       activeMenuBar('#inspection-sidebar', '#inspection-footbar')
+      scrollFootbar('inspection-footbar')
       break;
     case 'important-notice.html':
       authoriseAccess()
       activeMenuBar('#notice-sidebar', '#notice-footbar')
       activeIndicator('.notice-indicator-dot')
+      scrollFootbar('notice-footbar')
       break;
     case 'abnormal-alert.html':
       authoriseAccess()
       activeMenuBar('#alert-sidebar', '#alert-footbar')
       activeIndicator('.alert-indicator-dot')
+      scrollFootbar('alert-footbar')
       break;
     case 'support-center.html':
       authoriseAccess()
       activeMenuBar('#support-sidebar', '#support-footbar')
+      scrollFootbar('support-footbar')
       break;
     case 'faqs.html':
       authoriseAccess()
       activeMenuBar('#faqs-sidebar', '#faqs-footbar')
+      scrollFootbar('faqs-footbar')
       break;
     case 'exam-record.html':
       authoriseAccess()
       activeMenuBar('#record-sidebar', '#record-footbar')
       activeIndicator('.status-filter')
+      scrollFootbar('record-footbar')
       break;
   }
 }
@@ -123,6 +130,10 @@ function activeIndicator(classname) {
     $(classname).removeClass('active');
     $(this).addClass('active')
   })
+}
+
+function scrollFootbar(id) {
+  document.getElementById(id).scrollIntoView()
 }
 
 function authoriseAccess() {

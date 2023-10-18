@@ -75,8 +75,9 @@ $('#to-partner-dashboard').on('click', function(e) {
   // });
 });
 
-$('#verification-code-btn').on('click', function(e) {
+$('#verification-code-btn').on('click', async(e) => {
   e.preventDefault();
+  let lang = getSession('lang');
   var timeleft = 60;
   var timer = setInterval(function(){
     if(timeleft == 0){
@@ -89,10 +90,31 @@ $('#verification-code-btn').on('click', function(e) {
     }
     timeleft -= 1;
   }, 1000);
+
+  let response = await fetch('https://api.hskk.info/webapi/send_verify_code/', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type' : 'application/json',
+        'Accept-Language': lang
+      },
+        body: JSON.stringify({
+          email: inputVal('#email')
+        })
+    })
+  let data = await response.json();
+
+  if (data.code == 200) {
+    $('.toast').toast('hide');
+  } else if (data.code == 400) {
+    timeleft = 0;
+    toastMessage(data.msg)
+    $('.toast').toast('show');
+  }
 });
 
 function codeLang(classname) {
-  let lang = sessionStorage.getItem('lang');
+  let lang = getSession('lang');
 
   switch(lang) {
     case 'zh':
@@ -113,7 +135,7 @@ function codeLang(classname) {
 }
 
 function codeLangTimer(classname, timer) {
-  let lang = sessionStorage.getItem('lang');
+  let lang = getSession('lang');
 
   switch(lang) {
     case 'zh':
@@ -134,7 +156,7 @@ function codeLangTimer(classname, timer) {
 }
 
 function toastLang(error_type) {
-  let lang = sessionStorage.getItem('lang');
+  let lang = getSession('lang');
 
   if (error_type == 'Recaptcha not checked') {
     switch(lang) {
@@ -182,9 +204,17 @@ function toastMessage(line1, line2, line3) {
 }
 
 function addRecaptchaToHead() {
-  let lang = sessionStorage.getItem('lang') ? sessionStorage.getItem('lang') : 'zh';
+  let lang = getSession('lang');
   const script = document.createElement("script");
   script.src = `https://www.google.com/recaptcha/api.js?hl=${lang}`;
 
   document.head.appendChild(script);
+}
+
+function getSession(key) {
+  return sessionStorage.getItem(key) ? sessionStorage.getItem(key) : 'zh';
+}
+
+function inputVal(id) {
+  return $(id).val()
 }

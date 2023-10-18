@@ -128,8 +128,8 @@ user_footer_template.innerHTML = `
 `;
 
 user_footbar_template.innerHTML = `
-  <div class='row user-footbar-width'>
-    <div id='dashboard-footbar' class='col text-center ml-3 pt-2 nav-footbar'>
+  <div class='row user-footbar-width no-gutters fs10'>
+    <div id='dashboard-footbar' class='col text-center pt-2 nav-footbar'>
       <a href='dashboard.html'>
         <i class='fa-solid fa-house'></i>
         <p class='i18n-272'>个人主页</p>
@@ -141,7 +141,7 @@ user_footbar_template.innerHTML = `
         <p class='i18n-168'>考试须知</p>
       </a>
     </div>
-    <div id='inspection-footbar' class='col-2 text-center pt-2 nav-footbar'>
+    <div id='inspection-footbar' class='col text-center pt-2 nav-footbar'>
       <a href='inspection-instruction.html'>
         <i class='fa-solid fa-mobile-screen'></i>
         <p class='i18n-273'>设备检测指示</p>

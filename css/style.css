@@ -454,7 +454,7 @@ div.record {
 }
 
 .user-footbar-width {
-  min-width: 1200px;
+  min-width: 650px;
 }
 
 .partner-footbar-width {
@@ -595,6 +595,10 @@ div.record {
     border-radius: 12%;
     background-color: #CFCFCF;
   }
+
+  .instruction-content.no-scroll {
+    height: 600px;
+  }
 }
 
 @media screen and (min-width: 375px) {
@@ -646,6 +650,10 @@ div.record {
     height: 3px;
     border-radius: 12%;
     background-color: #CFCFCF;
+  }
+
+  .instruction-content.no-scroll {
+    height: 500px;
   }
 }
 
