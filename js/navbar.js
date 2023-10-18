@@ -208,7 +208,7 @@ $('.menu-btn').on('click', function() {
 // sessionStorage.setItem('user', 'true');
 // sessionStorage.removeItem('user')
 
-let user = sessionStorage.getItem('user');
+let user = localStorage.getItem('user');
 let partner = sessionStorage.getItem('partner');
 
 if (user == null) {
@@ -228,7 +228,7 @@ if (partner == null) {
 }
 
 $('#user-logout, #partner-logout').on('click', function(e) {
-  sessionStorage.removeItem('user');
+  localStorage.removeItem('user');
   sessionStorage.removeItem('partner');
   window.location.href = window.location.origin + '/index.html';
 });

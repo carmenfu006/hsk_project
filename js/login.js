@@ -1,15 +1,38 @@
 addRecaptchaToHead()
 
-$('#to-candidate-dashboard').on('click', function(e) {
+$('#to-candidate-dashboard').on('click', async(e) => {
   e.preventDefault();
+  let lang = getSession('lang');
   const captchaResponse = grecaptcha.getResponse()
 
   if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
     toastLang('Recaptcha not checked')
     $('.toast').toast('show');
   } else {
-    sessionStorage.setItem('user', 'true');
-    window.location.replace($(this)[0].form.action);
+
+    let response = await fetch('https://api.hskk.info/webapi/login/', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type' : 'application/json',
+        'Accept-Language': lang
+      },
+        body: JSON.stringify({
+          email: inputVal('#email'),
+          verify_code: inputVal('#verify_code')
+        })
+    })
+    let data = await response.json();
+
+    if (data.code == 200) {
+      let user_token = data.data.access;
+      $('.toast').toast('hide');
+      localStorage.setItem('user', user_token);
+      window.location.replace($('#to-candidate-dashboard')[0].form.action);
+    } else if (data.code == 400) {
+      toastMessage(data.msg)
+      $('.toast').toast('show');
+    }
   }
 
   // fetch('/recaptcha', {
