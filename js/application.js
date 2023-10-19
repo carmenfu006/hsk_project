@@ -314,3 +314,83 @@ function populateDay(id) {
     }
   }
 }
+
+$('#exam-location, #exam-level').on('change', async() => {
+  
+})
+
+defaultLoadExamTime(1, 7)
+
+async function defaultLoadExamTime(area, level) {
+  let lang = getSession('lang');
+  let month_options = [];
+  let year_options = [];
+  let response = await fetch(`https://api.hskk.info/webapi/test_schedule?test_area=${area}&test_level=${level}`, {
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type' : 'application/json'
+      }
+    })
+  let data = await response.json();
+  let exam_time_options = data.data[0];
+
+  exam_time_options.forEach(function(item) {
+    let event = new Date(item.test_timestamp * 1000);
+    let event_month_value = event.toLocaleString(convertLang('en'), {'month' : 'numeric'})
+    let event_month = event.toLocaleString(convertLang(lang), {'month' : 'short'})
+    let event_year = event.getFullYear()
+
+    let newMonthObject = {'year' : event_year, 'month' : event_month, 'value' : event_month_value, 'year_month' : event_year + '-' + event_month_value}
+    month_options.push(newMonthObject)
+    year_options.push(event_year)
+  });
+
+  let unique_year = [...new Set(year_options)]
+  let unique_year_month = month_options.filter((obj, index) => {
+    return index === month_options.findIndex(o => obj.year_month === o.year_month);
+  });
+
+  unique_year.forEach(function(item) {
+    const exam_datetime_selection = $('#exam-datetime-selection')[0];
+    const exam_year_template = document.createElement('template');
+    exam_year_template.innerHTML = `
+      <div id=${item} class='month-year mr-1 ml-1'>${item}</div>
+    `;
+    exam_datetime_selection.appendChild(exam_year_template.content);
+  });
+
+  unique_year_month.reverse().forEach(function(item) {
+    const exam_datetime_year = $(`#${item.year}`)[0];
+    let exam_month_template = document.createElement('template');
+
+    if (String(item.year) == exam_datetime_year.innerHTML) {
+      exam_month_template = `
+      <div class='btn rounded mr-1 ml-1 month-item' data-year=${item.year} data-month=${item.value}>${item.month}</div>
+    `;
+      exam_datetime_year.insertAdjacentHTML('afterend', exam_month_template);
+    }
+  });
+}
+
+function getSession(key) {
+  return sessionStorage.getItem(key) ? sessionStorage.getItem(key) : 'zh';
+}
+
+function convertLang(lang) {
+  switch(lang) {
+    case 'zh':
+      return 'zh-HK'
+      break;
+    case 'en':
+      return 'en-AU'
+      break;
+    case 'id':
+      return 'id-ID'
+      break;
+    case 'ar':
+      return 'ar-SA'
+      break;
+    default:
+      return 'zh-HK'
+  }
+}
