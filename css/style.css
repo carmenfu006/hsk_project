@@ -34,6 +34,10 @@ a.primary-color:hover {
   background-color: #ECFBF9;
 }
 
+.invalid {
+  border-color: #FB3C3C !important;
+}
+
 /* Color */
 .primary-color {
   color: #3FD3C3;
