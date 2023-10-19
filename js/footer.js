@@ -17,7 +17,7 @@ footer_template.innerHTML = `
     <div class='row'>
       <div class='col-lg-7 col-md-12 col-sm-12 fw500 fs14'>
         <div class='row no-gutters'>
-          <div class='col mb-2'>
+          <div class='col-7 mb-2'>
             <span class='i18n-9'>联系我们</span>
             <span><a class='text-white' href='mailto:support@hskk.org'>: support@hskk.org</a></span>
           </div>
@@ -37,7 +37,7 @@ footer_template.innerHTML = `
         </div>
         <div class='row'>
           <div class='col mb-5'>
-            <span class='i18n-11'>更多质讯</span>
+            <span class='i18n-11'>更多资讯</span>
             <span><a class='text-white' href='https://www.hskk.org'>: www.hskk.org</a></span>
           </div>
         </div>
@@ -97,7 +97,7 @@ user_footer_template.innerHTML = `
         </div>
         <div class='row'>
           <div class='col mb-5'>
-            <span class='i18n-11'>更多质讯</span>
+            <span class='i18n-11'>更多资讯</span>
             <span><a class='text-white' href='https://www.hskk.org'>: www.hskk.org</a></span>
           </div>
         </div>

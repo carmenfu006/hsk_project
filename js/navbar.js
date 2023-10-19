@@ -90,7 +90,7 @@ login_modal_template.innerHTML = `
         </div>
         <div class='modal-footer border-0 flex-lg-row flex-column-reverse justify-content-center'>
           <button type='button' class='i18n-155 btn btn-sm p-2 w180' data-dismiss='modal'>取消</button>
-          <a href='candidate-login.html' class='i18n-6 btn btn-sm p-2 w180 active'>考生登入/注册</a>
+          <a href='candidate-login.html?application=true' class='i18n-6 btn btn-sm p-2 w180 active'>考生登入/注册</a>
         </div>
       </div>
     </div>
@@ -233,7 +233,7 @@ $('#user-logout, #partner-logout').on('click', function(e) {
   window.location.href = window.location.origin + '/index.html';
 });
 
-$('#navbarDropdown').on('click', function(e) {
+$('#navbarDropdown, #news-menu-btn, #faqs-menu-btn').on('click', function(e) {
   $('.navbar-collapse').removeClass('show');
 });
 

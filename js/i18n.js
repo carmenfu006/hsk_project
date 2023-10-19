@@ -70,7 +70,7 @@ translateWeb(
 )
 translateWeb(
   '.i18n-11', 
-  '更多质讯', 
+  '更多资讯', 
   'More Information', 
   'Informasi Lebih Lanjut', 
   'لمزيد من المعلومات'

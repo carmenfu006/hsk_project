@@ -12,10 +12,10 @@ function setActiveMenu() {
 }
 
 $(window).scroll(function() {
-  var top_of_home_news = $("#home-news").offset().top;
-  var bottom_of_home_news = $("#home-news").offset().top + $("#home-news").outerHeight();
-  var top_of_home_faqs = $("#home-faqs").offset().top;
-  var bottom_of_home_faqs = $("#home-faqs").offset().top + $("#home-faqs").outerHeight();
+  var top_of_home_news = $('#home-news').offset().top;
+  var bottom_of_home_news = $('#home-news').offset().top + $('#home-news').outerHeight();
+  var top_of_home_faqs = $('#home-faqs').offset().top;
+  var bottom_of_home_faqs = $('#home-faqs').offset().top + $('#home-faqs').outerHeight();
   var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
   var top_of_screen = $(window).scrollTop();
 
@@ -74,7 +74,7 @@ async function loadExamTime() {
   const exam_time_advanced = $('#exam-time-advanced')[0];
   const exam_time_advanced_template = document.createElement('template');
 
-  let time_style = {
+  let datetime_style = {
     'timeZoneName' : 'long',
     'year' : 'numeric',
     'month' : 'short',
@@ -84,27 +84,27 @@ async function loadExamTime() {
   }
 
   data_elementary.forEach(function(item) {
-    let event = new Date(item.test_timestamp);
+    let event = new Date(item.test_timestamp * 1000);
     exam_time_elementary_template.innerHTML = `
-        <p class='card-text'>${event.toLocaleString(convertLang(lang), time_style)}</p>
+        <p class='card-text'>${event.toLocaleString(convertLang(lang), datetime_style)}</p>
         <hr class='border-bottom'>
     `;
     exam_time_elementary.appendChild(exam_time_elementary_template.content);
   });
 
   data_intermediate.forEach(function(item) {
-    let event = new Date(item.test_timestamp);
+    let event = new Date(item.test_timestamp * 1000);
     exam_time_intermediate_template.innerHTML = `
-        <p class='card-text'>${event.toLocaleString(convertLang(lang), time_style)}</p>
+        <p class='card-text'>${event.toLocaleString(convertLang(lang), datetime_style)}</p>
         <hr class='border-bottom'>
     `;
     exam_time_intermediate.appendChild(exam_time_intermediate_template.content);
   });
 
   data_advanced.forEach(function(item) {
-    let event = new Date(item.test_timestamp);
+    let event = new Date(item.test_timestamp * 1000);
     exam_time_advanced_template.innerHTML = `
-        <p class='card-text'>${event.toLocaleString(convertLang(lang), time_style)}</p>
+        <p class='card-text'>${event.toLocaleString(convertLang(lang), datetime_style)}</p>
         <hr class='border-bottom'>
     `;
     exam_time_advanced.appendChild(exam_time_advanced_template.content);

@@ -1,9 +1,12 @@
+let lang = getSession('lang');
+
 addRecaptchaToHead()
 
 $('#to-candidate-dashboard').on('click', async(e) => {
   e.preventDefault();
-  let lang = getSession('lang');
+  
   const captchaResponse = grecaptcha.getResponse()
+  const application = new URL(location.href).searchParams.get('application');
 
   if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
     toastLang('Recaptcha not checked')
@@ -28,7 +31,7 @@ $('#to-candidate-dashboard').on('click', async(e) => {
       let user_token = data.data.access;
       $('.toast').toast('hide');
       localStorage.setItem('user', user_token);
-      window.location.replace($('#to-candidate-dashboard')[0].form.action);
+      application == 'true' ? window.location.href = window.location.origin + '/application.html' : window.location.replace($('#to-candidate-dashboard')[0].form.action);
     } else if (data.code == 400) {
       toastMessage(data.msg)
       $('.toast').toast('show');
@@ -100,7 +103,6 @@ $('#to-partner-dashboard').on('click', function(e) {
 
 $('#verification-code-btn').on('click', async(e) => {
   e.preventDefault();
-  let lang = getSession('lang');
   var timeleft = 60;
   var timer = setInterval(function(){
     if(timeleft == 0){
@@ -137,8 +139,6 @@ $('#verification-code-btn').on('click', async(e) => {
 });
 
 function codeLang(classname) {
-  let lang = getSession('lang');
-
   switch(lang) {
     case 'zh':
       $(classname).html('获取验证码');
@@ -158,8 +158,6 @@ function codeLang(classname) {
 }
 
 function codeLangTimer(classname, timer) {
-  let lang = getSession('lang');
-
   switch(lang) {
     case 'zh':
       $(classname).html(`重新获取验证码(${timer}s)`);
@@ -179,8 +177,6 @@ function codeLangTimer(classname, timer) {
 }
 
 function toastLang(error_type) {
-  let lang = getSession('lang');
-
   if (error_type == 'Recaptcha not checked') {
     switch(lang) {
       case 'zh':
