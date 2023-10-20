@@ -252,7 +252,7 @@ function toastLang(error_type) {
         toastMessage('Please enter a valid email address.', '', '')
         break;
       case 'id':
-        toastMessage('Silakan isi alamat email.', '', '')
+        toastMessage('Silakan isi alamat email benar.', '', '')
         break;
       case 'ar':
         toastMessage('يرجى إدخال عنوان بريد إلكتروني صالح.', '', '')
