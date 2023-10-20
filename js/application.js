@@ -41,8 +41,8 @@ function progressIndicator() {
   switch(page) {
     case 'application.html':
       activeProgressBar('.step-1');
-      activeClick('.month-item');
-      checkboxSelect('.exam-datetime', true, '#exam-datetime');
+      loadExamTime(1, 7);
+      selectLoadExamTime();
       enabledNextBtn();
       break;
     case 'application-candidate-info.html':
@@ -173,6 +173,10 @@ function checkboxSelect(classname, setInputVal, inputId, targetId) {
 
     if (setInputVal) {
       $(inputId).val($(this).val())
+
+      if ($(this).data('price')) {
+        $(targetId).val($(this).data('price'));
+      }
 
       if ($(inputId).val() === 'yes') {
         $(targetId).removeClass('d-none');
@@ -315,13 +319,15 @@ function populateDay(id) {
   }
 }
 
-$('#exam-location, #exam-level').on('change', async() => {
-  
-})
+function selectLoadExamTime() {
+  $('#exam-location, #exam-level').on('change', function() {
+    $('#exam-datetime-selection').empty();
+    $('#exam-datetime-options').empty();
+    loadExamTime($('#exam-location').val(), $('#exam-level').val())
+  })
+}
 
-defaultLoadExamTime(1, 7)
-
-async function defaultLoadExamTime(area, level) {
+async function loadExamTime(area, level) {
   let lang = getSession('lang');
   let month_options = [];
   let year_options = [];
@@ -334,41 +340,89 @@ async function defaultLoadExamTime(area, level) {
   let data = await response.json();
   let exam_time_options = data.data[0];
 
-  exam_time_options.forEach(function(item) {
-    let event = new Date(item.test_timestamp * 1000);
-    let event_month_value = event.toLocaleString(convertLang('en'), {'month' : 'numeric'})
-    let event_month = event.toLocaleString(convertLang(lang), {'month' : 'short'})
-    let event_year = event.getFullYear()
+  console.log(exam_time_options)
+  if (exam_time_options) {
+    exam_time_options.forEach(function(item) {
+      let event = new Date(item.test_timestamp * 1000);
+      let event_month_value = event.toLocaleString(convertLang('en'), {'month' : '2-digit'})
+      let event_month = event.toLocaleString(convertLang(lang), {'month' : 'short'})
+      let event_year = event.getFullYear()
 
-    let newMonthObject = {'year' : event_year, 'month' : event_month, 'value' : event_month_value, 'year_month' : event_year + '-' + event_month_value}
-    month_options.push(newMonthObject)
-    year_options.push(event_year)
-  });
+      let newMonthObject = {'year' : event_year, 'month' : event_month, 'value' : event_month_value, 'year_month' : event_year + '-' + event_month_value}
+      month_options.push(newMonthObject)
+      year_options.push(event_year)
+    });
 
-  let unique_year = [...new Set(year_options)]
-  let unique_year_month = month_options.filter((obj, index) => {
-    return index === month_options.findIndex(o => obj.year_month === o.year_month);
-  });
+    let unique_year = [...new Set(year_options)]
+    let unique_year_month = month_options.filter((obj, index) => {
+      return index === month_options.findIndex(o => obj.year_month === o.year_month);
+    });
 
-  unique_year.forEach(function(item) {
-    const exam_datetime_selection = $('#exam-datetime-selection')[0];
-    const exam_year_template = document.createElement('template');
-    exam_year_template.innerHTML = `
-      <div id=${item} class='month-year mr-1 ml-1'>${item}</div>
-    `;
-    exam_datetime_selection.appendChild(exam_year_template.content);
-  });
+    unique_year.forEach(function(item) {
+      const exam_datetime_selection = $('#exam-datetime-selection')[0];
+      const exam_year_template = document.createElement('template');
+      exam_year_template.innerHTML = `
+        <div id=${item} class='month-year mr-1 ml-1'>${item}</div>
+      `;
+      exam_datetime_selection.appendChild(exam_year_template.content);
+    });
 
-  unique_year_month.reverse().forEach(function(item) {
-    const exam_datetime_year = $(`#${item.year}`)[0];
-    let exam_month_template = document.createElement('template');
+    unique_year_month.reverse().forEach(function(item) {
+      const exam_datetime_year = $(`#${item.year}`)[0];
+      let exam_month_template = document.createElement('template');
 
-    if (String(item.year) == exam_datetime_year.innerHTML) {
-      exam_month_template = `
-      <div class='btn rounded mr-1 ml-1 month-item' data-year=${item.year} data-month=${item.value}>${item.month}</div>
-    `;
-      exam_datetime_year.insertAdjacentHTML('afterend', exam_month_template);
+      if (String(item.year) == exam_datetime_year.innerHTML) {
+        exam_month_template = `
+        <div class='btn rounded mr-1 ml-1 month-item' data-year-month=${item.year_month}>${item.month}</div>
+      `;
+        exam_datetime_year.insertAdjacentHTML('afterend', exam_month_template);
+      }
+    });
+  }
+
+  if ($('.month-item:first')) {
+    $('.month-item:first').addClass('active');
+      let default_year_month = $('.month-item:first').data('year-month');
+      if (exam_time_options) loadSelectedExamTime(default_year_month, exam_time_options)
+  }
+  activeClick('.month-item');
+  checkboxSelect('.exam-datetime', true, '#exam-datetime', '#exam-amount');
+
+  $('.month-item').on('click', function() {
+    if ($(this).hasClass( "active" )) {
+      let year_month = $(this).data('year-month');
+      $('#exam-datetime-options').empty();
+      if (exam_time_options) loadSelectedExamTime(year_month, exam_time_options)
     }
+  })
+}
+
+function loadSelectedExamTime(year_month, exam_time_options) {
+  exam_time_options.forEach(function(item, i) {
+    let item_date = item.test_date_time.split(' ')[0].split('-');
+    let item_year_month = item_date[0] + '-' + item_date[1];
+    const exam_datetime_options = $('#exam-datetime-options')[0];
+    let exam_date_template = document.createElement('template');
+
+    if (year_month == item_year_month) {
+      exam_date_template.innerHTML = `
+        <div class='col-lg-6 col-md-6 col-sm-12'>
+          <ul class='list-group'>
+            <li class='list-group-item list-date rounded-0 border-top-0 border-right-0 border-left-0'>
+              <div class='form-check'>
+                <input class='form-check-input exam-datetime' type='checkbox' name='checkbox${i}' id='checkbox${i}' value='${item.test_date_time}' data-price='${item.price}'>
+                <label class='form-check-label' for='checkbox${i}'>
+                  ${item.test_date_time}
+                </label>
+              </div>
+            </li>
+          </ul>
+        </div>
+      `;
+      exam_datetime_options.appendChild(exam_date_template.content);
+    }
+    $('.list-date:last').removeClass('border-top-0 border-right-0 border-left-0')
+    $('.list-date:last').addClass('border-0')
   });
 }
 

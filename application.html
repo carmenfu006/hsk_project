@@ -26,10 +26,10 @@
             <div class='form-group'>
               <label class='i18n-67'>考试地区</label>
               <select class='form-control' id='exam-location' name='exam-location'>
-                <option class='i18n-68' value='hk'>中国香港 (GMT+8:00)</option>
-                <option class='i18n-69' value='id'>印尼 (GMT+07:00)</option>
-                <option class='i18n-70' value='ar'>阿联酋 (GMT+04:00)</option>
-                <option class='i18n-71' value='au'>澳洲 (GMT+10:00)</option>
+                <option class='i18n-68' value='1'>中国香港 (GMT+8:00)</option>
+                <option class='i18n-69' value='2'>印尼 (GMT+07:00)</option>
+                <option class='i18n-70' value='3'>阿联酋 (GMT+04:00)</option>
+                <option class='i18n-71' value='4'>澳洲 (GMT+10:00)</option>
               </select>
               <span>💡</span>
               <span class='i18n-14'>⽬前HSK口语移动端只提供考试当⽇在中国香港、印尼、阿联酋以及澳洲的考⽣。</span>
@@ -37,9 +37,9 @@
             <div class='form-group'>
               <label class='i18n-72'>考试级别</label>
               <select class='form-control' id='exam-level' name='exam-level'>
-                <option class='i18n-50' value='elementary'>HSK⼝语(初级)</option>
-                <option class='i18n-54' value='intermediate'>HSK⼝语(中级)</option>
-                <option class='i18n-56' value='advanced'>HSK⼝语(高级)</option>
+                <option class='i18n-50' value='7'>HSK⼝语(初级)</option>
+                <option class='i18n-54' value='8'>HSK⼝语(中级)</option>
+                <option class='i18n-56' value='9'>HSK⼝语(高级)</option>
               </select>
             </div>
             <div class='row'>
@@ -76,10 +76,10 @@
               <div class='card-header'>
                 <span class='i18n-75'>考试时间*(GMT+08:00)</span>
                 <input type='hidden' id='exam-datetime' name='exam-datetime'>
-                <input type='hidden' id='exam-amount' name='exam-amount' value='260'>
+                <input type='hidden' id='exam-amount' name='exam-amount'>
               </div>
-              <div class='row no-gutters'>
-                <div class='col-lg-6 col-md-6 col-sm-12'>
+              <div id='exam-datetime-options' class='row no-gutters'>
+                <!-- <div class='col-lg-6 col-md-6 col-sm-12'>
                   <ul class='list-group'>
                     <li class='list-group-item rounded-0 border-top-0 border-right-0 border-left-0'>
                       <div class='form-check'>
@@ -114,7 +114,7 @@
                       </div>
                     </li>
                   </ul>
-                </div>
+                </div> -->
               </div>
             </div>
             <div class='row'>
