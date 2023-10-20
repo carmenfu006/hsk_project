@@ -43,7 +43,6 @@ function progressIndicator() {
       activeProgressBar('.step-1');
       loadExamTime(1, 7);
       selectLoadExamTime();
-      enabledNextBtn();
       break;
     case 'application-candidate-info.html':
       activeProgressBar('.step-1, .step-2');
@@ -85,25 +84,34 @@ function activeProgressBar(classname) {
 
 function enabledNextBtn() {
   $(':input').on('change click keyup', function() {
-
-    if (verifyInput('#exam-datetime') && verifyInput('#exam-amount') && verifyCheckInput('#terms')) {
-      $('#to-step-2').attr('disabled', false);
-    } else {
-      $('#to-step-2').attr('disabled', true);
-    }
-
-    if (verifyInput('#gender') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#firstname') && verifyInput('#lastname') && verifyInput('#birth-year') && verifyInput('#birth-month') && verifyInput('#birth-day') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#identity-type') && verifyInput('#identity') && verifyInput('#country-code') && verifyInput('#contact-number') && verifyInputByCondition('#hsk', '#hsk-year', '#hsk-month', '#hsk-day') && verifyInputByCondition('#hskk', '#hskk-year', '#hskk-month', '#hskk-day')) {
-      $('#to-step-3').attr('disabled', false);
-    } else {
-      $('#to-step-3').attr('disabled', true);
-    }
-
-    if (verifyInput('#file')) {
-      $('#to-step-4').attr('disabled', false);
-    } else {
-      $('#to-step-4').attr('disabled', true);
-    }
+    nextBtnStage1()
+    nextBtnStage2()
+    nextBtnStage3()
   })
+}
+
+function nextBtnStage1() {
+  if (verifyInput('#exam-datetime') && verifyInput('#exam-amount') && verifyCheckInput('#terms')) {
+    $('#to-step-2').attr('disabled', false);
+  } else {
+    $('#to-step-2').attr('disabled', true);
+  }
+}
+
+function nextBtnStage2() {
+  if (verifyInput('#gender') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#firstname') && verifyInput('#lastname') && verifyInput('#birth-year') && verifyInput('#birth-month') && verifyInput('#birth-day') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#identity-type') && verifyInput('#identity') && verifyInput('#country-code') && verifyInput('#contact-number') && verifyInputByCondition('#hsk', '#hsk-year', '#hsk-month', '#hsk-day') && verifyInputByCondition('#hskk', '#hskk-year', '#hskk-month', '#hskk-day')) {
+    $('#to-step-3').attr('disabled', false);
+  } else {
+    $('#to-step-3').attr('disabled', true);
+  }
+}
+
+function nextBtnStage3() {
+  if (verifyInput('#file')) {
+    $('#to-step-4').attr('disabled', false);
+  } else {
+    $('#to-step-4').attr('disabled', true);
+  }
 }
 
 function loadFile() {
@@ -323,6 +331,10 @@ function selectLoadExamTime() {
   $('#exam-location, #exam-level').on('change', function() {
     $('#exam-datetime-selection').empty();
     $('#exam-datetime-options').empty();
+    $('#exam-datetime').val('');
+    $('#exam-amount').val('');
+    $('.exam-datetime').prop('checked', false);
+    nextBtnStage1()
     loadExamTime($('#exam-location').val(), $('#exam-level').val())
   })
 }
@@ -340,7 +352,6 @@ async function loadExamTime(area, level) {
   let data = await response.json();
   let exam_time_options = data.data[0];
 
-  console.log(exam_time_options)
   if (exam_time_options) {
     exam_time_options.forEach(function(item) {
       let event = new Date(item.test_timestamp * 1000);
@@ -385,16 +396,22 @@ async function loadExamTime(area, level) {
       let default_year_month = $('.month-item:first').data('year-month');
       if (exam_time_options) loadSelectedExamTime(default_year_month, exam_time_options)
   }
-  activeClick('.month-item');
-  checkboxSelect('.exam-datetime', true, '#exam-datetime', '#exam-amount');
 
   $('.month-item').on('click', function() {
+    $('#exam-datetime').val('');
+    $('#exam-amount').val('');
+    $('.exam-datetime').prop('checked', false);
+    nextBtnStage1()
     if ($(this).hasClass( "active" )) {
       let year_month = $(this).data('year-month');
       $('#exam-datetime-options').empty();
       if (exam_time_options) loadSelectedExamTime(year_month, exam_time_options)
     }
   })
+
+  activeClick('.month-item');
+  checkboxSelect('.exam-datetime', true, '#exam-datetime', '#exam-amount');
+  enabledNextBtn();
 }
 
 function loadSelectedExamTime(year_month, exam_time_options) {
