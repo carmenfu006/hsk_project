@@ -2303,6 +2303,13 @@ translateWeb(
   'الحصول على رمز التحقق'
 )
 translateWeb(
+  '.i18n-328',
+  '合计',
+  'Total',
+  'Total',
+  'المجموع'
+)
+translateWeb(
   '.i18n-500',
   '什么是HSK口语移动端（手机）考试中心？',
   'What is the HSK(Speaking) Mobile Exam Center?',

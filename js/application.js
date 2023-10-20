@@ -336,6 +336,7 @@ function selectLoadExamTime() {
     $('.exam-datetime').prop('checked', false);
     nextBtnStage1()
     loadExamTime($('#exam-location').val(), $('#exam-level').val())
+    updateCartItem()
   })
 }
 
@@ -389,6 +390,8 @@ async function loadExamTime(area, level) {
         exam_datetime_year.insertAdjacentHTML('afterend', exam_month_template);
       }
     });
+  } else {
+    unavailableExamDateTimeOptions()
   }
 
   if ($('.month-item:first')) {
@@ -407,11 +410,16 @@ async function loadExamTime(area, level) {
       $('#exam-datetime-options').empty();
       if (exam_time_options) loadSelectedExamTime(year_month, exam_time_options)
     }
+    updateCartItem()
   })
 
   activeClick('.month-item');
   checkboxSelect('.exam-datetime', true, '#exam-datetime', '#exam-amount');
   enabledNextBtn();
+
+  $('.exam-datetime').on('change', function() {
+    updateCartItem()
+  });
 }
 
 function loadSelectedExamTime(year_month, exam_time_options) {
@@ -441,6 +449,101 @@ function loadSelectedExamTime(year_month, exam_time_options) {
     $('.list-date:last').removeClass('border-top-0 border-right-0 border-left-0')
     $('.list-date:last').addClass('border-0')
   });
+}
+
+function displaySelectedDateTime(exam_location, exam_level, exam_datetime, exam_amount) {
+  switch(exam_location) {
+    case '1':
+      selectedDateTimeLocationLevelLang('#selected-exam-location-time', `${exam_datetime} (GMT+08:00), 中国香港`, `${exam_datetime} (GMT+08:00), China Hong Kong`, `${exam_datetime} (GMT+08:00), China Hong Kong`, `${exam_datetime} (GMT+08:00), China Hong Kong`)
+      break;
+    case '2':
+      selectedDateTimeLocationLevelLang('#selected-exam-location-time', `${exam_datetime} (GMT+07:00), 印尼`, `${exam_datetime} (GMT+07:00), Indonesia`, `${exam_datetime} (GMT+07:00), Indonesia`, `${exam_datetime} (GMT+07:00), Indonesia`)
+      break;
+    case '3':
+      selectedDateTimeLocationLevelLang('#selected-exam-location-time', `${exam_datetime} (GMT+04:00), 阿联酋`, `${exam_datetime} (GMT+04:00), United Arab Emirates`, `${exam_datetime} (GMT+04:00), United Arab Emirates`, `${exam_datetime} (GMT+04:00), United Arab Emirates`)
+      break;
+    case '4':
+      selectedDateTimeLocationLevelLang('#selected-exam-location-time', `${exam_datetime} (GMT+10:00), 印尼`, `${exam_datetime} (GMT+10:00), Australia`, `${exam_datetime} (GMT+10:00), Australia`, `${exam_datetime} (GMT+10:00), Australia`)
+      break;
+    default:
+      selectedDateTimeLocationLevelLang('#selected-exam-location-time', `${exam_datetime} (GMT+08:00), 中国香港`, `${exam_datetime} (GMT+08:00), China Hong Kong`, `${exam_datetime} (GMT+08:00), China Hong Kong`, `${exam_datetime} (GMT+08:00), China Hong Kong`)
+  }
+
+  switch(exam_level) {
+    case '7':
+      selectedDateTimeLocationLevelLang('#selected-exam-level', 'HSK⼝语(初级)移动端考試', 'HSK Oral (Elementary) Mobile Exam', 'Ujian Mobile HSK Lisan (Dasar)', 'اختبار HSK للتحدث (الابتدائي) عبر الهاتف المحمول')
+      break;
+    case '8':
+      selectedDateTimeLocationLevelLang('#selected-exam-level', 'HSK⼝语(中级)移动端考試', 'HSK Oral (Intermediate) Mobile Exam', 'Ujian Mobile HSK Lisan (Menengah)', 'اختبار التحدث باللغة HSK (المتوسط) عبر الهاتف المحمول')
+      break;
+    case '9':
+      selectedDateTimeLocationLevelLang('#selected-exam-level', 'HSK⼝语(高级)移动端考試', 'HSK Oral (Advanced) Mobile Exam', 'Ujian Mobile HSK Lisan (Lanjutan)', 'اختبار HSK للتحدث (المتقدم) عبر الهاتف المحمول')
+      break;
+    default:
+      selectedDateTimeLocationLevelLang('#selected-exam-level', 'HSK⼝语(初级)移动端考試', 'HSK Oral (Elementary) Mobile Exam', 'Ujian Mobile HSK Lisan (Dasar)', 'اختبار HSK للتحدث (الابتدائي) عبر الهاتف المحمول')
+  }
+
+  $('.selected-exam-amount').html('$' + parseInt(exam_amount).toFixed(2))
+}
+
+function selectedDateTimeLocationLevelLang(targetId, zh, en, id, ar) {
+  let lang = getSession('lang');
+  switch(lang) {
+    case 'zh':
+      $(targetId).html(zh)
+      break;
+    case 'en':
+      $(targetId).html(en)
+      break;
+    case 'id':
+      $(targetId).html(id)
+      break;
+    case 'ar':
+      $(targetId).html(ar)
+      break;
+    default:
+      $(targetId).html(zh)
+  }
+}
+
+function updateCartItem() {
+  if ($('#exam-datetime').val() != '') {
+    displaySelectedDateTime($('#exam-location').val(), $('#exam-level').val(), $('#exam-datetime').val(), $('#exam-amount').val())
+    $('#empty-cart').addClass('d-none');
+    $('#item-cart').addClass('d-flex');
+    $('#item-cart-border').removeClass('d-none');
+    $('#item-cart-total').removeClass('d-none');
+  } else {
+    $('#empty-cart').removeClass('d-none');
+    $('#item-cart').removeClass('d-flex');
+    $('#item-cart-border').addClass('d-none');
+    $('#item-cart-total').addClass('d-none');
+  }
+}
+
+function unavailableExamDateTimeOptions() {
+  let lang = getSession('lang');
+  const exam_datetime_options = $('#exam-datetime-options')[0];
+  let exam_date_template = document.createElement('template');
+  let no_data_lang
+  if (lang == 'zh') no_data_lang = '暂时无法提供考试时间';
+  if (lang == 'en') no_data_lang = 'The exam time is temporarily unavailable';
+  if (lang == 'id') no_data_lang = 'Waktu ujian untuk sementara tidak tersedia';
+  if (lang == 'ar') no_data_lang = 'وقت الامتحان غير متاح مؤقتا';
+    exam_date_template.innerHTML = `
+      <div class='col-lg-6 col-md-6 col-sm-12'>
+        <ul class='list-group'>
+          <li class='list-group-item list-date rounded-0 border-top-0 border-right-0 border-left-0'>
+            <div class='form-check'>
+              ${no_data_lang}
+            </div>
+          </li>
+        </ul>
+      </div>
+    `;
+    exam_datetime_options.appendChild(exam_date_template.content);
+    $('.list-date:last').removeClass('border-top-0 border-right-0 border-left-0')
+    $('.list-date:last').addClass('border-0')
 }
 
 function getSession(key) {

@@ -57,14 +57,6 @@
               <div class='o-hidden'>
                 <div class='month-bar'>
                   <div id='exam-datetime-selection' class='d-flex month position-relative'>
-                    <!-- <div class='month-year mr-1 ml-1'>2023</div>
-                    <div class='btn rounded mr-1 ml-1 month-item active'>9月</div>
-                    <div class='btn rounded mr-1 ml-1 month-item'>10月</div>
-                    <div class='btn rounded mr-1 ml-1 month-item'>11月</div>
-                    <div class='btn rounded mr-1 ml-1 month-item'>12月</div>
-                    <div class='month-year mr-1 ml-1'>2024</div>
-                    <div class='btn rounded mr-1 ml-1 month-item'>1月</div>
-                    <div class='btn rounded mr-1 ml-1 month-item'>2月</div> -->
                   </div>
                 </div>
               </div>
@@ -79,42 +71,6 @@
                 <input type='hidden' id='exam-amount' name='exam-amount'>
               </div>
               <div id='exam-datetime-options' class='row no-gutters'>
-                <!-- <div class='col-lg-6 col-md-6 col-sm-12'>
-                  <ul class='list-group'>
-                    <li class='list-group-item rounded-0 border-top-0 border-right-0 border-left-0'>
-                      <div class='form-check'>
-                        <input class='form-check-input exam-datetime' type='checkbox' name='checkbox' id='checkbox1' value='option1'>
-                        <label class='form-check-label' for='checkbox1'>
-                          2023-09-05 09:00
-                        </label>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class='col-lg-6 col-md-6 col-sm-12'>
-                  <ul class='list-group'>
-                    <li class='list-group-item rounded-0 border-top-0 border-right-0 border-left-0'>
-                      <div class='form-check'>
-                        <input class='form-check-input exam-datetime' type='checkbox' name='checkbox' id='checkbox2' value='option2'>
-                        <label class='form-check-label' for='checkbox2'>
-                          2023-09-10 09:00
-                        </label>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class='col-lg-6 col-md-6 col-sm-12'>
-                  <ul class='list-group'>
-                    <li class='list-group-item rounded-0 border-0'>
-                      <div class='form-check'>
-                        <input class='form-check-input exam-datetime' type='checkbox' name='checkbox' id='checkbox3' value='option3'>
-                        <label class='form-check-label' for='checkbox3'>
-                          2023-09-15 09:00
-                        </label>
-                      </div>
-                    </li>
-                  </ul>
-                </div> -->
               </div>
             </div>
             <div class='row'>
@@ -130,18 +86,18 @@
                 <li id='empty-cart' class='i18n-78 list-group-item text-muted'>
                   尚未选择任何考试
                 </li>
-                <li id='item-cart' class='list-group-item d-flex flex-lg-row flex-column justify-content-between border-0'>
-                  <p>HSK⼝语(初级)移动端考試</p>
-                  <p>2023-09-10 09:00 (GMT+08:00)，中国香港</p>
+                <li id='item-cart' class='list-group-item flex-lg-row flex-column justify-content-between border-0 d-none'>
+                  <p id='selected-exam-level'></p>
+                  <p id='selected-exam-location-time'></p>
                   <p class='text-right'>
-                    <span>$260.00</span>
+                    <span class='selected-exam-amount'></span>
                     <span class='text-muted'>HKD</span>
                   </p>
                 </li>
-                <div class='border-bottom ml-3 mr-3'></div>
-                <li class='list-group-item text-right'>
-                  <span>合计</span>
-                  <span>$260.00</span>
+                <div id='item-cart-border' class='border-bottom ml-3 mr-3 d-none'></div>
+                <li id='item-cart-total' class='list-group-item text-right d-none'>
+                  <span class='i18n-328'>合计</span>
+                  <span class='selected-exam-amount'></span>
                   <span class='text-muted font-weight-bold'>HKD</span>
                 </li>
               </ul>
