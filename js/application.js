@@ -41,7 +41,11 @@ function progressIndicator() {
   switch(page) {
     case 'application.html':
       activeProgressBar('.step-1');
-      loadExamTime(1, 7);
+      if (getSession('exam-location') == null && getSession('exam-level') == null) {
+        loadExamTime(1, 7);
+      } else {
+        loadExamTime(getSession('exam-location'), getSession('exam-level'));
+      }
       selectLoadExamTime();
       break;
     case 'application-candidate-info.html':
@@ -328,7 +332,7 @@ function populateDay(id) {
 }
 
 function selectLoadExamTime() {
-  $('#exam-location, #exam-level').on('change', function() {
+  $('#exam-location, #exam-level').on('change load', function() {
     $('#exam-datetime-selection').empty();
     $('#exam-datetime-options').empty();
     $('#exam-datetime').val('');
@@ -341,7 +345,7 @@ function selectLoadExamTime() {
 }
 
 async function loadExamTime(area, level) {
-  let lang = getSession('lang');
+  let lang = getSessionLang('lang');
   let month_options = [];
   let year_options = [];
   let response = await fetch(`https://api.hskk.info/webapi/test_schedule?test_area=${area}&test_level=${level}`, {
@@ -420,6 +424,15 @@ async function loadExamTime(area, level) {
   $('.exam-datetime').on('change', function() {
     updateCartItem()
   });
+
+  if (getSession('exam-location')) refillField('input', '#exam-location', getSession('exam-location'));
+  if (getSession('exam-level')) refillField('input', '#exam-level', getSession('exam-level'));
+  if (getSession('exam-datetime')) refillField('checkbox', '#exam-datetime', getSession('exam-datetime'));
+  if (getSession('exam-datetime')) refillField('input', '#exam-datetime', getSession('exam-datetime'));
+  if (getSession('exam-amount')) refillField('input', '#exam-amount', getSession('exam-amount'));
+  if (getSession('terms')) refillField('checkbox', '#terms', getSession('terms'));
+  nextBtnStage1()
+  updateCartItem()
 }
 
 function loadSelectedExamTime(year_month, exam_time_options) {
@@ -487,7 +500,7 @@ function displaySelectedDateTime(exam_location, exam_level, exam_datetime, exam_
 }
 
 function selectedDateTimeLocationLevelLang(targetId, zh, en, id, ar) {
-  let lang = getSession('lang');
+  let lang = getSessionLang('lang');
   switch(lang) {
     case 'zh':
       $(targetId).html(zh)
@@ -522,7 +535,7 @@ function updateCartItem() {
 }
 
 function unavailableExamDateTimeOptions() {
-  let lang = getSession('lang');
+  let lang = getSessionLang('lang');
   const exam_datetime_options = $('#exam-datetime-options')[0];
   let exam_date_template = document.createElement('template');
   let no_data_lang
@@ -546,7 +559,7 @@ function unavailableExamDateTimeOptions() {
     $('.list-date:last').addClass('border-0')
 }
 
-function getSession(key) {
+function getSessionLang(key) {
   return sessionStorage.getItem(key) ? sessionStorage.getItem(key) : 'zh';
 }
 
@@ -570,15 +583,11 @@ function convertLang(lang) {
 }
 
 function refillField(type, id, data) {
-  if (type == 'input') {
-
-  }
-
-  if (type == 'option') {
-
+  if (type == 'input' || type == 'option') {
+    $(id).val(data);
   }
 
   if (type == 'checkbox') {
-    
+    $(`input[value="${data}"]`).prop('checked', true)
   }
 }
