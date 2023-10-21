@@ -30,7 +30,7 @@
             <input type='hidden' id='hskk' name='hskk'>
             <div class='form-group'>
               <label class='i18n-84'>用户名</label>
-              <input type='text' class='i18n-84 form-control' placeholder='用户名' id='username'>
+              <input type='text' class='i18n-84 form-control' placeholder='用户名' id='username' readonly>
             </div>
             <div class='form-group'>
               <label class='i18n-85'>姓名</label>
@@ -78,7 +78,7 @@
             </div>
             <div class='form-group'>
               <label class='i18n-98'>证件类型</label>
-              <select class='form-control' id='identity-type'>
+              <select class='form-control' id='certificate-type'>
                 <option class='i18n-99' value=''>请选择证件类型</option>
                 <option class='i18n-331' value='1'>身份证</option>
                 <option class='i18n-332' value='2'>护照</option>
@@ -88,7 +88,7 @@
             </div>
             <div class='form-group'>
               <label class='i18n-100'>证件号码</label>
-              <input type='text' class='form-control i18n-100' placeholder='证件号码' id='identity'>
+              <input type='text' class='form-control i18n-100' placeholder='证件号码' id='certificate-number'>
               <p class='text-muted mt-2'>
                 <span>💡</span>
                 <span class='i18n-101'>证件号码应与证件保持一致，包括“（）”内的信息</span>
@@ -99,18 +99,18 @@
                 <span class='i18n-61'>联系电话</span>
               </label>
               <div class='input-group'>
-                <select class='form-control border-right-0 mw85' id='country-code'>
+                <select class='form-control border-right-0 mw85' id='phone-zone'>
                   <option value='+852'>+852</option>
                   <option value='+62'>+62</option>
                   <option value='+971'>+971</option>
                   <option value='+61'>+61</option>
                 </select>
-                <input type='number' class='form-control border-left-0 i18n-61' placeholder='联系电话' id='contact-number'/>
+                <input type='number' class='form-control border-left-0 i18n-61' placeholder='联系电话' id='phone'/>
               </div>
             </div>
             <div class='form-group'>
               <label class='i18n-102'>你学习汉语多长时间了</label>
-              <select class='form-control' id='learning-time'>
+              <select class='form-control' id='study-year'>
                 <option class='i18n-103' value=''>请选择时间</option>
                 <option class='i18n-335' value='1'>半年</option>
                 <option class='i18n-336' value='2'>6-12个月</option>
@@ -144,7 +144,7 @@
               <label class='i18n-106'>请选择最近一次HSK的考试日期</label>
               <div class='row'>
                 <div class='col-lg-6 col-md-12 col-sm-12'>
-                  <input type='text' class='form-control' data-date-format='yyyy-mm-dd' placeholder='YYYY-MM-DD' id='hskday'>
+                  <input type='text' class='form-control' data-date-format='yyyy-mm-dd' placeholder='YYYY-MM-DD' id='hskdate'>
                 </div>
               </div>
             </div>
@@ -169,7 +169,7 @@
               <label class='i18n-107'>请选择最近一次HSKK的考试日期</label>
               <div class='row'>
                 <div class='col-lg-6 col-md-12 col-sm-12'>
-                  <input type='text' class='form-control' data-date-format='yyyy-mm-dd' placeholder='YYYY-MM-DD' id='hskkday'>
+                  <input type='text' class='form-control' data-date-format='yyyy-mm-dd' placeholder='YYYY-MM-DD' id='hskkdate'>
                 </div>
               </div>
             </div>

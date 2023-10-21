@@ -45,6 +45,7 @@ $('#to-candidate-dashboard').on('click', async(e) => {
         let user_token = data.data.access;
         $('.toast').toast('hide');
         localStorage.setItem('user', user_token);
+        localStorage.setItem('email', inputVal('#email'));
         application == 'true' ? window.location.href = window.location.origin + '/application.html' : window.location.replace($('#to-candidate-dashboard')[0].form.action);
       } else if (data.code == 400) {
         toastMessage(data.msg)

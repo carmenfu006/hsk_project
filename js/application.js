@@ -53,11 +53,8 @@ function progressIndicator() {
       checkboxSelect('.hsk', true, '#hsk', '#hsk-date');
       checkboxSelect('.hskk', true, '#hskk', '#hskk-date');
       enabledNextBtn();
-      $('#birthday, #hskday, #hskkday').datepicker({});
-      populateNationality('#nationality')
-      populateEthnicity('#ethnicity')
-      populateNativeLang('#native-language')
-      displayEthnicity()
+      $('#birthday, #hskdate, #hskkdate').datepicker({});
+      populateRegisterInfo()
       break;
     case 'application-candidate-profile.html':
       activeProgressBar('.step-1, .step-2, .step-3');
@@ -98,7 +95,7 @@ function nextBtnStage1() {
 }
 
 function nextBtnStage2() {
-  if (verifyInput('#gender') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#firstname') && verifyInput('#lastname') && verifyInput('#birth-year') && verifyInput('#birth-month') && verifyInput('#birth-day') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#identity-type') && verifyInput('#identity') && verifyInput('#country-code') && verifyInput('#contact-number') && verifyInputByCondition('#hsk', '#hsk-year', '#hsk-month', '#hsk-day') && verifyInputByCondition('#hskk', '#hskk-year', '#hskk-month', '#hskk-day')) {
+  if (verifyInput('#gender') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#firstname') && verifyInput('#lastname') && verifyInput('#birthday') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#certificate-type') && verifyInput('#certificate-number') && verifyInput('#phone-zone') && verifyInput('#phone') && verifyInput('#study-year') && verifyInputByNationality('#nationality', '#ethnicity') && verifyInputByCondition('#hsk', '#hskdate') && verifyInputByCondition('#hskk', '#hskkdate')) {
     $('#to-step-3').attr('disabled', false);
   } else {
     $('#to-step-3').attr('disabled', true);
@@ -161,6 +158,10 @@ function getSession(key) {
   return sessionStorage.getItem(key);
 }
 
+function getLocal(key) {
+  return localStorage.getItem(key);
+}
+
 function activeClick(classname) {
   $(classname).on('click', function() {
     $(classname).removeClass('active');
@@ -203,9 +204,21 @@ function verifyInput(id) {
   }
 }
 
-function verifyInputByCondition(id, targetYear, targetMonth, targetDay) {
+function verifyInputByCondition(id, targetDate) {
   if ($(id).val() == 'yes') {
-    if ($(targetYear).val() == '' || $(targetMonth).val() == '' || $(targetDay).val() == '') {
+    if ($(targetDate).val() == '') {
+      return false;
+    } else {
+      return true;
+    }
+  } else {
+    return true;
+  }
+}
+
+function verifyInputByNationality(id, targetElem) {
+  if ($(id).val().match('中国')) {
+    if ($(targetElem).val() == '') {
       return false;
     } else {
       return true;
@@ -254,19 +267,21 @@ $('#to-step-3').on('click', function(e) {
   setSession('lastname', inputVal('#lastname'));
   setSession('birthday', inputVal('#birthday'));
   setSession('nationality', inputVal('#nationality'));
+  setSession('ethnicity', inputVal('#ethnicity'));
   setSession('native-language', inputVal('#native-language'));
-  setSession('identity-type', inputVal('#identity-type'));
-  setSession('identity', inputVal('#identity'));
-  setSession('country-code', inputVal('#country-code'));
-  setSession('contact-number', inputVal('#contact-number'));
-  setSession('learning-time', inputVal('#learning-time'));
+  setSession('certificate-type', inputVal('#certificate-type'));
+  setSession('certificate-number', inputVal('#certificate-number'));
+  setSession('phone-zone', inputVal('#phone-zone'));
+  setSession('phone', inputVal('#phone'));
+  setSession('study-year', inputVal('#study-year'));
 
   if (inputVal('#hsk') == 'yes') {
-    setSession('hskday', inputVal('#hskday'));
+    setSession('hskdate', inputVal('#hskdate'));
   }
   if (inputVal('#hskk') == 'yes') {
-    setSession('hskkday', inputVal('#hskkday'));
+    setSession('hskkdate', inputVal('#hskkdate'));
   }
+  setSession('stage2', true);
   window.location.replace($(this)[0].form.action);
 });
 
@@ -277,10 +292,10 @@ function populateInfo() {
   if ($('.info-birthday')) $('.info-birthday').html(getSession('birthday'));
   if ($('.info-nationality')) $('.info-nationality').html(getSession('nationality'));
   if ($('.info-native-language')) $('.info-native-language').html(getSession('native-language'));
-  if ($('.info-identity-type')) $('.info-identity-type').html(getSession('identity-type'));
-  if ($('.info-identity')) $('.info-identity').html(getSession('identity'));
-  if ($('.info-contact-number')) $('.info-contact-number').html(getSession('country-code') + '-' + getSession('contact-number'));
-  if ($('.info-learning-time')) $('.info-learning-time').html(getSession('learning-time'));
+  if ($('.info-certificate-type')) $('.info-certificate-type').html(getSession('certificate-type'));
+  if ($('.info-certificate-number')) $('.info-certificate-number').html(getSession('certificate-number'));
+  if ($('.info-contact-number')) $('.info-contact-number').html(getSession('phone-zone') + '-' + getSession('phone'));
+  if ($('.info-study-year')) $('.info-study-year').html(getSession('study-year'));
   if ($('.info-hsk')) $('.info-hsk').html(getSession('hsk'));
   if ($('.info-hskk')) $('.info-hskk').html(getSession('hskk'));
 }
@@ -662,7 +677,7 @@ async function populateNativeLang(id) {
 
 function displayEthnicity() {
   $('#ethnicity-selection').hide()
-  $('#nationality').on('change', function() {
+  $('#nationality').on('change load', function() {
     let selected = $(this).val();
     if (selected.match('中国')) {
       $('#ethnicity-selection').show()
@@ -670,4 +685,79 @@ function displayEthnicity() {
       $('#ethnicity-selection').hide()
     }
   })
+}
+
+async function populateRegisterInfo() {
+  populateNationality('#nationality')
+  populateEthnicity('#ethnicity')
+  populateNativeLang('#native-language')
+  displayEthnicity()
+  let response = await fetch('https://api.hskk.info/webapi/register_default_info/', {
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type' : 'application/json',
+        'Authorization' : `Bearer ${user}`
+      }
+    })
+  let data = await response.json();
+  let info = data.data;
+  
+  if (getSession('stage2') == 'true') {
+    if (getSession('username')) refillField('input', '#username', getSession('username'));
+    if (getSession('firstname')) refillField('input', '#firstname', getSession('firstname'));
+    if (getSession('lastname')) refillField('input', '#lastname', getSession('lastname'));
+    if (getSession('gender')) refillField('input', '#gender', getSession('gender'));
+    if (getSession('birthday')) refillField('input', '#birthday', getSession('birthday'));
+    if (getSession('nationality')) refillField('input', '#nationality', getSession('nationality'));
+    if (getSession('ethnicity')) refillField('input', '#ethnicity', getSession('ethnicity'));
+    if (getSession('native-language')) refillField('input', '#native-language', getSession('native-language'));
+    if (getSession('certificate-type')) refillField('input', '#certificate-type', getSession('certificate-type'));
+    if (getSession('certificate-number')) refillField('input', '#certificate-number', getSession('certificate-number'));
+    if (getSession('phone-zone')) refillField('input', '#phone-zone', getSession('phone-zone'));
+    if (getSession('phone')) refillField('input', '#phone', getSession('phone'));
+    if (getSession('study-year')) refillField('input', '#study-year', getSession('study-year'));
+    if (getSession('hsk')) refillField('input', '#hsk', getSession('hsk'));
+    if (getSession('hskk')) refillField('input', '#hskk', getSession('hskk'));
+
+    if (getSession('hsk') == 'yes') {
+      $('#yes_hsk').prop('checked', true)
+      $('#hsk-date').removeClass('d-none');
+      if (getSession('hskdate')) refillField('input', '#hskdate', getSession('hskdate'));
+    } else {
+      $('#no_hsk').prop('checked', true)
+    }
+
+    if (getSession('hskk') == 'yes') {
+      $('#yes_hskk').prop('checked', true)
+      $('#hskk-date').removeClass('d-none');
+      if (getSession('hskkdate')) refillField('input', '#hskkdate', getSession('hskkdate'));
+    } else {
+      $('#no_hskk').prop('checked', true)
+    }
+
+    if (getSession('nationality').match('中国')) {
+      $('#ethnicity-selection').show()
+    } else {
+      $('#ethnicity-selection').hide()
+    }
+    nextBtnStage2()
+  } else {
+    if (info.email == '') {
+      if (getLocal('email')) refillField('input', '#username', getLocal('email'));
+    } else {
+      if (info.email) refillField('input', '#username', info.email);
+      if (info.name_en) refillField('input', '#firstname', info.name_en);
+      if (info.name_cn) refillField('input', '#lastname', info.name_cn);
+      if (info.gender) refillField('input', '#gender', info.gender);
+      if (info.birthday) refillField('input', '#birthday', info.birthday);
+      if (info.nationality) refillField('input', '#nationality', info.nationality);
+      if (info.ethnicity) refillField('input', '#ethnicity', info.ethnicity);
+      if (info.native_language) refillField('input', '#native-language', info.native_language);
+      if (info.certificate_type) refillField('input', '#certificate-type', info.certificate_type);
+      if (info.certificate_number) refillField('input', '#certificate-number', info.certificate_number);
+      if (info.phone_zone) refillField('input', '#phone-zone', info.phone_zone);
+      if (info.phone) refillField('input', '#phone', info.phone);
+      if (info.study_year) refillField('input', '#study-year', info.study_year);
+    }
+  }
 }
