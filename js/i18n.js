@@ -2310,6 +2310,111 @@ translateWeb(
   'المجموع'
 )
 translateWeb(
+  '.i18n-329',
+  '民族',
+  'Ethnicity',
+  'Etnis',
+  'عِرق'
+)
+translateWeb(
+  '.i18n-330',
+  '请选择民族',
+  'Please select ethnicity',
+  'Silakan pilih etnis',
+  'الرجاء تحديد العرق'
+)
+translateWeb(
+  '.i18n-331',
+  '身份证',
+  'ID card',
+  'KTP',
+  'بطاقة التعريف'
+)
+translateWeb(
+  '.i18n-332',
+  '护照',
+  'Passport',
+  'Paspor',
+  'جواز سفر'
+)
+translateWeb(
+  '.i18n-333',
+  '居留证',
+  'Resident permit',
+  'Izin tinggal',
+  'تصريح المقيمين'
+)
+translateWeb(
+  '.i18n-334',
+  '其他',
+  'Other',
+  'Lainnya',
+  'آخر'
+)
+translateWeb(
+  '.i18n-335',
+  '半年',
+  'Half a year',
+  'Setengah tahun',
+  'نصف عام'
+)
+translateWeb(
+  '.i18n-336',
+  '6-12个月',
+  '6-12 months',
+  '6-12 bulan',
+  '6-12 شهرا'
+)
+translateWeb(
+  '.i18n-337',
+  '1年',
+  '1 year',
+  '1 tahun',
+  '1 سنة'
+)
+translateWeb(
+  '.i18n-338',
+  '2年',
+  '2 year',
+  '2 tahun',
+  '2 سنة'
+)
+translateWeb(
+  '.i18n-339',
+  '3年',
+  '3 year',
+  '3 tahun',
+  '3 سنة'
+)
+translateWeb(
+  '.i18n-340',
+  '4年',
+  '4 year',
+  '4 tahun',
+  '4 سنة'
+)
+translateWeb(
+  '.i18n-341',
+  '5年',
+  '5 year',
+  '5 tahun',
+  '5 سنة'
+)
+translateWeb(
+  '.i18n-342',
+  '5-10年',
+  '5-10 year',
+  '5-10 tahun',
+  '5-10 سنة'
+)
+translateWeb(
+  '.i18n-343',
+  '10年以上',
+  'More than 10 years',
+  'Lebih dari 10 tahun',
+  'أكثر من 10 سنوات'
+)
+translateWeb(
   '.i18n-500',
   '什么是HSK口语移动端（手机）考试中心？',
   'What is the HSK(Speaking) Mobile Exam Center?',

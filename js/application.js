@@ -53,16 +53,11 @@ function progressIndicator() {
       checkboxSelect('.hsk', true, '#hsk', '#hsk-date');
       checkboxSelect('.hskk', true, '#hskk', '#hskk-date');
       enabledNextBtn();
-      // populateYear('#birth-year');
-      // populateYear('#hsk-year');
-      // populateYear('#hskk-year');
-      // populateMonth('#birth-month');
-      // populateMonth('#hsk-month');
-      // populateMonth('#hskk-month');
-      // populateDay('#birth-day');
-      // populateDay('#hsk-day');
-      // populateDay('#hskk-day');
       $('#birthday, #hskday, #hskkday').datepicker({});
+      populateNationality('#nationality')
+      populateEthnicity('#ethnicity')
+      populateNativeLang('#native-language')
+      displayEthnicity()
       break;
     case 'application-candidate-profile.html':
       activeProgressBar('.step-1, .step-2, .step-3');
@@ -584,4 +579,82 @@ function refillField(type, id, data) {
   if (type == 'checkbox') {
     $(`input[value="${data}"]`).prop('checked', true)
   }
+}
+
+async function populateOptions(api) {
+  let response = await fetch(api, {
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type' : 'application/json',
+        'Authorization' : `Bearer ${user}`
+      }
+    })
+  let data = await response.json();
+  let options = data.data;
+
+  return options
+}
+
+async function populateNationality(id) {
+  let lang = getSessionLang('lang');
+  let options = await populateOptions('https://api.hskk.info/webapi/nationality/')
+  if (options) {
+    for (let i = 0; i <= options.length; i++) {
+      let option = document.createElement('option');
+      option.value = options[i].nationality;
+      if (lang == 'zh') {
+        option.text = options[i].nationality;
+      } else {
+        option.text = options[i].nationality_en;
+      }
+      option.data = options[i].id
+      $(id)[0].appendChild(option)
+    }
+  }
+}
+
+async function populateEthnicity(id) {
+  let lang = getSessionLang('lang');
+  let options = await populateOptions('https://api.hskk.info/webapi/ethnicity/')
+  if (options) {
+    for (let i = 0; i <= options.length; i++) {
+      let option = document.createElement('option');
+      option.value = options[i].ethnicity;
+      if (lang == 'zh') {
+        option.text = options[i].ethnicity;
+      } else {
+        option.text = options[i].ethnicity_en;
+      }
+      $(id)[0].appendChild(option)
+    }
+  }
+}
+
+async function populateNativeLang(id) {
+  let lang = getSessionLang('lang');
+  let options = await populateOptions('https://api.hskk.info/webapi/native_language/')
+  if (options) {
+    for (let i = 0; i <= options.length; i++) {
+      let option = document.createElement('option');
+      option.value = options[i].native_language;
+      if (lang == 'zh') {
+        option.text = options[i].native_language;
+      } else {
+        option.text = options[i].native_language_en;
+      }
+      $(id)[0].appendChild(option)
+    }
+  }
+}
+
+function displayEthnicity() {
+  $('#ethnicity-selection').hide()
+  $('#nationality').on('change', function() {
+    let selected = $(this).val();
+    if (selected.match('中国')) {
+      $('#ethnicity-selection').show()
+    } else {
+      $('#ethnicity-selection').hide()
+    }
+  })
 }
