@@ -238,7 +238,9 @@ $('#to-step-2').on('click', function(e) {
   setSession('exam-level', inputVal('#exam-level'));
   setSession('exam-datetime', inputVal('#exam-datetime'));
   setSession('exam-amount', inputVal('#exam-amount'));
+  setSession('exam-yearmonth', inputVal('#exam-yearmonth'));
   setSession('terms', inputVal('#terms'));
+  setSession('stage1', true);
 
   window.location.replace($(this)[0].form.action);
 });
@@ -321,7 +323,7 @@ function populateDay(id) {
 }
 
 function selectLoadExamTime() {
-  $('#exam-location, #exam-level').on('change load', function() {
+  $('#exam-location, #exam-level').on('change', function() {
     $('#exam-datetime-selection').empty();
     $('#exam-datetime-options').empty();
     $('#exam-datetime').val('');
@@ -394,6 +396,7 @@ async function loadExamTime(area, level) {
   }
 
   $('.month-item').on('click', function() {
+    $('#exam-yearmonth').val($(this).attr('data-year-month'));
     $('#exam-datetime').val('');
     $('#exam-amount').val('');
     $('.exam-datetime').prop('checked', false);
@@ -414,14 +417,7 @@ async function loadExamTime(area, level) {
     updateCartItem()
   });
 
-  if (getSession('exam-location')) refillField('input', '#exam-location', getSession('exam-location'));
-  if (getSession('exam-level')) refillField('input', '#exam-level', getSession('exam-level'));
-  if (getSession('exam-datetime')) refillField('checkbox', '#exam-datetime', getSession('exam-datetime'));
-  if (getSession('exam-datetime')) refillField('input', '#exam-datetime', getSession('exam-datetime'));
-  if (getSession('exam-amount')) refillField('input', '#exam-amount', getSession('exam-amount'));
-  if (getSession('terms')) refillField('checkbox', '#terms', getSession('terms'));
-  nextBtnStage1()
-  updateCartItem()
+  if (getSession('stage1') == 'true') loadSessionData1();
 }
 
 function loadSelectedExamTime(year_month, exam_time_options) {
@@ -571,14 +567,31 @@ function convertLang(lang) {
   }
 }
 
-function refillField(type, id, data) {
+function refillField(type, target, data) {
   if (type == 'input' || type == 'option') {
-    $(id).val(data);
+    $(target).val(data);
   }
 
   if (type == 'checkbox') {
     $(`input[value="${data}"]`).prop('checked', true)
   }
+
+  if (type == 'element') {
+    $('div').find(`[data-year-month='${data}']`).click();
+  }
+}
+
+function loadSessionData1() {
+  if (getSession('exam-location')) refillField('input', '#exam-location', getSession('exam-location'));
+  if (getSession('exam-level')) refillField('input', '#exam-level', getSession('exam-level'));
+  if (getSession('exam-yearmonth')) refillField('element', '.month-item', getSession('exam-yearmonth'));
+  if (getSession('exam-datetime')) refillField('checkbox', '#exam-datetime', getSession('exam-datetime'));
+  if (getSession('exam-datetime')) refillField('input', '#exam-datetime', getSession('exam-datetime'));
+  if (getSession('exam-amount')) refillField('input', '#exam-amount', getSession('exam-amount'));
+  if (getSession('terms')) refillField('checkbox', '#terms', getSession('terms'));
+  nextBtnStage1()
+  updateCartItem()
+  setSession('stage1', false);
 }
 
 async function populateOptions(api) {
