@@ -54,7 +54,11 @@ function progressIndicator() {
       checkboxSelect('.hskk', true, '#hskk', '#hskk-date');
       enabledNextBtn();
       $('#birthday, #hskdate, #hskkdate').datepicker({});
+      populateNationality('#nationality')
+      populateEthnicity('#ethnicity')
+      populateNativeLang('#native-language')
       populateRegisterInfo()
+      displayEthnicity()
       break;
     case 'application-candidate-profile.html':
       activeProgressBar('.step-1, .step-2, .step-3');
@@ -677,7 +681,7 @@ async function populateNativeLang(id) {
 
 function displayEthnicity() {
   $('#ethnicity-selection').hide()
-  $('#nationality').on('change load', function() {
+  $('#nationality').on('change', function() {
     let selected = $(this).val();
     if (selected.match('中国')) {
       $('#ethnicity-selection').show()
@@ -688,10 +692,6 @@ function displayEthnicity() {
 }
 
 async function populateRegisterInfo() {
-  populateNationality('#nationality')
-  populateEthnicity('#ethnicity')
-  populateNativeLang('#native-language')
-  displayEthnicity()
   let response = await fetch('https://api.hskk.info/webapi/register_default_info/', {
       headers: {
         'Accept': 'application/json, text/plain, */*',
