@@ -568,3 +568,17 @@ function convertLang(lang) {
       return 'zh-HK'
   }
 }
+
+function refillField(type, id, data) {
+  if (type == 'input') {
+
+  }
+
+  if (type == 'option') {
+
+  }
+
+  if (type == 'checkbox') {
+    
+  }
+}
