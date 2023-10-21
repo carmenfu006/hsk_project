@@ -6,10 +6,12 @@
     <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
     <script src="js/navbar.js" type="text/javascript" defer></script>
     <script src="js/footer.js" type="text/javascript" defer></script>
+    <script src="js/bootstrap.js" type="text/javascript" defer></script>
+    <script src="js/bootstrap-datepicker.js" type="text/javascript" defer></script>
     <script src="js/application.js" type="text/javascript" defer></script>
     <script src="js/i18n.js" type="text/javascript" defer></script>
-    <script src="js/bootstrap.js" type="text/javascript" defer></script>
     <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-datepicker3.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -24,7 +26,6 @@
       <div class='row'>
         <div class='col'>
           <form id='application-step-2-form' class='mb-5' action='application-candidate-profile.html'>
-            <input type='hidden' id='gender' name='gender'>
             <input type='hidden' id='hsk' name='hsk'>
             <input type='hidden' id='hskk' name='hskk'>
             <div class='form-group'>
@@ -43,39 +44,17 @@
               </div>
             </div>
             <div class='form-group'>
-              <label class='i18n-88'>性别</label>
               <div class='row'>
-                <div class='form-check ml-3'>
-                  <input class='form-check-input gender' type='checkbox' name='male' id='male' value='male'>
-                  <label class='form-check-label i18n-89' for='male'>
-                    男
-                  </label>
-                </div>
-                <div class='form-check ml-3'>
-                  <input class='form-check-input gender' type='checkbox' name='female' id='female' value='female'>
-                  <label class='form-check-label i18n-152' for='female'>
-                    女
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class='form-group'>
-              <label class='i18n-90'>生日</label>
-              <div class='row'>
-                <div class='col-4'>
-                  <select class='form-control' id='birth-year'>
-                    <option class='i18n-91' value=''>年</option>
+                <div class='col-lg-6 col-md-12 col-sm-12'>
+                  <label class='i18n-88'>性别</label>
+                  <select class='form-control' id='gender' name='gender'>
+                    <option class='i18n-152' value='0'>女</option>
+                    <option class='i18n-89' value='1'>男</option>
                   </select>
                 </div>
-                <div class='col-4'>
-                  <select class='form-control' id='birth-month'>
-                    <option class='i18n-92' value=''>月</option>
-                  </select>
-                </div>
-                <div class='col-4'>
-                  <select class='form-control' id='birth-day'>
-                    <option class='i18n-93' value=''>日</option>
-                  </select>
+                <div class='col-lg-6 col-md-12 col-sm-12'>
+                  <label class='i18n-90'>生日</label>
+                  <input type='text' class='form-control' data-date-format='yyyy-mm-dd' placeholder='YYYY-MM-DD' id='birthday'>
                 </div>
               </div>
             </div>
@@ -149,20 +128,8 @@
             <div id='hsk-date' class='form-group d-none'>
               <label class='i18n-106'>请选择最近一次HSK的考试日期</label>
               <div class='row'>
-                <div class='col-4'>
-                  <select class='form-control' id='hsk-year'>
-                    <option class='i18n-91' value=''>年</option>
-                  </select>
-                </div>
-                <div class='col-4'>
-                  <select class='form-control' id='hsk-month'>
-                    <option class='i18n-92' value=''>月</option>
-                  </select>
-                </div>
-                <div class='col-4'>
-                  <select class='form-control' id='hsk-day'>
-                    <option class='i18n-93' value=''>日</option>
-                  </select>
+                <div class='col-lg-6 col-md-12 col-sm-12'>
+                  <input type='text' class='form-control' data-date-format='yyyy-mm-dd' placeholder='YYYY-MM-DD' id='hskday'>
                 </div>
               </div>
             </div>
@@ -186,20 +153,8 @@
             <div id='hskk-date' class='form-group d-none'>
               <label class='i18n-107'>请选择最近一次HSKK的考试日期</label>
               <div class='row'>
-                <div class='col-4'>
-                  <select class='form-control' id='hskk-year'>
-                    <option class='i18n-91' value=''>年</option>
-                  </select>
-                </div>
-                <div class='col-4'>
-                  <select class='form-control' id='hskk-month'>
-                    <option class='i18n-92' value=''>月</option>
-                  </select>
-                </div>
-                <div class='col-4'>
-                  <select class='form-control' id='hskk-day'>
-                    <option class='i18n-93' value=''>日</option>
-                  </select>
+                <div class='col-lg-6 col-md-12 col-sm-12'>
+                  <input type='text' class='form-control' data-date-format='yyyy-mm-dd' placeholder='YYYY-MM-DD' id='hskkday'>
                 </div>
               </div>
             </div>

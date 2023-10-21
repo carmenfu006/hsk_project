@@ -50,19 +50,19 @@ function progressIndicator() {
       break;
     case 'application-candidate-info.html':
       activeProgressBar('.step-1, .step-2');
-      checkboxSelect('.gender', true, '#gender');
       checkboxSelect('.hsk', true, '#hsk', '#hsk-date');
       checkboxSelect('.hskk', true, '#hskk', '#hskk-date');
       enabledNextBtn();
-      populateYear('#birth-year');
-      populateYear('#hsk-year');
-      populateYear('#hskk-year');
-      populateMonth('#birth-month');
-      populateMonth('#hsk-month');
-      populateMonth('#hskk-month');
-      populateDay('#birth-day');
-      populateDay('#hsk-day');
-      populateDay('#hskk-day');
+      // populateYear('#birth-year');
+      // populateYear('#hsk-year');
+      // populateYear('#hskk-year');
+      // populateMonth('#birth-month');
+      // populateMonth('#hsk-month');
+      // populateMonth('#hskk-month');
+      // populateDay('#birth-day');
+      // populateDay('#hsk-day');
+      // populateDay('#hskk-day');
+      $('#birthday, #hskday, #hskkday').datepicker({});
       break;
     case 'application-candidate-profile.html':
       activeProgressBar('.step-1, .step-2, .step-3');
@@ -255,9 +255,7 @@ $('#to-step-3').on('click', function(e) {
   setSession('username', inputVal('#username'));
   setSession('firstname', inputVal('#firstname'));
   setSession('lastname', inputVal('#lastname'));
-  setSession('birth-year', inputVal('#birth-year'));
-  setSession('birth-month', inputVal('#birth-month'));
-  setSession('birth-day', inputVal('#birth-day'));
+  setSession('birthday', inputVal('#birthday'));
   setSession('nationality', inputVal('#nationality'));
   setSession('native-language', inputVal('#native-language'));
   setSession('identity-type', inputVal('#identity-type'));
@@ -267,14 +265,10 @@ $('#to-step-3').on('click', function(e) {
   setSession('learning-time', inputVal('#learning-time'));
 
   if (inputVal('#hsk') == 'yes') {
-    setSession('hsk-year', inputVal('#hsk-year'));
-    setSession('hsk-month', inputVal('#hsk-month'));
-    setSession('hsk-day', inputVal('#hsk-day'));
+    setSession('hskday', inputVal('#hskday'));
   }
   if (inputVal('#hskk') == 'yes') {
-    setSession('hskk-year', inputVal('#hskk-year'));
-    setSession('hskk-month', inputVal('#hskk-month'));
-    setSession('hskk-day', inputVal('#hskk-day'));
+    setSession('hskkday', inputVal('#hskkday'));
   }
   window.location.replace($(this)[0].form.action);
 });
@@ -283,7 +277,7 @@ function populateInfo() {
   if ($('.info-username')) $('.info-username').html(getSession('username'));
   if ($('.info-name')) $('.info-name').html(getSession('firstname') + ' ' + getSession('lastname'));
   if ($('.info-gender')) $('.info-gender').html(getSession('gender'));
-  if ($('.info-birthday')) $('.info-birthday').html(getSession('birth-year') + '/' + getSession('birth-month') + '/' + getSession('birth-day'));
+  if ($('.info-birthday')) $('.info-birthday').html(getSession('birthday'));
   if ($('.info-nationality')) $('.info-nationality').html(getSession('nationality'));
   if ($('.info-native-language')) $('.info-native-language').html(getSession('native-language'));
   if ($('.info-identity-type')) $('.info-identity-type').html(getSession('identity-type'));
