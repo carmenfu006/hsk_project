@@ -83,10 +83,11 @@ function activeProgressBar(classname) {
 }
 
 function enabledNextBtn() {
+  const page = document.URL.split(/[?#]/)[0].split('/').pop();
   $(':input').on('change click keyup', function() {
-    nextBtnStage1()
-    nextBtnStage2()
-    nextBtnStage3()
+    if (page == 'application.html') nextBtnStage1()
+    if (page == 'application-candidate-info.html') nextBtnStage2()
+    if (page == 'application-candidate-profile.html') nextBtnStage3()
   })
 }
 
@@ -114,8 +115,14 @@ function nextBtnStage3() {
   }
 }
 
-function loadFile() {
+async function loadFile() {
   let imageTag = $('#output');
+  let infoPhoto = await populateProfile();
+
+  if (infoPhoto) {
+    imageTag.attr('src', infoPhoto);
+    checkFile(imageTag)
+  }
 
   checkFile(imageTag)
 
@@ -760,4 +767,20 @@ async function populateRegisterInfo() {
       if (info.study_year) refillField('input', '#study-year', info.study_year);
     }
   }
+}
+
+async function populateProfile() {
+  let response = await fetch('https://api.hskk.info/webapi/register_default_info/', {
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type' : 'application/json',
+        'Authorization' : `Bearer ${user}`
+      }
+    })
+  let data = await response.json();
+  let info = data.data;
+  // let photo = info.photo_path;
+  let photo = 'https://fastly.picsum.photos/id/838/200/200.jpg?hmac=a2ZUJPqhEFH-OzhHFaKdtDdV2XnIE7t1tP2iXnP5Fj0';
+
+  return photo
 }
