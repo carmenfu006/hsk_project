@@ -134,6 +134,8 @@ async function loadFile() {
     $('#to-step-4').attr('disabled', false);
   }
 
+  checkFile(imageTag)
+
   $('#file').change(function() {
     const file = this.files[0];
 
@@ -316,25 +318,149 @@ $('#to-step-3').on('click', function(e) {
 });
 
 async function populateInfo() {
+  let lang = getSessionLang('lang');
   let infoPhoto = await populateProfile();
-
+  let nationality_options = await populateOptions('https://api.hskk.info/webapi/nationality/');
+  let ethnicity_options = await populateOptions('https://api.hskk.info/webapi/ethnicity/');
+  let native_language_options = await populateOptions('https://api.hskk.info/webapi/native_language/');
+  let nationality;
+  let ethnicity;
+  let native_language;
   if (getSession('file')) {
     $('#verify-profile').attr('src', getSession('file'));
   } else {
     $('#verify-profile').attr('src', infoPhoto);
   }
+  if (getSession('nationality').match('中国')) {
+    $('.ethnicity-info').show()
+  } else {
+    $('.ethnicity-info').hide()
+  }
+
+  nationality = nationality_options.filter(function(option) {
+    return option.nationality == getSession('nationality');
+  });
+
+  ethnicity = ethnicity_options.filter(function(option) {
+    return option.ethnicity == getSession('ethnicity');
+  });
+
+  native_language = native_language_options.filter(function(option) {
+    return option.native_language == getSession('native-language');
+  });
+
+  if (lang == 'zh') {
+    nationality = nationality[0].nationality;
+    ethnicity = ethnicity[0].ethnicity;
+    native_language = native_language[0].native_language;
+  } else {
+    nationality = nationality[0].nationality_en;
+    ethnicity = ethnicity[0].ethnicity;
+    native_language = native_language[0].native_language_en;
+  }
+
+  if ($('.info-gender')) $('.info-gender').html(valueGender(lang, getSession('gender')));
+  if ($('.info-nationality')) $('.info-nationality').html(nationality);
+  if ($('.info-ethnicity')) $('.info-ethnicity').html(ethnicity);
+  if ($('.info-native-language')) $('.info-native-language').html(native_language);
+  if ($('.info-certificate-type')) $('.info-certificate-type').html(valueCertificateType(lang, getSession('certificate-type')));
+  if ($('.info-study-year')) $('.info-study-year').html(valueStudyYear(lang, getSession('study-year')));
+
   if ($('.info-username')) $('.info-username').html(getSession('username'));
   if ($('.info-name')) $('.info-name').html(getSession('firstname') + ' ' + getSession('lastname'));
-  if ($('.info-gender')) $('.info-gender').html(getSession('gender'));
   if ($('.info-birthday')) $('.info-birthday').html(getSession('birthday'));
-  if ($('.info-nationality')) $('.info-nationality').html(getSession('nationality'));
-  if ($('.info-native-language')) $('.info-native-language').html(getSession('native-language'));
-  if ($('.info-certificate-type')) $('.info-certificate-type').html(getSession('certificate-type'));
   if ($('.info-certificate-number')) $('.info-certificate-number').html(getSession('certificate-number'));
   if ($('.info-contact-number')) $('.info-contact-number').html(getSession('phone-zone') + '-' + getSession('phone'));
-  if ($('.info-study-year')) $('.info-study-year').html(getSession('study-year'));
-  if ($('.info-hsk')) $('.info-hsk').html(getSession('hsk'));
-  if ($('.info-hskk')) $('.info-hskk').html(getSession('hskk'));
+  if ($('.info-hsk')) $('.info-hsk').html(valueYesNo(lang, getSession('hsk')));
+  if ($('.info-hskk')) $('.info-hskk').html(valueYesNo(lang, getSession('hskk')));
+}
+
+function valueYesNo(lang, value) {
+  if (value == 'yes') {
+    return transLang(lang, '有', 'Yes', 'Ya', 'نعم')
+  } else {
+    return transLang(lang, '没有', 'No', 'Tidak', 'لا')
+  }
+}
+
+function valueGender(lang, value) {
+  if (value == '0') {
+    return transLang(lang, '女', 'Female', 'Perempuan', 'أنثى')
+  } else {
+    return transLang(lang, '男', 'Male', 'Laki-laki', 'ذكر')
+  }
+}
+
+function valueCertificateType(lang, value) {
+  switch(value) {
+    case '1':
+      return transLang(lang, '身份证', 'ID card', 'KTP', 'بطاقة التعريف')
+      break;
+    case '2':
+      return transLang(lang, '护照', 'Passport', 'Paspor', 'جواز سفر')
+      break;
+    case '3':
+      return transLang(lang, '居留证', 'Resident permit', 'Izin tinggal', 'تصريح المقيمين')
+      break;
+    case '4':
+      return transLang(lang, '其他', 'Other', 'Lainnya', 'آخر')
+      break;
+    default:
+      return transLang(lang, '身份证', 'ID card', 'KTP', 'بطاقة التعريف')
+  }
+}
+
+function valueStudyYear(lang, value) {
+  switch(value) {
+    case '1':
+      return transLang(lang, '半年', 'Half a year', 'Setengah tahun', 'نصف عام')
+      break;
+    case '2':
+      return transLang(lang, '6-12个月', '6-12 months', '6-12 bulan', '6-12 شهرا')
+      break;
+    case '3':
+      return transLang(lang, '1年', '1 year', '1 tahun', '1 سنة')
+      break;
+    case '4':
+      return transLang(lang, '2年', '2 year', '2 tahun', '2 سنة')
+      break;
+    case '5':
+      return transLang(lang, '3年', '3 year', '3 tahun', '3 سنة')
+      break;
+    case '6':
+      return transLang(lang, '4年', '4 year', '4 tahun', '4 سنة')
+      break;
+    case '7':
+      return transLang(lang, '5年', '5 year', '5 tahun', '5 سنة')
+      break;
+    case '8':
+      return transLang(lang, '5-10年', '5-10 year', '5-10 tahun', '5-10 سنة')
+      break;
+    case '9':
+      return transLang(lang, '10年以上', 'More than 10 years', 'Lebih dari 10 tahun', 'أكثر من 10 سنوات')
+      break;
+    default:
+      return transLang(lang, '半年', 'Half a year', 'Setengah tahun', 'نصف عام')
+  }
+}
+
+function transLang(lang, zh, en, id, ar) {
+  switch(lang) {
+    case 'zh':
+      return zh
+      break;
+    case 'en':
+      return en
+      break;
+    case 'id':
+      return id
+      break;
+    case 'ar':
+      return ar
+      break;
+    default:
+      return zh
+  }
 }
 
 function populateYear(id) {
@@ -662,7 +788,7 @@ async function populateOptions(api) {
 
 async function populateNationality(id) {
   let lang = getSessionLang('lang');
-  let options = await populateOptions('https://api.hskk.info/webapi/nationality/')
+  let options = await populateOptions('https://api.hskk.info/webapi/nationality/');
   if (options) {
     for (let i = 0; i <= options.length; i++) {
       let option = document.createElement('option');
@@ -680,7 +806,7 @@ async function populateNationality(id) {
 
 async function populateEthnicity(id) {
   let lang = getSessionLang('lang');
-  let options = await populateOptions('https://api.hskk.info/webapi/ethnicity/')
+  let options = await populateOptions('https://api.hskk.info/webapi/ethnicity/');
   if (options) {
     for (let i = 0; i <= options.length; i++) {
       let option = document.createElement('option');
@@ -697,7 +823,7 @@ async function populateEthnicity(id) {
 
 async function populateNativeLang(id) {
   let lang = getSessionLang('lang');
-  let options = await populateOptions('https://api.hskk.info/webapi/native_language/')
+  let options = await populateOptions('https://api.hskk.info/webapi/native_language/');
   if (options) {
     for (let i = 0; i <= options.length; i++) {
       let option = document.createElement('option');
@@ -805,8 +931,7 @@ async function populateProfile() {
     })
   let data = await response.json();
   let info = data.data;
-  // let photo = info.photo_path;
-  let photo = 'https://fastly.picsum.photos/id/838/200/200.jpg?hmac=a2ZUJPqhEFH-OzhHFaKdtDdV2XnIE7t1tP2iXnP5Fj0';
+  let photo = info.photo_path;
 
   return photo
 }
