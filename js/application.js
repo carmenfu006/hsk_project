@@ -47,6 +47,7 @@ function progressIndicator() {
         loadExamTime(getSession('exam-location'), getSession('exam-level'));
       }
       selectLoadExamTime();
+      if (getSession('stage1') == 'false') setSession('stage1', true);
       break;
     case 'application-candidate-info.html':
       activeProgressBar('.step-1, .step-2');
@@ -67,7 +68,6 @@ function progressIndicator() {
     case 'application-verify-info.html':
       activeProgressBar('.step-1, .step-2, .step-3, .step-4');
       populateInfo();
-      $('#verify-profile').attr('src', getSession('file'));
       break;
     case 'application-submit.html':
       activeProgressBar('.step-1, .step-2, .step-3, .step-4, .step-5');
@@ -315,7 +315,14 @@ $('#to-step-3').on('click', function(e) {
   window.location.replace($(this)[0].form.action);
 });
 
-function populateInfo() {
+async function populateInfo() {
+  let infoPhoto = await populateProfile();
+
+  if (getSession('file')) {
+    $('#verify-profile').attr('src', getSession('file'));
+  } else {
+    $('#verify-profile').attr('src', infoPhoto);
+  }
   if ($('.info-username')) $('.info-username').html(getSession('username'));
   if ($('.info-name')) $('.info-name').html(getSession('firstname') + ' ' + getSession('lastname'));
   if ($('.info-gender')) $('.info-gender').html(getSession('gender'));
@@ -441,7 +448,7 @@ async function loadExamTime(area, level) {
   }
 
   $('.month-item').on('click', function() {
-    $('#exam-yearmonth').val($(this).attr('data-year-month'));
+    $('#exam-yearmonth').val($(this).data('year-month'));
     $('#exam-datetime').val('');
     $('#exam-amount').val('');
     $('.exam-datetime').prop('checked', false);
