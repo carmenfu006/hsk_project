@@ -63,7 +63,6 @@ function progressIndicator() {
     case 'application-candidate-profile.html':
       activeProgressBar('.step-1, .step-2, .step-3');
       loadFile();
-      enabledNextBtn();
       break;
     case 'application-verify-info.html':
       activeProgressBar('.step-1, .step-2, .step-3, .step-4');
@@ -107,8 +106,10 @@ function nextBtnStage2() {
   }
 }
 
-function nextBtnStage3() {
+function nextBtnStage3(infoPhoto) {
   if (getSession('file')) {
+    $('#to-step-4').attr('disabled', false);
+  } else if (infoPhoto) {
     $('#to-step-4').attr('disabled', false);
   } else {
     if (verifyInput('#file')) {
@@ -125,8 +126,8 @@ async function loadFile() {
 
   if (getSession('file')) {
     imageTag.attr('src', getSession('file'));
-    checkFile(imageTag)
     $('#to-step-4').attr('disabled', false);
+    checkFile(imageTag)
   } else if (infoPhoto) {
     imageTag.attr('src', infoPhoto);
     checkFile(imageTag)
@@ -142,6 +143,7 @@ async function loadFile() {
         imageTag.attr('src', URL.createObjectURL(file));
         checkFile(imageTag)
         setSession('file', event.target.result);
+        nextBtnStage3()
       }
       reader.readAsDataURL(file);
     }
@@ -154,6 +156,8 @@ async function loadFile() {
     sessionStorage.removeItem('file');
     checkFile(imageTag)
   })
+
+  nextBtnStage3(infoPhoto);
 }
 
 function checkFile(imageTag) {
