@@ -108,10 +108,14 @@ function nextBtnStage2() {
 }
 
 function nextBtnStage3() {
-  if (verifyInput('#file')) {
+  if (getSession('file')) {
     $('#to-step-4').attr('disabled', false);
   } else {
-    $('#to-step-4').attr('disabled', true);
+    if (verifyInput('#file')) {
+      $('#to-step-4').attr('disabled', false);
+    } else {
+      $('#to-step-4').attr('disabled', true);
+    }
   }
 }
 
@@ -119,12 +123,15 @@ async function loadFile() {
   let imageTag = $('#output');
   let infoPhoto = await populateProfile();
 
-  if (infoPhoto) {
+  if (getSession('file')) {
+    imageTag.attr('src', getSession('file'));
+    checkFile(imageTag)
+    $('#to-step-4').attr('disabled', false);
+  } else if (infoPhoto) {
     imageTag.attr('src', infoPhoto);
     checkFile(imageTag)
+    $('#to-step-4').attr('disabled', false);
   }
-
-  checkFile(imageTag)
 
   $('#file').change(function() {
     const file = this.files[0];
@@ -144,6 +151,7 @@ async function loadFile() {
     imageTag.attr('src', '')
     $('#file').val('');
     $('#to-step-4').attr('disabled', true);
+    sessionStorage.removeItem('file');
     checkFile(imageTag)
   })
 }
@@ -258,6 +266,7 @@ function setItemCart() {
 }
 
 $('#to-step-2').on('click', function(e) {
+  e.preventDefault;
   setSession('exam-location', inputVal('#exam-location'));
   setSession('exam-level', inputVal('#exam-level'));
   setSession('exam-datetime', inputVal('#exam-datetime'));
@@ -270,6 +279,7 @@ $('#to-step-2').on('click', function(e) {
 });
 
 $('#to-step-3').on('click', function(e) {
+  e.preventDefault;
   setSession('gender', inputVal('#gender'));
   setSession('hsk', inputVal('#hsk'));
   setSession('hskk', inputVal('#hskk'));
@@ -293,6 +303,11 @@ $('#to-step-3').on('click', function(e) {
     setSession('hskkdate', inputVal('#hskkdate'));
   }
   setSession('stage2', true);
+  window.location.replace($(this)[0].form.action);
+});
+
+$('#to-step-3').on('click', function(e) {
+  e.preventDefault;
   window.location.replace($(this)[0].form.action);
 });
 
