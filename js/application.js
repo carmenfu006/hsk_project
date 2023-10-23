@@ -139,16 +139,24 @@ async function loadFile() {
 
   $('#file').change(function() {
     const file = this.files[0];
-
-    if (file) {
-      let reader = new FileReader();
-      reader.onload = function(event){
-        imageTag.attr('src', URL.createObjectURL(file));
-        checkFile(imageTag)
-        setSession('file', event.target.result);
-        nextBtnStage3()
+    const maxBytes = 500000;
+    console.log(file.size)
+    if (file.size <= maxBytes) {
+      if (file) {
+        let reader = new FileReader();
+        reader.onload = function(event){
+          imageTag.attr('src', URL.createObjectURL(file));
+          checkFile(imageTag)
+          setSession('file', event.target.result);
+          nextBtnStage3()
+        }
+        reader.readAsDataURL(file);
       }
-      reader.readAsDataURL(file);
+    } else {
+      imageTag.attr('src', '')
+      $('#file').val('');
+      $('#to-step-4').attr('disabled', true);
+      $('.toast').toast('show');
     }
   });
 

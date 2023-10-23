@@ -56,7 +56,7 @@
       <div class='row border no-gutters mb-3 image-display'>
         <div class='col d-flex justify-content-between'>
           <div class='image-output'>
-            <img src='' id='output' width='200' class='img-fluid' alt='Responsive image'/>
+            <img src='' id='output' width='200' height='200' class='img-fluid' alt='Responsive image'/>
           </div>
           <i class='fa-solid fa-trash fa-lg text-danger align-self-center pointer mr-3'></i>
         </div>
@@ -85,6 +85,16 @@
               <button id='to-step-4' type='submit' disabled class='i18n-150 btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180'>下一步</button>
             </div>
           </form>
+        </div>
+      </div>
+      <div aria-live='polite' aria-atomic='true' class='d-flex justify-content-center align-items-center'>
+        <div class='toast' role='alert' aria-live='assertive' aria-atomic='true' data-autohide='false'>
+          <div class='toast-header secondary-color bg-danger-color'>
+            <strong class='toast-text i18n-344 mr-auto danger-color'>最大文件大小为500KB</strong>
+            <button type='button' class='ml-2 mb-1 close' data-dismiss='toast' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+            </button>
+          </div>
         </div>
       </div>
     </section>

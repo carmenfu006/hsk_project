@@ -2415,6 +2415,13 @@ translateWeb(
   'أكثر من 10 سنوات'
 )
 translateWeb(
+  '.i18n-344',
+  '最大文件大小为500KB',
+  'Maximum file size is 500KB',
+  'Ukuran file maksimum adalah 500KB',
+  'الحد الأقصى لحجم الملف هو 500 كيلو بايت'
+)
+translateWeb(
   '.i18n-500',
   '什么是HSK口语移动端（手机）考试中心？',
   'What is the HSK(Speaking) Mobile Exam Center?',
