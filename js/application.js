@@ -100,7 +100,7 @@ function nextBtnStage1() {
 }
 
 function nextBtnStage2() {
-  if (verifyInput('#gender') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#firstname') && verifyInput('#lastname') && verifyInput('#birthday') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#certificate-type') && verifyInput('#certificate-number') && verifyInput('#phone-zone') && verifyInput('#phone') && verifyInput('#study-year') && verifyInputByNationality('#nationality', '#ethnicity') && verifyInputByCondition('#hsk', '#hskdate') && verifyInputByCondition('#hskk', '#hskkdate')) {
+  if (verifyInput('#gender') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#firstname') && verifyInput('#lastname') && verifyInput('#birthday') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#certificate-type') && verifyInput('#certificate-number') && verifyInput('#phone-zone') && verifyInput('#phone') && verifyInputLength('#phone', 7) && verifyInput('#study-year') && verifyInputByNationality('#nationality', '#ethnicity') && verifyInputByCondition('#hsk', '#hskdate') && verifyInputByCondition('#hskk', '#hskkdate')) {
     $('#to-step-3').attr('disabled', false);
   } else {
     $('#to-step-3').attr('disabled', true);
@@ -140,7 +140,7 @@ async function loadFile() {
   $('#file').change(function() {
     const file = this.files[0];
     const maxBytes = 500000;
-    console.log(file.size)
+
     if (file.size <= maxBytes) {
       if (file) {
         let reader = new FileReader();
@@ -242,6 +242,14 @@ function verifyInput(id) {
   }
 }
 
+function verifyInputLength(id, minLength) {
+  if ($(id).val().length < minLength) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 function verifyInputByCondition(id, targetDate) {
   if ($(id).val() == 'yes') {
     if ($(targetDate).val() == '') {
@@ -329,6 +337,75 @@ $('#to-step-3').on('click', function(e) {
 $('#to-step-3').on('click', function(e) {
   e.preventDefault;
   window.location.replace($(this)[0].form.action);
+});
+
+$('#to-step-4').on('click', function(e) {
+  e.preventDefault;
+  window.location.replace($(this)[0].form.action);
+});
+
+$('#submit-application').on('click', async() => {
+  let sessionData;
+  if (getSession('ethnicity') == '') {
+    sessionData = {
+      schedule_id: getSession('exam-datetime-id'),
+      name_en: getSession('firstname'),
+      name_cn: getSession('lastname'),
+      gender: getSession('gender'),
+      birthday: getSession('birthday'),
+      nationality: getSession('nationality'),
+      native_language: getSession('native-language'),
+      certificate_type: getSession('certificate-type'),
+      certificate_number: getSession('certificate-number'),
+      phone_zone: getSession('phone-zone'),
+      phone: getSession('phone'),
+      study_year: getSession('study-year'),
+      have_hsk: getSession('hsk') == 'yes' ? true : false,
+      have_hskk: getSession('hskk') == 'yes' ? true : false,
+      have_hsk_date: getSession('hskdate'),
+      have_hskk_date: getSession('hskkdate'),
+      file64: getSession('file').split(',')[1],
+      file64_ext: 'jpg'
+    }
+  } else {
+    sessionData = {
+      schedule_id: getSession('exam-datetime-id'),
+      name_en: getSession('firstname'),
+      name_cn: getSession('lastname'),
+      gender: getSession('gender'),
+      birthday: getSession('birthday'),
+      nationality: getSession('nationality'),
+      ethnicity: getSession('ethnicity'),
+      native_language: getSession('native-language'),
+      certificate_type: getSession('certificate-type'),
+      certificate_number: getSession('certificate-number'),
+      phone_zone: getSession('phone-zone'),
+      phone: getSession('phone'),
+      study_year: getSession('study-year'),
+      have_hsk: getSession('hsk') == 'yes' ? true : false,
+      have_hskk: getSession('hskk') == 'yes' ? true : false,
+      have_hsk_date: getSession('hskdate'),
+      have_hskk_date: getSession('hskkdate'),
+      file64: getSession('file').split(',')[1],
+      file64_ext: 'jpg'
+    }
+  }
+  let response = await fetch('https://api.hskk.info/webapi/register_exam_info/', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type' : 'application/json',
+      'Authorization' : `Bearer ${user}`
+    },
+      body: JSON.stringify(sessionData)
+  })
+  let data = await response.json();
+
+  if (data.code == 201) {
+    window.location.href = window.location.origin + '/application-submit.html'
+  } else {
+    $('.toast').toast('show');
+  }
 });
 
 async function populateInfo() {

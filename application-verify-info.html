@@ -104,7 +104,17 @@
       </div>
       <div class='text-center mt-4 mb-5 d-flex justify-content-center'>
         <a href='application-candidate-profile.html' class='i18n-151 btn btn-sm p-2 pr-4 pl-4 mt-2 mr-1 w180'>上一步</a>
-        <a href='application-submit.html' class='i18n-153 btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180 active'>确认并提交</a>
+        <a id='submit-application' class='i18n-153 btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180 active'>确认并提交</a>
+      </div>
+      <div aria-live='polite' aria-atomic='true' class='d-flex justify-content-center align-items-center'>
+        <div class='toast' role='alert' aria-live='assertive' aria-atomic='true' data-autohide='false'>
+          <div class='toast-header secondary-color bg-danger-color'>
+            <strong class='toast-text i18n-345 mr-auto danger-color'>预报名提交未成功</strong>
+            <button type='button' class='ml-2 mb-1 close' data-dismiss='toast' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
     <footer id='footer' class='bg-secondary-color text-white'></footer>
