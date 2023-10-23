@@ -445,7 +445,7 @@ async function loadExamRecord(status) {
                   <div class='record'>${record.test_time}</div>
                 </div>
                 <div class='col'>
-                  <div class='btn ${valueTestStatusBtn(record.test_status)}'>${valueTestStatus(lang, record.test_status)}</div>
+                  <div class='btn ${valueTestStatusBtn(record.test_status)}'>${valueTestStatus(lang, record.test_status, record.score_final)}</div>
                 </div>
               </div>
             </div>
@@ -483,7 +483,7 @@ async function loadExamRecord(status) {
                     <p class='i18n-300 card-text font-weight-bold pb-2'>${transLang(lang, '状态/成绩', 'Status/Score', 'Status/Skor', 'الحالة/النتيجة')}</p>
                   </div>
                   <div class='col'>
-                    <div class='btn ${valueTestStatusBtn(record.test_status)}'>${valueTestStatus(lang, record.test_status)}</div>
+                    <div class='btn ${valueTestStatusBtn(record.test_status)}'>${valueTestStatus(lang, record.test_status, record.score_final)}</div>
                   </div>
                 </div>
               </div>
@@ -513,7 +513,7 @@ function valueTestLevel(lang, value) {
   }
 }
 
-function valueTestStatus(lang, value) {
+function valueTestStatus(lang, value, score) {
   switch(value) {
     case 0:
       return transLang(lang, '未付款', 'Unpaid', 'Tidak dibayar', 'غير مدفوعة الأجر')
@@ -553,10 +553,12 @@ function valueTestStatus(lang, value) {
       return transLang(lang, '评分完毕', 'Rating completed', 'Pemeringkatan selesai', 'اكتمل التقييم')
       break;
     case 22:
-      return transLang(lang, '及格', 'Pass', 'Lulus', 'يمر')
+      // return transLang(lang, '及格', 'Pass', 'Lulus', 'يمر')
+      return score
       break;
     case 23:
-      return transLang(lang, '不及格', 'Failed', 'Gagal', 'فشل')
+      // return transLang(lang, '不及格', 'Failed', 'Gagal', 'فشل')
+      return score
       break;
     case 40:
       return transLang(lang, '考试过期', 'Expired', 'Kedaluwarsa', 'منتهي الصلاحية')
@@ -569,9 +571,6 @@ function valueTestStatus(lang, value) {
       break;
     case 43:
       return transLang(lang, '考试终止', 'Terminated', 'Dihentikan', 'انقطاع الامتحان')
-      break;
-    case 400:
-      return transLang(lang, '查看本次成绩', 'View results', 'Lihat hasil', 'عرض النتائج')
       break;
     default:
       return transLang(lang, '未付款', 'Unpaid', 'Tidak dibayar', 'غير مدفوعة الأجر')
@@ -617,10 +616,10 @@ function valueTestStatusBtn(value) {
       return 'status-ongoing'
       break;
     case 22:
-      return 'status-ongoing'
+      return 'active'
       break;
     case 23:
-      return 'status-ongoing'
+      return ''
       break;
     case 40:
       return 'status-terminate'
@@ -633,9 +632,6 @@ function valueTestStatusBtn(value) {
       break;
     case 43:
       return 'status-terminate'
-      break;
-    case 400:
-      return 'active'
       break;
     default:
       return ''
