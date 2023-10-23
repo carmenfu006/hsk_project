@@ -97,6 +97,7 @@ function dashboardPage() {
       authoriseAccess()
       activeMenuBar('#support-sidebar', '#support-footbar')
       scrollFootbar('support-footbar')
+      checkFile($('#output'))
       break;
     case 'faqs.html':
       authoriseAccess()
@@ -138,4 +139,147 @@ function scrollFootbar(id) {
 
 function authoriseAccess() {
   if (user == null) window.location.href = window.location.origin + '/candidate-login.html'
+}
+
+$('#file').change(function() {
+  const fileTag = $('#output');
+  const file = this.files[0];
+  const maxBytes = 500000;
+
+  if (file.size <= maxBytes) {
+    if (file) {
+      let reader = new FileReader();
+      reader.onload = function(event){
+        fileTag.attr('src', URL.createObjectURL(file));
+        checkFile(fileTag)
+        setSession('support-center-file', event.target.result);
+      }
+      reader.readAsDataURL(file);
+    }
+  } else {
+    fileTag.attr('src', '')
+    $('#file').val('');
+    $('.toast').toast('show');
+  }
+});
+
+$('.fa-trash').click(function() {
+  const fileTag = $('#output');
+  fileTag.attr('src', '')
+  $('#file').val('');
+  checkFile(fileTag)
+  sessionStorage.removeItem('support-center-file');
+})
+
+function checkFile(fileTag) {
+  let fileUpload = $('.file-upload');
+  let fileDisplay = $('.file-display');
+
+  if (fileTag.attr('src') == '') {
+    fileUpload.removeClass('d-none');
+    fileDisplay.addClass('d-none');
+  } else {
+    fileUpload.addClass('d-none');
+    fileDisplay.removeClass('d-none');
+  }
+}
+
+$('#candidate-support-center').on('click', async() => {
+  let lang = getSession('lang') ? getSession('lang') : 'zh';
+  let inputData;
+  if (getSession('support-center-file')) {
+    inputData = {
+      device: $('#device').val(),
+      description: $('#description').val(),
+      file64: getSession('support-center-file').split(',')[1]
+    }
+  } else {
+    inputData = {
+      device: $('#device').val(),
+      description: $('#description').val()
+    }
+  }
+
+  if (verifyInput($('#device')) && verifyInput($('#description'))) {
+    let response = await fetch('https://api.hskk.info/webapi/support_center/', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type' : 'application/json',
+        'Accept-Language': lang,
+        'Authorization' : `Bearer ${user}`
+      },
+        body: JSON.stringify(inputData)
+    })
+    let data = await response.json();
+    console.log(data)
+    if (data.code == 201) {
+      $('.toast-header').removeClass('bg-danger-color');
+      $('.toast-text').html(transLang(lang, '信息已成功发送', 'Message sent successfully', 'Pesan berhasil terkirim', 'تم إرسال الرسالة بنجاح'));
+      $('.toast-text').removeClass('danger-color');
+      $('.toast').toast('show');
+    } else {
+      $('#toast-header').addClass('bg-danger-color');
+      $('#toast-text').addClass('danger-color');
+      $('#toast-text').html(data.msg)
+      $('.toast').toast('show');
+    }
+    
+  } else {
+    if (verifyInput($('#device')) == false) {
+      invalidInput($('#device'));
+      $('.toast-text').html(transLang(lang, '请输入您使用的设备型号', 'Please enter the model of the device you are using', 'Silakan masukkan model perangkat yang Anda gunakan', 'الرجاء إدخال نموذج الجهاز الذي تستخدمه'));
+      $('.toast').toast('show');
+    } else if (verifyInput($('#description')) == false) {
+      invalidInput($('#description'));
+      $('.toast-text').html(transLang(lang, '请输入您的问题描述', 'Please enter your description', 'Silakan masukkan deskripsi Anda', 'الرجاء إدخال الوصف الخاص بك'));
+      $('.toast').toast('show');
+    } else {
+      invalidInput($('#device'));
+      invalidInput($('#description'));
+      $('.toast-text').html(transLang(lang, '以上输入字段不能为空', 'Above input fields cannot be empty', 'Kolom masukan di atas tidak boleh kosong', 'لا يمكن أن تكون حقول الإدخال أعلاه فارغة'));
+      $('.toast').toast('show');
+    }
+  }
+  
+});
+
+$('#device, #description').on('keyup', function() {
+  validInput('#device');
+  validInput('#description');
+})
+
+function verifyInput(id) {
+  if ($(id).val() === '') {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function invalidInput(id) {
+  $(id).addClass('invalid');
+}
+
+function validInput(id) {
+  $(id).removeClass('invalid');
+}
+
+function transLang(lang, zh, en, id, ar) {
+  switch(lang) {
+    case 'zh':
+      return zh
+      break;
+    case 'en':
+      return en
+      break;
+    case 'id':
+      return id
+      break;
+    case 'ar':
+      return ar
+      break;
+    default:
+      return zh
+  }
 }

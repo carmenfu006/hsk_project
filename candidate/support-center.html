@@ -29,7 +29,7 @@
           <div class='row'>
             <div class='col'>
               <form id='support-center-form' class='mb-5'>
-                <div class='form-group'>
+                <div class='form-group d-none'>
                   <div class='row'>
                     <div class='col-lg-6 col-md-12 col-sm-12 mt-1'>
                       <label class='i18n-286'>问题类型</label>
@@ -52,11 +52,11 @@
                 </div>
                 <div class='form-group'>
                   <label class='i18n-291'>使用设备</label>
-                  <input type='text' class='form-control i18n-292' placeholder='请输入您使用的设备型号' name='equipment' id='equipment'>
+                  <input type='text' class='form-control i18n-292' placeholder='请输入您使用的设备型号' name='device' id='device'>
                 </div>
                 <div class='form-group'>
                   <label class='i18n-293'>问题描述</label>
-                  <textarea class='form-control i18n-293' rows='3' placeholder='问题描述' name='question' id='question'></textarea>
+                  <textarea class='form-control i18n-293' rows='3' placeholder='问题描述' name='description' id='description'></textarea>
                 </div>
                 <label class='i18n-294'>文件上传</label>
                 <div class='row no-gutters mb-3 file-upload'>
@@ -65,12 +65,30 @@
                       <label for='file' style='cursor: pointer;'><i class='fa-solid fa-arrow-up-from-bracket fa-2xl primary-color mb-4'></i></label>
                       <p class='i18n-113 font-weight-bold mb-0'>点击或拖动文件到此区域进行上传。</p>
                       <p class='i18n-114 text-muted'>(支持的文件格式：JPG; 最大文件大小为500KB)</p>
-                      <input type='file' accept='image/jpeg image/png' name='image' id='file' style='display: none;'>
+                      <input type='file' accept='image/jpeg' name='image' id='file' style='display: none;'>
                     </div>
                   </div>
                 </div>
+                <div class='row border no-gutters mb-3 file-display'>
+                  <div class='col d-flex justify-content-between'>
+                    <div class='file-output'>
+                      <img src='' id='output' width='200' height='200' class='img-fluid' alt='Responsive image'/>
+                    </div>
+                    <i class='fa-solid fa-trash fa-lg text-danger align-self-center pointer mr-3'></i>
+                  </div>
+                </div>
                 <div class='text-center mt-4 d-flex justify-content-center'>
-                  <button type='submit' class='i18n-295 btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180 active'>提交</button>
+                  <button id='candidate-support-center' type='button' class='i18n-295 btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180 active'>提交</button>
+                </div>
+                <div aria-live='polite' aria-atomic='true' class='d-flex justify-content-center align-items-center'>
+                  <div class='toast' role='alert' aria-live='assertive' aria-atomic='true' data-autohide='false'>
+                    <div class='toast-header secondary-color bg-danger-color'>
+                      <strong class='toast-text i18n-344 mr-auto danger-color'>最大文件大小为500KB</strong>
+                      <button type='button' class='ml-2 close' data-dismiss='toast' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </form>
             </div>
