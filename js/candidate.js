@@ -66,6 +66,7 @@ function dashboardPage() {
       authoriseAccess()
       activeMenuBar('#dashboard-sidebar', '#dashboard-footbar')
       scrollFootbar('dashboard-footbar')
+      personalInfo()
       break;
     case 'exam-instruction.html':
       authoriseAccess()
@@ -294,15 +295,7 @@ $('.status-filter').on('click', function() {
 
 async function loadExamRecord(status) {
   let lang = getSession('lang') ? getSession('lang') : 'zh';
-  let response = await fetch('https://api.hskk.info/webapi/test_info_history/', {
-    headers: {
-      'Accept': 'application/json, text/plain, */*',
-      'Content-Type' : 'application/json',
-      'Authorization' : `Bearer ${user}`
-    }
-  })
-  let data = await response.json();
-  let records = data.data;
+  let records = await fetchAPI('https://api.hskk.info/webapi/test_info_history/')
 
   if (records) {
     records.forEach(function(record) {
@@ -654,5 +647,33 @@ function transLang(lang, zh, en, id, ar) {
       break;
     default:
       return zh
+  }
+}
+
+async function fetchAPI(api) {
+  let response = await fetch(api, {
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type' : 'application/json',
+        'Authorization' : `Bearer ${user}`
+      }
+    })
+  let data = await response.json();
+  let records = data.data;
+
+  return records
+}
+
+async function personalInfo() {
+  let lang = getSession('lang') ? getSession('lang') : 'zh';
+  let records = await fetchAPI('https://api.hskk.info/webapi/homepage/')
+  let personal_records = await fetchAPI('https://api.hskk.info/webapi/register_default_info/')
+
+  $('#pending-test-count').html(`(${records.read_count})`);
+
+  if (personal_records.email == '') {
+    $('#candidate-name').html(getLocal('email'));
+  } else {
+    $('#candidate-name').html(transLang(lang, personal_records.name_cn, personal_records.name_en, personal_records.name_en, personal_records.name_en));
   }
 }
