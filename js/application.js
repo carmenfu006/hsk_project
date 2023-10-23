@@ -8,6 +8,7 @@ $('.toggle').click(function(){
 });
 
 progressIndicator()
+storeOptionsToLocal()
 
 function progressIndicator() {
   const progressbar = document.getElementById('progressbar');
@@ -55,9 +56,9 @@ function progressIndicator() {
       checkboxSelect('.hskk', true, '#hskk', '#hskk-date');
       enabledNextBtn();
       $('#birthday, #hskdate, #hskkdate').datepicker({});
-      populateNationality('#nationality')
       populateEthnicity('#ethnicity')
       populateNativeLang('#native-language')
+      populateNationality('#nationality')
       populateRegisterInfo()
       displayEthnicity()
       break;
@@ -325,9 +326,9 @@ $('#to-step-3').on('click', function(e) {
 async function populateInfo() {
   let lang = getSessionLang('lang');
   let infoPhoto = await populateProfile();
-  let nationality_options = await populateOptions('https://api.hskk.info/webapi/nationality/');
-  let ethnicity_options = await populateOptions('https://api.hskk.info/webapi/ethnicity/');
-  let native_language_options = await populateOptions('https://api.hskk.info/webapi/native_language/');
+  let nationality_options = JSON.parse(getLocal('nationality_options'));
+  let ethnicity_options = JSON.parse(getLocal('ethnicity_options'));
+  let native_language_options = JSON.parse(getLocal('native_language_options'));
   let nationality;
   let ethnicity;
   let native_language;
@@ -337,6 +338,10 @@ async function populateInfo() {
     $('#verify-profile').attr('src', infoPhoto);
   }
   if (getSession('nationality').match('中国')) {
+    ethnicity = ethnicity_options.filter(function(option) {
+      return option.ethnicity == getSession('ethnicity');
+    });
+    ethnicity = ethnicity[0].ethnicity;
     $('.ethnicity-info').show()
   } else {
     $('.ethnicity-info').hide()
@@ -346,21 +351,15 @@ async function populateInfo() {
     return option.nationality == getSession('nationality');
   });
 
-  ethnicity = ethnicity_options.filter(function(option) {
-    return option.ethnicity == getSession('ethnicity');
-  });
-
   native_language = native_language_options.filter(function(option) {
     return option.native_language == getSession('native-language');
   });
 
   if (lang == 'zh') {
     nationality = nationality[0].nationality;
-    ethnicity = ethnicity[0].ethnicity;
     native_language = native_language[0].native_language;
   } else {
     nationality = nationality[0].nationality_en;
-    ethnicity = ethnicity[0].ethnicity;
     native_language = native_language[0].native_language_en;
   }
 
@@ -794,56 +793,70 @@ async function populateOptions(api) {
   return options
 }
 
-async function populateNationality(id) {
+function populateNationality(id) {
   let lang = getSessionLang('lang');
-  let options = await populateOptions('https://api.hskk.info/webapi/nationality/');
+  let options = JSON.parse(getLocal('nationality_options'));
+
   if (options) {
     for (let i = 0; i <= options.length; i++) {
       let option = document.createElement('option');
-      option.value = options[i].nationality;
+      option.value = options[i]?.nationality;
       if (lang == 'zh') {
-        option.text = options[i].nationality;
+        option.text = options[i]?.nationality;
       } else {
-        option.text = options[i].nationality_en;
+        option.text = options[i]?.nationality_en;
       }
-      option.data = options[i].id
       $(id)[0].appendChild(option)
     }
+    $(id)[0].remove($(id)[0].length-1);
   }
 }
 
-async function populateEthnicity(id) {
+function populateEthnicity(id) {
   let lang = getSessionLang('lang');
-  let options = await populateOptions('https://api.hskk.info/webapi/ethnicity/');
+  let options = JSON.parse(getLocal('ethnicity_options'));
+
   if (options) {
     for (let i = 0; i <= options.length; i++) {
       let option = document.createElement('option');
-      option.value = options[i].ethnicity;
+      option.value = options[i]?.ethnicity;
       if (lang == 'zh') {
-        option.text = options[i].ethnicity;
+        option.text = options[i]?.ethnicity;
       } else {
-        option.text = options[i].ethnicity_en;
+        option.text = options[i]?.ethnicity_en;
       }
       $(id)[0].appendChild(option)
     }
+    $(id)[0].remove($(id)[0].length-1);
   }
 }
 
-async function populateNativeLang(id) {
+function populateNativeLang(id) {
   let lang = getSessionLang('lang');
-  let options = await populateOptions('https://api.hskk.info/webapi/native_language/');
+  let options = JSON.parse(getLocal('native_language_options'));
   if (options) {
     for (let i = 0; i <= options.length; i++) {
       let option = document.createElement('option');
-      option.value = options[i].native_language;
+      option.value = options[i]?.native_language;
       if (lang == 'zh') {
-        option.text = options[i].native_language;
+        option.text = options[i]?.native_language;
       } else {
-        option.text = options[i].native_language_en;
+        option.text = options[i]?.native_language_en;
       }
       $(id)[0].appendChild(option)
     }
+    $(id)[0].remove($(id)[0].length-1);
   }
+}
+
+async function storeOptionsToLocal() {
+  let nationality_options = await populateOptions('https://api.hskk.info/webapi/nationality/');
+  let ethnicity_options = await populateOptions('https://api.hskk.info/webapi/ethnicity/');
+  let native_language_options = await populateOptions('https://api.hskk.info/webapi/native_language/');
+
+  if (getLocal('nationality_options') == null ) localStorage.setItem('nationality_options', JSON.stringify(nationality_options));
+  if (getLocal('ethnicity_options') == null ) localStorage.setItem('ethnicity_options', JSON.stringify(ethnicity_options));
+  if (getLocal('native_language_options') == null ) localStorage.setItem('native_language_options', JSON.stringify(native_language_options));
 }
 
 function displayEthnicity() {
