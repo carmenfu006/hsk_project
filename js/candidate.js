@@ -109,6 +109,7 @@ function dashboardPage() {
       activeMenuBar('#record-sidebar', '#record-footbar')
       activeIndicator('.status-filter')
       scrollFootbar('record-footbar')
+      loadExamRecord()
       break;
   }
 }
@@ -212,7 +213,7 @@ $('#candidate-support-center').on('click', async() => {
         body: JSON.stringify(inputData)
     })
     let data = await response.json();
-    console.log(data)
+
     if (data.code == 201) {
       $('.toast-header').removeClass('bg-danger-color');
       $('.toast-text').html(transLang(lang, '信息已成功发送', 'Message sent successfully', 'Pesan berhasil terkirim', 'تم إرسال الرسالة بنجاح'));
@@ -263,6 +264,233 @@ function invalidInput(id) {
 
 function validInput(id) {
   $(id).removeClass('invalid');
+}
+
+function transLang(lang, zh, en, id, ar) {
+  switch(lang) {
+    case 'zh':
+      return zh
+      break;
+    case 'en':
+      return en
+      break;
+    case 'id':
+      return id
+      break;
+    case 'ar':
+      return ar
+      break;
+    default:
+      return zh
+  }
+}
+
+async function loadExamRecord() {
+  let lang = getSession('lang') ? getSession('lang') : 'zh';
+  let response = await fetch('https://api.hskk.info/webapi/test_info_history/', {
+    headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type' : 'application/json',
+      'Authorization' : `Bearer ${user}`
+    }
+  })
+  let data = await response.json();
+  let records = data.data;
+
+  if (records) {
+    records.forEach(function(record) {
+      const mobile_exam_records = $('#mobile-exam-records')[0];
+      const mobile_exam_records_template = document.createElement('template');
+      const web_exam_records = $('#web-exam-records')[0];
+      const web_exam_records_template = document.createElement('template');
+      web_exam_records_template.innerHTML = `
+        <div class='card-body border-bottom'>
+          <div class='row text-center'>
+            <div class='col'>
+              <div class='record'>${record.card_number}</div>
+            </div>
+            <div class='col'>
+              <div class='record'>${valueTestLevel(lang, record.level)}</div>
+            </div>
+            <div class='col'>
+              <div class='record'>${record.test_time}</div>
+            </div>
+            <div class='col'>
+              <div class='btn ${valueTestStatusBtn(record.test_status)}' data-toggle='modal' data-target='.modal-exam-result'>${valueTestStatus(lang, record.test_status)}</div>
+            </div>
+          </div>
+        </div>
+      `;
+      web_exam_records.appendChild(web_exam_records_template.content);
+
+      mobile_exam_records_template.innerHTML = `
+      <div class='card mb-2 shadow-sm ${valueTestStatusBtn(record.test_status)}'>
+        <div class='card-body'>
+          <div class='row no-gutters mb-2'>
+            <div class='col-sm-3'>
+              <p class='i18n-299 card-text font-weight-bold'>${transLang(lang, '准考证号', 'Admission Ticket Number', 'Nomor Kartu Ujian', 'رقم الترشيح')}</p>
+            </div>
+            <div class='col'>
+              <p class='card-text'>${record.card_number}</p>
+            </div>
+          </div>
+          <div class='row no-gutters mb-2'>
+            <div class='col-sm-3'>
+              <p class='i18n-72 card-text font-weight-bold'>${transLang(lang, '考试级别', 'Exam Level', 'Tingkat Ujian', 'مستوى الامتحان')}</p>
+            </div>
+            <div class='col'>
+              <p class='card-text'>${valueTestLevel(lang, record.level)}</p>
+            </div>
+          </div>
+          <div class='row no-gutters mb-2'>
+            <div class='col-sm-3'>
+              <p class='i18n-289 card-text font-weight-bold'>${transLang(lang, '考试时间', 'Exam Date', 'Waktu Ujian', 'وقت الاختبار')}</p>
+            </div>
+            <div class='col'>
+              <p class='card-text'>${record.test_time}</p>
+            </div>
+          </div>
+          <div class='row no-gutters mb-2'>
+            <div class='col-sm-3'>
+              <p class='i18n-300 card-text font-weight-bold pb-2'>${transLang(lang, '状态/成绩', 'Status/Score', 'Status/Skor', 'الحالة/النتيجة')}</p>
+            </div>
+            <div class='col'>
+              <div class='btn ${valueTestStatusBtn(record.test_status)}' data-toggle='modal' data-target='.modal-exam-result'>${valueTestStatus(lang, record.test_status)}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      `;
+      mobile_exam_records.appendChild(mobile_exam_records_template.content);
+    });
+  }
+}
+
+function valueTestLevel(lang, value) {
+  switch(value) {
+    case 7:
+      return transLang(lang, 'HSK口语（初级)', 'HSK Oral (Elementary)', 'HSK Lisan (Dasar)', 'HSK الشفوي (مستوى المبتدئين)')
+      break;
+    case 8:
+      return transLang(lang, 'HSK口语（中级)', 'HSK Oral (Intermediate)', 'HSK Lisan (Menengah)', 'HSK الشفوي (متوسط)')
+      break;
+    case 9:
+      return transLang(lang, 'HSK口语（高级)', 'HSK Oral (Advanced)', 'HSK Lisan (Lanjutan)', 'HSK الشفوي (متقدم)')
+      break;
+    default:
+      return transLang(lang, 'HSK口语（初级)', 'HSK Oral (Elementary)', 'HSK Lisan (Dasar)', 'HSK الشفوي (مستوى المبتدئين)')
+  }
+}
+
+function valueTestStatus(lang, value) {
+  switch(value) {
+    case 0:
+      return transLang(lang, '未付款', 'Unpaid', 'Tidak dibayar', 'غير مدفوعة الأجر')
+      break;
+    case 1:
+      return transLang(lang, '已付款待考试', 'Paid', 'Dibayar', 'مدفوع')
+      break;
+    case 2:
+      return transLang(lang, '考试准备', 'Exam preparation', 'Persiapan ujian', 'التحضير للامتحانات')
+      break;
+    case 3:
+      return transLang(lang, '考试中', 'In exam', 'Dalam ujian', 'في الامتحان')
+      break;
+    case 4:
+      return transLang(lang, '考试完毕', 'Exam is over', 'Ujian sudah selesai', 'انتهى الامتحان')
+      break;
+    case 5:
+      return transLang(lang, '上传中', 'Uploading', 'Mengunggah', 'تحميل')
+      break;
+    case 6:
+      return transLang(lang, '上传完毕', 'Upload completed', 'Pengunggahan selesai', 'اكتمل التحميل')
+      break;
+    case 20:
+      // return transLang(lang, '阅卷中', 'Marking', 'Menandai', 'العلامات')
+      return transLang(lang, '评分中', 'Rating', 'Peringkat', 'تقييم')
+      break;
+    case 21:
+      return transLang(lang, '评分完毕', 'Rating completed', 'Pemeringkatan selesai', 'اكتمل التقييم')
+      break;
+    case 22:
+      return transLang(lang, '及格', 'Pass', 'Lulus', 'يمر')
+      break;
+    case 23:
+      return transLang(lang, '不及格', 'Failed', 'Gagal', 'فشل')
+      break;
+    case 40:
+      return transLang(lang, '考试过期', 'Expired', 'Kedaluwarsa', 'منتهي الصلاحية')
+      break;
+    case 41:
+    return transLang(lang, '考试取消', 'Canceled', 'Dibatalkan', 'ألغيت')
+    break;
+    case 42:
+      return transLang(lang, '考试中断', 'Interruption', 'Gangguan', 'مقاطعة')
+      break;
+    case 43:
+      return transLang(lang, '考试终止', 'Terminated', 'Dihentikan', 'انقطاع الامتحان')
+      break;
+    case 400:
+      return transLang(lang, '查看本次成绩', 'View results', 'Lihat hasil', 'عرض النتائج')
+      break;
+    default:
+      return transLang(lang, '未付款', 'Unpaid', 'Tidak dibayar', 'غير مدفوعة الأجر')
+  }
+}
+
+function valueTestStatusBtn(value) {
+  switch(value) {
+    case 0:
+      return ''
+      break;
+    case 1:
+      return ''
+      break;
+    case 2:
+      return ''
+      break;
+    case 3:
+      return ''
+      break;
+    case 4:
+      return ''
+      break;
+    case 5:
+      return ''
+      break;
+    case 6:
+      return ''
+      break;
+    case 20:
+      return 'status-ongoing'
+      break;
+    case 21:
+      return 'status-ongoing'
+      break;
+    case 22:
+      return 'status-ongoing'
+      break;
+    case 23:
+      return 'status-ongoing'
+      break;
+    case 40:
+      return 'status-terminate'
+      break;
+    case 41:
+      return 'status-terminate'
+      break;
+    case 42:
+      return 'status-terminate'
+      break;
+    case 43:
+      return 'status-terminate'
+      break;
+    case 400:
+      return 'active'
+      break;
+    default:
+      return ''
+  }
 }
 
 function transLang(lang, zh, en, id, ar) {
