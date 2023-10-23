@@ -20,9 +20,9 @@
       <div class='d-flex flex-md-row flex-column justify-content-between mt-3'>
         <h4 class='i18n-276 font-weight-bold'>考试记录</h4>
         <div class='d-flex exam-record-status mt-2'>
-          <p class='i18n-296 btn status-filter active'>全部</p>
-          <p class='i18n-297 btn status-filter'>未完成</p>
-          <p class='i18n-298 btn status-filter'>已完成</p>
+          <p class='i18n-296 btn status-filter active' data-status='all'>全部</p>
+          <p class='i18n-297 btn status-filter' data-status='incomplete'>未完成</p>
+          <p class='i18n-298 btn status-filter' data-status='completed'>已完成</p>
         </div>
       </div>
       <div id='web-exam-records' class='card d-none d-lg-block'>
@@ -168,7 +168,7 @@
           </div>
         </div> -->
       </div>
-      <div class='modal fade modal-exam-result' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
+      <!-- <div class='modal fade modal-exam-result' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
         <div class='modal-dialog modal-sm'>
           <div class='modal-content'>
             <div class='modal-header border-0 justify-content-center'>
@@ -196,7 +196,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
     <footer id='user-footbar' class='user-footbar fixed-bottom bg-white d-block d-sm-none d-md-block d-lg-none'></footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
