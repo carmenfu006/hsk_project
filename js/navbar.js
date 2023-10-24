@@ -209,7 +209,7 @@ $('.menu-btn').on('click', function() {
 // sessionStorage.removeItem('user')
 
 let user = localStorage.getItem('user');
-let partner = sessionStorage.getItem('partner');
+let partner = localStorage.getItem('partner');
 
 if (user == null) {
   $('#apply-menu-btn').remove()
@@ -229,7 +229,9 @@ if (partner == null) {
 
 $('#user-logout, #partner-logout').on('click', function(e) {
   localStorage.removeItem('user');
-  sessionStorage.removeItem('partner');
+  localStorage.removeItem('email');
+  localStorage.removeItem('partner');
+  localStorage.removeItem('username');
   window.location.href = window.location.origin + '/index.html';
 });
 

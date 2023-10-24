@@ -1160,7 +1160,7 @@ translateWeb(
 )
 translateWeb(
   '.i18n-165',
-  '账号',
+  '密码',
   'Password',
   'Kata Sandi',
   'كلمة المرور',

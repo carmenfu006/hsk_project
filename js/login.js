@@ -27,7 +27,7 @@ $('#to-candidate-dashboard').on('click', async(e) => {
       toastLang('invalid code')
       $('.toast').toast('show');
     } else if (verifyEmailVal(inputVal('#email')) != null && verifyCodeVal(inputVal('#verify_code')) != null) {
-      let response = await fetch('https://api.hskk.info/webapi/login/', {
+      let response = await fetch('https://api.hskk.org/webapi/login/', {
         method: 'POST',
         headers: {
           'Accept': 'application/json, text/plain, */*',
@@ -52,7 +52,6 @@ $('#to-candidate-dashboard').on('click', async(e) => {
         $('.toast').toast('show');
       }
     }
-    
   }
 
   // fetch('/recaptcha', {
@@ -81,7 +80,7 @@ $('#to-candidate-dashboard').on('click', async(e) => {
   // });
 });
 
-$('#to-partner-dashboard').on('click', function(e) {
+$('#to-partner-dashboard').on('click', async(e) => {
   e.preventDefault();
   const captchaResponse = grecaptcha.getResponse()
 
@@ -89,8 +88,41 @@ $('#to-partner-dashboard').on('click', function(e) {
     toastLang('Recaptcha not checked')
     $('.toast').toast('show');
   } else {
-    sessionStorage.setItem('partner', 'true');
-    window.location.replace($(this)[0].form.action);
+
+    if (verifyEmailVal(inputVal('#username')) == null) {
+      invalidInput('#username')
+      toastLang('invalid email')
+      $('.toast').toast('show');
+    } else if (verifyInput('#password') == false) {
+      invalidInput('#password')
+      toastLang('invalid password')
+      $('.toast').toast('show');
+    } else if (verifyEmailVal(inputVal('#username')) != null && verifyInput('#password')) {
+      console.log(inputVal('#username'), inputVal('#password'))
+      let response = await fetch('https://api.hskk.org/webapi/login-partner/', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type' : 'application/json',
+          'Accept-Language': lang
+        },
+          body: JSON.stringify({
+            username: inputVal('#username'),
+            password: inputVal('#password')
+          })
+      })
+      let data = await response.json();
+      if (data.code == 200) {
+        let partner_token = data.data.access;
+        $('.toast').toast('hide');
+        localStorage.setItem('partner', partner_token);
+        localStorage.setItem('username', inputVal('#username'));
+        window.location.href = window.location.origin + '/partner/candidate-management.html'
+      } else if (data.code == 400) {
+        toastMessage(data.msg)
+        $('.toast').toast('show');
+      }
+    }
   }
 
   // fetch('/recaptcha', {
@@ -134,7 +166,7 @@ $('#verification-code-btn').on('click', async(e) => {
   }, 1000);
 
   if (verifyEmailVal(inputVal('#email')) != null) {
-    let response = await fetch('https://api.hskk.info/webapi/send_verify_code/', {
+    let response = await fetch('https://api.hskk.org/webapi/send_verify_code/', {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain, */*',
@@ -162,9 +194,11 @@ $('#verification-code-btn').on('click', async(e) => {
   }
 });
 
-$('#email, #verify_code').on('keyup', function() {
+$('#email, #verify_code, #username, #password').on('keyup', function() {
   validInput('#email');
   validInput('#verify_code');
+  validInput('#username');
+  validInput('#password');
 })
 
 function codeLang(classname) {
@@ -263,6 +297,25 @@ function toastLang(error_type) {
     }
   }
 
+  if (error_type == 'invalid password') {
+    switch(lang) {
+      case 'zh':
+        toastMessage('请输入密码。', '', '')
+        break;
+      case 'en':
+        toastMessage('Please enter your password.', '', '')
+        break;
+      case 'id':
+        toastMessage('Silakan masukkan kata sandi Anda.', '', '')
+        break;
+      case 'ar':
+        toastMessage('من فضلك أدخل رقمك السري.', '', '')
+        break;
+      default:
+        toastMessage('请输入密码。', '', '')
+    }
+  }
+
   if (error_type == 'invalid code') {
     switch(lang) {
       case 'zh':
@@ -322,6 +375,14 @@ function getSession(key) {
 
 function inputVal(id) {
   return $(id).val()
+}
+
+function verifyInput(id) {
+  if ($(id).val() === '') {
+    return false;
+  } else {
+    return true;
+  }
 }
 
 function verifyEmailVal(email) {

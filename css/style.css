@@ -17,6 +17,10 @@ a.primary-color:hover {
   color: #3FD3C3;
 }
 
+a.primary {
+  color: #3FD3C3;
+}
+
 .pointer {
   cursor: pointer;
 }

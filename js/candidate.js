@@ -203,7 +203,7 @@ $('#candidate-support-center').on('click', async() => {
   }
 
   if (verifyInput($('#device')) && verifyInput($('#description'))) {
-    let response = await fetch('https://api.hskk.info/webapi/support_center/', {
+    let response = await fetch('https://api.hskk.org/webapi/support_center/', {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain, */*',
@@ -295,7 +295,7 @@ $('.status-filter').on('click', function() {
 
 async function loadExamRecord(status) {
   let lang = getSession('lang') ? getSession('lang') : 'zh';
-  let records = await fetchAPI('https://api.hskk.info/webapi/test_info_history/')
+  let records = await fetchAPI('https://api.hskk.org/webapi/test_info_history/')
 
   if (records) {
     records.forEach(function(record) {
@@ -666,8 +666,8 @@ async function fetchAPI(api) {
 
 async function personalInfo() {
   let lang = getSession('lang') ? getSession('lang') : 'zh';
-  let records = await fetchAPI('https://api.hskk.info/webapi/homepage/')
-  let personal_records = await fetchAPI('https://api.hskk.info/webapi/register_default_info/')
+  let records = await fetchAPI('https://api.hskk.org/webapi/homepage/')
+  let personal_records = await fetchAPI('https://api.hskk.org/webapi/register_default_info/')
 
   $('#pending-test-count').html(`(${records.read_count})`);
 

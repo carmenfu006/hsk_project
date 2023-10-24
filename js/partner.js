@@ -96,7 +96,7 @@ $('#partner-form-btn').on('click', async(e) => {
       $('.toast').toast('show');
     } else {
       
-      let response = await fetch('https://api.hskk.info/webapi/partner/', {
+      let response = await fetch('https://api.hskk.org/webapi/partner/', {
           method: 'POST',
           headers: {
             'Accept': 'application/json, text/plain, */*',

@@ -390,7 +390,7 @@ $('#submit-application').on('click', async() => {
       file64_ext: 'jpg'
     }
   }
-  let response = await fetch('https://api.hskk.info/webapi/register_exam_info/', {
+  let response = await fetch('https://api.hskk.org/webapi/register_exam_info/', {
     method: 'POST',
     headers: {
       'Accept': 'application/json, text/plain, */*',
@@ -606,7 +606,7 @@ async function loadExamTime(area, level) {
   let lang = getSessionLang('lang');
   let month_options = [];
   let year_options = [];
-  let response = await fetch(`https://api.hskk.info/webapi/test_schedule?test_area=${area}&test_level=${level}`, {
+  let response = await fetch(`https://api.hskk.org/webapi/test_schedule?test_area=${area}&test_level=${level}`, {
       headers: {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type' : 'application/json'
@@ -935,9 +935,9 @@ function populateNativeLang(id) {
 }
 
 async function storeOptionsToLocal() {
-  let nationality_options = await populateOptions('https://api.hskk.info/webapi/nationality/');
-  let ethnicity_options = await populateOptions('https://api.hskk.info/webapi/ethnicity/');
-  let native_language_options = await populateOptions('https://api.hskk.info/webapi/native_language/');
+  let nationality_options = await populateOptions('https://api.hskk.org/webapi/nationality/');
+  let ethnicity_options = await populateOptions('https://api.hskk.org/webapi/ethnicity/');
+  let native_language_options = await populateOptions('https://api.hskk.org/webapi/native_language/');
 
   if (getLocal('nationality_options') == null ) localStorage.setItem('nationality_options', JSON.stringify(nationality_options));
   if (getLocal('ethnicity_options') == null ) localStorage.setItem('ethnicity_options', JSON.stringify(ethnicity_options));
@@ -957,7 +957,7 @@ function displayEthnicity() {
 }
 
 async function populateRegisterInfo() {
-  let response = await fetch('https://api.hskk.info/webapi/register_default_info/', {
+  let response = await fetch('https://api.hskk.org/webapi/register_default_info/', {
       headers: {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type' : 'application/json',
@@ -1028,7 +1028,7 @@ async function populateRegisterInfo() {
 }
 
 async function populateProfile() {
-  let response = await fetch('https://api.hskk.info/webapi/register_default_info/', {
+  let response = await fetch('https://api.hskk.org/webapi/register_default_info/', {
       headers: {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type' : 'application/json',

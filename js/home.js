@@ -55,7 +55,7 @@ $('#more-faq').on('click', function() {
 
 async function loadExamTime() {
   let lang = getSession('lang');
-  let response = await fetch('https://api.hskk.info/webapi/test_schedule/', {
+  let response = await fetch('https://api.hskk.org/webapi/test_schedule/', {
       headers: {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type' : 'application/json',
