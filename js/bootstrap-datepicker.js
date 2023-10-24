@@ -1731,6 +1731,18 @@
 	];
 	$.fn.datepicker.Constructor = Datepicker;
 	var dates = $.fn.datepicker.dates = {
+		zh: {
+			days: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+			daysShort: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+			daysMin: ["日", "一", "二", "三", "四", "五", "六"],
+			months: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+			monthsShort: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+			today: "今天",
+			monthsTitle: "选择月份",
+			clear: "清除",
+			format: "yyyy-mm-dd",
+			titleFormat: "yyyy年mm月"
+		},
 		en: {
 			days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
 			daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
@@ -1738,6 +1750,27 @@
 			months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
 			monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
 			today: "Today",
+			clear: "Clear",
+			titleFormat: "MM yyyy"
+		},
+		id: {
+			days: ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"],
+			daysShort: ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"],
+			daysMin: ["Mg", "Sn", "Sl", "Rb", "Km", "Jm", "Sb"],
+			months: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
+			monthsShort: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agt", "Sep", "Okt", "Nov", "Des"],
+			today: "Hari Ini",
+			monthsTitle: "Bulan",
+			clear: "Kosongkan",
+			titleFormat: "MM yyyy"
+		},
+		ar: {
+			days: ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت", "الأحد"],
+			daysShort: ["أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت", "أحد"],
+			daysMin: ["ح", "ن", "ث", "ع", "خ", "ج", "س", "ح"],
+			months: ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"],
+			monthsShort: ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"],
+			today: "هذا اليوم",
 			clear: "Clear",
 			titleFormat: "MM yyyy"
 		}

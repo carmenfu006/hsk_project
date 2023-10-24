@@ -55,7 +55,7 @@ function progressIndicator() {
       checkboxSelect('.hsk', true, '#hsk', '#hsk-date');
       checkboxSelect('.hskk', true, '#hskk', '#hskk-date');
       enabledNextBtn();
-      $('#birthday, #hskdate, #hskkdate').datepicker({});
+      $('#birthday, #hskdate, #hskkdate').datepicker({language: `${getSessionLang('lang')}`});
       populateEthnicity('#ethnicity')
       populateNativeLang('#native-language')
       populateNationality('#nationality')
