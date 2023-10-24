@@ -98,7 +98,6 @@ $('#to-partner-dashboard').on('click', async(e) => {
       toastLang('invalid password')
       $('.toast').toast('show');
     } else if (verifyEmailVal(inputVal('#username')) != null && verifyInput('#password')) {
-      console.log(inputVal('#username'), inputVal('#password'))
       let response = await fetch('https://api.hskk.org/webapi/login-partner/', {
         method: 'POST',
         headers: {

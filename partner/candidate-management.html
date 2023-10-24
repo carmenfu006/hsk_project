@@ -23,16 +23,15 @@
           <div class='card-body bg-white shadow-sm mt-3'>
             <h4 class='i18n-302 font-weight-bold mt-3 mb-4 text-center'>考⽣管理</h4>
             <div class='row text-center mr-1 ml-1 mb-4 level-bar'>
-              <div class='col i18n-296 level-bar-item left active'>全部</div>
-              <div class='col i18n-303 level-bar-item border-left'>初級</div>
-              <div class='col i18n-304 level-bar-item border-left'>中級</div>
-              <div class='col i18n-305 level-bar-item right border-left'>高級</div>
+              <div class='col i18n-296 level-bar-item left active' data-level='0'>全部</div>
+              <div class='col i18n-303 level-bar-item border-left' data-level='7'>初級</div>
+              <div class='col i18n-304 level-bar-item border-left' data-level='8'>中級</div>
+              <div class='col i18n-305 level-bar-item right border-left' data-level='9'>高級</div>
             </div>
             <div class='form-group'>
               <label class='i18n-289'>考试时间</label>
               <select class='form-control' id='exam-time' name='exam-time'>
                 <option class='i18n-73' value=''>请选择考试时间</option>
-                <option value='api'>api</option>
               </select>
             </div>
             <table class='table border text-center'>
@@ -43,22 +42,17 @@
                   <th scope='col' class='i18n-307'>考点密码</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
+              <tbody id='candidate-table'>
+                <!-- <tr>
                   <th scope='row'>1</th>
                   <td>陈大文</td>
                   <td><i class='fa-solid fa-eye'></i></td>
-                </tr>
-                <tr>
-                  <th scope='row'>2</th>
-                  <td>李大文</td>
-                  <td><i class='fa-solid fa-eye'></i></td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
             <div class='text-muted'>
               <span class='i18n-308'>全部共</span>
-              <span>2</span> 
+              <span id='total-candidates'>2</span> 
               <span class='i18n-309'>名考生</span>
             </div>
           </div>

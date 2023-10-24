@@ -287,7 +287,6 @@ function transLang(lang, zh, en, id, ar) {
 }
 
 $('.status-filter').on('click', function() {
-  console.log($(this).attr('data-status'))
   $('#web-exam-records').children().not(':first').remove();
   $('#mobile-exam-records').empty();
   loadExamRecord($(this).attr('data-status'))
