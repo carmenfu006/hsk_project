@@ -479,6 +479,28 @@ $('#submit-application').on('click', async() => {
       file64: getSession('file').split(',')[1],
       file64_ext: 'jpg'
     }
+  } else if (getSession('ethnicity') == '' && getSession('hsk') == 'yes' && getSession('hskk') == 'yes') {
+    sessionData = {
+      schedule_id: getSession('exam-datetime-id'),
+      name_en: getSession('firstname'),
+      name_cn: getSession('lastname'),
+      gender: getSession('gender'),
+      birthday: getSession('birthday'),
+      nationality: getSession('nationality'),
+      // ethnicity: getSession('ethnicity'),
+      native_language: getSession('native-language'),
+      certificate_type: getSession('certificate-type'),
+      certificate_number: getSession('certificate-number'),
+      phone_zone: getSession('phone-zone'),
+      phone: getSession('phone'),
+      study_year: getSession('study-year'),
+      have_hsk: getSession('hsk') == 'yes' ? true : false,
+      have_hskk: getSession('hskk') == 'yes' ? true : false,
+      have_hsk_date: getSession('hskdate'),
+      have_hskk_date: getSession('hskkdate'),
+      file64: getSession('file').split(',')[1],
+      file64_ext: 'jpg'
+    }
   } else {
     sessionData = {
       schedule_id: getSession('exam-datetime-id'),
@@ -789,6 +811,10 @@ async function loadExamTime(area, level) {
       let year_month = $(this).data('year-month');
       $('#exam-datetime-options').empty();
       if (exam_time_options) loadSelectedExamTime(year_month, exam_time_options)
+      checkboxSelect('.exam-datetime', true, '#exam-datetime', '#exam-amount', '#exam-datetime-id');
+      $('.exam-datetime').on('change', function() {
+        updateCartItem()
+      });
     }
     updateCartItem()
   })
@@ -798,6 +824,7 @@ async function loadExamTime(area, level) {
   enabledNextBtn();
 
   $('.exam-datetime').on('change', function() {
+    console.log($('#exam-datetime').val())
     updateCartItem()
   });
 
@@ -889,6 +916,7 @@ function selectedDateTimeLocationLevelLang(targetId, zh, en, id, ar) {
 }
 
 function updateCartItem() {
+  console.log($('#exam-datetime').val())
   if ($('#exam-datetime').val() != '') {
     displaySelectedDateTime($('#exam-location').val(), $('#exam-level').val(), $('#exam-datetime').val(), $('#exam-amount').val())
     $('#empty-cart').addClass('d-none');
