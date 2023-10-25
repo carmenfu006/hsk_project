@@ -797,7 +797,7 @@ async function loadExamTime(area, level) {
     $('.month-item:first').addClass('active');
       let default_year_month = $('.month-item:first').data('year-month');
       $('#exam-yearmonth').val(default_year_month);
-      if (exam_time_options) loadSelectedExamTime(default_year_month, exam_time_options)
+      if (exam_time_options) loadSelectedExamTime(default_year_month, JSON.stringify(exam_time_options))
   }
 
   $('.month-item').on('click', function() {
@@ -807,15 +807,14 @@ async function loadExamTime(area, level) {
     $('#exam-amount').val('');
     $('.exam-datetime').prop('checked', false);
     nextBtnStage1()
-    if ($(this).hasClass( "active" )) {
-      let year_month = $(this).data('year-month');
-      $('#exam-datetime-options').empty();
-      if (exam_time_options) loadSelectedExamTime(year_month, exam_time_options)
-      checkboxSelect('.exam-datetime', true, '#exam-datetime', '#exam-amount', '#exam-datetime-id');
-      $('.exam-datetime').on('change', function() {
-        updateCartItem()
-      });
-    }
+    let year_month = $(this).data('year-month');
+    $('#exam-datetime-options').empty();
+    if (exam_time_options) loadSelectedExamTime(year_month, JSON.stringify(exam_time_options))
+    checkboxSelect('.exam-datetime', true, '#exam-datetime', '#exam-amount', '#exam-datetime-id');
+    $('.exam-datetime').on('change', function() {
+      updateCartItem()
+      nextBtnStage1()
+    });
     updateCartItem()
   })
 
@@ -824,7 +823,6 @@ async function loadExamTime(area, level) {
   enabledNextBtn();
 
   $('.exam-datetime').on('change', function() {
-    console.log($('#exam-datetime').val())
     updateCartItem()
   });
 
@@ -832,7 +830,7 @@ async function loadExamTime(area, level) {
 }
 
 function loadSelectedExamTime(year_month, exam_time_options) {
-  exam_time_options.forEach(function(item, i) {
+  JSON.parse(exam_time_options).forEach(function(item, i) {
     let item_date = item.test_date_time.split(' ')[0].split('-');
     let item_year_month = item_date[0] + '-' + item_date[1];
     const exam_datetime_options = $('#exam-datetime-options')[0];
@@ -916,7 +914,6 @@ function selectedDateTimeLocationLevelLang(targetId, zh, en, id, ar) {
 }
 
 function updateCartItem() {
-  console.log($('#exam-datetime').val())
   if ($('#exam-datetime').val() != '') {
     displaySelectedDateTime($('#exam-location').val(), $('#exam-level').val(), $('#exam-datetime').val(), $('#exam-amount').val())
     $('#empty-cart').addClass('d-none');
