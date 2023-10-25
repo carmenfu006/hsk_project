@@ -4,6 +4,22 @@ $('#partner-contact-us').on('click', function() {
   $('#partner-contact-us-form')[0].scrollIntoView({ behavior: 'smooth' });
 });
 
+$('.collapse')
+.on('show.bs.collapse', function () {
+  $(this)
+    .prev('.card-header')
+    .find('.fa')
+    .removeClass('fa-plus')
+    .addClass('fa-minus');
+})
+.on('hide.bs.collapse', function () {
+  $(this)
+    .prev('.card-header')
+    .find('.fa')
+    .removeClass('fa-minus')
+    .addClass('fa-plus');
+});
+
 dashboardPage()
 
 function dashboardPage() {

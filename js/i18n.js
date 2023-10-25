@@ -2227,10 +2227,10 @@ translateWeb(
 )
 translateWeb(
   '.i18n-317',
-  '如果下述常见问题的答案未能解决你的问题，请将您的问题发送至___电邮___，邮件内容需包括考生姓名，HSKK考试等级，考生序号，以及您遇到的问题，我们会尽快为您解决。',
-  'If the answers to the following frequently asked questions do not resolve your issue, please send your question to [email address], including your name, HSKK exam level, candidate number, and the issue you are facing. We will resolve it as soon as possible.',
-  'Jika jawaban untuk pertanyaan yang sering diajukan berikut tidak dapat mengatasi masalah Anda, silakan kirim pertanyaan Anda ke [alamat email], sertakan nama Anda, tingkat ujian HSKK, nomor kandidat, dan masalah yang Anda hadapi. Kami akan mengatasi masalah tersebut secepat mungkin.',
-  'إذا لم تحل إجابات الأسئلة الشائعة التالية مشكلتك، يرجى إرسال سؤالك إلى [عنوان البريد الإلكتروني]، بما في ذلك اسمك ومستوى امتحان HSKK ورقم المرشح والمشكلة التي تواجهها. سنقوم بحلها في أقرب وقت ممكن.'
+  "如果下述常见问题的答案未能解决你的问题，请将您的问题发送至<a href='mailto:support@hskk.org'>support@hskk.org</a>，邮件内容需包括考生姓名，HSKK考试等级，考生序号，以及您遇到的问题，我们会尽快为您解决。",
+  "If the answers to the following frequently asked questions do not resolve your issue, please send your question to <a href='mailto:support@hskk.org'>support@hskk.org</a>, including your name, HSKK exam level, candidate number, and the issue you are facing. We will resolve it as soon as possible.",
+  "Jika jawaban untuk pertanyaan yang sering diajukan berikut tidak dapat mengatasi masalah Anda, silakan kirim pertanyaan Anda ke <a href='mailto:support@hskk.org'>support@hskk.org</a>, sertakan nama Anda, tingkat ujian HSKK, nomor kandidat, dan masalah yang Anda hadapi. Kami akan mengatasi masalah tersebut secepat mungkin.",
+  "إذا لم تحل إجابات الأسئلة الشائعة التالية مشكلتك، يرجى إرسال سؤالك إلى <a href='mailto:support@hskk.org'>support@hskk.org</a>، بما في ذلك اسمك ومستوى امتحان HSKK ورقم المرشح والمشكلة التي تواجهها. سنقوم بحلها في أقرب وقت ممكن."
 )
 translateWeb(
   '.i18n-318',
@@ -2752,10 +2752,10 @@ translateWeb(
 )
 translateWeb(
   '.i18n-530',
-  '考生姓名、国籍、考点、头像照片与个人实际信息不符合，请发送考生编号、考生姓名、考试等级，以及需要修改的个人信息至____电邮_____。',
-  'If your candidate name, nationality, test center, or profile photo does not match your actual information, please send your candidate number, candidate name, test level, and the personal information that needs to be corrected to the following email: email.',
-  'Nama calon, kewarganegaraan, lokasi ujian, dan foto profil tidak sesuai dengan informasi pribadi Anda. Silakan kirimkan nomor peserta, nama peserta, tingkat ujian, serta informasi pribadi yang perlu diperbarui ke alamat email ____.',
-  'إذا لم يتطابق اسم ا لم رشح، والجنسية، ومركز ا لاختبار، أو الصورة الشخصية مع معلوماتك الفعلية، يرجى إرسال رقم ا لم رشح الخاص بك، واسم ا لم رشح، ومستوى ا لاختبار، وا لمعلومات الشخصية التي تحتاج إلى تصحيحها إلى البريد ا لإلكتروني التالي: .]البريد ا لإلكتروني['
+  "考生姓名、国籍、考点、头像照片与个人实际信息不符合，请发送考生编号、考生姓名、考试等级，以及需要修改的个人信息至<a href='mailto:support@hskk.org'>support@hskk.org</a>。",
+  "If your candidate name, nationality, test center, or profile photo does not match your actual information, please send your candidate number, candidate name, test level, and the personal information that needs to be corrected to the following email: <a href='mailto:support@hskk.org'>support@hskk.org</a>.",
+  "Nama calon, kewarganegaraan, lokasi ujian, dan foto profil tidak sesuai dengan informasi pribadi Anda. Silakan kirimkan nomor peserta, nama peserta, tingkat ujian, serta informasi pribadi yang perlu diperbarui ke alamat <a href='mailto:support@hskk.org'>support@hskk.org</a>.",
+  "إذا لم يتطابق اسم ا لم رشح، والجنسية، ومركز ا لاختبار، أو الصورة الشخصية مع معلوماتك الفعلية، يرجى إرسال رقم ا لم رشح الخاص بك، واسم ا لم رشح، ومستوى ا لاختبار، وا لمعلومات الشخصية التي تحتاج إلى تصحيحها إلى البريد ا لإلكتروني التالي: <a href='mailto:support@hskk.org'>support@hskk.org</a>."
 )
 translateWeb(
   '.i18n-531',
@@ -2780,10 +2780,10 @@ translateWeb(
 )
 translateWeb(
   '.i18n-531-3',
-  '你可以发送电邮至___电邮____查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。',
-  'You can inquire by sending an email to email, including your candidate name, test level, candidate number, and the issue you need assistance with.',
-  'Anda dapat mengirim email ke alamat ____ untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.',
-  'يمكنك ا لاستفسار عن طريق إرسال بريد إلكتروني إلى ]البريد ا لإلكتروني[، بما في ذلك اسم ا لم رشح، ومستوى ا لاختبار، .ورقم ا لم رشح، وا لمشكلة التي تحتاج إلى مساعدة في حلها'
+  "你可以发送电邮至<a href='mailto:support@hskk.org'>support@hskk.org</a>查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。",
+  "You can inquire by sending an email to <a href='mailto:support@hskk.org'>support@hskk.org</a>, including your candidate name, test level, candidate number, and the issue you need assistance with.",
+  "Anda dapat mengirim email ke alamat <a href='mailto:support@hskk.org'>support@hskk.org</a> untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.",
+  "يمكنك إجراء استفسارات عن طريق إرسال بريد إلكتروني إلى <a href='mailto:support@hskk.org'>support@hskk.org</a>، يتضمن اسم المرشح ومستوى الامتحان ورقم المرشح والأسئلة التي تحتاجها مساعدة في."
 )
 translateWeb(
   '.i18n-532',
@@ -2864,10 +2864,10 @@ translateWeb(
 )
 translateWeb(
   '.i18n-532-11',
-  '你也可以发送电邮至___电邮____查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。',
-  'You can also inquire by sending an email to email, including your candidate name, test level, candidate number, and the issue you need assistance with.',
-  'Anda juga dapat mengirim email ke alamat ____ untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.',
-  'يمكنك أي ًضا ا لاستفسار عن طريق إرسال بريد إلكتروني إلى ]البريد ا لإلكتروني[، بما في ذلك اسم ا لم رشح، ومستوى .ا لاختبار، ورقم ا لم رشح، وا لمشكلة التي تحتاج إلى مساعدة في حلها'
+  "你也可以发送电邮至<a href='mailto:support@hskk.org'>support@hskk.org</a>查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。",
+  "You can also inquire by sending an email to <a href='mailto:support@hskk.org'>support@hskk.org</a>, including your candidate name, test level, candidate number, and the issue you need assistance with.",
+  "Anda juga dapat mengirim email ke alamat <a href='mailto:support@hskk.org'>support@hskk.org</a> untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.",
+  "يمكنك أيضًا إجراء استفسارات عن طريق إرسال بريد إلكتروني إلى <a href='mailto:support@hskk.org'>support@hskk.org</a>، يتضمن اسم المرشح ومستوى الامتحان ورقم المرشح والسؤال الذي تحتاجه مساعدة في."
 )
 translateWeb(
   '.i18n-533',
@@ -2899,10 +2899,10 @@ translateWeb(
 )
 translateWeb(
   '.i18n-533-4',
-  '你也可以发送电邮至___电邮____查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。',
-  'You can inquire by sending an email to email, including your candidate name, test level, candidate number, and the issue you need assistance with.',
-  'Anda juga dapat mengirim email ke alamat ____ untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.',
-  'يمكنك ا لاستفسار عبر إرسال بريد إلكتروني إلى البريد ا لإلكتروني، بما في ذلك اسم ا لم رشح الخاص بك، ومستوى .ا لاختبار، ورقم ا لم رشح، وا لمشكلة التي تحتاج إلى مساعدة في حلها'
+  "你也可以发送电邮至<a href='mailto:support@hskk.org'>support@hskk.org</a>查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。",
+  "You can inquire by sending an email to <a href='mailto:support@hskk.org'>support@hskk.org</a>, including your candidate name, test level, candidate number, and the issue you need assistance with.",
+  "Anda juga dapat mengirim email ke alamat <a href='mailto:support@hskk.org'>support@hskk.org</a> untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.",
+  "يمكنك الاستفسار عن طريق إرسال بريد إلكتروني إلى عنوان بريدك الإلكتروني إلى <a href='mailto:support@hskk.org'>support@hskk.org</a>، بما في ذلك اسم المرشح ومستوى الامتحان ورقم المرشح والمشكلة. أنت بحاجة إلى مساعدة في الحل."
 )
 translateWeb(
   '.i18n-534',
@@ -2927,10 +2927,10 @@ translateWeb(
 )
 translateWeb(
   '.i18n-534-3',
-  '你可以发送电邮至___电邮____查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。',
-  'You can inquire by sending an email to email, including your candidate name, test level, candidate number, and the issue you need assistance with.',
-  'Anda dapat mengirim email ke alamat ____ untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.',
-  'يمكنك ا لاستفسار عن طريق إرسال بريد إلكتروني إلى البريد ا لإلكتروني، بما في ذلك اسم ا لم رشح الخاص بك، ومستوى .ا لاختبار، ورقم ا لم رشح، وا لمشكلة التي تحتاج إلى مساعدة في حلها'
+  "你可以发送电邮至<a href='mailto:support@hskk.org'>support@hskk.org</a>查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。",
+  "You can inquire by sending an email to <a href='mailto:support@hskk.org'>support@hskk.org</a>, including your candidate name, test level, candidate number, and the issue you need assistance with.",
+  "Anda dapat mengirim email ke alamat <a href='mailto:support@hskk.org'>support@hskk.org</a> untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.",
+  "يمكنك الاستفسار عن طريق إرسال بريد إلكتروني إلى عنوان بريدك الإلكتروني إلى <a href='mailto:support@hskk.org'>support@hskk.org</a>، بما في ذلك اسم المرشح ومستوى الامتحان ورقم المرشح والمشكلة. أنت بحاجة إلى مساعدة في الحل."
 )
 translateWeb(
   '.i18n-535',
@@ -2962,10 +2962,10 @@ translateWeb(
 )
 translateWeb(
   '.i18n-535-4',
-  '你也可以发送电邮至___电邮____查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。',
-  'You can inquire by sending an email to email, including your candidate name, test level, candidate number, and the issue you need assistance with.',
-  'Anda juga dapat mengirim email ke alamat ____ untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.',
-  'يمكنك ا لاستفسار عن طريق إرسال بريد إلكتروني إلى البريد ا لإلكتروني، بما في ذلك اسم ا لم رشح الخاص بك، ومستوى .ا لاختبار، ورقم ا لم رشح، وا لمشكلة التي تحتاج إلى مساعدة في حلها'
+  "你也可以发送电邮至<a href='mailto:support@hskk.org'>support@hskk.org</a>查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。",
+  "You can inquire by sending an email to <a href='mailto:support@hskk.org'>support@hskk.org</a>, including your candidate name, test level, candidate number, and the issue you need assistance with.",
+  "Anda juga dapat mengirim email ke alamat <a href='mailto:support@hskk.org'>support@hskk.org</a> untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.",
+  "يمكنك الاستفسار عن طريق إرسال بريد إلكتروني إلى عنوان بريدك الإلكتروني إلى <a href='mailto:support@hskk.org'>support@hskk.org</a>، بما في ذلك اسم المرشح ومستوى الامتحان ورقم المرشح والمشكلة. أنت بحاجة إلى مساعدة في الحل."
 )
 translateWeb(
   '.i18n-536',
@@ -3004,10 +3004,10 @@ translateWeb(
 )
 translateWeb(
   '.i18n-536-5',
-  '你也可以发送电邮至___电邮____查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决问题。',
-  'You can inquire by sending an email to email, including your candidate name, test level, candidate number, and the issue you need assistance with.',
-  'Anda juga dapat mengirim email ke alamat ____ untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.',
-  'يمكنك ا لاستفسار عن طريق إرسال بريد إلكتروني إلى البريد ا لإلكتروني ا لمذكور، متضمنًا اسم ا لم رشح ومستوى ا لاختبار .ورقم ا لم رشح وا لمشكلة التي تحتاج إلى ا لمساعدة في حلها'
+  "你也可以发送电邮至<a href='mailto:support@hskk.org'>support@hskk.org</a>查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。",
+  "You can inquire by sending an email to <a href='mailto:support@hskk.org'>support@hskk.org</a>, including your candidate name, test level, candidate number, and the issue you need assistance with.",
+  "Anda juga dapat mengirim email ke alamat <a href='mailto:support@hskk.org'>support@hskk.org</a> untuk pertanyaan lebih lanjut, sertakan nama peserta, tingkat ujian, nomor peserta, dan masalah yang perlu diatasi.",
+  "يمكنك الاستفسار عن طريق إرسال بريد إلكتروني إلى عنوان بريدك الإلكتروني إلى <a href='mailto:support@hskk.org'>support@hskk.org</a>، بما في ذلك اسم المرشح ومستوى الامتحان ورقم المرشح والمشكلة. أنت بحاجة إلى مساعدة في الحل."
 )
 translateWeb(
   '.i18n-537',
@@ -3067,10 +3067,10 @@ translateWeb(
 )
 translateWeb(
   '.i18n-539',
-  'App内提示考试被终止，表示你的考试过程中多次出现异常或违规情况，并且没有及时按照提示进行调整。若有异议，请将你的考生编号，姓名，考生等级发送至_____电邮______进行申诉。',
-  'If the app notifies you that your exam has been terminated, it means there have been multiple instances of abnormalities or violations during your exam, and you did not make the necessary adjustments as prompted. If you have any objections, please send your candidate number, name, and test level to email for appeal.',
-  'Pemberitahuan di dalam aplikasi bahwa ujian Anda telah dihentikan menandakan bahwa selama proses ujian Anda telah mengalami beberapa masalah atau pelanggaran aturan, dan Anda tidak segera mengikuti petunjuk yang diberikan. Jika Anda merasa ini tidak benar, silakan kirim nomor peserta Anda, nama, tingkat peserta, ke alamat email _____ untuk mengajukan keluhan.',
-  'إذا قام التطبيق بإخطارك بأن امتحانك تم إنهاؤه، فهذا يعني أن هناك عدة حا لات من ا لاستثناءات أو ا لانتهاكات أثناءامتحانك، ولم تقم بإجراء التعديلات اللا زمة كما تم توجيهك. إذا كان لديك أي اعتراضات، يرجى إرسال رقم ا لم رشح الخاص بك .واسمك ومستوى ا لاختبار إلى البريد ا لإلكتروني لتقديم ا لاستئناف'
+  "App内提示考试被终止，表示你的考试过程中多次出现异常或违规情况，并且没有及时按照提示进行调整。若有异议，请将你的考生编号，姓名，考生等级发送至<a href='mailto:support@hskk.org'>support@hskk.org</a>进行申诉。",
+  "If the app notifies you that your exam has been terminated, it means there have been multiple instances of abnormalities or violations during your exam, and you did not make the necessary adjustments as prompted. If you have any objections, please send your candidate number, name, and test level to <a href='mailto:support@hskk.org'>support@hskk.org</a> for appeal.",
+  "Pemberitahuan di dalam aplikasi bahwa ujian Anda telah dihentikan menandakan bahwa selama proses ujian Anda telah mengalami beberapa masalah atau pelanggaran aturan, dan Anda tidak segera mengikuti petunjuk yang diberikan. Jika Anda merasa ini tidak benar, silakan kirim nomor peserta Anda, nama, tingkat peserta, ke alamat email <a href='mailto:support@hskk.org'>support@hskk.org</a> untuk mengajukan keluhan.",
+  "إذا أبلغك التطبيق بأنه قد تم إنهاء امتحانك، فهذا يعني أنه كانت هناك حالات شاذة أو مخالفات متعددة أثناء امتحانك ولم تقم بإجراء التعديلات اللازمة حسب التوجيهات. إذا كان لديك أي اعتراضات، فيرجى إرسال اختبارك إلى الرجاء الإرسال رقم طلبك واسمك ومستوى الامتحان عبر البريد الإلكتروني إلى <a href='mailto:support@hskk.org'>support@hskk.org</a> صندوق بريد الاستئناف."
 )
 translateWeb(
   '.i18n-540',

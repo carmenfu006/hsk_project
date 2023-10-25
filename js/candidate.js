@@ -3,6 +3,22 @@
 instructionProgressIndicator()
 dashboardPage()
 
+$('.collapse')
+.on('show.bs.collapse', function () {
+  $(this)
+    .prev('.card-header')
+    .find('.fa')
+    .removeClass('fa-plus')
+    .addClass('fa-minus');
+})
+.on('hide.bs.collapse', function () {
+  $(this)
+    .prev('.card-header')
+    .find('.fa')
+    .removeClass('fa-minus')
+    .addClass('fa-plus');
+});
+
 function instructionProgressIndicator() {
   const progressbar = document.getElementById('instruction-progressbar');
   const progressbar_template = document.createElement('template');
