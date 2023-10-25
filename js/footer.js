@@ -54,7 +54,7 @@ footer_template.innerHTML = `
     <div class='row border-bottom pt-5'></div>
     <div class='row pt-5 flex-lg-row flex-column-reverse'>
       <div class='col-lg-6 col-md-12 col-sm-12 order-lg-0 order-md-0 order-sm-0 fw400 fs12'>
-        Copyright © 2023 HSKk Speaking Test Mobile Exam Center. All rights reserved.
+        Copyright © 2023 HSK Speaking Test Mobile Exam Center. All rights reserved.
       </div>
       <div class='col-lg-6 col-md-12 col-sm-12 order-lg-1 order-md-1 order-sm-1'>
         <div class='d-flex justify-content-lg-end mb-4'>
@@ -114,7 +114,7 @@ user_footer_template.innerHTML = `
     <div class='row border-bottom pt-5'></div>
     <div class='row pt-5 flex-lg-row flex-column-reverse'>
       <div class='col-lg-6 col-md-12 col-sm-12 order-lg-0 order-md-0 order-sm-0 fw400 fs12'>
-        Copyright © 2023 HSKk Speaking Test Mobile Exam Center. All rights reserved.
+        Copyright © 2023 HSK Speaking Test Mobile Exam Center. All rights reserved.
       </div>
       <div class='col-lg-6 col-md-12 col-sm-12 order-lg-1 order-md-1 order-sm-1'>
         <div class='d-flex justify-content-lg-end mb-4'>
