@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', async () => {
   const lang = getSession('lang') ? getSession('lang') : 'zh';
+  const payment_id = new URL(location.href).searchParams.get('payment_id');
+  const exam_amount = parseInt(getSession('exam-amount')).toFixed(2)
   // const {stripePublicKey} = await fetch('/config').then(r => r.json())
   const stripe = Stripe('pk_test_51NxVaQArZBHZvCDsV7skPBV3kedEbXpekrZs98aWWjiPSqlECB25Ppsjdwps66A3FQ3CHLGnmSAAmHbAmj7931XE00FawLsIN4', { locale : `${lang}` })
 
@@ -12,9 +14,15 @@ window.addEventListener('DOMContentLoaded', async () => {
   //   },
   //   body: JSON.stringify(data)
   // }).then(r => r.json())
+  if (payment_id == null || payment_id == '') {
+    $('#payment-section').remove();
+  } else {
+    $('#payment-link-invalid').remove();
+  }
 
-  const clientSecret = 'pi_3Ny66eArZBHZvCDs1A7jgrhZ_secret_d5uRkrCqAwPhfLkA28lV3TKQw'
-
+  const clientSecret = payment_id;
+  $('#selected-exam-level').html(displaySelectedExam(getSession('exam-level')));
+  $('.total-amount').html(exam_amount);
   const elements = stripe.elements({ clientSecret });
   const paymentElement = elements.create('payment');
   paymentElement.mount('#payment-element');
@@ -70,9 +78,9 @@ window.addEventListener('DOMContentLoaded', async () => {
     //   body: JSON.stringify(updatedData)
     // }).then(r => r.json())
 
-    const updatePaymentIntents = ({'status': 'complete'})
+    const updatePaymentIntents = ({'status': ''})
 
-    console.log(updatePaymentIntents.status)
+    // console.log(updatePaymentIntents.status)
 
     if (updatePaymentIntents.status == 'complete') {
       $('.total-amount').html((finalAmount/100).toFixed(2))
@@ -83,11 +91,16 @@ window.addEventListener('DOMContentLoaded', async () => {
     } else {
       $('#discount-error-message').removeClass('d-none')
       $('#discount-success-message').addClass('d-none')
+      applyText(lang, verify_code, '应用', 'Apply', 'Aplikasi', 'تطبيق');
     }
   })
 
   function getSession(key) {
     return sessionStorage.getItem(key);
+  }
+
+  function getLocal(key) {
+    return localStorage.getItem(key);
   }
   
   function applyText(lang, target, zh, en, id, ar) {
@@ -99,6 +112,41 @@ window.addEventListener('DOMContentLoaded', async () => {
       target.html(id);
     } else if (lang == 'ar') {
       target.html(ar);
+    }
+  }
+
+  function displaySelectedExam(exam_level) {
+    switch(exam_level) {
+      case '7':
+        return transLang(lang, 'HSK⼝语(初级)移动端考試', 'HSK Oral (Elementary) Mobile Exam', 'Ujian Mobile HSK Lisan (Dasar)', 'اختبار HSK للتحدث (الابتدائي) عبر الهاتف المحمول')
+        break;
+      case '8':
+        return transLang(lang, 'HSK⼝语(中级)移动端考試', 'HSK Oral (Intermediate) Mobile Exam', 'Ujian Mobile HSK Lisan (Menengah)', 'اختبار التحدث باللغة HSK (المتوسط) عبر الهاتف المحمول')
+        break;
+      case '9':
+        return transLang(lang, 'HSK⼝语(高级)移动端考試', 'HSK Oral (Advanced) Mobile Exam', 'Ujian Mobile HSK Lisan (Lanjutan)', 'اختبار HSK للتحدث (المتقدم) عبر الهاتف المحمول')
+        break;
+      default:
+        return transLang(lang, 'HSK⼝语(初级)移动端考試', 'HSK Oral (Elementary) Mobile Exam', 'Ujian Mobile HSK Lisan (Dasar)', 'اختبار HSK للتحدث (الابتدائي) عبر الهاتف المحمول')
+    }
+  }
+
+  function transLang(lang, zh, en, id, ar) {
+    switch(lang) {
+      case 'zh':
+        return zh
+        break;
+      case 'en':
+        return en
+        break;
+      case 'id':
+        return id
+        break;
+      case 'ar':
+        return ar
+        break;
+      default:
+        return zh
     }
   }
 })

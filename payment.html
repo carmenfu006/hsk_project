@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class='col'></div>
-        <div class='col-lg-5 col-md-5 col-md-12'>
+        <div id='payment-section' class='col-lg-5 col-md-5 col-md-12'>
           <div class='card mb-3'>
             <div class='card-header d-flex justify-content-between'>
               <div class='i18n-135'>支付项目</div>
@@ -42,10 +42,10 @@
             </div>
             <ul class='list-group list-group-flush'>
               <li class='list-group-item d-flex justify-content-between'>
-                <div>HSK⼝语(初级)移动端考试</div>
+                <div id='selected-exam-level'></div>
                 <div>
                   <span>$</span>
-                  <span class='total-amount'>260.00</span>
+                  <span class='total-amount'></span>
                   <span class='text-muted font-weight-bold'>HKD</span>
                 </div>
               </li>
@@ -68,17 +68,18 @@
             <div>
               <h5 class='font-weight-bold'>
                 <span>$</span>
-                <span class='total-amount'>260.00</span>
+                <span class='total-amount'></span>
                 <span class='text-muted'>HKD</span>
               </h5>
             </div>
           </div>
           <div class='text-center mt-4 mb-5'>
-            <button type='submit' class='btn btn-block p-2 pr-4 pl-4 active fs16'>付款</button>
+            <button type='submit' class='btn btn-block p-2 pr-4 pl-4 active fs16 i18n-346'>付款</button>
           </div>
         </div>
         <div class='col'></div>
       </div>
+      <div id='payment-link-invalid' class='i18n-347 text-center'>付款链接无效</div>
     </form>
     <div aria-live='polite' aria-atomic='true' class='d-flex justify-content-center align-items-center'>
       <div class='toast' role='alert' aria-live='assertive' aria-atomic='true' data-autohide='false'>

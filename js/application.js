@@ -72,6 +72,7 @@ function progressIndicator() {
       break;
     case 'application-submit.html':
       activeProgressBar('.step-1, .step-2, .step-3, .step-4, .step-5');
+      setPaymentIntent()
       break;
     default:
       activeProgressBar('.step-1');
@@ -346,7 +347,7 @@ $('#to-step-4').on('click', function(e) {
 
 $('#submit-application').on('click', async() => {
   let sessionData;
-  if (getSession('ethnicity') == '') {
+  if (getSession('ethnicity') == '' && getSession('hsk') == 'no' && getSession('hskk') == 'no') {
     sessionData = {
       schedule_id: getSession('exam-datetime-id'),
       name_en: getSession('firstname'),
@@ -354,6 +355,29 @@ $('#submit-application').on('click', async() => {
       gender: getSession('gender'),
       birthday: getSession('birthday'),
       nationality: getSession('nationality'),
+      // ethnicity: getSession('ethnicity'),
+      native_language: getSession('native-language'),
+      certificate_type: getSession('certificate-type'),
+      certificate_number: getSession('certificate-number'),
+      phone_zone: getSession('phone-zone'),
+      phone: getSession('phone'),
+      study_year: getSession('study-year'),
+      have_hsk: getSession('hsk') == 'yes' ? true : false,
+      have_hskk: getSession('hskk') == 'yes' ? true : false,
+      // have_hsk_date: getSession('hskdate'),
+      // have_hskk_date: getSession('hskkdate'),
+      file64: getSession('file').split(',')[1],
+      file64_ext: 'jpg'
+    }
+  } else if (getSession('ethnicity') == '' && getSession('hsk') == 'yes' && getSession('hskk') == 'no') {
+    sessionData = {
+      schedule_id: getSession('exam-datetime-id'),
+      name_en: getSession('firstname'),
+      name_cn: getSession('lastname'),
+      gender: getSession('gender'),
+      birthday: getSession('birthday'),
+      nationality: getSession('nationality'),
+      // ethnicity: getSession('ethnicity'),
       native_language: getSession('native-language'),
       certificate_type: getSession('certificate-type'),
       certificate_number: getSession('certificate-number'),
@@ -363,6 +387,94 @@ $('#submit-application').on('click', async() => {
       have_hsk: getSession('hsk') == 'yes' ? true : false,
       have_hskk: getSession('hskk') == 'yes' ? true : false,
       have_hsk_date: getSession('hskdate'),
+      // have_hskk_date: getSession('hskkdate'),
+      file64: getSession('file').split(',')[1],
+      file64_ext: 'jpg'
+    }
+  } else if (getSession('ethnicity') == '' && getSession('hsk') == 'no' && getSession('hskk') == 'yes') {
+    sessionData = {
+      schedule_id: getSession('exam-datetime-id'),
+      name_en: getSession('firstname'),
+      name_cn: getSession('lastname'),
+      gender: getSession('gender'),
+      birthday: getSession('birthday'),
+      nationality: getSession('nationality'),
+      // ethnicity: getSession('ethnicity'),
+      native_language: getSession('native-language'),
+      certificate_type: getSession('certificate-type'),
+      certificate_number: getSession('certificate-number'),
+      phone_zone: getSession('phone-zone'),
+      phone: getSession('phone'),
+      study_year: getSession('study-year'),
+      have_hsk: getSession('hsk') == 'yes' ? true : false,
+      have_hskk: getSession('hskk') == 'yes' ? true : false,
+      // have_hsk_date: getSession('hskdate'),
+      have_hskk_date: getSession('hskkdate'),
+      file64: getSession('file').split(',')[1],
+      file64_ext: 'jpg'
+    }
+  } else if (getSession('ethnicity') != '' && getSession('hsk') == 'no' && getSession('hskk') == 'no') {
+    sessionData = {
+      schedule_id: getSession('exam-datetime-id'),
+      name_en: getSession('firstname'),
+      name_cn: getSession('lastname'),
+      gender: getSession('gender'),
+      birthday: getSession('birthday'),
+      nationality: getSession('nationality'),
+      ethnicity: getSession('ethnicity'),
+      native_language: getSession('native-language'),
+      certificate_type: getSession('certificate-type'),
+      certificate_number: getSession('certificate-number'),
+      phone_zone: getSession('phone-zone'),
+      phone: getSession('phone'),
+      study_year: getSession('study-year'),
+      have_hsk: getSession('hsk') == 'yes' ? true : false,
+      have_hskk: getSession('hskk') == 'yes' ? true : false,
+      // have_hsk_date: getSession('hskdate'),
+      // have_hskk_date: getSession('hskkdate'),
+      file64: getSession('file').split(',')[1],
+      file64_ext: 'jpg'
+    }
+  } else if (getSession('ethnicity') != '' && getSession('hsk') == 'yes' && getSession('hskk') == 'no') {
+    sessionData = {
+      schedule_id: getSession('exam-datetime-id'),
+      name_en: getSession('firstname'),
+      name_cn: getSession('lastname'),
+      gender: getSession('gender'),
+      birthday: getSession('birthday'),
+      nationality: getSession('nationality'),
+      ethnicity: getSession('ethnicity'),
+      native_language: getSession('native-language'),
+      certificate_type: getSession('certificate-type'),
+      certificate_number: getSession('certificate-number'),
+      phone_zone: getSession('phone-zone'),
+      phone: getSession('phone'),
+      study_year: getSession('study-year'),
+      have_hsk: getSession('hsk') == 'yes' ? true : false,
+      have_hskk: getSession('hskk') == 'yes' ? true : false,
+      have_hsk_date: getSession('hskdate'),
+      // have_hskk_date: getSession('hskkdate'),
+      file64: getSession('file').split(',')[1],
+      file64_ext: 'jpg'
+    }
+  } else if (getSession('ethnicity') != '' && getSession('hsk') == 'no' && getSession('hskk') == 'yes') {
+    sessionData = {
+      schedule_id: getSession('exam-datetime-id'),
+      name_en: getSession('firstname'),
+      name_cn: getSession('lastname'),
+      gender: getSession('gender'),
+      birthday: getSession('birthday'),
+      nationality: getSession('nationality'),
+      ethnicity: getSession('ethnicity'),
+      native_language: getSession('native-language'),
+      certificate_type: getSession('certificate-type'),
+      certificate_number: getSession('certificate-number'),
+      phone_zone: getSession('phone-zone'),
+      phone: getSession('phone'),
+      study_year: getSession('study-year'),
+      have_hsk: getSession('hsk') == 'yes' ? true : false,
+      have_hskk: getSession('hskk') == 'yes' ? true : false,
+      // have_hsk_date: getSession('hskdate'),
       have_hskk_date: getSession('hskkdate'),
       file64: getSession('file').split(',')[1],
       file64_ext: 'jpg'
@@ -400,9 +512,12 @@ $('#submit-application').on('click', async() => {
       body: JSON.stringify(sessionData)
   })
   let data = await response.json();
+  let info = data.data
 
   if (data.code == 201) {
-    window.location.href = window.location.origin + '/application-submit.html'
+    localStorage.setItem('intend_id', info.payment_intent_id)
+    localStorage.setItem('client_secret', info.payment_client_secret)
+    window.location.href = window.location.origin + `/application-submit.html?payment=${info.payment_client_secret}`
   } else {
     $('.toast').toast('show');
   }
@@ -1040,4 +1155,11 @@ async function populateProfile() {
   let photo = info.photo_path;
 
   return photo
+}
+
+function setPaymentIntent() {
+  const payment_id = new URL(location.href).searchParams.get('payment');
+  $('#payment-link').html($('#payment-link').html() + payment_id)
+
+  $('#to-payment-btn').attr('href', $('#to-payment-btn').attr('href') + `?payment_id=${payment_id}`)
 }

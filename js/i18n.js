@@ -2429,6 +2429,20 @@ translateWeb(
   'التسجيل المسبق لم ينجح'
 )
 translateWeb(
+  '.i18n-346',
+  '付款',
+  'Payment',
+  'Pembayaran',
+  'قسط'
+)
+translateWeb(
+  '.i18n-347',
+  '付款链接无效',
+  'Invalid payment link',
+  'Tautan pembayaran tidak valid',
+  'رابط الدفع غير صالح'
+)
+translateWeb(
   '.i18n-500',
   '什么是HSK口语移动端（手机）考试中心？',
   'What is the HSK(Speaking) Mobile Exam Center?',
