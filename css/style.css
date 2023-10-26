@@ -21,6 +21,10 @@ a.primary {
   color: #3FD3C3;
 }
 
+a.underline {
+  text-decoration: underline;
+}
+
 .overflow-break {
   overflow-wrap: break-word !important;
 }

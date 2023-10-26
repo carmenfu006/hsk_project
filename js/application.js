@@ -1110,7 +1110,8 @@ async function populateProfile() {
 
 function setPaymentIntent() {
   const payment_id = new URL(location.href).searchParams.get('payment');
-  $('#payment-link').html($('#payment-link').html() + payment_id)
-
+  const payment_link = window.location.origin + '/payment.html?payment_id=' + payment_id
+  $('#payment-link').html(payment_link);
+  $('#payment-link').attr('href', payment_link);
   $('#to-payment-btn').attr('href', $('#to-payment-btn').attr('href') + `?payment_id=${payment_id}`)
 }

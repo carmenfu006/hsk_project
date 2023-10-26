@@ -3202,6 +3202,7 @@ $('.i18n').on('click', function() {
 function translateWeb(classname, zh, en, id, ar, input) {
   let url = new URL(window.location.href);
   let lang = getLocalLang('lang');
+  updateTitle(lang)
   updatePDFLink(lang)
   // updateLogo(lang)
   
@@ -3251,6 +3252,14 @@ function updateLogo(lang) {
   } else {
     $('#navbar-logo').attr('src', 'images/logo_lang.png');
     $('#navbar-user-logo').attr('src', '../images/logo_lang.png');
+  }
+}
+
+function updateTitle(lang) {
+  if (lang == 'zh') {
+    document.title = 'HSK口语移动端考试中心'
+  } else {
+    document.title = 'HSK Speaking Test Mobile Exam Center'
   }
 }
 
