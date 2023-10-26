@@ -384,6 +384,9 @@ $('#to-step-4').on('click', function(e) {
 });
 
 $('#submit-application').on('click', async() => {
+  let photo_url = await populateProfile();
+  let image_file = getSession('file') ? getSession('file').split(',')[1] : photo_url
+
   let sessionData = {
       schedule_id: getSession('exam-datetime-id'),
       name_en: getSession('firstname'),
@@ -402,7 +405,7 @@ $('#submit-application').on('click', async() => {
       have_hskk: getSession('hskk') == 'yes' ? true : false,
       // have_hsk_date: getSession('hskdate'),
       // have_hskk_date: getSession('hskkdate'),
-      file64: getSession('file').split(',')[1],
+      file64: image_file,
       file64_ext: 'jpg'
   }
   if (getSession('ethnicity') == '' && getSession('hsk') == 'yes' && getSession('hskk') == 'no') {
@@ -420,11 +423,12 @@ $('#submit-application').on('click', async() => {
   } else if (getSession('ethnicity') == '' && getSession('hsk') == 'yes' && getSession('hskk') == 'yes') {
     sessionData['have_hsk_date'] = getSession('hskdate')
     sessionData['have_hskk_date'] = getSession('hskkdate')
-  } else {
+  } else if (getSession('ethnicity') != '' && getSession('hsk') == 'yes' && getSession('hskk') == 'yes') {
     sessionData['ethnicity'] = getSession('ethnicity')
     sessionData['have_hsk_date'] = getSession('hskdate')
     sessionData['have_hskk_date'] = getSession('hskkdate')
   }
+
   let response = await fetch('https://api.hskk.org/webapi/register_exam_info/', {
     method: 'POST',
     headers: {
