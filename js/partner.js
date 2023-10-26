@@ -239,7 +239,8 @@ async function populateCandidates(level, test_time) {
           <tr>
             <th scope='row'>${index+1}</th>
             <td>${ lang == 'zh' ? candidate.name_cn : candidate.name_en }</td>
-            <td><i class='fa-solid fa-eye'></i></td>
+            <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
+            <td class='card-password-${index} d-none'>${candidate.card_password}</td>
           </tr>
         `;
       } else if (candidate.level == level && test_time == '') {
@@ -247,7 +248,8 @@ async function populateCandidates(level, test_time) {
           <tr>
             <th scope='row'>${index+1}</th>
             <td>${ lang == 'zh' ? candidate.name_cn : candidate.name_en }</td>
-            <td><i class='fa-solid fa-eye'></i></td>
+            <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
+            <td class='card-password-${index} d-none'>${candidate.card_password}</td>
           </tr>
         `;
       } else if (level == 0 && candidate.test_time == test_time) {
@@ -255,7 +257,8 @@ async function populateCandidates(level, test_time) {
           <tr>
             <th scope='row'>${index+1}</th>
             <td>${ lang == 'zh' ? candidate.name_cn : candidate.name_en }</td>
-            <td><i class='fa-solid fa-eye'></i></td>
+            <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
+            <td class='card-password-${index} d-none'>${candidate.card_password}</td>
           </tr>
         `;
       } else if (level == 0 && test_time == '') {
@@ -263,7 +266,8 @@ async function populateCandidates(level, test_time) {
           <tr>
             <th scope='row'>${index+1}</th>
             <td>${ lang == 'zh' ? candidate.name_cn : candidate.name_en }</td>
-            <td><i class='fa-solid fa-eye'></i></td>
+            <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
+            <td class='card-password-${index} d-none'>${candidate.card_password}</td>
           </tr>
         `;
       } else if (level == undefined && candidate.test_time == test_time) {
@@ -271,7 +275,8 @@ async function populateCandidates(level, test_time) {
           <tr>
             <th scope='row'>${index+1}</th>
             <td>${ lang == 'zh' ? candidate.name_cn : candidate.name_en }</td>
-            <td><i class='fa-solid fa-eye'></i></td>
+            <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
+            <td class='card-password-${index} d-none'>${candidate.card_password}</td>
           </tr>
         `;
       } else if (level == undefined && test_time == '') {
@@ -279,7 +284,8 @@ async function populateCandidates(level, test_time) {
           <tr>
             <th scope='row'>${index+1}</th>
             <td>${ lang == 'zh' ? candidate.name_cn : candidate.name_en }</td>
-            <td><i class='fa-solid fa-eye'></i></td>
+            <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
+            <td class='card-password-${index} d-none'>${candidate.card_password}</td>
           </tr>
         `;
       } else if (level == undefined) {
@@ -287,7 +293,8 @@ async function populateCandidates(level, test_time) {
           <tr>
             <th scope='row'>${index+1}</th>
             <td>${ lang == 'zh' ? candidate.name_cn : candidate.name_en }</td>
-            <td><i class='fa-solid fa-eye'></i></td>
+            <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
+            <td class='card-password-${index} d-none'>${candidate.card_password}</td>
           </tr>
         `;
       }
@@ -295,4 +302,10 @@ async function populateCandidates(level, test_time) {
     });
   }
   $('#total-candidates').html($('#candidate-table').children().length);
+
+  $('.fa-eye').on('click', function() {
+    let card_id = $(this).data('id');
+    $(`.card-password-${card_id}`).removeClass('d-none');
+    $(`.column-${card_id}`).addClass('d-none');
+  })
 }

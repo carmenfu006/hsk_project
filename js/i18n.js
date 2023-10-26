@@ -556,10 +556,17 @@ translateWeb(
 )
 translateWeb(
   '.i18n-80',
-  '(考生须知)',
-  'Guidelines for HSK Test Takers',
-  'Pedoman Peserta Ujian Bahasa Tionghoa',
-  'إشعار مرشح امتحان اللغة الصينية'
+  '考生须知(居家)',
+  'Guidelines for HSK Test Takers (At Home)',
+  'Pedoman Peserta Ujian Bahasa Tionghoa (Di Rumah)',
+  'إرشادات للمتقدمين لاختبار HSK (في المنزل)'
+)
+translateWeb(
+  '.i18n-80-1',
+  '考生须知(考点)',
+  'Guidelines for HSK Test Takers (Onsite)',
+  'Pedoman Peserta Ujian Bahasa Tionghoa (Lokasi)',
+  'إرشادات للمتقدمين لاختبار HSK (في الموقع)'
 )
 translateWeb(
   '.i18n-81',
@@ -3199,12 +3206,12 @@ $('.i18n').on('click', function() {
   location.reload();
 });
 
+updatePDFLink()
+updateTitle()
+
 function translateWeb(classname, zh, en, id, ar, input) {
   let url = new URL(window.location.href);
   let lang = getLocalLang('lang');
-  updateTitle(lang)
-  updatePDFLink(lang)
-  // updateLogo(lang)
   
   switch(lang) {
     case 'zh':
@@ -3238,11 +3245,18 @@ function translate(classname, lang, input) {
   }
 }
 
-function updatePDFLink(lang) {
-  let terms_pdf = $('#terms-pdf');
+function updatePDFLink() {
+  let lang = getLocalLang('lang');
+  let terms_home_pdf = $('#terms-home-pdf');
+  let terms_onsite_pdf = $('#terms-onsite-pdf');
   let privacy_pdf = $('#privacy-pdf');
-  terms_pdf.attr('href', `terms/tnc_${lang}.pdf`);
-  privacy_pdf.attr('href', `privacy/privacy_${lang}.pdf`);
+  // terms_pdf.attr('href', `terms/tnc_${lang}.pdf`);
+  // privacy_pdf.attr('href', `privacy/privacy_${lang}.pdf`);
+  if (lang != 'zh') {
+    terms_home_pdf.attr('href', terms_home_pdf.attr('href') + `?lang=${lang}`)
+    terms_onsite_pdf.attr('href', terms_onsite_pdf.attr('href') + `?lang=${lang}`)
+    privacy_pdf.attr('href', privacy_pdf.attr('href') + `?lang=${lang}`)
+  }
 }
 
 function updateLogo(lang) {
@@ -3255,7 +3269,8 @@ function updateLogo(lang) {
   }
 }
 
-function updateTitle(lang) {
+function updateTitle() {
+  let lang = getLocalLang('lang');
   if (lang == 'zh') {
     document.title = 'HSK口语移动端考试中心'
   } else {

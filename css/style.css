@@ -33,6 +33,10 @@ a.underline {
   cursor: pointer;
 }
 
+.fa-solid.fa-eye {
+  cursor: pointer;
+}
+
 .nav-link {
   color: #002F5D !important;
 }
@@ -434,14 +438,19 @@ div.record {
 }
 
 /* Partner Candidate Management */
-.level-bar {
+.level-bar-width {
   border: 1px solid #3FD3C3;
   border-radius: 16px;
   background-color: #D9F6F3;
+  min-width: 620px;
 }
 
 .border-left {
   border-color: #3FD3C3 !important;
+}
+
+.level-bar {
+  overflow-x: scroll;
 }
 
 .level-bar-item {
@@ -615,11 +624,19 @@ div.record {
   .instruction-content.no-scroll {
     height: 600px;
   }
+
+  .candidate-info {
+    font-size: 10px;
+  }
 }
 
 @media screen and (min-width: 375px) {
   .home-bg-image-2 {
     min-height: 560px;
+  }
+
+  .candidate-info {
+    font-size: 12px;
   }
 }
 
@@ -670,6 +687,10 @@ div.record {
 
   .instruction-content.no-scroll {
     height: 500px;
+  }
+
+  .candidate-info {
+    font-size: 14px;
   }
 }
 
