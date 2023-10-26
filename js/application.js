@@ -1081,7 +1081,7 @@ function populateEthnicity(id) {
       if (lang == 'zh') {
         option.text = options[i]?.ethnicity;
       } else {
-        option.text = options[i]?.ethnicity_en;
+        option.text = options[i]?.ethnicity;
       }
       $(id)[0].appendChild(option)
     }
