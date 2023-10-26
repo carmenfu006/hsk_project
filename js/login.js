@@ -44,6 +44,7 @@ $('#to-candidate-dashboard').on('click', async(e) => {
       if (data.code == 200) {
         let user_token = data.data.access;
         $('.toast').toast('hide');
+        localStorage.removeItem('partner');
         localStorage.setItem('user', user_token);
         localStorage.setItem('email', inputVal('#email'));
         application == 'true' ? window.location.href = window.location.origin + '/application.html' : window.location.replace($('#to-candidate-dashboard')[0].form.action);
@@ -114,6 +115,7 @@ $('#to-partner-dashboard').on('click', async(e) => {
       if (data.code == 200) {
         let partner_token = data.data.access;
         $('.toast').toast('hide');
+        localStorage.removeItem('user');
         localStorage.setItem('partner', partner_token);
         localStorage.setItem('username', inputVal('#username'));
         window.location.href = window.location.origin + '/partner/candidate-management.html'
