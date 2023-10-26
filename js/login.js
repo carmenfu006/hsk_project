@@ -1,3 +1,5 @@
+if (user || partner) window.location.href = window.location.origin + '/application.html'
+
 let lang = getLocalLang('lang');
 
 addRecaptchaToHead()
