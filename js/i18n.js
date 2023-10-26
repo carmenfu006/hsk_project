@@ -3201,7 +3201,7 @@ $('.i18n').on('click', function() {
 
 function translateWeb(classname, zh, en, id, ar, input) {
   let url = new URL(window.location.href);
-  let lang = localStorage.getItem("lang");
+  let lang = getLocalLang('lang');
   updatePDFLink(lang)
   // updateLogo(lang)
   
@@ -3252,6 +3252,10 @@ function updateLogo(lang) {
     $('#navbar-logo').attr('src', 'images/logo_lang.png');
     $('#navbar-user-logo').attr('src', '../images/logo_lang.png');
   }
+}
+
+function getLocalLang(key) {
+  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
 }
 
 // let lang = sessionStorage.getItem("lang");
