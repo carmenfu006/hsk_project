@@ -1,3 +1,9 @@
+
+if (user || partner) {
+  $('#candidate-login-mobile-btn').hide();
+  $('#partner-login-mobile-btn').hide();
+}
+
 setActiveMenu()
 loadExamTime()
 
@@ -22,7 +28,7 @@ $(window).scroll(function() {
   var top_of_screen = $(window).scrollTop();
 
   $('.menu-btn').removeClass('active');
-  
+
   if ((bottom_of_screen > top_of_exam_datetime) && (top_of_screen < bottom_of_exam_datetime)) {
     $("#apply-modal-btn").addClass('active');
   } else if ((bottom_of_screen > top_of_home_news) && (top_of_screen < bottom_of_home_news)){
