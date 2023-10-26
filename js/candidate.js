@@ -144,6 +144,10 @@ function getSession(key) {
   return sessionStorage.getItem(key);
 }
 
+function getLocalLang(key) {
+  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
+}
+
 function activeIndicator(classname) {
   $(classname).on('click', function(event) {
     $(classname).removeClass('active');
@@ -203,7 +207,7 @@ function checkFile(fileTag) {
 }
 
 $('#candidate-support-center').on('click', async() => {
-  let lang = getSession('lang') ? getSession('lang') : 'zh';
+  let lang = getLocalLang('lang') ? getLocalLang('lang') : 'zh';
   let inputData;
   if (getSession('support-center-file')) {
     inputData = {
@@ -309,7 +313,7 @@ $('.status-filter').on('click', function() {
 })
 
 async function loadExamRecord(status) {
-  let lang = getSession('lang') ? getSession('lang') : 'zh';
+  let lang = getLocalLang('lang') ? getLocalLang('lang') : 'zh';
   let records = await fetchAPI('https://api.hskk.org/webapi/test_info_history/')
 
   if (records) {
@@ -680,7 +684,7 @@ async function fetchAPI(api) {
 }
 
 async function personalInfo() {
-  let lang = getSession('lang') ? getSession('lang') : 'zh';
+  let lang = getLocalLang('lang') ? getLocalLang('lang') : 'zh';
   let records = await fetchAPI('https://api.hskk.org/webapi/homepage/')
   let personal_records = await fetchAPI('https://api.hskk.org/webapi/register_default_info/')
 

@@ -1,4 +1,4 @@
-let lang = getSession('lang');
+let lang = getLocalLang('lang');
 
 addRecaptchaToHead()
 
@@ -361,15 +361,15 @@ function toastMessage(line1, line2, line3) {
 }
 
 function addRecaptchaToHead() {
-  let lang = getSession('lang');
+  let lang = getLocalLang('lang');
   const script = document.createElement("script");
   script.src = `https://www.google.com/recaptcha/api.js?hl=${lang}`;
 
   document.head.appendChild(script);
 }
 
-function getSession(key) {
-  return sessionStorage.getItem(key) ? sessionStorage.getItem(key) : 'zh';
+function getLocalLang(key) {
+  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
 }
 
 function inputVal(id) {

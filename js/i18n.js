@@ -3202,13 +3202,13 @@ translateWeb(
 
 $('.i18n').on('click', function() {
   let lang = $(this).attr('lang');
-  sessionStorage.setItem('lang', lang);
+  localStorage.setItem('lang', lang);
   location.reload();
 });
 
 function translateWeb(classname, zh, en, id, ar, input) {
   let url = new URL(window.location.href);
-  let lang = sessionStorage.getItem("lang");
+  let lang = localStorage.getItem("lang");
   updatePDFLink(lang)
   // updateLogo(lang)
   

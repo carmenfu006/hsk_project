@@ -60,8 +60,8 @@ function authoriseAccess() {
   if (partner == null) window.location.href = window.location.origin + '/partner-login.html'
 }
 
-function getSession(key) {
-  return sessionStorage.getItem(key) ? sessionStorage.getItem(key) : 'zh';
+function getLocalLang(key) {
+  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
 }
 
 function inputVal(id) {
@@ -90,7 +90,7 @@ function validInput(id) {
 
 $('#partner-form-btn').on('click', async(e) => {
   e.preventDefault();
-  let lang = getSession('lang');
+  let lang = getLocalLang('lang');
 
   if (verifyInput('#phone') == false) {
     $('#toast-header').addClass('bg-danger-color');
@@ -226,7 +226,7 @@ async function populateCandidatesExamtime(level) {
 }
 
 async function populateCandidates(level, test_time) {
-  let lang = getSession('lang');
+  let lang = getLocalLang('lang');
   let candidates = await fetchAPI('https://api.hskk.org/webapi/partner_test_info_overview/');
   
   if (candidates) {

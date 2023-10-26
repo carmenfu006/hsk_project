@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', async () => {
-  const lang = getSession('lang') ? getSession('lang') : 'zh';
+  const lang = getLocalLang('lang');
   const payment_id = new URL(location.href).searchParams.get('payment_id');
   const exam_amount = parseInt(getSession('exam-amount')).toFixed(2)
   // const {stripePublicKey} = await fetch('/config').then(r => r.json())
@@ -98,10 +98,6 @@ window.addEventListener('DOMContentLoaded', async () => {
   function getSession(key) {
     return sessionStorage.getItem(key);
   }
-
-  function getLocal(key) {
-    return localStorage.getItem(key);
-  }
   
   function applyText(lang, target, zh, en, id, ar) {
     if (lang == null || lang == 'zh') {
@@ -148,5 +144,9 @@ window.addEventListener('DOMContentLoaded', async () => {
       default:
         return zh
     }
+  }
+
+  function getLocalLang(key) {
+    return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
   }
 })

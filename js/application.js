@@ -55,7 +55,7 @@ function progressIndicator() {
       checkboxSelect('.hsk', true, '#hsk', '#hsk-date');
       checkboxSelect('.hskk', true, '#hskk', '#hskk-date');
       enabledNextBtn();
-      $('#birthday, #hskdate, #hskkdate').datepicker({language: `${getSessionLang('lang')}`});
+      $('#birthday, #hskdate, #hskkdate').datepicker({language: `${getLocalLang('lang')}`});
       populateEthnicity('#ethnicity')
       populateNativeLang('#native-language')
       populateNationality('#nationality')
@@ -548,7 +548,7 @@ $('#submit-application').on('click', async() => {
 });
 
 async function populateInfo() {
-  let lang = getSessionLang('lang');
+  let lang = getLocalLang('lang');
   let infoPhoto = await populateProfile();
   let nationality_options = JSON.parse(getLocal('nationality_options'));
   let ethnicity_options = JSON.parse(getLocal('ethnicity_options'));
@@ -742,7 +742,7 @@ function selectLoadExamTime() {
 }
 
 async function loadExamTime(area, level) {
-  let lang = getSessionLang('lang');
+  let lang = getLocalLang('lang');
   let month_options = [];
   let year_options = [];
   let response = await fetch(`https://api.hskk.org/webapi/test_schedule?test_area=${area}&test_level=${level}`, {
@@ -896,7 +896,7 @@ function displaySelectedDateTime(exam_location, exam_level, exam_datetime, exam_
 }
 
 function selectedDateTimeLocationLevelLang(targetId, zh, en, id, ar) {
-  let lang = getSessionLang('lang');
+  let lang = getLocalLang('lang');
   switch(lang) {
     case 'zh':
       $(targetId).html(zh)
@@ -931,7 +931,7 @@ function updateCartItem() {
 }
 
 function unavailableExamDateTimeOptions() {
-  let lang = getSessionLang('lang');
+  let lang = getLocalLang('lang');
   const exam_datetime_options = $('#exam-datetime-options')[0];
   let exam_date_template = document.createElement('template');
   let no_data_lang
@@ -955,8 +955,8 @@ function unavailableExamDateTimeOptions() {
     $('.list-date:last').addClass('border-0')
 }
 
-function getSessionLang(key) {
-  return sessionStorage.getItem(key) ? sessionStorage.getItem(key) : 'zh';
+function getLocalLang(key) {
+  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
 }
 
 function convertLang(lang) {
@@ -1021,7 +1021,7 @@ async function populateOptions(api) {
 }
 
 function populateNationality(id) {
-  let lang = getSessionLang('lang');
+  let lang = getLocalLang('lang');
   let options = JSON.parse(getLocal('nationality_options'));
 
   if (options) {
@@ -1040,7 +1040,7 @@ function populateNationality(id) {
 }
 
 function populateEthnicity(id) {
-  let lang = getSessionLang('lang');
+  let lang = getLocalLang('lang');
   let options = JSON.parse(getLocal('ethnicity_options'));
 
   if (options) {
@@ -1059,7 +1059,7 @@ function populateEthnicity(id) {
 }
 
 function populateNativeLang(id) {
-  let lang = getSessionLang('lang');
+  let lang = getLocalLang('lang');
   let options = JSON.parse(getLocal('native_language_options'));
   if (options) {
     for (let i = 0; i <= options.length; i++) {

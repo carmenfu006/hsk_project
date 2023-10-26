@@ -54,7 +54,7 @@ $('#more-faq').on('click', function() {
 })
 
 async function loadExamTime() {
-  let lang = getSession('lang');
+  let lang = getLocalLang('lang');
   let response = await fetch('https://api.hskk.org/webapi/test_schedule/', {
       headers: {
         'Accept': 'application/json, text/plain, */*',
@@ -111,8 +111,8 @@ async function loadExamTime() {
   });
 }
 
-function getSession(key) {
-  return sessionStorage.getItem(key) ? sessionStorage.getItem(key) : 'zh';
+function getLocalLang(key) {
+  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
 }
 
 function convertLang(lang) {
