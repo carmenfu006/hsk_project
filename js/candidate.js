@@ -324,7 +324,7 @@ async function loadExamRecord(status) {
       const web_exam_records_template = document.createElement('template');
 
       if (status == 'incomplete') {
-        if (record.test_status == 0 || record.test_status == 1 || record.test_status == 2 || record.test_status == 3 || record.test_status == 4 || record.test_status == 5 || record.test_status == 6 || record.test_status == 10 || record.test_status == 11 || record.test_status == 12 || record.test_status == 20 || record.test_status == 21 ) {
+        if (record.test_status == 0 || record.test_status == 1 || record.test_status == 2 || record.test_status == 3 || record.test_status == 5 || record.test_status == 6 || record.test_status == 10 || record.test_status == 11 || record.test_status == 12 || record.test_status == 20 || record.test_status == 21 ) {
           web_exam_records_template.innerHTML = `
             <div class='card-body border-bottom'>
               <div class='row text-center'>
@@ -384,7 +384,7 @@ async function loadExamRecord(status) {
           `;
         }
       } else if (status == 'completed') {
-        if (record.test_status == 22 || record.test_status == 23 || record.test_status == 40 || record.test_status == 41 || record.test_status == 42 || record.test_status == 43) {
+        if (record.test_status == 4 || record.test_status == 22 || record.test_status == 23 || record.test_status == 40 || record.test_status == 41 || record.test_status == 42 || record.test_status == 43) {
           web_exam_records_template.innerHTML = `
             <div class='card-body border-bottom'>
               <div class='row text-center'>
