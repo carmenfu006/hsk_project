@@ -574,7 +574,7 @@ $('#submit-application').on('click', async() => {
   let data = await response.json();
   let info = data.data
 
-  if (data.code == 201) {
+  if (data.code == 200) {
     setSession('stage4', true);
     localStorage.setItem('intend_id', info.payment_intent_id)
     localStorage.setItem('client_secret', info.payment_client_secret)
