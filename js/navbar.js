@@ -30,7 +30,8 @@ navbar_template.innerHTML = `
       </li>
       <li class='nav-item'>
         <a id='apply-menu-btn' class='nav-link menu-btn i18n-2' href='application.html'>HSK口语移动端考期</a>
-        <p id='apply-modal-btn' class='mr-2 mt-2 pointer menu-btn i18n-2' data-toggle='modal' data-target='#staticBackdrop'>HSK口语移动端考期</p>
+        <!-- <p id='apply-modal-btn' class='mr-2 mt-2 pointer menu-btn i18n-2' data-toggle='modal' data-target='#staticBackdrop'>HSK口语移动端考期</p> -->
+        <a id='apply-modal-btn' class='nav-link menu-btn i18n-2' href='index.html#exam-datetime'>HSK口语移动端考期</a>
       </li>
       <li class='nav-item'>
         <a id='partner-menu-btn' class='nav-link menu-btn i18n-3' href='partner.html'>考点与学校合作</a>

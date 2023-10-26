@@ -12,6 +12,8 @@ function setActiveMenu() {
 }
 
 $(window).scroll(function() {
+  var top_of_exam_datetime = $('#exam-datetime').offset().top;
+  var bottom_of_exam_datetime = $('#exam-datetime').offset().top + $('#exam-datetime').outerHeight();
   var top_of_home_news = $('#home-news').offset().top;
   var bottom_of_home_news = $('#home-news').offset().top + $('#home-news').outerHeight();
   var top_of_home_faqs = $('#home-faqs').offset().top;
@@ -20,8 +22,10 @@ $(window).scroll(function() {
   var top_of_screen = $(window).scrollTop();
 
   $('.menu-btn').removeClass('active');
-
-  if ((bottom_of_screen > top_of_home_news) && (top_of_screen < bottom_of_home_news)){
+  
+  if ((bottom_of_screen > top_of_exam_datetime) && (top_of_screen < bottom_of_exam_datetime)) {
+    $("#apply-modal-btn").addClass('active');
+  } else if ((bottom_of_screen > top_of_home_news) && (top_of_screen < bottom_of_home_news)){
     $("#news-menu-btn").addClass('active');
   } else if ((bottom_of_screen > top_of_home_faqs) && (top_of_screen < bottom_of_home_faqs)) {
     $("#faqs-menu-btn").addClass('active');
