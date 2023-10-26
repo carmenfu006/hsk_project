@@ -367,6 +367,12 @@ $('#to-step-3').on('click', function(e) {
     setSession('stage2', true);
     window.location.replace($(this)[0].form.action);
   } else {
+    let lang = getLocalLang('lang');
+    if ($('#phone').val().length < 7) {
+      $('.toast-text').html(transLang(lang, '请确保您的联系电话至少为 7 位数字。', 'Please make sure your contact number is at least 7 digits.', 'Pastikan nomor kontak Anda minimal 7 digit.', 'يرجى التأكد من أن رقم الاتصال الخاص بك يتكون من 7 أرقام على الأقل.'))
+    } else {
+      $('.toast-text').html(transLang(lang, '请填写所有字段。', 'Please have all the fields filled.', 'Harap isi semua kolom.', 'يرجى ملء كافة الحقول.'))
+    }
     $('.toast').toast('show');
   }
 });
