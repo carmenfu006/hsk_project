@@ -102,9 +102,11 @@ function nextBtnStage1() {
 
 function nextBtnStage2() {
   if (verifyInput('#gender') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#firstname') && verifyInput('#lastname') && verifyInput('#birthday') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#certificate-type') && verifyInput('#certificate-number') && verifyInput('#phone-zone') && verifyInput('#phone') && verifyInputLength('#phone', 7) && verifyInput('#study-year') && verifyInputByNationality('#nationality', '#ethnicity') && verifyInputByCondition('#hsk', '#hskdate') && verifyInputByCondition('#hskk', '#hskkdate')) {
-    $('#to-step-3').attr('disabled', false);
+    // $('#to-step-3').attr('disabled', true);
+    $('#input-fields').val('true');
   } else {
-    $('#to-step-3').attr('disabled', true);
+    // $('#to-step-3').attr('disabled', true);
+    $('#input-fields').val('false');
   }
 }
 
@@ -294,7 +296,7 @@ function setItemCart() {
 }
 
 $('#to-step-2').on('click', function(e) {
-  e.preventDefault;
+  e.preventDefault();
   setSession('exam-location', inputVal('#exam-location'));
   setSession('exam-level', inputVal('#exam-level'));
   setSession('exam-datetime-id', inputVal('#exam-datetime-id'));
@@ -308,7 +310,7 @@ $('#to-step-2').on('click', function(e) {
 });
 
 $('#to-step-3').on('click', function(e) {
-  e.preventDefault;
+  e.preventDefault();
   setSession('gender', inputVal('#gender'));
   setSession('hsk', inputVal('#hsk'));
   setSession('hskk', inputVal('#hskk'));
@@ -332,16 +334,16 @@ $('#to-step-3').on('click', function(e) {
     setSession('hskkdate', inputVal('#hskkdate'));
   }
   setSession('stage2', true);
-  window.location.replace($(this)[0].form.action);
-});
 
-$('#to-step-3').on('click', function(e) {
-  e.preventDefault;
-  window.location.replace($(this)[0].form.action);
+  if (inputVal('#input-fields') == 'true') {
+    window.location.replace($(this)[0].form.action);
+  } else {
+    $('.toast').toast('show');
+  }
 });
 
 $('#to-step-4').on('click', function(e) {
-  e.preventDefault;
+  e.preventDefault();
   window.location.replace($(this)[0].form.action);
 });
 
@@ -1096,6 +1098,14 @@ function displayEthnicity() {
   })
 }
 
+function checkEthnicity() {
+  if ($('#nationality').val().match('中国')) {
+    $('#ethnicity-selection').show()
+  } else {
+    $('#ethnicity-selection').hide()
+  }
+}
+
 async function populateRegisterInfo() {
   let response = await fetch('https://api.hskk.org/webapi/register_default_info/', {
       headers: {
@@ -1163,6 +1173,7 @@ async function populateRegisterInfo() {
       if (info.phone_zone) refillField('input', '#phone-zone', info.phone_zone);
       if (info.phone) refillField('input', '#phone', info.phone);
       if (info.study_year) refillField('input', '#study-year', info.study_year);
+      checkEthnicity()
     }
   }
 }

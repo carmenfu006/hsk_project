@@ -2443,6 +2443,13 @@ translateWeb(
   'رابط الدفع غير صالح'
 )
 translateWeb(
+  '.i18n-348',
+  '请填写所有字段，并确保您的联系电话至少为 7 位数字。',
+  'Please have all the fields filled and make sure your contact phone is at least 7 digits.',
+  'Harap isi semua kolom dan pastikan nomor telepon kontak Anda minimal 7 digit.',
+  'يرجى ملء جميع الحقول والتأكد من أن رقم هاتف الاتصال الخاص بك يتكون من 7 أرقام على الأقل.'
+)
+translateWeb(
   '.i18n-500',
   '什么是HSK口语移动端（手机）考试中心？',
   'What is the HSK(Speaking) Mobile Exam Center?',
