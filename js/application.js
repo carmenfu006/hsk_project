@@ -51,32 +51,61 @@ function progressIndicator() {
       if (getSession('stage1') == 'false') setSession('stage1', true);
       break;
     case 'application-candidate-info.html':
-      activeProgressBar('.step-1, .step-2');
-      checkboxSelect('.hsk', true, '#hsk', '#hsk-date');
-      checkboxSelect('.hskk', true, '#hskk', '#hskk-date');
-      enabledNextBtn();
-      $('#birthday, #hskdate, #hskkdate').datepicker({language: `${getLocalLang('lang')}`});
-      populateEthnicity('#ethnicity')
-      populateNativeLang('#native-language')
-      populateNationality('#nationality')
-      populateRegisterInfo()
-      displayEthnicity()
+      if (getSession('stage1') == 'true') {
+        activeProgressBar('.step-1, .step-2');
+        checkboxSelect('.hsk', true, '#hsk', '#hsk-date');
+        checkboxSelect('.hskk', true, '#hskk', '#hskk-date');
+        enabledNextBtn();
+        $('#birthday, #hskdate, #hskkdate').datepicker({language: `${getLocalLang('lang')}`});
+        populateEthnicity('#ethnicity')
+        populateNativeLang('#native-language')
+        populateNationality('#nationality')
+        populateRegisterInfo()
+        displayEthnicity()
+      } else {
+        window.location.href = window.location.origin + '/application.html'
+        clearSessionStage()
+      }
       break;
     case 'application-candidate-profile.html':
-      activeProgressBar('.step-1, .step-2, .step-3');
-      loadFile();
+      if (getSession('stage2') == 'true') {
+        activeProgressBar('.step-1, .step-2, .step-3');
+        loadFile();
+      } else {
+        window.location.href = window.location.origin + '/application.html'
+        clearSessionStage()
+      }
       break;
     case 'application-verify-info.html':
-      activeProgressBar('.step-1, .step-2, .step-3, .step-4');
-      populateInfo();
+      if (getSession('stage3') == 'true') {
+        activeProgressBar('.step-1, .step-2, .step-3, .step-4');
+        populateInfo();
+      } else {
+        window.location.href = window.location.origin + '/application.html'
+        clearSessionStage()
+      }
       break;
     case 'application-submit.html':
-      activeProgressBar('.step-1, .step-2, .step-3, .step-4, .step-5');
-      setPaymentIntent()
+      if (getSession('stage4') == 'true') {
+        activeProgressBar('.step-1, .step-2, .step-3, .step-4, .step-5');
+        setPaymentIntent()
+      } else {
+        window.location.href = window.location.origin + '/application.html'
+        clearSessionStage()
+      }
       break;
     default:
       activeProgressBar('.step-1');
+      clearSessionStage()
   }
+}
+
+function clearSessionStage() {
+  sessionStorage.clear();
+  // sessionStorage.removeItem('stage1')
+  // sessionStorage.removeItem('stage2')
+  // sessionStorage.removeItem('stage3')
+  // sessionStorage.removeItem('stage4')
 }
 
 function activeProgressBar(classname) {
@@ -333,9 +362,9 @@ $('#to-step-3').on('click', function(e) {
   if (inputVal('#hskk') == 'yes') {
     setSession('hskkdate', inputVal('#hskkdate'));
   }
-  setSession('stage2', true);
 
   if (inputVal('#input-fields') == 'true') {
+    setSession('stage2', true);
     window.location.replace($(this)[0].form.action);
   } else {
     $('.toast').toast('show');
@@ -344,6 +373,7 @@ $('#to-step-3').on('click', function(e) {
 
 $('#to-step-4').on('click', function(e) {
   e.preventDefault();
+  setSession('stage3', true);
   window.location.replace($(this)[0].form.action);
 });
 
@@ -539,6 +569,7 @@ $('#submit-application').on('click', async() => {
   let info = data.data
 
   if (data.code == 201) {
+    setSession('stage4', true);
     localStorage.setItem('intend_id', info.payment_intent_id)
     localStorage.setItem('client_secret', info.payment_client_secret)
     window.location.href = window.location.origin + `/application-submit.html?payment=${info.payment_client_secret}`
