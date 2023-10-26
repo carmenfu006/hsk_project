@@ -1207,7 +1207,10 @@ async function populateRegisterInfo() {
       if (info.name_cn) refillField('input', '#lastname', info.name_cn);
       if (info.gender) refillField('input', '#gender', info.gender);
       if (info.birthday) refillField('input', '#birthday', info.birthday);
-      if (info.nationality) refillField('input', '#nationality', info.nationality);
+      if (info.nationality) {
+        refillField('input', '#nationality', info.nationality);
+        checkEthnicity()
+      } 
       if (info.ethnicity) refillField('input', '#ethnicity', info.ethnicity);
       if (info.native_language) refillField('input', '#native-language', info.native_language);
       if (info.certificate_type) refillField('input', '#certificate-type', info.certificate_type);
@@ -1215,7 +1218,6 @@ async function populateRegisterInfo() {
       if (info.phone_zone) refillField('input', '#phone-zone', info.phone_zone);
       if (info.phone) refillField('input', '#phone', info.phone);
       if (info.study_year) refillField('input', '#study-year', info.study_year);
-      checkEthnicity()
     }
   }
 }
