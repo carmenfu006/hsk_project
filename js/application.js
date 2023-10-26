@@ -1077,13 +1077,18 @@ function populateNativeLang(id) {
 }
 
 async function storeOptionsToLocal() {
-  let nationality_options = await populateOptions('https://api.hskk.org/webapi/nationality/');
-  let ethnicity_options = await populateOptions('https://api.hskk.org/webapi/ethnicity/');
-  let native_language_options = await populateOptions('https://api.hskk.org/webapi/native_language/');
-
-  if (getLocal('nationality_options') == null ) localStorage.setItem('nationality_options', JSON.stringify(nationality_options));
-  if (getLocal('ethnicity_options') == null ) localStorage.setItem('ethnicity_options', JSON.stringify(ethnicity_options));
-  if (getLocal('native_language_options') == null ) localStorage.setItem('native_language_options', JSON.stringify(native_language_options));
+  if (getLocal('nationality_options') == null || getLocal('nationality_options') == '') {
+    let nationality_options = await populateOptions('https://api.hskk.org/webapi/nationality/');
+    localStorage.setItem('nationality_options', JSON.stringify(nationality_options));
+  }
+  if (getLocal('ethnicity_options') == null || getLocal('ethnicity_options') == '' ) {
+    let ethnicity_options = await populateOptions('https://api.hskk.org/webapi/ethnicity/');
+    localStorage.setItem('ethnicity_options', JSON.stringify(ethnicity_options));
+  } 
+  if (getLocal('native_language_options') == null || getLocal('native_language_options') == '' ) {
+    let native_language_options = await populateOptions('https://api.hskk.org/webapi/native_language/');
+    localStorage.setItem('native_language_options', JSON.stringify(native_language_options));
+  }
 }
 
 function displayEthnicity() {
