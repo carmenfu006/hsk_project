@@ -384,9 +384,7 @@ $('#to-step-4').on('click', function(e) {
 });
 
 $('#submit-application').on('click', async() => {
-  let sessionData;
-  if (getSession('ethnicity') == '' && getSession('hsk') == 'no' && getSession('hskk') == 'no') {
-    sessionData = {
+  let sessionData = {
       schedule_id: getSession('exam-datetime-id'),
       name_en: getSession('firstname'),
       name_cn: getSession('lastname'),
@@ -406,161 +404,26 @@ $('#submit-application').on('click', async() => {
       // have_hskk_date: getSession('hskkdate'),
       file64: getSession('file').split(',')[1],
       file64_ext: 'jpg'
-    }
-  } else if (getSession('ethnicity') == '' && getSession('hsk') == 'yes' && getSession('hskk') == 'no') {
-    sessionData = {
-      schedule_id: getSession('exam-datetime-id'),
-      name_en: getSession('firstname'),
-      name_cn: getSession('lastname'),
-      gender: getSession('gender'),
-      birthday: getSession('birthday'),
-      nationality: getSession('nationality'),
-      // ethnicity: getSession('ethnicity'),
-      native_language: getSession('native-language'),
-      certificate_type: getSession('certificate-type'),
-      certificate_number: getSession('certificate-number'),
-      phone_zone: getSession('phone-zone'),
-      phone: getSession('phone'),
-      study_year: getSession('study-year'),
-      have_hsk: getSession('hsk') == 'yes' ? true : false,
-      have_hskk: getSession('hskk') == 'yes' ? true : false,
-      have_hsk_date: getSession('hskdate'),
-      // have_hskk_date: getSession('hskkdate'),
-      file64: getSession('file').split(',')[1],
-      file64_ext: 'jpg'
-    }
+  }
+  if (getSession('ethnicity') == '' && getSession('hsk') == 'yes' && getSession('hskk') == 'no') {
+    sessionData['have_hsk_date'] = getSession('hskdate')
   } else if (getSession('ethnicity') == '' && getSession('hsk') == 'no' && getSession('hskk') == 'yes') {
-    sessionData = {
-      schedule_id: getSession('exam-datetime-id'),
-      name_en: getSession('firstname'),
-      name_cn: getSession('lastname'),
-      gender: getSession('gender'),
-      birthday: getSession('birthday'),
-      nationality: getSession('nationality'),
-      // ethnicity: getSession('ethnicity'),
-      native_language: getSession('native-language'),
-      certificate_type: getSession('certificate-type'),
-      certificate_number: getSession('certificate-number'),
-      phone_zone: getSession('phone-zone'),
-      phone: getSession('phone'),
-      study_year: getSession('study-year'),
-      have_hsk: getSession('hsk') == 'yes' ? true : false,
-      have_hskk: getSession('hskk') == 'yes' ? true : false,
-      // have_hsk_date: getSession('hskdate'),
-      have_hskk_date: getSession('hskkdate'),
-      file64: getSession('file').split(',')[1],
-      file64_ext: 'jpg'
-    }
+    sessionData['have_hskk_date'] = getSession('hskkdate')
   } else if (getSession('ethnicity') != '' && getSession('hsk') == 'no' && getSession('hskk') == 'no') {
-    sessionData = {
-      schedule_id: getSession('exam-datetime-id'),
-      name_en: getSession('firstname'),
-      name_cn: getSession('lastname'),
-      gender: getSession('gender'),
-      birthday: getSession('birthday'),
-      nationality: getSession('nationality'),
-      ethnicity: getSession('ethnicity'),
-      native_language: getSession('native-language'),
-      certificate_type: getSession('certificate-type'),
-      certificate_number: getSession('certificate-number'),
-      phone_zone: getSession('phone-zone'),
-      phone: getSession('phone'),
-      study_year: getSession('study-year'),
-      have_hsk: getSession('hsk') == 'yes' ? true : false,
-      have_hskk: getSession('hskk') == 'yes' ? true : false,
-      // have_hsk_date: getSession('hskdate'),
-      // have_hskk_date: getSession('hskkdate'),
-      file64: getSession('file').split(',')[1],
-      file64_ext: 'jpg'
-    }
+    sessionData['ethnicity'] = getSession('ethnicity')
   } else if (getSession('ethnicity') != '' && getSession('hsk') == 'yes' && getSession('hskk') == 'no') {
-    sessionData = {
-      schedule_id: getSession('exam-datetime-id'),
-      name_en: getSession('firstname'),
-      name_cn: getSession('lastname'),
-      gender: getSession('gender'),
-      birthday: getSession('birthday'),
-      nationality: getSession('nationality'),
-      ethnicity: getSession('ethnicity'),
-      native_language: getSession('native-language'),
-      certificate_type: getSession('certificate-type'),
-      certificate_number: getSession('certificate-number'),
-      phone_zone: getSession('phone-zone'),
-      phone: getSession('phone'),
-      study_year: getSession('study-year'),
-      have_hsk: getSession('hsk') == 'yes' ? true : false,
-      have_hskk: getSession('hskk') == 'yes' ? true : false,
-      have_hsk_date: getSession('hskdate'),
-      // have_hskk_date: getSession('hskkdate'),
-      file64: getSession('file').split(',')[1],
-      file64_ext: 'jpg'
-    }
+    sessionData['ethnicity'] = getSession('ethnicity')
+    sessionData['have_hsk_date'] = getSession('hskdate')
   } else if (getSession('ethnicity') != '' && getSession('hsk') == 'no' && getSession('hskk') == 'yes') {
-    sessionData = {
-      schedule_id: getSession('exam-datetime-id'),
-      name_en: getSession('firstname'),
-      name_cn: getSession('lastname'),
-      gender: getSession('gender'),
-      birthday: getSession('birthday'),
-      nationality: getSession('nationality'),
-      ethnicity: getSession('ethnicity'),
-      native_language: getSession('native-language'),
-      certificate_type: getSession('certificate-type'),
-      certificate_number: getSession('certificate-number'),
-      phone_zone: getSession('phone-zone'),
-      phone: getSession('phone'),
-      study_year: getSession('study-year'),
-      have_hsk: getSession('hsk') == 'yes' ? true : false,
-      have_hskk: getSession('hskk') == 'yes' ? true : false,
-      // have_hsk_date: getSession('hskdate'),
-      have_hskk_date: getSession('hskkdate'),
-      file64: getSession('file').split(',')[1],
-      file64_ext: 'jpg'
-    }
+    sessionData['ethnicity'] = getSession('ethnicity')
+    sessionData['have_hskk_date'] = getSession('hskkdate')
   } else if (getSession('ethnicity') == '' && getSession('hsk') == 'yes' && getSession('hskk') == 'yes') {
-    sessionData = {
-      schedule_id: getSession('exam-datetime-id'),
-      name_en: getSession('firstname'),
-      name_cn: getSession('lastname'),
-      gender: getSession('gender'),
-      birthday: getSession('birthday'),
-      nationality: getSession('nationality'),
-      // ethnicity: getSession('ethnicity'),
-      native_language: getSession('native-language'),
-      certificate_type: getSession('certificate-type'),
-      certificate_number: getSession('certificate-number'),
-      phone_zone: getSession('phone-zone'),
-      phone: getSession('phone'),
-      study_year: getSession('study-year'),
-      have_hsk: getSession('hsk') == 'yes' ? true : false,
-      have_hskk: getSession('hskk') == 'yes' ? true : false,
-      have_hsk_date: getSession('hskdate'),
-      have_hskk_date: getSession('hskkdate'),
-      file64: getSession('file').split(',')[1],
-      file64_ext: 'jpg'
-    }
+    sessionData['have_hsk_date'] = getSession('hskdate')
+    sessionData['have_hskk_date'] = getSession('hskkdate')
   } else {
-    sessionData = {
-      schedule_id: getSession('exam-datetime-id'),
-      name_en: getSession('firstname'),
-      name_cn: getSession('lastname'),
-      gender: getSession('gender'),
-      birthday: getSession('birthday'),
-      nationality: getSession('nationality'),
-      ethnicity: getSession('ethnicity'),
-      native_language: getSession('native-language'),
-      certificate_type: getSession('certificate-type'),
-      certificate_number: getSession('certificate-number'),
-      phone_zone: getSession('phone-zone'),
-      phone: getSession('phone'),
-      study_year: getSession('study-year'),
-      have_hsk: getSession('hsk') == 'yes' ? true : false,
-      have_hskk: getSession('hskk') == 'yes' ? true : false,
-      have_hsk_date: getSession('hskdate'),
-      have_hskk_date: getSession('hskkdate'),
-      file64: getSession('file').split(',')[1],
-      file64_ext: 'jpg'
-    }
+    sessionData['ethnicity'] = getSession('ethnicity')
+    sessionData['have_hsk_date'] = getSession('hskdate')
+    sessionData['have_hskk_date'] = getSession('hskkdate')
   }
   let response = await fetch('https://api.hskk.org/webapi/register_exam_info/', {
     method: 'POST',
@@ -1136,6 +999,8 @@ function displayEthnicity() {
       $('#ethnicity-selection').show()
     } else {
       $('#ethnicity-selection').hide()
+      $('#ethnicity').val('')
+      setSession('ethnicity', '')
     }
   })
 }
@@ -1145,6 +1010,8 @@ function checkEthnicity() {
     $('#ethnicity-selection').show()
   } else {
     $('#ethnicity-selection').hide()
+    $('#ethnicity').val('')
+    setSession('ethnicity', '')
   }
 }
 
