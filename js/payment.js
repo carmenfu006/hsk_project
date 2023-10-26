@@ -1,7 +1,8 @@
 window.addEventListener('DOMContentLoaded', async () => {
+  if (user == null) window.location.href = 'candidate-login.html';
   const lang = getLocalLang('lang');
   const payment_id = new URL(location.href).searchParams.get('payment_id');
-  const exam_amount = parseInt(getSession('exam-amount')).toFixed(2)
+  const paymentIntentId = payment_id.split('_secret')[0];
   // const {stripePublicKey} = await fetch('/config').then(r => r.json())
   const stripe = Stripe('pk_test_51NxVaQArZBHZvCDsV7skPBV3kedEbXpekrZs98aWWjiPSqlECB25Ppsjdwps66A3FQ3CHLGnmSAAmHbAmj7931XE00FawLsIN4', { locale : `${lang}` })
 
@@ -14,6 +15,16 @@ window.addEventListener('DOMContentLoaded', async () => {
   //   },
   //   body: JSON.stringify(data)
   // }).then(r => r.json())
+  let response = await fetch(`https://api.hskk.org/webapi/order_read_payment/${paymentIntentId}`, {
+    headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type' : 'application/json',
+      'Authorization' : `Bearer ${user}`
+    }
+  })
+  let data = await response.json();
+  let info = data.data;
+
   if (payment_id == null || payment_id == '') {
     $('#payment-section').remove();
   } else {
@@ -22,7 +33,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   const clientSecret = payment_id;
   $('#selected-exam-level').html(displaySelectedExam(getSession('exam-level')));
-  $('.total-amount').html(exam_amount);
+  $('.total-amount').html((info.payment_amount/100).toFixed(2));
   const elements = stripe.elements({ clientSecret });
   const paymentElement = elements.create('payment');
   paymentElement.mount('#payment-element');
