@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
-    <script src="js/navbar.js?v=1.1" type="text/javascript" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/1e357e8cb4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/navbar.js?v=1.2" type="text/javascript" defer></script>
     <script src="js/footer.js?v=1.1" type="text/javascript" defer></script>
-    <script src="js/login.js" type="text/javascript" defer></script>
+    <script src="js/login.js?v=1.0" type="text/javascript" defer></script>
     <script src="js/candidate.js" type="text/javascript" defer></script>
     <script src="js/i18n.js?v=1.2" type="text/javascript" defer></script>
     <script src="js/bootstrap.js?v=1.0" type="text/javascript" defer></script>
@@ -14,63 +17,130 @@
     <link href="css/style.css?v=1.1" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <nav id='navbar' class='navbar navbar-light navbar-expand-lg border-bottom bg-white'></nav>
-    <div id='login-modal'></div>
-    <section class='content container mt-5'>
-      <div class='row pt-5 pb-5'>
-        <div class='col'></div>
-        <div class='col-lg-4 col-md-8 col-sm-12'>
-          <div class='d-flex flex-column text-center'>
-            <h3 class='i18n-6 font-weight-bold'>考生登入/注册</h3>
+    <nav
+      id="navbar"
+      class="navbar navbar-light navbar-expand-lg border-bottom bg-white"
+    ></nav>
+    <div id="login-modal"></div>
+    <section class="content container mt-5">
+      <div class="row pt-5 pb-5">
+        <div class="col"></div>
+        <div class="col-lg-4 col-md-8 col-sm-12">
+          <div class="d-flex flex-column text-center">
+            <h3 class="i18n-6 font-weight-bold">考生登入/注册</h3>
           </div>
-          <form id='user-login-form' class='mt-5 mb-3' action='candidate/dashboard.html'>
-            <div class='form-group'>
+          <form
+            id="user-login-form"
+            class="mt-5 mb-3"
+            action="candidate/dashboard.html"
+          >
+            <div class="form-group">
               <label>
-                <span class='i18n-161'>邮箱</span>
-                <span class='text-danger'>*</span>
+                <span class="i18n-161">邮箱</span>
+                <span class="text-danger">*</span>
               </label>
-              <input type='email' class='form-control i18n-161' placeholder='邮箱' name='email' id='email'>
+              <input
+                type="email"
+                class="form-control i18n-161"
+                placeholder="邮箱"
+                name="email"
+                id="email"
+              />
             </div>
-            <div class='form-group'>
+            <div class="form-group">
               <label>
-                <span class='i18n-162'>验证码</span>
-                <span class='text-danger'>*</span>
+                <span class="i18n-162">验证码</span>
+                <span class="text-danger">*</span>
               </label>
-              <div id='input-code' class='input-group border rounded'>
-                <input type='text' class='form-control border-0 i18n-162' placeholder='验证码' name='verify_code' id='verify_code'>
-                <button id='verification-code-btn' type='button' class='i18n-327 btn btn-sm bg-white font-weight-light rounded'>获取验证码</button>
+              <div id="input-code" class="input-group border rounded">
+                <input
+                  type="text"
+                  class="form-control border-0 i18n-162"
+                  placeholder="验证码"
+                  name="verify_code"
+                  id="verify_code"
+                />
+                <button
+                  id="verification-code-btn"
+                  type="button"
+                  class="i18n-327 btn btn-sm bg-white font-weight-light rounded"
+                >
+                  获取验证码
+                </button>
               </div>
             </div>
-            <div class='text-center'>
-              <div class='g-recaptcha mb-2' data-sitekey='6LduQIkoAAAAACTqA7h-DMcBcBog5mBiHdk-CULq'></div>
+            <div class="text-center">
+              <div
+                class="g-recaptcha mb-2"
+                data-sitekey="6LduQIkoAAAAACTqA7h-DMcBcBog5mBiHdk-CULq"
+              ></div>
             </div>
-            <div class='d-flex flex-column text-justify'>
-              <p>💡<span class='i18n-163 text-muted fs12'>如果未注册，填入邮箱和验证码后，会自动帮你注册账号。如果已注册，请用之前登录过的email登入。</span></p>
+            <div class="d-flex flex-column text-justify">
+              <p>
+                💡<span class="i18n-163 text-muted fs12"
+                  >如果未注册，填入邮箱和验证码后，会自动帮你注册账号。如果已注册，请用之前登录过的email登入。</span
+                >
+              </p>
             </div>
-            <div class='text-center'>
-              <button id='to-candidate-dashboard' type='submit' class='i18n-159 btn btn-sm p-2 pr-4 pl-4 mt-2 w180'>登入/註冊</button>
+            <div class="text-center">
+              <button
+                id="to-candidate-dashboard"
+                type="submit"
+                class="i18n-159 btn btn-sm p-2 pr-4 pl-4 mt-2 w180"
+              >
+                登入/註冊
+              </button>
             </div>
           </form>
         </div>
-        <div class='col'></div>
+        <div class="col"></div>
       </div>
-      <div aria-live='polite' aria-atomic='true' class='d-flex justify-content-center align-items-center'>
-        <div class='toast rounded toast-login' style='position: absolute; width: 300px;' role='alert' aria-live='assertive' aria-atomic='true' data-autohide='false'>
-          <div class='toast-header bg-white border-bottom-0 justify-content-between h-50'>
-            <div><img src='images/error-icon.png' class='img-responsive mt-2' width='35px'/></div>
-            <button type='button' class='ml-2 mb-1 close' data-dismiss='toast' aria-label='Close'>
-              <span aria-hidden='true'>&times;</span>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        class="d-flex justify-content-center align-items-center"
+      >
+        <div
+          class="toast rounded toast-login"
+          style="position: absolute; width: 300px"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+          data-autohide="false"
+        >
+          <div
+            class="toast-header bg-white border-bottom-0 justify-content-between h-50"
+          >
+            <div>
+              <img
+                src="images/error-icon.png"
+                class="img-responsive mt-2"
+                width="35px"
+              />
+            </div>
+            <button
+              type="button"
+              class="ml-2 mb-1 close"
+              data-dismiss="toast"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="toast-body bg-white">
-            <strong class='mr-auto error-line-1'>邮箱账号输入有误！</strong>
-            <p class='text-muted p-0 m-0 mt-2 fs11 error-line-2'></p>
-            <p class='text-muted p-0 m-0 fs11 error-line-3'></p>
+            <strong class="mr-auto error-line-1">邮箱账号输入有误！</strong>
+            <p class="text-muted p-0 m-0 mt-2 fs11 error-line-2"></p>
+            <p class="text-muted p-0 m-0 fs11 error-line-3"></p>
           </div>
         </div>
       </div>
     </section>
-    <footer id='footer' class='bg-secondary-color text-white'></footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <footer id="footer" class="bg-secondary-color text-white"></footer>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
   </body>
-<html>
+  <html></html>
+</html>

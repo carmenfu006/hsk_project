@@ -239,6 +239,7 @@ $('#user-logout, #partner-logout').on('click', function(e) {
   localStorage.removeItem('email');
   localStorage.removeItem('partner');
   localStorage.removeItem('username');
+  sessionStorage.clear();
   window.location.href = window.location.origin + '/index.html';
 });
 

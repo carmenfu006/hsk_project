@@ -1,73 +1,137 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
-    <script src="js/navbar.js?v=1.1" type="text/javascript" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/1e357e8cb4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/navbar.js?v=1.2" type="text/javascript" defer></script>
     <script src="js/footer.js?v=1.1" type="text/javascript" defer></script>
-    <script src="js/login.js" type="text/javascript" defer></script>
+    <script src="js/login.js?v=1.0" type="text/javascript" defer></script>
     <script src="js/i18n.js?v=1.2" type="text/javascript" defer></script>
     <script src="js/bootstrap.js?v=1.0" type="text/javascript" defer></script>
     <link href="css/bootstrap.css?v=1.0" rel="stylesheet" />
     <link href="css/style.css?v=1.1" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <nav id='navbar' class='navbar navbar-light navbar-expand-lg border-bottom bg-white'></nav>
-    <div id='login-modal'></div>
-    <section class='content container mt-5'>
-      <div class='row pt-5 pb-5'>
-        <div class='col'></div>
-        <div class='col-lg-4 col-md-8 col-sm-12'>
-          <div class='d-flex flex-column'>
-            <h3 class='i18n-7 font-weight-bold'>合作方登入</h3>
+    <nav
+      id="navbar"
+      class="navbar navbar-light navbar-expand-lg border-bottom bg-white"
+    ></nav>
+    <div id="login-modal"></div>
+    <section class="content container mt-5">
+      <div class="row pt-5 pb-5">
+        <div class="col"></div>
+        <div class="col-lg-4 col-md-8 col-sm-12">
+          <div class="d-flex flex-column">
+            <h3 class="i18n-7 font-weight-bold">合作方登入</h3>
           </div>
-          <form id='partner-login-form' class='mt-5 mb-5' action='partner/candidate-management.html'>
-            <div class='form-group'>
+          <form
+            id="partner-login-form"
+            class="mt-5 mb-5"
+            action="partner/candidate-management.html"
+          >
+            <div class="form-group">
               <label>
-                <span class='i18n-164'>账号</span>
+                <span class="i18n-164">账号</span>
               </label>
-              <input type='email' class='form-control i18n-164' placeholder='账号' id='username'>
+              <input
+                type="email"
+                class="form-control i18n-164"
+                placeholder="账号"
+                id="username"
+              />
             </div>
-            <div class='form-group'>
+            <div class="form-group">
               <label>
-                <span class='i18n-165'>密码</span>
+                <span class="i18n-165">密码</span>
               </label>
-              <input type='password' class='form-control i18n-165' placeholder='密码' id='password'>
+              <input
+                type="password"
+                class="form-control i18n-165"
+                placeholder="密码"
+                id="password"
+              />
             </div>
-            <div class='text-center'>
-              <div class='g-recaptcha mb-2' data-sitekey='6LduQIkoAAAAACTqA7h-DMcBcBog5mBiHdk-CULq'></div>
+            <div class="text-center">
+              <div
+                class="g-recaptcha mb-2"
+                data-sitekey="6LduQIkoAAAAACTqA7h-DMcBcBog5mBiHdk-CULq"
+              ></div>
             </div>
-            <div class='text-center'>
-              <button id='to-partner-dashboard' type='submit' class='i18n-160 btn btn-sm p-2 pr-4 pl-4 mt-2 w180 active'>登入</button>
+            <div class="text-center">
+              <button
+                id="to-partner-dashboard"
+                type="submit"
+                class="i18n-160 btn btn-sm p-2 pr-4 pl-4 mt-2 w180 active"
+              >
+                登入
+              </button>
             </div>
           </form>
-          <div class='d-flex flex-column text-center'>
+          <div class="d-flex flex-column text-center">
             <p>
-              <span class='i18n-166 text-muted'>还没有账号？</span>
-              <span class='primary-color pointer'><a href='/partner.html' class='primary'><u class='i18n-167'>加入我们</u></a></span>
+              <span class="i18n-166 text-muted">还没有账号？</span>
+              <span class="primary-color pointer"
+                ><a href="/partner.html" class="primary"
+                  ><u class="i18n-167">加入我们</u></a
+                ></span
+              >
             </p>
           </div>
         </div>
-        <div class='col'></div>
+        <div class="col"></div>
       </div>
-      <div aria-live='polite' aria-atomic='true' class='d-flex justify-content-center align-items-center'>
-        <div class='toast rounded toast-login' style='position: absolute; width: 300px;' role='alert' aria-live='assertive' aria-atomic='true' data-autohide='false'>
-          <div class='toast-header bg-white border-bottom-0 justify-content-between h-50'>
-            <div><img src='images/error-icon.png' class='img-responsive mt-2' width='35px'/></div>
-            <button type='button' class='ml-2 mb-1 close' data-dismiss='toast' aria-label='Close'>
-              <span aria-hidden='true'>&times;</span>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        class="d-flex justify-content-center align-items-center"
+      >
+        <div
+          class="toast rounded toast-login"
+          style="position: absolute; width: 300px"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+          data-autohide="false"
+        >
+          <div
+            class="toast-header bg-white border-bottom-0 justify-content-between h-50"
+          >
+            <div>
+              <img
+                src="images/error-icon.png"
+                class="img-responsive mt-2"
+                width="35px"
+              />
+            </div>
+            <button
+              type="button"
+              class="ml-2 mb-1 close"
+              data-dismiss="toast"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="toast-body bg-white">
-            <strong class='mr-auto error-line-1'>邮箱账号输入有误！</strong>
-            <p class='text-muted p-0 m-0 mt-2 fs11 error-line-2'>请重新输入正确的邮箱账号。</p>
-            <p class='text-muted p-0 m-0 fs11 error-line-3'>请重试</p>
+            <strong class="mr-auto error-line-1">邮箱账号输入有误！</strong>
+            <p class="text-muted p-0 m-0 mt-2 fs11 error-line-2">
+              请重新输入正确的邮箱账号。
+            </p>
+            <p class="text-muted p-0 m-0 fs11 error-line-3">请重试</p>
           </div>
         </div>
       </div>
     </section>
-    <footer id='footer' class='bg-secondary-color text-white'></footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <footer id="footer" class="bg-secondary-color text-white"></footer>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
   </body>
-<html>
+  <html></html>
+</html>

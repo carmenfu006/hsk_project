@@ -45,6 +45,7 @@ $('#to-candidate-dashboard').on('click', async(e) => {
 
       if (data.code == 200) {
         let user_token = data.data.access;
+        sessionStorage.clear();
         $('.toast').toast('hide');
         localStorage.removeItem('partner');
         localStorage.setItem('user', user_token);
@@ -115,6 +116,7 @@ $('#to-partner-dashboard').on('click', async(e) => {
       })
       let data = await response.json();
       if (data.code == 200) {
+        sessionStorage.clear();
         let partner_token = data.data.access;
         $('.toast').toast('hide');
         localStorage.removeItem('user');
