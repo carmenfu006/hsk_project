@@ -188,8 +188,10 @@ async function fetchAPI(api) {
 }
 
 $('.level-bar-item').on('click', function() {
-  $('#exam-time').children().not(':first').remove();
-  $('#candidate-table').empty();
+  // $('#exam-time').children().not(':first').remove();
+  // $('#candidate-table').empty();
+  $('#exam-time')[0].replaceChildren($('#exam-time')[0].firstElementChild);
+  $('#candidate-table')[0].replaceChildren();
   let test_time = $('#exam-time').val();
   let level = parseInt($('.level-bar-item.active').attr('data-level'));
   populateCandidatesExamtime(level)

@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', async () => {
+  $('#payment-link-invalid').hide();
   if (user == null) window.location.href = 'candidate-login.html';
   const lang = getLocalLang('lang');
   const payment_id = new URL(location.href).searchParams.get('payment_id');
@@ -15,44 +16,45 @@ window.addEventListener('DOMContentLoaded', async () => {
   //   },
   //   body: JSON.stringify(data)
   // }).then(r => r.json())
-  let response = await fetch(`https://api.hskk.org/webapi/order_read_payment/${paymentIntentId}`, {
-    headers: {
-      'Accept': 'application/json, text/plain, */*',
-      'Content-Type' : 'application/json',
-      'Authorization' : `Bearer ${user}`
-    }
-  })
-  let data = await response.json();
-  let info = data.data;
-
   if (payment_id == null || payment_id == '') {
-    $('#payment-section').remove();
+    $('#payment-section').hide();
+    $('#payment-link-invalid').show();
   } else {
-    $('#payment-link-invalid').remove();
-  }
-
-  const clientSecret = payment_id;
-  $('#selected-exam-level').html(displaySelectedExam(getSession('exam-level')));
-  $('.total-amount').html((info.payment_amount/100).toFixed(2));
-  const elements = stripe.elements({ clientSecret });
-  const paymentElement = elements.create('payment');
-  paymentElement.mount('#payment-element');
-
-  const form = $('#payment-form')
-  form.on('submit', async (e) => {
-    e.preventDefault();
-
-    const {error} = await stripe.confirmPayment({
-      elements,
-      confirmParams: {
-        return_url: window.location.origin + '/payment-success.html'
+    $('#payment-link-invalid').hide();
+    let response = await fetch(`https://api.hskk.org/webapi/order_read_payment/${paymentIntentId}`, {
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type' : 'application/json',
+        'Authorization' : `Bearer ${user}`
       }
     })
-    if (error) {
-      $('.toast').toast('show');
-    }
-  })
-  
+    let data = await response.json();
+    let info = data.data;
+
+    const clientSecret = payment_id;
+    $('#selected-exam-level').html(displaySelectedExam(getSession('exam-level')));
+    $('.total-amount').html((info.payment_amount/100).toFixed(2));
+    const elements = stripe.elements({ clientSecret });
+    const paymentElement = elements.create('payment');
+    paymentElement.mount('#payment-element');
+
+    const form = $('#payment-form')
+    form.on('submit', async (e) => {
+      e.preventDefault();
+
+      const {error} = await stripe.confirmPayment({
+        elements,
+        confirmParams: {
+          return_url: window.location.origin + '/payment-success.html'
+        }
+      })
+      if (error) {
+        $('.toast').toast('show');
+      }
+    })
+  }
+
+
   // Discount and update paymentIntent
   const verify_code = $('#verify-code');
   const discount_field = $('#discount-code');

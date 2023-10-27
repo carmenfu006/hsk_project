@@ -213,19 +213,25 @@ let user = localStorage.getItem('user');
 let partner = localStorage.getItem('partner');
 
 if (user == null) {
-  $('#apply-menu-btn').remove()
-  $('#user-logout').remove()
+  $('#apply-menu-btn').hide()
+  $('#apply-modal-btn').show()
+  $('#user-logout').hide()
+  $('#user-logout').removeClass('d-flex')
+  $('#user-public').show()
   $('#candidate-dashboard').removeClass('d-flex')
 } else {
-  $('#apply-modal-btn').remove()
-  $('#user-public').remove()
+  $('#apply-menu-btn').show()
+  $('#apply-modal-btn').hide()
+  $('#user-logout').show()
+  $('#user-public').hide()
   $('#candidate-dashboard').addClass('d-flex')
 }
 
 if (partner == null) {
-  $('#partner-logout').remove()
+  $('#partner-logout').hide()
+  $('#partner-logout').removeClass('d-flex')
 } else {
-  $('#user-public').remove()
+  $('#user-public').hide()
 }
 
 $('#user-logout, #partner-logout').on('click', function(e) {

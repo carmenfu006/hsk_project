@@ -606,7 +606,7 @@ translateWeb(
 )
 translateWeb(
   '.i18n-86',
-  '姓',
+  '证件名',
   'First Name',
   'Nama Belakang',
   'اللقب',
@@ -614,7 +614,7 @@ translateWeb(
 )
 translateWeb(
   '.i18n-87',
-  '名',
+  '中文姓名',
   'Last Name',
   'Nama Depan',
   'الاسم',

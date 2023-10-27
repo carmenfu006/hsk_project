@@ -307,8 +307,10 @@ function transLang(lang, zh, en, id, ar) {
 }
 
 $('.status-filter').on('click', function() {
-  $('#web-exam-records').children().not(':first').remove();
-  $('#mobile-exam-records').empty();
+  // $('#web-exam-records').children().not(':first').remove();
+  // $('#mobile-exam-records').empty();
+  $('#web-exam-records')[0].replaceChildren($('#web-exam-records')[0].firstElementChild);
+  $('#mobile-exam-records')[0].replaceChildren();
   loadExamRecord($(this).attr('data-status'))
 })
 

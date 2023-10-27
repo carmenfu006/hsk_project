@@ -57,7 +57,7 @@ $('.collapse')
 });
 
 $('#more-faq').on('click', function() {
-  $(this).remove();
+  $(this).hide();
   for (let i = 8; i <= 15; i++) {
     $(`#card-${i}`).removeClass('d-none');
   }
