@@ -3256,6 +3256,11 @@ function updatePDFLink() {
     terms_home_pdf.attr('href', terms_home_pdf.attr('href') + `?lang=${lang}`)
     terms_onsite_pdf.attr('href', terms_onsite_pdf.attr('href') + `?lang=${lang}`)
     privacy_pdf.attr('href', privacy_pdf.attr('href') + `?lang=${lang}`)
+  } else {
+    lang = 'zh-hans'
+    terms_home_pdf.attr('href', terms_home_pdf.attr('href') + `?lang=${lang}`)
+    terms_onsite_pdf.attr('href', terms_onsite_pdf.attr('href') + `?lang=${lang}`)
+    privacy_pdf.attr('href', privacy_pdf.attr('href') + `?lang=${lang}`)
   }
 }
 
