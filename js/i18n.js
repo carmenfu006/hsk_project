@@ -49,10 +49,10 @@ translateWeb(
 )
 translateWeb(
   '.i18n-8', 
-  '全球唯一HSK口语移动端考试', 
-  'The only HSK Spoken Mobile Test available worldwide', 
-  'Satu-satunya Ujian HSK Lisan Versi Seluler di Dunia', 
-  'اختبار HSK الشفوي للهواتف المحمولة الوحيد في العالم'
+  '官方认证HSK口语移动端考试', 
+  'Officially Certified HSK Spoken Mobile Test', 
+  'Ujian HSK Lisan Versi Seluler Bersertifikat Resmi', 
+  'اختبار الهاتف المحمول المنطوق المعتمد رسميًا من HSK'
 )
 translateWeb(
   '.i18n-9', 
@@ -607,17 +607,17 @@ translateWeb(
 translateWeb(
   '.i18n-86',
   '证件名',
-  'First Name',
-  'Nama Belakang',
-  'اللقب',
+  'Name',
+  'Nama',
+  'الاسم',
   true
 )
 translateWeb(
   '.i18n-87',
   '中文姓名',
-  'Last Name',
-  'Nama Depan',
-  'الاسم',
+  'Chinese Name',
+  'Nama Cina',
+  'اسم صيني',
   true
 )
 translateWeb(
