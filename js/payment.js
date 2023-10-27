@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   const payment_id = new URL(location.href).searchParams.get('payment_id');
   const paymentIntentId = payment_id.split('_secret')[0];
   // const {stripePublicKey} = await fetch('/config').then(r => r.json())
-  const stripe = Stripe('pk_test_51NxVaQArZBHZvCDsV7skPBV3kedEbXpekrZs98aWWjiPSqlECB25Ppsjdwps66A3FQ3CHLGnmSAAmHbAmj7931XE00FawLsIN4', { locale : `${lang}` })
+  const stripe = Stripe('pk_live_51NxVaQArZBHZvCDsIip5DutxzIoCQZ4DIXwNxLZtWiMb2bKBPp7eCH7d4bp1vSvBs8CCdzItKEbaQqn8qTgXz23N00i4I9qDpu', { locale : `${lang}` })
 
   // let data = { amount: 26000, customer: 'dummy'}
 
