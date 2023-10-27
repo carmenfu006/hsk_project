@@ -11,7 +11,7 @@ footer_template.innerHTML = `
   <div class='container pt-5 pb-5'>
     <div class='row'>
       <div class='col-12 mb-3 fw500 fs28'>
-        <h5 class='i18n-8'>全球唯一HSK口语移动端考试</h5>
+        <h5 class='i18n-8'>官方认证HSK口语移动端考试</h5>
       </div>
     </div>
     <div class='row'>
@@ -71,7 +71,7 @@ user_footer_template.innerHTML = `
   <div class='container pt-5 pb-5'>
     <div class='row'>
       <div class='col-12 mb-3 fw500 fs28'>
-        <h5 class='i18n-8'>全球唯一HSK口语移动端考试</h5>
+        <h5 class='i18n-8'>官方认证HSK口语移动端考试</h5>
       </div>
     </div>
     <div class='row'>
