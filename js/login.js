@@ -7,13 +7,14 @@ addRecaptchaToHead()
 $('#to-candidate-dashboard').on('click', async(e) => {
   e.preventDefault();
   
-  const captchaResponse = grecaptcha.getResponse()
+  // const captchaResponse = grecaptcha.getResponse()
   const application = new URL(location.href).searchParams.get('application');
 
-  if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
-    toastLang('Recaptcha not checked')
-    $('.toast').toast('show');
-  } else {
+  // if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
+  //   toastLang('Recaptcha not checked')
+  //   $('.toast').toast('show');
+  // } else {
+  // }
 
     if (verifyEmailVal(inputVal('#email')) == null && verifyCodeVal(inputVal('#verify_code')) == null) {
       invalidInput('#email')
@@ -56,7 +57,7 @@ $('#to-candidate-dashboard').on('click', async(e) => {
         $('.toast').toast('show');
       }
     }
-  }
+  
 
   // fetch('/recaptcha', {
   //   method: 'POST',
@@ -86,12 +87,13 @@ $('#to-candidate-dashboard').on('click', async(e) => {
 
 $('#to-partner-dashboard').on('click', async(e) => {
   e.preventDefault();
-  const captchaResponse = grecaptcha.getResponse()
+  // const captchaResponse = grecaptcha.getResponse()
 
-  if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
-    toastLang('Recaptcha not checked')
-    $('.toast').toast('show');
-  } else {
+  // if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
+  //   toastLang('Recaptcha not checked')
+  //   $('.toast').toast('show');
+  // } else {
+  // }
 
     if (verifyEmailVal(inputVal('#username')) == null) {
       invalidInput('#username')
@@ -128,7 +130,7 @@ $('#to-partner-dashboard').on('click', async(e) => {
         $('.toast').toast('show');
       }
     }
-  }
+  
 
   // fetch('/recaptcha', {
   //   method: 'POST',
