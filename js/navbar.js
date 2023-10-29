@@ -241,7 +241,7 @@ $('#user-logout, #partner-logout').on('click', function(e) {
   window.location.href = window.location.origin + '/index.html';
 });
 
-$('#navbarDropdown, #news-menu-btn, #faqs-menu-btn').on('click', function(e) {
+$('#navbarDropdown, #apply-modal-btn, #news-menu-btn, #faqs-menu-btn').on('click', function(e) {
   $('.navbar-collapse').removeClass('show');
 });
 

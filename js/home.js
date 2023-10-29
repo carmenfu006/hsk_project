@@ -10,6 +10,8 @@ loadExamTime()
 function setActiveMenu() {
   if (window.location.hash === '') {
     $('#home-menu-btn').addClass('active');
+  } else if (window.location.hash === '#exam-datetime') {
+    $("#apply-modal-btn").addClass('active');
   } else if (window.location.hash === '#home-news') {
     $('#news-menu-btn').addClass('active');
   } else if (window.location.hash === '#home-faqs') {
