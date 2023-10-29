@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     if (data.code == 200) {
       const clientSecret = payment_id;
-      $('#selected-exam-level').html(displaySelectedExam(getSession('exam-level')));
+      $('#selected-exam-level').html(displaySelectedExam(info.test_level));
       $('.total-amount').html((info.payment_amount/100).toFixed(2));
       $('.currency-display').html((info.payment_currency).toUpperCase());
       const elements = stripe.elements({ clientSecret });
@@ -81,10 +81,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     if (data.code == 200) {
       let info = data.data;
-      let discountValue = parseInt(info.order_fee_discount);
-      let currentAmount = parseInt(info.order_fee_original);
-      let finalAmount = currentAmount - discountValue;
-      $('.total-amount').html((finalAmount/100).toFixed(2))
+      $('.total-amount').html((parseInt(info.payment_amount)/100).toFixed(2))
       applyText(lang, verify_code, '应用', 'Apply', 'Aplikasi', 'تطبيق');
       verify_code.css('background-color', '#3FD3C3')
       $('#discount-error-message').addClass('d-none')
@@ -114,13 +111,13 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   function displaySelectedExam(exam_level) {
     switch(exam_level) {
-      case '7':
+      case 7:
         return transLang(lang, 'HSK⼝语(初级)移动端考試', 'HSK Oral (Elementary) Mobile Exam', 'Ujian Mobile HSK Lisan (Dasar)', 'اختبار HSK للتحدث (الابتدائي) عبر الهاتف المحمول')
         break;
-      case '8':
+      case 8:
         return transLang(lang, 'HSK⼝语(中级)移动端考試', 'HSK Oral (Intermediate) Mobile Exam', 'Ujian Mobile HSK Lisan (Menengah)', 'اختبار التحدث باللغة HSK (المتوسط) عبر الهاتف المحمول')
         break;
-      case '9':
+      case 9:
         return transLang(lang, 'HSK⼝语(高级)移动端考試', 'HSK Oral (Advanced) Mobile Exam', 'Ujian Mobile HSK Lisan (Lanjutan)', 'اختبار HSK للتحدث (المتقدم) عبر الهاتف المحمول')
         break;
       default:
