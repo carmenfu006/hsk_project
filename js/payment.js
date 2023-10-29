@@ -11,25 +11,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     $('#payment-link-invalid').show();
   } else {
     $('#payment-link-invalid').hide();
-    let response = await fetch(`https://api.hskk.org/webapi/order_read_payment/${paymentIntentId}`, {
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type' : 'application/json',
-        // 'Authorization' : `Bearer ${user}`
-      }
-    })
-    let data = await response.json();
-    let info = data.data;
-
-    if (data.code == 200) {
-      const clientSecret = payment_id;
-      $('#selected-exam-level').html(displaySelectedExam(info.test_level));
-      $('.total-amount').html((info.payment_amount/100).toFixed(2));
-      $('.currency-display').html((info.payment_currency).toUpperCase());
-      const elements = stripe.elements({ clientSecret });
-      const paymentElement = elements.create('payment');
-      paymentElement.mount('#payment-element');
-    }
+    checkPaymentAmount();
 
     const form = $('#payment-form')
     form.on('submit', async (e) => {
@@ -91,6 +73,7 @@ window.addEventListener('DOMContentLoaded', async () => {
       $('#discount-success-message').addClass('d-none')
       applyText(lang, verify_code, '应用', 'Apply', 'Aplikasi', 'تطبيق');
     }
+    checkPaymentAmount()
   })
 
   function getSession(key) {
@@ -146,5 +129,35 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   function getLocalLang(key) {
     return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
+  }
+
+  async function checkPaymentAmount() {
+    let response = await fetch(`https://api.hskk.org/webapi/order_read_payment/${paymentIntentId}`, {
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type' : 'application/json',
+        // 'Authorization' : `Bearer ${user}`
+      }
+    })
+    let data = await response.json();
+    let info = data.data;
+
+    if (data.code == 200) {
+      const clientSecret = payment_id;
+      $('#selected-exam-level').html(displaySelectedExam(info.test_level));
+      $('.total-amount').html((info.payment_amount/100).toFixed(2));
+      $('.currency-display').html((info.payment_currency).toUpperCase());
+      const elements = stripe.elements({ clientSecret });
+      const paymentElement = elements.create('payment');
+      paymentElement.mount('#payment-element');
+
+      if (info.coupon_code != null) {
+        $('#discount-code').prop('readonly', true);
+        $('#discount-code').val(info.coupon_code);
+        $('#discount-error-message').addClass('d-none');
+        $('#discount-success-message').removeClass('d-none');
+        $('#verify-code').prop('disabled', true);
+      }
+    }
   }
 })
