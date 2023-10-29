@@ -7,7 +7,7 @@
     <script src="js/jquery-3.5.1.slim.min.js?v=1.0" type="text/javascript" defer></script>
     <script src="js/navbar.js?v=1.4" type="text/javascript" defer></script>
     <script src="js/footer.js?v=1.1" type="text/javascript" defer></script>
-    <script src="js/application.js?v=1.2" type="text/javascript" defer></script>
+    <script src="js/application.js?v=1.3" type="text/javascript" defer></script>
     <script src="js/i18n.js?v=1.2" type="text/javascript" defer></script>
     <script src="js/bootstrap.js?v=1.0" type="text/javascript" defer></script>
     <link href="css/bootstrap.css?v=1.0" rel="stylesheet" />
@@ -72,6 +72,7 @@
                 <input type='hidden' id='exam-datetime-id' name='exam-datetime-id'>
                 <input type='hidden' id='exam-datetime' name='exam-datetime'>
                 <input type='hidden' id='exam-amount' name='exam-amount'>
+                <input type='hidden' id='exam-currency' name='exam-currency'>
                 <input type='hidden' id='exam-yearmonth' name='exam-yearmonth'>
               </div>
               <div id='exam-datetime-options' class='row no-gutters'>
@@ -95,14 +96,14 @@
                   <p id='selected-exam-location-time'></p>
                   <p class='text-right'>
                     <span class='selected-exam-amount'></span>
-                    <span class='currency-display text-muted'>HKD</span>
+                    <span class='currency-display text-muted'></span>
                   </p>
                 </li>
                 <div id='item-cart-border' class='border-bottom ml-3 mr-3 d-none'></div>
                 <li id='item-cart-total' class='list-group-item text-right d-none'>
                   <span class='i18n-328'>合计</span>
                   <span class='selected-exam-amount'></span>
-                  <span class='currency-display text-muted font-weight-bold'>HKD</span>
+                  <span class='currency-display text-muted font-weight-bold'></span>
                 </li>
               </ul>
             </div>

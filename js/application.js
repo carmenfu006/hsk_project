@@ -229,7 +229,7 @@ function activeClick(classname) {
   });
 }
 
-function checkboxSelect(classname, setInputVal, inputId, targetId, targetId2, targetElem) {
+function checkboxSelect(classname, setInputVal, inputId, targetId, targetId2, targetElem, targetDisplay) {
   $(classname).on('change', function() {
     $(classname).prop('checked', false);
 
@@ -251,7 +251,8 @@ function checkboxSelect(classname, setInputVal, inputId, targetId, targetId2, ta
       }
 
       if ($(this).data('currency')) {
-        $(targetElem).html($(this).data('currency').toUpperCase());
+        $(targetElem).val($(this).data('currency').toUpperCase());
+        $(targetDisplay).html($(targetElem).val());
       }
 
       if ($(inputId).val() === 'yes') {
@@ -329,6 +330,7 @@ $('#to-step-2').on('click', function(e) {
   setSession('exam-datetime-id', inputVal('#exam-datetime-id'));
   setSession('exam-datetime', inputVal('#exam-datetime'));
   setSession('exam-amount', inputVal('#exam-amount'));
+  setSession('exam-currency', inputVal('#exam-currency'));
   setSession('exam-yearmonth', inputVal('#exam-yearmonth'));
   setSession('terms', inputVal('#terms'));
   setSession('stage1', true);
@@ -638,6 +640,7 @@ function selectLoadExamTime() {
     $('#exam-datetime-options').empty();
     $('#exam-datetime').val('');
     $('#exam-amount').val('');
+    $('#exam-currency').val('');
     $('.exam-datetime').prop('checked', false);
     nextBtnStage1()
     loadExamTime($('#exam-location').val(), $('#exam-level').val())
@@ -716,7 +719,7 @@ async function loadExamTime(area, level) {
     let year_month = $(this).data('year-month');
     $('#exam-datetime-options').empty();
     if (exam_time_options) loadSelectedExamTime(year_month, JSON.stringify(exam_time_options))
-    checkboxSelect('.exam-datetime', true, '#exam-datetime', '#exam-amount', '#exam-datetime-id', '.currency-display');
+    checkboxSelect('.exam-datetime', true, '#exam-datetime', '#exam-amount', '#exam-datetime-id', '#exam-currency', '.currency-display');
     $('.exam-datetime').on('change', function() {
       updateCartItem()
       nextBtnStage1()
@@ -725,12 +728,14 @@ async function loadExamTime(area, level) {
   })
 
   activeClick('.month-item');
-  checkboxSelect('.exam-datetime', true, '#exam-datetime', '#exam-amount', '#exam-datetime-id', '.currency-display');
+  checkboxSelect('.exam-datetime', true, '#exam-datetime', '#exam-amount', '#exam-datetime-id', '#exam-currency', '.currency-display');
   enabledNextBtn();
 
   $('.exam-datetime').on('change', function() {
     updateCartItem()
   });
+
+  if ($('#exam-currency').val() == '') $('.currency-display').html(getSession('exam-currency'));
 
   if (getSession('stage1') == 'true') loadSessionData1();
 }
