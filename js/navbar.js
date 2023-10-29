@@ -209,8 +209,8 @@ $('.menu-btn').on('click', function() {
 // sessionStorage.setItem('user', 'true');
 // sessionStorage.removeItem('user')
 
-let user = localStorage.getItem('user');
-let partner = localStorage.getItem('partner');
+let user = sessionStorage.getItem('user');
+let partner = sessionStorage.getItem('partner');
 
 if (user == null) {
   $('#apply-menu-btn').hide()
@@ -235,9 +235,7 @@ if (partner == null) {
 }
 
 $('#user-logout, #partner-logout').on('click', function(e) {
-  localStorage.removeItem('user');
   localStorage.removeItem('email');
-  localStorage.removeItem('partner');
   localStorage.removeItem('username');
   sessionStorage.clear();
   window.location.href = window.location.origin + '/index.html';
@@ -246,6 +244,12 @@ $('#user-logout, #partner-logout').on('click', function(e) {
 $('#navbarDropdown, #news-menu-btn, #faqs-menu-btn').on('click', function(e) {
   $('.navbar-collapse').removeClass('show');
 });
+
+let clearInfoSession = function() {
+  let current_user = sessionStorage.getItem('user');
+  sessionStorage.clear();
+  sessionStorage.setItem('user', current_user);
+}
 
 // var loc = window.location.pathname;
 // var path = loc.substring(0, loc.lastIndexOf('/'));

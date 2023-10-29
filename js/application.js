@@ -8,7 +8,9 @@ $('.toggle').click(function(){
 });
 
 progressIndicator()
-storeOptionsToLocal()
+if (getSession('user') && getSession('user') !== '') {
+  storeOptionsToLocal()
+}
 
 function progressIndicator() {
   const progressbar = document.getElementById('progressbar');
@@ -64,7 +66,7 @@ function progressIndicator() {
         displayEthnicity()
       } else {
         window.location.href = window.location.origin + '/application.html'
-        clearSessionStage()
+        clearInfoSession()
       }
       break;
     case 'application-candidate-profile.html':
@@ -73,7 +75,7 @@ function progressIndicator() {
         loadFile();
       } else {
         window.location.href = window.location.origin + '/application.html'
-        clearSessionStage()
+        clearInfoSession()
       }
       break;
     case 'application-verify-info.html':
@@ -82,7 +84,7 @@ function progressIndicator() {
         populateInfo();
       } else {
         window.location.href = window.location.origin + '/application.html'
-        clearSessionStage()
+        clearInfoSession()
       }
       break;
     case 'application-submit.html':
@@ -91,21 +93,13 @@ function progressIndicator() {
         setPaymentIntent()
       } else {
         window.location.href = window.location.origin + '/application.html'
-        clearSessionStage()
+        clearInfoSession()
       }
       break;
     default:
       activeProgressBar('.step-1');
-      clearSessionStage()
+      clearInfoSession()
   }
-}
-
-function clearSessionStage() {
-  sessionStorage.clear();
-  // sessionStorage.removeItem('stage1')
-  // sessionStorage.removeItem('stage2')
-  // sessionStorage.removeItem('stage3')
-  // sessionStorage.removeItem('stage4')
 }
 
 function activeProgressBar(classname) {
@@ -442,9 +436,8 @@ $('#submit-application').on('click', async() => {
   let info = data.data
 
   if (data.code == 200) {
+    clearInfoSession();
     setSession('stage4', true);
-    localStorage.setItem('intend_id', info.payment_intent_id)
-    localStorage.setItem('client_secret', info.payment_client_secret)
     window.location.href = window.location.origin + `/application-submit.html?payment=${info.payment_client_secret}`
   } else {
     $('.toast').toast('show');
