@@ -7,7 +7,7 @@
     <script src="js/jquery-3.5.1.slim.min.js?v=1.0" type="text/javascript" defer></script>
     <script src="js/navbar.js?v=1.4" type="text/javascript" defer></script>
     <script src="js/footer.js?v=1.1" type="text/javascript" defer></script>
-    <script src="js/application.js?v=1.1" type="text/javascript" defer></script>
+    <script src="js/application.js?v=1.2" type="text/javascript" defer></script>
     <script src="js/i18n.js?v=1.2" type="text/javascript" defer></script>
     <script src="js/bootstrap.js?v=1.0" type="text/javascript" defer></script>
     <link href="css/bootstrap.css?v=1.0" rel="stylesheet" />
@@ -29,7 +29,8 @@
               <div class='row candidate-info no-gutters'>
                 <div class='col-5'>
                   <p class='i18n-84 font-weight-bold'>用户名</p>
-                  <p class='i18n-85 font-weight-bold'>姓名</p>
+                  <p class='i18n-86 font-weight-bold'>证件名</p>
+                  <p class='i18n-87 font-weight-bold'>中文姓名</p>
                   <p class='i18n-88 font-weight-bold'>性别</p>
                   <p class='i18n-90 font-weight-bold'>生日</p>
                   <p class='i18n-94 font-weight-bold'>国籍</p>
@@ -40,7 +41,8 @@
                 </div>
                 <div class='col'>
                   <p class='info-username'></p>
-                  <p class='info-name'></p>
+                  <p class='info-fistname'></p>
+                  <p class='info-lastname'></p>
                   <p class='info-gender'></p>
                   <p class='info-birthday'></p>
                   <p class='info-nationality'></p>
@@ -105,7 +107,7 @@
       </div>
       <div class='text-center mt-4 mb-5 d-flex justify-content-center'>
         <a href='application-candidate-profile.html' class='i18n-151 btn btn-sm p-2 pr-4 pl-4 mt-2 mr-1 w180'>上一步</a>
-        <a id='submit-application' class='i18n-153 btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180 active'>确认并提交</a>
+        <button id='submit-application' type='button' class='i18n-153 btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180 active'>确认并提交</button>
       </div>
       <div aria-live='polite' aria-atomic='true' class='d-flex justify-content-center align-items-center'>
         <div class='toast' role='alert' aria-live='assertive' aria-atomic='true' data-autohide='false'>

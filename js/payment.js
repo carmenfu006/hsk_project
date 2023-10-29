@@ -34,6 +34,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     const clientSecret = payment_id;
     $('#selected-exam-level').html(displaySelectedExam(getSession('exam-level')));
     $('.total-amount').html((info.payment_amount/100).toFixed(2));
+    $('.currency-display').html((info.payment_currency).toUpperCase());
     const elements = stripe.elements({ clientSecret });
     const paymentElement = elements.create('payment');
     paymentElement.mount('#payment-element');

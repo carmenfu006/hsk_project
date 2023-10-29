@@ -229,7 +229,7 @@ function activeClick(classname) {
   });
 }
 
-function checkboxSelect(classname, setInputVal, inputId, targetId, targetId2) {
+function checkboxSelect(classname, setInputVal, inputId, targetId, targetId2, targetElem) {
   $(classname).on('change', function() {
     $(classname).prop('checked', false);
 
@@ -248,6 +248,10 @@ function checkboxSelect(classname, setInputVal, inputId, targetId, targetId2) {
 
       if ($(this).data('id')) {
         $(targetId2).val($(this).data('id'));
+      }
+
+      if ($(this).data('currency')) {
+        $(targetElem).html($(this).data('currency').toUpperCase());
       }
 
       if ($(inputId).val() === 'yes') {
@@ -377,7 +381,8 @@ $('#to-step-4').on('click', function(e) {
   window.location.replace($(this)[0].form.action);
 });
 
-$('#submit-application').on('click', async() => {
+$('#submit-application').on('click', async(e) => {
+  $('#submit-application').attr('disabled', true);
   let photo_url = await populateProfile();
   let image_file = getSession('file') ? getSession('file').split(',')[1] : photo_url
 
@@ -440,6 +445,7 @@ $('#submit-application').on('click', async() => {
     setSession('stage4', true);
     window.location.href = window.location.origin + `/application-submit.html?payment=${info.payment_client_secret}`
   } else {
+    $('#submit-application').attr('disabled', false);
     $('.toast').toast('show');
   }
 });
@@ -492,7 +498,8 @@ async function populateInfo() {
   if ($('.info-study-year')) $('.info-study-year').html(valueStudyYear(lang, getSession('study-year')));
 
   if ($('.info-username')) $('.info-username').html(getSession('username'));
-  if ($('.info-name')) $('.info-name').html(getSession('firstname') + ' ' + getSession('lastname'));
+  if ($('.info-fistname')) $('.info-fistname').html(getSession('firstname'));
+  if ($('.info-lastname')) $('.info-lastname').html(getSession('lastname'));
   if ($('.info-birthday')) $('.info-birthday').html(getSession('birthday'));
   if ($('.info-certificate-number')) $('.info-certificate-number').html(getSession('certificate-number'));
   if ($('.info-contact-number')) $('.info-contact-number').html(getSession('phone-zone') + '-' + getSession('phone'));
@@ -709,7 +716,7 @@ async function loadExamTime(area, level) {
     let year_month = $(this).data('year-month');
     $('#exam-datetime-options').empty();
     if (exam_time_options) loadSelectedExamTime(year_month, JSON.stringify(exam_time_options))
-    checkboxSelect('.exam-datetime', true, '#exam-datetime', '#exam-amount', '#exam-datetime-id');
+    checkboxSelect('.exam-datetime', true, '#exam-datetime', '#exam-amount', '#exam-datetime-id', '.currency-display');
     $('.exam-datetime').on('change', function() {
       updateCartItem()
       nextBtnStage1()
@@ -718,7 +725,7 @@ async function loadExamTime(area, level) {
   })
 
   activeClick('.month-item');
-  checkboxSelect('.exam-datetime', true, '#exam-datetime', '#exam-amount', '#exam-datetime-id');
+  checkboxSelect('.exam-datetime', true, '#exam-datetime', '#exam-amount', '#exam-datetime-id', '.currency-display');
   enabledNextBtn();
 
   $('.exam-datetime').on('change', function() {
@@ -741,7 +748,7 @@ function loadSelectedExamTime(year_month, exam_time_options) {
           <ul class='list-group'>
             <li class='list-group-item list-date rounded-0 border-top-0 border-right-0 border-left-0'>
               <div class='form-check'>
-                <input class='form-check-input exam-datetime' type='checkbox' name='checkbox${i}' id='checkbox${i}' value='${item.test_date_time}' data-price='${item.price}' data-id='${item.id}'>
+                <input class='form-check-input exam-datetime' type='checkbox' name='checkbox${i}' id='checkbox${i}' value='${item.test_date_time}' data-price='${item.price}' data-currency='${item.currency_display}' data-id='${item.id}'>
                 <label class='form-check-label' for='checkbox${i}'>
                   ${item.test_date_time}
                 </label>
