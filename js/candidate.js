@@ -693,7 +693,7 @@ async function personalInfo() {
   $('#pending-test-count').html(`(${records.read_count})`);
 
   if (personal_records.email == '') {
-    $('#candidate-name').html(getLocal('email'));
+    $('#candidate-name').html(getSession('username'));
   } else {
     $('#candidate-name').html(transLang(lang, personal_records.name_cn, personal_records.name_en, personal_records.name_en, personal_records.name_en));
   }

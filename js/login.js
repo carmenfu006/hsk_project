@@ -1,21 +1,30 @@
-if (user || partner) window.location.href = window.location.origin + '/application.html'
-
 let lang = getLocalLang('lang');
+const page = document.URL.split(/[?#]/)[0].split('/').pop();
+
+if (user && page == 'candidate-login.html') {
+  window.location.href = window.location.origin + '/application.html';
+} else if (user && page == 'partner-login.html') {
+  sessionStorage.clear();
+  location.reload();
+} else if (partner && page == 'partner-login.html') {
+  window.location.href = window.location.origin + '/partner/candidate-management.html';
+} else if (partner && page == 'candidate-login.html') {
+  sessionStorage.clear();
+  location.reload();
+}
 
 addRecaptchaToHead()
 
 $('#to-candidate-dashboard').on('click', async(e) => {
   e.preventDefault();
   
-  // const captchaResponse = grecaptcha.getResponse()
+  const captchaResponse = grecaptcha.getResponse()
   const application = new URL(location.href).searchParams.get('application');
 
-  // if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
-  //   toastLang('Recaptcha not checked')
-  //   $('.toast').toast('show');
-  // } else {
-  // }
-
+  if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
+    toastLang('Recaptcha not checked')
+    $('.toast').toast('show');
+  } else {
     if (verifyEmailVal(inputVal('#email')) == null && verifyCodeVal(inputVal('#verify_code')) == null) {
       invalidInput('#email')
       invalidInput('#input-code')
@@ -45,19 +54,26 @@ $('#to-candidate-dashboard').on('click', async(e) => {
       let data = await response.json();
 
       if (data.code == 200) {
-        let user_token = data.data.access;
         sessionStorage.clear();
         $('.toast').toast('hide');
-        sessionStorage.removeItem('partner');
-        sessionStorage.setItem('user', user_token);
-        localStorage.setItem('email', inputVal('#email'));
+        let info = data.data
+        sessionStorage.setItem('refresh', info.refresh);
+        sessionStorage.setItem('user', info.access);
+        sessionStorage.setItem('expire', info.expire);
+        sessionStorage.setItem('username', info.username);
+        sessionStorage.setItem('first_name', info.first_name);
+        sessionStorage.setItem('first_name_en', info.first_name_en);
+        sessionStorage.setItem('email', info.email);
+        sessionStorage.setItem('user_type', info.user_type);
+        sessionStorage.setItem('is_tester', info.is_tester);
+        sessionStorage.setItem('photo_path', info.photo_path);
         application == 'true' ? window.location.href = window.location.origin + '/application.html' : window.location.replace($('#to-candidate-dashboard')[0].form.action);
       } else if (data.code == 400) {
         toastMessage(data.msg)
         $('.toast').toast('show');
       }
     }
-  
+  }
 
   // fetch('/recaptcha', {
   //   method: 'POST',
@@ -87,14 +103,12 @@ $('#to-candidate-dashboard').on('click', async(e) => {
 
 $('#to-partner-dashboard').on('click', async(e) => {
   e.preventDefault();
-  // const captchaResponse = grecaptcha.getResponse()
+  const captchaResponse = grecaptcha.getResponse()
 
-  // if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
-  //   toastLang('Recaptcha not checked')
-  //   $('.toast').toast('show');
-  // } else {
-  // }
-
+  if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
+    toastLang('Recaptcha not checked')
+    $('.toast').toast('show');
+  } else {
     if (verifyEmailVal(inputVal('#username')) == null) {
       invalidInput('#username')
       toastLang('invalid email')
@@ -119,18 +133,25 @@ $('#to-partner-dashboard').on('click', async(e) => {
       let data = await response.json();
       if (data.code == 200) {
         sessionStorage.clear();
-        let partner_token = data.data.access;
         $('.toast').toast('hide');
-        sessionStorage.removeItem('user');
-        sessionStorage.setItem('partner', partner_token);
-        localStorage.setItem('username', inputVal('#username'));
+        let info = data.data;
+        sessionStorage.setItem('refresh', info.refresh);
+        sessionStorage.setItem('partner', info.access);
+        sessionStorage.setItem('expire', info.expire);
+        sessionStorage.setItem('username', info.username);
+        sessionStorage.setItem('first_name', info.first_name);
+        sessionStorage.setItem('first_name_en', info.first_name_en);
+        sessionStorage.setItem('email', info.email);
+        sessionStorage.setItem('user_type', info.user_type);
+        sessionStorage.setItem('is_partner', info.is_partner);
+        sessionStorage.setItem('photo_path', info.photo_path);
         window.location.href = window.location.origin + '/partner/candidate-management.html'
       } else if (data.code == 400) {
         toastMessage(data.msg)
         $('.toast').toast('show');
       }
     }
-  
+  }
 
   // fetch('/recaptcha', {
   //   method: 'POST',

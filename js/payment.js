@@ -1,21 +1,11 @@
 window.addEventListener('DOMContentLoaded', async () => {
   $('#payment-link-invalid').hide();
-  if (user == null) window.location.href = 'candidate-login.html';
+  // if (user == null) window.location.href = 'candidate-login.html';
   const lang = getLocalLang('lang');
   const payment_id = new URL(location.href).searchParams.get('payment_id');
   const paymentIntentId = payment_id.split('_secret')[0];
-  // const {stripePublicKey} = await fetch('/config').then(r => r.json())
   const stripe = Stripe('pk_live_51NxVaQArZBHZvCDsIip5DutxzIoCQZ4DIXwNxLZtWiMb2bKBPp7eCH7d4bp1vSvBs8CCdzItKEbaQqn8qTgXz23N00i4I9qDpu', { locale : `${lang}` })
 
-  // let data = { amount: 26000, customer: 'dummy'}
-
-  // const {clientSecret} = await fetch('/create-payment-intent', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: JSON.stringify(data)
-  // }).then(r => r.json())
   if (payment_id == null || payment_id == '') {
     $('#payment-section').hide();
     $('#payment-link-invalid').show();
@@ -25,19 +15,21 @@ window.addEventListener('DOMContentLoaded', async () => {
       headers: {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type' : 'application/json',
-        'Authorization' : `Bearer ${user}`
+        // 'Authorization' : `Bearer ${user}`
       }
     })
     let data = await response.json();
     let info = data.data;
 
-    const clientSecret = payment_id;
-    $('#selected-exam-level').html(displaySelectedExam(getSession('exam-level')));
-    $('.total-amount').html((info.payment_amount/100).toFixed(2));
-    $('.currency-display').html((info.payment_currency).toUpperCase());
-    const elements = stripe.elements({ clientSecret });
-    const paymentElement = elements.create('payment');
-    paymentElement.mount('#payment-element');
+    if (data.code == 200) {
+      const clientSecret = payment_id;
+      $('#selected-exam-level').html(displaySelectedExam(getSession('exam-level')));
+      $('.total-amount').html((info.payment_amount/100).toFixed(2));
+      $('.currency-display').html((info.payment_currency).toUpperCase());
+      const elements = stripe.elements({ clientSecret });
+      const paymentElement = elements.create('payment');
+      paymentElement.mount('#payment-element');
+    }
 
     const form = $('#payment-form')
     form.on('submit', async (e) => {
@@ -59,7 +51,6 @@ window.addEventListener('DOMContentLoaded', async () => {
   // Discount and update paymentIntent
   const verify_code = $('#verify-code');
   const discount_field = $('#discount-code');
-  const discount_error_message = $('#discount-error-message');
   
   discount_field.on('keyup', function() {
     if (discount_field.val() != '') {
@@ -73,30 +64,26 @@ window.addEventListener('DOMContentLoaded', async () => {
     e.preventDefault();
     verify_code.html('<i class="fa-solid fa-spinner fa-spin"></i>')
 
-    // let discount_code = $('#discount-code').val();
-    
-    let discountValue = 6000;
-    let currentAmount = 26000;
-    // // let currentAmount = data.amount;
-    let finalAmount = currentAmount - discountValue;
+    let discount_code = $('#discount-code').val();
 
-    // let paymentIntentId = clientSecret.split('_secret')[0];
+    let response = await fetch(`https://api.hskk.org/webapi/order_read_payment/${paymentIntentId}`, {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type' : 'application/json',
+        // 'Authorization' : `Bearer ${user}`
+      },
+      body: JSON.stringify({
+        coupon: discount_code
+      })
+    })
+    let data = await response.json();
 
-    // let updatedData = { paymentIntentId: paymentIntentId, amount: finalAmount }
-
-    // const updatePaymentIntents = await fetch('/update-payment-intent', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(updatedData)
-    // }).then(r => r.json())
-
-    const updatePaymentIntents = ({'status': ''})
-
-    // console.log(updatePaymentIntents.status)
-
-    if (updatePaymentIntents.status == 'complete') {
+    if (data.code == 200) {
+      let info = data.data;
+      let discountValue = parseInt(info.order_fee_discount);
+      let currentAmount = parseInt(info.order_fee_original);
+      let finalAmount = currentAmount - discountValue;
       $('.total-amount').html((finalAmount/100).toFixed(2))
       applyText(lang, verify_code, '应用', 'Apply', 'Aplikasi', 'تطبيق');
       verify_code.css('background-color', '#3FD3C3')
