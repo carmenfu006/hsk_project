@@ -170,14 +170,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     let info = data.data;
 
     if (data.code == 200) {
-      const clientSecret = payment_id;
-      $('#selected-exam-level').html(displaySelectedExam(info.test_level));
-      $('.total-amount').html((info.payment_amount/100).toFixed(2));
-      $('.currency-display').html((info.payment_currency).toUpperCase());
-      const elements = stripe.elements({ clientSecret });
-      const paymentElement = elements.create('payment');
-      paymentElement.mount('#payment-element');
-
       if (info.coupon_code != null) {
         $('#discount-code').prop('readonly', true);
         $('#discount-code').val(info.coupon_code);
