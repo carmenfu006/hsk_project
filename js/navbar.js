@@ -206,11 +206,8 @@ $('.menu-btn').on('click', function() {
   $(this).addClass('active');
 });
 
-// sessionStorage.setItem('user', 'true');
-// sessionStorage.removeItem('user')
-
-let user = sessionStorage.getItem('user');
-let partner = sessionStorage.getItem('partner');
+let user = localStorage.getItem('user');
+let partner = localStorage.getItem('partner');
 
 if (user == null) {
   $('#apply-menu-btn').hide()
@@ -235,8 +232,7 @@ if (partner == null) {
 }
 
 $('#user-logout, #partner-logout').on('click', function(e) {
-  localStorage.removeItem('email');
-  localStorage.removeItem('username');
+  localStorage.clear();
   sessionStorage.clear();
   window.location.href = window.location.origin + '/index.html';
 });
@@ -246,27 +242,27 @@ $('#navbarDropdown, #apply-modal-btn, #news-menu-btn, #faqs-menu-btn').on('click
 });
 
 let clearInfoSession = function() {
-  let user = sessionStorage.getItem('user');
-  let refresh = sessionStorage.getItem('refresh');
-  let expire = sessionStorage.getItem('expire');
-  let username = sessionStorage.getItem('username');
-  let first_name = sessionStorage.getItem('first_name');
-  let first_name_en = sessionStorage.getItem('first_name_en');
-  let email = sessionStorage.getItem('email');
-  let user_type = sessionStorage.getItem('user_type');
-  let is_tester = sessionStorage.getItem('is_tester');
-  let photo_path = sessionStorage.getItem('photo_path');
+  // let user = sessionStorage.getItem('user');
+  // let refresh = sessionStorage.getItem('refresh');
+  // let expire = sessionStorage.getItem('expire');
+  // let username = sessionStorage.getItem('username');
+  // let first_name = sessionStorage.getItem('first_name');
+  // let first_name_en = sessionStorage.getItem('first_name_en');
+  // let email = sessionStorage.getItem('email');
+  // let user_type = sessionStorage.getItem('user_type');
+  // let is_tester = sessionStorage.getItem('is_tester');
+  // let photo_path = sessionStorage.getItem('photo_path');
   sessionStorage.clear();
-  sessionStorage.setItem('user', user);
-  sessionStorage.setItem('refresh', refresh);
-  sessionStorage.setItem('expire', expire);
-  sessionStorage.setItem('username', username);
-  sessionStorage.setItem('first_name', first_name);
-  sessionStorage.setItem('first_name_en', first_name_en);
-  sessionStorage.setItem('email', email);
-  sessionStorage.setItem('user_type', user_type);
-  sessionStorage.setItem('is_tester', is_tester);
-  sessionStorage.setItem('photo_path', photo_path);
+  // sessionStorage.setItem('user', user);
+  // sessionStorage.setItem('refresh', refresh);
+  // sessionStorage.setItem('expire', expire);
+  // sessionStorage.setItem('username', username);
+  // sessionStorage.setItem('first_name', first_name);
+  // sessionStorage.setItem('first_name_en', first_name_en);
+  // sessionStorage.setItem('email', email);
+  // sessionStorage.setItem('user_type', user_type);
+  // sessionStorage.setItem('is_tester', is_tester);
+  // sessionStorage.setItem('photo_path', photo_path);
 }
 
 // var loc = window.location.pathname;

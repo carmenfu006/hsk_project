@@ -8,7 +8,7 @@ $('.toggle').click(function(){
 });
 
 progressIndicator()
-if (getSession('user') && getSession('user') !== '') {
+if (getLocal('user') && getLocal('user') !== '') {
   storeOptionsToLocal()
 }
 
@@ -1076,7 +1076,7 @@ async function populateRegisterInfo() {
     nextBtnStage2()
   } else {
     if (info.email == '') {
-      if (getSession('username')) refillField('input', '#username', getSession('username'));
+      if (getLocal('username')) refillField('input', '#username', getLocal('username'));
     } else {
       if (info.email) refillField('input', '#username', info.email);
       if (info.name_en) refillField('input', '#firstname', info.name_en);

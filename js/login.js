@@ -4,11 +4,13 @@ const page = document.URL.split(/[?#]/)[0].split('/').pop();
 if (user && page == 'candidate-login.html') {
   window.location.href = window.location.origin + '/application.html';
 } else if (user && page == 'partner-login.html') {
+  localStorage.clear();
   sessionStorage.clear();
   location.reload();
 } else if (partner && page == 'partner-login.html') {
   window.location.href = window.location.origin + '/partner/candidate-management.html';
 } else if (partner && page == 'candidate-login.html') {
+  localStorage.clear();
   sessionStorage.clear();
   location.reload();
 }
@@ -55,18 +57,19 @@ $('#to-candidate-dashboard').on('click', async(e) => {
 
       if (data.code == 200) {
         sessionStorage.clear();
+        localStorage.clear();
         $('.toast').toast('hide');
         let info = data.data
-        sessionStorage.setItem('refresh', info.refresh);
-        sessionStorage.setItem('user', info.access);
-        sessionStorage.setItem('expire', info.expire);
-        sessionStorage.setItem('username', info.username);
-        sessionStorage.setItem('first_name', info.first_name);
-        sessionStorage.setItem('first_name_en', info.first_name_en);
-        sessionStorage.setItem('email', info.email);
-        sessionStorage.setItem('user_type', info.user_type);
-        sessionStorage.setItem('is_tester', info.is_tester);
-        sessionStorage.setItem('photo_path', info.photo_path);
+        localStorage.setItem('refresh', info.refresh);
+        localStorage.setItem('user', info.access);
+        localStorage.setItem('expire', info.expire);
+        localStorage.setItem('username', info.username);
+        localStorage.setItem('first_name', info.first_name);
+        localStorage.setItem('first_name_en', info.first_name_en);
+        localStorage.setItem('email', info.email);
+        localStorage.setItem('user_type', info.user_type);
+        localStorage.setItem('is_tester', info.is_tester);
+        localStorage.setItem('photo_path', info.photo_path);
         application == 'true' ? window.location.href = window.location.origin + '/application.html' : window.location.replace($('#to-candidate-dashboard')[0].form.action);
       } else if (data.code == 400) {
         toastMessage(data.msg)
@@ -133,18 +136,19 @@ $('#to-partner-dashboard').on('click', async(e) => {
       let data = await response.json();
       if (data.code == 200) {
         sessionStorage.clear();
+        localStorage.clear();
         $('.toast').toast('hide');
         let info = data.data;
-        sessionStorage.setItem('refresh', info.refresh);
-        sessionStorage.setItem('partner', info.access);
-        sessionStorage.setItem('expire', info.expire);
-        sessionStorage.setItem('username', info.username);
-        sessionStorage.setItem('first_name', info.first_name);
-        sessionStorage.setItem('first_name_en', info.first_name_en);
-        sessionStorage.setItem('email', info.email);
-        sessionStorage.setItem('user_type', info.user_type);
-        sessionStorage.setItem('is_partner', info.is_partner);
-        sessionStorage.setItem('photo_path', info.photo_path);
+        localStorage.setItem('refresh', info.refresh);
+        localStorage.setItem('partner', info.access);
+        localStorage.setItem('expire', info.expire);
+        localStorage.setItem('username', info.username);
+        localStorage.setItem('first_name', info.first_name);
+        localStorage.setItem('first_name_en', info.first_name_en);
+        localStorage.setItem('email', info.email);
+        localStorage.setItem('user_type', info.user_type);
+        localStorage.setItem('is_partner', info.is_partner);
+        localStorage.setItem('photo_path', info.photo_path);
         window.location.href = window.location.origin + '/partner/candidate-management.html'
       } else if (data.code == 400) {
         toastMessage(data.msg)
