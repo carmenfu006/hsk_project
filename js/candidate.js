@@ -145,7 +145,7 @@ function getSession(key) {
 }
 
 function getLocalLang(key) {
-  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
+  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh-hans';
 }
 
 function activeIndicator(classname) {
@@ -207,7 +207,7 @@ function checkFile(fileTag) {
 }
 
 $('#candidate-support-center').on('click', async() => {
-  let lang = getLocalLang('lang') ? getLocalLang('lang') : 'zh';
+  let lang = getLocalLang('lang') ? getLocalLang('lang') : 'zh-hans';
   let inputData;
   if (getSession('support-center-file')) {
     inputData = {
@@ -287,10 +287,13 @@ function validInput(id) {
   $(id).removeClass('invalid');
 }
 
-function transLang(lang, zh, en, id, ar) {
+function transLang(lang, zh_hans, en, id, ar) {
   switch(lang) {
-    case 'zh':
-      return zh
+    case 'zh-hans':
+      return zh_hans
+      break;
+    case 'zh-hant':
+      return zh_hans
       break;
     case 'en':
       return en
@@ -315,7 +318,7 @@ $('.status-filter').on('click', function() {
 })
 
 async function loadExamRecord(status) {
-  let lang = getLocalLang('lang') ? getLocalLang('lang') : 'zh';
+  let lang = getLocalLang('lang') ? getLocalLang('lang') : 'zh-hans';
   let records = await fetchAPI('https://api.hskk.org/webapi/test_info_history/')
 
   if (records) {
@@ -652,10 +655,13 @@ function valueTestStatusBtn(value) {
   }
 }
 
-function transLang(lang, zh, en, id, ar) {
+function transLang(lang, zh_hans, en, id, ar) {
   switch(lang) {
-    case 'zh':
-      return zh
+    case 'zh-hans':
+      return zh_hans
+      break;
+    case 'zh-hant':
+      return zh_hans
       break;
     case 'en':
       return en
@@ -667,7 +673,7 @@ function transLang(lang, zh, en, id, ar) {
       return ar
       break;
     default:
-      return zh
+      return zh_hans
   }
 }
 
@@ -686,7 +692,7 @@ async function fetchAPI(api) {
 }
 
 async function personalInfo() {
-  let lang = getLocalLang('lang') ? getLocalLang('lang') : 'zh';
+  let lang = getLocalLang('lang') ? getLocalLang('lang') : 'zh-hans';
   let records = await fetchAPI('https://api.hskk.org/webapi/homepage/')
   let personal_records = await fetchAPI('https://api.hskk.org/webapi/register_default_info/')
 

@@ -3206,17 +3206,21 @@ $('.i18n').on('click', function() {
   location.reload();
 });
 
-if (!getLocal('lang')) checkParamsLang();
+const params_lang = new URL(location.href).searchParams.get('lang');
+if (params_lang) if (!getLocal('lang') || params_lang != getLocal('lang')) checkParamsLang(params_lang);
 updatePDFLink()
 updateTitle()
 
-function translateWeb(classname, zh, en, id, ar, input) {
+function translateWeb(classname, zh_hans, en, id, ar, input) {
   let url = new URL(window.location.href);
   let lang = getLocalLang('lang');
   
   switch(lang) {
-    case 'zh':
-      translate(classname, zh, input)
+    case 'zh-hans':
+      translate(classname, zh_hans, input)
+      break;
+    case 'zh-hant':
+      translate(classname, zh_hans, input)
       break;
     case 'en':
       translate(classname, en, input)
@@ -3228,7 +3232,7 @@ function translateWeb(classname, zh, en, id, ar, input) {
       translate(classname, ar, input)
       break;
     default:
-      translate(classname, zh, input)
+      translate(classname, zh_hans, input)
   }
 }
 
@@ -3253,7 +3257,7 @@ function updatePDFLink() {
   let privacy_pdf = $('#privacy-pdf');
   // terms_pdf.attr('href', `terms/tnc_${lang}.pdf`);
   // privacy_pdf.attr('href', `privacy/privacy_${lang}.pdf`);
-  if (lang != 'zh') {
+  if (lang != 'zh-hans' || lang != 'zh-hant') {
     terms_home_pdf.attr('href', terms_home_pdf.attr('href') + `?lang=${lang}`)
     terms_onsite_pdf.attr('href', terms_onsite_pdf.attr('href') + `?lang=${lang}`)
     privacy_pdf.attr('href', privacy_pdf.attr('href') + `?lang=${lang}`)
@@ -3266,7 +3270,7 @@ function updatePDFLink() {
 }
 
 function updateLogo(lang) {
-  if (lang == 'zh') {
+  if (lang == 'zh-hans' || lang == 'zh-hant') {
     $('#navbar-logo').attr('src', 'images/logo.png');
     $('#navbar-user-logo').attr('src', '../images/logo.png');
   } else {
@@ -3277,7 +3281,7 @@ function updateLogo(lang) {
 
 function updateTitle() {
   let lang = getLocalLang('lang');
-  if (lang == 'zh') {
+  if (lang == 'zh-hans' || lang == 'zh-hant') {
     document.title = 'HSK口语移动端考试中心'
   } else {
     document.title = 'HSK Speaking Test Mobile Exam Center'
@@ -3285,20 +3289,19 @@ function updateTitle() {
 }
 
 function getLocalLang(key) {
-  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
+  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh-hans';
 }
 
 function getLocal(key) {
   return localStorage.getItem(key);
 }
 
-function checkParamsLang() {
-  const lang = new URL(location.href).searchParams.get('lang');
-  const change = true;
-  if (lang && change) {
-    localStorage.setItem('lang', lang);
+function checkParamsLang(params_lang) {
+  if (params_lang == 'zh-hans' || params_lang == 'zh-hant' || params_lang == 'en' || params_lang == 'id' || params_lang == 'ar') {
+    localStorage.setItem('lang', params_lang);
     location.reload();
-    change = false
+  } else {
+    localStorage.setItem('lang', 'zh-hans');
   }
 }
 

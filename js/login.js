@@ -50,7 +50,8 @@ $('#to-candidate-dashboard').on('click', async(e) => {
         },
           body: JSON.stringify({
             email: inputVal('#email'),
-            verify_code: inputVal('#verify_code')
+            verify_code: inputVal('#verify_code'),
+            language: lang
           })
       })
       let data = await response.json();
@@ -235,7 +236,10 @@ $('#email, #verify_code, #username, #password').on('keyup', function() {
 
 function codeLang(classname) {
   switch(lang) {
-    case 'zh':
+    case 'zh-hans':
+      $(classname).html('获取验证码');
+      break;
+    case 'zh-hant':
       $(classname).html('获取验证码');
       break;
     case 'en':
@@ -254,7 +258,10 @@ function codeLang(classname) {
 
 function codeLangTimer(classname, timer) {
   switch(lang) {
-    case 'zh':
+    case 'zh-hans':
+      $(classname).html(`重新获取验证码(${timer}s)`);
+      break;
+    case 'zh-hant':
       $(classname).html(`重新获取验证码(${timer}s)`);
       break;
     case 'en':
@@ -274,7 +281,10 @@ function codeLangTimer(classname, timer) {
 function toastLang(error_type) {
   if (error_type == 'Recaptcha not checked') {
     switch(lang) {
-      case 'zh':
+      case 'zh-hans':
+        toastMessage(error_type, '', '')
+        break;
+      case 'zh-hant':
         toastMessage(error_type, '', '')
         break;
       case 'en':
@@ -293,7 +303,10 @@ function toastLang(error_type) {
 
   if (error_type == 'Recaptcha fails') {
     switch(lang) {
-      case 'zh':
+      case 'zh-hans':
+        toastMessage(error_type, '', '')
+        break;
+      case 'zh-hant':
         toastMessage(error_type, '', '')
         break;
       case 'en':
@@ -312,7 +325,10 @@ function toastLang(error_type) {
 
   if (error_type == 'invalid email') {
     switch(lang) {
-      case 'zh':
+      case 'zh-hans':
+        toastMessage('请输入合法的邮件地址。', '', '')
+        break;
+      case 'zh-hant':
         toastMessage('请输入合法的邮件地址。', '', '')
         break;
       case 'en':
@@ -331,7 +347,10 @@ function toastLang(error_type) {
 
   if (error_type == 'invalid password') {
     switch(lang) {
-      case 'zh':
+      case 'zh-hans':
+        toastMessage('请输入密码。', '', '')
+        break;
+      case 'zh-hant':
         toastMessage('请输入密码。', '', '')
         break;
       case 'en':
@@ -350,7 +369,10 @@ function toastLang(error_type) {
 
   if (error_type == 'invalid code') {
     switch(lang) {
-      case 'zh':
+      case 'zh-hans':
+        toastMessage('请确保验证码至少包含 6 个字符。', '', '')
+        break;
+      case 'zh-hant':
         toastMessage('请确保验证码至少包含 6 个字符。', '', '')
         break;
       case 'en':
@@ -369,7 +391,10 @@ function toastLang(error_type) {
 
   if (error_type == 'invalid email and code') {
     switch(lang) {
-      case 'zh':
+      case 'zh-hans':
+        toastMessage('请输入合法的邮件地址。', '请确保验证码至少包含 6 个字符。', '')
+        break;
+      case 'zh-hant':
         toastMessage('请输入合法的邮件地址。', '请确保验证码至少包含 6 个字符。', '')
         break;
       case 'en':
@@ -402,7 +427,7 @@ function addRecaptchaToHead() {
 }
 
 function getLocalLang(key) {
-  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
+  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh-hans';
 }
 
 function inputVal(id) {

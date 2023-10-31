@@ -61,7 +61,7 @@ function authoriseAccess() {
 }
 
 function getLocalLang(key) {
-  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
+  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh-hans';
 }
 
 function inputVal(id) {
@@ -145,10 +145,13 @@ $('#partner-form-btn').on('click', async(e) => {
   }
 });
 
-function convertLang(lang, zh, en, id, ar) {
+function convertLang(lang, zh_hans, en, id, ar) {
   switch(lang) {
-    case 'zh':
-      return zh
+    case 'zh-hans':
+      return zh_hans
+      break;
+    case 'zh-hant':
+      return zh_hans
       break;
     case 'en':
       return en
@@ -240,7 +243,7 @@ async function populateCandidates(level, test_time) {
         candidate_table_template.innerHTML = `
           <tr>
             <th scope='row'>${index+1}</th>
-            <td>${ lang == 'zh' ? candidate.name_cn : candidate.name_en }</td>
+            <td>${ lang == 'zh-hans' || lang == 'zh-hant' ? candidate.name_cn : candidate.name_en }</td>
             <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
             <td class='card-password-${index} d-none'>${candidate.card_password}</td>
           </tr>
@@ -249,7 +252,7 @@ async function populateCandidates(level, test_time) {
         candidate_table_template.innerHTML = `
           <tr>
             <th scope='row'>${index+1}</th>
-            <td>${ lang == 'zh' ? candidate.name_cn : candidate.name_en }</td>
+            <td>${ lang == 'zh-hans' || lang == 'zh-hant' ? candidate.name_cn : candidate.name_en }</td>
             <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
             <td class='card-password-${index} d-none'>${candidate.card_password}</td>
           </tr>
@@ -258,7 +261,7 @@ async function populateCandidates(level, test_time) {
         candidate_table_template.innerHTML = `
           <tr>
             <th scope='row'>${index+1}</th>
-            <td>${ lang == 'zh' ? candidate.name_cn : candidate.name_en }</td>
+            <td>${ lang == 'zh-hans' || lang == 'zh-hant' ? candidate.name_cn : candidate.name_en }</td>
             <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
             <td class='card-password-${index} d-none'>${candidate.card_password}</td>
           </tr>
@@ -267,7 +270,7 @@ async function populateCandidates(level, test_time) {
         candidate_table_template.innerHTML = `
           <tr>
             <th scope='row'>${index+1}</th>
-            <td>${ lang == 'zh' ? candidate.name_cn : candidate.name_en }</td>
+            <td>${ lang == 'zh-hans' || lang == 'zh-hant' ? candidate.name_cn : candidate.name_en }</td>
             <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
             <td class='card-password-${index} d-none'>${candidate.card_password}</td>
           </tr>
@@ -276,7 +279,7 @@ async function populateCandidates(level, test_time) {
         candidate_table_template.innerHTML = `
           <tr>
             <th scope='row'>${index+1}</th>
-            <td>${ lang == 'zh' ? candidate.name_cn : candidate.name_en }</td>
+            <td>${ lang == 'zh-hans' || lang == 'zh-hant' ? candidate.name_cn : candidate.name_en }</td>
             <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
             <td class='card-password-${index} d-none'>${candidate.card_password}</td>
           </tr>
@@ -285,7 +288,7 @@ async function populateCandidates(level, test_time) {
         candidate_table_template.innerHTML = `
           <tr>
             <th scope='row'>${index+1}</th>
-            <td>${ lang == 'zh' ? candidate.name_cn : candidate.name_en }</td>
+            <td>${ lang == 'zh-hans' || lang == 'zh-hant' ? candidate.name_cn : candidate.name_en }</td>
             <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
             <td class='card-password-${index} d-none'>${candidate.card_password}</td>
           </tr>
@@ -294,7 +297,7 @@ async function populateCandidates(level, test_time) {
         candidate_table_template.innerHTML = `
           <tr>
             <th scope='row'>${index+1}</th>
-            <td>${ lang == 'zh' ? candidate.name_cn : candidate.name_en }</td>
+            <td>${ lang == 'zh-hans' || lang == 'zh-hant' ? candidate.name_cn : candidate.name_en }</td>
             <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
             <td class='card-password-${index} d-none'>${candidate.card_password}</td>
           </tr>

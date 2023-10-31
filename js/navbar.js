@@ -15,7 +15,7 @@ navbar_template.innerHTML = `
     <i class='fa-solid fa-globe fa-lg secondary-color'></i>
   </a>
   <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
-    <a class='dropdown-item i18n' lang='zh'>中文</a>
+    <a class='dropdown-item i18n' lang='zh-hans'>中文</a>
     <a class='dropdown-item i18n' lang='en'>English</a>
     <a class='dropdown-item i18n' lang='id'>Bahasa Indonesia</a>
     <a class='dropdown-item i18n' lang='ar'>عربي</a>
@@ -49,7 +49,7 @@ navbar_template.innerHTML = `
           <i class='fa-solid fa-globe fa-lg mt-3 align-self-center secondary-color'></i>
         </a>
         <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
-          <a class='dropdown-item i18n' lang='zh'>中文</a>
+          <a class='dropdown-item i18n' lang='zh-hans'>中文</a>
           <a class='dropdown-item i18n' lang='en'>English</a>
           <a class='dropdown-item i18n' lang='id'>Bahasa Indonesia</a>
           <a class='dropdown-item i18n' lang='ar'>عربي</a>
@@ -104,7 +104,7 @@ user_navbar_template.innerHTML = `
     <i class='fa-solid fa-globe fa-lg secondary-color'></i>
   </a>
   <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
-    <a class='dropdown-item i18n' lang='zh'>中文</a>
+    <a class='dropdown-item i18n' lang='zh-hans'>中文</a>
     <a class='dropdown-item i18n' lang='en'>English</a>
     <a class='dropdown-item i18n' lang='id'>Bahasa Indonesia</a>
     <a class='dropdown-item i18n' lang='ar'>عربي</a>
@@ -121,7 +121,7 @@ user_navbar_template.innerHTML = `
           <i class='fa-solid fa-globe fa-lg mt-3 align-self-center secondary-color'></i>
         </a>
         <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
-          <a class='dropdown-item i18n' lang='zh'>中文</a>
+          <a class='dropdown-item i18n' lang='zh-hans'>中文</a>
           <a class='dropdown-item i18n' lang='en'>English</a>
           <a class='dropdown-item i18n' lang='id'>Bahasa Indonesia</a>
           <a class='dropdown-item i18n' lang='ar'>عربي</a>

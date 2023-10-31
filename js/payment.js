@@ -112,9 +112,9 @@ window.addEventListener('DOMContentLoaded', async () => {
     return sessionStorage.getItem(key);
   }
   
-  function applyText(lang, target, zh, en, id, ar) {
-    if (lang == null || lang == 'zh') {
-      target.html(zh);
+  function applyText(lang, target, zh_hans, en, id, ar) {
+    if (lang == null || lang == 'zh-hans' || lang == 'zh-hant') {
+      target.html(zh_hans);
     } else if (lang == 'en') {
       target.html(en);
     } else if (lang == 'id') {
@@ -140,10 +140,13 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  function transLang(lang, zh, en, id, ar) {
+  function transLang(lang, zh_hans, en, id, ar) {
     switch(lang) {
-      case 'zh':
-        return zh
+      case 'zh-hans':
+        return zh_hans
+        break;
+      case 'zh-hant':
+        return zh_hans
         break;
       case 'en':
         return en
@@ -155,12 +158,12 @@ window.addEventListener('DOMContentLoaded', async () => {
         return ar
         break;
       default:
-        return zh
+        return zh_hans
     }
   }
 
   function getLocalLang(key) {
-    return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
+    return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh-hans';
   }
 
   async function checkPaymentAmount() {

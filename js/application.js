@@ -484,7 +484,7 @@ async function populateInfo() {
     return option.native_language == getSession('native-language');
   });
 
-  if (lang == 'zh') {
+  if (lang == 'zh-hans' || lang == 'zh-hant') {
     nationality = nationality[0].nationality;
     native_language = native_language[0].native_language;
   } else {
@@ -578,10 +578,13 @@ function valueStudyYear(lang, value) {
   }
 }
 
-function transLang(lang, zh, en, id, ar) {
+function transLang(lang, zh_hans, en, id, ar) {
   switch(lang) {
-    case 'zh':
-      return zh
+    case 'zh-hans':
+      return zh_hans
+      break;
+    case 'zh-hant':
+      return zh_hans
       break;
     case 'en':
       return en
@@ -593,7 +596,7 @@ function transLang(lang, zh, en, id, ar) {
       return ar
       break;
     default:
-      return zh
+      return zh_hans
   }
 }
 
@@ -804,11 +807,14 @@ function displaySelectedDateTime(exam_location, exam_level, exam_datetime, exam_
   $('.selected-exam-amount').html('$' + parseInt(exam_amount).toFixed(2))
 }
 
-function selectedDateTimeLocationLevelLang(targetId, zh, en, id, ar) {
+function selectedDateTimeLocationLevelLang(targetId, zh_hans, en, id, ar) {
   let lang = getLocalLang('lang');
   switch(lang) {
-    case 'zh':
-      $(targetId).html(zh)
+    case 'zh-hans':
+      $(targetId).html(zh_hans)
+      break;
+    case 'zh-hant':
+      $(targetId).html(zh_hans)
       break;
     case 'en':
       $(targetId).html(en)
@@ -820,7 +826,7 @@ function selectedDateTimeLocationLevelLang(targetId, zh, en, id, ar) {
       $(targetId).html(ar)
       break;
     default:
-      $(targetId).html(zh)
+      $(targetId).html(zh_hans)
   }
 }
 
@@ -844,7 +850,7 @@ function unavailableExamDateTimeOptions() {
   const exam_datetime_options = $('#exam-datetime-options')[0];
   let exam_date_template = document.createElement('template');
   let no_data_lang
-  if (lang == 'zh') no_data_lang = '暂时无法提供考试时间';
+  if (lang == 'zh-hans' || lang == 'zh-hant') no_data_lang = '暂时无法提供考试时间';
   if (lang == 'en') no_data_lang = 'The exam time is temporarily unavailable';
   if (lang == 'id') no_data_lang = 'Waktu ujian untuk sementara tidak tersedia';
   if (lang == 'ar') no_data_lang = 'وقت الامتحان غير متاح مؤقتا';
@@ -865,12 +871,15 @@ function unavailableExamDateTimeOptions() {
 }
 
 function getLocalLang(key) {
-  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
+  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh-hans';
 }
 
 function convertLang(lang) {
   switch(lang) {
-    case 'zh':
+    case 'zh-hans':
+      return 'zh-HK'
+      break;
+    case 'zh-hant':
       return 'zh-HK'
       break;
     case 'en':
@@ -937,7 +946,7 @@ function populateNationality(id) {
     for (let i = 0; i <= options.length; i++) {
       let option = document.createElement('option');
       option.value = options[i]?.nationality;
-      if (lang == 'zh') {
+      if (lang == 'zh-hans' || lang == 'zh-hant') {
         option.text = options[i]?.nationality;
       } else {
         option.text = options[i]?.nationality_en;
@@ -956,7 +965,7 @@ function populateEthnicity(id) {
     for (let i = 0; i <= options.length; i++) {
       let option = document.createElement('option');
       option.value = options[i]?.ethnicity;
-      if (lang == 'zh') {
+      if (lang == 'zh-hans' || lang == 'zh-hant') {
         option.text = options[i]?.ethnicity;
       } else {
         option.text = options[i]?.ethnicity;
@@ -974,7 +983,7 @@ function populateNativeLang(id) {
     for (let i = 0; i <= options.length; i++) {
       let option = document.createElement('option');
       option.value = options[i]?.native_language;
-      if (lang == 'zh') {
+      if (lang == 'zh-hans' || lang == 'zh-hant') {
         option.text = options[i]?.native_language;
       } else {
         option.text = options[i]?.native_language_en;

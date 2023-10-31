@@ -124,12 +124,15 @@ async function loadExamTime() {
 }
 
 function getLocalLang(key) {
-  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
+  return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh-hans';
 }
 
 function convertLang(lang) {
   switch(lang) {
-    case 'zh':
+    case 'zh-hans':
+      return 'zh-HK'
+      break;
+    case 'zh-hant':
       return 'zh-HK'
       break;
     case 'en':
