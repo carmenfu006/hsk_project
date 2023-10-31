@@ -4,14 +4,14 @@ const page = document.URL.split(/[?#]/)[0].split('/').pop();
 if (user && page == 'candidate-login.html') {
   window.location.href = window.location.origin + '/application.html';
 } else if (user && page == 'partner-login.html') {
-  localStorage.clear();
-  sessionStorage.clear();
+  clearInfoLocal();
+  clearInfoSession();
   location.reload();
 } else if (partner && page == 'partner-login.html') {
   window.location.href = window.location.origin + '/partner/candidate-management.html';
 } else if (partner && page == 'candidate-login.html') {
-  localStorage.clear();
-  sessionStorage.clear();
+  clearInfoLocal();
+  clearInfoSession();
   location.reload();
 }
 
@@ -56,8 +56,8 @@ $('#to-candidate-dashboard').on('click', async(e) => {
       let data = await response.json();
 
       if (data.code == 200) {
-        sessionStorage.clear();
-        localStorage.clear();
+        clearInfoSession();
+        clearInfoLocal();
         $('.toast').toast('hide');
         let info = data.data
         localStorage.setItem('refresh', info.refresh);
@@ -135,8 +135,8 @@ $('#to-partner-dashboard').on('click', async(e) => {
       })
       let data = await response.json();
       if (data.code == 200) {
-        sessionStorage.clear();
-        localStorage.clear();
+        clearInfoSession();
+        clearInfoLocal();
         $('.toast').toast('hide');
         let info = data.data;
         localStorage.setItem('refresh', info.refresh);

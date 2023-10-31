@@ -232,8 +232,8 @@ if (partner == null) {
 }
 
 $('#user-logout, #partner-logout').on('click', function(e) {
-  localStorage.clear();
-  sessionStorage.clear();
+  clearInfoSession();
+  clearInfoLocal();
   window.location.href = window.location.origin + '/index.html';
 });
 
@@ -263,6 +263,12 @@ let clearInfoSession = function() {
   // sessionStorage.setItem('user_type', user_type);
   // sessionStorage.setItem('is_tester', is_tester);
   // sessionStorage.setItem('photo_path', photo_path);
+}
+
+let clearInfoLocal = function() {
+  let lang = localStorage.getItem('lang');
+  localStorage.clear();
+  localStorage.setItem('lang', lang);
 }
 
 // var loc = window.location.pathname;

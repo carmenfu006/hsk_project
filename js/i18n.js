@@ -3206,6 +3206,7 @@ $('.i18n').on('click', function() {
   location.reload();
 });
 
+if (!getLocal('lang')) checkParamsLang();
 updatePDFLink()
 updateTitle()
 
@@ -3285,6 +3286,20 @@ function updateTitle() {
 
 function getLocalLang(key) {
   return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh';
+}
+
+function getLocal(key) {
+  return localStorage.getItem(key);
+}
+
+function checkParamsLang() {
+  const lang = new URL(location.href).searchParams.get('lang');
+  const change = true;
+  if (lang && change) {
+    localStorage.setItem('lang', lang);
+    location.reload();
+    change = false
+  }
 }
 
 // let lang = sessionStorage.getItem("lang");
