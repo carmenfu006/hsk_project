@@ -71,6 +71,7 @@ $('#to-candidate-dashboard').on('click', async(e) => {
         localStorage.setItem('user_type', info.user_type);
         localStorage.setItem('is_tester', info.is_tester);
         localStorage.setItem('photo_path', info.photo_path);
+        localStorage.setItem('lang', info.language);
         application == 'true' ? window.location.href = window.location.origin + '/application.html' : window.location.replace($('#to-candidate-dashboard')[0].form.action);
       } else if (data.code == 400) {
         toastMessage(data.msg)
@@ -428,6 +429,10 @@ function addRecaptchaToHead() {
 
 function getLocalLang(key) {
   return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh-hans';
+}
+
+function getLocal(key) {
+  return localStorage.getItem(key);
 }
 
 function inputVal(id) {

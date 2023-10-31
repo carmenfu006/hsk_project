@@ -3200,10 +3200,37 @@ translateWeb(
 )
 
 
-$('.i18n').on('click', function() {
-  let lang = $(this).attr('lang');
+$('.i18n').on('click', async(e) => {
+  const lang = $(e.target).attr('lang');
+  const params_lang = new URL(location.href).searchParams.get('lang');
+  const url = new URL(location.href);
+
+  if (params_lang) {
+    url.searchParams.set('lang', lang);
+  }
+  
+  if (getLocal('user')) {
+    let response = await fetch('https://api.hskk.org/webapi/language/', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type' : 'application/json',
+          'Accept-Language': lang,
+          'Authorization' : `Bearer ${getLocal('user')}`
+        },
+          body: JSON.stringify({
+            language: lang
+          })
+      })
+    let data = await response.json();
+    
+    if (data.code == 200) {
+      localStorage.setItem('lang', lang);
+      window.location.href = url.href;
+    }
+  }
   localStorage.setItem('lang', lang);
-  location.reload();
+  window.location.href = url.href;
 });
 
 const params_lang = new URL(location.href).searchParams.get('lang');
