@@ -102,7 +102,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     let total_amounts = document.querySelectorAll('.total-amount');
     let discount_error_message = document.getElementById('discount-error-message');
     let discount_success_message = document.getElementById('discount-success-message');
-
+console.log(data)
     if (data.code == 200) {
       let info = data.data;
       total_amounts.forEach(total_amount => {
