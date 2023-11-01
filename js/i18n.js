@@ -1122,7 +1122,7 @@ translateWeb(
 )
 translateWeb(
   '.i18n-159',
-  '登入/註冊',
+  '登入/注册',
   'Login/Register',
   'Masuk/Daftar',
   'تسجيل الدخول / التسجيل'
