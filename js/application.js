@@ -165,7 +165,7 @@ async function loadFile() {
 
   $('#file').change(function() {
     const file = this.files[0];
-    const maxBytes = 500000;
+    const maxBytes = 5000000;
 
     if (file.size <= maxBytes) {
       if (file) {

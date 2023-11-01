@@ -85,7 +85,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     e.preventDefault();
     verify_code.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
 
-    let discount_code = document.getElementById('discount-code').value;
+    let discount_code = document.getElementById('discount-code');
 
     let response = await fetch(`https://api.hskk.org/webapi/order_read_payment/${paymentIntentId}`, {
       method: 'PUT',
@@ -95,7 +95,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         // 'Authorization' : `Bearer ${user}`
       },
       body: JSON.stringify({
-        coupon: discount_code
+        coupon: discount_code.value
       })
     })
     let data = await response.json();
