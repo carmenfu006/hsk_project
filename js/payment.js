@@ -87,16 +87,14 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     let discount_code = document.getElementById('discount-code');
 
-    let response = await fetch(`https://api.hskk.org/webapi/order_read_payment/${paymentIntentId}`, {
-      method: 'PUT',
+    let response = await fetch(`https://api.hskk.org/webapi/order_read_payment?coupon=${discount_code.value}&payment_intent_id=${paymentIntentId}`, {
+      method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type' : 'application/json',
         // 'Authorization' : `Bearer ${user}`
       },
-      body: JSON.stringify({
-        coupon: discount_code.value
-      })
+      body: {}
     })
     let data = await response.json();
     let total_amounts = document.querySelectorAll('.total-amount');
@@ -109,6 +107,8 @@ window.addEventListener('DOMContentLoaded', async () => {
         total_amount.innerHTML = (parseInt(info.payment_amount)/100).toFixed(2);
       });
       applyText(lang, verify_code, '应用', 'Apply', 'Aplikasi', 'تطبيق');
+      discount_code.readOnly = true;
+      verify_code.disabled = true;
       verify_code.style.backgroundColor = '#3FD3C3';
       discount_error_message.classList.add('d-none')
       discount_success_message.classList.remove('d-none')
