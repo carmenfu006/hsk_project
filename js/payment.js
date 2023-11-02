@@ -87,11 +87,11 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     let discount_code = document.getElementById('discount-code');
 
-    let response = await fetch(`https://api.hskk.org/webapi/order_read_payment?coupon=${discount_code.value}&payment_intent_id=${paymentIntentId}`, {
-      method: 'POST',
+    let response = await fetch(`https://api.hskk.org/webapi/order_read_payment/${paymentIntentId}?coupon=${discount_code.value}`, {
+      method: 'PUT',
       headers: {
         'Accept': 'application/json, text/plain, */*',
-        'Content-Type' : 'application/json',
+        'Content-Type' : 'application/json'
         // 'Authorization' : `Bearer ${user}`
       },
       body: {}
