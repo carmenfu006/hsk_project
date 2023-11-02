@@ -44,6 +44,8 @@ function progressIndicator() {
   switch(page) {
     case 'application.html':
       activeProgressBar('.step-1');
+      $('.display-loading').show();
+      $('.display-month-year-datetime').hide();
       if (getSession('exam-location') == null && getSession('exam-level') == null) {
         loadExamTime(1, 7);
       } else {
@@ -638,7 +640,9 @@ function populateDay(id) {
 }
 
 function selectLoadExamTime() {
-  $('#exam-location, #exam-level').on('change', function() {
+  $('#exam-location, #exam-level').on('change', async() => {
+    $('.display-loading').show();
+    $('.display-month-year-datetime').hide();
     $('#exam-datetime-selection').empty();
     $('#exam-datetime-options').empty();
     $('#exam-datetime').val('');
@@ -646,13 +650,12 @@ function selectLoadExamTime() {
     $('#exam-currency').val('');
     $('.exam-datetime').prop('checked', false);
     nextBtnStage1()
-    loadExamTime($('#exam-location').val(), $('#exam-level').val())
+    await loadExamTime($('#exam-location').val(), $('#exam-level').val())
     updateCartItem()
   })
 }
 
 async function loadExamTime(area, level) {
-  $('#exam-datetime-selection').empty();
   let lang = getLocalLang('lang');
   let month_options = [];
   let year_options = [];
@@ -702,6 +705,9 @@ async function loadExamTime(area, level) {
         exam_datetime_year.insertAdjacentHTML('afterend', exam_month_template);
       }
     });
+
+    $('.display-loading').hide();
+    $('.display-month-year-datetime').show();
   } else {
     unavailableExamDateTimeOptions()
   }

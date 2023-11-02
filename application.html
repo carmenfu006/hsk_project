@@ -7,7 +7,7 @@
     <script src="js/jquery-3.5.1.slim.min.js?v=1.0" type="text/javascript" defer></script>
     <script src="js/navbar.js?v=1.8" type="text/javascript" defer></script>
     <script src="js/footer.js?v=1.1" type="text/javascript" defer></script>
-    <script src="js/application.js?v=1.8" type="text/javascript" defer></script>
+    <script src="js/application.js?v=1.9" type="text/javascript" defer></script>
     <script src="js/i18n.js?v=1.7" type="text/javascript" defer></script>
     <script src="js/bootstrap.js?v=1.0" type="text/javascript" defer></script>
     <link href="css/bootstrap.css?v=1.0" rel="stylesheet" />
@@ -44,7 +44,12 @@
                 <option class='i18n-56' value='9'>HSK⼝语(高级)</option>
               </select>
             </div>
-            <div class='row'>
+            <div class='row mt-5 mb-5 display-loading'>
+              <div class='col text-center'>
+                <i class='fa-solid fa-spinner fa-spin fa-4x'></i>
+              </div>
+            </div>
+            <div class='row display-month-year-datetime'>
               <div class='col'>
                 <p class='mt-2'>
                   <span class='i18n-73'>请选择考试时间</span>
@@ -52,21 +57,23 @@
                 </p>
               </div>
             </div>
-            <div class='d-flex justify-content-between mb-3'>
-              <div class='d-block d-lg-none d-md-none d-sm-block'>
-                <i class='fa-solid fa-angle-left btn-left text-dark toggle mt-2 mr-2'></i>
-              </div>
-              <div class='o-hidden'>
-                <div class='month-bar'>
-                  <div id='exam-datetime-selection' class='d-flex month position-relative'>
+            <div class='display-month-year-datetime'>
+              <div class='d-flex justify-content-between mb-3'>
+                <div class='d-block d-lg-none d-md-none d-sm-block'>
+                  <i class='fa-solid fa-angle-left btn-left text-dark toggle mt-2 mr-2'></i>
+                </div>
+                <div class='o-hidden'>
+                  <div class='month-bar'>
+                    <div id='exam-datetime-selection' class='d-flex month position-relative'>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class='d-block d-lg-none d-md-none d-sm-block'>
-                <i class='fa-solid fa-angle-right btn-right text-dark toggle mt-2 ml-2'></i>
+                <div class='d-block d-lg-none d-md-none d-sm-block'>
+                  <i class='fa-solid fa-angle-right btn-right text-dark toggle mt-2 ml-2'></i>
+                </div>
               </div>
             </div>
-            <div class='card mb-3'>
+            <div class='card mb-3 display-month-year-datetime'>
               <div class='card-header'>
                 <span class='i18n-75'>考试时间*(GMT+08:00)</span>
                 <input type='hidden' id='exam-datetime-id' name='exam-datetime-id'>
