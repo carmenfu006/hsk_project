@@ -803,13 +803,12 @@ translateWeb(
   'Klik atau seret file ke area ini untuk mengunggah.',
   'انقر أو اسحب الملفات إلى هذا المجال للتحميل.'
 )
-
 translateWeb(
   '.i18n-114',
-  '(支持的文件格式：JPG; 最大文件大小为500KB)',
-  '(Supported file formats: JPG; Maximum file size is 500KB)',
-  '(Format file yang didukung: JPG; Ukuran maksimum file adalah 500KB)',
-  '(تنسيقات الملفات المدعومة: JPG؛ الحجم الأقصى للملف: 500 كيلوبايت)'
+  '(支持的文件格式：JPG; 最大文件大小为5MB)',
+  '(Supported file formats: JPG; Maximum file size is 5MB)',
+  '(Format file yang didukung: JPG; Ukuran maksimum file adalah 5MB)',
+  '(تنسيقات الملفات المدعومة: JPG؛ الحد الأقصى لحجم الملف هو 5 ميجابايت)'
 )
 translateWeb(
   '.i18n-115',
@@ -848,10 +847,10 @@ translateWeb(
 )
 translateWeb(
   '.i18n-120',
-  '文件大小: 15~500kb',
-  'File Size: 15~500kb',
-  'Ukuran file: 15 hingga 500KB',
-  '.حجم الملف: من 15 إلى 500 كيلوبايت'
+  '文件大小: 15KB~5MB',
+  'File Size: 15KB~5MB',
+  'Ukuran file: 15KB hingga 5MB',
+  'حجم الملف: 15 كيلو بايت ~ 5 ميجا بايت'
 )
 translateWeb(
   '.i18n-121',
@@ -2423,10 +2422,10 @@ translateWeb(
 )
 translateWeb(
   '.i18n-344',
-  '最大文件大小为500KB',
-  'Maximum file size is 500KB',
-  'Ukuran file maksimum adalah 500KB',
-  'الحد الأقصى لحجم الملف هو 500 كيلو بايت'
+  '最大文件大小为5MB',
+  'Maximum file size is 5MB',
+  'Ukuran file maksimum adalah 5MB',
+  'الحد الأقصى لحجم الملف هو 5 ميغابايت'
 )
 translateWeb(
   '.i18n-345',
