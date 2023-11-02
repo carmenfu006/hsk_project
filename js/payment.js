@@ -94,7 +94,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         'Content-Type' : 'application/json'
         // 'Authorization' : `Bearer ${user}`
       },
-      body: {}
+      body: JSON.stringify({})
     })
     let data = await response.json();
     let total_amounts = document.querySelectorAll('.total-amount');
