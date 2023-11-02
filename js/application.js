@@ -652,6 +652,7 @@ function selectLoadExamTime() {
 }
 
 async function loadExamTime(area, level) {
+  $('#exam-datetime-selection').empty();
   let lang = getLocalLang('lang');
   let month_options = [];
   let year_options = [];
