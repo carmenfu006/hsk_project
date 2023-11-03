@@ -93,19 +93,31 @@ if ('geolocation' in navigator) {
   });
 } else {
   console.error('Geolocation is not available in this browser.');
+  $('#google-recaptcha').show();
+  $('#to-candidate-dashboard').on('click', async(e) => {
+    e.preventDefault();
+    const captchaResponse = grecaptcha.getResponse()
+    const application = new URL(location.href).searchParams.get('application');
+  
+    if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
+      toastLang('Recaptcha not checked')
+      $('.toast').toast('show');
+    } else {
+      await candidateLogin(application)
+    }
+  });
+  $('#to-partner-dashboard').on('click', async(e) => {
+    e.preventDefault();
+    const captchaResponse = grecaptcha.getResponse()
+  
+    if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
+      toastLang('Recaptcha not checked')
+      $('.toast').toast('show');
+    } else {
+      await partnerLogin()
+    }
+  });
 }
-
-$('#to-partner-dashboard').on('click', async(e) => {
-  e.preventDefault();
-  const captchaResponse = grecaptcha.getResponse()
-
-  if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
-    toastLang('Recaptcha not checked')
-    $('.toast').toast('show');
-  } else {
-    await partnerLogin()
-  }
-});
 
 $('#verification-code-btn').on('click', async(e) => {
   e.preventDefault();
