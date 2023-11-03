@@ -16,95 +16,84 @@ if (user && page == 'candidate-login.html') {
 }
 
 addRecaptchaToHead()
+$('#google-recaptcha').hide();
 
-$('#to-candidate-dashboard').on('click', async(e) => {
-  e.preventDefault();
-  
-  const captchaResponse = grecaptcha.getResponse()
-  const application = new URL(location.href).searchParams.get('application');
+async function printJSON() {
+  const response = await fetch('../json/cn.json');
+  const json = await response.json();
+  return json;
+}
 
-  if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
-    toastLang('Recaptcha not checked')
-    $('.toast').toast('show');
-  } else {
-    if (verifyEmailVal(inputVal('#email')) == null && verifyCodeVal(inputVal('#verify_code')) == null) {
-      invalidInput('#email')
-      invalidInput('#input-code')
-      toastLang('invalid email and code')
-      $('.toast').toast('show');
-    } else if (verifyEmailVal(inputVal('#email')) == null) {
-      invalidInput('#email')
-      toastLang('invalid email')
-      $('.toast').toast('show');
-    } else if (verifyCodeVal(inputVal('#verify_code')) == null) {
-      invalidInput('#input-code')
-      toastLang('invalid code')
-      $('.toast').toast('show');
-    } else if (verifyEmailVal(inputVal('#email')) != null && verifyCodeVal(inputVal('#verify_code')) != null) {
-      let response = await fetch('https://api.hskk.org/webapi/login/', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json, text/plain, */*',
-          'Content-Type' : 'application/json',
-          'Accept-Language': lang
-        },
-          body: JSON.stringify({
-            email: inputVal('#email'),
-            verify_code: inputVal('#verify_code'),
-            language: lang
-          })
-      })
-      let data = await response.json();
+if ('geolocation' in navigator) {
+  navigator.geolocation.getCurrentPosition(async(position) => {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    const cn_list = await printJSON();
+    let is_China;
 
-      if (data.code == 200) {
-        clearInfoSession();
-        clearInfoLocal();
-        $('.toast').toast('hide');
-        let info = data.data
-        localStorage.setItem('refresh', info.refresh);
-        localStorage.setItem('user', info.access);
-        localStorage.setItem('expire', info.expire);
-        localStorage.setItem('username', info.username);
-        localStorage.setItem('first_name', info.first_name);
-        localStorage.setItem('first_name_en', info.first_name_en);
-        localStorage.setItem('email', info.email);
-        localStorage.setItem('user_type', info.user_type);
-        localStorage.setItem('is_tester', info.is_tester);
-        localStorage.setItem('photo_path', info.photo_path);
-        localStorage.setItem('lang', info.language);
-        application == 'true' ? window.location.href = window.location.origin + '/application.html' : window.location.replace($('#to-candidate-dashboard')[0].form.action);
-      } else if (data.code == 400) {
-        toastMessage(data.msg)
-        $('.toast').toast('show');
+    is_China = cn_list.filter(function(list) {
+      if (list.lat == latitude && list.lng == longitude) {
+        return list
       }
-    }
-  }
+    });
 
-  // fetch('/recaptcha', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Accept': 'application/json, text/plain, */*',
-  //     'Content-Type' : 'application/json'
-  //   },
-  //     body: JSON.stringify({captchaResponse: captchaResponse})
-  // })
-  // .then(r => r.json())
-  // .then((data) => {
-    
-  //   if (data.status == true) {
-  //     sessionStorage.setItem('user', 'true');
-  //     window.location.replace($(this)[0].form.action);
-  //   } else {
-  //     if (data.message == 'Recaptcha not checked') {
-  //       toastLang(data.message)
-  //       $('.toast').toast('show');
-  //     } else {
-  //       toastLang(data.message)
-  //       $('.toast').toast('show');
-  //     }
-  //   }
-  // });
-});
+    if (!is_China[0]) {
+      $('#google-recaptcha').show();
+      $('#to-candidate-dashboard').on('click', async(e) => {
+        e.preventDefault();
+        const captchaResponse = grecaptcha.getResponse()
+        const application = new URL(location.href).searchParams.get('application');
+      
+        if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
+          toastLang('Recaptcha not checked')
+          $('.toast').toast('show');
+        } else {
+          await candidateLogin(application)
+        }
+      });
+      $('#to-partner-dashboard').on('click', async(e) => {
+        e.preventDefault();
+        const captchaResponse = grecaptcha.getResponse()
+      
+        if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
+          toastLang('Recaptcha not checked')
+          $('.toast').toast('show');
+        } else {
+          await partnerLogin()
+        }
+      });
+    } else {
+      $('#google-recaptcha').hide();
+      $('#to-candidate-dashboard').on('click', async(e) => {
+        e.preventDefault();
+        const application = new URL(location.href).searchParams.get('application');
+        await candidateLogin(application)
+      });
+      $('#to-partner-dashboard').on('click', async(e) => {
+        e.preventDefault();
+        await partnerLogin()
+      });
+    }
+      
+  }, function(error) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+            console.error('User denied the request for geolocation.');
+            break;
+        case error.POSITION_UNAVAILABLE:
+            console.error('Location information is unavailable.');
+            break;
+        case error.TIMEOUT:
+            console.error('The request to get user location timed out.');
+            break;
+        case error.UNKNOWN_ERROR:
+            console.error('An unknown error occurred.');
+            break;
+      }
+  });
+} else {
+  console.error('Geolocation is not available in this browser.');
+}
 
 $('#to-partner-dashboard').on('click', async(e) => {
   e.preventDefault();
@@ -114,74 +103,8 @@ $('#to-partner-dashboard').on('click', async(e) => {
     toastLang('Recaptcha not checked')
     $('.toast').toast('show');
   } else {
-    if (verifyEmailVal(inputVal('#username')) == null) {
-      invalidInput('#username')
-      toastLang('invalid email')
-      $('.toast').toast('show');
-    } else if (verifyInput('#password') == false) {
-      invalidInput('#password')
-      toastLang('invalid password')
-      $('.toast').toast('show');
-    } else if (verifyEmailVal(inputVal('#username')) != null && verifyInput('#password')) {
-      let response = await fetch('https://api.hskk.org/webapi/login-partner/', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json, text/plain, */*',
-          'Content-Type' : 'application/json',
-          'Accept-Language': lang
-        },
-          body: JSON.stringify({
-            username: inputVal('#username'),
-            password: inputVal('#password')
-          })
-      })
-      let data = await response.json();
-      if (data.code == 200) {
-        clearInfoSession();
-        clearInfoLocal();
-        $('.toast').toast('hide');
-        let info = data.data;
-        localStorage.setItem('refresh', info.refresh);
-        localStorage.setItem('partner', info.access);
-        localStorage.setItem('expire', info.expire);
-        localStorage.setItem('username', info.username);
-        localStorage.setItem('first_name', info.first_name);
-        localStorage.setItem('first_name_en', info.first_name_en);
-        localStorage.setItem('email', info.email);
-        localStorage.setItem('user_type', info.user_type);
-        localStorage.setItem('is_partner', info.is_partner);
-        localStorage.setItem('photo_path', info.photo_path);
-        window.location.href = window.location.origin + '/partner/candidate-management.html'
-      } else if (data.code == 400) {
-        toastMessage(data.msg)
-        $('.toast').toast('show');
-      }
-    }
+    await partnerLogin()
   }
-
-  // fetch('/recaptcha', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Accept': 'application/json, text/plain, */*',
-  //     'Content-Type' : 'application/json'
-  //   },
-  //     body: JSON.stringify({captchaResponse: captchaResponse})
-  // })
-  // .then(r => r.json())
-  // .then((data) => {
-  //   if (data.status == true) {
-  //     sessionStorage.setItem('partner', 'true');
-  //     window.location.replace($(this)[0].form.action);
-  //   } else {
-  //     if (data.message == 'Recaptcha not checked') {
-  //       toastLang(data.message)
-  //       $('.toast').toast('show');
-  //     } else {
-  //       toastLang(data.message)
-  //       $('.toast').toast('show');
-  //     }
-  //   }
-  // });
 });
 
 $('#verification-code-btn').on('click', async(e) => {
@@ -461,4 +384,104 @@ function invalidInput(id) {
 
 function validInput(id) {
   $(id).removeClass('invalid');
+}
+
+async function candidateLogin(application) {
+  if (verifyEmailVal(inputVal('#email')) == null && verifyCodeVal(inputVal('#verify_code')) == null) {
+    invalidInput('#email')
+    invalidInput('#input-code')
+    toastLang('invalid email and code')
+    $('.toast').toast('show');
+  } else if (verifyEmailVal(inputVal('#email')) == null) {
+    invalidInput('#email')
+    toastLang('invalid email')
+    $('.toast').toast('show');
+  } else if (verifyCodeVal(inputVal('#verify_code')) == null) {
+    invalidInput('#input-code')
+    toastLang('invalid code')
+    $('.toast').toast('show');
+  } else if (verifyEmailVal(inputVal('#email')) != null && verifyCodeVal(inputVal('#verify_code')) != null) {
+    let response = await fetch('https://api.hskk.org/webapi/login/', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type' : 'application/json',
+        'Accept-Language': lang
+      },
+        body: JSON.stringify({
+          email: inputVal('#email'),
+          verify_code: inputVal('#verify_code'),
+          language: lang
+        })
+    })
+    let data = await response.json();
+
+    if (data.code == 200) {
+      clearInfoSession();
+      clearInfoLocal();
+      $('.toast').toast('hide');
+      let info = data.data
+      localStorage.setItem('refresh', info.refresh);
+      localStorage.setItem('user', info.access);
+      localStorage.setItem('expire', info.expire);
+      localStorage.setItem('username', info.username);
+      localStorage.setItem('first_name', info.first_name);
+      localStorage.setItem('first_name_en', info.first_name_en);
+      localStorage.setItem('email', info.email);
+      localStorage.setItem('user_type', info.user_type);
+      localStorage.setItem('is_tester', info.is_tester);
+      localStorage.setItem('photo_path', info.photo_path);
+      localStorage.setItem('lang', info.language);
+      application == 'true' ? window.location.href = window.location.origin + '/application.html' : window.location.replace($('#to-candidate-dashboard')[0].form.action);
+    } else if (data.code == 400) {
+      toastMessage(data.msg)
+      $('.toast').toast('show');
+    }
+  }
+}
+
+async function partnerLogin() {
+  if (verifyEmailVal(inputVal('#username')) == null) {
+    invalidInput('#username')
+    toastLang('invalid email')
+    $('.toast').toast('show');
+  } else if (verifyInput('#password') == false) {
+    invalidInput('#password')
+    toastLang('invalid password')
+    $('.toast').toast('show');
+  } else if (verifyEmailVal(inputVal('#username')) != null && verifyInput('#password')) {
+    let response = await fetch('https://api.hskk.org/webapi/login-partner/', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type' : 'application/json',
+        'Accept-Language': lang
+      },
+        body: JSON.stringify({
+          username: inputVal('#username'),
+          password: inputVal('#password')
+        })
+    })
+    let data = await response.json();
+    if (data.code == 200) {
+      clearInfoSession();
+      clearInfoLocal();
+      $('.toast').toast('hide');
+      let info = data.data;
+      localStorage.setItem('refresh', info.refresh);
+      localStorage.setItem('partner', info.access);
+      localStorage.setItem('expire', info.expire);
+      localStorage.setItem('username', info.username);
+      localStorage.setItem('first_name', info.first_name);
+      localStorage.setItem('first_name_en', info.first_name_en);
+      localStorage.setItem('email', info.email);
+      localStorage.setItem('user_type', info.user_type);
+      localStorage.setItem('is_partner', info.is_partner);
+      localStorage.setItem('photo_path', info.photo_path);
+      window.location.href = window.location.origin + '/partner/candidate-management.html'
+    } else if (data.code == 400) {
+      toastMessage(data.msg)
+      $('.toast').toast('show');
+    }
+  }
 }
