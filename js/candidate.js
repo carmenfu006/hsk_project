@@ -114,6 +114,7 @@ function dashboardPage() {
       authoriseAccess()
       activeMenuBar('#support-sidebar', '#support-footbar')
       scrollFootbar('support-footbar')
+      dragDropFile()
       checkFile($('#output'))
       break;
     case 'faqs.html':
@@ -161,6 +162,63 @@ function scrollFootbar(id) {
 
 function authoriseAccess() {
   if (user == null) window.location.href = window.location.origin + '/candidate-login.html'
+}
+
+function dragDropFile() {
+  let dropArea = document.getElementById('drop-area')
+  dropArea.addEventListener(
+    "dragenter",
+    (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    },
+    false
+  );
+  dropArea.addEventListener(
+    "dragleave",
+    (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    },
+    false
+  );
+  dropArea.addEventListener(
+    "dragover",
+    (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    },
+    false
+  );
+
+  dropArea.addEventListener(
+    "drop",
+    (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      let draggedData = e.dataTransfer;
+      let file = draggedData.files[0];
+      const fileTag = $('#output');
+      const maxBytes = 5000000;
+
+      if (file.size <= maxBytes) {
+        if (file) {
+          let reader = new FileReader();
+          reader.onload = function(event){
+            fileTag.attr('src', URL.createObjectURL(file));
+            checkFile(fileTag)
+            setSession('support-center-file', event.target.result);
+          }
+          reader.readAsDataURL(file);
+        }
+      } else {
+        fileTag.attr('src', '')
+        $('#file').val('');
+        $('.toast').toast('show');
+      }
+    },
+    false
+  );
 }
 
 $('#file').change(function() {

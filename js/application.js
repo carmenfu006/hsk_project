@@ -74,6 +74,7 @@ function progressIndicator() {
     case 'application-candidate-profile.html':
       if (getSession('stage2') == 'true') {
         activeProgressBar('.step-1, .step-2, .step-3');
+        dragDropFile();
         loadFile();
       } else {
         window.location.href = window.location.origin + '/application.html'
@@ -147,6 +148,65 @@ function nextBtnStage3(infoPhoto) {
       $('#to-step-4').attr('disabled', true);
     }
   }
+}
+
+function dragDropFile() {
+  let dropArea = document.getElementById('drop-area')
+  dropArea.addEventListener(
+    "dragenter",
+    (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    },
+    false
+  );
+  dropArea.addEventListener(
+    "dragleave",
+    (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    },
+    false
+  );
+  dropArea.addEventListener(
+    "dragover",
+    (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    },
+    false
+  );
+
+  dropArea.addEventListener(
+    "drop",
+    (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      let draggedData = e.dataTransfer;
+      let file = draggedData.files[0];
+      let imageTag = $('#output');
+      const maxBytes = 5000000;
+
+      if (file.size <= maxBytes) {
+        if (file) {
+          let reader = new FileReader();
+          reader.onload = function(event){
+            imageTag.attr('src', URL.createObjectURL(file));
+            checkFile(imageTag)
+            setSession('file', event.target.result);
+            nextBtnStage3()
+          }
+          reader.readAsDataURL(file);
+        }
+      } else {
+        imageTag.attr('src', '')
+        $('#file').val('');
+        $('#to-step-4').attr('disabled', true);
+        $('.toast').toast('show');
+      }
+    },
+    false
+  );
 }
 
 async function loadFile() {
