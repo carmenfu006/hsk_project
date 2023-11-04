@@ -201,20 +201,40 @@ function dragDropFile() {
       const fileTag = $('#output');
       const maxBytes = 5000000;
 
-      if (file.size <= maxBytes) {
-        if (file) {
+      if (file) {
+        if (file.size <= maxBytes) {
           let reader = new FileReader();
           reader.onload = function(event){
             fileTag.attr('src', URL.createObjectURL(file));
             checkFile(fileTag)
-            setSession('support-center-file', event.target.result);
+            // setSession('support-center-file', event.target.result);
+
+            var image = new Image();
+            image.onload = function(imageEvent) {
+              var max_size = 300;
+              var w = image.width;
+              var h = image.height;
+            
+              if (w > h) {  if (w > max_size) { h*=max_size/w; w=max_size; }
+              } else     {  if (h > max_size) { w*=max_size/h; h=max_size; } }
+            
+              var canvas = document.createElement('canvas');
+              canvas.width = w;
+              canvas.height = h;
+              canvas.getContext('2d').drawImage(image, 0, 0, w, h);
+              
+              var dataURL = canvas.toDataURL('image/jpeg', 1.0);
+
+              setSession('support-center-file', dataURL);
+            }
+            image.src = event.target.result;
           }
           reader.readAsDataURL(file);
+        } else {
+          fileTag.attr('src', '')
+          $('#file').val('');
+          $('.toast').toast('show');
         }
-      } else {
-        fileTag.attr('src', '')
-        $('#file').val('');
-        $('.toast').toast('show');
       }
     },
     false
@@ -226,20 +246,40 @@ $('#file').change(function() {
   const file = this.files[0];
   const maxBytes = 5000000;
 
-  if (file.size <= maxBytes) {
-    if (file) {
+  if (file) {
+    if (file.size <= maxBytes) {
       let reader = new FileReader();
       reader.onload = function(event){
         fileTag.attr('src', URL.createObjectURL(file));
         checkFile(fileTag)
-        setSession('support-center-file', event.target.result);
+        // setSession('support-center-file', event.target.result);
+
+        var image = new Image();
+        image.onload = function(imageEvent) {
+          var max_size = 300;
+          var w = image.width;
+          var h = image.height;
+        
+          if (w > h) {  if (w > max_size) { h*=max_size/w; w=max_size; }
+          } else     {  if (h > max_size) { w*=max_size/h; h=max_size; } }
+        
+          var canvas = document.createElement('canvas');
+          canvas.width = w;
+          canvas.height = h;
+          canvas.getContext('2d').drawImage(image, 0, 0, w, h);
+          
+          var dataURL = canvas.toDataURL('image/jpeg', 1.0);
+
+          setSession('support-center-file', dataURL);
+        }
+        image.src = event.target.result;
       }
       reader.readAsDataURL(file);
+    } else {
+      fileTag.attr('src', '')
+      $('#file').val('');
+      $('.toast').toast('show');
     }
-  } else {
-    fileTag.attr('src', '')
-    $('#file').val('');
-    $('.toast').toast('show');
   }
 });
 
