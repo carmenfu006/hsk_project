@@ -16,8 +16,11 @@ if (user && page == 'candidate-login.html') {
 }
 
 $('#google-recaptcha').hide();
+$('#login-interface').hide();
 
 loaderScript(`https://www.google.com/recaptcha/api.js?hl=${lang}`).then(() => {
+  $('.display-loading').hide();
+  $('#login-interface').show();
   $('#google-recaptcha').show();
   $('#to-candidate-dashboard').on('click', async(e) => {
     e.preventDefault();
@@ -43,6 +46,8 @@ loaderScript(`https://www.google.com/recaptcha/api.js?hl=${lang}`).then(() => {
     }
   });
 }).catch(() => {
+  $('.display-loading').hide();
+  $('#login-interface').show();
   $('#google-recaptcha').hide();
   $('#to-candidate-dashboard').on('click', async(e) => {
     e.preventDefault();

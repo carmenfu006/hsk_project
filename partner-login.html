@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.5.1.slim.min.js?v=1.0" type="text/javascript" defer></script>
-    <script src="js/navbar.js?v=1.8" type="text/javascript" defer></script>
-    <script src="js/footer.js?v=1.1" type="text/javascript" defer></script>
-    <script src="js/login.js?v=1.9" type="text/javascript" defer></script>
-    <script src="js/i18n.js?v=1.7" type="text/javascript" defer></script>
-    <script src="js/bootstrap.js?v=1.0" type="text/javascript" defer></script>
-    <link href="css/bootstrap.css?v=1.0" rel="stylesheet" />
-    <link href="css/style.css?v=1.1" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-3.5.1.slim.min.js?V=2" type="text/javascript" defer></script>
+    <script src="js/navbar.js?V=2" type="text/javascript" defer></script>
+    <script src="js/footer.js?V=2" type="text/javascript" defer></script>
+    <script src="js/login.js?V=2" type="text/javascript" defer></script>
+    <script src="js/i18n.js?V=2" type="text/javascript" defer></script>
+    <script src="js/bootstrap.js?V=2" type="text/javascript" defer></script>
+    <link href="css/bootstrap.css?V=2" rel="stylesheet" />
+    <link href="css/style.css?V=2" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <nav
@@ -20,7 +20,12 @@
     ></nav>
     <div id="login-modal"></div>
     <section class="content container mt-5">
-      <div class="row pt-5 pb-5">
+      <div class='row mt-5 mb-5 pt-5 pb-5 display-loading'>
+        <div class='col text-center'>
+          <i class='fa-solid fa-spinner fa-spin fa-4x'></i>
+        </div>
+      </div>
+      <div id="login-interface" class="row pt-5 pb-5">
         <div class="col"></div>
         <div class="col-lg-4 col-md-8 col-sm-12">
           <div class="d-flex flex-column">
