@@ -15,84 +15,9 @@ if (user && page == 'candidate-login.html') {
   location.reload();
 }
 
-addRecaptchaToHead()
 $('#google-recaptcha').hide();
 
-async function printJSON() {
-  const response = await fetch('../json/cn.json');
-  const json = await response.json();
-  return json;
-}
-
-if ('geolocation' in navigator) {
-  navigator.geolocation.getCurrentPosition(async(position) => {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
-    const cn_list = await printJSON();
-    let is_China;
-
-    is_China = cn_list.filter(function(list) {
-      if (list.lat == latitude && list.lng == longitude) {
-        return list
-      }
-    });
-
-    if (!is_China[0]) {
-      $('#google-recaptcha').show();
-      $('#to-candidate-dashboard').on('click', async(e) => {
-        e.preventDefault();
-        const captchaResponse = grecaptcha.getResponse()
-        const application = new URL(location.href).searchParams.get('application');
-      
-        if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
-          toastLang('Recaptcha not checked')
-          $('.toast').toast('show');
-        } else {
-          await candidateLogin(application)
-        }
-      });
-      $('#to-partner-dashboard').on('click', async(e) => {
-        e.preventDefault();
-        const captchaResponse = grecaptcha.getResponse()
-      
-        if (captchaResponse === undefined || captchaResponse === '' || captchaResponse === null) {
-          toastLang('Recaptcha not checked')
-          $('.toast').toast('show');
-        } else {
-          await partnerLogin()
-        }
-      });
-    } else {
-      $('#google-recaptcha').hide();
-      $('#to-candidate-dashboard').on('click', async(e) => {
-        e.preventDefault();
-        const application = new URL(location.href).searchParams.get('application');
-        await candidateLogin(application)
-      });
-      $('#to-partner-dashboard').on('click', async(e) => {
-        e.preventDefault();
-        await partnerLogin()
-      });
-    }
-      
-  }, function(error) {
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-            console.error('User denied the request for geolocation.');
-            break;
-        case error.POSITION_UNAVAILABLE:
-            console.error('Location information is unavailable.');
-            break;
-        case error.TIMEOUT:
-            console.error('The request to get user location timed out.');
-            break;
-        case error.UNKNOWN_ERROR:
-            console.error('An unknown error occurred.');
-            break;
-      }
-  });
-} else {
-  console.error('Geolocation is not available in this browser.');
+loaderScript(`https://www.google.com/recaptcha/api.js?hl=${lang}`).then(() => {
   $('#google-recaptcha').show();
   $('#to-candidate-dashboard').on('click', async(e) => {
     e.preventDefault();
@@ -117,7 +42,18 @@ if ('geolocation' in navigator) {
       await partnerLogin()
     }
   });
-}
+}).catch(() => {
+  $('#google-recaptcha').hide();
+  $('#to-candidate-dashboard').on('click', async(e) => {
+    e.preventDefault();
+    const application = new URL(location.href).searchParams.get('application');
+    await candidateLogin(application)
+  });
+  $('#to-partner-dashboard').on('click', async(e) => {
+    e.preventDefault();
+    await partnerLogin()
+  });
+});
 
 $('#verification-code-btn').on('click', async(e) => {
   e.preventDefault();
@@ -496,4 +432,18 @@ async function partnerLogin() {
       $('.toast').toast('show');
     }
   }
+}
+
+function loaderScript(scriptUrl){
+  return new Promise(function (res, rej) {
+    let script = document.createElement('script');
+    script.src = scriptUrl;
+    script.type = 'text/javascript';
+    script.onerror = rej;
+    script.async = true;
+    script.onload = res;
+    script.addEventListener('error',rej);
+    script.addEventListener('load',res);
+    document.head.appendChild(script);
+  })
 }
