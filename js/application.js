@@ -832,6 +832,7 @@ async function loadExamTime(area, level) {
 
   if ($('#exam-currency').val() == '') $('.currency-display').html(getSession('exam-currency'));
 
+  // If user already been through application stage 1 then load session data.
   if (getSession('stage1') == 'true') loadSessionData1();
 }
 
