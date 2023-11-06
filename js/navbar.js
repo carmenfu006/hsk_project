@@ -1,3 +1,5 @@
+// navbar.js included in every HTML to insert accordingly where when user is not logged-in or user is logged-in.
+
 const partner_sidebar = document.getElementById('partner-sidebar');
 const user_sidebar = document.getElementById('user-sidebar');
 const user_navbar = document.getElementById('user-navbar');
@@ -9,6 +11,7 @@ const login_modal_template = document.createElement('template');
 const user_sidebar_template = document.createElement('template');
 const partner_sidebar_template = document.createElement('template');
 
+// This is the main navbar element.
 navbar_template.innerHTML = `
   <a class='navbar-brand mr-auto' href='index.html'><img src='images/logo.png' id='navbar-logo' class='img-fluid w-75' alt='Responsive image'></a>
   <a class='nav-link dropdown-toggle d-block d-sm-none d-md-block d-lg-none' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -74,6 +77,7 @@ navbar_template.innerHTML = `
   </div>
 `;
 
+// This is the modal element where users can choose to login from here whenever they are not logged in. This modal can be triggered on the homepage of the exam timetable.
 login_modal_template.innerHTML = `
   <div class='modal fade' id='staticBackdrop' data-backdrop='static' data-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'>
     <div class='modal-dialog modal-dialog-centered'>
@@ -98,6 +102,7 @@ login_modal_template.innerHTML = `
   </div>
 `;
 
+// This navbar element is when user visits dashboard.
 user_navbar_template.innerHTML = `
   <a class='navbar-brand mr-auto' href='../index.html'><img src='../images/logo.png' id='navbar-user-logo' class='img-fluid w-75' alt='Responsive image'></a>
   <a class='nav-link dropdown-toggle d-block d-sm-none d-md-block d-lg-none' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -142,6 +147,7 @@ user_navbar_template.innerHTML = `
   </div>
 `;
 
+// This sidebar element is shown in user dashboard.
 user_sidebar_template.innerHTML = `
   <a href='dashboard.html' id='dashboard-sidebar' class='w3-bar-item w3-button rounded'>
     <i class='fa-solid fa-house mr-2'></i>
@@ -180,6 +186,7 @@ user_sidebar_template.innerHTML = `
   </a>
 `;
 
+// This sidebar element is shown in partner dashboard.
 partner_sidebar_template.innerHTML = `
   <a href='candidate-management.html' id='candidate-management-sidebar' class='w3-bar-item w3-button rounded'>
     <i class='fa-solid fa-user mr-2'></i>
@@ -195,17 +202,20 @@ partner_sidebar_template.innerHTML = `
   </a>
 `;
 
+// To check whether ID exists in HTML then append navbar/sidebar/modal elements.
 if (navbar) navbar.appendChild(navbar_template.content);
 if (partner_sidebar) partner_sidebar.appendChild(partner_sidebar_template.content);
 if (user_sidebar) user_sidebar.appendChild(user_sidebar_template.content);
 if (user_navbar) user_navbar.appendChild(user_navbar_template.content);
 if (login_modal) login_modal.appendChild(login_modal_template.content);
 
+// To indicate selected page or portion.
 $('.menu-btn').on('click', function() {
   $('.menu-btn').removeClass('active');
   $(this).addClass('active');
 });
 
+// To hide and show certain buttons for user and partner logged in scenario.
 let user = localStorage.getItem('user');
 let partner = localStorage.getItem('partner');
 
@@ -231,48 +241,26 @@ if (partner == null) {
   $('#user-public').hide()
 }
 
+// Clear session storage and local storage when user or partner logout.
 $('#user-logout, #partner-logout').on('click', function(e) {
   clearInfoSession();
   clearInfoLocal();
   window.location.href = window.location.origin + '/index.html';
 });
 
+// To collapse mobile view navbar when certain menu is triggered. Most of the menu here are navigated using hashtag.
 $('#navbarDropdown, #apply-modal-btn, #news-menu-btn, #faqs-menu-btn').on('click', function(e) {
   $('.navbar-collapse').removeClass('show');
 });
 
+// To clear all session storage.
 let clearInfoSession = function() {
-  // let user = sessionStorage.getItem('user');
-  // let refresh = sessionStorage.getItem('refresh');
-  // let expire = sessionStorage.getItem('expire');
-  // let username = sessionStorage.getItem('username');
-  // let first_name = sessionStorage.getItem('first_name');
-  // let first_name_en = sessionStorage.getItem('first_name_en');
-  // let email = sessionStorage.getItem('email');
-  // let user_type = sessionStorage.getItem('user_type');
-  // let is_tester = sessionStorage.getItem('is_tester');
-  // let photo_path = sessionStorage.getItem('photo_path');
   sessionStorage.clear();
-  // sessionStorage.setItem('user', user);
-  // sessionStorage.setItem('refresh', refresh);
-  // sessionStorage.setItem('expire', expire);
-  // sessionStorage.setItem('username', username);
-  // sessionStorage.setItem('first_name', first_name);
-  // sessionStorage.setItem('first_name_en', first_name_en);
-  // sessionStorage.setItem('email', email);
-  // sessionStorage.setItem('user_type', user_type);
-  // sessionStorage.setItem('is_tester', is_tester);
-  // sessionStorage.setItem('photo_path', photo_path);
 }
 
+// To clear all local storage except language.
 let clearInfoLocal = function() {
   let lang = localStorage.getItem('lang');
   localStorage.clear();
   localStorage.setItem('lang', lang);
 }
-
-// var loc = window.location.pathname;
-// var path = loc.substring(0, loc.lastIndexOf('/'));
-// var directoryName = path.substring(path.lastIndexOf("/")+1);
-
-// console.log(directoryName);

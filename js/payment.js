@@ -1,11 +1,14 @@
+// payment.js only applies to payment.html
+
 window.addEventListener('DOMContentLoaded', async () => {
   $('#payment-link-invalid').hide();
-  // if (user == null) window.location.href = 'candidate-login.html';
   const lang = getLocalLang('lang');
   const payment_id = new URL(location.href).searchParams.get('payment_id');
   const paymentIntentId = payment_id.split('_secret')[0];
   const stripe = Stripe('pk_live_51NxVaQArZBHZvCDsIip5DutxzIoCQZ4DIXwNxLZtWiMb2bKBPp7eCH7d4bp1vSvBs8CCdzItKEbaQqn8qTgXz23N00i4I9qDpu', { locale : `${lang}` })
 
+  // To check if payment_id params exists in url.
+  // If does not exists, do not show payment element and show wording of invalid URL.
   if (payment_id == null || payment_id == '') {
     document.getElementById('payment-section').style.display = 'none';
     document.getElementById('payment-link-invalid').style.display = 'block';
@@ -14,8 +17,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     let response = await fetch(`https://api.hskk.org/webapi/order_read_payment/${paymentIntentId}`, {
       headers: {
         'Accept': 'application/json, text/plain, */*',
-        'Content-Type' : 'application/json',
-        // 'Authorization' : `Bearer ${user}`
+        'Content-Type' : 'application/json'
       }
     })
     let data = await response.json();
@@ -69,10 +71,11 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Discount and update paymentIntent
+  // Discount and update paymentIntent.
   const verify_code = document.getElementById('verify-code');
   const discount_field = document.getElementById('discount-code');
   
+  // Enabled apply of coupon code button.
   discount_field.addEventListener('keyup', function() {
     if (discount_field.value != '') {
       verify_code.disabled = false;
@@ -81,6 +84,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
   })
 
+  // Update payment amount after verify coupon code.
   verify_code.addEventListener('click', async (e) => {
     e.preventDefault();
     verify_code.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
@@ -119,11 +123,8 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
     checkPaymentAmount()
   })
-
-  function getSession(key) {
-    return sessionStorage.getItem(key);
-  }
   
+  // Display language accordingly
   function applyText(lang, target, zh_hans, en, id, ar) {
     if (lang == null || lang == 'zh-hans' || lang == 'zh-hant') {
       target.innerHTML = zh_hans;
@@ -136,6 +137,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
+  // Display selected exam level based on integer from calling API.
   function displaySelectedExam(exam_level) {
     switch(exam_level) {
       case 7:
@@ -152,6 +154,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
+  // Return current preferred language
   function transLang(lang, zh_hans, en, id, ar) {
     switch(lang) {
       case 'zh-hans':
@@ -174,10 +177,12 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
+  // Get language value from local storage. Default value is 'zh-hans'.
   function getLocalLang(key) {
     return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh-hans';
   }
 
+  // To disabled applying of coupon code when already applied before.
   async function checkPaymentAmount() {
     let response = await fetch(`https://api.hskk.org/webapi/order_read_payment/${paymentIntentId}`, {
       headers: {

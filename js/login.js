@@ -1,6 +1,16 @@
+// login.js only applies to candidate-login.html and partner-login.html
+
+// Get current preferred language
 let lang = getLocalLang('lang');
+
+// Get current html page
 const page = document.URL.split(/[?#]/)[0].split('/').pop();
 
+// To prevent logged-in user and partner from accessing candidate login and partner login page.
+// If logged-in is a user and tries to access candidate login page, he/she will be directed to application page.
+// If logged-in is a user and tries to access partner login page, all local storage and session storage will be erased.
+// If logged-in is a partner and tries to access partner login page, he/she will be directed to partner dashboard page.
+// If logged-in is a partner and tries to access candidate login page, all local storage and session storage will be erased.
 if (user && page == 'candidate-login.html') {
   window.location.href = window.location.origin + '/application.html';
 } else if (user && page == 'partner-login.html') {
@@ -15,10 +25,13 @@ if (user && page == 'candidate-login.html') {
   location.reload();
 }
 
+// To hide both recaptcha and login interface first to prevent confusion due to China restriction of Google when page loaded.
 $('#google-recaptcha').hide();
 $('#login-interface').hide();
 
+// To check if Google recaptcha is loaded due to China restriction then only show login interface with or without showing recaptcha.
 loaderScript(`https://www.google.com/recaptcha/api.js?hl=${lang}`).then(() => {
+  // When Google recaptcha is loaded. Enabled recaptcha verification.
   $('.display-loading').hide();
   $('#login-interface').show();
   $('#google-recaptcha').show();
@@ -46,6 +59,7 @@ loaderScript(`https://www.google.com/recaptcha/api.js?hl=${lang}`).then(() => {
     }
   });
 }).catch(() => {
+  // When Google recaptcha cannot be loaded. Skip recaptcha verification.
   $('.display-loading').hide();
   $('#login-interface').show();
   $('#google-recaptcha').hide();
@@ -60,6 +74,7 @@ loaderScript(`https://www.google.com/recaptcha/api.js?hl=${lang}`).then(() => {
   });
 });
 
+// Eventlistiner for retrieving verification code via email.
 $('#verification-code-btn').on('click', async(e) => {
   e.preventDefault();
   var timeleft = 60;
@@ -104,6 +119,7 @@ $('#verification-code-btn').on('click', async(e) => {
   }
 });
 
+// To remove red warning of input field when after input field is not fulfilled.
 $('#email, #verify_code, #username, #password').on('keyup', function() {
   validInput('#email');
   validInput('#verify_code');
@@ -111,6 +127,7 @@ $('#email, #verify_code, #username, #password').on('keyup', function() {
   validInput('#password');
 })
 
+// To convert language for verification code button.
 function codeLang(classname) {
   switch(lang) {
     case 'zh-hans':
@@ -133,6 +150,7 @@ function codeLang(classname) {
   }
 }
 
+// To convert language for verification code button with timer shown.
 function codeLangTimer(classname, timer) {
   switch(lang) {
     case 'zh-hans':
@@ -155,6 +173,7 @@ function codeLangTimer(classname, timer) {
   }
 }
 
+// To display error messages according to condition.
 function toastLang(error_type) {
   if (error_type == 'Recaptcha not checked') {
     switch(lang) {
@@ -289,12 +308,14 @@ function toastLang(error_type) {
   }
 }
 
+// To allow display of toast messages
 function toastMessage(line1, line2, line3) {
   $('.error-line-1').html(line1)
   $('.error-line-2').html(line2)
   $('.error-line-3').html(line3)
 }
 
+// To insert Google Recaptcha script tag with preferred locale.
 function addRecaptchaToHead() {
   let lang = getLocalLang('lang');
   const script = document.createElement("script");
@@ -303,18 +324,22 @@ function addRecaptchaToHead() {
   document.head.appendChild(script);
 }
 
+// Get preferred language from local storage. Default to zh-hans.
 function getLocalLang(key) {
   return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh-hans';
 }
 
+// Get value from local storage.
 function getLocal(key) {
   return localStorage.getItem(key);
 }
 
+// Get input value.
 function inputVal(id) {
   return $(id).val()
 }
 
+// Verify existance of input value.
 function verifyInput(id) {
   if ($(id).val() === '') {
     return false;
@@ -323,22 +348,27 @@ function verifyInput(id) {
   }
 }
 
+// Verify email value.
 function verifyEmailVal(email) {
   return email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
 }
 
+// Verify 6 digits code value.
 function verifyCodeVal(code) {
   return code.match(/^(\s*\d{6}\s*)(,\s*\d{6}\s*)*,?\s*$/);
 }
 
+// To have red warning for input field.
 function invalidInput(id) {
   $(id).addClass('invalid');
 }
 
+// To remove red warning from input field.
 function validInput(id) {
   $(id).removeClass('invalid');
 }
 
+// To call user login API when condition is fulfilled.
 async function candidateLogin(application) {
   if (verifyEmailVal(inputVal('#email')) == null && verifyCodeVal(inputVal('#verify_code')) == null) {
     invalidInput('#email')
@@ -393,6 +423,7 @@ async function candidateLogin(application) {
   }
 }
 
+// To call partner login API when condition is fulfilled.
 async function partnerLogin() {
   if (verifyEmailVal(inputVal('#username')) == null) {
     invalidInput('#username')
@@ -439,6 +470,7 @@ async function partnerLogin() {
   }
 }
 
+// To check if script tag is loaded with error, specifically for checking Google recaptcha.
 function loaderScript(scriptUrl){
   return new Promise(function (res, rej) {
     let script = document.createElement('script');

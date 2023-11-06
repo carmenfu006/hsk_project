@@ -1,3 +1,5 @@
+// i18n.js applies to every HTML to translate the website.
+
 translateWeb(
   '.i18n-1', 
   '首页', 
@@ -3198,7 +3200,7 @@ translateWeb(
   'الأفلام التي تتناول موضوع الذكاء الاصطناعي كموضوع رئيسي هي شيء شاهده معظمنا. عادةً ما يتم اعتبارها خيالًا روائيًا. ومع ذلك، لم يمض وقت طويل حتى تقلب رياح رقمية تم تشغيلها بواسطة برامج الذكاء الاصطناعي مثل ChatGPT العالم، جذبت الملايين من الأشخاص لتجربتها ومناقشتها. في مجموعة متنوعة من المجالات مثل التكنولوجيا والمال والكتابة والموسيقى والترفيه، وحتى التعليم، أحدث هذا العاصفة الكثير من الضجة. يجب علينا أن نعترف بأن الذكاء الاصطناعي اندمج بسلاسة في حياتنا الحقيقية. المستقبل الذي تم تحميله بصمت قد وصل الآن. هذا الاهتزاز من الذكاء الاصطناعي قد هز العالم، مما ألقى بالعديد من الأشخاص في حيرة. الأثر الواسع النطاق الذي يحمله مرشح لأن يحدث ثورة في سوق العمل في المستقبل وحتى النماذج التعليمية الحالية. كوالدين، من الحكمة أن تكونوا مستعدين. التعامل مع التغييرات المتسارعة في العالم ونماذج التعليم، ما يمكن للوالدين فعله هو فهم عميق. لذلك، تشارك هذه الطبعة الخاصة معكم أحدث الاتجاهات العالمية في مجال التعليم وتستكشف التأثير العميق الذي ستكون له الذكاء الاصطناعي، خاصة الذكاء الاصطناعي التوليدي، والعالم الافتراضي، وهما عنصران ساخنان، على قطاع التعليم العالمي. نحن نقدم أيضًا معلومات أساسية حول مفهوم الذكاء الاصطناعي والعالم الافتراضي، تطبيقاتهما وإمكانياتهما في التعليم، ومواقف المؤسسات التعليمية والحكومات الدولية، والفوائد والسلبيات للتعليم الذكي مقارنة بالتعليم التقليدي، ودورات الذكاء الاصطناعي والعالم الافتراضي في المدارس المحلية والأجنبية، وأكثر من ذلك بكثير. هدفنا هو تزويد الوالدين بتحديث سريع وعملي، مما يتيح لهم اتخاذ قرارات مستنيرة بشأن اختيار المدرسة والمواد الدراسية، بالإضافة إلى التحضير المالي. يمكنكم أيضًا الرجوع إلى دراسات الحالة لفهم كيف يمكن لخطط التأمين أن تكمل احتياجات التعليم المتعلقة بأبنائك وتخلق مستقبلًا أكثر أمانًا.'
 )
 
-
+// To update the language of the website and also to update info of the current logged-in user via calling API.
 $('.i18n').on('click', async(e) => {
   const lang = $(e.target).attr('lang');
   const params_lang = new URL(location.href).searchParams.get('lang');
@@ -3232,11 +3234,16 @@ $('.i18n').on('click', async(e) => {
   window.location.href = url.href;
 });
 
+// To check if params 'lang' exists in URL.
+// If exists, update local storage value of lang.
 const params_lang = new URL(location.href).searchParams.get('lang');
 if (params_lang) if (!getLocal('lang') || params_lang != getLocal('lang')) checkParamsLang(params_lang);
+
 updatePDFLink()
 updateTitle()
 
+// Translate wording according classname of the element.
+// If placeholder exists, please have input argument to set to true.
 function translateWeb(classname, zh_hans, en, id, ar, input) {
   let url = new URL(window.location.href);
   let lang = getLocalLang('lang');
@@ -3262,6 +3269,7 @@ function translateWeb(classname, zh_hans, en, id, ar, input) {
   }
 }
 
+// Translate wording and check if it is an input to have placeholder to take effect.
 function translate(classname, lang, input) {
   if (!input) {
     $(classname).html(lang);
@@ -3276,13 +3284,13 @@ function translate(classname, lang, input) {
   }
 }
 
+// Update link for tnc_home, link for tnc_onsite and link for privacy based on preferred language.
 function updatePDFLink() {
   let lang = getLocalLang('lang');
   let terms_home_pdf = $('#terms-home-pdf');
   let terms_onsite_pdf = $('#terms-onsite-pdf');
   let privacy_pdf = $('#privacy-pdf');
-  // terms_pdf.attr('href', `terms/tnc_${lang}.pdf`);
-  // privacy_pdf.attr('href', `privacy/privacy_${lang}.pdf`);
+
   if (lang != 'zh-hans' || lang != 'zh-hant') {
     terms_home_pdf.attr('href', terms_home_pdf.attr('href') + `?lang=${lang}`)
     terms_onsite_pdf.attr('href', terms_onsite_pdf.attr('href') + `?lang=${lang}`)
@@ -3295,6 +3303,7 @@ function updatePDFLink() {
   }
 }
 
+// Update logo based on preferred language. Currently not in use.
 function updateLogo(lang) {
   if (lang == 'zh-hans' || lang == 'zh-hant') {
     $('#navbar-logo').attr('src', 'images/logo.png');
@@ -3305,6 +3314,7 @@ function updateLogo(lang) {
   }
 }
 
+// Update title based on preferred language.
 function updateTitle() {
   let lang = getLocalLang('lang');
   if (lang == 'zh-hans' || lang == 'zh-hant') {
@@ -3314,14 +3324,17 @@ function updateTitle() {
   }
 }
 
+// To get language value from local storage. Default value is 'zh-hans'.
 function getLocalLang(key) {
   return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh-hans';
 }
 
+// To get value from local storage.
 function getLocal(key) {
   return localStorage.getItem(key);
 }
 
+// To check if params 'lang' exists in URL.
 function checkParamsLang(params_lang) {
   if (params_lang == 'zh-hans' || params_lang == 'zh-hant' || params_lang == 'en' || params_lang == 'id' || params_lang == 'ar') {
     localStorage.setItem('lang', params_lang);
@@ -3330,37 +3343,3 @@ function checkParamsLang(params_lang) {
     localStorage.setItem('lang', 'zh-hans');
   }
 }
-
-// let lang = sessionStorage.getItem("lang");
-// updateRecaptcha(lang);
-
-// function updateRecaptcha(lang) {
-//   let src = $('#recaptcha')[0].src
-//   if (src) src = src + `?hl=${lang}`
-//   console.log(src)
-//   $('#recaptcha').attr('src', src)
-// }
-
-// function urlAddParams(key, value) {
-//   let url = new URL(window.location.href);
-//   url.searchParams.set(key, value);
-//   window.location.href = url.href;
-// }
-
-// function setQueryString() {
-//   let queryString = new URL(window.location).search;
-//   $('a[href*=".html"]').each(function() {
-//     let current = this.href.split('#')[0];
-//     let hash = this.href.split('#')[1];
-//     this.href = current + queryString + '#' + hash;
-//   });
-// }
-
-// $('#lang').val(urlParam('lang'))
-// function urlParam(name) {
-//   var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-//     if (results==null) {
-//        return null;
-//     }
-//     return decodeURI(results[1]) || 0;
-// }

@@ -1,9 +1,14 @@
+// partner.js applies to partner.html and partner dashboard pages.
+
+// To indicate selected partner page.
 $('#partner-menu-btn').addClass('active');
 
+// To scroll to partner form when clicked.
 $('#partner-contact-us').on('click', function() {
   $('#partner-contact-us-form')[0].scrollIntoView({ behavior: 'smooth' });
 });
 
+// Partner FAQs collapse and expand behavior.
 $('.collapse')
 .on('show.bs.collapse', function () {
   $(this)
@@ -22,6 +27,7 @@ $('.collapse')
 
 dashboardPage()
 
+// Execute functions according to different partner dashboard pages.
 function dashboardPage() {
   const page = document.URL.split(/[?#]/)[0].split('/').pop();
 
@@ -44,11 +50,13 @@ function dashboardPage() {
   }
 }
 
+// To indicate selected page on sidebar and footbar.
 function activeMenuBar(sidebarId, footbarId) {
   $(sidebarId).addClass('active');
   $(footbarId).addClass('active');
 }
 
+// Filter indication for candidate-management.html
 function activeIndicator(classname) {
   $(classname).on('click', function(event) {
     $(classname).removeClass('active');
@@ -56,18 +64,22 @@ function activeIndicator(classname) {
   })
 }
 
+// To prevent unauthorized access to partner dashboard.
 function authoriseAccess() {
   if (partner == null) window.location.href = window.location.origin + '/partner-login.html'
 }
 
+// To get preferred language from local storage. Default value is 'zh-hans'.
 function getLocalLang(key) {
   return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh-hans';
 }
 
+// To get input value.
 function inputVal(id) {
   return $(id).val()
 }
 
+// Verify existance of input value. 
 function verifyInput(id) {
   if ($(id).val() === '') {
     return false;
@@ -76,18 +88,22 @@ function verifyInput(id) {
   }
 }
 
+// Verify email value.
 function verifyEmailVal(email) {
   return email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
 }
 
+// To have red warning for input field.
 function invalidInput(id) {
   $(id).addClass('invalid');
 }
 
+// To remove red warning from input field.
 function validInput(id) {
   $(id).removeClass('invalid');
 }
 
+// Eventlistener for submitting partner collaboration form.
 $('#partner-form-btn').on('click', async(e) => {
   e.preventDefault();
   let lang = getLocalLang('lang');
@@ -145,6 +161,7 @@ $('#partner-form-btn').on('click', async(e) => {
   }
 });
 
+// To display language accordingly.
 function convertLang(lang, zh_hans, en, id, ar) {
   switch(lang) {
     case 'zh-hans':
@@ -167,15 +184,18 @@ function convertLang(lang, zh_hans, en, id, ar) {
   }
 }
 
+// To remove red warning of input field when after input field is not fulfilled.
 $('#phone, #phone_zone').on('keyup', function() {
   validInput('#phone');
   validInput('#phone_zone');
 })
 
+// To remove red warning of input field when after input field is not fulfilled.
 $('#email').on('keyup', function() {
   validInput('#email');
 })
 
+// To fetch API
 async function fetchAPI(api) {
   let response = await fetch(api, {
       headers: {
@@ -190,9 +210,8 @@ async function fetchAPI(api) {
   return records
 }
 
+// To display of student records based on selected level and exam time.
 $('.level-bar-item').on('click', function() {
-  // $('#exam-time').children().not(':first').remove();
-  // $('#candidate-table').empty();
   $('#exam-time')[0].replaceChildren($('#exam-time')[0].firstElementChild);
   $('#candidate-table')[0].replaceChildren();
   let test_time = $('#exam-time').val();
@@ -201,6 +220,7 @@ $('.level-bar-item').on('click', function() {
   populateCandidates(level, test_time)
 })
 
+// To display of student records based on selected exam time.
 $('#exam-time').on('change', function() {
   $('#candidate-table').empty();
   let test_time = $(this).val();
@@ -208,6 +228,7 @@ $('#exam-time').on('change', function() {
   populateCandidates(level, test_time)
 })
 
+// To retrieve student records by level by calling API.
 async function populateCandidatesExamtime(level) {
   let candidates = await fetchAPI('https://api.hskk.org/webapi/partner_test_info_overview/');
   
@@ -230,6 +251,7 @@ async function populateCandidatesExamtime(level) {
   }
 }
 
+// To retrieve student records by level and exam time by calling API.
 async function populateCandidates(level, test_time) {
   let lang = getLocalLang('lang');
   let candidates = await fetchAPI('https://api.hskk.org/webapi/partner_test_info_overview/');

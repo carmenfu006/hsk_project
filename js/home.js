@@ -1,4 +1,6 @@
+// home.js only applies to index.html
 
+// Hide both mobile user login and partner login button when either one logged-in.
 if (user || partner) {
   $('#candidate-login-mobile-btn').hide();
   $('#partner-login-mobile-btn').hide();
@@ -7,6 +9,7 @@ if (user || partner) {
 setActiveMenu()
 loadExamTime()
 
+// To indicate selected portion to view on homepage.
 function setActiveMenu() {
   if (window.location.hash === '') {
     $('#home-menu-btn').addClass('active');
@@ -19,6 +22,7 @@ function setActiveMenu() {
   }
 }
 
+// To indicate viewing portion on homepage when page scrolls.
 $(window).scroll(function() {
   var top_of_exam_datetime = $('#exam-datetime').offset().top;
   var bottom_of_exam_datetime = $('#exam-datetime').offset().top + $('#exam-datetime').outerHeight();
@@ -42,6 +46,7 @@ $(window).scroll(function() {
   }
 });
 
+// For FAQs collapse and expand feature.
 $('.collapse')
 .on('show.bs.collapse', function () {
   $(this)
@@ -58,6 +63,7 @@ $('.collapse')
     .addClass('fa-plus');
 });
 
+// To show more FAQs
 $('#more-faq').on('click', function() {
   $(this).hide();
   for (let i = 8; i <= 15; i++) {
@@ -65,6 +71,7 @@ $('#more-faq').on('click', function() {
   }
 })
 
+// To populate exam datetime by calling API to show on homepage.
 async function loadExamTime() {
   let lang = getLocalLang('lang');
   let response = await fetch('https://api.hskk.org/webapi/test_schedule/', {
@@ -123,10 +130,12 @@ async function loadExamTime() {
   });
 }
 
+// To get language value from local Storage. Default value is 'zh-hans'.
 function getLocalLang(key) {
   return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh-hans';
 }
 
+// Return preferred language for showing timestamp.
 function convertLang(lang) {
   switch(lang) {
     case 'zh-hans':

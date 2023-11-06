@@ -1,8 +1,9 @@
-// $('.toast').toast('show');
+// candidate.js applies to user dashboard pages
 
 instructionProgressIndicator()
 dashboardPage()
 
+// For FAQs collapse and expand feature.
 $('.collapse')
 .on('show.bs.collapse', function () {
   $(this)
@@ -19,6 +20,7 @@ $('.collapse')
     .addClass('fa-plus');
 });
 
+// Progress indicator for exam instruction pages.
 function instructionProgressIndicator() {
   const progressbar = document.getElementById('instruction-progressbar');
   const progressbar_template = document.createElement('template');
@@ -58,10 +60,12 @@ function instructionProgressIndicator() {
   }
 }
 
+// To indicate selected progress bar.
 function activeProgressBar(classname) {
   $(classname).addClass('active');
 }
 
+// To countdown and direct user to user dashboard after finish exam instructions.
 function countdown(second) {
   var timeleft = second;
   var timer = setInterval(function(){
@@ -74,6 +78,7 @@ function countdown(second) {
   }, 1000);
 }
 
+// Execute functions according to different user dashboard pages.
 function dashboardPage() {
   const page = document.URL.split(/[?#]/)[0].split('/').pop();
 
@@ -132,23 +137,28 @@ function dashboardPage() {
   }
 }
 
+// To indicate selected page on sidebar and footbar.
 function activeMenuBar(sidebarId, footbarId) {
   $(sidebarId).addClass('active');
   $(footbarId).addClass('active');
 }
 
+// To set session.
 function setSession(key, value) {
   sessionStorage.setItem(key, value);
 }
 
+// To get session value.
 function getSession(key) {
   return sessionStorage.getItem(key);
 }
 
+// To get preferred language from local storage. Default value is 'zh-hans'.
 function getLocalLang(key) {
   return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh-hans';
 }
 
+// Filter indication for candidate record status.
 function activeIndicator(classname) {
   $(classname).on('click', function(event) {
     $(classname).removeClass('active');
@@ -156,14 +166,17 @@ function activeIndicator(classname) {
   })
 }
 
+// To indicate viewed page on footbar
 function scrollFootbar(id) {
   document.getElementById(id).scrollIntoView()
 }
 
+// To prevent unauthorized access to user dashboard.
 function authoriseAccess() {
   if (user == null) window.location.href = window.location.origin + '/candidate-login.html'
 }
 
+// To allow drag and drop file upload then display.
 function dragDropFile() {
   let dropArea = document.getElementById('drop-area')
   dropArea.addEventListener(
@@ -207,27 +220,7 @@ function dragDropFile() {
           reader.onload = function(event){
             fileTag.attr('src', URL.createObjectURL(file));
             checkFile(fileTag)
-            // setSession('support-center-file', event.target.result);
-
-            var image = new Image();
-            image.onload = function(imageEvent) {
-              var max_size = 300;
-              var w = image.width;
-              var h = image.height;
-            
-              if (w > h) {  if (w > max_size) { h*=max_size/w; w=max_size; }
-              } else     {  if (h > max_size) { w*=max_size/h; h=max_size; } }
-            
-              var canvas = document.createElement('canvas');
-              canvas.width = w;
-              canvas.height = h;
-              canvas.getContext('2d').drawImage(image, 0, 0, w, h);
-              
-              var dataURL = canvas.toDataURL('image/jpeg', 1.0);
-
-              setSession('support-center-file', dataURL);
-            }
-            image.src = event.target.result;
+            compressUploadedImage(event)
           }
           reader.readAsDataURL(file);
         } else {
@@ -241,6 +234,7 @@ function dragDropFile() {
   );
 }
 
+// To allow file upload then display.
 $('#file').change(function() {
   const fileTag = $('#output');
   const file = this.files[0];
@@ -252,27 +246,7 @@ $('#file').change(function() {
       reader.onload = function(event){
         fileTag.attr('src', URL.createObjectURL(file));
         checkFile(fileTag)
-        // setSession('support-center-file', event.target.result);
-
-        var image = new Image();
-        image.onload = function(imageEvent) {
-          var max_size = 300;
-          var w = image.width;
-          var h = image.height;
-        
-          if (w > h) {  if (w > max_size) { h*=max_size/w; w=max_size; }
-          } else     {  if (h > max_size) { w*=max_size/h; h=max_size; } }
-        
-          var canvas = document.createElement('canvas');
-          canvas.width = w;
-          canvas.height = h;
-          canvas.getContext('2d').drawImage(image, 0, 0, w, h);
-          
-          var dataURL = canvas.toDataURL('image/jpeg', 1.0);
-
-          setSession('support-center-file', dataURL);
-        }
-        image.src = event.target.result;
+        compressUploadedImage(event)
       }
       reader.readAsDataURL(file);
     } else {
@@ -283,6 +257,30 @@ $('#file').change(function() {
   }
 });
 
+// To compress uploaded image for storing it in session.
+function compressUploadedImage(event) {
+  var image = new Image();
+  image.onload = function(imageEvent) {
+    var max_size = 300;
+    var w = image.width;
+    var h = image.height;
+  
+    if (w > h) {  if (w > max_size) { h*=max_size/w; w=max_size; }
+    } else     {  if (h > max_size) { w*=max_size/h; h=max_size; } }
+  
+    var canvas = document.createElement('canvas');
+    canvas.width = w;
+    canvas.height = h;
+    canvas.getContext('2d').drawImage(image, 0, 0, w, h);
+    
+    var dataURL = canvas.toDataURL('image/jpeg', 1.0);
+
+    setSession('support-center-file', dataURL);
+  }
+  image.src = event.target.result;
+}
+
+// To allow delete of uploaded image.
 $('.fa-trash').click(function() {
   const fileTag = $('#output');
   fileTag.attr('src', '')
@@ -291,6 +289,7 @@ $('.fa-trash').click(function() {
   sessionStorage.removeItem('support-center-file');
 })
 
+// To display uploaded image if it exists.
 function checkFile(fileTag) {
   let fileUpload = $('.file-upload');
   let fileDisplay = $('.file-display');
@@ -304,6 +303,7 @@ function checkFile(fileTag) {
   }
 }
 
+// Eventlister for submitting form for candidate support center.
 $('#candidate-support-center').on('click', async() => {
   let lang = getLocalLang('lang') ? getLocalLang('lang') : 'zh-hans';
   let inputData;
@@ -364,11 +364,13 @@ $('#candidate-support-center').on('click', async() => {
   
 });
 
+// To remove red warning of input field when after input field is not fulfilled.
 $('#device, #description').on('keyup', function() {
   validInput('#device');
   validInput('#description');
 })
 
+// Verify existance of input value. 
 function verifyInput(id) {
   if ($(id).val() === '') {
     return false;
@@ -377,14 +379,17 @@ function verifyInput(id) {
   }
 }
 
+// To have red warning for input field.
 function invalidInput(id) {
   $(id).addClass('invalid');
 }
 
+// To remove red warning from input field.
 function validInput(id) {
   $(id).removeClass('invalid');
 }
 
+// To display language accordingly.
 function transLang(lang, zh_hans, en, id, ar) {
   switch(lang) {
     case 'zh-hans':
@@ -407,14 +412,14 @@ function transLang(lang, zh_hans, en, id, ar) {
   }
 }
 
+// Eventlistener for displaying exam records.
 $('.status-filter').on('click', function() {
-  // $('#web-exam-records').children().not(':first').remove();
-  // $('#mobile-exam-records').empty();
   $('#web-exam-records')[0].replaceChildren($('#web-exam-records')[0].firstElementChild);
   $('#mobile-exam-records')[0].replaceChildren();
   loadExamRecord($(this).attr('data-status'))
 })
 
+// To load/display exam records according to status.
 async function loadExamRecord(status) {
   let lang = getLocalLang('lang') ? getLocalLang('lang') : 'zh-hans';
   let records = await fetchAPI('https://api.hskk.org/webapi/test_info_history/')
@@ -612,6 +617,7 @@ async function loadExamRecord(status) {
   }
 }
 
+// To display exam level based on integer via API.
 function valueTestLevel(lang, value) {
   switch(value) {
     case 7:
@@ -628,6 +634,7 @@ function valueTestLevel(lang, value) {
   }
 }
 
+// To display record status based on integer via API.
 function valueTestStatus(lang, value, score) {
   switch(value) {
     case 0:
@@ -692,6 +699,7 @@ function valueTestStatus(lang, value, score) {
   }
 }
 
+// To display different color of button based on integer via API.
 function valueTestStatusBtn(value) {
   switch(value) {
     case 0:
@@ -753,6 +761,7 @@ function valueTestStatusBtn(value) {
   }
 }
 
+// To display language accordingly.
 function transLang(lang, zh_hans, en, id, ar) {
   switch(lang) {
     case 'zh-hans':
@@ -775,6 +784,7 @@ function transLang(lang, zh_hans, en, id, ar) {
   }
 }
 
+// To fetch API
 async function fetchAPI(api) {
   let response = await fetch(api, {
       headers: {
@@ -789,6 +799,7 @@ async function fetchAPI(api) {
   return records
 }
 
+// Populate info from calling API on user dashboard.
 async function personalInfo() {
   let lang = getLocalLang('lang') ? getLocalLang('lang') : 'zh-hans';
   let records = await fetchAPI('https://api.hskk.org/webapi/homepage/')
@@ -803,6 +814,7 @@ async function personalInfo() {
   }
 }
 
+// To get value from local storage.
 function getLocal(key) {
   return localStorage.getItem(key);
 }
