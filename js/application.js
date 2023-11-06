@@ -711,6 +711,7 @@ function transLang(lang, zh_hans, en, id, ar) {
 }
 
 // To load exam datetime when location and exam level changes.
+// To have hidden input fields cleared.
 function selectLoadExamTime() {
   $('#exam-location, #exam-level').on('change', async() => {
     $('.display-loading').show();
@@ -754,11 +755,13 @@ async function loadExamTime(area, level) {
       year_options.push(event_year)
     });
 
+    // To filter out duplicated months and years
     let unique_year = [...new Set(year_options)]
     let unique_year_month = month_options.filter((obj, index) => {
       return index === month_options.findIndex(o => obj.year_month === o.year_month);
     });
 
+    // To clear element before append
     $('#exam-datetime-selection').empty();
     $('#exam-datetime-options').empty();
     
@@ -800,6 +803,7 @@ async function loadExamTime(area, level) {
   }
 
   // Eventlistener on selected month to show exam datetime.
+  // To have hidden input fields cleared.
   $('.month-item').on('click', function() {
     $('#exam-yearmonth').val($(this).data('year-month'));
     $('#exam-datetime-id').val('');
@@ -831,7 +835,7 @@ async function loadExamTime(area, level) {
   if (getSession('stage1') == 'true') loadSessionData1();
 }
 
-// To load exam datetime based on selected month.
+// To load exam datetime and append element based on selected month.
 function loadSelectedExamTime(year_month, exam_time_options) {
   JSON.parse(exam_time_options).forEach(function(item, i) {
     let item_date = item.test_date_time.split(' ')[0].split('-');
