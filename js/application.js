@@ -759,6 +759,9 @@ async function loadExamTime(area, level) {
       return index === month_options.findIndex(o => obj.year_month === o.year_month);
     });
 
+    $('#exam-datetime-selection').empty();
+    $('#exam-datetime-options').empty();
+    
     // Populate available years.
     unique_year.forEach(function(item) {
       const exam_datetime_selection = $('#exam-datetime-selection')[0];
