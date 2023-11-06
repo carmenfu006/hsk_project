@@ -1,7 +1,10 @@
+// Redirect user to candidate login page when not logged-in.
 if (user == null) window.location.href = 'candidate-login.html';
 
+// To indicate selected page.
 $('#apply-menu-btn').addClass('active');
 
+// To indicate selected month.
 $('.toggle').click(function(){
   $('.month').toggleClass("justify-content-end");
   $('.toggle').toggleClass("text-light");
@@ -12,6 +15,8 @@ if (getLocal('user') && getLocal('user') !== '') {
   storeOptionsToLocal()
 }
 
+// To indicate progress bar for application.
+// Execute functions according to different application stage.
 function progressIndicator() {
   const progressbar = document.getElementById('progressbar');
   const progressbar_template = document.createElement('template');
@@ -105,10 +110,12 @@ function progressIndicator() {
   }
 }
 
+// To indicate progress bar by classname.
 function activeProgressBar(classname) {
   $(classname).addClass('active');
 }
 
+// To enabled next button for each application stage.
 function enabledNextBtn() {
   const page = document.URL.split(/[?#]/)[0].split('/').pop();
   $(':input').on('change click keyup', function() {
@@ -118,6 +125,7 @@ function enabledNextBtn() {
   })
 }
 
+// To enabled next button for application stage 1.
 function nextBtnStage1() {
   if (verifyInput('#exam-datetime-id') && verifyInput('#exam-datetime') && verifyInput('#exam-amount') && verifyCheckInput('#terms')) {
     $('#to-step-2').attr('disabled', false);
@@ -126,6 +134,7 @@ function nextBtnStage1() {
   }
 }
 
+// To enabled next button for application stage 2.
 function nextBtnStage2() {
   if (verifyInput('#gender') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#firstname') && verifyInput('#lastname') && verifyInput('#birthday') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#certificate-type') && verifyInput('#certificate-number') && verifyInput('#phone-zone') && verifyInput('#phone') && verifyInputLength('#phone', 7) && verifyInput('#study-year') && verifyInputByNationality('#nationality', '#ethnicity') && verifyInputByCondition('#hsk', '#hskdate') && verifyInputByCondition('#hskk', '#hskkdate')) {
     // $('#to-step-3').attr('disabled', true);
@@ -136,6 +145,7 @@ function nextBtnStage2() {
   }
 }
 
+// To enabled next button for application stage 3.
 function nextBtnStage3(infoPhoto) {
   if (getSession('file')) {
     $('#to-step-4').attr('disabled', false);
@@ -150,6 +160,7 @@ function nextBtnStage3(infoPhoto) {
   }
 }
 
+// To allow drag and drop file upload then display.
 function dragDropFile() {
   let dropArea = document.getElementById('drop-area')
   dropArea.addEventListener(
@@ -193,27 +204,8 @@ function dragDropFile() {
           reader.onload = function(event){
             imageTag.attr('src', URL.createObjectURL(file));
             checkFile(imageTag)
-            // setSession('file', event.target.result);
             nextBtnStage3()
-            var image = new Image();
-            image.onload = function(imageEvent) {
-              var max_size = 300;
-              var w = image.width;
-              var h = image.height;
-              
-              if (w > h) {  if (w > max_size) { h*=max_size/w; w=max_size; }
-              } else     {  if (h > max_size) { w*=max_size/h; h=max_size; } }
-              
-              var canvas = document.createElement('canvas');
-              canvas.width = w;
-              canvas.height = h;
-              canvas.getContext('2d').drawImage(image, 0, 0, w, h);
-              
-              var dataURL = canvas.toDataURL('image/jpeg', 1.0);
-
-              setSession('file', dataURL);
-            }
-            image.src = event.target.result;
+            compressUploadedImage(event)
           }
           reader.readAsDataURL(file);
         } else {
@@ -228,6 +220,8 @@ function dragDropFile() {
   );
 }
 
+// To allow file upload then display.
+// If there is existing profile avatar then display.
 async function loadFile() {
   let imageTag = $('#output');
   let infoPhoto = await populateProfile();
@@ -244,6 +238,7 @@ async function loadFile() {
 
   checkFile(imageTag)
 
+  // To allow file upload then display.
   $('#file').change(function() {
     const file = this.files[0];
     const maxBytes = 5000000;
@@ -254,28 +249,8 @@ async function loadFile() {
         reader.onload = function(event){
           imageTag.attr('src', URL.createObjectURL(file));
           checkFile(imageTag)
-          // setSession('file', event.target.result);
           nextBtnStage3()
-
-          var image = new Image();
-          image.onload = function(imageEvent) {
-            var max_size = 300;
-            var w = image.width;
-            var h = image.height;
-            
-            if (w > h) {  if (w > max_size) { h*=max_size/w; w=max_size; }
-            } else     {  if (h > max_size) { w*=max_size/h; h=max_size; } }
-            
-            var canvas = document.createElement('canvas');
-            canvas.width = w;
-            canvas.height = h;
-            canvas.getContext('2d').drawImage(image, 0, 0, w, h);
-            
-            var dataURL = canvas.toDataURL('image/jpeg', 1.0);
-
-            setSession('file', dataURL);
-          }
-          image.src = event.target.result;
+          compressUploadedImage(event)
         }
         reader.readAsDataURL(file);
       } else {
@@ -287,6 +262,7 @@ async function loadFile() {
     }
   });
 
+  // To allow delete of uploaded image.
   $('.fa-trash').click(function() {
     imageTag.attr('src', '')
     $('#file').val('');
@@ -298,6 +274,7 @@ async function loadFile() {
   nextBtnStage3(infoPhoto);
 }
 
+// To display uploaded image if it exists.
 function checkFile(imageTag) {
   let imageUpload = $('.image-upload');
   let imageDisplay = $('.image-display');
@@ -311,18 +288,45 @@ function checkFile(imageTag) {
   }
 }
 
+// To compress uploaded image for storing it in session.
+function compressUploadedImage(event) {
+  var image = new Image();
+  image.onload = function(imageEvent) {
+    var max_size = 300;
+    var w = image.width;
+    var h = image.height;
+    
+    if (w > h) {  if (w > max_size) { h*=max_size/w; w=max_size; }
+    } else     {  if (h > max_size) { w*=max_size/h; h=max_size; } }
+    
+    var canvas = document.createElement('canvas');
+    canvas.width = w;
+    canvas.height = h;
+    canvas.getContext('2d').drawImage(image, 0, 0, w, h);
+    
+    var dataURL = canvas.toDataURL('image/jpeg', 1.0);
+
+    setSession('file', dataURL);
+  }
+  image.src = event.target.result;
+}
+
+// To set session.
 function setSession(key, value) {
   sessionStorage.setItem(key, value);
 }
 
+// To get session storage value.
 function getSession(key) {
   return sessionStorage.getItem(key);
 }
 
+// To get local storage value.
 function getLocal(key) {
   return localStorage.getItem(key);
 }
 
+// To add active class to element.
 function activeClick(classname) {
   $(classname).on('click', function() {
     $(classname).removeClass('active');
@@ -330,6 +334,7 @@ function activeClick(classname) {
   });
 }
 
+// To update hidden input value based on checked checkbox.
 function checkboxSelect(classname, setInputVal, inputId, targetId, targetId2, targetElem, targetDisplay) {
   $(classname).on('change', function() {
     $(classname).prop('checked', false);
@@ -366,6 +371,7 @@ function checkboxSelect(classname, setInputVal, inputId, targetId, targetId2, ta
   });
 }
 
+// Verify existance of input value. 
 function verifyInput(id) {
   if ($(id).val() === '') {
     return false;
@@ -374,6 +380,7 @@ function verifyInput(id) {
   }
 }
 
+// Verify length of input value. 
 function verifyInputLength(id, minLength) {
   if ($(id).val().length < minLength) {
     return false;
@@ -382,6 +389,7 @@ function verifyInputLength(id, minLength) {
   }
 }
 
+// Verify existance of input value based on condition. 
 function verifyInputByCondition(id, targetDate) {
   if ($(id).val() == 'yes') {
     if ($(targetDate).val() == '') {
@@ -394,6 +402,7 @@ function verifyInputByCondition(id, targetDate) {
   }
 }
 
+// Verify input value to determine another input field to be filled. 
 function verifyInputByNationality(id, targetElem) {
   if ($(id).val().match('中国')) {
     if ($(targetElem).val() == '') {
@@ -406,24 +415,17 @@ function verifyInputByNationality(id, targetElem) {
   }
 }
 
+// Verify if input is checked.
 function verifyCheckInput(id) {
   return $(id).is(':checked')
 }
 
+// To get input value.
 function inputVal(id) {
   return $(id).val()
 }
 
-function setItemCart() {
-  if (user == null) {
-    $('#apply-menu-btn').remove()
-    $('#user-login').remove()
-  } else {
-    $('#apply-modal-btn').remove()
-    $('#user-public').remove()
-  }
-}
-
+// Eventlistener for application stage 1 next button.
 $('#to-step-2').on('click', function(e) {
   e.preventDefault();
   setSession('exam-location', inputVal('#exam-location'));
@@ -439,6 +441,7 @@ $('#to-step-2').on('click', function(e) {
   window.location.replace($(this)[0].form.action);
 });
 
+// Eventlistener for application stage 2 next button.
 $('#to-step-3').on('click', function(e) {
   e.preventDefault();
   setSession('gender', inputVal('#gender'));
@@ -478,12 +481,15 @@ $('#to-step-3').on('click', function(e) {
   }
 });
 
+// Eventlistener for application stage 3 next button.
 $('#to-step-4').on('click', function(e) {
   e.preventDefault();
   setSession('stage3', true);
   window.location.replace($(this)[0].form.action);
 });
 
+// Eventlistener for application submit button.
+// Submit application via API.
 $('#submit-application').on('click', async(e) => {
   $('#submit-application').attr('disabled', true);
   let photo_url = await populateProfile();
@@ -496,7 +502,6 @@ $('#submit-application').on('click', async(e) => {
       gender: getSession('gender'),
       birthday: getSession('birthday'),
       nationality: getSession('nationality'),
-      // ethnicity: getSession('ethnicity'),
       native_language: getSession('native-language'),
       certificate_type: getSession('certificate-type'),
       certificate_number: getSession('certificate-number'),
@@ -505,8 +510,6 @@ $('#submit-application').on('click', async(e) => {
       study_year: getSession('study-year'),
       have_hsk: getSession('hsk') == 'yes' ? true : false,
       have_hskk: getSession('hskk') == 'yes' ? true : false,
-      // have_hsk_date: getSession('hskdate'),
-      // have_hskk_date: getSession('hskkdate'),
       file64: image_file,
       file64_ext: 'jpg'
   }
@@ -553,6 +556,7 @@ $('#submit-application').on('click', async(e) => {
   }
 });
 
+// To populate info for verification on application-verify-info.html
 async function populateInfo() {
   let lang = getLocalLang('lang');
   let infoPhoto = await populateProfile();
@@ -610,6 +614,7 @@ async function populateInfo() {
   if ($('.info-hskk')) $('.info-hskk').html(valueYesNo(lang, getSession('hskk')));
 }
 
+// To translate based on yes/no value.
 function valueYesNo(lang, value) {
   if (value == 'yes') {
     return transLang(lang, '有', 'Yes', 'Ya', 'نعم')
@@ -618,6 +623,7 @@ function valueYesNo(lang, value) {
   }
 }
 
+// To translate based on male/female value.
 function valueGender(lang, value) {
   if (value == '0') {
     return transLang(lang, '女', 'Female', 'Perempuan', 'أنثى')
@@ -626,6 +632,7 @@ function valueGender(lang, value) {
   }
 }
 
+// To translate based on certificate type.
 function valueCertificateType(lang, value) {
   switch(value) {
     case '1':
@@ -645,6 +652,7 @@ function valueCertificateType(lang, value) {
   }
 }
 
+// To translate based on study year.
 function valueStudyYear(lang, value) {
   switch(value) {
     case '1':
@@ -679,6 +687,7 @@ function valueStudyYear(lang, value) {
   }
 }
 
+// To display language accordingly.
 function transLang(lang, zh_hans, en, id, ar) {
   switch(lang) {
     case 'zh-hans':
@@ -701,43 +710,7 @@ function transLang(lang, zh_hans, en, id, ar) {
   }
 }
 
-function populateYear(id) {
-  let select_year = $(id);
-  let currentYear = (new Date()).getFullYear();
-  if (select_year) {
-    for (let i = currentYear; i >= currentYear-100; i--) {
-      let option = document.createElement('option');
-      option.value = i;
-      option.text = i;
-      select_year[0].appendChild(option)
-    }
-  }
-}
-
-function populateMonth(id) {
-  let select_month = $(id);
-  if (select_month) {
-    for (let i = 1; i <= 12; i++) {
-      let option = document.createElement('option');
-      option.value = i;
-      option.text = i;
-      select_month[0].appendChild(option)
-    }
-  }
-}
-
-function populateDay(id) {
-  let select_day = $(id);
-  if (select_day) {
-    for (let i = 1; i <= 31; i++) {
-      let option = document.createElement('option');
-      option.value = i;
-      option.text = i;
-      select_day[0].appendChild(option)
-    }
-  }
-}
-
+// To load exam datetime when location and exam level changes.
 function selectLoadExamTime() {
   $('#exam-location, #exam-level').on('change', async() => {
     $('.display-loading').show();
@@ -754,6 +727,7 @@ function selectLoadExamTime() {
   })
 }
 
+// To load exam datetime according to location and exam level via API.
 async function loadExamTime(area, level) {
   let lang = getLocalLang('lang');
   let month_options = [];
@@ -768,6 +742,7 @@ async function loadExamTime(area, level) {
   let exam_time_options = data.data[0];
 
   if (exam_time_options) {
+    // To get available years and months.
     exam_time_options.forEach(function(item) {
       let event = new Date(item.test_timestamp * 1000);
       let event_month_value = event.toLocaleString(convertLang('en'), {'month' : '2-digit'})
@@ -784,6 +759,7 @@ async function loadExamTime(area, level) {
       return index === month_options.findIndex(o => obj.year_month === o.year_month);
     });
 
+    // Populate available years.
     unique_year.forEach(function(item) {
       const exam_datetime_selection = $('#exam-datetime-selection')[0];
       const exam_year_template = document.createElement('template');
@@ -793,6 +769,7 @@ async function loadExamTime(area, level) {
       exam_datetime_selection.appendChild(exam_year_template.content);
     });
 
+    // Populate available months.
     unique_year_month.reverse().forEach(function(item) {
       const exam_datetime_year = $(`#${item.year}`)[0];
       let exam_month_template = document.createElement('template');
@@ -811,6 +788,7 @@ async function loadExamTime(area, level) {
     unavailableExamDateTimeOptions()
   }
 
+  // To select the first month displayed if available and load exam datetime accordingly.
   if ($('.month-item:first')) {
     $('.month-item:first').addClass('active');
       let default_year_month = $('.month-item:first').data('year-month');
@@ -818,6 +796,7 @@ async function loadExamTime(area, level) {
       if (exam_time_options) loadSelectedExamTime(default_year_month, JSON.stringify(exam_time_options))
   }
 
+  // Eventlistener on selected month to show exam datetime.
   $('.month-item').on('click', function() {
     $('#exam-yearmonth').val($(this).data('year-month'));
     $('#exam-datetime-id').val('');
@@ -849,6 +828,7 @@ async function loadExamTime(area, level) {
   if (getSession('stage1') == 'true') loadSessionData1();
 }
 
+// To load exam datetime based on selected month.
 function loadSelectedExamTime(year_month, exam_time_options) {
   JSON.parse(exam_time_options).forEach(function(item, i) {
     let item_date = item.test_date_time.split(' ')[0].split('-');
@@ -878,6 +858,7 @@ function loadSelectedExamTime(year_month, exam_time_options) {
   });
 }
 
+// To display selected location, exam level and exam datetime in cart.
 function displaySelectedDateTime(exam_location, exam_level, exam_datetime, exam_amount) {
   switch(exam_location) {
     case '1':
@@ -913,6 +894,7 @@ function displaySelectedDateTime(exam_location, exam_level, exam_datetime, exam_
   $('.selected-exam-amount').html('$' + parseInt(exam_amount).toFixed(2))
 }
 
+// To display based on preferred language.
 function selectedDateTimeLocationLevelLang(targetId, zh_hans, en, id, ar) {
   let lang = getLocalLang('lang');
   switch(lang) {
@@ -936,6 +918,8 @@ function selectedDateTimeLocationLevelLang(targetId, zh_hans, en, id, ar) {
   }
 }
 
+// To update cart item each time exam datetime selection changes.
+// To clear cart item each time exam location or exam level changes.
 function updateCartItem() {
   if ($('#exam-datetime').val() != '') {
     displaySelectedDateTime($('#exam-location').val(), $('#exam-level').val(), $('#exam-datetime').val(), $('#exam-amount').val())
@@ -951,6 +935,7 @@ function updateCartItem() {
   }
 }
 
+// To display unavailable exam datetime wording when no datetime is available via API.
 function unavailableExamDateTimeOptions() {
   let lang = getLocalLang('lang');
   const exam_datetime_options = $('#exam-datetime-options')[0];
@@ -976,10 +961,12 @@ function unavailableExamDateTimeOptions() {
     $('.list-date:last').addClass('border-0')
 }
 
+// To get language value from local storage. Default value is 'zh-hans'.
 function getLocalLang(key) {
   return localStorage.getItem(key) ? localStorage.getItem(key) : 'zh-hans';
 }
 
+// Return preferred language for showing timestamp.
 function convertLang(lang) {
   switch(lang) {
     case 'zh-hans':
@@ -1002,6 +989,7 @@ function convertLang(lang) {
   }
 }
 
+// To fill value for input field.
 function refillField(type, target, data) {
   if (type == 'input' || type == 'option') {
     $(target).val(data);
@@ -1016,6 +1004,7 @@ function refillField(type, target, data) {
   }
 }
 
+// To load session data for application stage 1.
 function loadSessionData1() {
   if (getSession('exam-location')) refillField('input', '#exam-location', getSession('exam-location'));
   if (getSession('exam-level')) refillField('input', '#exam-level', getSession('exam-level'));
@@ -1030,6 +1019,7 @@ function loadSessionData1() {
   setSession('stage1', false);
 }
 
+// To get options from API.
 async function populateOptions(api) {
   let response = await fetch(api, {
       headers: {
@@ -1044,6 +1034,7 @@ async function populateOptions(api) {
   return options
 }
 
+// To populate nationality options.
 function populateNationality(id) {
   let lang = getLocalLang('lang');
   let options = JSON.parse(getLocal('nationality_options'));
@@ -1063,6 +1054,7 @@ function populateNationality(id) {
   }
 }
 
+// To populate ethnicity options.
 function populateEthnicity(id) {
   let lang = getLocalLang('lang');
   let options = JSON.parse(getLocal('ethnicity_options'));
@@ -1082,6 +1074,7 @@ function populateEthnicity(id) {
   }
 }
 
+// To populate native language options.
 function populateNativeLang(id) {
   let lang = getLocalLang('lang');
   let options = JSON.parse(getLocal('native_language_options'));
@@ -1100,6 +1093,7 @@ function populateNativeLang(id) {
   }
 }
 
+// Store options to local storage.
 async function storeOptionsToLocal() {
   if (!getLocal('nationality_options')) {
     let nationality_options = await populateOptions('https://api.hskk.org/webapi/nationality/');
@@ -1115,6 +1109,7 @@ async function storeOptionsToLocal() {
   }
 }
 
+// Display ethnicity field when nationality field selection value contains '中国'.
 function displayEthnicity() {
   $('#ethnicity-selection').hide()
   $('#nationality').on('change', function() {
@@ -1129,6 +1124,7 @@ function displayEthnicity() {
   })
 }
 
+// Display ethnicity value when nationality value contains '中国'.
 function checkEthnicity() {
   if ($('#nationality').val().match('中国')) {
     $('#ethnicity-selection').show()
@@ -1139,6 +1135,7 @@ function checkEthnicity() {
   }
 }
 
+// Populate existing user info if exists via API.
 async function populateRegisterInfo() {
   let response = await fetch('https://api.hskk.org/webapi/register_default_info/', {
       headers: {
@@ -1213,6 +1210,7 @@ async function populateRegisterInfo() {
   }
 }
 
+// Get user avatar via API.
 async function populateProfile() {
   let response = await fetch('https://api.hskk.org/webapi/register_default_info/', {
       headers: {
@@ -1228,6 +1226,8 @@ async function populateProfile() {
   return photo
 }
 
+// Set button URL on application-submit.html to have payment_id params for the purpose of payment page.
+// Display payment link for user to refer on application-submit.html
 function setPaymentIntent() {
   const payment_id = new URL(location.href).searchParams.get('payment');
   const payment_link = window.location.origin + '/payment.html?payment_id=' + payment_id
