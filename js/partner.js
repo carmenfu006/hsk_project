@@ -36,8 +36,8 @@ function dashboardPage() {
       authoriseAccess()
       activeMenuBar('#candidate-management-sidebar', '#candidate-management-footbar')
       activeIndicator('.level-bar-item')
-      populateCandidatesExamtime()
-      populateCandidates()
+      populateCandidatesExamtime(0)
+      populateCandidates(0, '')
       break;
     case 'support-center.html':
       authoriseAccess()
@@ -230,8 +230,13 @@ $('#exam-time').on('change', function() {
 
 // To retrieve student records by level by calling API.
 async function populateCandidatesExamtime(level) {
-  let candidates = await fetchAPI('https://api.hskk.org/webapi/partner_test_info_overview/');
-  
+  let candidates;
+  if (level == undefined || level == 0) {
+    candidates = await fetchAPI('https://api.hskk.org/webapi/partner_test_info_overview');
+  } else {
+    candidates = await fetchAPI(`https://api.hskk.org/webapi/partner_test_info_overview?level=${level}`);
+  }
+
   if (candidates) {
     let unique_test_time = candidates.filter((obj, index) => {
       return index === candidates.findIndex(o => obj.test_time === o.test_time);
@@ -254,77 +259,31 @@ async function populateCandidatesExamtime(level) {
 // To retrieve student records by level and exam time by calling API.
 async function populateCandidates(level, test_time) {
   let lang = getLocalLang('lang');
-  let candidates = await fetchAPI('https://api.hskk.org/webapi/partner_test_info_overview/');
-  
+  let candidates;
+
+  if ((level == undefined || level == 0) && (test_time == '')) {
+    candidates = await fetchAPI('https://api.hskk.org/webapi/partner_test_info_overview');
+  } else if (!(level == undefined || level == 0) && (test_time == '')) {
+    candidates = await fetchAPI(`https://api.hskk.org/webapi/partner_test_info_overview?level=${level}`);
+  } else if ((level == undefined || level == 0) && !(test_time == '')) {
+    candidates = await fetchAPI(`https://api.hskk.org/webapi/partner_test_info_overview?test_time=${test_time}`);
+  } else if (!(level == undefined || level == 0) && !(test_time == '')) {
+    candidates = await fetchAPI(`https://api.hskk.org/webapi/partner_test_info_overview?level=${level}&test_time=${test_time}`);
+  }
+
   if (candidates) {
     candidates.forEach(function(candidate, index) {
       const candidate_table = $('#candidate-table')[0];
       const candidate_table_template = document.createElement('template');
 
-      if (candidate.level == level && candidate.test_time == test_time) {
-        candidate_table_template.innerHTML = `
-          <tr>
-            <th scope='row'>${index+1}</th>
-            <td>${ lang == 'zh-hans' || lang == 'zh-hant' ? candidate.name_cn : candidate.name_en }</td>
-            <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
-            <td class='card-password-${index} d-none'>${candidate.card_password}</td>
-          </tr>
-        `;
-      } else if (candidate.level == level && test_time == '') {
-        candidate_table_template.innerHTML = `
-          <tr>
-            <th scope='row'>${index+1}</th>
-            <td>${ lang == 'zh-hans' || lang == 'zh-hant' ? candidate.name_cn : candidate.name_en }</td>
-            <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
-            <td class='card-password-${index} d-none'>${candidate.card_password}</td>
-          </tr>
-        `;
-      } else if (level == 0 && candidate.test_time == test_time) {
-        candidate_table_template.innerHTML = `
-          <tr>
-            <th scope='row'>${index+1}</th>
-            <td>${ lang == 'zh-hans' || lang == 'zh-hant' ? candidate.name_cn : candidate.name_en }</td>
-            <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
-            <td class='card-password-${index} d-none'>${candidate.card_password}</td>
-          </tr>
-        `;
-      } else if (level == 0 && test_time == '') {
-        candidate_table_template.innerHTML = `
-          <tr>
-            <th scope='row'>${index+1}</th>
-            <td>${ lang == 'zh-hans' || lang == 'zh-hant' ? candidate.name_cn : candidate.name_en }</td>
-            <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
-            <td class='card-password-${index} d-none'>${candidate.card_password}</td>
-          </tr>
-        `;
-      } else if (level == undefined && candidate.test_time == test_time) {
-        candidate_table_template.innerHTML = `
-          <tr>
-            <th scope='row'>${index+1}</th>
-            <td>${ lang == 'zh-hans' || lang == 'zh-hant' ? candidate.name_cn : candidate.name_en }</td>
-            <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
-            <td class='card-password-${index} d-none'>${candidate.card_password}</td>
-          </tr>
-        `;
-      } else if (level == undefined && test_time == '') {
-        candidate_table_template.innerHTML = `
-          <tr>
-            <th scope='row'>${index+1}</th>
-            <td>${ lang == 'zh-hans' || lang == 'zh-hant' ? candidate.name_cn : candidate.name_en }</td>
-            <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
-            <td class='card-password-${index} d-none'>${candidate.card_password}</td>
-          </tr>
-        `;
-      } else if (level == undefined) {
-        candidate_table_template.innerHTML = `
-          <tr>
-            <th scope='row'>${index+1}</th>
-            <td>${ lang == 'zh-hans' || lang == 'zh-hant' ? candidate.name_cn : candidate.name_en }</td>
-            <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
-            <td class='card-password-${index} d-none'>${candidate.card_password}</td>
-          </tr>
-        `;
-      }
+      candidate_table_template.innerHTML = `
+        <tr>
+          <th scope='row'>${index+1}</th>
+          <td>${ lang == 'zh-hans' || lang == 'zh-hant' ? candidate.name_cn : candidate.name_en }</td>
+          <td class='column-${index}'><i class='fa-solid fa-eye' data-id='${index}'></i></td>
+          <td class='card-password-${index} d-none'>${candidate.card_password}</td>
+        </tr>
+      `;
       candidate_table.appendChild(candidate_table_template.content);
     });
   }

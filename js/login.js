@@ -416,7 +416,7 @@ async function candidateLogin(application) {
       localStorage.setItem('photo_path', info.photo_path);
       localStorage.setItem('lang', info.language);
       application == 'true' ? window.location.href = window.location.origin + '/application.html' : window.location.replace($('#to-candidate-dashboard')[0].form.action);
-    } else if (data.code == 400) {
+    } else {
       toastMessage(data.msg)
       $('.toast').toast('show');
     }
@@ -463,7 +463,7 @@ async function partnerLogin() {
       localStorage.setItem('is_partner', info.is_partner);
       localStorage.setItem('photo_path', info.photo_path);
       window.location.href = window.location.origin + '/partner/candidate-management.html'
-    } else if (data.code == 400) {
+    } else {
       toastMessage(data.msg)
       $('.toast').toast('show');
     }

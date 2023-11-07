@@ -145,12 +145,66 @@ function nextBtnStage1() {
 
 // To enabled next button for application stage 2.
 function nextBtnStage2() {
+  // Hide error message if condition fulfilled.
+  if (verifyInput('#firstname')) hideErrorMsg('#firstname');
+  if (verifyInput('#firstname')) hideErrorMsg('#firstname');
+  if (verifyInput('#lastname')) hideErrorMsg('#lastname');
+  if (verifyInput('#birthday')) hideErrorMsg('#birthday');
+  if (verifyInput('#nationality')) hideErrorMsg('#nationality');
+  if (verifyInputByNationality('#nationality', '#ethnicity')) hideErrorMsg('#ethnicity');
+  if (verifyInput('#native-language')) hideErrorMsg('#native-language');
+  if (verifyInput('#certificate-type')) hideErrorMsg('#certificate-type');
+  if (verifyInput('#certificate-number')) hideErrorMsg('#certificate-number');
+  if (verifyInput('#phone') && verifyInputLength('#phone', 7)) {
+    hideErrorMsg('#phone');
+    validInput('#phone-zone');
+  } 
+  if (verifyInput('#study-year')) hideErrorMsg('#study-year');
+  if (verifyInput('#hsk')) hideErrorMsg('#hsk');
+  if (verifyInput('#hskk')) hideErrorMsg('#hskk');
+  if (verifyInputByCondition('#hsk', '#hskdate')) hideErrorMsg('#hskdate');
+  if (verifyInputByCondition('#hskk', '#hskkdate')) hideErrorMsg('#hskkdate');
+
+  // Check if every field is filled.
   if (verifyInput('#gender') && verifyInput('#hsk') && verifyInput('#hskk') && verifyInput('#username') && verifyInput('#firstname') && verifyInput('#lastname') && verifyInput('#birthday') && verifyInput('#nationality') && verifyInput('#native-language') && verifyInput('#certificate-type') && verifyInput('#certificate-number') && verifyInput('#phone-zone') && verifyInput('#phone') && verifyInputLength('#phone', 7) && verifyInput('#study-year') && verifyInputByNationality('#nationality', '#ethnicity') && verifyInputByCondition('#hsk', '#hskdate') && verifyInputByCondition('#hskk', '#hskkdate')) {
-    // $('#to-step-3').attr('disabled', true);
     $('#input-fields').val('true');
   } else {
-    // $('#to-step-3').attr('disabled', true);
     $('#input-fields').val('false');
+  }
+}
+
+// To prompt error message for input fields on application stage 2.
+function nextBtnStage2FieldMsg() {
+  // Show error message if condition not fulfilled.
+  if (!verifyInput('#firstname')) {
+    showErrorMsg('#firstname');
+  } else if (!verifyInput('#lastname')) {
+    showErrorMsg('#lastname');
+  } else if (!verifyInput('#birthday')) {
+    showErrorMsg('#birthday');
+  } else if (!verifyInput('#nationality')) {
+    showErrorMsg('#nationality');
+  } else if (!verifyInputByNationality('#nationality', '#ethnicity')) {
+    showErrorMsg('#ethnicity');
+  } else if (!verifyInput('#native-language')) {
+    showErrorMsg('#native-language');
+  } else if (!verifyInput('#certificate-type')) {
+    showErrorMsg('#certificate-type');
+  } else if (!verifyInput('#certificate-number')) {
+    showErrorMsg('#certificate-number');
+  } else if (!verifyInput('#phone') || !verifyInputLength('#phone', 7)) {
+    showErrorMsg('#phone');
+    invalidInput('#phone-zone');
+  } else if (!verifyInput('#study-year')) {
+    showErrorMsg('#study-year');
+  } else if (!verifyInput('#hsk')) {
+    showErrorMsg('#hsk');
+  } else if (!verifyInput('#hskk')) {
+    showErrorMsg('#hskk');
+  } else if (!verifyInputByCondition('#hsk', '#hskdate')) {
+    showErrorMsg('#hskdate');
+  } else if (!verifyInputByCondition('#hskk', '#hskkdate')) {
+    showErrorMsg('#hskkdate');
   }
 }
 
@@ -213,8 +267,8 @@ function dragDropFile() {
           reader.onload = function(event){
             imageTag.attr('src', URL.createObjectURL(file));
             checkFile(imageTag)
-            nextBtnStage3()
             compressUploadedImage(event)
+            nextBtnStage3()
           }
           reader.readAsDataURL(file);
         } else {
@@ -258,8 +312,8 @@ async function loadFile() {
         reader.onload = function(event){
           imageTag.attr('src', URL.createObjectURL(file));
           checkFile(imageTag)
-          nextBtnStage3()
           compressUploadedImage(event)
+          nextBtnStage3()
         }
         reader.readAsDataURL(file);
       } else {
@@ -380,6 +434,33 @@ function checkboxSelect(classname, setInputVal, inputId, targetId, targetId2, ta
   });
 }
 
+// Show error message for input field
+function showErrorMsg(id) {
+  let position = document.getElementById(id.split('#')[1]).offsetTop;
+  invalidInput(id)
+  $(`${id}-error`).removeClass('d-none');
+  
+  if (position > 0) {
+    window.scrollTo({top: position, behavior: 'smooth'});
+  }
+}
+
+// Hide error message for input field
+function hideErrorMsg(id) {
+  validInput(id)
+  $(`${id}-error`).addClass('d-none');
+}
+
+// To have red warning for input field.
+function invalidInput(id) {
+  $(id).addClass('invalid');
+}
+
+// To remove red warning from input field.
+function validInput(id) {
+  $(id).removeClass('invalid');
+}
+
 // Verify existance of input value. 
 function verifyInput(id) {
   if ($(id).val() === '') {
@@ -481,11 +562,8 @@ $('#to-step-3').on('click', function(e) {
     window.location.replace($(this)[0].form.action);
   } else {
     let lang = getLocalLang('lang');
-    if ($('#phone').val().length < 7) {
-      $('.toast-text').html(transLang(lang, '请确保您的联系电话至少为 7 位数字。', 'Please make sure your contact number is at least 7 digits.', 'Pastikan nomor kontak Anda minimal 7 digit.', 'يرجى التأكد من أن رقم الاتصال الخاص بك يتكون من 7 أرقام على الأقل.'))
-    } else {
-      $('.toast-text').html(transLang(lang, '请填写所有字段。', 'Please have all the fields filled.', 'Harap isi semua kolom.', 'يرجى ملء كافة الحقول.'))
-    }
+    $('.toast-text').html(transLang(lang, '请填写所有字段。', 'Please have all the fields filled.', 'Harap isi semua kolom.', 'يرجى ملء كافة الحقول.'));
+    nextBtnStage2FieldMsg();
     $('.toast').toast('show');
   }
 });

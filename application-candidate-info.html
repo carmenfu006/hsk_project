@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.5.1.slim.min.js?V=2.2" type="text/javascript" defer></script>
-    <script src="js/navbar.js?V=2.2" type="text/javascript" defer></script>
-    <script src="js/footer.js?V=2.2" type="text/javascript" defer></script>
-    <script src="js/bootstrap.js?V=2.2" type="text/javascript" defer></script>
-    <script src="js/bootstrap-datepicker.js?V=2.2" type="text/javascript" defer></script>
-    <script src="js/application.js?V=2.2" type="text/javascript" defer></script>
-    <script src="js/i18n.js?V=2.2" type="text/javascript" defer></script>
-    <link href="css/bootstrap.css?V=2.2" rel="stylesheet" />
+    <script src="js/jquery-3.5.1.slim.min.js?V=2.3" type="text/javascript" defer></script>
+    <script src="js/navbar.js?V=2.3" type="text/javascript" defer></script>
+    <script src="js/footer.js?V=2.3" type="text/javascript" defer></script>
+    <script src="js/bootstrap.js?V=2.3" type="text/javascript" defer></script>
+    <script src="js/bootstrap-datepicker.js?V=2.3" type="text/javascript" defer></script>
+    <script src="js/application.js?V=2.3" type="text/javascript" defer></script>
+    <script src="js/i18n.js?V=2.3" type="text/javascript" defer></script>
+    <link href="css/bootstrap.css?V=2.3" rel="stylesheet" />
     <link href="css/bootstrap-datepicker3.css?v=1.0" rel="stylesheet" />
-    <link href="css/style.css?V=2.2" rel="stylesheet" type="text/css" />
+    <link href="css/style.css?V=2.3" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <nav id='navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
@@ -36,13 +36,15 @@
             </div>
             <div class='form-group'>
               <div class='row'>
-                <div class='col-lg-6 col-md-12 col-sm-12 mt-2'>
+                <div class='col-lg-6 col-md-12 col-sm-12 mt-3'>
                   <label class='i18n-86'>证件名</label>
-                  <input type='text' class='form-control i18n-86' placeholder='姓' id='firstname'>
+                  <input type='text' class='form-control i18n-86' placeholder='证件名' id='firstname'>
+                  <p id='firstname-error' class='i18n-86-error p-0 m-0 text-danger d-none'>证件名不能留空</p>
                 </div>
-                <div class='col-lg-6 col-md-12 col-sm-12 mt-2'>
+                <div class='col-lg-6 col-md-12 col-sm-12 mt-3'>
                   <label class='i18n-87'>中文姓名</label>
-                  <input type='text' class='form-control i18n-87' placeholder='名' id='lastname'>
+                  <input type='text' class='form-control i18n-87' placeholder='中文姓名' id='lastname'>
+                  <p id='lastname-error' class='i18n-87-error p-0 m-0 text-danger d-none'>中文姓名不能留空</p>
                 </div>
               </div>
             </div>
@@ -58,6 +60,7 @@
                 <div class='col-lg-6 col-md-6 col-sm-12 mt-2'>
                   <label class='i18n-90'>生日</label>
                   <input type='text' class='form-control' data-date-format='yyyy-mm-dd' placeholder='YYYY-MM-DD' id='birthday'>
+                  <p id='birthday-error' class='i18n-90-error p-0 m-0 text-danger d-none'>生日不能留空</p>
                 </div>
               </div>
             </div>
@@ -66,18 +69,21 @@
               <select class='form-control' id='nationality'>
                 <option class='i18n-95' value=''>请选择国籍</option>
               </select>
+              <p id='nationality-error' class='i18n-94-error p-0 m-0 text-danger d-none'>国籍不能留空</p>
             </div>
             <div id='ethnicity-selection' class='form-group'>
               <label class='i18n-329'>民族</label>
               <select class='form-control' id='ethnicity'>
                 <option class='i18n-330' value=''>请选择民族</option>
               </select>
+              <p id='ethnicity-error' class='i18n-329-error p-0 m-0 text-danger d-none'>民族不能留空</p>
             </div>
             <div class='form-group'>
               <label class='i18n-96'>母语</label>
               <select class='form-control' id='native-language'>
                 <option class='i18n-97' value=''>请选择您的第一语言，即母语</option>
               </select>
+              <p id='native-language-error' class='i18n-96-error p-0 m-0 text-danger d-none'>母语不能留空</p>
             </div>
             <div class='form-group'>
               <label class='i18n-98'>证件类型</label>
@@ -88,10 +94,12 @@
                 <option class='i18n-333' value='3'>居留证</option>
                 <option class='i18n-334' value='4'>其他</option>
               </select>
+              <p id='certificate-type-error' class='i18n-98-error p-0 m-0 text-danger d-none'>证件类型不能留空</p>
             </div>
             <div class='form-group'>
               <label class='i18n-100'>证件号码</label>
               <input type='text' class='form-control i18n-100' placeholder='证件号码' id='certificate-number'>
+              <p id='certificate-number-error' class='i18n-100-error p-0 m-0 text-danger d-none'>证件号码不能留空</p>
               <p class='text-muted mt-2'>
                 <span>💡</span>
                 <span class='i18n-101'>证件号码应与证件保持一致，包括“（）”内的信息</span>
@@ -110,6 +118,7 @@
                 </select>
                 <input type='number' class='form-control border-left-0 i18n-61' placeholder='联系电话' id='phone'/>
               </div>
+              <p id='phone-error' class='i18n-61-error p-0 m-0 text-danger d-none'>请确保您的联系电话至少为 7 位数字。</p>
             </div>
             <div class='form-group'>
               <label class='i18n-102'>你学习汉语多长时间了</label>
@@ -125,6 +134,7 @@
                 <option class='i18n-342' value='8'>5-10年</option>
                 <option class='i18n-343' value='9'>10年以上</option>
               </select>
+              <p id='study-year-error' class='i18n-102-error p-0 m-0 text-danger d-none'>学习汉语多长时间不能留空</p>
             </div>
             <div class='form-group'>
               <label class='i18n-104'>过去6个月考過HSK沒有？</label>
@@ -142,12 +152,14 @@
                   </label>
                 </div>
               </div>
+              <p id='hsk-error' class='i18n-104-error p-0 m-0 text-danger d-none'>过去6个月考過HSK不能留空</p>
             </div>
             <div id='hsk-date' class='form-group d-none'>
               <label class='i18n-106'>请选择最近一次HSK的考试日期</label>
               <div class='row'>
                 <div class='col-lg-6 col-md-6 col-sm-12'>
                   <input type='text' class='form-control' data-date-format='yyyy-mm-dd' placeholder='YYYY-MM-DD' id='hskdate'>
+                  <p id='hskdate-error' class='i18n-106-error p-0 m-0 text-danger d-none'>最近一次HSK的考试日期不能留空</p>
                 </div>
               </div>
             </div>
@@ -167,12 +179,14 @@
                   </label>
                 </div>
               </div>
+              <p id='hskk-error' class='i18n-105-error p-0 m-0 text-danger d-none'>过去6个月考過HSKK不能留空</p>
             </div>
             <div id='hskk-date' class='form-group d-none'>
               <label class='i18n-107'>请选择最近一次HSKK的考试日期</label>
               <div class='row'>
                 <div class='col-lg-6 col-md-6 col-sm-12'>
                   <input type='text' class='form-control' data-date-format='yyyy-mm-dd' placeholder='YYYY-MM-DD' id='hskkdate'>
+                  <p id='hskkdate-error' class='i18n-107-error p-0 m-0 text-danger d-none'>最近一次HSKK的考试日期不能留空</p>
                 </div>
               </div>
             </div>

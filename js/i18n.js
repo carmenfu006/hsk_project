@@ -429,6 +429,13 @@ translateWeb(
   true
 )
 translateWeb(
+  '.i18n-61-error',
+  '请确保您的联系电话至少为 7 位数字。',
+  'Please make sure your contact phone number is at least 7 digits.',
+  'Pastikan nomor telepon kontak Anda minimal 7 digit.',
+  'يرجى التأكد من أن رقم هاتف الاتصال الخاص بك يتكون من 7 أرقام على الأقل.'
+)
+translateWeb(
   '.i18n-62',
   '电子邮件',
   'Email',
@@ -615,12 +622,26 @@ translateWeb(
   true
 )
 translateWeb(
+  '.i18n-86-error',
+  '证件名不能留空',
+  'Name cannot be left blank',
+  'Nama tidak boleh dikosongkan',
+  'لا يمكن ترك الاسم فارغا'
+)
+translateWeb(
   '.i18n-87',
   '中文姓名',
   'Chinese Name',
   'Nama Cina',
   'اسم صيني',
   true
+)
+translateWeb(
+  '.i18n-87-error',
+  '中文姓名不能留空',
+  'Chinese Name cannot be left blank',
+  'Nama Cina tidak boleh dikosongkan',
+  'لا يمكن ترك الاسم الصيني فارغا'
 )
 translateWeb(
   '.i18n-88',
@@ -642,6 +663,13 @@ translateWeb(
   'Date of Birth',
   'Tanggal Lahir',
   'تاريخ الميلاد'
+)
+translateWeb(
+  '.i18n-90-error',
+  '生日不能留空',
+  'Date of Birth cannot be left blank',
+  'Tanggal Lahir tidak boleh dikosongkan',
+  'لا يمكن ترك تاريخ الميلاد فارغا'
 )
 translateWeb(
   '.i18n-91',
@@ -672,6 +700,13 @@ translateWeb(
   'الجنسية'
 )
 translateWeb(
+  '.i18n-94-error',
+  '国籍不能留空',
+  'Nationality cannot be left blank',
+  'Kebangsaan tidak boleh dikosongkan',
+  'لا يمكن ترك الجنسية فارغة'
+)
+translateWeb(
   '.i18n-95',
   '请选择国籍',
   'Please select your nationality',
@@ -682,8 +717,15 @@ translateWeb(
   '.i18n-96',
   '母语',
   'Native Language',
-  'Bahasa Ibu',
+  'Bahasa Asli',
   'اللغة الأم'
+)
+translateWeb(
+  '.i18n-96-error',
+  '母语不能留空',
+  'Native Language cannot be left blank',
+  'Bahasa Asli tidak boleh kosong',
+  'لا يمكن ترك اللغة الأصلية فارغة'
 )
 translateWeb(
   '.i18n-97',
@@ -698,6 +740,13 @@ translateWeb(
   'Document Type',
   'Jenis Identitas',
   'نوع الوثيقة'
+)
+translateWeb(
+  '.i18n-98-error',
+  '证件类型不能留空',
+  'Document Type cannot be left blank',
+  'Jenis Identitas tidak boleh kosong',
+  'لا يمكن ترك نوع المستند فارغًا'
 )
 translateWeb(
   '.i18n-99',
@@ -715,6 +764,13 @@ translateWeb(
   true
 )
 translateWeb(
+  '.i18n-100-error',
+  '证件号码不能留空',
+  'Document Number cannot be left blank',
+  'Nomor Identitas tidak boleh kosong',
+  'لا يمكن ترك رقم المستند فارغًا'
+)
+translateWeb(
   '.i18n-101',
   '证件号码应与证件保持一致，包括“（）”内的信息',
   'Document number should match the information within the parentheses',
@@ -727,6 +783,13 @@ translateWeb(
   'How long have you been learning Chinese?',
   'Berapa lama Anda telah belajar bahasa Mandarin?',
   'مدة دراستك للصينية'
+)
+translateWeb(
+  '.i18n-102-error',
+  '学习汉语多长时间不能留空',
+  'How long have you been learning Chinese cannot be left blank',
+  'Sudah berapa lama Anda belajar bahasa Mandarin tidak boleh kosong',
+  'منذ متى وأنت تتعلم اللغة الصينية لا يمكن تركها فارغة'
 )
 translateWeb(
   '.i18n-103',
@@ -743,11 +806,25 @@ translateWeb(
   'هل أجريت اختبار HSK خلال الـ 6 أشهر الماضية؟'
 )
 translateWeb(
+  '.i18n-104-error',
+  '过去6个月考過HSK不能留空',
+  'Those who have taken the HSK test in the past 6 months cannot leave this blank',
+  'Mereka yang telah mengikuti tes HSK dalam 6 bulan terakhir tidak boleh mengosongkannya',
+  'لا يمكن لأولئك الذين أجروا اختبار HSK خلال الأشهر الستة الماضية ترك هذا الحقل فارغًا'
+)
+translateWeb(
   '.i18n-105',
   '过去6个月考過HSKK沒有？',
   'Have you taken the HSKK test in the past 6 months?',
   'Apakah Anda pernah mengikuti tes HSKK dalam 6 bulan terakhir?',
   'هل أجريت اختبار HSKK خلال الـ 6 أشهر الماضية؟'
+)
+translateWeb(
+  '.i18n-105-error',
+  '过去6个月考過HSKK不能留空',
+  'Those who have taken the HSKK test in the past 6 months cannot leave this blank',
+  'Mereka yang telah mengikuti tes HSKK dalam 6 bulan terakhir tidak boleh mengosongkannya',
+  'لا يمكن لأولئك الذين أجروا اختبار HSKK خلال الأشهر الستة الماضية ترك هذا الحقل فارغًا'
 )
 translateWeb(
   '.i18n-106',
@@ -757,11 +834,25 @@ translateWeb(
   'يرجى تحديد تاريخ آخر اختبار HSK'
 )
 translateWeb(
+  '.i18n-106-error',
+  '最近一次HSK的考试日期不能留空',
+  'The most recent HSK test date cannot be left blank',
+  'Tanggal tes HSK terbaru tidak boleh kosong',
+  'لا يمكن ترك آخر تاريخ لاختبار HSK فارغًا'
+)
+translateWeb(
   '.i18n-107',
   '请选择最近一次HSKK的考试日期',
   'Please select the most recent HSKK test date',
   'Silakan pilih tanggal tes HSKK terbaru',
   'يرجى تحديد تاريخ آخر اختبار HSKK'
+)
+translateWeb(
+  '.i18n-107-error',
+  '最近一次HSKK的考试日期不能留空',
+  'The most recent HSKK test date cannot be left blank',
+  'Tanggal tes HSKK terbaru tidak boleh kosong',
+  'لا يمكن ترك آخر تاريخ لاختبار HSKK فارغًا'
 )
 translateWeb(
   '.i18n-108',
@@ -2323,6 +2414,13 @@ translateWeb(
   'Ethnicity',
   'Etnis',
   'عِرق'
+)
+translateWeb(
+  '.i18n-329-error',
+  '民族不能留空',
+  'Ethnicity cannot be left blank',
+  'Etnisitas tidak boleh dibiarkan kosong',
+  'لا يمكن ترك العرق فارغا'
 )
 translateWeb(
   '.i18n-330',

@@ -135,6 +135,11 @@ function dashboardPage() {
       activeIndicator('.status-filter')
       scrollFootbar('record-footbar')
       loadExamRecord()
+      // To filter status incomplete if params status exists
+      const params_status = new URL(location.href).searchParams.get('status');
+      if (params_status) {
+        $('.status-filter[data-status="incomplete"]').click();
+      }
       break;
   }
 }
@@ -448,7 +453,7 @@ async function loadExamRecord(status) {
                   <div class='record'>${record.test_time}</div>
                 </div>
                 <div class='col'>
-                  <div class='btn ${valueTestStatusBtn(record.test_status)}'>${valueTestStatus(lang, record.test_status)}</div>
+                  <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status)}</div>
                 </div>
               </div>
             </div>
@@ -486,7 +491,7 @@ async function loadExamRecord(status) {
                     <p class='i18n-300 card-text font-weight-bold pb-2'>${transLang(lang, '状态/成绩', 'Status/Score', 'Status/Skor', 'الحالة/النتيجة')}</p>
                   </div>
                   <div class='col'>
-                    <div class='btn ${valueTestStatusBtn(record.test_status)}'>${valueTestStatus(lang, record.test_status)}</div>
+                    <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status)}</div>
                   </div>
                 </div>
               </div>
@@ -508,7 +513,7 @@ async function loadExamRecord(status) {
                   <div class='record'>${record.test_time}</div>
                 </div>
                 <div class='col'>
-                  <div class='btn ${valueTestStatusBtn(record.test_status)}'>${valueTestStatus(lang, record.test_status)}</div>
+                  <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status)}</div>
                 </div>
               </div>
             </div>
@@ -546,7 +551,7 @@ async function loadExamRecord(status) {
                     <p class='i18n-300 card-text font-weight-bold pb-2'>${transLang(lang, '状态/成绩', 'Status/Score', 'Status/Skor', 'الحالة/النتيجة')}</p>
                   </div>
                   <div class='col'>
-                    <div class='btn ${valueTestStatusBtn(record.test_status)}'>${valueTestStatus(lang, record.test_status)}</div>
+                    <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status)}</div>
                   </div>
                 </div>
               </div>
@@ -567,7 +572,7 @@ async function loadExamRecord(status) {
                   <div class='record'>${record.test_time}</div>
                 </div>
                 <div class='col'>
-                  <div class='btn ${valueTestStatusBtn(record.test_status)}'>${valueTestStatus(lang, record.test_status, record.score_final)}</div>
+                  <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status, record.score_final)}</div>
                 </div>
               </div>
             </div>
@@ -605,7 +610,7 @@ async function loadExamRecord(status) {
                     <p class='i18n-300 card-text font-weight-bold pb-2'>${transLang(lang, '状态/成绩', 'Status/Score', 'Status/Skor', 'الحالة/النتيجة')}</p>
                   </div>
                   <div class='col'>
-                    <div class='btn ${valueTestStatusBtn(record.test_status)}'>${valueTestStatus(lang, record.test_status, record.score_final)}</div>
+                    <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status, record.score_final)}</div>
                   </div>
                 </div>
               </div>
@@ -616,6 +621,22 @@ async function loadExamRecord(status) {
       web_exam_records.appendChild(web_exam_records_template.content);
       mobile_exam_records.appendChild(mobile_exam_records_template.content);
     });
+    // To redirect user to make payment
+    $('.btn-record').on('click', function() {
+      let payment_secret = $(this).data('payment');
+      if (payment_secret) {
+        window.location.href = window.location.origin + '/payment.html?payment_id=' + payment_secret;
+      }
+    })
+  }
+}
+
+// Set payment link value to data-payment
+function setPaymentLink(status, payment_link) {
+  if (status == 0) {
+    return payment_link
+  } else {
+    return null;
   }
 }
 
