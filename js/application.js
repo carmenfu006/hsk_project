@@ -4,23 +4,24 @@ if (user == null) window.location.href = 'candidate-login.html';
 // To indicate selected page.
 $('#apply-menu-btn').addClass('active');
 
-// To indicate selected month.
+// To scroll months selection.
 $('.toggle').click(function(){
   $('.month').toggleClass("justify-content-end");
   $('.toggle').toggleClass("text-light");
 });
 
 progressIndicator()
+setupApplication()
+
+// Check If user exists in local storage. If yes, execute storing options to local storage.
 if (getLocal('user') && getLocal('user') !== '') {
   storeOptionsToLocal()
 }
 
 // To indicate progress bar for application.
-// Execute functions according to different application stage.
 function progressIndicator() {
   const progressbar = document.getElementById('progressbar');
   const progressbar_template = document.createElement('template');
-  const page = document.URL.split(/[?#]/)[0].split('/').pop();
   
   progressbar_template.innerHTML = `
     <div class='progress-indicator-width'>
@@ -45,12 +46,19 @@ function progressIndicator() {
     </div>`;
 
   if (progressbar) progressbar.appendChild(progressbar_template.content);
+}
+
+// Execute functions according to different application stage.
+// If user tries to access further stages, all session will be cleared and redirect user to stage 1.
+function setupApplication() {
+  const page = document.URL.split(/[?#]/)[0].split('/').pop();
 
   switch(page) {
     case 'application.html':
       activeProgressBar('.step-1');
       $('.display-loading').show();
       $('.display-month-year-datetime').hide();
+      // Default load of exam datetime.
       if (getSession('exam-location') == null && getSession('exam-level') == null) {
         loadExamTime(1, 7);
       } else {
@@ -65,6 +73,7 @@ function progressIndicator() {
         checkboxSelect('.hsk', true, '#hsk', '#hsk-date');
         checkboxSelect('.hskk', true, '#hskk', '#hskk-date');
         enabledNextBtn();
+        // To have datepicker on targeted element. Set locale for datepicker, refer line 1733 in bootstrap-datepicker.js
         $('#birthday, #hskdate, #hskkdate').datepicker({language: `${getLocalLang('lang')}`});
         populateEthnicity('#ethnicity')
         populateNativeLang('#native-language')
@@ -492,7 +501,9 @@ $('#to-step-4').on('click', function(e) {
 // Submit application via API.
 $('#submit-application').on('click', async(e) => {
   $('#submit-application').attr('disabled', true);
+  // Get avatar url.
   let photo_url = await populateProfile();
+  // If new avatar exists get base64 of the uploaded image else existing avatar url.
   let image_file = getSession('file') ? getSession('file').split(',')[1] : photo_url
 
   let sessionData = {
@@ -513,6 +524,8 @@ $('#submit-application').on('click', async(e) => {
       file64: image_file,
       file64_ext: 'jpg'
   }
+
+  // Only include params when exists.
   if (getSession('ethnicity') == '' && getSession('hsk') == 'yes' && getSession('hskk') == 'no') {
     sessionData['have_hsk_date'] = getSession('hskdate')
   } else if (getSession('ethnicity') == '' && getSession('hsk') == 'no' && getSession('hskk') == 'yes') {
@@ -534,6 +547,7 @@ $('#submit-application').on('click', async(e) => {
     sessionData['have_hskk_date'] = getSession('hskkdate')
   }
 
+  // Post API to submit application.
   let response = await fetch('https://api.hskk.org/webapi/register_exam_info/', {
     method: 'POST',
     headers: {

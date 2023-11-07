@@ -3228,10 +3228,12 @@ $('.i18n').on('click', async(e) => {
     if (data.code == 200) {
       localStorage.setItem('lang', lang);
       window.location.href = url.href;
+      location.reload();
     }
   }
   localStorage.setItem('lang', lang);
   window.location.href = url.href;
+  location.reload();
 });
 
 // To check if params 'lang' exists in URL.

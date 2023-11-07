@@ -33,10 +33,10 @@ function instructionProgressIndicator() {
       <div class='instruction-progress-indicator-word i18n-170 step-1'>下载移动端考试APP</div>
       <div class='instruction-progress-indicator-line step-2'></div>
       <div class='instruction-progress-indicator-dot step-2'>2</div>
-      <div class='instruction-progress-indicator-word i18n-171 step-2'>考前需知</div>
+      <div id='instruction-step-2' class='instruction-progress-indicator-word i18n-171 step-2'>考前需知</div>
       <div class='instruction-progress-indicator-line step-3'></div>
       <div class='instruction-progress-indicator-dot step-3'>3</div>
-      <div class='instruction-progress-indicator-word i18n-172 step-3'>考试当天</div>
+      <div id='instruction-step-3' class='instruction-progress-indicator-word i18n-172 step-3'>考试当天</div>
     </div>
   </div>`;
 
@@ -94,9 +94,11 @@ function dashboardPage() {
       break;
     case 'exam-instruction-step2.html':
       authoriseAccess()
+      window.location.href = window.location.origin + '/candidate/exam-instruction-step2.html#instruction-step-2'
       break;
     case 'exam-instruction-step3.html':
       authoriseAccess()
+      window.location.href = window.location.origin + '/candidate/exam-instruction-step3.html#instruction-step-3'
       break;
     case 'inspection-instruction.html':
       authoriseAccess()
