@@ -1,92 +1,176 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
-    <script src="../js/jquery-3.5.1.slim.min.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/navbar.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/footer.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/candidate.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/i18n.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/bootstrap.js?V=2.3" type="text/javascript" defer></script>
-    <link href="../css/bootstrap.css?V=2.3" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="../css/style.css?V=2.3" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/1e357e8cb4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="../js/jquery-3.5.1.slim.min.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="../js/navbar.js?V=2.4" type="text/javascript" defer></script>
+    <script src="../js/footer.js?V=2.4" type="text/javascript" defer></script>
+    <script
+      src="../js/candidate.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="../js/i18n.js?V=2.4" type="text/javascript" defer></script>
+    <script
+      src="../js/bootstrap.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <link href="../css/bootstrap.css?V=2.4" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link href="../css/style.css?V=2.4" rel="stylesheet" type="text/css" />
   </head>
-  <body class='bg-grey-color'>
-    <nav id='user-navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
-    <nav id='user-sidebar' class='w3-sidebar w3-bar-block d-none d-lg-block pt-3'></nav>
-    <section class='user-content container'>
-      <div class='row pt-5 pb-5 mb-5'>
-        <div class='col-lg-1 col-md-12 col-sm-12'></div>
-        <div class='col-lg-11 col-md-12 col-sm-12'>
-          <div class='row'>
-            <div class='col text-center mb-5'>
-              <h4 class='i18n-275 font-weight-bold mb-2'>⽀援中⼼</h4>
-              <p class='i18n-285 p-0 m-0 text-muted'>如果你已通过app反馈过问题，请勿重复在本⻚⾯留⾔。</p>
+  <body class="bg-grey-color">
+    <nav
+      id="user-navbar"
+      class="navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white"
+    ></nav>
+    <nav
+      id="user-sidebar"
+      class="w3-sidebar w3-bar-block d-none d-lg-block pt-3"
+    ></nav>
+    <section class="user-content container">
+      <div class="row pt-5 pb-5 mb-5">
+        <div class="col-lg-1 col-md-12 col-sm-12"></div>
+        <div class="col-lg-11 col-md-12 col-sm-12">
+          <div class="row">
+            <div class="col text-center mb-5">
+              <h4 class="i18n-275 font-weight-bold mb-2">⽀援中⼼</h4>
+              <p class="i18n-285 p-0 m-0 text-muted">
+                如果你已通过app反馈过问题，请勿重复在本⻚⾯留⾔。
+              </p>
             </div>
           </div>
-          <div class='row'>
-            <div class='col'>
-              <form id='support-center-form' class='mb-5'>
-                <div class='form-group d-none'>
-                  <div class='row'>
-                    <div class='col-lg-6 col-md-12 col-sm-12 mt-1'>
-                      <label class='i18n-286'>问题类型</label>
-                      <select class='form-control' id='question-type'>
-                        <option class='i18n-287' value=''>请选择问题相关类型</option>
+          <div class="row">
+            <div class="col">
+              <form id="support-center-form" class="mb-5">
+                <div class="form-group d-none">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12 mt-1">
+                      <label class="i18n-286">问题类型</label>
+                      <select class="form-control" id="question-type">
+                        <option class="i18n-287" value="">
+                          请选择问题相关类型
+                        </option>
                       </select>
                     </div>
-                    <div class='col-lg-6 col-md-12 col-sm-12 mt-1'>
-                      <label class='i18n-289'>考试时间</label>
-                      <select class='form-control' id='exam-time'>
-                        <option class='i18n-73' value=''>请选择考试时间</option>
+                    <div class="col-lg-6 col-md-12 col-sm-12 mt-1">
+                      <label class="i18n-289">考试时间</label>
+                      <select class="form-control" id="exam-time">
+                        <option class="i18n-73" value="">请选择考试时间</option>
                       </select>
                       <p>
                         <span>💡</span>
-                        <span class='i18n-290'>时间格式: (YYYY-MM-DD HH:MM) (UTC+8)</span>
+                        <span class="i18n-290"
+                          >时间格式: (YYYY-MM-DD HH:MM) (UTC+8)</span
+                        >
                       </p>
                     </div>
-                    
                   </div>
                 </div>
-                <div class='form-group'>
-                  <label class='i18n-291'>使用设备</label>
-                  <input type='text' class='form-control i18n-292' placeholder='请输入您使用的设备型号' name='device' id='device'>
+                <div class="form-group">
+                  <label class="i18n-291">使用设备</label>
+                  <input
+                    type="text"
+                    class="form-control i18n-292"
+                    placeholder="请输入您使用的设备型号"
+                    name="device"
+                    id="device"
+                  />
                 </div>
-                <div class='form-group'>
-                  <label class='i18n-293'>问题描述</label>
-                  <textarea class='form-control i18n-293' rows='3' placeholder='问题描述' name='description' id='description'></textarea>
+                <div class="form-group">
+                  <label class="i18n-293">问题描述</label>
+                  <textarea
+                    class="form-control i18n-293"
+                    rows="3"
+                    placeholder="问题描述"
+                    name="description"
+                    id="description"
+                  ></textarea>
                 </div>
-                <label class='i18n-294'>文件上传</label>
-                <div id='drop-area' class='row no-gutters mb-3 file-upload'>
-                  <div class='col bg-white text-center'>
-                    <div class='pt-5 pb-3'>
-                      <label for='file' style='cursor: pointer;'><i class='fa-solid fa-arrow-up-from-bracket fa-2xl primary-color mb-4'></i></label>
-                      <p class='i18n-113 font-weight-bold mb-0'>点击或拖动文件到此区域进行上传。</p>
-                      <p class='i18n-114 text-muted'>(支持的文件格式：JPG; 最大文件大小为500KB)</p>
-                      <input type='file' accept='image/jpeg' name='image' id='file' style='display: none;'>
+                <label class="i18n-294">文件上传</label>
+                <div id="drop-area" class="row no-gutters mb-3 file-upload">
+                  <div class="col bg-white text-center">
+                    <div class="pt-5 pb-3">
+                      <label for="file" style="cursor: pointer"
+                        ><i
+                          class="fa-solid fa-arrow-up-from-bracket fa-2xl primary-color mb-4"
+                        ></i
+                      ></label>
+                      <p class="i18n-113 font-weight-bold mb-0">
+                        点击或拖动文件到此区域进行上传。
+                      </p>
+                      <p class="i18n-114 text-muted">
+                        (支持的文件格式：JPG; 最大文件大小为500KB)
+                      </p>
+                      <input
+                        type="file"
+                        accept="image/jpeg"
+                        name="image"
+                        id="file"
+                        style="display: none"
+                      />
                     </div>
                   </div>
                 </div>
-                <div class='row border no-gutters mb-3 file-display'>
-                  <div class='col d-flex justify-content-between'>
-                    <div class='file-output'>
-                      <img src='' id='output' width='200' height='200' class='img-fluid' alt='Responsive image'/>
+                <div class="row border no-gutters mb-3 file-display">
+                  <div class="col d-flex justify-content-between">
+                    <div class="file-output">
+                      <img
+                        src=""
+                        id="output"
+                        width="200"
+                        height="200"
+                        class="img-fluid"
+                        alt="Responsive image"
+                      />
                     </div>
-                    <i class='fa-solid fa-trash fa-lg text-danger align-self-center pointer mr-3'></i>
+                    <i
+                      class="fa-solid fa-trash fa-lg text-danger align-self-center pointer mr-3"
+                    ></i>
                   </div>
                 </div>
-                <div class='text-center mt-4 d-flex justify-content-center'>
-                  <button id='candidate-support-center' type='button' class='i18n-295 btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180 active'>提交</button>
+                <div class="text-center mt-4 d-flex justify-content-center">
+                  <button
+                    id="candidate-support-center"
+                    type="button"
+                    class="i18n-295 btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180 active"
+                  >
+                    提交
+                  </button>
                 </div>
-                <div aria-live='polite' aria-atomic='true' class='d-flex justify-content-center align-items-center'>
-                  <div class='toast' role='alert' aria-live='assertive' aria-atomic='true' data-autohide='false'>
-                    <div class='toast-header secondary-color bg-danger-color'>
-                      <strong class='toast-text i18n-344 mr-auto danger-color'>最大文件大小为500KB</strong>
-                      <button type='button' class='ml-2 close' data-dismiss='toast' aria-label='Close'>
-                        <span aria-hidden='true'>&times;</span>
+                <div
+                  aria-live="polite"
+                  aria-atomic="true"
+                  class="d-flex justify-content-center align-items-center"
+                >
+                  <div
+                    class="toast"
+                    role="alert"
+                    aria-live="assertive"
+                    aria-atomic="true"
+                    data-autohide="false"
+                  >
+                    <div class="toast-header secondary-color bg-danger-color">
+                      <strong class="toast-text i18n-344 mr-auto danger-color"
+                        >最大文件大小为500KB</strong
+                      >
+                      <button
+                        type="button"
+                        class="ml-2 close"
+                        data-dismiss="toast"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                   </div>
@@ -97,6 +181,10 @@
         </div>
       </div>
     </section>
-    <footer id='user-footbar' class='user-footbar fixed-bottom bg-white d-block d-sm-none d-md-block d-lg-none'></footer>
+    <footer
+      id="user-footbar"
+      class="user-footbar fixed-bottom bg-white d-block d-sm-none d-md-block d-lg-none"
+    ></footer>
   </body>
-<html>
+  <html></html>
+</html>

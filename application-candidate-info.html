@@ -1,213 +1,404 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.5.1.slim.min.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/navbar.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/footer.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/bootstrap.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/bootstrap-datepicker.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/application.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/i18n.js?V=2.3" type="text/javascript" defer></script>
-    <link href="css/bootstrap.css?V=2.3" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/1e357e8cb4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="js/jquery-3.5.1.slim.min.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="js/navbar.js?V=2.4" type="text/javascript" defer></script>
+    <script src="js/footer.js?V=2.4" type="text/javascript" defer></script>
+    <script src="js/bootstrap.js?V=2.4" type="text/javascript" defer></script>
+    <script
+      src="js/bootstrap-datepicker.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="js/application.js?V=2.4" type="text/javascript" defer></script>
+    <script src="js/i18n.js?V=2.4" type="text/javascript" defer></script>
+    <link href="css/bootstrap.css?V=2.4" rel="stylesheet" />
     <link href="css/bootstrap-datepicker3.css?v=1.0" rel="stylesheet" />
-    <link href="css/style.css?V=2.3" rel="stylesheet" type="text/css" />
+    <link href="css/style.css?V=2.4" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <nav id='navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
-    <section class='application-content container mt-5'>
-      <div id='progressbar' class='progress-indicator'></div>
-      <div class='row'>
-        <div class='col'>
-          <h4 class='i18n-83 text-center font-weight-bold mt-5 mb-5'>考生资料</h4>
+    <nav
+      id="navbar"
+      class="navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white"
+    ></nav>
+    <section class="application-content container mt-5">
+      <div id="progressbar" class="progress-indicator"></div>
+      <div class="row">
+        <div class="col">
+          <h4 class="i18n-83 text-center font-weight-bold mt-5 mb-5">
+            考生资料
+          </h4>
         </div>
       </div>
-      <div class='row'>
-        <div class='col'>
-          <form id='application-step-2-form' class='mb-5' action='application-candidate-profile.html'>
-            <input type='hidden' id='input-fields' name='input-fields'>
-            <input type='hidden' id='hsk' name='hsk'>
-            <input type='hidden' id='hskk' name='hskk'>
-            <div class='form-group'>
-              <label class='i18n-84'>用户名</label>
-              <input type='text' class='i18n-84 form-control' placeholder='用户名' id='username' readonly>
+      <div class="row">
+        <div class="col">
+          <form
+            id="application-step-2-form"
+            class="mb-5"
+            action="application-candidate-profile.html"
+          >
+            <input type="hidden" id="input-fields" name="input-fields" />
+            <input type="hidden" id="hsk" name="hsk" />
+            <input type="hidden" id="hskk" name="hskk" />
+            <div class="form-group">
+              <label class="i18n-84">用户名</label>
+              <input
+                type="text"
+                class="i18n-84 form-control"
+                placeholder="用户名"
+                id="username"
+                readonly
+              />
             </div>
-            <div class='form-group'>
-              <div class='row'>
-                <div class='col-lg-6 col-md-12 col-sm-12 mt-3'>
-                  <label class='i18n-86'>证件名</label>
-                  <input type='text' class='form-control i18n-86' placeholder='证件名' id='firstname'>
-                  <p id='firstname-error' class='i18n-86-error p-0 m-0 text-danger d-none'>证件名不能留空</p>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 mt-3">
+                  <label class="i18n-86">证件名</label>
+                  <input
+                    type="text"
+                    class="form-control i18n-86"
+                    placeholder="证件名"
+                    id="firstname"
+                  />
+                  <p
+                    id="firstname-error"
+                    class="i18n-86-error p-0 m-0 text-danger d-none"
+                  >
+                    证件名不能留空
+                  </p>
                 </div>
-                <div class='col-lg-6 col-md-12 col-sm-12 mt-3'>
-                  <label class='i18n-87'>中文姓名</label>
-                  <input type='text' class='form-control i18n-87' placeholder='中文姓名' id='lastname'>
-                  <p id='lastname-error' class='i18n-87-error p-0 m-0 text-danger d-none'>中文姓名不能留空</p>
+                <div class="col-lg-6 col-md-12 col-sm-12 mt-3">
+                  <label class="i18n-87">中文姓名</label>
+                  <input
+                    type="text"
+                    class="form-control i18n-87"
+                    placeholder="中文姓名"
+                    id="lastname"
+                  />
+                  <p
+                    id="lastname-error"
+                    class="i18n-87-error p-0 m-0 text-danger d-none"
+                  >
+                    中文姓名不能留空
+                  </p>
                 </div>
               </div>
             </div>
-            <div class='form-group'>
-              <div class='row'>
-                <div class='col-lg-6 col-md-6 col-sm-12 mt-2'>
-                  <label class='i18n-88'>性别</label>
-                  <select class='form-control' id='gender' name='gender'>
-                    <option class='i18n-152' value='0'>女</option>
-                    <option class='i18n-89' value='1'>男</option>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                  <label class="i18n-88">性别</label>
+                  <select class="form-control" id="gender" name="gender">
+                    <option class="i18n-152" value="0">女</option>
+                    <option class="i18n-89" value="1">男</option>
                   </select>
                 </div>
-                <div class='col-lg-6 col-md-6 col-sm-12 mt-2'>
-                  <label class='i18n-90'>生日</label>
-                  <input type='text' class='form-control' data-date-format='yyyy-mm-dd' placeholder='YYYY-MM-DD' id='birthday'>
-                  <p id='birthday-error' class='i18n-90-error p-0 m-0 text-danger d-none'>生日不能留空</p>
+                <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                  <label class="i18n-90">生日</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    data-date-format="yyyy-mm-dd"
+                    placeholder="YYYY-MM-DD"
+                    id="birthday"
+                  />
+                  <p
+                    id="birthday-error"
+                    class="i18n-90-error p-0 m-0 text-danger d-none"
+                  >
+                    生日不能留空
+                  </p>
                 </div>
               </div>
             </div>
-            <div class='form-group'>
-              <label class='i18n-94'>国籍</label>
-              <select class='form-control' id='nationality'>
-                <option class='i18n-95' value=''>请选择国籍</option>
+            <div class="form-group">
+              <label class="i18n-94">国籍</label>
+              <select class="form-control" id="nationality">
+                <option class="i18n-95" value="">请选择国籍</option>
               </select>
-              <p id='nationality-error' class='i18n-94-error p-0 m-0 text-danger d-none'>国籍不能留空</p>
-            </div>
-            <div id='ethnicity-selection' class='form-group'>
-              <label class='i18n-329'>民族</label>
-              <select class='form-control' id='ethnicity'>
-                <option class='i18n-330' value=''>请选择民族</option>
-              </select>
-              <p id='ethnicity-error' class='i18n-329-error p-0 m-0 text-danger d-none'>民族不能留空</p>
-            </div>
-            <div class='form-group'>
-              <label class='i18n-96'>母语</label>
-              <select class='form-control' id='native-language'>
-                <option class='i18n-97' value=''>请选择您的第一语言，即母语</option>
-              </select>
-              <p id='native-language-error' class='i18n-96-error p-0 m-0 text-danger d-none'>母语不能留空</p>
-            </div>
-            <div class='form-group'>
-              <label class='i18n-98'>证件类型</label>
-              <select class='form-control' id='certificate-type'>
-                <option class='i18n-99' value=''>请选择证件类型</option>
-                <option class='i18n-331' value='1'>身份证</option>
-                <option class='i18n-332' value='2'>护照</option>
-                <option class='i18n-333' value='3'>居留证</option>
-                <option class='i18n-334' value='4'>其他</option>
-              </select>
-              <p id='certificate-type-error' class='i18n-98-error p-0 m-0 text-danger d-none'>证件类型不能留空</p>
-            </div>
-            <div class='form-group'>
-              <label class='i18n-100'>证件号码</label>
-              <input type='text' class='form-control i18n-100' placeholder='证件号码' id='certificate-number'>
-              <p id='certificate-number-error' class='i18n-100-error p-0 m-0 text-danger d-none'>证件号码不能留空</p>
-              <p class='text-muted mt-2'>
-                <span>💡</span>
-                <span class='i18n-101'>证件号码应与证件保持一致，包括“（）”内的信息</span>
+              <p
+                id="nationality-error"
+                class="i18n-94-error p-0 m-0 text-danger d-none"
+              >
+                国籍不能留空
               </p>
             </div>
-            <div class='form-group'>
-              <label>
-                <span class='i18n-61'>联系电话</span>
-              </label>
-              <div class='input-group'>
-                <select class='form-control border-right-0 mw85' id='phone-zone'>
-                  <option value='+852'>+852</option>
-                  <option value='+62'>+62</option>
-                  <option value='+971'>+971</option>
-                  <option value='+61'>+61</option>
-                </select>
-                <input type='number' class='form-control border-left-0 i18n-61' placeholder='联系电话' id='phone'/>
-              </div>
-              <p id='phone-error' class='i18n-61-error p-0 m-0 text-danger d-none'>请确保您的联系电话至少为 7 位数字。</p>
-            </div>
-            <div class='form-group'>
-              <label class='i18n-102'>你学习汉语多长时间了</label>
-              <select class='form-control' id='study-year'>
-                <option class='i18n-103' value=''>请选择时间</option>
-                <option class='i18n-335' value='1'>半年</option>
-                <option class='i18n-336' value='2'>6-12个月</option>
-                <option class='i18n-337' value='3'>1年</option>
-                <option class='i18n-338' value='4'>2年</option>
-                <option class='i18n-339' value='5'>3年</option>
-                <option class='i18n-340' value='6'>4年</option>
-                <option class='i18n-341' value='7'>5年</option>
-                <option class='i18n-342' value='8'>5-10年</option>
-                <option class='i18n-343' value='9'>10年以上</option>
+            <div id="ethnicity-selection" class="form-group">
+              <label class="i18n-329">民族</label>
+              <select class="form-control" id="ethnicity">
+                <option class="i18n-330" value="">请选择民族</option>
               </select>
-              <p id='study-year-error' class='i18n-102-error p-0 m-0 text-danger d-none'>学习汉语多长时间不能留空</p>
+              <p
+                id="ethnicity-error"
+                class="i18n-329-error p-0 m-0 text-danger d-none"
+              >
+                民族不能留空
+              </p>
             </div>
-            <div class='form-group'>
-              <label class='i18n-104'>过去6个月考過HSK沒有？</label>
-              <div class='row'>
-                <div class='form-check ml-3'>
-                  <input class='form-check-input hsk' type='checkbox' name='hsk' id='yes_hsk' value='yes'>
-                  <label class='form-check-label i18n-108' for='hsk'>
+            <div class="form-group">
+              <label class="i18n-96">母语</label>
+              <select class="form-control" id="native-language">
+                <option class="i18n-97" value="">
+                  请选择您的第一语言，即母语
+                </option>
+              </select>
+              <p
+                id="native-language-error"
+                class="i18n-96-error p-0 m-0 text-danger d-none"
+              >
+                母语不能留空
+              </p>
+            </div>
+            <div class="form-group">
+              <label class="i18n-98">证件类型</label>
+              <select class="form-control" id="certificate-type">
+                <option class="i18n-99" value="">请选择证件类型</option>
+                <option class="i18n-331" value="1">身份证</option>
+                <option class="i18n-332" value="2">护照</option>
+                <option class="i18n-333" value="3">居留证</option>
+                <option class="i18n-334" value="4">其他</option>
+              </select>
+              <p
+                id="certificate-type-error"
+                class="i18n-98-error p-0 m-0 text-danger d-none"
+              >
+                证件类型不能留空
+              </p>
+            </div>
+            <div class="form-group">
+              <label class="i18n-100">证件号码</label>
+              <input
+                type="text"
+                class="form-control i18n-100"
+                placeholder="证件号码"
+                id="certificate-number"
+              />
+              <p
+                id="certificate-number-error"
+                class="i18n-100-error p-0 m-0 text-danger d-none"
+              >
+                证件号码不能留空
+              </p>
+              <p class="text-muted mt-2">
+                <span>💡</span>
+                <span class="i18n-101"
+                  >证件号码应与证件保持一致，包括“（）”内的信息</span
+                >
+              </p>
+            </div>
+            <div class="form-group">
+              <label>
+                <span class="i18n-61">联系电话</span>
+              </label>
+              <div class="input-group">
+                <select
+                  class="form-control border-right-0 mw85"
+                  id="phone-zone"
+                >
+                  <option value="+852">+852</option>
+                  <option value="+62">+62</option>
+                  <option value="+971">+971</option>
+                  <option value="+61">+61</option>
+                </select>
+                <input
+                  type="number"
+                  class="form-control border-left-0 i18n-61"
+                  placeholder="联系电话"
+                  id="phone"
+                />
+              </div>
+              <p
+                id="phone-error"
+                class="i18n-61-error p-0 m-0 text-danger d-none"
+              >
+                请确保您的联系电话至少为 7 位数字。
+              </p>
+            </div>
+            <div class="form-group">
+              <label class="i18n-102">你学习汉语多长时间了</label>
+              <select class="form-control" id="study-year">
+                <option class="i18n-103" value="">请选择时间</option>
+                <option class="i18n-335" value="1">半年</option>
+                <option class="i18n-336" value="2">6-12个月</option>
+                <option class="i18n-337" value="3">1年</option>
+                <option class="i18n-338" value="4">2年</option>
+                <option class="i18n-339" value="5">3年</option>
+                <option class="i18n-340" value="6">4年</option>
+                <option class="i18n-341" value="7">5年</option>
+                <option class="i18n-342" value="8">5-10年</option>
+                <option class="i18n-343" value="9">10年以上</option>
+              </select>
+              <p
+                id="study-year-error"
+                class="i18n-102-error p-0 m-0 text-danger d-none"
+              >
+                学习汉语多长时间不能留空
+              </p>
+            </div>
+            <div class="form-group">
+              <label class="i18n-104">过去6个月考過HSK沒有？</label>
+              <div class="row">
+                <div class="form-check ml-3">
+                  <input
+                    class="form-check-input hsk"
+                    type="checkbox"
+                    name="hsk"
+                    id="yes_hsk"
+                    value="yes"
+                  />
+                  <label class="form-check-label i18n-108" for="hsk">
                     有
                   </label>
                 </div>
-                <div class='form-check ml-3'>
-                  <input class='form-check-input hsk' type='checkbox' name='hsk' id='no_hsk' value='no'>
-                  <label class='form-check-label i18n-109' for='hsk'>
+                <div class="form-check ml-3">
+                  <input
+                    class="form-check-input hsk"
+                    type="checkbox"
+                    name="hsk"
+                    id="no_hsk"
+                    value="no"
+                  />
+                  <label class="form-check-label i18n-109" for="hsk">
                     沒有
                   </label>
                 </div>
               </div>
-              <p id='hsk-error' class='i18n-104-error p-0 m-0 text-danger d-none'>过去6个月考過HSK不能留空</p>
+              <p
+                id="hsk-error"
+                class="i18n-104-error p-0 m-0 text-danger d-none"
+              >
+                过去6个月考過HSK不能留空
+              </p>
             </div>
-            <div id='hsk-date' class='form-group d-none'>
-              <label class='i18n-106'>请选择最近一次HSK的考试日期</label>
-              <div class='row'>
-                <div class='col-lg-6 col-md-6 col-sm-12'>
-                  <input type='text' class='form-control' data-date-format='yyyy-mm-dd' placeholder='YYYY-MM-DD' id='hskdate'>
-                  <p id='hskdate-error' class='i18n-106-error p-0 m-0 text-danger d-none'>最近一次HSK的考试日期不能留空</p>
+            <div id="hsk-date" class="form-group d-none">
+              <label class="i18n-106">请选择最近一次HSK的考试日期</label>
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <input
+                    type="text"
+                    class="form-control"
+                    data-date-format="yyyy-mm-dd"
+                    placeholder="YYYY-MM-DD"
+                    id="hskdate"
+                  />
+                  <p
+                    id="hskdate-error"
+                    class="i18n-106-error p-0 m-0 text-danger d-none"
+                  >
+                    最近一次HSK的考试日期不能留空
+                  </p>
                 </div>
               </div>
             </div>
-            <div class='form-group'>
-              <label class='i18n-105'>过去6个月考過HSKK沒有？</label>
-              <div class='row'>
-                <div class='form-check ml-3'>
-                  <input class='form-check-input hskk' type='checkbox' name='hskk' id='yes_hskk' value='yes'>
-                  <label class='form-check-label i18n-108' for='hskk'>
+            <div class="form-group">
+              <label class="i18n-105">过去6个月考過HSKK沒有？</label>
+              <div class="row">
+                <div class="form-check ml-3">
+                  <input
+                    class="form-check-input hskk"
+                    type="checkbox"
+                    name="hskk"
+                    id="yes_hskk"
+                    value="yes"
+                  />
+                  <label class="form-check-label i18n-108" for="hskk">
                     有
                   </label>
                 </div>
-                <div class='form-check ml-3'>
-                  <input class='form-check-input hskk' type='checkbox' name='hskk' id='no_hskk' value='no'>
-                  <label class='form-check-label i18n-109' for='hskk'>
+                <div class="form-check ml-3">
+                  <input
+                    class="form-check-input hskk"
+                    type="checkbox"
+                    name="hskk"
+                    id="no_hskk"
+                    value="no"
+                  />
+                  <label class="form-check-label i18n-109" for="hskk">
                     沒有
                   </label>
                 </div>
               </div>
-              <p id='hskk-error' class='i18n-105-error p-0 m-0 text-danger d-none'>过去6个月考過HSKK不能留空</p>
+              <p
+                id="hskk-error"
+                class="i18n-105-error p-0 m-0 text-danger d-none"
+              >
+                过去6个月考過HSKK不能留空
+              </p>
             </div>
-            <div id='hskk-date' class='form-group d-none'>
-              <label class='i18n-107'>请选择最近一次HSKK的考试日期</label>
-              <div class='row'>
-                <div class='col-lg-6 col-md-6 col-sm-12'>
-                  <input type='text' class='form-control' data-date-format='yyyy-mm-dd' placeholder='YYYY-MM-DD' id='hskkdate'>
-                  <p id='hskkdate-error' class='i18n-107-error p-0 m-0 text-danger d-none'>最近一次HSKK的考试日期不能留空</p>
+            <div id="hskk-date" class="form-group d-none">
+              <label class="i18n-107">请选择最近一次HSKK的考试日期</label>
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <input
+                    type="text"
+                    class="form-control"
+                    data-date-format="yyyy-mm-dd"
+                    placeholder="YYYY-MM-DD"
+                    id="hskkdate"
+                  />
+                  <p
+                    id="hskkdate-error"
+                    class="i18n-107-error p-0 m-0 text-danger d-none"
+                  >
+                    最近一次HSKK的考试日期不能留空
+                  </p>
                 </div>
               </div>
             </div>
-            <div aria-live='polite' aria-atomic='true' class='d-flex justify-content-center align-items-center'>
-              <div class='toast' role='alert' aria-live='assertive' aria-atomic='true' data-autohide='false'>
-                <div class='toast-header secondary-color bg-danger-color'>
-                  <strong class='toast-text mr-auto danger-color'></strong>
-                  <button type='button' class='ml-2 mb-1 close' data-dismiss='toast' aria-label='Close'>
-                    <span aria-hidden='true'>&times;</span>
+            <div
+              aria-live="polite"
+              aria-atomic="true"
+              class="d-flex justify-content-center align-items-center"
+            >
+              <div
+                class="toast"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+                data-autohide="false"
+              >
+                <div class="toast-header secondary-color bg-danger-color">
+                  <strong class="toast-text mr-auto danger-color"></strong>
+                  <button
+                    type="button"
+                    class="ml-2 mb-1 close"
+                    data-dismiss="toast"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
               </div>
             </div>
-            <div class='text-center mt-4 d-flex justify-content-center'>
-              <a href='application.html' class='i18n-151 btn btn-sm p-2 pr-4 pl-4 mt-2 mr-1 w180'>上一步</a>
-              <button id='to-step-3' type='button' class='i18n-150 btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180'>下一步</button>
+            <div class="text-center mt-4 d-flex justify-content-center">
+              <a
+                href="application.html"
+                class="i18n-151 btn btn-sm p-2 pr-4 pl-4 mt-2 mr-1 w180"
+                >上一步</a
+              >
+              <button
+                id="to-step-3"
+                type="button"
+                class="i18n-150 btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180"
+              >
+                下一步
+              </button>
             </div>
           </form>
         </div>
       </div>
     </section>
-    <footer id='footer' class='bg-secondary-color text-white'></footer>
+    <footer id="footer" class="bg-secondary-color text-white"></footer>
   </body>
-<html>
+  <html></html>
+</html>

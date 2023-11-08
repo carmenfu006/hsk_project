@@ -1,45 +1,72 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
-    <script src="../js/jquery-3.5.1.slim.min.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/navbar.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/footer.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/candidate.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/i18n.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/bootstrap.js?V=2.3" type="text/javascript" defer></script>
-    <link href="../css/bootstrap.css?V=2.3" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="../css/style.css?V=2.3" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/1e357e8cb4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="../js/jquery-3.5.1.slim.min.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="../js/navbar.js?V=2.4" type="text/javascript" defer></script>
+    <script src="../js/footer.js?V=2.4" type="text/javascript" defer></script>
+    <script
+      src="../js/candidate.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="../js/i18n.js?V=2.4" type="text/javascript" defer></script>
+    <script
+      src="../js/bootstrap.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <link href="../css/bootstrap.css?V=2.4" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link href="../css/style.css?V=2.4" rel="stylesheet" type="text/css" />
   </head>
-  <body class='bg-grey-color'>
-    <nav id='user-navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
-    <nav id='user-sidebar' class='w3-sidebar w3-bar-block d-none d-lg-block pt-3'></nav>
-    <section class='side-content container'>
-      <div class='d-flex flex-md-row flex-column justify-content-between mt-3'>
-        <h4 class='i18n-276 font-weight-bold'>考试记录</h4>
-        <div class='d-flex exam-record-status mt-2'>
-          <p class='i18n-296 btn status-filter active' data-status='all'>全部</p>
-          <p class='i18n-297 btn status-filter' data-status='incomplete'>未完成</p>
-          <p class='i18n-298 btn status-filter' data-status='completed'>已完成</p>
+  <body class="bg-grey-color">
+    <nav
+      id="user-navbar"
+      class="navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white"
+    ></nav>
+    <nav
+      id="user-sidebar"
+      class="w3-sidebar w3-bar-block d-none d-lg-block pt-3"
+    ></nav>
+    <section class="side-content container">
+      <div class="d-flex flex-md-row flex-column justify-content-between mt-3">
+        <h4 class="i18n-276 font-weight-bold">考试记录</h4>
+        <div class="d-flex exam-record-status mt-2">
+          <p class="i18n-296 btn status-filter active" data-status="all">
+            全部
+          </p>
+          <p class="i18n-297 btn status-filter" data-status="incomplete">
+            未完成
+          </p>
+          <p class="i18n-298 btn status-filter" data-status="completed">
+            已完成
+          </p>
         </div>
       </div>
-      <div id='web-exam-records' class='card d-none d-lg-block'>
-        <div class='card-header bg-white'>
-          <div class='row text-center'>
-            <div class='col'>
-              <h6 class='i18n-299 font-weight-bold'>准考证号</h6>
+      <div id="web-exam-records" class="card d-none d-lg-block">
+        <div class="card-header bg-white">
+          <div class="row text-center">
+            <div class="col">
+              <h6 class="i18n-299 font-weight-bold">准考证号</h6>
             </div>
-            <div class='col'>
-              <h6 class='i18n-72 font-weight-bold'>考试级别</h6>
+            <div class="col">
+              <h6 class="i18n-72 font-weight-bold">考试级别</h6>
             </div>
-            <div class='col'>
-              <h6 class='i18n-289 font-weight-bold'>考试时间</h6>
+            <div class="col">
+              <h6 class="i18n-289 font-weight-bold">考试时间</h6>
             </div>
-            <div class='col'>
-              <h6 class='i18n-300 font-weight-bold'>状态/成绩</h6>
+            <div class="col">
+              <h6 class="i18n-300 font-weight-bold">状态/成绩</h6>
             </div>
           </div>
         </div>
@@ -108,12 +135,15 @@
           </div>
         </div> -->
       </div>
-      <div class='card d-none d-lg-block rounded-0'>
-        <div class='card-body border-bottom text-muted i18n-301'>
+      <div class="card d-none d-lg-block rounded-0">
+        <div class="card-body border-bottom text-muted i18n-301">
           * 考试时间格式：年-月-日
         </div>
       </div>
-      <div id='mobile-exam-records' class='d-block d-sm-none d-md-block d-lg-none pb-5 mb-5'>
+      <div
+        id="mobile-exam-records"
+        class="d-block d-sm-none d-md-block d-lg-none pb-5 mb-5"
+      >
         <!-- <div class='card mb-2 shadow-sm status-ongoing'>
           <div class='card-body'>
             <div class='row no-gutters mb-2'>
@@ -199,6 +229,10 @@
         </div>
       </div> -->
     </section>
-    <footer id='user-footbar' class='user-footbar fixed-bottom bg-white d-block d-sm-none d-md-block d-lg-none'></footer>
+    <footer
+      id="user-footbar"
+      class="user-footbar fixed-bottom bg-white d-block d-sm-none d-md-block d-lg-none"
+    ></footer>
   </body>
-<html>
+  <html></html>
+</html>

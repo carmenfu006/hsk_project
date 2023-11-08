@@ -1,125 +1,172 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.5.1.slim.min.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/navbar.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/footer.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/application.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/i18n.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/bootstrap.js?V=2.3" type="text/javascript" defer></script>
-    <link href="css/bootstrap.css?V=2.3" rel="stylesheet" />
-    <link href="css/style.css?V=2.3" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/1e357e8cb4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="js/jquery-3.5.1.slim.min.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="js/navbar.js?V=2.4" type="text/javascript" defer></script>
+    <script src="js/footer.js?V=2.4" type="text/javascript" defer></script>
+    <script src="js/application.js?V=2.4" type="text/javascript" defer></script>
+    <script src="js/i18n.js?V=2.4" type="text/javascript" defer></script>
+    <script src="js/bootstrap.js?V=2.4" type="text/javascript" defer></script>
+    <link href="css/bootstrap.css?V=2.4" rel="stylesheet" />
+    <link href="css/style.css?V=2.4" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <nav id='navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
-    <section class='application-content container mt-5'>
-      <div id='progressbar' class='progress-indicator'></div>
-      <div class='row'>
-        <div class='col'>
-          <h4 class='i18n-123 text-center font-weight-bold mt-5 mb-5'>考生信息确认</h4>
+    <nav
+      id="navbar"
+      class="navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white"
+    ></nav>
+    <section class="application-content container mt-5">
+      <div id="progressbar" class="progress-indicator"></div>
+      <div class="row">
+        <div class="col">
+          <h4 class="i18n-123 text-center font-weight-bold mt-5 mb-5">
+            考生信息确认
+          </h4>
         </div>
       </div>
-      <div class='applicant-info border pl-3 pr-3'>
-        <div class='row flex-lg-row flex-md-row flex-column-reverse'>
-          <div class='col-lg-9 col-md-9 col-sm-12'>
-            <div class='mt-3'>
-              <div class='row candidate-info no-gutters'>
-                <div class='col-5'>
-                  <p class='i18n-84 font-weight-bold'>用户名</p>
-                  <p class='i18n-86 font-weight-bold'>证件名</p>
-                  <p class='i18n-87 font-weight-bold'>中文姓名</p>
-                  <p class='i18n-88 font-weight-bold'>性别</p>
-                  <p class='i18n-90 font-weight-bold'>生日</p>
-                  <p class='i18n-94 font-weight-bold'>国籍</p>
-                  <p class='i18n-329 ethnicity-info font-weight-bold'>民族</p>
-                  <p class='i18n-96 font-weight-bold'>母语</p>
-                  <p class='i18n-98 font-weight-bold'>证件类型</p>
-                  <p class='i18n-100 font-weight-bold'>证件号码</p>
+      <div class="applicant-info border pl-3 pr-3">
+        <div class="row flex-lg-row flex-md-row flex-column-reverse">
+          <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="mt-3">
+              <div class="row candidate-info no-gutters">
+                <div class="col-5">
+                  <p class="i18n-84 font-weight-bold">用户名</p>
+                  <p class="i18n-86 font-weight-bold">证件名</p>
+                  <p class="i18n-87 font-weight-bold">中文姓名</p>
+                  <p class="i18n-88 font-weight-bold">性别</p>
+                  <p class="i18n-90 font-weight-bold">生日</p>
+                  <p class="i18n-94 font-weight-bold">国籍</p>
+                  <p class="i18n-329 ethnicity-info font-weight-bold">民族</p>
+                  <p class="i18n-96 font-weight-bold">母语</p>
+                  <p class="i18n-98 font-weight-bold">证件类型</p>
+                  <p class="i18n-100 font-weight-bold">证件号码</p>
                 </div>
-                <div class='col'>
-                  <p class='info-username'></p>
-                  <p class='info-fistname'></p>
-                  <p class='info-lastname'></p>
-                  <p class='info-gender'></p>
-                  <p class='info-birthday'></p>
-                  <p class='info-nationality'></p>
-                  <p class='info-ethnicity ethnicity-info'></p>
-                  <p class='info-native-language'></p>
-                  <p class='info-certificate-type'></p>
-                  <p class='info-certificate-number'></p>
+                <div class="col">
+                  <p class="info-username"></p>
+                  <p class="info-fistname"></p>
+                  <p class="info-lastname"></p>
+                  <p class="info-gender"></p>
+                  <p class="info-birthday"></p>
+                  <p class="info-nationality"></p>
+                  <p class="info-ethnicity ethnicity-info"></p>
+                  <p class="info-native-language"></p>
+                  <p class="info-certificate-type"></p>
+                  <p class="info-certificate-number"></p>
                 </div>
               </div>
             </div>
           </div>
-          <div class='col-lg-3 col-md-3 col-sm-12'>
-            <div class='mt-3'>
-              <div class='candidate-profile text-center'>
-                <img id='verify-profile' width='200' class='img-fluid' alt='Responsive image'>
+          <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="mt-3">
+              <div class="candidate-profile text-center">
+                <img
+                  id="verify-profile"
+                  width="200"
+                  class="img-fluid"
+                  alt="Responsive image"
+                />
               </div>
             </div>
           </div>
         </div>
-        <div class='row candidate-info no-gutters'>
-          <p class='text-muted ml-2'>
+        <div class="row candidate-info no-gutters">
+          <p class="text-muted ml-2">
             <span>💡</span>
-            <span class='i18n-101'>证件号码应与证件保持一致，包括“（）”内的信息</span>
+            <span class="i18n-101"
+              >证件号码应与证件保持一致，包括“（）”内的信息</span
+            >
           </p>
         </div>
-        <div class='row'>
-          <div class='col-9'>
-            <div class='row candidate-info no-gutters mb-3'>
-              <div class='col-5'>
-                <p class='i18n-61 font-weight-bold'>联系电话</p>
+        <div class="row">
+          <div class="col-9">
+            <div class="row candidate-info no-gutters mb-3">
+              <div class="col-5">
+                <p class="i18n-61 font-weight-bold">联系电话</p>
               </div>
-              <div class='col'>
-                <p class='info-contact-number'></p>
+              <div class="col">
+                <p class="info-contact-number"></p>
               </div>
             </div>
           </div>
         </div>
-        <div class='row candidate-info no-gutters mb-3'>
-          <div class='col-12'>
-            <p class='i18n-102 font-weight-bold'>你学习汉语多长时间了？</p>
+        <div class="row candidate-info no-gutters mb-3">
+          <div class="col-12">
+            <p class="i18n-102 font-weight-bold">你学习汉语多长时间了？</p>
           </div>
-          <div class='col'>
-            <p class='info-study-year'></p>
-          </div>
-        </div>
-        <div class='row candidate-info no-gutters mb-3'>
-          <div class='col-12'>
-            <p class='i18n-104 font-weight-bold'>过去6个月考過HSK沒有？</p>
-          </div>
-          <div class='col'>
-            <p class='info-hsk'>没有</p>
+          <div class="col">
+            <p class="info-study-year"></p>
           </div>
         </div>
-        <div class='row candidate-info no-gutters mb-3'>
-          <div class='col-12'>
-            <p class='i18n-105 font-weight-bold'>过去6个月考過HSKK沒有？</p>
+        <div class="row candidate-info no-gutters mb-3">
+          <div class="col-12">
+            <p class="i18n-104 font-weight-bold">过去6个月考過HSK沒有？</p>
           </div>
-          <div class='col'>
-            <p class='info-hskk'>没有</p>
+          <div class="col">
+            <p class="info-hsk">没有</p>
+          </div>
+        </div>
+        <div class="row candidate-info no-gutters mb-3">
+          <div class="col-12">
+            <p class="i18n-105 font-weight-bold">过去6个月考過HSKK沒有？</p>
+          </div>
+          <div class="col">
+            <p class="info-hskk">没有</p>
           </div>
         </div>
       </div>
-      <div class='text-center mt-4 mb-5 d-flex justify-content-center'>
-        <a href='application-candidate-profile.html' class='i18n-151 btn btn-sm p-2 pr-4 pl-4 mt-2 mr-1 w180'>上一步</a>
-        <button id='submit-application' type='button' class='i18n-153 btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180 active'>确认并提交</button>
+      <div class="text-center mt-4 mb-5 d-flex justify-content-center">
+        <a
+          href="application-candidate-profile.html"
+          class="i18n-151 btn btn-sm p-2 pr-4 pl-4 mt-2 mr-1 w180"
+          >上一步</a
+        >
+        <button
+          id="submit-application"
+          type="button"
+          class="i18n-153 btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180 active"
+        >
+          确认并提交
+        </button>
       </div>
-      <div aria-live='polite' aria-atomic='true' class='d-flex justify-content-center align-items-center'>
-        <div class='toast' role='alert' aria-live='assertive' aria-atomic='true' data-autohide='false'>
-          <div class='toast-header secondary-color bg-danger-color'>
-            <strong class='toast-text i18n-345 mr-auto danger-color'>预报名提交未成功</strong>
-            <button type='button' class='ml-2 mb-1 close' data-dismiss='toast' aria-label='Close'>
-              <span aria-hidden='true'>&times;</span>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        class="d-flex justify-content-center align-items-center"
+      >
+        <div
+          class="toast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+          data-autohide="false"
+        >
+          <div class="toast-header secondary-color bg-danger-color">
+            <strong class="toast-text i18n-345 mr-auto danger-color"
+              >预报名提交未成功</strong
+            >
+            <button
+              type="button"
+              class="ml-2 mb-1 close"
+              data-dismiss="toast"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
             </button>
           </div>
         </div>
       </div>
     </section>
-    <footer id='footer' class='bg-secondary-color text-white'></footer>
+    <footer id="footer" class="bg-secondary-color text-white"></footer>
   </body>
-<html>
+  <html></html>
+</html>

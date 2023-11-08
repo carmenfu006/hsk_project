@@ -453,7 +453,7 @@ async function loadExamRecord(status) {
                   <div class='record'>${record.test_time}</div>
                 </div>
                 <div class='col'>
-                  <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status)}</div>
+                  <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status)}</div>
                 </div>
               </div>
             </div>
@@ -491,7 +491,7 @@ async function loadExamRecord(status) {
                     <p class='i18n-300 card-text font-weight-bold pb-2'>${transLang(lang, '状态/成绩', 'Status/Score', 'Status/Skor', 'الحالة/النتيجة')}</p>
                   </div>
                   <div class='col'>
-                    <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status)}</div>
+                    <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status)}</div>
                   </div>
                 </div>
               </div>
@@ -513,7 +513,7 @@ async function loadExamRecord(status) {
                   <div class='record'>${record.test_time}</div>
                 </div>
                 <div class='col'>
-                  <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status)}</div>
+                  <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status)}</div>
                 </div>
               </div>
             </div>
@@ -551,7 +551,7 @@ async function loadExamRecord(status) {
                     <p class='i18n-300 card-text font-weight-bold pb-2'>${transLang(lang, '状态/成绩', 'Status/Score', 'Status/Skor', 'الحالة/النتيجة')}</p>
                   </div>
                   <div class='col'>
-                    <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status)}</div>
+                    <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status)}</div>
                   </div>
                 </div>
               </div>
@@ -572,7 +572,7 @@ async function loadExamRecord(status) {
                   <div class='record'>${record.test_time}</div>
                 </div>
                 <div class='col'>
-                  <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status, record.score_final)}</div>
+                  <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status, record.score_final)}</div>
                 </div>
               </div>
             </div>
@@ -610,7 +610,7 @@ async function loadExamRecord(status) {
                     <p class='i18n-300 card-text font-weight-bold pb-2'>${transLang(lang, '状态/成绩', 'Status/Score', 'Status/Skor', 'الحالة/النتيجة')}</p>
                   </div>
                   <div class='col'>
-                    <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status, record.score_final)}</div>
+                    <div class='btn ${valueTestStatusBtn(record.test_status)} btn-record' data-payment='${setPaymentLink(record.test_status, record.payment_status, record.payment_client_secret)}'>${valueTestStatus(lang, record.test_status, record.score_final)}</div>
                   </div>
                 </div>
               </div>
@@ -632,8 +632,8 @@ async function loadExamRecord(status) {
 }
 
 // Set payment link value to data-payment
-function setPaymentLink(status, payment_link) {
-  if (status == 0) {
+function setPaymentLink(test_status, payment_status, payment_link) {
+  if (test_status == 0 && payment_status == null) {
     return payment_link
   } else {
     return null;

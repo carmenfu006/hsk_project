@@ -1,113 +1,201 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
-    <script src="../js/jquery-3.5.1.slim.min.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/navbar.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/footer.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/candidate.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/i18n.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/bootstrap.js?V=2.3" type="text/javascript" defer></script>
-    <link href="../css/bootstrap.css?V=2.3" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="../css/style.css?V=2.3" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/1e357e8cb4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="../js/jquery-3.5.1.slim.min.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="../js/navbar.js?V=2.4" type="text/javascript" defer></script>
+    <script src="../js/footer.js?V=2.4" type="text/javascript" defer></script>
+    <script
+      src="../js/candidate.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="../js/i18n.js?V=2.4" type="text/javascript" defer></script>
+    <script
+      src="../js/bootstrap.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <link href="../css/bootstrap.css?V=2.4" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link href="../css/style.css?V=2.4" rel="stylesheet" type="text/css" />
   </head>
-  <body class='bg-grey-color'>
-    <nav id='user-navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
-    <nav id='user-sidebar' class='w3-sidebar w3-bar-block d-none d-lg-block pt-3'></nav>
-    <section class='side-content'>
-      <div id='alert-card-content' class='alert-card-content'>
-        <div class='d-flex pt-5 mb-3 alert-card-width'>
-          <div id='alert-card-1' class='card alert-card p-3 rounded-0 border-0 shadow-sm'>
-            <div class='card-body alert-card-body bg-white'>
-              <h4 class='i18n-221 font-weight-bold mt-5 text-center'>异常警告</h4>
-              <ul class='p-0 pl-3'>
-                <li class='i18n-281'>考试过程中将进行多重检测</li>
-                <li class='i18n-282'>绿色外框代表考试顺利进行</li>
-                <li class='i18n-283'>如考试无异常外框将保持绿色，直至考试结束</li>
+  <body class="bg-grey-color">
+    <nav
+      id="user-navbar"
+      class="navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white"
+    ></nav>
+    <nav
+      id="user-sidebar"
+      class="w3-sidebar w3-bar-block d-none d-lg-block pt-3"
+    ></nav>
+    <section class="side-content">
+      <div id="alert-card-content" class="alert-card-content">
+        <div class="d-flex pt-5 mb-3 alert-card-width">
+          <div
+            id="alert-card-1"
+            class="card alert-card p-3 rounded-0 border-0 shadow-sm"
+          >
+            <div class="card-body alert-card-body bg-white">
+              <h4 class="i18n-221 font-weight-bold mt-5 text-center">
+                异常警告
+              </h4>
+              <ul class="p-0 pl-3">
+                <li class="i18n-281">考试过程中将进行多重检测</li>
+                <li class="i18n-282">绿色外框代表考试顺利进行</li>
+                <li class="i18n-283">
+                  如考试无异常外框将保持绿色，直至考试结束
+                </li>
               </ul>
             </div>
           </div>
-          <div id='alert-card-2' class='card alert-card p-3 rounded-0 border-0 shadow-sm'>
-            <div class='card-body alert-card-body bg-white'>
-              <h4 class='i18n-221 font-weight-bold mt-5 text-center'>异常警告</h4>
-              <ul class='p-0 pl-3'>
-                <li class='i18n-225'>多重认证识别第一次异常，外框将变为浅红色</li>
-                <li class='i18n-226'>请尽快根据提示进行调整</li>
-                <li class='i18n-227'>浅红色外框状态仍能继续答题</li>
-                <li class='i18n-228'>调整后检测无异常外框将变回绿色</li>
+          <div
+            id="alert-card-2"
+            class="card alert-card p-3 rounded-0 border-0 shadow-sm"
+          >
+            <div class="card-body alert-card-body bg-white">
+              <h4 class="i18n-221 font-weight-bold mt-5 text-center">
+                异常警告
+              </h4>
+              <ul class="p-0 pl-3">
+                <li class="i18n-225">
+                  多重认证识别第一次异常，外框将变为浅红色
+                </li>
+                <li class="i18n-226">请尽快根据提示进行调整</li>
+                <li class="i18n-227">浅红色外框状态仍能继续答题</li>
+                <li class="i18n-228">调整后检测无异常外框将变回绿色</li>
               </ul>
             </div>
           </div>
-          <div id='alert-card-3' class='card alert-card p-3 rounded-0 border-0 shadow-sm'>
-            <div class='card-body alert-card-body bg-white'>
-              <h4 class='i18n-221 font-weight-bold mt-5 text-center'>异常警告</h4>
-              <ul class='p-0 pl-3'>
-                <li class='i18n-230'>多重认证识别第二次异常，外框将变为红色</li>
-                <li class='i18n-226'>请尽快根据提示进行调整</li>
-                <li class='i18n-231'>红色外框状态仍能继续答题</li>
-                <li class='i18n-232'>留意提示内容，减少异常情况发生</li>
-                <li class='i18n-228'>调整后检测无异常外框将变回绿色</li>
+          <div
+            id="alert-card-3"
+            class="card alert-card p-3 rounded-0 border-0 shadow-sm"
+          >
+            <div class="card-body alert-card-body bg-white">
+              <h4 class="i18n-221 font-weight-bold mt-5 text-center">
+                异常警告
+              </h4>
+              <ul class="p-0 pl-3">
+                <li class="i18n-230">多重认证识别第二次异常，外框将变为红色</li>
+                <li class="i18n-226">请尽快根据提示进行调整</li>
+                <li class="i18n-231">红色外框状态仍能继续答题</li>
+                <li class="i18n-232">留意提示内容，减少异常情况发生</li>
+                <li class="i18n-228">调整后检测无异常外框将变回绿色</li>
               </ul>
             </div>
           </div>
-          <div id='alert-card-4' class='card alert-card p-3 rounded-0 border-0 shadow-sm'>
-            <div class='card-body alert-card-body bg-white'>
-              <h4 class='i18n-221 font-weight-bold mt-5 text-center'>异常警告</h4>
-              <ul class='p-0 pl-3'>
-                <li class='i18n-234'>多重认证识别第三次异常，外框将变为深红色（最后一次异常提醒）</li>
-                <li class='i18n-235'>考生务必根据提示进行调整</li>
-                <li class='i18n-236'>深红色外框状态仍能继续答题</li>
-                <li class='i18n-237'>再次发生异常情况，考试将被自动终止，将根据已完成的部分进行评分</li>
-                <li class='i18n-228'>调整后检测无异常外框将变回绿色</li>
+          <div
+            id="alert-card-4"
+            class="card alert-card p-3 rounded-0 border-0 shadow-sm"
+          >
+            <div class="card-body alert-card-body bg-white">
+              <h4 class="i18n-221 font-weight-bold mt-5 text-center">
+                异常警告
+              </h4>
+              <ul class="p-0 pl-3">
+                <li class="i18n-234">
+                  多重认证识别第三次异常，外框将变为深红色（最后一次异常提醒）
+                </li>
+                <li class="i18n-235">考生务必根据提示进行调整</li>
+                <li class="i18n-236">深红色外框状态仍能继续答题</li>
+                <li class="i18n-237">
+                  再次发生异常情况，考试将被自动终止，将根据已完成的部分进行评分
+                </li>
+                <li class="i18n-228">调整后检测无异常外框将变回绿色</li>
               </ul>
             </div>
           </div>
-          <div id='alert-card-5' class='card alert-card p-3 rounded-0 border-0 shadow-sm'>
-            <div class='card-body alert-card-body bg-white'>
-              <h4 class='i18n-221 font-weight-bold mt-5 text-center'>异常警告</h4>
-              <p class='i18n-239'>严重违反的行为有：</p>
-              <ul class='p-0 pl-3'>
-                <li class='i18n-240'>考试过程中面部及声纹识别三次异常</li>
-                <li class='i18n-241'>考试过程中两次退出app</li>
-                <li class='i18n-242'>考试过程中录屏或者截屏</li>
-                <li class='i18n-243'>考试过程中通话</li>
+          <div
+            id="alert-card-5"
+            class="card alert-card p-3 rounded-0 border-0 shadow-sm"
+          >
+            <div class="card-body alert-card-body bg-white">
+              <h4 class="i18n-221 font-weight-bold mt-5 text-center">
+                异常警告
+              </h4>
+              <p class="i18n-239">严重违反的行为有：</p>
+              <ul class="p-0 pl-3">
+                <li class="i18n-240">考试过程中面部及声纹识别三次异常</li>
+                <li class="i18n-241">考试过程中两次退出app</li>
+                <li class="i18n-242">考试过程中录屏或者截屏</li>
+                <li class="i18n-243">考试过程中通话</li>
               </ul>
             </div>
           </div>
-          <div id='alert-card-6' class='card alert-card p-3 rounded-0 border-0 shadow-sm'>
-            <div class='card-body alert-card-body bg-white'>
-              <div class='row mt-5 text-center'>
-                <div class='col'>
-                  <i class='fa-solid fa-circle-xmark fa-5x mb-3' style='color: #fb3c3c;'></i>
-                  <h4 class='i18n-284 font-weight-bold'>考试已被终止</h4>
+          <div
+            id="alert-card-6"
+            class="card alert-card p-3 rounded-0 border-0 shadow-sm"
+          >
+            <div class="card-body alert-card-body bg-white">
+              <div class="row mt-5 text-center">
+                <div class="col">
+                  <i
+                    class="fa-solid fa-circle-xmark fa-5x mb-3"
+                    style="color: #fb3c3c"
+                  ></i>
+                  <h4 class="i18n-284 font-weight-bold">考试已被终止</h4>
                 </div>
               </div>
-              <ul class='p-0 pl-3'>
-                <li class='i18n-245'>认证识别多次异常，考生未根据提示完成调整</li>
-                <li class='i18n-246'>考试将根据已完成的部分进行评分</li>
-                <li class='i18n-247'>我们将复查试卷异常记录，若核实作弊情况，考试成绩将被取消</li>
-                <li class='i18n-248'>作弊的考生将被列入黑名单，两年内不得再报考试</li>
+              <ul class="p-0 pl-3">
+                <li class="i18n-245">
+                  认证识别多次异常，考生未根据提示完成调整
+                </li>
+                <li class="i18n-246">考试将根据已完成的部分进行评分</li>
+                <li class="i18n-247">
+                  我们将复查试卷异常记录，若核实作弊情况，考试成绩将被取消
+                </li>
+                <li class="i18n-248">
+                  作弊的考生将被列入黑名单，两年内不得再报考试
+                </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <div class='user-content container notice-card-indicator pb-5 mb-5'>
-        <div class='row'>
-          <div class='col d-flex justify-content-center'>
-            <a href='abnormal-alert.html#alert-card-1' class='alert-indicator-dot active'></a>
-            <a href='abnormal-alert.html#alert-card-2' class='alert-indicator-dot'></a>
-            <a href='abnormal-alert.html#alert-card-3' class='alert-indicator-dot'></a>
-            <a href='abnormal-alert.html#alert-card-4' class='alert-indicator-dot'></a>
-            <a href='abnormal-alert.html#alert-card-5' class='alert-indicator-dot'></a>
-            <a href='abnormal-alert.html#alert-card-6' class='alert-indicator-dot'></a>
+      <div class="user-content container notice-card-indicator pb-5 mb-5">
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <a
+              href="abnormal-alert.html#alert-card-1"
+              class="alert-indicator-dot active"
+            ></a>
+            <a
+              href="abnormal-alert.html#alert-card-2"
+              class="alert-indicator-dot"
+            ></a>
+            <a
+              href="abnormal-alert.html#alert-card-3"
+              class="alert-indicator-dot"
+            ></a>
+            <a
+              href="abnormal-alert.html#alert-card-4"
+              class="alert-indicator-dot"
+            ></a>
+            <a
+              href="abnormal-alert.html#alert-card-5"
+              class="alert-indicator-dot"
+            ></a>
+            <a
+              href="abnormal-alert.html#alert-card-6"
+              class="alert-indicator-dot"
+            ></a>
           </div>
         </div>
       </div>
     </section>
-    <footer id='user-footbar' class='user-footbar fixed-bottom bg-white d-block d-sm-none d-md-block d-lg-none'></footer>
+    <footer
+      id="user-footbar"
+      class="user-footbar fixed-bottom bg-white d-block d-sm-none d-md-block d-lg-none"
+    ></footer>
   </body>
-<html>
+  <html></html>
+</html>

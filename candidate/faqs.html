@@ -1,245 +1,526 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
-    <script src="../js/jquery-3.5.1.slim.min.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/navbar.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/footer.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/candidate.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/i18n.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/bootstrap.js?V=2.3" type="text/javascript" defer></script>
-    <link href="../css/bootstrap.css?V=2.3" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="../css/style.css?V=2.3" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/1e357e8cb4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="../js/jquery-3.5.1.slim.min.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="../js/navbar.js?V=2.4" type="text/javascript" defer></script>
+    <script src="../js/footer.js?V=2.4" type="text/javascript" defer></script>
+    <script
+      src="../js/candidate.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="../js/i18n.js?V=2.4" type="text/javascript" defer></script>
+    <script
+      src="../js/bootstrap.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <link href="../css/bootstrap.css?V=2.4" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link href="../css/style.css?V=2.4" rel="stylesheet" type="text/css" />
   </head>
-  <body class='bg-grey-color'>
-    <nav id='user-navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
-    <nav id='user-sidebar' class='w3-sidebar w3-bar-block d-none d-lg-block pt-3'></nav>
-    <section class='user-content container'>
-      <div class='row pt-5 pb-5 mb-5'>
-        <div class='col-lg-1 col-md-12 col-sm-12'></div>
-        <div class='col-lg-11 col-md-12 col-sm-12'>
-          <h4 class='i18n-5 text-center font-weight-bold'>常见问题</h4>
-          <p class='i18n-317 text-center text-muted'>如果下述常见问题的答案未能解决你的问题，请将您的问题发送至<a href='mailto:support@hskk.org'>support@hskk.org</a>，邮件内容需包括考生姓名，HSKK考试等级，考生序号，以及您遇到的问题，我们会尽快为您解决。</p>
-          <div class='accordion border-bottom rounded' id='accordion'>
-            <div id='card-1' class='card'>
-              <div class='card-header bg-white'>
-                <div class='d-flex justify-content-between mt-2'>
-                  <h6 class='i18n-529 pr-1'>我的个人信息错误怎么办？</h6>
-                  <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-1' aria-expanded='true' aria-controls='collapse-1'><i class='fa fa-plus'></i></h6>
+  <body class="bg-grey-color">
+    <nav
+      id="user-navbar"
+      class="navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white"
+    ></nav>
+    <nav
+      id="user-sidebar"
+      class="w3-sidebar w3-bar-block d-none d-lg-block pt-3"
+    ></nav>
+    <section class="user-content container">
+      <div class="row pt-5 pb-5 mb-5">
+        <div class="col-lg-1 col-md-12 col-sm-12"></div>
+        <div class="col-lg-11 col-md-12 col-sm-12">
+          <h4 class="i18n-5 text-center font-weight-bold">常见问题</h4>
+          <p class="i18n-317 text-center text-muted">
+            如果下述常见问题的答案未能解决你的问题，请将您的问题发送至<a
+              href="mailto:support@hskk.org"
+              >support@hskk.org</a
+            >，邮件内容需包括考生姓名，HSKK考试等级，考生序号，以及您遇到的问题，我们会尽快为您解决。
+          </p>
+          <div class="accordion border-bottom rounded" id="accordion">
+            <div id="card-1" class="card">
+              <div class="card-header bg-white">
+                <div class="d-flex justify-content-between mt-2">
+                  <h6 class="i18n-529 pr-1">我的个人信息错误怎么办？</h6>
+                  <h6
+                    class="text-right bg-white primary-color collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapse-1"
+                    aria-expanded="true"
+                    aria-controls="collapse-1"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </h6>
                 </div>
               </div>
-              <div id='collapse-1' class='collapse' aria-labelledby='heading-1' data-parent='#accordion'>
-                <div class='i18n-530 card-body'>
-                  考生姓名、国籍、考点、头像照片与个人实际信息不符合，请发送考生编号、考生姓名、考试等级，以及需要修改的个人信息至<a href='mailto:support@hskk.org'>support@hskk.org</a>。
+              <div
+                id="collapse-1"
+                class="collapse"
+                aria-labelledby="heading-1"
+                data-parent="#accordion"
+              >
+                <div class="i18n-530 card-body">
+                  考生姓名、国籍、考点、头像照片与个人实际信息不符合，请发送考生编号、考生姓名、考试等级，以及需要修改的个人信息至<a
+                    href="mailto:support@hskk.org"
+                    >support@hskk.org</a
+                  >。
                 </div>
               </div>
             </div>
-            <div id='card-2' class='card'>
-              <div class='card-header bg-white'>
-                <div class='d-flex justify-content-between mt-2'>
-                  <h6 class='i18n-531 pr-1'>为什么我收不到验证信息？</h6>
-                  <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-2' aria-expanded='true' aria-controls='collapse-2'><i class='fa fa-plus'></i></h6>
+            <div id="card-2" class="card">
+              <div class="card-header bg-white">
+                <div class="d-flex justify-content-between mt-2">
+                  <h6 class="i18n-531 pr-1">为什么我收不到验证信息？</h6>
+                  <h6
+                    class="text-right bg-white primary-color collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapse-2"
+                    aria-expanded="true"
+                    aria-controls="collapse-2"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </h6>
                 </div>
               </div>
-              <div id='collapse-2' class='collapse' aria-labelledby='heading-2' data-parent='#accordion'>
-                <div class='card-body'>
+              <div
+                id="collapse-2"
+                class="collapse"
+                aria-labelledby="heading-2"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
                   <ul>
-                    <li class='i18n-531-1'>请考生检查当前网络是否畅通，网络问题可能会导致验证信息接收延迟。</li>
-                    <li class='i18n-531-2'>若不是网络问题，可能为联络方式登记错误，考生可以给我们发送电邮修改联络方式。</li>
-                    <li class='i18n-531-3'>你可以发送电邮至<a href='mailto:support@hskk.org'>support@hskk.org</a>查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。</li>
+                    <li class="i18n-531-1">
+                      请考生检查当前网络是否畅通，网络问题可能会导致验证信息接收延迟。
+                    </li>
+                    <li class="i18n-531-2">
+                      若不是网络问题，可能为联络方式登记错误，考生可以给我们发送电邮修改联络方式。
+                    </li>
+                    <li class="i18n-531-3">
+                      你可以发送电邮至<a href="mailto:support@hskk.org"
+                        >support@hskk.org</a
+                      >查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div id='card-3' class='card'>
-              <div class='card-header bg-white'>
-                <div class='d-flex justify-content-between mt-2'>
-                  <h6 class='i18n-532 pr-1'>为什么我的设备检测不通过？</h6>
-                  <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-3' aria-expanded='true' aria-controls='collapse-3'><i class='fa fa-plus'></i></h6>
+            <div id="card-3" class="card">
+              <div class="card-header bg-white">
+                <div class="d-flex justify-content-between mt-2">
+                  <h6 class="i18n-532 pr-1">为什么我的设备检测不通过？</h6>
+                  <h6
+                    class="text-right bg-white primary-color collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapse-3"
+                    aria-expanded="true"
+                    aria-controls="collapse-3"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </h6>
                 </div>
               </div>
-              <div id='collapse-3' class='collapse' aria-labelledby='heading-3' data-parent='#accordion'>
-                <div class='card-body'>
-                  <p class='i18n-532-1'>HSKK考试对于考生考试设备的具体要求如下：</p>
+              <div
+                id="collapse-3"
+                class="collapse"
+                aria-labelledby="heading-3"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  <p class="i18n-532-1">
+                    HSKK考试对于考生考试设备的具体要求如下：
+                  </p>
                   <ul>
-                    <li class='i18n-532-2'>iPhone8Plus 以上, IOS 15以上</li>
-                    <li class='i18n-532-3'>安卓6以上，建议⼿机屏幕 5.5⼨及以上</li>
-                    <li class='i18n-532-4'>开启位置</li>
-                    <li class='i18n-532-5'>权限电量25%以上</li>
-                    <li class='i18n-532-6'>开启通知权限</li>
-                    <li class='i18n-532-7'>网速150KB以上</li>
-                    <li class='i18n-532-8'>允许使用摄像头</li>
-                    <li class='i18n-532-9'>内存>2G 存储>1G</li>
-                    <li class='i18n-532-10'>建议使用耳机</li>
+                    <li class="i18n-532-2">iPhone8Plus 以上, IOS 15以上</li>
+                    <li class="i18n-532-3">
+                      安卓6以上，建议⼿机屏幕 5.5⼨及以上
+                    </li>
+                    <li class="i18n-532-4">开启位置</li>
+                    <li class="i18n-532-5">权限电量25%以上</li>
+                    <li class="i18n-532-6">开启通知权限</li>
+                    <li class="i18n-532-7">网速150KB以上</li>
+                    <li class="i18n-532-8">允许使用摄像头</li>
+                    <li class="i18n-532-9">内存>2G 存储>1G</li>
+                    <li class="i18n-532-10">建议使用耳机</li>
                   </ul>
-                  <p class='i18n-532-11'>你也可以发送电邮至<a href='mailto:support@hskk.org'>support@hskk.org</a>查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。</p>
+                  <p class="i18n-532-11">
+                    你也可以发送电邮至<a href="mailto:support@hskk.org"
+                      >support@hskk.org</a
+                    >查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。
+                  </p>
                 </div>
               </div>
             </div>
-            <div id='card-4' class='card'>
-              <div class='card-header bg-white'>
-                <div class='d-flex justify-content-between mt-2'>
-                  <h6 class='i18n-533 pr-1'>为什么手机播放不出我录的声音？</h6>
-                  <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-4' aria-expanded='true' aria-controls='collapse-4'><i class="fa fa-plus"></i></h6>
+            <div id="card-4" class="card">
+              <div class="card-header bg-white">
+                <div class="d-flex justify-content-between mt-2">
+                  <h6 class="i18n-533 pr-1">为什么手机播放不出我录的声音？</h6>
+                  <h6
+                    class="text-right bg-white primary-color collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapse-4"
+                    aria-expanded="true"
+                    aria-controls="collapse-4"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </h6>
                 </div>
               </div>
-              <div id='collapse-4' class='collapse' aria-labelledby='heading-4' data-parent='#accordion'>
-                <div class='card-body'>
-                  <li class='i18n-533-1'>请解除静音模式，调高音量。</li>
-                  <li class='i18n-533-2'>请授权APP使用麦克风和扬声器。</li>
-                  <li class='i18n-533-3'>若仍无法解决，请更换移动设备再次进行尝试。</li>
-                  <li class='i18n-533-4'>你也可以发送电邮至<a href='mailto:support@hskk.org'>support@hskk.org</a>查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。</li>
+              <div
+                id="collapse-4"
+                class="collapse"
+                aria-labelledby="heading-4"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  <li class="i18n-533-1">请解除静音模式，调高音量。</li>
+                  <li class="i18n-533-2">请授权APP使用麦克风和扬声器。</li>
+                  <li class="i18n-533-3">
+                    若仍无法解决，请更换移动设备再次进行尝试。
+                  </li>
+                  <li class="i18n-533-4">
+                    你也可以发送电邮至<a href="mailto:support@hskk.org"
+                      >support@hskk.org</a
+                    >查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。
+                  </li>
                 </div>
               </div>
             </div>
-            <div id='card-5' class='card'>
-              <div class='card-header bg-white'>
-                <div class='d-flex justify-content-between mt-2'>
-                  <h6 class='i18n-534 pr-1'>为什么我的位置识别不通过？</h6>
-                  <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-5' aria-expanded='true' aria-controls='collapse-5'><i class="fa fa-plus"></i></h6>
+            <div id="card-5" class="card">
+              <div class="card-header bg-white">
+                <div class="d-flex justify-content-between mt-2">
+                  <h6 class="i18n-534 pr-1">为什么我的位置识别不通过？</h6>
+                  <h6
+                    class="text-right bg-white primary-color collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapse-5"
+                    aria-expanded="true"
+                    aria-controls="collapse-5"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </h6>
                 </div>
               </div>
-              <div id='collapse-5' class='collapse' aria-labelledby='heading-5' data-parent='#accordion'>
-                <div class='card-body'>
+              <div
+                id="collapse-5"
+                class="collapse"
+                aria-labelledby="heading-5"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
                   <ul>
-                    <li class='i18n-534-1'>请检查手机是否允许APP读取个人位置，若不允许读取位置，请在设置中打开位置信息再次进行尝试；</li>
-                    <li class='i18n-534-2'>请核对考试地点与报名考试时选择的考点位置是否相同，若需要修改考点信息，可以发送电邮给我们。</li>
-                    <li class='i18n-534-3'>你可以发送电邮至<a href='mailto:support@hskk.org'>support@hskk.org</a>查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。</li>
+                    <li class="i18n-534-1">
+                      请检查手机是否允许APP读取个人位置，若不允许读取位置，请在设置中打开位置信息再次进行尝试；
+                    </li>
+                    <li class="i18n-534-2">
+                      请核对考试地点与报名考试时选择的考点位置是否相同，若需要修改考点信息，可以发送电邮给我们。
+                    </li>
+                    <li class="i18n-534-3">
+                      你可以发送电邮至<a href="mailto:support@hskk.org"
+                        >support@hskk.org</a
+                      >查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div id='card-6' class='card'>
-              <div class='card-header bg-white'>
-                <div class='d-flex justify-content-between mt-2'>
-                  <h6 class='i18n-535 pr-1'>为什么我无法进行信息确认？</h6>
-                  <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-6' aria-expanded='true' aria-controls='collapse-6'><i class="fa fa-plus"></i></h6>
+            <div id="card-6" class="card">
+              <div class="card-header bg-white">
+                <div class="d-flex justify-content-between mt-2">
+                  <h6 class="i18n-535 pr-1">为什么我无法进行信息确认？</h6>
+                  <h6
+                    class="text-right bg-white primary-color collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapse-6"
+                    aria-expanded="true"
+                    aria-controls="collapse-6"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </h6>
                 </div>
               </div>
-              <div id='collapse-6' class='collapse' aria-labelledby='heading-6' data-parent='#accordion'>
-                <div class='card-body'>
-                  <li class='i18n-535-1'>考生在回答问题时声音过小</li>
-                  <li class='i18n-535-2'>考生在回答问题时语速过快</li>
-                  <li class='i18n-535-3'>请调整后再尝试</li>
-                  <li class='i18n-535-4'>你也可以发送电邮至<a href='mailto:support@hskk.org'>support@hskk.org</a>查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。</li>
-                </div>
-              </div>
-            </div>
-            <div id='card-7' class='card'>
-              <div class='card-header bg-white'>
-                <div class='d-flex justify-content-between mt-2'>
-                  <h6 class='i18n-536 pr-1'>为什么我在环境检测中面部拍照不通过？</h6>
-                  <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-7' aria-expanded='true' aria-controls='collapse-7'><i class="fa fa-plus"></i></h6>
-                </div>
-              </div>
-              <div id='collapse-7' class='collapse' aria-labelledby='heading-7' data-parent='#accordion'>
-                <div class='card-body'>
-                  <li class='i18n-536-1'>我们会使用环境检测中的照片进行面部识别，如果拍照不通过，请检查考生的面部是否完全处于镜头可拍摄范围内。</li>
-                  <li class='i18n-536-2'>调整室内光线及拍摄角度重新尝试</li>
-                  <li class='i18n-536-3'>确认参加考试者为考生本人，报考时提供的照片与本人一致</li>
-                  <li class='i18n-536-4'>拍照时请勿佩戴帽子、头巾、发带、墨镜等配饰</li>
-                  <li class='i18n-536-5'>你也可以发送电邮至<a href='mailto:support@hskk.org'>support@hskk.org</a>查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决问题。</li>
-                </div>
-              </div>
-            </div>
-            <div id='card-8' class='card'>
-              <div class='card-header bg-white'>
-                <div class='d-flex justify-content-between mt-2'>
-                  <h6 class='i18n-537 pr-1'>考试过程中我的屏幕边框为什么会变成红色？</h6>
-                  <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-8' aria-expanded='true' aria-controls='collapse-8'><i class="fa fa-plus"></i></h6>
-                </div>
-              </div>
-              <div id='collapse-8' class='collapse' aria-labelledby='heading-8' data-parent='#accordion'>
-                <div class='card-body'>
-                  <li class='i18n-537-1'>考试过程中屏幕边框变成红色是一种警告提示，你的面部识别、位置识别、声纹识别或环境检测可能存在异常或违规，请根据提示信息进行调整。</li>
-                  <li class='i18n-537-2'>多重认证识别第一次异常边框为浅红色</li>
-                  <li class='i18n-537-3'>多重认证识别第二次异常边框为红色</li>
-                  <li class='i18n-537-4'>多重认证识别第三次异常边框为深红色</li>
-                  <li class='i18n-537-5'>认证识别多次异常考试将即刻停止</li>
-                  <li class='i18n-537-6'>考生调整后检测无异常边框将变回绿色</li>
+              <div
+                id="collapse-6"
+                class="collapse"
+                aria-labelledby="heading-6"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  <li class="i18n-535-1">考生在回答问题时声音过小</li>
+                  <li class="i18n-535-2">考生在回答问题时语速过快</li>
+                  <li class="i18n-535-3">请调整后再尝试</li>
+                  <li class="i18n-535-4">
+                    你也可以发送电邮至<a href="mailto:support@hskk.org"
+                      >support@hskk.org</a
+                    >查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决的问题。
+                  </li>
                 </div>
               </div>
             </div>
-            <div id='card-9' class='card'>
-              <div class='card-header bg-white'>
-                <div class='d-flex justify-content-between mt-2'>
-                  <h6 class='i18n-538 pr-1'>App内为什么提示我的考试被终止？</h6>
-                  <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-9' aria-expanded='true' aria-controls='collapse-9'><i class="fa fa-plus"></i></h6>
+            <div id="card-7" class="card">
+              <div class="card-header bg-white">
+                <div class="d-flex justify-content-between mt-2">
+                  <h6 class="i18n-536 pr-1">
+                    为什么我在环境检测中面部拍照不通过？
+                  </h6>
+                  <h6
+                    class="text-right bg-white primary-color collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapse-7"
+                    aria-expanded="true"
+                    aria-controls="collapse-7"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </h6>
                 </div>
               </div>
-              <div id='collapse-9' class='collapse' aria-labelledby='heading-9' data-parent='#accordion'>
-                <div class='i18n-539 card-body'>
-                  App内提示考试被终止，表示你的考试过程中多次出现异常或违规情况，并且没有及时按照提示进行调整。若有异议，请将你的考生编号，姓名，考生等级发送至<a href='mailto:support@hskk.org'>support@hskk.org</a>进行申诉。
+              <div
+                id="collapse-7"
+                class="collapse"
+                aria-labelledby="heading-7"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  <li class="i18n-536-1">
+                    我们会使用环境检测中的照片进行面部识别，如果拍照不通过，请检查考生的面部是否完全处于镜头可拍摄范围内。
+                  </li>
+                  <li class="i18n-536-2">调整室内光线及拍摄角度重新尝试</li>
+                  <li class="i18n-536-3">
+                    确认参加考试者为考生本人，报考时提供的照片与本人一致
+                  </li>
+                  <li class="i18n-536-4">
+                    拍照时请勿佩戴帽子、头巾、发带、墨镜等配饰
+                  </li>
+                  <li class="i18n-536-5">
+                    你也可以发送电邮至<a href="mailto:support@hskk.org"
+                      >support@hskk.org</a
+                    >查询，邮件需要包括考生姓名，考试等级，考生序号和需要解决问题。
+                  </li>
                 </div>
               </div>
             </div>
-            <div id='card-10' class='card'>
-              <div class='card-header bg-white'>
-                <div class='d-flex justify-content-between mt-2'>
-                  <h6 class='i18n-540 pr-1'>考试期间提示答案上传不成功怎么办？</h6>
-                  <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-10' aria-expanded='true' aria-controls='collapse-10'><i class="fa fa-plus"></i></h6>
+            <div id="card-8" class="card">
+              <div class="card-header bg-white">
+                <div class="d-flex justify-content-between mt-2">
+                  <h6 class="i18n-537 pr-1">
+                    考试过程中我的屏幕边框为什么会变成红色？
+                  </h6>
+                  <h6
+                    class="text-right bg-white primary-color collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapse-8"
+                    aria-expanded="true"
+                    aria-controls="collapse-8"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </h6>
                 </div>
               </div>
-              <div id='collapse-10' class='collapse' aria-labelledby='heading-10' data-parent='#accordion'>
-                <div class='card-body'>
-                  <li class='i18n-540-1'>App提示答案上传不成功，是本地网络环境不佳，请考生更换网络重新进行上传。</li>
-                  <li class='i18n-540-2'>若考试完成后，一个小时内持续上传不成功，我们将按照上传成功的部分进行评分。</li>
+              <div
+                id="collapse-8"
+                class="collapse"
+                aria-labelledby="heading-8"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  <li class="i18n-537-1">
+                    考试过程中屏幕边框变成红色是一种警告提示，你的面部识别、位置识别、声纹识别或环境检测可能存在异常或违规，请根据提示信息进行调整。
+                  </li>
+                  <li class="i18n-537-2">多重认证识别第一次异常边框为浅红色</li>
+                  <li class="i18n-537-3">多重认证识别第二次异常边框为红色</li>
+                  <li class="i18n-537-4">多重认证识别第三次异常边框为深红色</li>
+                  <li class="i18n-537-5">认证识别多次异常考试将即刻停止</li>
+                  <li class="i18n-537-6">考生调整后检测无异常边框将变回绿色</li>
                 </div>
               </div>
             </div>
-            <div id='card-11' class='card'>
-              <div class='card-header bg-white'>
-                <div class='d-flex justify-content-between mt-2'>
-                  <h6 class='i18n-541 pr-1'>我如何选择考试时间？</h6>
-                  <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-11' aria-expanded='true' aria-controls='collapse-11'><i class="fa fa-plus"></i></h6>
+            <div id="card-9" class="card">
+              <div class="card-header bg-white">
+                <div class="d-flex justify-content-between mt-2">
+                  <h6 class="i18n-538 pr-1">App内为什么提示我的考试被终止？</h6>
+                  <h6
+                    class="text-right bg-white primary-color collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapse-9"
+                    aria-expanded="true"
+                    aria-controls="collapse-9"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </h6>
                 </div>
               </div>
-              <div id='collapse-11' class='collapse' aria-labelledby='heading-11' data-parent='#accordion'>
-                <div class='i18n-542 card-body'>
+              <div
+                id="collapse-9"
+                class="collapse"
+                aria-labelledby="heading-9"
+                data-parent="#accordion"
+              >
+                <div class="i18n-539 card-body">
+                  App内提示考试被终止，表示你的考试过程中多次出现异常或违规情况，并且没有及时按照提示进行调整。若有异议，请将你的考生编号，姓名，考生等级发送至<a
+                    href="mailto:support@hskk.org"
+                    >support@hskk.org</a
+                  >进行申诉。
+                </div>
+              </div>
+            </div>
+            <div id="card-10" class="card">
+              <div class="card-header bg-white">
+                <div class="d-flex justify-content-between mt-2">
+                  <h6 class="i18n-540 pr-1">
+                    考试期间提示答案上传不成功怎么办？
+                  </h6>
+                  <h6
+                    class="text-right bg-white primary-color collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapse-10"
+                    aria-expanded="true"
+                    aria-controls="collapse-10"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </h6>
+                </div>
+              </div>
+              <div
+                id="collapse-10"
+                class="collapse"
+                aria-labelledby="heading-10"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  <li class="i18n-540-1">
+                    App提示答案上传不成功，是本地网络环境不佳，请考生更换网络重新进行上传。
+                  </li>
+                  <li class="i18n-540-2">
+                    若考试完成后，一个小时内持续上传不成功，我们将按照上传成功的部分进行评分。
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div id="card-11" class="card">
+              <div class="card-header bg-white">
+                <div class="d-flex justify-content-between mt-2">
+                  <h6 class="i18n-541 pr-1">我如何选择考试时间？</h6>
+                  <h6
+                    class="text-right bg-white primary-color collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapse-11"
+                    aria-expanded="true"
+                    aria-controls="collapse-11"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </h6>
+                </div>
+              </div>
+              <div
+                id="collapse-11"
+                class="collapse"
+                aria-labelledby="heading-11"
+                data-parent="#accordion"
+              >
+                <div class="i18n-542 card-body">
                   你可以点这里进行考期查看及报名。同时请留意，你需要在考试开始的前30分钟内完成线上移动端设备检测。
                 </div>
               </div>
             </div>
-            <div id='card-12' class='card'>
-              <div class='card-header bg-white'>
-                <div class='d-flex justify-content-between mt-2'>
-                  <h6 class='i18n-543 pr-1'>如何确定我所在时区的考试时间</h6>
-                  <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-12' aria-expanded='true' aria-controls='collapse-12'><i class="fa fa-plus"></i></h6>
+            <div id="card-12" class="card">
+              <div class="card-header bg-white">
+                <div class="d-flex justify-content-between mt-2">
+                  <h6 class="i18n-543 pr-1">如何确定我所在时区的考试时间</h6>
+                  <h6
+                    class="text-right bg-white primary-color collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapse-12"
+                    aria-expanded="true"
+                    aria-controls="collapse-12"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </h6>
                 </div>
               </div>
-              <div id='collapse-12' class='collapse' aria-labelledby='heading-12' data-parent='#accordion'>
-                <div class='i18n-544 card-body'>
+              <div
+                id="collapse-12"
+                class="collapse"
+                aria-labelledby="heading-12"
+                data-parent="#accordion"
+              >
+                <div class="i18n-544 card-body">
                   目前我们只支持考试当日身处中国香港，印尼，阿联酋以及澳洲四个地区的考生。请查看考试日期，并选择所在地区，可以查看到您所在地区的对应考试时间。
                 </div>
               </div>
             </div>
-            <div id='card-13' class='card'>
-              <div class='card-header bg-white'>
-                <div class='d-flex justify-content-between mt-2'>
-                  <h6 class='i18n-545 pr-1'>我什么时候可以知道HSK口语移动端的考试成绩？</h6>
-                  <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-13' aria-expanded='true' aria-controls='collapse-13'><i class="fa fa-plus"></i></h6>
+            <div id="card-13" class="card">
+              <div class="card-header bg-white">
+                <div class="d-flex justify-content-between mt-2">
+                  <h6 class="i18n-545 pr-1">
+                    我什么时候可以知道HSK口语移动端的考试成绩？
+                  </h6>
+                  <h6
+                    class="text-right bg-white primary-color collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapse-13"
+                    aria-expanded="true"
+                    aria-controls="collapse-13"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </h6>
                 </div>
               </div>
-              <div id='collapse-13' class='collapse' aria-labelledby='heading-13' data-parent='#accordion'>
-                <div class='card-body'>
-                  <li class='i18n-545-1'>HSK口语移动端考试的成绩会在7-10个工作日内显示。</li>
-                  <li class='i18n-545-2'>阅卷完成后，我们会以电邮及SMS的形式通知考生。</li>
-                  <li class='i18n-545-3'>考生可以进入<a href='https://www.hskk.org'>www.hskk.org</a>或考试APP查看成绩。</li>
+              <div
+                id="collapse-13"
+                class="collapse"
+                aria-labelledby="heading-13"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
+                  <li class="i18n-545-1">
+                    HSK口语移动端考试的成绩会在7-10个工作日内显示。
+                  </li>
+                  <li class="i18n-545-2">
+                    阅卷完成后，我们会以电邮及SMS的形式通知考生。
+                  </li>
+                  <li class="i18n-545-3">
+                    考生可以进入<a href="https://www.hskk.org">www.hskk.org</a
+                    >或考试APP查看成绩。
+                  </li>
                 </div>
               </div>
             </div>
-            <div id='card-14' class='card'>
-              <div class='card-header bg-white'>
-                <div class='d-flex justify-content-between mt-2'>
-                  <h6 class='i18n-546 pr-1'>我什么时候可以知道HSK的考试成绩？</h6>
-                  <h6 class='text-right bg-white primary-color collapsed' data-toggle='collapse' data-target='#collapse-14' aria-expanded='true' aria-controls='collapse-14'><i class="fa fa-plus"></i></h6>
+            <div id="card-14" class="card">
+              <div class="card-header bg-white">
+                <div class="d-flex justify-content-between mt-2">
+                  <h6 class="i18n-546 pr-1">
+                    我什么时候可以知道HSK的考试成绩？
+                  </h6>
+                  <h6
+                    class="text-right bg-white primary-color collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapse-14"
+                    aria-expanded="true"
+                    aria-controls="collapse-14"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </h6>
                 </div>
               </div>
-              <div id='collapse-14' class='collapse' aria-labelledby='heading-14' data-parent='#accordion'>
-                <div class='i18n-547 card-body'>
+              <div
+                id="collapse-14"
+                class="collapse"
+                aria-labelledby="heading-14"
+                data-parent="#accordion"
+              >
+                <div class="i18n-547 card-body">
                   HSK考试的成绩可以在HSK考试完成30个工作日后登陆报名网页查询。
                 </div>
               </div>
@@ -248,6 +529,10 @@
         </div>
       </div>
     </section>
-    <footer id='user-footbar' class='user-footbar fixed-bottom bg-white d-block d-sm-none d-md-block d-lg-none'></footer>
+    <footer
+      id="user-footbar"
+      class="user-footbar fixed-bottom bg-white d-block d-sm-none d-md-block d-lg-none"
+    ></footer>
   </body>
-<html>
+  <html></html>
+</html>

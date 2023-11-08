@@ -1,104 +1,209 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.5.1.slim.min.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/navbar.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/footer.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/application.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/i18n.js?V=2.3" type="text/javascript" defer></script>
-    <script src="js/bootstrap.js?V=2.3" type="text/javascript" defer></script>
-    <link href="css/bootstrap.css?V=2.3" rel="stylesheet" />
-    <link href="css/style.css?V=2.3" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/1e357e8cb4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="js/jquery-3.5.1.slim.min.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="js/navbar.js?V=2.4" type="text/javascript" defer></script>
+    <script src="js/footer.js?V=2.4" type="text/javascript" defer></script>
+    <script src="js/application.js?V=2.4" type="text/javascript" defer></script>
+    <script src="js/i18n.js?V=2.4" type="text/javascript" defer></script>
+    <script src="js/bootstrap.js?V=2.4" type="text/javascript" defer></script>
+    <link href="css/bootstrap.css?V=2.4" rel="stylesheet" />
+    <link href="css/style.css?V=2.4" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <nav id='navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
-    <section class='application-content container mt-5'>
-      <div id='progressbar' class='progress-indicator'></div>
-      <div class='row'>
-        <div class='col'>
-          <h4 class='i18n-110 text-center font-weight-bold mt-5 mb-5'>上传照片</h4>
+    <nav
+      id="navbar"
+      class="navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white"
+    ></nav>
+    <section class="application-content container mt-5">
+      <div id="progressbar" class="progress-indicator"></div>
+      <div class="row">
+        <div class="col">
+          <h4 class="i18n-110 text-center font-weight-bold mt-5 mb-5">
+            上传照片
+          </h4>
         </div>
       </div>
-      <div class='row'>
-        <div class='col'>
+      <div class="row">
+        <div class="col">
           <p>
-            <span class='i18n-111'>照片会出现在你的成绩报告中，请按要求提交照片。</span>
-            <span class='primary-color pointer' data-toggle='modal' data-target='#staticBackdrop'><u class='i18n-112'>点击此处查看样本</u></span>
+            <span class="i18n-111"
+              >照片会出现在你的成绩报告中，请按要求提交照片。</span
+            >
+            <span
+              class="primary-color pointer"
+              data-toggle="modal"
+              data-target="#staticBackdrop"
+              ><u class="i18n-112">点击此处查看样本</u></span
+            >
           </p>
-          <div class='modal fade' id='staticBackdrop' data-backdrop='static' data-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'>
-            <div class='modal-dialog modal-dialog-centered'>
-              <div class='modal-content'>
-                <div class='modal-header border-0 justify-content-center'>
-                  <h5 class='modal-title i18n-115' id='staticBackdropLabel'>照片样本</h5>
+          <div
+            class="modal fade"
+            id="staticBackdrop"
+            data-backdrop="static"
+            data-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header border-0 justify-content-center">
+                  <h5 class="modal-title i18n-115" id="staticBackdropLabel">
+                    照片样本
+                  </h5>
                 </div>
-                <div class='modal-body text-center'>
-                  <img src='images/app-sample-profile.png' class='img-fluid' alt='Responsive image'>
+                <div class="modal-body text-center">
+                  <img
+                    src="images/app-sample-profile.png"
+                    class="img-fluid"
+                    alt="Responsive image"
+                  />
                 </div>
-                <div class='modal-footer border-0 flex-lg-row flex-column-reverse justify-content-center'>
-                  <button type='button' class='btn btn-sm p-2 w180' data-dismiss='modal'>返回</button>
+                <div
+                  class="modal-footer border-0 flex-lg-row flex-column-reverse justify-content-center"
+                >
+                  <button
+                    type="button"
+                    class="btn btn-sm p-2 w180"
+                    data-dismiss="modal"
+                  >
+                    返回
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div id='drop-area' class='row no-gutters mb-3 image-upload'>
-        <div class='col bg-grey-color text-center'>
-          <div class='pt-5 pb-3'>
-            <label for='file' style='cursor: pointer;'><i class='fa-solid fa-arrow-up-from-bracket fa-2xl primary-color mb-4'></i></label>
-            <p class='i18n-113 font-weight-bold mb-0'>点击或拖动文件到此区域进行上传。</p>
-            <p class='i18n-114 text-muted'>(支持的文件格式：JPG; 最大文件大小为5MB)</p>
+      <div id="drop-area" class="row no-gutters mb-3 image-upload">
+        <div class="col bg-grey-color text-center">
+          <div class="pt-5 pb-3">
+            <label for="file" style="cursor: pointer"
+              ><i
+                class="fa-solid fa-arrow-up-from-bracket fa-2xl primary-color mb-4"
+              ></i
+            ></label>
+            <p class="i18n-113 font-weight-bold mb-0">
+              点击或拖动文件到此区域进行上传。
+            </p>
+            <p class="i18n-114 text-muted">
+              (支持的文件格式：JPG; 最大文件大小为5MB)
+            </p>
           </div>
         </div>
       </div>
-      <div class='row border no-gutters mb-3 image-display'>
-        <div class='col d-flex justify-content-between'>
-          <div class='image-output'>
-            <img src='' id='output' width='200' height='200' class='img-fluid' alt='Responsive image'/>
+      <div class="row border no-gutters mb-3 image-display">
+        <div class="col d-flex justify-content-between">
+          <div class="image-output">
+            <img
+              src=""
+              id="output"
+              width="200"
+              height="200"
+              class="img-fluid"
+              alt="Responsive image"
+            />
           </div>
-          <i class='fa-solid fa-trash fa-lg text-danger align-self-center pointer mr-3'></i>
+          <i
+            class="fa-solid fa-trash fa-lg text-danger align-self-center pointer mr-3"
+          ></i>
         </div>
       </div>
-      <div class='row'>
-        <div class='col'>
-          <div class='image-guideline'>
-            <p class='i18n-116'>相关注意事项</p>
+      <div class="row">
+        <div class="col">
+          <div class="image-guideline">
+            <p class="i18n-116">相关注意事项</p>
             <ul>
-              <li class='i18n-117'>照片要求:近期免冠、正面、单色背景、两寸证件照，不得使用风景照、生活照</li>
-              <li class='i18n-118'>照片格式: JPG</li>
-              <li class='i18n-119'>照片标佳: 180像素*240像素</li>
-              <li class='i18n-120'>文件大小: 15KB~5MB</li>
-              <li class='i18n-121'>如果考生没有在报名网站上传电子照片，可以使用移动存储设备 (U盘，移动硬盘等) 将电子照片送到报考的考点，寻求考点工作人员的帮助</li>
-              <li class='i18n-122'>在中国大陆地区考点报名参加汉语考试的考生，须上传电子照片。如未上传照片或上传照片不符合要求的，将不能进入考场参加考试</li>
+              <li class="i18n-117">
+                照片要求:近期免冠、正面、单色背景、两寸证件照，不得使用风景照、生活照
+              </li>
+              <li class="i18n-118">照片格式: JPG</li>
+              <li class="i18n-119">照片标佳: 180像素*240像素</li>
+              <li class="i18n-120">文件大小: 15KB~5MB</li>
+              <li class="i18n-121">
+                如果考生没有在报名网站上传电子照片，可以使用移动存储设备
+                (U盘，移动硬盘等)
+                将电子照片送到报考的考点，寻求考点工作人员的帮助
+              </li>
+              <li class="i18n-122">
+                在中国大陆地区考点报名参加汉语考试的考生，须上传电子照片。如未上传照片或上传照片不符合要求的，将不能进入考场参加考试
+              </li>
             </ul>
           </div>
         </div>
       </div>
-      <div class='row'>
-        <div class='col'>
-          <form id='application-step-3-form' class='mb-5' action='application-verify-info.html'>
-            <input type='file' accept='image/jpeg' name='image' id='file' style='display: none;'>
-            <div class='text-center mt-4 d-flex justify-content-center'>
-              <a href='application-candidate-info.html' class='i18n-151 btn btn-sm p-2 pr-4 pl-4 mt-2 mr-1 w180'>上一步</a>
-              <button id='to-step-4' type='button' disabled class='i18n-150 btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180'>下一步</button>
+      <div class="row">
+        <div class="col">
+          <form
+            id="application-step-3-form"
+            class="mb-5"
+            action="application-verify-info.html"
+          >
+            <input
+              type="file"
+              accept="image/jpeg"
+              name="image"
+              id="file"
+              style="display: none"
+            />
+            <div class="text-center mt-4 d-flex justify-content-center">
+              <a
+                href="application-candidate-info.html"
+                class="i18n-151 btn btn-sm p-2 pr-4 pl-4 mt-2 mr-1 w180"
+                >上一步</a
+              >
+              <button
+                id="to-step-4"
+                type="button"
+                disabled
+                class="i18n-150 btn btn-sm p-2 pr-4 pl-4 mt-2 ml-1 w180"
+              >
+                下一步
+              </button>
             </div>
           </form>
         </div>
       </div>
-      <div aria-live='polite' aria-atomic='true' class='d-flex justify-content-center align-items-center'>
-        <div class='toast' role='alert' aria-live='assertive' aria-atomic='true' data-autohide='false'>
-          <div class='toast-header secondary-color bg-danger-color'>
-            <strong class='toast-text i18n-344 mr-auto danger-color'>最大文件大小为5MB</strong>
-            <button type='button' class='ml-2 mb-1 close' data-dismiss='toast' aria-label='Close'>
-              <span aria-hidden='true'>&times;</span>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        class="d-flex justify-content-center align-items-center"
+      >
+        <div
+          class="toast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+          data-autohide="false"
+        >
+          <div class="toast-header secondary-color bg-danger-color">
+            <strong class="toast-text i18n-344 mr-auto danger-color"
+              >最大文件大小为5MB</strong
+            >
+            <button
+              type="button"
+              class="ml-2 mb-1 close"
+              data-dismiss="toast"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
             </button>
           </div>
         </div>
       </div>
     </section>
-    <footer id='footer' class='bg-secondary-color text-white'></footer>
+    <footer id="footer" class="bg-secondary-color text-white"></footer>
   </body>
-<html>
+  <html></html>
+</html>

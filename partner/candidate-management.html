@@ -1,51 +1,90 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
-    <script src="../js/jquery-3.5.1.slim.min.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/navbar.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/footer.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/partner.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/i18n.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/bootstrap.js?V=2.3" type="text/javascript" defer></script>
-    <link href="../css/bootstrap.css?V=2.3" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="../css/style.css?V=2.3" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/1e357e8cb4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="../js/jquery-3.5.1.slim.min.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="../js/navbar.js?V=2.4" type="text/javascript" defer></script>
+    <script src="../js/footer.js?V=2.4" type="text/javascript" defer></script>
+    <script src="../js/partner.js?V=2.4" type="text/javascript" defer></script>
+    <script src="../js/i18n.js?V=2.4" type="text/javascript" defer></script>
+    <script
+      src="../js/bootstrap.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <link href="../css/bootstrap.css?V=2.4" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link href="../css/style.css?V=2.4" rel="stylesheet" type="text/css" />
   </head>
-  <body class='bg-grey-color'>
-    <nav id='user-navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
-    <nav id='partner-sidebar' class='w3-sidebar w3-bar-block d-none d-lg-block pt-3'></nav>
-    <section class='user-content container'>
-      <div class='row pt-5 pb-5 mb-5'>
-        <div class='col-lg-1 col-md-12 col-sm-12'></div>
-        <div class='col-lg-11 col-md-12 col-sm-12'>
-          <div class='card-body bg-white shadow-sm mt-3'>
-            <h4 class='i18n-302 font-weight-bold mt-3 mb-4 text-center'>考⽣管理</h4>
-            <div class='level-bar'>
-              <div class='row text-center mr-1 ml-1 mb-4 level-bar-width'>
-                <div class='col i18n-296 level-bar-item left active' data-level='0'>全部</div>
-                <div class='col i18n-303 level-bar-item border-left' data-level='7'>初級</div>
-                <div class='col i18n-304 level-bar-item border-left' data-level='8'>中級</div>
-                <div class='col i18n-305 level-bar-item right border-left' data-level='9'>高級</div>
+  <body class="bg-grey-color">
+    <nav
+      id="user-navbar"
+      class="navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white"
+    ></nav>
+    <nav
+      id="partner-sidebar"
+      class="w3-sidebar w3-bar-block d-none d-lg-block pt-3"
+    ></nav>
+    <section class="user-content container">
+      <div class="row pt-5 pb-5 mb-5">
+        <div class="col-lg-1 col-md-12 col-sm-12"></div>
+        <div class="col-lg-11 col-md-12 col-sm-12">
+          <div class="card-body bg-white shadow-sm mt-3">
+            <h4 class="i18n-302 font-weight-bold mt-3 mb-4 text-center">
+              考⽣管理
+            </h4>
+            <div class="level-bar">
+              <div class="row text-center mr-1 ml-1 mb-4 level-bar-width">
+                <div
+                  class="col i18n-296 level-bar-item left active"
+                  data-level="0"
+                >
+                  全部
+                </div>
+                <div
+                  class="col i18n-303 level-bar-item border-left"
+                  data-level="7"
+                >
+                  初級
+                </div>
+                <div
+                  class="col i18n-304 level-bar-item border-left"
+                  data-level="8"
+                >
+                  中級
+                </div>
+                <div
+                  class="col i18n-305 level-bar-item right border-left"
+                  data-level="9"
+                >
+                  高級
+                </div>
               </div>
             </div>
-            <div class='form-group'>
-              <label class='i18n-289'>考试时间</label>
-              <select class='form-control' id='exam-time' name='exam-time'>
-                <option class='i18n-73' value=''>请选择考试时间</option>
+            <div class="form-group">
+              <label class="i18n-289">考试时间</label>
+              <select class="form-control" id="exam-time" name="exam-time">
+                <option class="i18n-73" value="">请选择考试时间</option>
               </select>
             </div>
-            <table class='table border text-center'>
+            <table class="table border text-center">
               <thead>
                 <tr>
-                  <th scope='col'>NO.</th>
-                  <th scope='col' class='i18n-306'>证件上姓名</th>
-                  <th scope='col' class='i18n-307'>考点密码</th>
+                  <th scope="col">NO.</th>
+                  <th scope="col" class="i18n-306">证件上姓名</th>
+                  <th scope="col" class="i18n-307">考点密码</th>
                 </tr>
               </thead>
-              <tbody id='candidate-table'>
+              <tbody id="candidate-table">
                 <!-- <tr>
                   <th scope='row'>1</th>
                   <td>陈大文</td>
@@ -53,15 +92,19 @@
                 </tr> -->
               </tbody>
             </table>
-            <div class='text-muted'>
-              <span class='i18n-308'>全部共</span>
-              <span id='total-candidates'>2</span> 
-              <span class='i18n-309'>名考生</span>
+            <div class="text-muted">
+              <span class="i18n-308">全部共</span>
+              <span id="total-candidates">2</span>
+              <span class="i18n-309">名考生</span>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <footer id='partner-footbar' class='partner-footbar fixed-bottom bg-white d-block d-sm-none d-md-block d-lg-none'></footer>
+    <footer
+      id="partner-footbar"
+      class="partner-footbar fixed-bottom bg-white d-block d-sm-none d-md-block d-lg-none"
+    ></footer>
   </body>
-<html>
+  <html></html>
+</html>

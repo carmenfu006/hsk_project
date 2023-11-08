@@ -1,225 +1,478 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/1e357e8cb4.js" crossorigin="anonymous"></script>
-    <script src="../js/jquery-3.5.1.slim.min.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/navbar.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/footer.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/candidate.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/i18n.js?V=2.3" type="text/javascript" defer></script>
-    <script src="../js/bootstrap.js?V=2.3" type="text/javascript" defer></script>
-    <link href="../css/bootstrap.css?V=2.3" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="../css/style.css?V=2.3" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/1e357e8cb4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="../js/jquery-3.5.1.slim.min.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="../js/navbar.js?V=2.4" type="text/javascript" defer></script>
+    <script src="../js/footer.js?V=2.4" type="text/javascript" defer></script>
+    <script
+      src="../js/candidate.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="../js/i18n.js?V=2.4" type="text/javascript" defer></script>
+    <script
+      src="../js/bootstrap.js?V=2.4"
+      type="text/javascript"
+      defer
+    ></script>
+    <link href="../css/bootstrap.css?V=2.4" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link href="../css/style.css?V=2.4" rel="stylesheet" type="text/css" />
   </head>
-  <body class='bg-grey-color'>
-    <nav id='user-navbar' class='navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white'></nav>
-    <nav id='user-sidebar' class='w3-sidebar w3-bar-block d-none d-lg-block pt-3'></nav>
-    <section class='side-content'>
-      <div id='notice-card-content' class='notice-card-content'>
-        <div class='d-flex pt-5 mb-3 notice-card-width'>
-          <div id='notice-card-1' class='card notice-card shadow-sm'>
-            <img class='card-img-top' src='../images/candidate/notice_1.png' alt='Card image cap'>
-            <div class='card-body'>
-              <h4 class='i18n-199 font-weight-bold'>环境测试</h4>
-              <ul class='p-0 pl-3'>
-                <li class='i18n-200'>请在安静的环境中进行考试</li>
-                <li class='i18n-201'>确保网路环境畅通</li>
-                <li class='i18n-202'>房间内光线充足</li>
-                <li class='i18n-203'>且只有考生一人在考试空间内</li>
+  <body class="bg-grey-color">
+    <nav
+      id="user-navbar"
+      class="navbar navbar-light navbar-expand-lg border-bottom sticky-top bg-white"
+    ></nav>
+    <nav
+      id="user-sidebar"
+      class="w3-sidebar w3-bar-block d-none d-lg-block pt-3"
+    ></nav>
+    <section class="side-content">
+      <div id="notice-card-content" class="notice-card-content">
+        <div class="d-flex pt-5 mb-3 notice-card-width">
+          <div id="notice-card-1" class="card notice-card shadow-sm">
+            <img
+              class="card-img-top"
+              src="../images/candidate/notice_1.png"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h4 class="i18n-199 font-weight-bold">环境测试</h4>
+              <ul class="p-0 pl-3">
+                <li class="i18n-200">请在安静的环境中进行考试</li>
+                <li class="i18n-201">确保网路环境畅通</li>
+                <li class="i18n-202">房间内光线充足</li>
+                <li class="i18n-203">且只有考生一人在考试空间内</li>
               </ul>
             </div>
           </div>
-          <div id='notice-card-2' class='card notice-card shadow-sm'>
-            <img class='card-img-top' src='../images/candidate/notice_2.png' alt='Card image cap'>
-            <div class='card-body'>
-              <h4 class='i18n-210 font-weight-bold'>考试切换</h4>
-              <ul class='p-0 pl-3'>
-                <li class='i18n-211'>考试过程中不允许将APP切至后台</li>
-                <li class='i18n-212'>若不小心将APP切入后台，务必在15秒内回到考试介面，否则考试将被终止</li>
-                <li class='i18n-213'>如APP第二次切至后台，考试将立即被终止</li>
+          <div id="notice-card-2" class="card notice-card shadow-sm">
+            <img
+              class="card-img-top"
+              src="../images/candidate/notice_2.png"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h4 class="i18n-210 font-weight-bold">考试切换</h4>
+              <ul class="p-0 pl-3">
+                <li class="i18n-211">考试过程中不允许将APP切至后台</li>
+                <li class="i18n-212">
+                  若不小心将APP切入后台，务必在15秒内回到考试介面，否则考试将被终止
+                </li>
+                <li class="i18n-213">如APP第二次切至后台，考试将立即被终止</li>
               </ul>
             </div>
           </div>
-          <div id='notice-card-3' class='card notice-card shadow-sm'>
-            <img class='card-img-top' src='../images/candidate/notice_3.png' alt='Card image cap'>
-            <div class='card-body'>
-              <h4 class='i18n-278 font-weight-bold'>禁止考试中录屏或截图</h4>
-              <p class='i18n-255'>在考试进行中，请勿录屏或截屏，禁止使用别的手机录像。如出现此情况，您的考试会被视为作弊处理</p>
+          <div id="notice-card-3" class="card notice-card shadow-sm">
+            <img
+              class="card-img-top"
+              src="../images/candidate/notice_3.png"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h4 class="i18n-278 font-weight-bold">禁止考试中录屏或截图</h4>
+              <p class="i18n-255">
+                在考试进行中，请勿录屏或截屏，禁止使用别的手机录像。如出现此情况，您的考试会被视为作弊处理
+              </p>
             </div>
           </div>
-          <div id='notice-card-4' class='card notice-card shadow-sm'>
-            <img class='card-img-top' src='../images/candidate/notice_4.png' alt='Card image cap'>
-            <div class='card-body'>
-              <h4 class='i18n-279 font-weight-bold'>禁止考试中通话</h4>
-              <p class='i18n-256'>在考试进行中，请勿拨打电话。如出现此情况，您的考试会被视为作弊处理</p>
+          <div id="notice-card-4" class="card notice-card shadow-sm">
+            <img
+              class="card-img-top"
+              src="../images/candidate/notice_4.png"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h4 class="i18n-279 font-weight-bold">禁止考试中通话</h4>
+              <p class="i18n-256">
+                在考试进行中，请勿拨打电话。如出现此情况，您的考试会被视为作弊处理
+              </p>
             </div>
           </div>
-          <div id='notice-card-5' class='card notice-card shadow-sm'>
-            <img class='card-img-top' src='../images/candidate/notice_5.png' alt='Card image cap'>
-            <div class='card-body notice-card-body'>
-              <h4 class='i18n-214 font-weight-bold'>防止干扰</h4>
-              <p class='i18n-215'>考试期间其他信息提示会打断答题和影响考试</p>
-              <ul class='p-0 pl-3'>
-                <li class='i18n-280'>受电话或信息影响的题目将不得分，建议开启手机勿扰模式</li>
+          <div id="notice-card-5" class="card notice-card shadow-sm">
+            <img
+              class="card-img-top"
+              src="../images/candidate/notice_5.png"
+              alt="Card image cap"
+            />
+            <div class="card-body notice-card-body">
+              <h4 class="i18n-214 font-weight-bold">防止干扰</h4>
+              <p class="i18n-215">考试期间其他信息提示会打断答题和影响考试</p>
+              <ul class="p-0 pl-3">
+                <li class="i18n-280">
+                  受电话或信息影响的题目将不得分，建议开启手机勿扰模式
+                </li>
               </ul>
-              <div class='row'>
-                <div class='col-6 text-center'>
-                  <img src='../images/candidate/app_1.png' class='img-fluid mb-2' data-toggle='modal' data-target='.modal-app-1' />
+              <div class="row">
+                <div class="col-6 text-center">
+                  <img
+                    src="../images/candidate/app_1.png"
+                    class="img-fluid mb-2"
+                    data-toggle="modal"
+                    data-target=".modal-app-1"
+                  />
                 </div>
-                <div class='col-6 text-center'>
-                  <img src='../images/candidate/app_2.png' class='img-fluid mb-2' data-toggle='modal' data-target='.modal-app-2' />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id='notice-card-6' class='card notice-card shadow-sm'>
-            <img class='card-img-top' src='../images/candidate/notice_6.png' alt='Card image cap'>
-            <div class='card-body notice-card-body'>
-              <h4 class='i18n-219 font-weight-bold'>考试界面</h4>
-              <p class='i18n-220'>请认真查看并熟悉以下考试界面，了解界面有助于顺利考试。</p>
-              <p class='i18n-303'>初級</p>
-              <div class='row'>
-                <div class='col-6 text-center'>
-                  <img src='../images/candidate/elementary_1_zh.png' class='img-fluid mb-2' data-toggle='modal' data-target='.modal-elementary-1'  />
-                </div>
-                <div class='col-6 text-center'>
-                  <img src='../images/candidate/elementary_2_zh.png' class='img-fluid mb-2' data-toggle='modal' data-target='.modal-elementary-2' />
-                </div>
-              </div>
-              <p class='i18n-304 mt-3'>中級</p>
-              <div class='row'>
-                <div class='col-6 text-center'>
-                  <img src='../images/candidate/intermediate_1_zh.png' class='img-fluid mb-2' data-toggle='modal' data-target='.modal-intermediate-1'  />
-                </div>
-                <div class='col-6 text-center'>
-                  <img src='../images/candidate/intermediate_2_zh.png' class='img-fluid mb-2' data-toggle='modal' data-target='.modal-intermediate-2' />
-                </div>
-              </div>
-              <p class='i18n-305 mt-3'>高級</p>
-              <div class='row'>
-                <div class='col-6 text-center'>
-                  <img src='../images/candidate/advanced_1_zh.png' class='img-fluid mb-2' data-toggle='modal' data-target='.modal-advanced-1'  />
-                </div>
-                <div class='col-6 text-center'>
-                  <img src='../images/candidate/advanced_2_zh.png' class='img-fluid mb-2' data-toggle='modal' data-target='.modal-advanced-2' />
+                <div class="col-6 text-center">
+                  <img
+                    src="../images/candidate/app_2.png"
+                    class="img-fluid mb-2"
+                    data-toggle="modal"
+                    data-target=".modal-app-2"
+                  />
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class='modal fade modal-app-1' data-backdrop='static' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
-        <div class='modal-dialog modal-sm'>
-          <div class='modal-content mh400 bg-dark-color'>
-            <img src='../images/candidate/app_1.png' class='img-responsive mt-5' />
-            <div class='row'>
-              <div class='col text-center'>
-                <button type='button' class='i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark' data-dismiss='modal' aria-label='Close'>知道了</button>
+          <div id="notice-card-6" class="card notice-card shadow-sm">
+            <img
+              class="card-img-top"
+              src="../images/candidate/notice_6.png"
+              alt="Card image cap"
+            />
+            <div class="card-body notice-card-body">
+              <h4 class="i18n-219 font-weight-bold">考试界面</h4>
+              <p class="i18n-220">
+                请认真查看并熟悉以下考试界面，了解界面有助于顺利考试。
+              </p>
+              <p class="i18n-303">初級</p>
+              <div class="row">
+                <div class="col-6 text-center">
+                  <img
+                    src="../images/candidate/elementary_1_zh.png"
+                    class="img-fluid mb-2"
+                    data-toggle="modal"
+                    data-target=".modal-elementary-1"
+                  />
+                </div>
+                <div class="col-6 text-center">
+                  <img
+                    src="../images/candidate/elementary_2_zh.png"
+                    class="img-fluid mb-2"
+                    data-toggle="modal"
+                    data-target=".modal-elementary-2"
+                  />
+                </div>
+              </div>
+              <p class="i18n-304 mt-3">中級</p>
+              <div class="row">
+                <div class="col-6 text-center">
+                  <img
+                    src="../images/candidate/intermediate_1_zh.png"
+                    class="img-fluid mb-2"
+                    data-toggle="modal"
+                    data-target=".modal-intermediate-1"
+                  />
+                </div>
+                <div class="col-6 text-center">
+                  <img
+                    src="../images/candidate/intermediate_2_zh.png"
+                    class="img-fluid mb-2"
+                    data-toggle="modal"
+                    data-target=".modal-intermediate-2"
+                  />
+                </div>
+              </div>
+              <p class="i18n-305 mt-3">高級</p>
+              <div class="row">
+                <div class="col-6 text-center">
+                  <img
+                    src="../images/candidate/advanced_1_zh.png"
+                    class="img-fluid mb-2"
+                    data-toggle="modal"
+                    data-target=".modal-advanced-1"
+                  />
+                </div>
+                <div class="col-6 text-center">
+                  <img
+                    src="../images/candidate/advanced_2_zh.png"
+                    class="img-fluid mb-2"
+                    data-toggle="modal"
+                    data-target=".modal-advanced-2"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class='modal fade modal-app-2' data-backdrop='static' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
-        <div class='modal-dialog modal-sm'>
-          <div class='modal-content mh400 bg-dark-color'>
-            <img src='../images/candidate/app_2.png' class='img-responsive mt-5' />
-            <div class='row'>
-              <div class='col text-center'>
-                <button type='button' class='i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark' data-dismiss='modal' aria-label='Close'>知道了</button>
+      <div
+        class="modal fade modal-app-1"
+        data-backdrop="static"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="mySmallModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content mh400 bg-dark-color">
+            <img
+              src="../images/candidate/app_1.png"
+              class="img-responsive mt-5"
+            />
+            <div class="row">
+              <div class="col text-center">
+                <button
+                  type="button"
+                  class="i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  知道了
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class='modal fade modal-elementary-1' data-backdrop='static' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
-        <div class='modal-dialog modal-sm'>
-          <div class='modal-content mh400 bg-dark-color'>
-            <img src='../images/candidate/elementary_1_zh.png' class='img-responsive mt-5' />
-            <div class='row'>
-              <div class='col text-center'>
-                <button type='button' class='i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark' data-dismiss='modal' aria-label='Close'>知道了</button>
+      <div
+        class="modal fade modal-app-2"
+        data-backdrop="static"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="mySmallModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content mh400 bg-dark-color">
+            <img
+              src="../images/candidate/app_2.png"
+              class="img-responsive mt-5"
+            />
+            <div class="row">
+              <div class="col text-center">
+                <button
+                  type="button"
+                  class="i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  知道了
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class='modal fade modal-elementary-2' data-backdrop='static' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
-        <div class='modal-dialog modal-sm'>
-          <div class='modal-content mh400 bg-dark-color'>
-            <img src='../images/candidate/elementary_2_zh.png' class='img-responsive mt-5' />
-            <div class='row'>
-              <div class='col text-center'>
-                <button type='button' class='i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark' data-dismiss='modal' aria-label='Close'>知道了</button>
+      <div
+        class="modal fade modal-elementary-1"
+        data-backdrop="static"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="mySmallModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content mh400 bg-dark-color">
+            <img
+              src="../images/candidate/elementary_1_zh.png"
+              class="img-responsive mt-5"
+            />
+            <div class="row">
+              <div class="col text-center">
+                <button
+                  type="button"
+                  class="i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  知道了
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class='modal fade modal-intermediate-1' data-backdrop='static' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
-        <div class='modal-dialog modal-sm'>
-          <div class='modal-content mh400 bg-dark-color'>
-            <img src='../images/candidate/intermediate_1_zh.png' class='img-responsive mt-5' />
-            <div class='row'>
-              <div class='col text-center'>
-                <button type='button' class='i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark' data-dismiss='modal' aria-label='Close'>知道了</button>
+      <div
+        class="modal fade modal-elementary-2"
+        data-backdrop="static"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="mySmallModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content mh400 bg-dark-color">
+            <img
+              src="../images/candidate/elementary_2_zh.png"
+              class="img-responsive mt-5"
+            />
+            <div class="row">
+              <div class="col text-center">
+                <button
+                  type="button"
+                  class="i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  知道了
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class='modal fade modal-intermediate-2' data-backdrop='static' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
-        <div class='modal-dialog modal-sm'>
-          <div class='modal-content mh400 bg-dark-color'>
-            <img src='../images/candidate/intermediate_2_zh.png' class='img-responsive mt-5' />
-            <div class='row'>
-              <div class='col text-center'>
-                <button type='button' class='i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark' data-dismiss='modal' aria-label='Close'>知道了</button>
+      <div
+        class="modal fade modal-intermediate-1"
+        data-backdrop="static"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="mySmallModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content mh400 bg-dark-color">
+            <img
+              src="../images/candidate/intermediate_1_zh.png"
+              class="img-responsive mt-5"
+            />
+            <div class="row">
+              <div class="col text-center">
+                <button
+                  type="button"
+                  class="i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  知道了
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class='modal fade modal-advanced-1' data-backdrop='static' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
-        <div class='modal-dialog modal-sm'>
-          <div class='modal-content mh400 bg-dark-color'>
-            <img src='../images/candidate/advanced_1_zh.png' class='img-responsive mt-5' />
-            <div class='row'>
-              <div class='col text-center'>
-                <button type='button' class='i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark' data-dismiss='modal' aria-label='Close'>知道了</button>
+      <div
+        class="modal fade modal-intermediate-2"
+        data-backdrop="static"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="mySmallModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content mh400 bg-dark-color">
+            <img
+              src="../images/candidate/intermediate_2_zh.png"
+              class="img-responsive mt-5"
+            />
+            <div class="row">
+              <div class="col text-center">
+                <button
+                  type="button"
+                  class="i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  知道了
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class='modal fade modal-advanced-2' data-backdrop='static' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
-        <div class='modal-dialog modal-sm'>
-          <div class='modal-content mh400 bg-dark-color'>
-            <img src='../images/candidate/advanced_2_zh.png' class='img-responsive mt-5' />
-            <div class='row'>
-              <div class='col text-center'>
-                <button type='button' class='i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark' data-dismiss='modal' aria-label='Close'>知道了</button>
+      <div
+        class="modal fade modal-advanced-1"
+        data-backdrop="static"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="mySmallModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content mh400 bg-dark-color">
+            <img
+              src="../images/candidate/advanced_1_zh.png"
+              class="img-responsive mt-5"
+            />
+            <div class="row">
+              <div class="col text-center">
+                <button
+                  type="button"
+                  class="i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  知道了
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class='user-content container notice-card-indicator pb-5 mb-5'>
-        <div class='row'>
-          <div class='col d-flex justify-content-center'>
-            <a href='important-notice.html#notice-card-1' class='notice-indicator-dot active'></a>
-            <a href='important-notice.html#notice-card-2' class='notice-indicator-dot'></a>
-            <a href='important-notice.html#notice-card-3' class='notice-indicator-dot'></a>
-            <a href='important-notice.html#notice-card-4' class='notice-indicator-dot'></a>
-            <a href='important-notice.html#notice-card-5' class='notice-indicator-dot'></a>
-            <a href='important-notice.html#notice-card-6' class='notice-indicator-dot'></a>
+      <div
+        class="modal fade modal-advanced-2"
+        data-backdrop="static"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="mySmallModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content mh400 bg-dark-color">
+            <img
+              src="../images/candidate/advanced_2_zh.png"
+              class="img-responsive mt-5"
+            />
+            <div class="row">
+              <div class="col text-center">
+                <button
+                  type="button"
+                  class="i18n-316 btn btn-sm p-2 pr-4 pl-4 mt-3 mb-3 w180 dark"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  知道了
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="user-content container notice-card-indicator pb-5 mb-5">
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <a
+              href="important-notice.html#notice-card-1"
+              class="notice-indicator-dot active"
+            ></a>
+            <a
+              href="important-notice.html#notice-card-2"
+              class="notice-indicator-dot"
+            ></a>
+            <a
+              href="important-notice.html#notice-card-3"
+              class="notice-indicator-dot"
+            ></a>
+            <a
+              href="important-notice.html#notice-card-4"
+              class="notice-indicator-dot"
+            ></a>
+            <a
+              href="important-notice.html#notice-card-5"
+              class="notice-indicator-dot"
+            ></a>
+            <a
+              href="important-notice.html#notice-card-6"
+              class="notice-indicator-dot"
+            ></a>
           </div>
         </div>
       </div>
     </section>
-    <footer id='user-footbar' class='user-footbar fixed-bottom bg-white d-block d-sm-none d-md-block d-lg-none'></footer>
+    <footer
+      id="user-footbar"
+      class="user-footbar fixed-bottom bg-white d-block d-sm-none d-md-block d-lg-none"
+    ></footer>
   </body>
-<html>
+  <html></html>
+</html>
