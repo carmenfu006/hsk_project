@@ -439,7 +439,7 @@ async function loadExamRecord(status) {
       const web_exam_records_template = document.createElement('template');
 
       if (status == 'incomplete') {
-        if (record.test_status == 0 || record.test_status == 1 || record.test_status == 2 || record.test_status == 3 || record.test_status == 5 || record.test_status == 6 || record.test_status == 10 || record.test_status == 11 || record.test_status == 12 || record.test_status == 20 || record.test_status == 21 ) {
+        if (record.test_status == 0 || record.test_status == 1 || record.test_status == 2 || record.test_status == 3 || record.test_status == 5 || record.test_status == 6 || record.test_status == 10 || record.test_status == 11 || record.test_status == 12 || record.test_status == 20 || record.test_status == 21 || record.test_status == 44) {
           web_exam_records_template.innerHTML = `
             <div class='card-body border-bottom'>
               <div class='row text-center'>
@@ -717,6 +717,9 @@ function valueTestStatus(lang, value, score) {
     case 43:
       return transLang(lang, '考试终止', 'Terminated', 'Dihentikan', 'انقطاع الامتحان')
       break;
+    case 44:
+      return transLang(lang, '支付时间过期', 'Payment time expired', 'Waktu pembayaran telah habis', 'انتهى وقت الدفع')
+      break;
     default:
       return transLang(lang, '未付款', 'Unpaid', 'Tidak dibayar', 'غير مدفوعة الأجر')
   }
@@ -778,6 +781,9 @@ function valueTestStatusBtn(value) {
       break;
     case 43:
       return 'status-terminate'
+      break;
+    case 44:
+      return ''
       break;
     default:
       return ''

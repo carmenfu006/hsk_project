@@ -99,7 +99,8 @@ $('#verification-code-btn').on('click', async(e) => {
         'Accept-Language': lang
       },
         body: JSON.stringify({
-          email: inputVal('#email')
+          email: inputVal('#email'),
+          lang: lang
         })
     })
     let data = await response.json();

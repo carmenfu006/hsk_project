@@ -268,7 +268,7 @@ function dragDropFile() {
             imageTag.attr('src', URL.createObjectURL(file));
             checkFile(imageTag)
             compressUploadedImage(event)
-            nextBtnStage3()
+            $('#to-step-4').attr('disabled', false);
           }
           reader.readAsDataURL(file);
         } else {
@@ -335,6 +335,10 @@ async function loadFile() {
   })
 
   nextBtnStage3(infoPhoto);
+
+  if (imageTag[0].naturalWidth == 0) {
+    $('.fa-trash').click();
+  }
 }
 
 // To display uploaded image if it exists.
