@@ -14,7 +14,7 @@ const partner_sidebar_template = document.createElement('template');
 // This is the main navbar element.
 navbar_template.innerHTML = `
   <a class='navbar-brand mr-auto' href='index.html'><img src='images/logo.png' id='navbar-logo' class='img-fluid w-75' alt='Responsive image'></a>
-  <a class='nav-link dropdown-toggle d-block d-sm-none d-md-block d-lg-none' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+  <a class='nav-link dropdown-toggle d-block d-sm-block d-md-block d-lg-none' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
     <i class='fa-solid fa-globe fa-lg secondary-color'></i>
   </a>
   <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
@@ -47,7 +47,7 @@ navbar_template.innerHTML = `
       </li>
     </ul>
     <ul class='navbar-nav'>
-      <li class='nav-item dropdown show d-none d-sm-block d-md-none d-lg-block'>
+      <li class='nav-item dropdown show d-none d-sm-none d-md-none d-lg-block'>
         <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
           <i class='fa-solid fa-globe fa-lg mt-3 align-self-center secondary-color'></i>
         </a>
@@ -105,7 +105,7 @@ login_modal_template.innerHTML = `
 // This navbar element is when user visits dashboard.
 user_navbar_template.innerHTML = `
   <a class='navbar-brand mr-auto' href='../index.html'><img src='../images/logo.png' id='navbar-user-logo' class='img-fluid w-75' alt='Responsive image'></a>
-  <a class='nav-link dropdown-toggle d-block d-sm-none d-md-block d-lg-none' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+  <a class='nav-link dropdown-toggle d-block d-sm-block d-md-block d-lg-none' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
     <i class='fa-solid fa-globe fa-lg secondary-color'></i>
   </a>
   <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
@@ -121,7 +121,7 @@ user_navbar_template.innerHTML = `
     <ul class='navbar-nav mr-auto'>
     </ul>
     <ul class='navbar-nav'>
-      <li class='nav-item dropdown show d-none d-sm-block d-md-none d-lg-block mr-2'>
+      <li class='nav-item dropdown show d-none d-sm-none d-md-none d-lg-block mr-2'>
         <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
           <i class='fa-solid fa-globe fa-lg mt-3 align-self-center secondary-color'></i>
         </a>
