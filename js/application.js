@@ -287,13 +287,13 @@ function dragDropFile() {
 // If there is existing profile avatar then display.
 async function loadFile() {
   let imageTag = $('#output');
+  let infoPhoto = await populateProfile();
 
   if (getSession('file')) {
     imageTag.attr('src', getSession('file'));
     $('#to-step-4').attr('disabled', false);
     checkFile(imageTag)
-  } else {
-    let infoPhoto = await populateProfile();
+  } else if (infoPhoto) {
     imageTag.attr('src', infoPhoto);
     checkFile(imageTag)
     $('#to-step-4').attr('disabled', false);
@@ -313,7 +313,7 @@ async function loadFile() {
           imageTag.attr('src', URL.createObjectURL(file));
           checkFile(imageTag)
           compressUploadedImage(event)
-          nextBtnStage3()
+          $('#to-step-4').attr('disabled', false);
         }
         reader.readAsDataURL(file);
       } else {
@@ -334,9 +334,15 @@ async function loadFile() {
     checkFile(imageTag)
   })
 
-  if (imageTag[0].naturalWidth == 0) {
+  errorImage();
+}
+
+// Check if image loaded with error
+function errorImage() {
+  let imageTag = $('#output');
+  imageTag.on('error', function() { 
     $('.fa-trash').click();
-  }
+  })
 }
 
 // To display uploaded image if it exists.
