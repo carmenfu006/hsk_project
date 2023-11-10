@@ -502,15 +502,15 @@ div.record {
 
 /* Background Image */
 .home-card-1 {
-  background-image: url('../images/home-card-1.jpg');
+  background-image: url('../images/home-card-green.jpg');
 }
 
 .home-card-2 {
-  background-image: url('../images/home-card-2.jpg');
+  background-image: url('../images/home-card-blue.jpg');
 }
 
 .home-card-3 {
-  background-image: url('../images/home-card-3.jpg');
+  background-image: url('../images/home-card-purple.jpg');
 }
 
 .home-card {
