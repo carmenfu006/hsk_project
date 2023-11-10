@@ -287,13 +287,13 @@ function dragDropFile() {
 // If there is existing profile avatar then display.
 async function loadFile() {
   let imageTag = $('#output');
-  let infoPhoto = await populateProfile();
 
   if (getSession('file')) {
     imageTag.attr('src', getSession('file'));
     $('#to-step-4').attr('disabled', false);
     checkFile(imageTag)
-  } else if (infoPhoto) {
+  } else {
+    let infoPhoto = await populateProfile();
     imageTag.attr('src', infoPhoto);
     checkFile(imageTag)
     $('#to-step-4').attr('disabled', false);
@@ -333,8 +333,6 @@ async function loadFile() {
     sessionStorage.removeItem('file');
     checkFile(imageTag)
   })
-
-  nextBtnStage3(infoPhoto);
 
   if (imageTag[0].naturalWidth == 0) {
     $('.fa-trash').click();
