@@ -650,6 +650,28 @@ div.record {
   }
 }
 
+@media screen and (min-width: 640px) {
+  .progress-indicator-width {
+    max-width: 600px;
+    min-height: 50px;
+  }
+
+  .progress-indicator-bar {
+    padding-left: 90px;
+  }
+
+  .progress-indicator-word-bar {
+    padding-left: 35px;
+  }
+
+  .progress-indicator-line {
+    width: 103px;
+    height: 3px;
+    border-radius: 12%;
+    background-color: #CFCFCF;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .home-text-1 {
     font-size: 42px;
@@ -686,6 +708,10 @@ div.record {
   
   .progress-indicator-bar, .instruction-progress-indicator-bar {
     padding-left: 68px;
+  }
+
+  .progress-indicator-word-bar {
+    padding-left: 0px;
   }
   
   .progress-indicator-line, .instruction-progress-indicator-line {
